@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>绑定手机</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/personal/bindMobile.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_changeMobile.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_validateMobile.css">
+    <!--endbuild-->
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="325">
+    <!--输入手机-->
+    <section class="al-mainInner ev-mobileInner">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:history.back(-1);" class="ev_digHole">
+                    <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>绑定手机</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)">
+                </a>
+            </figure>
+        </header>
+
+        <section class="al-changeMobileBox">
+            <article class="al-changeMobileContent">
+                绑定手机能够保证你的帐号安全，随时找回发布的图片
+            </article>
+            <form id="bindMobile">
+            <figure class="al-changeMobileInput">
+                <input type="text" placeholder="请输入手机号" id="mobile" name="mobile">
+                <i class="icon-searchCancel"></i>
+                <i class="icon-mobile"></i>
+            </figure>
+            </form>
+            <button class="btn-primary-lg al-msgWriting" id="mobileSumit">确认</button>
+        </section>
+    </section>
+    <!--验证码-->
+    <section class="al-mainInner ev-validCode">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:;" class="back">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>验证手机</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)">
+                </a>
+            </figure>
+        </header>
+        <section class="al-changeMobileBox">
+            <article class="al-changeMobileContent">
+                验证码已发送，请输入收到的验证码
+            </article>
+            <form id="updateMobile">
+            <figure class="al-validateInput">
+                <input type="text" name="validCode" id="validCode">
+            </figure>
+            </form>
+            <article class="al-changeMobileContent sended ev-sended">
+                已发送<span class="second"></span>后重新发送
+            </article>
+            <article class="al-changeMobileContent sended ev-reSend" style="display:none;color:#3598db">
+                重新发送
+            </article>
+            <article class="al-changeMobileContent sended">
+                今天剩余<span class="num"></span>次
+            </article>
+        </section>
+    </section>
+
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+    <!--build:js /dest/pages/personal/bindMobile.js-->
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+    <script src="/js/scene/personal/bindMobile.js"></script>
+    <!--endbuild-->
+</body>
+
+</html>

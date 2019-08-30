@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:gs="http://www.gensee.com/gsml">
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            var url=document.URL;
+            var str=url.substring(url.lastIndexOf("?"),url.length);
+            window.location.href='//m.allinmd.cn/pages/live/living_watch.html'+str;
+        }
+    </script>
+    <title>直播</title>
+    <meta name="keywords" content="在线直播，医学直播，手术直播，医生直播，医师直播，唯医，allinmd">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <!--build:css /dest/live/live_watch.css-->
+    <link rel="stylesheet" href="/css/v3/base.css">
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/auth/module.auth.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/weixin/module.weixin.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/css/v3/pages/webcast/watchWebcast.css" />
+    <!-- endbuild -->
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="184">
+<div class="al-videoPageBox">
+    <!--主界面左侧边栏：begin-->
+    <aside class="al-livingLeftSideBar">
+        <ul class="al-videoLeftNav">
+            <li id="ev_composite">
+                <img src="//img10.allinmd.cn/v3/webcast/syntheticModeIcon.png" alt=""/>
+                <article>
+                    <span>合成模式</span>
+                    <p>UPLOAD</p>
+                </article>
+            </li>
+            <li class="al-filpScreenBox" id="ev_changeWindows">
+                <img src="//img10.allinmd.cn/v3/webcast/flipScreenIcon.png" alt=""/>
+                <article>
+                    <span>切换屏幕</span>
+                    <p>SWITCH</p>
+                </article>
+            </li>
+        </ul>
+    </aside>
+    <!--主界面左侧边栏：end-->
+
+    <section class="al-videoMainBox">
+        <header class="al-videoMainHead">
+            <div class="al-videoMainInfo">
+                <h4 id="ev_liveTitle"></h4>
+                <figure class="al-userInfoBox" data-alcode-mod="354">
+                    <p>用户名：<a href="" target="_blank"><span class="al-videoUserName" id="ev_authName"></span></a></p>
+                    <p id="userOnlineNumber">观看人数：<span class="al-videoWatchNum" id="ev_watchNum">0人</span></p>
+                </figure>
+            </div>
+            <div class="al-shareNoticeBox">
+                <figure class="al-videoShareBox">
+                    <section class="al-videoShareContainer" id="ev_share">
+                        分享
+                        <section class="al-shareBox hide ev-shareBox" style="z-index: 4; display: none;">
+                            <figure class="al-shareListItem ev-tsina" style="width:48px"><img src="//img10.allinmd.cn/v3/common/icon/share_weibo.png" alt=""><figcaption>微博</figcaption></figure>
+                            <figure class="al-shareListItem ev-tweixin" style="width:48px"><img src="//img10.allinmd.cn/v3/common/icon/share_weixin.png" alt=""><figcaption>微信</figcaption></figure>
+                            <figure class="al-shareListItem ev-tqq" style="width:48px"><img src="//img10.allinmd.cn/v3/common/icon/share_qq.png" alt=""><figcaption>QQ</figcaption></figure>
+                            <figure class="al-shareListItem ev-tqzone" style="margin-left:4px;margin-right:4px"><img src="//img10.allinmd.cn/v3/common/icon/share_zone.png" alt=""><figcaption>QQ空间</figcaption></figure>
+                            <!--<figure class="al-shareListItem ev-link" style="width:48px"><img src="//img10.allinmd.cn/v3/webcast/linkIcon.png" alt=""><figcaption>链接</figcaption></figure>-->
+                            <section class="al-weixinErweiCodeBox ev-erweima hide" style="display:none;">
+                                <span>使用微信扫描二维码</span><img src="//img10.allinmd.cn/v3/friends/weixin_share.jpg" alt="">
+                            </section>
+                            <section class="al-shareVideoLinkBox ev-linkBox">
+                                <p id="ev_linkUrl"></p>
+                                <span class="al-copyLinkBtn" id="ev_copyLink">复制链接</span>
+                            </section>
+                        </section>
+                    </section>
+                </figure>
+                <figure class="al-noticeBox">
+                    <section class="al-noticeContainer" id="ev_notice">
+                        公告
+                        <div class="al-noticePopBox">
+                            <b id="ev_noticeClose"></b>
+                            <h4>直播公告</h4>
+                            <p id="ev_liveNotice"></p>
+                        </div>
+                    </section>
+                    <article class="al-reportBox">
+                        <span id="ev-report">举报</span>
+                        <div class="al-reportAnchorPop">
+                            <p><i></i>确定举报该主播？</p>
+                            <span class="al-sureBtn" id="anchor_reportSure">确定</span>
+                            <span id="anchor_reportCancel">取消</span>
+                        </div>
+                    </article>
+                </figure>
+            </div>
+        </header>
+        <!--视频-->
+        <div class="al_videoPar">
+            <div class="al_offsideVideo">
+                <div class="videoIndexArea ifrVideo-21">
+                    <div id="livePlayer" class="ifrVideo-21" style="width: 100%;height: 100%;"></div>
+                    <!--<gs:video-live id="videoComponent" class="gsVideo" site="weiyiceshi.gensee.com" ctx="webcast" ownerid="" uname="usl" authcode=""/>-->
+                </div>
+            </div>
+        </div>
+        <!--视频-->
+
+        <!--直播已结束:begin-->
+        <div class="al-webcastEndPop" style="display: none">
+            <header>
+                <h4>直播已结束</h4>
+                <p>去其他直播间发现更多精彩！</p>
+            </header>
+            <section class="al-webcastEndPopMainPart ev-recomendList">
+
+            </section>
+        </div>
+        <!--直播已结束:end-->
+        <div class="al-orderWebcastArea" style="display: none">
+            <figure>
+                <figcaption>开始时间：<span class="ev-startTime"></span></figcaption>
+                <a class="ev-orderBtn" href="javascript:;">立即预约</a>
+            </figure>
+        </div>
+    </section>
+
+    <!--主界面右侧边栏：begin-->
+    <aside class="al-livingRightSideBar">
+        <div class="al-offsideImgBox">
+            <b class="al-imgBox_leftBtn"></b>
+            <b class="al-imgBox_rightBtn"></b>
+            <figure class="al-imgBox_imgCount"></figure>
+        </div>
+        <!--文档:begin-->
+        <div class="al_docPar">
+            <div class="al-offsideNoContent">
+                <img src="//img10.allinmd.cn/v3/webcast/noContentImg.png" alt=""/>
+            </div>
+            <div class="al_offsideDoc">
+                <div class="al-offsideContent">
+                    <div id="ifr-1" style="width:100%;height: 100%;">
+                        <div id="drawPanel"></div>
+                    </div>
+                    <!--<gs:doc id="docComponent" site="weiyiceshi.gensee.com" class="gsVideo" ctx="webcast" ownerid="" uname="usl" authcode=" "/>-->
+                </div>
+            </div>
+        </div>
+        <!--文档:end-->
+        <!--互动聊天:begin-->
+        <div class="al-interactiveChatBox">
+            <h3>互动聊天区</h3>
+            <section class="al-chatItemBox">
+                <!--聊天信息start-->
+                <section id="ev_chatList" data-alcode-mod="355"></section>
+                <!--聊天信息end-->
+
+                <div class="al-chatReportBox">
+                    <b id="ev_cancelBox"></b>
+                    <header class="al-reportUserInfo">
+                        <a href="" class="ev_userLink" target="_blank"><img src="" alt=""/></a>
+                        <figure>
+                            <span class="ev_userName"></span><i class="ev_vipIcon" style="display: none"></i>
+                            <p class="ev_userUnit"></p>
+                        </figure>
+                    </header>
+                    <section class="al-chatReportMain" id="ev_mainSelect">
+                        <figure class="al-chatReportBtn">举报</figure>
+                        <figure>屏蔽</figure>
+                    </section>
+                    <div class="ev_selectBox">
+                        <div class="al-charReportPop" id="ev_reportInfo">
+                            <p reportType="1">举报昵称违规</p>
+                            <p reportType="2">举报头像违规</p>
+                            <p reportType="3">举报发言违规</p>
+                            <p class="al-cancelBtn">取消</p>
+                        </div>
+                        <div class="al-charReportPop al-chatReportConfirm" id="ev_reportSureBox">
+                            <i></i>
+                            <span>确定举报该用户？</span>
+                            <section class="al-chatReportMain">
+                                <figure class="al-chatReportBtn" id="ev_reportSure">确定</figure>
+                                <figure id="ev_reportCancel">取消</figure>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="al-charReportPop al-chatReportConfirm al-chatshied ev_selectBox" id="ev_shieldBox">
+                        <i></i>
+                        <span>确定屏蔽该用户？</span>
+                        <section class="al-chatReportMain">
+                            <figure class="al-chatReportBtn" id="ev_shieldSure">确定</figure>
+                            <figure id="ev_shieldCancel">取消</figure>
+                        </section>
+                    </div>
+
+                </div>
+
+                <figure class="al-chatRepoetedPop">
+                    <div>
+                        <b class="ev_hasReportClose"></b>
+                        <p>您已经举报过，请耐心等待，我们正在加速审核</p>
+                        <span class="ev_hasReportClose">知道了</span>
+                    </div>
+                </figure>
+
+            </section>
+            <footer class="al-userInputArea enabledChat">
+                <textarea name="" cols="0" rows="0" placeholder="这里输入聊天内容" id="ev_chatAre"></textarea>
+                <span class="al-inputSentBtn" id="ev_chatSubmit">发送</span>
+            </footer>
+            <footer class="al-userInputArea al-banSpeech disabledChat">
+                <p>抱歉，您已被禁言！</p>
+                <span class="al-inputSentBtn">发送</span>
+            </footer>
+        </div>
+        <!--互动聊天:end-->
+    </aside>
+    <!--主界面右侧边栏：end-->
+</div>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<!--build:js /dest/live/live_watch.js-->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<!--<script src="/js/comm/comm.track.js"></script>-->
+
+<script src="/js/modules/share/module.share.js" ></script>
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js" ></script>
+<!--<script src="/js/modules/auth/module.auth.js"></script>-->
+<script src="/js/modules/user/module.user.js"></script>
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/validate-email/module.validate-email.js"></script>
+<script src="/js/modules/weixin/module.welcome.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.new.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script><script src='/js/third-party/md5.js'></script>
+<script src="/js/third-party/jquery-loadmask-0.3/jquery.loadmask.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/ajaxfileupload.js" ></script>
+<script src="/js/third-party/jquery-qrcode-master/src/jquery.qrcode.js"> </script>
+<script src="/js/third-party/jquery-qrcode-master/src/qrcode.js"> </script>
+
+<!--endbuild-->
+<script src="/js/third-party/ccLive/js/liveSDK.js"></script>
+<script src="/js/scene/live/scene.live.liveWatch.js"></script>
+</body>
+</html>

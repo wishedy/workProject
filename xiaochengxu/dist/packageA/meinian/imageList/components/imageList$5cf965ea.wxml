@@ -1,0 +1,13 @@
+<template name="imageList$5cf965ea">
+  <view class="_section data-v-746cda22 report-attachment-inner">
+    <view class="_h1 data-v-746cda22 title">
+      <view class="_i data-v-746cda22"></view> <label class="_span data-v-746cda22 subTitle">共{{physicalAttList.length}}张图片</label>
+    </view>
+    <view class="_article data-v-746cda22 report-attachment-list">
+      <view class="_figure data-v-746cda22 report-attachment-item" wx:key="index" key="{{index}}" catchtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" wx:for="{{physicalAttList}}" wx:for-index="index" wx:for-item="item">
+        <image src="{{item.attUrl}}" alt="{{item.inspectionItem}}" class="_img data-v-746cda22"></image>
+      </view>
+    </view>
+    <view class="_div data-v-746cda22 returnBack" catchtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">返回</view>
+  </view>
+</template>

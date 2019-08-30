@@ -1,0 +1,101 @@
+@charset "UTF-8";
+//发布弹层组件
+//Created by qiangkailiang on 2016/08/11
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.al-releasePageMask {
+    background-color: rgba(255, 255, 255, .5);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 7;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+.al-releasePageMask.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.al-releaseTitle {
+    width: rem(519px);
+    height: rem(115px);
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    margin-left: rem(-259.5px);
+    img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+}
+
+.al-releaseBtn {
+    position: absolute;
+    bottom: rem(190px);
+    text-align: center;
+    width: 100%;
+    .al-releaseItem {
+        display: inline-block;
+        margin: 0 rem(25px);
+        img {
+            @include circle(rem(170px), transparent);
+        }
+        figcaption {
+            //@include font-dpr(14px);
+            margin-top: rem(-10px);
+            color: #476479;
+            font-size: rem(30px);
+            line-height: rem(30px);
+        }
+    }
+}
+
+.al-releaseCancel {
+    @include square(rem(30px));
+    position: absolute;
+    bottom: rem(75px);
+    left: 50%;
+    margin-left: rem(-30px);
+    z-index: 6;
+    img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+        //border: rem(3px) solid #2899e6;
+        border-radius: 50%;
+        padding: rem(15px);
+    }
+}
+// 当点击发布——全页面添加blur模糊
+.al-mainInner.al-fullBlur {
+    filter: blur(50px);
+    -webkit-filter: blur(50px)
+}
+
+.al-releasePageMask.al-fullBlurAndroid {
+    background-color: #fff;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+// 横屏特殊处理
+@media only screen and (orientation:landscape){
+    .al-releaseTitle{
+        top: 5%;
+    }
+    .al-releaseBtn{
+        bottom: 50%;
+        transform:translateY(-50%);
+        -webkit-transform:translateY(50%);
+    }
+}

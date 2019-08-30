@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超多内推大奖</title>
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="./css/page01.css">
+</head>
+<body>
+<audio id="audio" src="./video/newMess.mp3" preload="auto"> </audio>
+<section class="wrap">
+    <section class="notice">
+        <ul>
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+        </ul>
+    </section>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<script src="./js/share.js"></script>
+<script>
+
+    $(function () {
+
+        var isWeChat = false;
+        var isAudio = false;
+        var isFisrt = false;
+
+        function doAnimation(index) {
+            $(".notice li").eq(index).addClass("animation");
+            $("#audio")[0].play();
+        }
+
+        var i = 0;
+        var timer;
+
+        function setTimeAnimation() {
+            doAnimation(i++);
+            timer = setInterval(function () {
+                doAnimation(i++);
+                if (i === 3) {
+                    clearInterval(timer);
+                }
+
+            }, 1300)
+        }
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            $("#audio")[0].load();
+            isWeChat = true;
+            if (isWeChat && isAudio) {
+                setTimeAnimation()
+            }
+        }, false);
+
+        $("#audio")[0].addEventListener("canplaythrough", function () {
+            if (isFisrt) {
+                return;
+            }
+            isFisrt = true;
+            isAudio = true;
+            if (isWeChat && isAudio) {
+                setTimeAnimation()
+            }
+        }, false);
+
+        $("#audio")[0].addEventListener('ended', function () {
+            $("#audio")[0].load();
+        }, false);
+
+        $(document).on("click touchstart",function(){
+            window.location.href='./page02.html'
+        })
+    })
+
+</script>
+</body>
+</html>

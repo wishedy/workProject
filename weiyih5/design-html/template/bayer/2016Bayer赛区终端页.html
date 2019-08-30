@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>${areaName}赛区</title>
+    <meta name="description" content="#厚积理应薄发，实力就该发声#投上您的宝贵一票，将喜欢的选手送至总决赛擂台吧！"/>
+
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="Keywords" content="病例专题，视频专题，专题页面，骨科专题，学术专题，文献专题，手术汇总，">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <script type="text/javascript" src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/column/bayer_race/template/swiper.min.css">
+    <link rel="stylesheet" href="/css/column/bayer_race/template/bayerBase.css">
+    <link rel="stylesheet" href="/css/column/bayer_race/template/bayerDetails.css">
+
+
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/html/activity/1460028659268/activity_index.html';
+        }
+    </script>
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="266">
+<!--主页面结构-->
+<section class="main">
+    <!--顶部title栏-->
+    <header class="headTitle">
+        <h2>${areaName}赛区</h2>
+        <a href="javascript:void(0)" class="Ev-BackBtn">
+            <img src="/images/img50/column/bayer_race/backBtn.png" alt="">
+        </a>
+    </header>
+    <!--顶部轮播banner-->
+    <header class="headBanner swiper-container">
+        <section class="swiper-wrapper">
+
+            <!--新版广告位01-->
+            <#if adPosition_list??>
+                <#list adPosition_list as adPositionList>
+                    <#if adPositionList_index==0>
+                        <#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+                            <#if v_adPositionAttachmentList??>
+                                <#list v_adPositionAttachmentList as list>
+                                    <figure class="headBannerItem swiper-slide">
+                                        <img src="//img99.allinmd.cn/${list.adAttUrl}" alt="">
+                                        <article class="areaRaceImgTitle">
+                                            <span class="title Ev-BayerDetailsBannerText"><#if list.adAttName?length gt 15 > ${list.adAttName?substring(0,15)}…<#else>${list.adAttName}</#if></span>
+                                        </article>
+                                    </figure>
+                                </#list>
+                            </#if>
+                    </#if>
+                </#list>
+            </#if>
+
+        </section>
+        <section class="swiper-pagination"></section>
+    </header>
+    <!--轮播banner结束-->
+    <!--精彩现场开始
+        需要提示“晋级”图标的，请在section.broveShowList的Class中添加levelUp，即可显示晋级。
+        -->
+    <section class="broveShow generalPart" data-alcode-mod='529'>
+        <header class="broveShowTitle generalTitle">
+            <h2>精彩现场</h2>
+        </header>
+        <!-- H5拜耳赛区终端页 -->
+        <#if (recommendVideo_list??)&&(recommendVideo_list?size>0)>
+            <#list recommendVideo_list as recommendVideoList>
+                <section <#if recommendVideoList.isPromoted==1>class="broveShowList levelUp Ev-broveShowList Ev-BayerDetailsVideoListClick"<#else>class="broveShowList Ev-broveShowList Ev-BayerDetailsVideoListClick"</#if>>
+                <figure class="broveShowImg">
+                    <img src="${recommendVideoList.videoLogoUrl}" alt="">
+                    <figure class="levelUpIcon">
+                        <img src="/images/img50/column/bayer_race/levelUp.png" alt="">
+                    </figure>
+                </figure>
+                <article class="broveShowText">
+                    <a href="${recommendVideoList.webStoragePath}" data-ajax="false"><#if recommendVideoList.videoName?length gt 26>${recommendVideoList.videoName?substring(0,26)}…<#else>${recommendVideoList.videoName}</#if></a>
+                    <p>
+                        <span class="userName">${recommendVideoList.videoAuthor}</span>
+                        <span class="watchNum">${recommendVideoList.videoForArea}</span>
+                    </p>
+                </article>
+    </section>
+    </#list>
+    </#if>
+</section>
+<!--精彩现场结束-->
+<!--专家寄语-->
+<!-- 新闻01 -->
+<section class="expertMsgBox generalPart">
+    <#if (cms_news_list??)&&(cms_news_list?size>0)>
+        <#list cms_news_list as newsList>
+            <#if newsList_index==0>
+                ${newsList.newsBody}
+            </#if>
+        </#list>
+    </#if>
+</section>
+<!--专家寄语结束-->
+<!--全部赛区-->
+<section class="allArea generalPart">
+    <#if (area_list??)&&(area_list?size<=3)>
+    <article class="allAreaTitle generalTitle">
+        <h2><span>半决赛</span> · 全部赛区</h2>
+    </article>
+    <!--淘汰赛阶段赛区列表-->
+    <!--区域赛阶段使用areaList 半决赛阶段使用halfList-->
+    <section class="halfList">
+        <#else>
+            <article class="allAreaTitle generalTitle">
+                <h2><span>区域赛</span> · 全部赛区</h2>
+            </article>
+            <!--淘汰赛阶段赛区列表-->
+            <!--区域赛阶段使用areaList 半决赛阶段使用halfList-->
+            <section class="areaList">
+                </#if>
+                <ul data-alcode-mod='530'>
+
+                    <#if (area_list??)&&(area_list?size>0)>
+                        <#list area_list as areaList>
+                            <li <#if areaList.isValid ==1>class="areaListItem Ev-AreaListItem"<#else>class="areaListItem no-areaListItem Ev-AreaListItem"</#if>>
+                            <a <#if areaList.isValid ==1>href="//m.allinmd.cn/html/m/activity/1460028659268/${areaList.propertyId?c}.html"<#else>href="javascript:;"</#if> data-ajax="false">
+                            ${areaList.propertyName}
+                            </a>
+                            </li>
+                        </#list>
+                    </#if>
+                    <#if (area_list??)&&(area_list?size<=3)>
+                    <li>
+                        <a href="http://m.allinmd.cn/html/m/activity/1460028659268/activity_revive.html" data-ajax="false">复活赛区</a>
+                    </li>
+                    </#if>
+                </ul>
+            </section>
+    </section>
+    <!--全部赛区结束-->
+    <!--页脚按钮组-->
+    <footer class="pageFooter bayerAreaFooter" data-alcode-mod='515'>
+        <article class="footerItem">
+            <a href="//m.allinmd.cn" class="footerHome" data-ajax="false">
+                唯医首页
+            </a>
+        </article>
+        <i class="hr"></i>
+        <article class="footerItem ">
+            <a href="javascript:;" class="footerDownload Ev-footerAppDownload" data-ajax="false">
+                下载APP
+            </a>
+        </article>
+        <i class="hr"></i>
+        <article class="footerItem">
+            <a href="javascript:;" class="footerBackToTop">
+                返回顶部
+            </a>
+        </article>
+    </footer>
+    <div class="videoPK_share_pop Ev-BayerShareCasePopShow" style="display: none;">
+        <div id="videoPK_sharebtn" class="vPK_share_cont">
+            <div class="vPK_share_list">
+                <div class="share_dao">分享到</div>
+                <a class="share_sina Ev-BayerShareSina" ref="sina" target="_blank">
+                    <div class="share_sina_icon"><img src="/images/img50/column/bayer_race/xinlang.png" _mce_src="/images/img50/column/bayer_race/xinlang.png" alt=""></div>
+                    <div class="share_sina_text">新浪微博</div>
+                </a>
+                <a class="share_qzone Ev-BayerShareQzone" ref="qzone" target="_blank">
+                    <div class="share_qzone_icon"><img src="/images/img50/column/bayer_race/kongjian.png" _mce_src="/images/img50/column/bayer_race/kongjian.png" alt=""></div>
+                    <div class="share_sina_text">QQ空间</div>
+                </a>
+            </div>
+        </div>
+        <div class="share_quxiao Ev-BayerShareHideBtn">取消</div>
+    </div>
+    <footer class="footerBtn">
+        <a class="share Ev-BayerShareCaseBtn">
+            分享
+        </a>
+    </footer>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/comm/jweixin-1.0.0.js"></script>
+<script src="/js/comm/shareAll.js"></script>
+<script type="text/javascript" src="/js/social_intercourse/share.js"></script>
+<script type="text/javascript" src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="/js/column/bayer/bayerComm.js"></script>
+<script type="text/javascript" src="/js/column/bayer/bayerDetails.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href='//m.allinmd.cn/html/m/activity/1472178139520/personal_center.html?activityId=1472178139520';
+        }
+
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>我的作品专题页－唯医，allinmd</title>
+    <meta name="Keywords" content="病例专题，视频专题，视频pk-我的作品，骨科专题，学术专题，文献专题，手术汇总，">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+
+    <link rel="stylesheet" href="/dest/column/videoPK_V2/personal_center.css" type="text/css"/>
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="113">
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav" data-alcode-mod='123' data-alcode-item-selector="li">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+
+    <input type="hidden" id="activityId">
+    <div id="code_2D"><img src="//img00.allinmd.cn/column/videoPK_v2/2D_code_2q.png" alt=""></div>
+    <!--新版广告位-->
+    <#if adPosition_list??>
+        <#list adPosition_list as adPositionList>
+            <#if adPositionList_index==0>
+                <#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+                    <#if v_adPositionAttachmentList??>
+                        <#list v_adPositionAttachmentList as list>
+
+                            <div id="banner" style="background: url(//img99.allinmd.cn/${list.adAttUrl}) no-repeat center;">
+                                <div class="share_box">
+                                    <div class="share" id="hr_share" data-alcode-mod='199' data-alcode-item-selector="a">
+                                        <span>分享至：</span>
+                                        <a href="javascript:;" target="_blank" class="share_ico_tsina"><img src="//img00.allinmd.cn/column/videoPK_v2/sina.png" alt=""></a>
+                                        <a href="javascript:;" target="_blank" class="share_ico_tqq"><img src="//img00.allinmd.cn/column/videoPK_v2/qq.png" alt=""></a>
+                                        <a href="javascript:;" target="_blank" class="share_ico_qzone"><img src="//img00.allinmd.cn/column/videoPK_v2/qqkongjian.png" alt=""></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </#list>
+                    </#if>
+            </#if>
+        </#list>
+    </#if>
+    <section class="naverBox">
+        <div id="naver">
+            <ul class="naver_lists" data-alcode-mod='200'>
+                <#if (activityMenu??)&&(activityMenu?size>0)>
+                    <#list activityMenu as MenuList>
+                        <#if MenuList_index  ==4>
+                            <li class="nav_homgpage"><a  class="wait_review_work" href="${MenuList.activityMenuUrl}?activityId=${MenuList.activityId?c}">${MenuList.activityMenuName}</a></li>
+                            <#else>
+                                <li><a  href="${MenuList.activityMenuUrl}?activityId=${MenuList.activityId?c}">${MenuList.activityMenuName}</a></li>
+                        </#if>
+                    </#list>
+                </#if>
+                <li class="nav_apply" id="nav_apply">
+                    <a href="javascript:;"></a>
+                    <div></div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class="works_mine_content">
+        <div class="works_mine_cont_center works_center_main" style="display:none;">
+            <div class="no_upload no_up_reg" style="display:none;">
+                <div class="no_up_center">
+                    <p>报名已结束，评审正在紧张进行中，请关注初选结果...</p>
+                    <a href="javascript:;" id="works_gr_upload_now">查看参选作品</a>
+                </div>
+            </div>
+            <div class="no_register no_up_reg" style="display:none;">
+                <div class="no_reg_center">
+                    <p>你还没有登录！</p>
+                    <a href="javascript:;" id="tanchu_login">立即登录</a>
+                </div>
+            </div>
+        </div>
+        <div class="works_mine_lists_box works_center_main" style="display:none;">
+            <div class="works_mine_lists_top">
+                <h2>我的作品<span></span></h2>
+            </div>
+            <div class="works_mine_lists" data-alcode-mod='205'>
+
+            </div>
+        </div>
+        <div class="expertReview" style="display:none;">
+            <!--无待评和已评作品-->
+            <div class="er_noList" style="display:none;"></div>
+            <!--待评作品-->
+            <div class="expertReview_wait" style="display:none;">
+                <h2>待评作品<span></span></h2>
+                <div class="wait_cont"></div>
+            </div>
+            <!--已评作品-->
+            <div class="expertReview_finish" style="display:none;">
+                <h2>已评作品<span></span></h2>
+                <div class="finish_cont"></div>
+            </div>
+        </div>
+        <!-- 分页 -->
+        <div class="page-container ev_pages">
+            <div class="pagination pager">
+                <div class="pages">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--弹层窗口-->
+    <div id="videoMask" style="display: none;">
+        <div id="videoTpk_btn" class="videoTpk_btn">
+            <a href="javascript:;"><img src="/images/img00/column/videoPK/pk_v3/case_pk_btn.png" alt=""/></a>
+        </div>
+    </div>
+    <div id="videoPlayer" class="videoT_playBox font_yahei" style="display:none;">
+        <div id="videoT_playBox_nav" class="videoT_playBox_nav">
+            <ul>
+                <li>
+                    <a href="javascript:;" class="vPlay cur">视频播放<div class="vtbbg"></div></a>
+                    <!-- 当前显示的时候会显示下面的三角 -->
+                </li>
+                <li>
+                    <a href="javascript:;" class="vScore">评分</a>
+                </li>
+            </ul>
+        </div>
+        <div class="videoT_playBox_con">
+            <!--内容替换区域-->
+
+            <div id="v_detail_content" class="v_detail_content">
+                <div id="v_detail_title" class="v_detail_title videoT_dtop" style="overflow:hidden;">
+                    <div class="v_d_t_l videoT_dtopCon">
+                        <div class="v_d_t font_yahei videoT_title ev_videoTitle"></div>
+                        <div class="author">
+                            <span class="author_span"><a style="color:#626f8c; text-decoration:none;" class="name-card ev_nameCard"></a></span>
+                            <span class="publishTime">发布于：<i></i></span>
+                            <span class="ly">术式：<span class="ev_operation"></span></span>
+                        </div>
+                    </div>
+                    <div class="playNumBox">
+                        <p class="playNum"></p>
+                        <p>播放</p>
+                    </div>
+                </div>
+                <!--视频插件位置-->
+                <div id='video_wrap'>
+                    <div id="video" >
+                        <div id="a1">
+                        </div>
+                    </div>
+
+                </div>
+                <!--文字介绍-->
+                <div id="video_jj" class="video_jj">
+                    <div class="video_jj_title font_yahei">视频简介</div>
+                    <div class="video_jj_text ev_videoAbstract"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--视频播放-->
+    <!--评论-->
+    <div class="videoT_playBox font_yahei"  id='vPK_prof_score' style='display: none;'>
+        <div class="videoT_playBox_nav">
+            <ul>
+                <li>
+                    <a href="javascript:;" class="vPlay ">视频播放</a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="vScore cur">评分<div class="vtbbg"></div></a>
+                    <!-- 当前显示的时候会显示下面的三角 -->
+                </li>
+            </ul>
+        </div>
+        <div class="pingfen_all font_yahei">
+            <div class="pingfen_bg"></div>
+            <div class="pingfen_top">
+                <div class="pingfen_top02 pingfen_topP ev_videoTitle"></div>
+                <div class="author pingfen_top03">
+                    <span class="author_span" style="margin-right:5px;"><a style="color:#626f8c; text-decoration:none;" class="name-card ev_nameCard"></a></span>
+                    <span class="publishTime" style="margin-right:15px;">发布于：<i></i></span>
+                    <span class="ly">术式：<span class="ev_operation"></span></span>
+                </div>
+            </div>
+            <div class='videoT_playBox_inn' style='min-height:600px;'>
+            </div>
+        </div>
+    </div>
+    <!--弹层窗口-->
+
+    <!--#include virtual="/includes/footer.jsp"-->
+</section>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src="/dest/column/videoPK_V2/personal_center.css"></script>
+<script>
+    module.videoPKShare({
+        title: '《第二届骨科规范化手术视频征集评选》获奖名单已公布！巅峰之战圆满落幕，最终由谁问鼎？',
+        sina: '《第二届骨科规范化手术视频征集评选》获奖名单已公布！巅峰之战圆满落幕，最终由谁问鼎？ ',
+        qqFriend: '巅峰之战圆满落幕，最终由谁问鼎？ ',
+        qqFriendTitle: '第二届骨科规范化手术视频征集评选-获奖名单已公布！',
+        qqZone: "巅峰之战即将打响，百家争鸣谁主沉浮？总决赛邀您观战！",
+        qqZoneTitle: '巅峰之战圆满落幕，最终由谁问鼎？ ',
+        pic: 'https://img00.allinmd.cn/column/videoPK_v2/share_2q.jpg'
+    });
+</script>
+</body>
+</html>                                    

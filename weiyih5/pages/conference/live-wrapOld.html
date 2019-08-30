@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <title>直播页面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!--   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1">-->
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="Keywords" content="医学视频,教学视频,手术视频,会议回放,医学会议,会议直播,手术讲解,唯医,allinmd">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <link href="/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.css" rel="stylesheet">
+    <link href="/css/common/main.css" type="text/css" rel="stylesheet"/>
+    <link href="/css/scene/live_list.css" type="text/css" rel="stylesheet"/>
+
+    <script src="/js/comm/domain.js"></script>
+
+    <script type="text/javascript">
+        domain.get(
+                '/js/comm/comm.checkAddress.js',
+                '/js/comm/Weixin_share.js',
+                '/js/social_intercourse/share.js'
+        );
+    </script>
+    <script type="text/javascript">
+
+        $(function () {
+            //comm.bindNav(4, true, false, false);
+            var result;
+            var hHeight = 0;
+            if($(".fixedHeader").length){
+                hHeight = $(".fixedHeader").height();
+            }else if($(".header").length){
+                hHeight = $(".header").height();
+            }
+            $("#liveWrap").attr("height", $(window).height() - hHeight);
+            var liveId = comm.getpara().liveId;
+            var token = comm.getpara().token;
+            var conId = comm.getpara().conId;
+            var conSubId = comm.getpara().conSubId;
+            var playBackId = comm.getpara().playBackId;
+            var shareTitle, desc = "", conTime, conPlace;
+
+
+
+            /**
+             * 绑定唤醒APP
+             * */
+            var callAppOptions = {
+                el: "#callAppBtn",
+                ios: "allinmdios://app.allinmd.cn/applinks.html?scene=resourceList&index=3&conId=" + conId,
+                android: "allin://com.allin.social:75235?data={scene:2,conId:"+ conId +",type:3,categoryType:11}",
+                ios9: "http://app.allinmd.cn/applinks.html?scene=resourceList&index=3&conId=" + conId,
+                runAtOnce: false
+            };
+            comm.recognizeAppShareLink(callAppOptions);
+
+            $.ajax({
+                type: 'post',
+                dataType: 'json',
+                data: {paramJson: $.toJSON({conId: conId})},
+                async: false,
+                url: '/mcall/conference/index/getConferenceSubList/',
+                success: function (data) {
+                    if (data != null && data != undefined && data.responseObject && data.responseObject.responseStatus) {
+                        result = data.responseObject;
+                    }
+                }
+            });
+            var data = result.responseMessage;
+            var info = result.responseData;
+            var sharePic;
+            if (playBackId != "" && playBackId != undefined) {
+                for (var i = 0; i < data.length; i++) {
+                    if(data[i].id==conSubId){
+                        document.title=data[i].conSubName+"-"+info.conName + "-回播-唯医,allinmd";
+                        sharePic = data[i].conSubPicUrl;
+                        break;
+                    }
+                }
+                for (var i = 0; i < data.length; i++) {
+                    if (playBackId == data[i].playBackId) {
+                        desc = data[i].conSubIntro;
+                        shareTitle = data[i].conSubName;
+                        conTime = data[i].startTime && data[i].startTime.substring(0, 10);
+                        conPlace = data[i].conSubPlace;
+                        break;
+                    }
+                }
+                wechat_share({
+                    title: '[' + shareTitle + ']-会议回顾-唯医,allinmd',
+                    imgUrl: sharePic?sharePic:"https://m.allinmd.cn/image/allin_logo.png",
+                    desc: "免费在线观看会议，让医学不再有时空的限制",
+                    fnMessageSuc: function () {
+                        comm.shareLog({shareSence: 26, shareChannel: 4,shareContent:'[' + shareTitle + ']-会议回顾-唯医,allinmd'});   // 回播 好友
+                    },
+                    fnTimelineSuc: function () {
+                        comm.shareLog({shareSence: 26, shareChannel: 5,shareContent:'[' + shareTitle + ']-会议回顾-唯医,allinmd'});  // 回播 朋友圈
+                    }
+                });
+            } else {
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].id == conSubId) {
+                        document.title = data[i].conSubName + "-" + info.conName + "-直播-唯医,allinmd";
+                        sharePic = data[i].conSubPicUrl;
+                        break;
+                    }
+                }
+                for (var i = 0; i < data.length; i++) {
+                    if (liveId == data[i].liveId) {
+                        desc = data[i].conSubIntro;
+                        shareTitle = data[i].conSubName;
+                        conTime = data[i].startTime && data[i].startTime.substring(0, 10);
+                        conPlace = data[i].conSubPlace;
+                        break;
+                    }
+                }
+                wechat_share({
+                    title: '[' + shareTitle + ']-会议直播-唯医,allinmd',
+                    imgUrl: sharePic?sharePic:"https://m.allinmd.cn/image/allin_logo.png",
+                    desc: "会议时间:" + conTime + "，会议地点:" + conPlace + (desc != "" ? "," + desc : ", 汇集海量手术视频、医学文献、病例讨论、会议回放资源。医生专业互动社区。"),
+                    fnMessageSuc: function () {
+                        comm.shareLog({shareSence: 24, shareChannel: 4,shareContent:'[' + shareTitle + ']-会议直播-唯医,allinmd'});   // 回播 好友
+                    },
+                    fnTimelineSuc: function () {
+                        comm.shareLog({shareSence: 24, shareChannel: 5,shareContent:'[' + shareTitle + ']-会议直播-唯医,allinmd'});   // 回播 朋友圈
+                    }
+                });
+            }
+
+
+            function IsPC() {
+                var userAgentInfo = navigator.userAgent;
+                var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+                var flag = true;
+                for (var v = 0; v < Agents.length; v++) {
+                    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+                return flag;
+            }
+
+            if (IsPC()) {
+                var link = "";
+                if (playBackId != "" && playBackId != undefined) {
+                    link = '//www.allinmd.cn/pages/channel/conference/multi-conference/playback.html?ownerid=' + playBackId + '&conId=' + conId + '&conSubId=' + conSubId
+                } else {
+                    //请求权限
+                    var authorityURL = "/mcall/conference/index/getAllSubConferenceListV2/",
+                            conId = comm.getpara().conId,
+                            dataParams = {};
+                    dataParams.paramJson = $.toJSON({conId: conId});
+                    $.ajax({url: authorityURL, type: "POST", data: dataParams, async: false}).done(function (res) {
+                        var data = res.responseObject.responseData.data_list[0].menu_data_list;
+                        if (data.length > 1) {
+                            link = '//www.allinmd.cn/pages/channel/conference/multi-conference/live.html?ownerid=' + liveId + '&conId=' + conId + '&conSubId=' + conSubId;
+                        } else {
+                            link = '//www.allinmd.cn/pages/channel/conference/only-conference/live.html?ownerid=' + liveId + '&conId=' + conId + '&conSubId=' + conSubId;
+                        }
+                    });
+                }
+                window.location.href = link;
+            }
+
+            function generateLiveUrl(userInfo) {
+
+                if (playBackId != "" && playBackId != undefined) {
+                    var href = "//weiyiwang.gensee.com/webcast/site/vod/play-" + playBackId;
+                    $("#liveWrap").attr("src", href);
+                } else {
+                    if (liveId != "" && token != "") {
+                        if (userInfo) {
+                            var href = "//weiyiwang.gensee.com/webcast/site/entry/join-" + liveId + "?token=" + token + "&nickName=" + ((!userInfo.lastName||!userInfo.firstName)?'游客':userInfo.lastName+ userInfo.firstName)  + '_' + (localStorage.getItem("userId")?localStorage.getItem("userId"):'0') + '_2_' + comm.getpara().conSubId;
+                        } else {
+                            var href = "//weiyiwang.gensee.com/webcast/site/entry/join-" + liveId + "?token=" + token + "&nickName=m-visitor_0_2_" + comm.getpara().conSubId;
+                        }
+                        //Log.createBrowse(24, "会议直播页", "//m.allinmd.cn/pages/conference/live_list.html?conSubId=" + comm.getpara().conSubId); //	浏览日志
+                        $("#liveWrap").attr("src", href);
+                    } else {
+                        alert("参数错误")
+                    }
+                }
+            }
+
+
+            if (checkIsChina()) {         // 国内
+                function authorityHandle(rs) {
+                    var data = rs.responseObject.responseData.data_list[0].menu_data_list,
+                            conSubId = comm.getpara().conSubId,
+                            authority = 0;
+
+                    $.each(data, function (i, el) {
+                        if (el.id == conSubId) {
+                            authority = el.authority;
+                        }
+                    });
+
+                    //非法进入
+                    if (!authority) {
+                        window.location = "/";
+                    }
+
+                    var goAuthURL = "/pages/passport/auth/auth.html?type=needAuth&redirect=1",
+                            goLoginURL = "/pages/passport/login_select.html?redirect=1";
+                    // 匹配结果
+                    switch (authority) {
+
+                        case 1://所有
+                            this.callback();
+                            break;
+                        case 2: //登录
+//                            if (localStorage.getItem("userId") === null){
+//                                window.location.href = goLoginURL;
+//                                TempCache.setItem("fromPage", window.location.href);
+//                            }  else {
+//                                this.callback();
+//                            }
+                            var t = this;
+                            TempCache.setItem("fromPageConference", window.location.href);
+                            user.privExecute({
+                                operateType: 'login',   //'login','auth','conference'
+                                callback: function () {
+                                    t.callback();
+                                }
+                            });
+                            break;
+                        case 3: //认证
+//                            TempCache.setItem("fromPage", window.location.href);
+//                            if (localStorage.getItem("userId") === null) {
+//                                window.location.href = goLoginURL;
+//                                return false;
+//                            }
+                            var t = this;
+                            TempCache.setItem("fromPageConference", window.location.href);
+                            user.privExecute({
+                                operateType: 'auth',   //'login','auth','conference'
+                                callback: function () {
+                                    t.callback();
+                                }
+                            });
+                            //查询当前人认证状态
+//                            var authCallURL = "/mcall/customer/auth/getCustomerAuth/";
+//                            $.ajax({
+//                                url: authCallURL,
+//                                type: "POST",
+//                                data: {},
+//                                relayAuthPath: goAuthURL,
+//                                callback: this.callback
+//                            }).done(function (rs) {
+//                                if (rs.responseObject && rs.responseObject.responseMessage) {
+//                                    if (rs.responseObject.responseMessage.state != 1 && rs.responseObject.responseMessage.state != 2) {
+//                                        window.location.href = this.relayAuthPath;
+//                                    } else {
+//                                        this.callback();
+//                                    }
+//                                } else {
+//                                    window.location.href = "/";
+//                                }
+//                            });
+                            break;
+                        case 4:
+                            window.location.href = "/";
+                            break; //CAOS缴费
+                        default:
+                            window.location.href = "/";
+                    }
+                }
+
+                //请求权限
+
+                var authorityURL = "/mcall/conference/index/getAllSubConferenceListV2/",
+                        conId = comm.getpara().conId,
+                        dataParams = {};
+                dataParams.paramJson = $.toJSON({conId: conId});
+                $.ajax({
+                    url: authorityURL, type: "POST", data: dataParams, callback: function () {
+                        generateLiveUrl(user.getRenZhengInfo())
+                    }
+                }).done(authorityHandle);
+
+
+//                if (user.needRenZhengHandler()) {
+//                    var userInfo = user.getRenZhengInfo();
+//                    generateLiveUrl(userInfo);
+//                }
+            } else {       // 国外
+                generateLiveUrl(user.getRenZhengInfo());
+            }
+            $('#chat-textarea').bind('blur',function(){
+                 $('.content-page').css('minHeight',$('.content-page').css('minHeight'));
+            });
+            //返回
+            $(".ev-back").on("click",function(){
+                if (document.referrer.lastIndexOf("/passport/") > -1 || !document.referrer) {
+                    window.location.href = "/";
+                } else {
+                    history.back();
+                }
+                return false;
+            })
+            Log.createBrowse(((playBackId != "" && playBackId != undefined)?26:24), ((playBackId != "" && playBackId != undefined)?"会议回放页面":"会议直播页面"));
+        });
+
+       //	浏览日志
+    </script>
+</head>
+
+<body>
+<section data-role="page" class="content-page live_content">
+    <header class="al-indexHeader" style="height: 2.5rem">
+        <figure class="al-indexHeaderItem">
+               <img class="ev-back" src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="" style="width:2.5rem;height: 2.5rem">
+           </figure>
+        <figure class="al-indexHeaderItem">
+        <h1 style="transform:scale(0.5);-webkit-transform:scale(0.5);line-height: 2.5rem">会议</h1>
+        </figure>
+        <figure class="al-indexHeaderItem">
+          <a href="javascript:void(0)"></a>
+        </figure>
+    </header>
+    <iframe src="" id="liveWrap" frameborder="0" width="100%" height="800" style="transform: scaleY(0.9) translateY(-1.6rem);-webkit-transform: scaleY(0.9) translateY(-1.6rem)"></iframe>
+
+</section>
+<script type="text/javascript">
+    function f_load(){
+        document.getElementById("liveWrap").height = window.innerHeight + "px";//高度(获取目标网页的高度自适应)
+        document.getElementById("liveWrap").width = window.innerWidth + "px";//宽度(获取目标网页的宽度自适应)});
+    }
+    /*横竖屏*/
+    var gschi=0;//翻转屏hash数
+    function createOrientationChangeProxy(fn, scope) {
+        return function() {
+            clearTimeout(scope.orientationChangedTimeout);
+            var args = Array.prototype.slice.call(arguments, 0);
+            scope.orientationChangedTimeout = setTimeout($.proxy(function() {
+                var ori = window.orientation;
+                /*if(ori==0){//竖屏
+                    $(".al-indexHeader").show();
+                }else{//横屏
+                    $(".al-indexHeader").hide();
+                }*/
+                if (ori != scope.lastOrientation) {
+                    fn.apply(scope, args); // 这里才是真正执行回调函数
+                }
+                scope.lastOrientation = ori;
+            }, scope), 500);
+        };
+    }
+    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", createOrientationChangeProxy(function() {
+        setTimeout(function(){
+            //获取iframeurl
+            var src=$('#liveWrap').attr('src');
+            if(src.indexOf("#")){
+                var a=src.split("#"),
+                        src=a[0];
+            }
+            //翻转数自增
+            gschi+=1;
+            //iframe加上hash重新传值src
+            $('#liveWrap').attr('src',src+'#gsorientationchange='+gschi);
+            f_load();
+        },0);
+    }, window), false);
+    $(function(){
+        f_load();
+        setInterval(function(){
+            if($(window).scrollTop()!=0){
+                $(window).scrollTop(0);
+            }
+        },100);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="module.video-case-pk.css"/>
+    <link href="//css.allinmd.cn/common/base.css" rel="stylesheet" type="text/css" />
+    <link href="/js/module/user/module.user.css" rel="stylesheet" type="text/css" >
+    <title></title>
+</head>
+<body>
+    <!-- 填写个人信息 -->
+    <div class="form_all module-user ">
+        <h2 class="all_h">个人信息</h2>
+        <p class="all_p">请填写以下信息，完成报名</p>
+        <form id="renzhengForm">
+            <div class="inputParent rz_input">
+                <div class=" input-wrap input-border">
+                    <div class="jinggao"></div>
+                    <div class="ok"></div>
+                    <input type="text" placeholder="姓名"  tabindex="5" name="name" id="name"/>
+                </div>
+                <div class="l_warning"></div>
+            </div>
+            <div class="inputParent rz_input">
+                <div class=" input-wrap input-border">
+                    <div class="jinggao"></div>
+                    <div class="ok"></div>
+                    <input type="text" placeholder="医院"  tabindex="5" name="company" id="company"/>
+                </div>
+                <div class="l_warning"></div>
+             </div>
+
+            <div class="inputParent rz_input">
+                <div class="lk_input input-wrap input-border" id="medical_title" >
+                    <div class="jinggao"></div>
+                    <div class="ok"></div>
+                    <div class="input_name">职称</div>
+                    <ul class="medicalShow"></ul>
+                </div>
+                <div class="l_warning medical_error"></div>
+            </div>
+            <div class="inputParent rz_input">
+                <div class=" input-wrap input-border">
+                    <div class="jinggao"></div>
+                    <div class="ok"></div>
+                    <input type="text" placeholder="邮箱"  tabindex="5" name="email" id="email"/>
+                </div>
+                <div class="l_warning"></div>
+            </div>
+            <div class="inputParent rz_input">
+                <div class=" input-wrap input-border">
+                    <div class="jinggao"></div>
+                    <div class="ok"></div>
+                    <input type="text" placeholder="电话"  tabindex="5" name="mobile" id="mobile"/>
+                </div>
+                <div class="l_warning"></div>
+            </div>
+
+            <!-- 弹出工作职称下拉框 -->
+            <div id="medicalMenu" class="xmenu" style="display: none; left:0">
+                <div class="select-info">
+                    <label class="top-label">已选职称：</label>
+                    <ul></ul>
+                    <a name="menu-confirm" href="javascript:void(0);" class="a-btn">
+                       <span class="a-btn-text">确定</span>
+                    </a>
+                </div>
+                <dl></dl>
+            </div>
+        </form>
+        <div class="wu_y">
+            <a  class="btn_bao btn_bnn" href="" type="button">立即报名</a>
+        </div>
+    </div>
+    <!-- 报名成功 -->
+    <div class="enroll_success">
+	     <div class="content_bar">
+	            <p class="cheng_g">恭喜你，报名成功</p>
+	            <p class="content_p">接下来你想...</p>
+	         <div class="bao_z">
+	            <div class="contener_1">
+	                <img src="images/pk-case.jpg" alt=""/><br/>
+	                <a href=""class="btn_1">上传病例</a>
+	            </div>
+	            <div class="contener_2">
+	                <img src="images/pk-video.jpg" alt=""/><br/>
+	                <a href="" class="btn_1">上传视频</a>
+	            </div>
+	            <div class="clear"></div>
+	         </div>
+	     </div>
+	     <a class="content_3" href="">稍后上传</a>
+     </div>
+<!-- 选择专业和术式  默认 -->
+<div class="content_all">
+        <p class="title_1">请选择作品所属的专业及术式</p>
+        <div class="contener">
+            <div class="pk_one">
+                <p class="title_2">所属专业</p>
+                <ul class="oen_pk">
+                    <li><div class="tu_pk"></div><div class="tu_pk1">脊柱</div></li>
+                    <li><div class="tu_pk2"></div><div class="tu_pk1">关节</div></li>
+                    <li><div class="tu_pk"></div><div class="tu_pk1">创伤</div></li>
+                    <li><div class="tu_pk"></div><div class="tu_pk1">运动医学</div></li>
+                    <li><div class="tu_pk"></div><div class="tu_pk1">小儿骨科</div></li>
+                    <li><div class="tu_pk"></div><div class="tu_pk1">手足显微外科</div></li>
+                </ul>
+            </div>
+            <div class="pk_two">
+                <p class="title_3">术式</p>
+                <ul class="two_pk">
+                    <li><div class="tu_pk"></div><div class="tu_pk1">颈椎前路减压植骨融合(内固定)术</div></li>
+                    <li><div class="tu_pk"></div><div class="tu_pk1">颈椎后路减压椎管扩大成形术</div></li>
+                    <li><div class="tu_pk2"></div><div class="tu_pk1">胸椎后路椎板切除减压植骨融合内固定术</div></li>
+                    <li><div class="tu_pk"></div><div class="tu_pk1">腰椎后路椎间融合术(PLIF,TLIF)</div></li>
+                    <li><div class="tu_pk"></div><div class="tu_pk1">腰椎后外侧入路椎间融合术</div></li>
+                    <li><div class="tu_pk"></div><div class="tu_pk1">微创经椎间孔腰椎减压椎间融合术</div></li>
+                    <li><div class="tu_pk"></div><div class="tu_pk1">腰椎椎间盘切除术(椎板间开窗、半椎板)</div></li>
+                    <li><div class="tu_pk"></div><div class="tu_pk1">腰椎骨折椎体成形术(PKP,PVP)</div></li>
+                    <li><div class="tu_pk"></div><div class="tu_pk1">脊柱外固定术—Halo-vest,Halo-chair,头颈胸石膏、支具、颅骨牵引等</div></li>
+                    <li><div class="tu_pk"></div><div class="tu_pk1">脊柱骨折开放复位固定术和经皮固定术</div></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wu_y">
+            <a href="" class="content_btn1 content_bun1">下一步</a>
+            <a href="" class="content_btn2 content_bun2">返回</a>
+        </div>
+    </div>
+    <!-- 选择专业和术式 滚动条 -->
+    <div class="content_all">
+    <p class="title_1">请选择作品所属的专业及术式</p>
+    <div class="contener">
+        <div class="pk_one">
+            <p class="title_2">所属专业</p>
+            <ul class="oen_pk">
+                <li><div class="tu_pk"></div><div class="tu_pk1">脊柱</div></li>
+                <li><div class="tu_pk2"></div><div class="tu_pk1">关节</div></li>
+                <li><div class="tu_pk"></div><div class="tu_pk1">创伤</div></li>
+                <li><div class="tu_pk"></div><div class="tu_pk1">运动医学</div></li>
+                <li><div class="tu_pk"></div><div class="tu_pk1">小儿骨科</div></li>
+                <li><div class="tu_pk"></div><div class="tu_pk1">手足显微外科</div></li>
+            </ul>
+        </div>
+        <div class="pk_two_hidden">
+            <p class="title_3">术式</p>
+            <p class="title_4">手足外科</p>
+            <ul class="two_pk">
+                <li><div class="tu_pk"></div><div class="tu_pk1">颈椎后路减压椎管扩大成形术</div></li>
+                <li><div class="tu_pk"></div><div class="tu_pk1">胸椎后路椎板切除减压植骨融合内固定术</div></li>
+                <li><div class="tu_pk"></div><div class="tu_pk1">腰椎后路椎间融合术(PLIF,TLIF)</div></li>
+                <li><div class="tu_pk"></div><div class="tu_pk1">腰椎后外侧入路椎间融合术</div></li>
+                <li><div class="tu_pk"></div><div class="tu_pk1">微创经椎间孔腰椎减压椎间融合术(MIS-TLIF)</div></li>
+            </ul>
+            <p  class="title_5">显微外科</p>
+            <ul class="th_pk">
+                <li><div class="tu_pk"></div><div class="tu_pk1">腰椎骨折椎体成形术(PKP,PVP)</div></li>
+                <li><div class="tu_pk"></div><div class="tu_pk1">脊柱外固定术—Halo-vest,Halo-chair,头颈胸石膏、支具、颅骨牵引等</div></li>
+                <li><div class="tu_pk"></div><div class="tu_pk1">脊柱骨折开放复位固定术和经皮固定术</div></li>
+                <li><div class="tu_pk"></div><div class="tu_pk1">腰椎骨折椎体成形术(PKP,PVP)</div></li>
+                <li><div class="tu_pk"></div><div class="tu_pk1">脊柱外固定术—Halo-vest,Halo-chair,头颈胸石膏、支具、颅骨牵引等</div></li>
+                <li><div class="tu_pk"></div><div class="tu_pk1">脊柱骨折开放复位固定术和经皮固定术</div></li>
+            </ul>
+        </div>
+    </div>
+    <div class="wu_y">
+        <a href="" class="content_btn1 content_bun1">下一步</a>
+        <a href="" class="content_btn2 content_bun2">返回</a>
+    </div>
+</div>
+</body>
+</html>

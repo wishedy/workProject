@@ -1,0 +1,163 @@
+@charset "UTF-8";
+/*开屏弹层*/
+.al_openGuid{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  background: rgba(10, 30, 43, 0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#bb0A1E2B, endColorstr=#bb0A1E2B);
+  .al_openGuidContent{
+    background: #fff;
+    width: 450px;
+    height:318px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px;
+    margin-top:-159px;
+    border-radius: 4px;
+    .guid_title{
+      margin:23px 0 12px 0;
+    }
+  }
+  .guid_icon{
+    width:42px;
+    height:42px;
+    margin-left: 205px;
+    margin-top: 38px;
+    img{
+      width: 100%;
+      height:100%;
+    }
+  }
+  .guid_close{
+    position: absolute;
+    top: 19px;
+    right: 19px;
+    width: 14px;
+    height: 14px;
+    background: url(/images/img10/authentication/close_grey.png) no-repeat 0 0;
+    background-size: contain;
+    cursor: pointer;
+  }
+  .guid_title{
+    font-size: 20px;
+    color: #000000;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 600;
+  }
+  p{
+    font-size: 16px;
+    color: #333333;
+    line-height: 26px;
+    margin-left: 114px;
+  }
+  button{
+    margin:45px 0 0 177px;
+    width:96px;
+    height:37px;
+    background: #2888FF;
+    border-radius: 100px;
+    font-size: 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+  /*重置密码*/
+  .al_openGuidUpdatePwd{
+    background: #fff;
+    width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px;
+    margin-top:-182px;
+    border-radius: 4px;
+    .guid_title{
+      i{
+        width:24px;
+        height:24px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-right: 6px;
+        background: url('/images/img10/authentication/success.png') no-repeat;
+      }
+      span{
+        vertical-align: middle;
+      }
+      margin:50px 0 17px 0;
+    }
+    .guid_tip{
+      font-size: 16px;
+      color: #333333;
+      text-align: center;
+      margin-bottom: 34px;
+    }
+    .guid_input{
+      margin-bottom: 17px;
+      margin-left: 55px;
+      .guid_error{
+        display: none;
+      }
+      input{
+        width: 323px;
+        height:47px;
+        padding-left: 15px;
+        font-size: 17px;
+        border: 1px solid #E6E8ED;
+        border-radius: 4px;
+      }
+    }
+    .guid_error{
+      input{
+        border: 1px solid #F34B4B;
+      }
+      .error_tip{
+        display: block;
+        font-size: 13px;
+        color: #F34B4B;
+        line-height: 13px;
+        vertical-align: middle;
+        margin-top: 9px;
+        i{
+          width:13px;
+          height:13px;
+          vertical-align: middle;
+          background: url('/images/img10/authentication/error_icon.png') no-repeat;
+          background-size: 13px;
+          display: inline-block;
+          margin-left: 10px;
+          margin-right: 3px;
+        }
+        span{
+          vertical-align: middle;
+        }
+      }
+    }
+    button{
+      margin: 28px 0 30px 177px;
+    }
+  }
+  /*认证提示*/
+  .al_openGuidAuthTip{
+    background: #fff;
+    width: 450px;
+    height:242px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px;
+    margin-top:-121px;
+    border-radius: 4px;
+    .guid_title{
+      margin-top: 23px;
+    }
+    button{
+      margin:55px 0 0 177px;
+      height:36px;
+    }
+  }
+}

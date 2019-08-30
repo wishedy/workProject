@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        if (!IsPC()) {
+            window.location.href = '//m.allinmd.cn/dist/personal/personal_index.html';
+        }
+    </script>
+    <title>我的－唯医,allinmd</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="我的－唯医,allinmd">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <!--build:css /dest/personal/personal_index.css -->
+    <link rel="stylesheet" href="/css/v3/base.css">
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css"/>
+    <link rel="stylesheet" href="/css/v3/pageFooter.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/personal/personal_index.css">
+
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/auth/module.auth.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/publish/publish.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/weixin/module.weixin.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/logo-Replace/module.logo-Replace.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/add-removeable-group-picV3/plugin.add-removeable-group-pic.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="/js/modules/view-big-img/module.view-big-img.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/pagination/pager.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/cropper/cropper.min.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+
+<body data-alcode="64">
+<section class="al-mainInner">
+    <!-- 页头——本页面无超链接-->
+    <header class="al-header al-dis_header">
+        <section class="al-headerContainer">
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text"/>
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar al-mainSidebarCollapse">
+        <header class="al-mainLogo">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+        <section class="al-mainSidebarList">
+            <ul data-alcode-mod='52'>
+                <li class="al-mainSidebarItem">
+                    <a href="/">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>首页</h4>
+                            <p>HOME</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="/pages/college/college_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_college.png" alt="">
+                        <figcaption>唯医学院</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>唯医学院</h4>
+                            <p>HOME</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="/pages/discover/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发现</h4>
+                            <p>DISCOVERY</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发布</h4>
+                            <p>RELEASE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navMes">
+                    <a href="/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>消息</h4>
+                            <p>MESSAGE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navIndex active">
+                    <a href="/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                        <figcaption>我的</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>我的</h4>
+                            <p>PROFILE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList" data-alcode-mod='72'>
+                <li class="al-mainSidebarItem al-siteEmr">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_emrIcon.png" alt="">
+                        <figcaption>病历管理</figcaption>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-siteSwitch">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_siteSwitch.png" alt="">
+                        <figcaption class="ev_siteSwitchName">骨科</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4 class="ev_siteSwitchName">骨科</h4>
+                                <p>SITE SWITCH</p>
+                            </div>
+                        </article>
+                    </a>
+                    <div class="al_siteSwitch_popBox">
+                        <div class="al_siteSwitch_orthopaedics"><i></i>骨科</div>
+                        <div class="al_siteSwitch_handSurgery"><i></i>手外科</div>
+                    </div>
+                </li>
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>小唯</h4>
+                            <p>SERVICE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navPhone">
+                    <a href="/pages/singlePage/iphone-app-download.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>手机端</h4>
+                            <p>MOBILES</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <section class="al-personal">
+        <section class="al-personalInner">
+            <header class="al-personalHeader" data-alcode-mod='81'>
+                <section class="al-personalLogoMsg">
+                    <figure class="al-personalLogo ev-logoUrl ev-uploadFace">
+
+                    </figure>
+                    <p class="al-personalName ev-noAuth-hide"><span class="ev-name"></span></p>
+                    <figcaption class="al-personalJobMsg ev-companyMedicalTitle">
+                    </figcaption>
+                </section>
+                <section class="al-personalFollowMsg ev-noAuth-hide hide">
+                    <a href="/pages/personal/sns.html?action=fans" class="al-personalFollowNum">粉丝<span
+                            class="ev-fansNum"></span></a>
+                    <hr>
+                    <a href="/pages/personal/sns.html?action=follow" class="al-personalFollowNum">关注<span
+                            class="ev-followNum"></span></a>
+                    <hr>
+                    <a href="/pages/personal/sns.html?action=praise" class="al-personalFollowNum">赞<span
+                            class="ev-upNum"></span></a>
+                </section>
+                <section class="al-certification-status">
+                    <!--<p>
+                        审核将在1个工作日内完成，请耐心等待
+                    </p>-->
+                </section>
+                <a href="/pages/personal/setting.html" class="al-personalConfig" style="display:block;color:#fff;">
+                    <span><i class="al-iconConfig"></i>设置</span>
+                </a>
+            </header>
+            <nav class="al-personalNavbar" data-alcode-mod='82'>
+                <figure class="al-personalNavbarItem active">
+                    <a href="personal_index.html"><i class="al-iconMyIndex"></i>主页</a>
+                </figure>
+                <figure class="al-personalNavbarItem">
+                    <a href="personal_contribution.html"><i class="al-iconMyContribution"></i>贡献</a>
+                </figure>
+                <figure class="al-personalNavbarItem">
+                    <a href="personal_active.html"><i class="al-iconMyActive"></i>动态</a>
+                </figure>
+                <figure class="al-personalNavbarItem  al-customer-info">
+                    <a href="personal_customerInfo.html"><i class="al-iconMyMsg"></i>个人资料</a>
+                    <span class="al-auth-reminder hide">
+                            <aside class="reminderClose"><i class="al-auth-reminder-close"></i></aside>
+                            <aside class="author"><i class="al-auth-reminder-icon"></i>
+                                <i class="al-auth-reminder-content">
+
+                                </i>
+                                <em class="al-auth-reminder-sharp"></em>
+                            </aside>
+                        <aside class="al-auth-reminder-go"></aside>
+                        </span>
+                </figure>
+            </nav>
+            <aside class="al-personalInnerSidebar ev-leftSide">
+                <section class="al-personalInnersidebarBox" data-alcode-mod='83' data-alcode-item-selector="figure">
+                    <figure class="al-personalInnerSidebarItem" data-role="collect">
+                        <p><i class="al-iconMyCollect"></i>我的收藏<span class="ev-collectionNum ev_c_name"></span></p>
+                    </figure>
+                    <figure class="al-personalInnerSidebarItem" data-role="follow">
+                        <p><i class="al-iconMyFollow"></i>我的关注<span class="ev-followAllNum"></span></p>
+                    </figure>
+                    <figure class="al-personalInnerSidebarItem" data-role="browsed">
+                        <p><i class="al-iconMyBrowsed"></i>浏览记录<span class="ev-browseNum"></span></p>
+                    </figure>
+                    <figure class="al-personalInnerSidebarItem" data-role="comment">
+                        <p><i class="al-iconMyComment"></i>我的评论<span class="ev-reviewNum"></span></p>
+                    </figure>
+                    <figure class="al-personalInnerSidebarItem" data-role="draft">
+                        <p><i class="al-iconMyDraft"></i>我的草稿<span class="ev-draftNum"></span></p>
+                    </figure>
+                </section>
+            </aside>
+            <section class="al-personalInnerContent">
+                <!--主页-->
+                <section class="al-personalInnerBasePage">
+                    <section class="al-contentItem" data-alcode-mod='84'>
+                        <header class="al-contentItemTitle">
+                            <h2>
+                                个人资料完善度
+                                <span class="al-autoUser al-contentItemOtherMsg ev-authOrNo"></span>
+                                <span class="al-unauthorizedBtn hide" id="ev-goAuth">去认证</span>
+                            </h2>
+                        </header>
+                        <section class="al-personalMsgCompletion">
+                            <p class="al-personalMsgCompletionLine">
+                                <i class="al-personalMsgCompletionLineMask ev-inforate">
+                                    <strong class="al-personalMsgCompletionLineTips ev-inforateNum"></strong>
+                                    <b class="al-personalMsgCompletionLinePoint"></b>
+                                </i>
+                            </p>
+                            <a href="/pages/personal/personal_customerInfo.html"
+                               class="al-personalMsgCompletionBtn al-contentBlueBtn"><i></i>完善简介</a>
+                        </section>
+                    </section>
+                    <section class="al-contentItem" data-alcode-mod='85'>
+                        <header class="al-contentItemTitle">
+                            <h2>我的收藏<a class="al-contentItemOtherMsg al-more ev-mycollectIndexMore"
+                                       style="display:none;">更多<i></i></a></h2>
+                        </header>
+                        <section class="ev-mycollecIndex">
+                        </section>
+
+                    </section>
+                    <section class="al-contentItem" data-alcode-mod='86'>
+                        <header class="al-contentItemTitle">
+                            <h2>我关注的病例<a class="al-contentItemOtherMsg al-more ev-myFollowIndexMore"
+                                         style="display:none;">更多<i></i></a></h2>
+                        </header>
+                        <section class="ev-myFollowIndex" data-alcode-sm="case">
+                        </section>
+                    </section>
+                    <section class="al-contentItem" data-alcode-mod='86'>
+                        <header class="al-contentItemTitle">
+                            <h2>我关注的话题<a class="al-contentItemOtherMsg al-more ev-myFollowTopicMore"
+                                         style="display:none;">更多<i></i></a></h2>
+                        </header>
+                        <section class="ev-myFollowTopic" data-alcode-sm="topic">
+                        </section>
+                    </section>
+                    <section class="al-contentItem" data-alcode-mod='86'>
+                        <header class="al-contentItemTitle">
+                            <h2>我关注的标签<a class="al-contentItemOtherMsg al-more ev-myFollowTagMore"
+                                         style="display:none;">更多<i></i></a></h2>
+                        </header>
+                        <section class="al-personalFollowTag ev-myFollowTag" data-alcode-sm="tag">
+
+
+                        </section>
+                    </section>
+                    <section class="al-contentItem">
+                        <header class="al-contentItemTitle">
+                            <h2>我的评论<a class="al-contentItemOtherMsg al-more ev-myReviewIndexMore"
+                                       style="display:none;">更多<i></i></a></h2>
+                        </header>
+                        <section class="ev-myReviewIndex" data-alcode-mod='88'>
+                        </section>
+                    </section>
+
+                    <section class="al-contentItem">
+                        <header class="al-contentItemTitle">
+                            <h2>浏览记录<a class="al-contentItemOtherMsg al-more hide ev-moreBrowse"
+                                       data-role="browsed">更多<i></i></a></h2>
+                        </header>
+                        <section class="al-contentBrowseBox ev-browseDefaultBox" data-alcode-mod='87'>
+
+                        </section>
+                    </section>
+
+                    <section class="al-contentItem">
+                        <header class="al-contentItemTitle">
+                            <h2>我的草稿<a class="al-contentItemOtherMsg al-more hide ev-moreDraft"
+                                       data-role="draft">更多<i></i></a></h2>
+                        </header>
+                        <section class="ev-draftDefaultBox">
+
+                        </section>
+                    </section>
+                </section>
+
+                <!--我的收藏-->
+                <section class="al-personalInnerSidebarChange" data-role="collect">
+                    <section class="al-contentItem">
+                        <header class="al-contentTabsChange ev-clickCollectionTab">
+                            <figure class="al-contentTabsItem active" data-role="tabVideo">
+                                视频<span>(<span class="collectVideoNum ev_c_name">0</span>)</span>
+                            </figure>
+                            <figure class="al-contentTabsItem" data-role="tabCase">
+                                病例<span>(<span class="collectCaseNum ev_c_name">0</span>)</span>
+                            </figure>
+                            <figure class="al-contentTabsItem" data-role="tabDoc">
+                                文库<span>(<span class="collectDocNum ev_c_name">0</span>)</span>
+                            </figure>
+                            <figure class="al-contentTabsItem" data-role="tabSeries">
+                                系列课<span>(<span class="collectSeriesNum ev_c_name">0</span>)</span>
+                            </figure>
+                            <figure class="al-contentTabsItem" data-role="tabTopic">
+                                话题<span>(<span class="collectTopicNum ev_c_name">0</span>)</span>
+                            </figure>
+                            <figure class="al-contentTabsItem" data-role="tabDiscuss">
+                                评论<span>(<span class="collectDiscussNum ev_c_name">0</span>)</span>
+                            </figure>
+                            <figure class="al-contentTabsItem" data-role="tabBook" style="width:116px;">
+                                书籍<span>(<span class="collectBookNum ev_c_name">0</span>)</span>
+                            </figure>
+                        </header>
+                        <section class="ev-collectList">
+                        </section>
+                    </section>
+                </section>
+
+                <!--我关注的-->
+                <section class="al-personalInnerSidebarChange ev-clickFollowNav" data-role="follow">
+                    <section class="al-contentItem">
+                        <header class="al-contentTabsChange">
+                            <figure class="al-contentTabsItem active" data-role="tabCase">
+                                病例<span>(<span class="followCaseNum">7</span>)</span>
+                            </figure>
+                            <figure class="al-contentTabsItem" data-role="tabTopic">
+                                话题<span>(<span class="followTopicNum">7</span>)</span>
+                            </figure>
+                            <figure class="al-contentTabsItem" data-role="tabTag">
+                                标签<span>(<span class="followTagNum">7</span>)</span>
+                            </figure>
+                        </header>
+                        <section class="ev-followList" data-alcode-mod='244'>
+                        </section>
+                    </section>
+                </section>
+
+                <!--浏览记录-->
+                <section class="al-personalInnerSidebarChange" data-role="browsed">
+                    <section class="al-contentItem">
+                        <header class="al-contentItemTitle">
+                            <h2>浏览记录</h2>
+                        </header>
+                        <section class="al-contentBrowseBox ev-browseContentBox" data-alcode-mod='87'>
+
+                        </section>
+                    </section>
+                </section>
+
+                <!--我的评论-->
+                <section class="al-personalInnerSidebarChange" data-role="comment">
+                    <section class="al-contentItem">
+                        <header class="al-contentItemTitle">
+                            <h2>我评论的</h2>
+                        </header>
+
+                        <section class="ev-listReview" data-alcode-mod='88'>
+                        </section>
+                    </section>
+                </section>
+
+                <!--草稿列表-->
+                <section class="al-personalInnerSidebarChange" data-role="draft">
+                    <section class="al-contentItem">
+                        <header class="al-contentItemTitle">
+                            <h2 class="al-contentTipTitleLeft">我的草稿</h2>
+                            <span class="al-contentTipTitleRight">当前版本仅支持病例草稿编辑，评论、话题草稿请在手机端编辑</span>
+                        </header>
+                        <section class="ev-draftContentBox">
+
+                        </section>
+                    </section>
+                </section>
+
+
+                <!-- pager分页 -->
+                <div class="pagination">
+                    <div class="pager" data-alcode-mod='129' data-alcode-item-selector="li"></div>
+                </div>
+                <!-- pager end-->
+            </section>
+
+        </section>
+    </section>
+    <!--公共底部 start-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--公共底部 End-->
+</section>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.form.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src="/js/third-party/cropper/cropper.min.js"></script>
+<script>!$.cropper && document.write(unescape("%3Cscript src='/js/third-party/cropper/cropper.min.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript" src="//paas.allinmd.cn/compose/ap_pcs/seed.js"></script>
+<!--build:js /dest/personal/personal_index.js -->
+<script src="/js/lib/jquery/jquery-1.8.2.alpha.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.fastError.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.ajaxExistHtml.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+
+<script src="/js/modules/share/module.share.js"></script>
+<script src="/js/modules/user/module.user.js"></script>
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/publish/module.video-upload.js"></script>
+<script src="/js/modules/publish/module.doc-upload.js"></script>
+
+<script src="/js/modules/validate-email/module.validate-email.js"></script>
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+<script src="/js/modules/weixin/module.welcome.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<script src="/js/modules/resource-list-template/module.resource-list-template.js"></script>
+<script src="/js/modules/view-big-img/module.view-big-img.js"></script>
+<script src="/js/modules/background-video/module.background-video.js"></script>
+<script src="/js/modules/list2-template/module.list2-template.js"></script>
+<script src="/js/modules/review-box/module.review-box.js"></script>
+<script src="/js/modules/review-page/module.review-page.js"></script>
+<script src="/js/modules/validate-email/module.validate-email.js"></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+<script src="/js/plugins/relation2/review/relation2.review.js"></script>
+<script src="/js/plugins/scroll-box/plugin.scroll-box.js"></script>
+<script src="/js/plugins/follow/plugin.follow.js"></script>
+<script src="/js/plugins/relation2/downstairs/relation2.downstairs.js"></script>
+<script src="/js/plugins/popup-review/plugin.popup-review.js"></script>
+<script src="/js/plugins/relation2/upstairs/relation2.upstairs.js"></script>
+<script src="/js/plugins/relation2/plugin.relation2.js"></script>
+<script src="/js/plugins/add-removeable-group-picV3/plugin.replaceInput/plugin.replaceInput.js"></script>
+<script src="/js/plugins/add-removeable-group-picV3/plugin.add-removeable-group-pic.js"></script>
+<script src="/js/plugins/add-removeable-group-picV3/plugin.readFile/plugin.readFile.js"></script>
+<script src="/js/plugins/view-dialog/plugin.view-dialog.js"></script>
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+<script src="/js/plugins/expand-shrink/plugin.expand-shrink.js"></script>
+<script src="/js/plugins/reference-resourceV3/reference-resource.js"></script>
+<script src="/js/plugins/make-sure-popup/plugin.make-sure-popup.js"></script>
+
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src='/js/third-party/md5.js'></script>
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<script src="/js/third-party/pagination/jquery.pager.js"></script>
+<script src="/js/third-party/jquery_lazyload/jquery.lazyload.min.js"></script>
+<script src="/js/third-party/jquery_lazyload/jquery.scrollstop.js"></script>
+<script src="/js/third-party/ajaxfileupload.js"></script>
+<script src="/js/third-party/qiniu/qiniu.js"></script>
+<script src="/js/third-party/qiniu/ui.js"></script>
+<script src="/js/third-party/plupload/plupload.full.min.js"></script>
+<script src="/js/third-party/plupload/i18n/zh_CN.js"></script>
+<script src="/js/third-party/jquery-qrcode-master/src/jquery.qrcode.js"></script>
+<script src="/js/third-party/jquery-qrcode-master/src/qrcode.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/modules/logo-Replace/module.logo-Replace.js"></script>
+
+<script src="/js/scene/personal/scene.personal.commV3.js"></script>
+<script src="/js/scene/personal/scene.personal.inforate.js"></script>
+<script src="/js/scene/personal/scene.personal.indexV3.js"></script>
+<!-- endbuild -->
+<section class="al-auth-grade">
+    <section class="al-auth-grade-details">
+        <h1 class="al-auth-grade-title">认证等级规则</h1>
+        <p class="al-auth-grade-produce">认证等级是用户在唯医、医鼎、医栈、唯医骨科所具有的统一认证等级。包括：</p>
+        <div class="al-auth-grade-des">
+            <h1><i></i>V1-认证医师</h1>
+            <p>拥有在唯医、医鼎、医栈的医师操作权限</p>
+        </div>
+        <div class="al-auth-grade-des">
+            <h1><i></i>V2-执业医师</h1>
+            <p>拥有V1权限的同时，还具有在唯医骨科进行执业诊疗的权限</p>
+        </div>
+        <div class="al-auth-grade-close"></div>
+    </section>
+</section>
+</body>
+
+</html>

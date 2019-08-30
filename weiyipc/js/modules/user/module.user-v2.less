@@ -1,0 +1,74 @@
+/** 
+	filename:module.user-v2
+	author:Administrator
+	adddate:2015/9/8
+    新版登录 弹层
+*/
+@import url("../../../less/zIndex.less");
+
+.m-UserPop-v2{
+    font-family: "microsoft yahei";
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: @zIndex_User_v2;
+    .mask {
+        background: #000;
+        width: 100%;
+        position: fixed;
+        z-index: 20;
+        opacity: 0.6;
+        filter: ~"alpha(60)";
+    }
+    .center-box {
+        width: 800px;
+        height: 510px;
+        background: #f9f9f9;
+        position: absolute;
+        z-index: 50;
+        .top {
+            background: #9da6b0;
+            border-left: 40px solid #3d84c6;
+            height: 5px;
+            overflow: hidden;
+        }
+
+        /* 关闭 */
+        .close {
+            float: right;
+            background: url(images/close.png);
+            width: 15px;
+            height: 15px;
+            margin: 19px 15px 0 0;
+            cursor: pointer;
+            &:hover {
+                background: url(images/close-hover.png);
+            }
+        }
+        /* 返回 */
+        .back {
+            float: left;
+            background: url(images/back.png);
+            width: 22px;
+            height: 22px;
+            margin: 15px 0 0 16px;
+            display: none;
+            cursor: pointer;
+            &:hover {
+                background: url(images/back-hover.png);
+            }
+        }
+        .content {
+            clear: both;
+            background: #f9f9f9 url(images/user-v2/bg.jpg) 24px top no-repeat;
+            height: 420px;
+            .module-login-box{
+                position: relative;
+                float: right;
+                width: 320px;
+                height: 420px;
+                margin: -30px 45px 0 0;
+            }
+        }
+    }
+}

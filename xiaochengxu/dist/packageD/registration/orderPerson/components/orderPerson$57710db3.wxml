@@ -1,0 +1,54 @@
+<import src="/components/share$baffe8be" />
+<import src="/components/telephoneVerify$034675df" /><template name="orderPerson$57710db3">
+  <view class="_section data-v-00ea210e person"><template ref="share" bindsuccess="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="share$baffe8be"></template> <template ref="verify" bindsuccess="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="telephoneVerify$034675df"></template>
+    <view wx:if="{{attentionFlag}}" class="_section data-v-00ea210e attention">
+      <view class="_section data-v-00ea210e content">
+        <view class="_div data-v-00ea210e info">
+          <view class="_p data-v-00ea210e">同一个就诊人每日仅可预约5个号源</view>
+          <view class="_p data-v-00ea210e tips">详细规则请见<label class="_span data-v-00ea210e nav" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">预约须知</label></view>
+        </view>
+        <view class="_div data-v-00ea210e submit-box">
+          <form class="_form data-v-00ea210e confirm" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}"><button class="_button data-v-00ea210e">知道了</button></form>
+        </view>
+      </view>
+    </view>
+    <view class="_section data-v-00ea210e person-title"><label class="_span data-v-00ea210e">今日：{{now}}</label></view>
+    <view class="_section data-v-00ea210e person-order">
+      <view class="_h3 data-v-00ea210e">挂号信息</view>
+      <view class="_div data-v-00ea210e order-info">
+        <view class="_div data-v-00ea210e order-item"><label class="_span data-v-00ea210e">就诊科室</label> <label class="_span data-v-00ea210e order-content">重庆唯医骨科医院-{{deptName}}</label></view>
+        <view class="_div data-v-00ea210e order-item"><label class="_span data-v-00ea210e">就诊医生</label> <label class="_span data-v-00ea210e order-content">{{doctorName}} {{medicalTitle}}</label></view>
+        <view class="_div data-v-00ea210e order-item no-border"><label class="_span data-v-00ea210e">就诊日期</label> <label class="_span data-v-00ea210e order-content">{{regDate}} {{week}} {{clinicDuration}}</label></view>
+      </view>
+    </view>
+    <view class="_section data-v-00ea210e person-order add-info">
+      <view class="_h3 data-v-00ea210e">填写相关信息完成预约</view>
+      <view class="_div data-v-00ea210e order-info">
+        <view id="patient" class="_div data-v-00ea210e order-item" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}"><label class="_span data-v-00ea210e">就诊人</label> <label class="_span data-v-00ea210e order-content">{{patientName}}
+            <image src="https://m.allinmed.cn/static/image/mp/index/1.5.0/order_info_go.png" class="_img data-v-00ea210e"></image>
+          </label></view>
+        <view class="_div data-v-00ea210e order-item"><label class="_span data-v-00ea210e">身份证</label> <input wx:if="{{!IDCardStatus}}" bindblur="handleProxy" class="_input data-v-00ea210e order-content idcard" type="text" placeholder="就诊人身份证号" value="{{IDCard}}" bindinput="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}" /> <input wx:if="{{IDCardStatus}}" class="_input data-v-00ea210e order-content idcard" type="text" placeholder="就诊人身份证号" value="{{IDCard}}" bindinput="handleProxy" disabled data-eventid="{{'6'}}" data-comkey="{{$k}}" /></view>
+        <view class="_div data-v-00ea210e order-item no-border" bindtap="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}"><label class="_span data-v-00ea210e">手机号</label> <button class="_button data-v-00ea210e order-content-btn">{{phone}}
+            <image src="https://m.allinmed.cn/static/image/mp/index/1.5.0/order_info_go.png" class="_img data-v-00ea210e"></image>
+          </button></view>
+        <view class="_div data-v-00ea210e order-item no-border phone-sure"><label class="_span data-v-00ea210e">(请确保手机号为本人号码)</label></view>
+      </view>
+    </view>
+    <view class="_section data-v-00ea210e person-btn">
+      <form class="_form data-v-00ea210e person-order-btn" bindsubmit="handleProxy" report-submit="true" data-eventid="{{'10'}}" data-comkey="{{$k}}"><label wx:if="{{!infoFlag}}" class="_span data-v-00ea210e"><button class="_button data-v-00ea210e disabled" wx:if="{{cost === 0}}">免费预约{{type}}</button><button class="_button data-v-00ea210e disabled" wx:else>免费预约{{type}}</button></label> <label wx:if="{{infoFlag}}" class="_span data-v-00ea210e"><button bindtap="handleProxy" wx:if="{{cost === 0}}" data-eventid="{{'9'}}" data-comkey="{{$k}}" class="_button data-v-00ea210e">免费预约{{type}}</button><button bindtap="handleProxy" wx:else data-eventid="{{'8'}}" data-comkey="{{$k}}" class="_button data-v-00ea210e">免费预约{{type}}</button></label></form>
+    </view>
+    <view id="person" class="_section data-v-00ea210e persons" wx:if="{{showPersonList}}" bindtap="handleProxy" data-eventid="{{'14'}}" data-comkey="{{$k}}">
+      <view class="_div data-v-00ea210e tit">
+        <image src="https://m.allinmed.cn/static/image/mp/index/1.5.0/patient.png" class="_img data-v-00ea210e"></image> 选择就诊人
+      </view>
+      <view class="_section data-v-00ea210e person-list">
+        <view wx:key="index" key="{{index}}" class="_div data-v-00ea210e person-item" bindtap="handleProxy" data-eventid="{{'12-'+index}}" data-comkey="{{$k}}" wx:for="{{personListData}}" wx:for-index="index" wx:for-item="item"><label class="_span data-v-00ea210e person-item-name">{{item.patientName}}</label> <label class="_span data-v-00ea210e person-item-sex">{{ item.patientSex == 1 ? '男' : '女'}}</label> <label class="_span data-v-00ea210e person-item-age">{{ item.patientAge }}岁</label>
+          <form wx:if="{{item.idcardStatus != 1}}" class="_form data-v-00ea210e person-item-edit"><button bindtap="handleProxy" data-eventid="{{'11-'+index}}" data-comkey="{{$k}}" class="_button data-v-00ea210e">编辑</button></form> <label wx:if="{{item.idcardStatus == 1}}" class="_span data-v-00ea210e person-item-tips">已实名认证，不可更改</label>
+        </view>
+      </view>
+      <view class="_section data-v-00ea210e add-person">
+        <form class="_form data-v-00ea210e add-person-btn"><button bindtap="handleProxy" data-eventid="{{'13'}}" data-comkey="{{$k}}" class="_button data-v-00ea210e">添加就诊人</button></form>
+      </view>
+    </view>
+  </view>
+</template>

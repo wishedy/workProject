@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="Keywords" content="病例专题，视频专题，我的作品，骨科专题，学术专题，文献专题，手术汇总，">
+    <meta charset="UTF-8">
+    <title>视频PK-我的作品－唯医，allinmd</title>
+    <link rel="stylesheet" href="/js/third-party/jqueryscrollpagination/css/scrollpagination_demo.css">
+    <link rel="stylesheet" href="/css/column/videoPK_v2/m_works_run.css">
+    <link rel="stylesheet" href="/css/column/videoPK_v2/pk_share750.css">
+    <script src="/js/column/videoPK_v2/rem_750.js"></script>
+    <script type="text/javascript">
+
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/html/activity/1472178139520/personal_center.html?activityId=1472178139520';
+        }
+    </script>
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="246">
+<input type="hidden" id="activityId"/>
+<header id="head">
+    <!--新版广告位-->
+    <section class="bannerBox">
+        <#if adPosition_list??>
+            <#list adPosition_list as adPositionList>
+                <#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+                    <#if v_adPositionAttachmentList??>
+                        <#list v_adPositionAttachmentList as list>
+                            <img src="//img99.allinmd.cn/${list.adAttUrl}" alt="" class="bannerImg">
+                        </#list>
+                    </#if>
+            </#list>
+        </#if>
+        <section class="backHome">
+            <a href="https://m.allinmd.cn"><img src="/images/img50/column/videoPK_v2/backHome.png" alt="" class="backImg"></a>
+        </section>
+    </section>
+    <section class="naver">
+        <ul class="naverBox clear" data-alcode-mod='507'>
+            <#if (activityMenu??)&&(activityMenu?size>0)>
+                <#list activityMenu as MenuList>
+                    <li ><a <#if MenuList_index  ==4>class="cuter"</#if> href="${MenuList.activityMenuUrl}?activityId=${MenuList.activityId?c}" data-ajax="false">${MenuList.activityMenuName}</a></li>
+                </#list>
+            </#if>
+        </ul>
+    </section>
+</header>
+<section class="mine_main">
+    <section class="mine_main_cont">
+        <section class="mine_main_top">
+            <ul class="mine_main_nav">
+                <li style="width:2rem;">我的作品(<span class="mineNum"></span>)</li>
+            </ul>
+        </section>
+        <section class="mine_main_cont_piece_box" data-alcode-mod='506'>
+
+        </section>
+    </section>
+    <section class="nowork"></section>
+</section>
+<!--总 报名和分享-->
+<!--<section class="apply_and_share" style="display:none;">
+    <div class="applyLeft left">我要报名</div>
+    <div class="shareRight left">我要分享</div>
+</section>-->
+<!--分享-->
+<!--<section class="onlyShare">我要分享</section>-->
+<!--总  遮罩-->
+<section id="zhezhao_baomingSuc" style="display:none;"></section>
+<!--报名层-->
+<section class="zhezhao_baomingSucCenter" style="display:none;">
+    <h3>恭喜你，报名成功！</h3>
+    <p>上传参选视频，请登录电脑版唯</p>
+    <p>医 www.allinmd.cn 中进行～ </p>
+    <p style="padding-bottom:0.4rem;">期待你精彩的作品</p>
+    <div class="baoming_success">知道了</div>
+</section>
+<!--发布层-->
+<section class="zhezhao_fabuTip" style="display:none;">
+    <p style="padding-top:0.4rem;">为了保证视频质量，此次活动仅</p>
+    <p>提供脑版上传功能，请登录电脑</p>
+    <p>版唯医www.allinmd.cn 中进行</p>
+    <p style="padding-bottom:0.4rem;">期待你精彩的作品</p>
+    <div class="baoming_success">知道了</div>
+</section>
+</body>
+<script src="/js/lib/jquery/jquery-1.8.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/jweixin-1.0.0.js"></script>
+<script src="/js/comm/shareAll.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+
+<script src="/js/column/videoPK_v2/PK_v2_comm.js"></script>
+<script src="/js/column/videoPK_v2/m_works_mine.js"></script>
+<script src="/js/column/videoPK_v2/m_baoming.js"></script>
+<script>
+    $(document).ready(function () {
+        shareAll({
+            title:'第二届骨科规范化手术视频征集评选-获奖名单已公布！',
+            url:window.location.href,//不传默认取当前地址
+            pic:"http://m.allinmd.cn/images/img50/column/videoPK_v2/share_2q.jpg",//分享图片
+            trendUrl:"",
+            noPJ:0,//0：分享动态给后台的参数需要转为paramJson ,1:不需要
+            data:{
+                "reprintType": "16",
+                "customerId": localStorage.getItem("userId"),//当前人ID
+                "refId": $("#activityId").val(),//活动ID
+                "visitSiteId": "2"
+            },
+            wxTitle:'第二届骨科规范化手术视频征集评选-获奖名单已公布！',//微信分享标题
+            wxDesc:"巅峰之战圆满落幕，最终由谁问鼎？ ",//微信分享描述
+            timeLineTitle:'《第二届骨科规范化手术视频征集评选》获奖名单已公布！巅峰之战圆满落幕，最终由谁问鼎？ ',
+            sinaTitle:'《第二届骨科规范化手术视频征集评选》获奖名单已公布！巅峰之战圆满落幕，最终由谁问鼎？',//新浪title
+            desc:"《第二届骨科规范化手术视频征集评选》获奖名单已公布！巅峰之战圆满落幕，最终由谁问鼎？",//新浪的描述
+            qzoneTitle:'第二届骨科规范化手术视频征集评选-获奖名单已公布！',//qq空间title
+            summary:"巅峰之战圆满落幕，最终由谁问鼎？",//qq空间的描述
+            qShareLog:function(x){    //分享新浪，空间成功与否都执行
+                if(x=='sina'){
+                    comm.shareLog({
+                        shareType: "",
+                        resourceId: "",
+                        resourceType: "",
+                        refId: "",
+                        isValid: 1,
+                        shareSence: 33,
+                        shareChannel: 3,
+                        shareContent: '《第二届骨科规范化手术视频征集评选》获奖名单已公布！巅峰之战圆满落幕，最终由谁问鼎？'
+                    });
+                }else{
+                    comm.shareLog({
+                        shareType: "",
+                        resourceId: "",
+                        resourceType: "",
+                        refId: "",
+                        isValid: 1,
+                        shareSence: 33,
+                        shareChannel: 1,
+                        shareContent: '第二届骨科规范化手术视频征集评选-获奖名单已公布！'
+                    });
+                }
+            },
+            fnMessageSuc:function(){
+                comm.shareLog({
+                    shareType: "",
+                    resourceId: "",
+                    resourceType: "",
+                    refId: "",
+                    isValid: 1,
+                    shareSence: 33,
+                    shareChannel: 4,
+                    shareContent: '第二届骨科规范化手术视频征集评选-获奖名单已公布！'
+                });
+            },      //分享好友成功回调
+            fnTimelineSuc:function(){
+                comm.shareLog({
+                    shareType: "",
+                    resourceId: "",
+                    resourceType: "",
+                    refId: "",
+                    isValid: 1,
+                    shareSence: 33,
+                    shareChannel: 5,
+                    shareContent:'《第二届骨科规范化手术视频征集评选》获奖名单已公布！巅峰之战圆满落幕，最终由谁问鼎？'
+                });
+            }      //分享朋友圈成功回调
+        },false,$('.shareRight,.onlyShare'));
+    })
+</script>
+</html>

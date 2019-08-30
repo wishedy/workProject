@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="Keywords" content="病例专题，视频专题，唯医年度帐单，骨科专题，学术专题，文献专题，手术汇总，">
+		<title>唯医年度帐单－唯医，allinmd</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+        <script type="text/javascript">
+            localStorage.setItem("fromPage","/pages/column/data_cube/dataCube_welcome.html");
+            /**
+             * 微信分享
+             */
+            function initShareWeixin(){
+                var weiXinTitle="我发现了一个很专业的医生社区。一起来看看吧。";
+                var weiXinDesc="唯医网是专门的医生互动社区。更汇集海量手术视频、病例讨论、会议回放哦～";
+                WeixinJSApi.title=function(){return weiXinTitle;};
+                WeixinJSApi.desc=function(){return weiXinDesc;};
+            }
+            initShareWeixin();
+        </script>
+    </head>
+
+	<body>
+		<div class="dataCube_wrap dc_login">
+			<div class="dc_loginCon">
+				<div class="dc_indexTop"><img src="images/DC_indexLogo.png" /></div>
+				<div class="dc_loginBtn">
+					<a href="/pages/passport/login_caos.html"  data-ajax="false"><img src="images/DC_loginCAOS.png" /></a>
+					<a href="/pages/passport/login_allin.html"  data-ajax="false"><img src="images/DC_loginAllin.png" /></a>
+				</div>
+				<div class="dc_loginTip">
+					<img src="images/DC_loginTip.png" />
+				</div>
+				<div class="dc_loginReg">
+					<a href="/pages/passport/regist_allin.html" data-ajax="false">立即注册</a>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

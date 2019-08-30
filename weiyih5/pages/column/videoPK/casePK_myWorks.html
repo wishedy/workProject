@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="Keywords" content="病例专题，视频专题，病例PK-我的作品，骨科专题，学术专题，文献专题，手术汇总，">
+		<meta charset="UTF-8">
+		<title>病例PK-我的作品</title>
+		<link rel="dns-prefetch" href="//m.allinmd.cn"/>
+		<link rel="stylesheet" href="//m.allinmd.cn/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
+		<link rel="stylesheet" href="//m.allinmd.cn/css/column/casePK.css">
+	</head>
+
+	<body>
+	    <input type="hidden" id="activityId"/>
+		<div class="casePK_top">
+			<!-- 安卓头部 -->
+			<div class="casePK_title_Ios" id="browser_title">
+				<div class="casePK_titleCon">
+					<div class="casePK_l"><a href="javascript:;" onclick="appjs.popToLastVC()"></a></div>
+					<div class="casePK_c">病例&视频评选活动</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+
+			<div class="casePK_banner"><img src="//img50.allinmd.cn/column/videoPK/casePK_banner.jpg" alt=""></div>
+			<div class="casePK_nav">
+				<ul>
+					<li><a href="//m.allinmd.cn/html/app/activity/new/1449026372937/activity_index.html?activityId=1449026372937" data-ajax="false">活动首页</a></li>
+					<li><a href="//m.allinmd.cn/html/app/activity/new/1449026372937/activity_details.html?activityId=1449026372937" data-ajax="false">活动详情</a></li>
+					<li><a href="//m.allinmd.cn/html/app/activity/new/1449026372937/works_details.html?activityId=1449026372937" data-ajax="false">要求&范例</a></li>
+					<li><a href="//m.allinmd.cn/pages/column/videoPK/casePK_works.html?activityId=1449026372937" data-ajax="false">参选作品</a></li>
+					<li><a href="//m.allinmd.cn/pages/column/videoPK/casePK_semifinalsResult.html?activityId=1449026372937" data-ajax="false">预赛结果</a></li>
+					<li class="cur"><a href="//m.allinmd.cn/pages/column/videoPK/casePK_myWorks.html?activityId=1449026372937" data-ajax="false">我的作品</a></li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+		</div>
+
+		<div class="casePK_blank"></div>
+		<div class="casePK_h5" style="padding-bottom: 50px">
+			<!--第一块-->
+			<div class="act_con" style="padding-bottom: 0;">
+				<div class="content_pk act_bg_new casePK">
+					<div class="content_main casePK_main">
+						<!--视频-->
+						<div class="prod_list">
+
+						</div>
+
+						<div class="videoPK_noWork" style="display:none"><img src="//img50.allinmd.cn/column/videoPK/videoPK_noWbg.png" alt="" width="100%"/></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--分享APP-->
+		<div class="videopk_index_tc" id="shareBox" style="display:block;">
+			<div class="videopk_index">
+				<a href="javascript:void(0)" class="EVshare_btn"/><img width="100%" src="//img50.allinmd.cn/column/videoPK/only_share.png"></a>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+	</body>
+	<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+	<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+	<script src="//m.allinmd.cn/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
+	<script src="//m.allinmd.cn/js/column/videoPK/PKcomm.js"></script>
+	<script>
+		$(function(){
+			if(status==1){//1:结果公示中 -1:过期
+				qqTitle="《骨科示教病例及手术视频评选活动》最终获奖结果揭晓"; //qq微信title
+				qqDesc="最终结果新鲜出炉，桂冠由谁摘得？人气王花落谁家？点击揭晓，并查看全部优秀作品！"; //qq微信簡介
+				sDesc="《骨科示教病例及手术视频评选活动》最终获奖结果揭晓—最终结果新鲜出炉，桂冠由谁摘得？人气王花落谁家？点击揭晓，并查看全部优秀作品！点击链接："; //新浪簡介
+				mDesc="《骨科示教病例及手术视频评选活动》最终获奖结果揭晓—最终结果新鲜出炉，桂冠由谁摘得？人气王花落谁家？查看全部优秀作品！点击链接：";//短信
+			}else{
+				qqTitle="决战一触即发，骨科示教病例及手术视频选拔赛决赛入围名单公布！"; //qq微信title
+				qqDesc="点击查看优秀作品名单，看看有没有你心中的“它”！桂冠最终由谁摘得？5月21日CAOS2016为你揭晓！"; //qq微信簡介
+				sDesc="决战一触即发，骨科示教病例及手术视频选拔赛决赛入围名单公布！点击查看优秀作品名单，看看有没有你心中的“它”！桂冠最终由谁摘得？5月21日CAOS2016为你揭晓！点击链接："; //新浪簡介
+				mDesc="决战一触即发，骨科示教病例及手术视频选拔赛决赛入围名单公布！点击查看优秀作品名单，看看有没有你心中的“它”！桂冠最终由谁摘得？5月21日CAOS2016为你揭晓！点击链接：";//短信
+			}
+			$(".EVshare_btn").on("click",function(){
+				appjs.share($.toJSON({"url":"http://m.allinmd.cn/pages/column/videoPK/m/myWorks.html?activityId=1449026372937",
+					"imgUrl":"http://img50.allinmd.cn/column/videoPK/pk_banner.jpg",
+					"sinaContent":sDesc,
+					"qqTitle":qqTitle,
+					"qqContent":qqDesc,
+					"messageContent":mDesc
+				})
+				);
+			})
+		})
+
+
+	</script>
+	<script src="//m.allinmd.cn/js/column/videoPK/PKmyWork.js"></script>
+</html>

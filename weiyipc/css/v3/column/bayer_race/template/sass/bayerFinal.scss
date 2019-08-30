@@ -1,0 +1,249 @@
+@charset "UTF-8";
+@import "method.scss";
+
+/*总决赛精彩瞬间*/
+
+.finalPart {
+    .broveShowTitle {
+        border-bottom: none;
+    }
+    .broveShowList {
+        display: none;
+    }
+    .broveShowFinal {
+        display: block;
+    }
+    .broveMore {
+        display: none;
+    }
+}
+
+.broveShowFinal {
+    padding: rem(30px);
+    padding-top: 0;
+    .finalImg {
+        width: 100%;
+        position: relative;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+    .videoBtn {
+        $r: rem(82px);
+        width: rem(82px);
+        height: rem(82px);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: - $r/2;
+        margin-top: - $r/2;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+    .finalShowText {
+        font-size: rem(30px);
+        color: $textColor;
+        line-height: 1.7;
+        padding-top: rem(20px);
+    }
+}
+
+.finalMore {
+    border-top: 1px solid $borderOuter;
+}
+
+
+/*晋级总决赛名单*/
+
+.finalNameListItem {
+    list-style-type: disc;
+    position: relative;
+    left: rem(60px);
+    border-bottom: 1px solid $borderOuter;
+    padding: rem(25px) 0;
+    color: $textColor;
+    &:nth-last-child(1) {
+        border-bottom: none;
+    }
+    h3 {
+        display: inline-block;
+        color: #000;
+        font-size: rem(28px);
+        width: 2rem;
+        vertical-align: middle;
+    }
+    span {
+        color: #9c9c9d;
+        display: inline-block;
+        font-size: rem(28px);
+        margin-left: rem(35px);
+        vertical-align: middle;
+    }
+    .country {
+        width: 2rem;
+    }
+    .hospital {
+        width: 3.5rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+
+/*获奖感言*/
+
+.awardsPhoto {
+    $r: rem(110px);
+    width: $r;
+    height: $r;
+    border-radius: 50%;
+    float: left;
+    position: relative;
+    img {
+        width: 100%;
+        vertical-align: top;
+        border-radius: 50%;
+    }
+    &:after {
+        content: "";
+        display: inline-block;
+        width: rem(137px);
+        height: rem(55px);
+        position: absolute;
+        left: 50%;
+        margin-left: rem(-68.5px);
+        bottom: rem(-15px);
+    }
+}
+
+.awardsText {
+    margin-left: rem(30px);
+    border-bottom: 1px solid $borderOuter;
+    &:nth-last-child(1) {
+        border-bottom: none;
+    }
+    &:nth-child(2) {
+        .awardsPhoto:after {
+            background: transparent url('/image/column/bayer_race/1st.png') center center no-repeat;
+            background-size: contain;
+        }
+    }
+    &:nth-child(3) {
+        .awardsPhoto:after {
+            background: transparent url('/image/column/bayer_race/2nd.png') center center no-repeat;
+            background-size: contain;
+        }
+    }
+    &:nth-child(4) {
+        .awardsPhoto:after {
+            background: transparent url('/image/column/bayer_race/3rd.png') center center no-repeat;
+            background-size: contain;
+        }
+    }
+}
+
+.awardsTextList {
+    margin: rem(34px) 0 rem(34px) rem(140px);
+    color: $textColor;
+    display: block;
+    h3 {
+        font-size: rem(28px);
+        margin-right: rem(20px);
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: bold;
+    }
+    .expertElseMsg {
+        display: inline-block;
+        font-size: rem(20px);
+        color: #fff;
+        background-color: #9a87c7;
+        border-radius: rem(20px);
+        padding: rem(5px) rem(10px);
+        vertical-align: middle;
+    }
+    .title {
+        margin-left: rem(10px);
+    }
+    p {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: rem(26px);
+        color: #808080;
+        margin-top: rem(20px);
+        padding-right: rem(30px);
+    }
+}
+
+
+/*精彩瞬间轮播*/
+
+.highLights{
+    width: 100%;
+    height: rem(355px);
+    text-shadow: none;
+    margin-top: rem(20px);
+    .highLightsItem {
+        height: 100%;
+    }
+    .swiper-pagination {
+        text-align: right;
+        .swiper-pagination-bullet {
+            background-color: transparent;
+            border: 2px solid #fff;
+            margin: 0 rem(3px);
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #fff;
+        }
+    }
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    left: rem(-30px);
+    bottom: rem(28px);
+}
+
+.highLightsItem  {
+    position: relative;
+    width: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+    .highLightsImgTitle {
+        position: absolute;
+        bottom: 0;
+        font-size: rem(28px);
+        color: #fff;
+        left: 0;
+        right: 0;
+        padding: 0 rem(20px);
+        padding-bottom: rem(30px);
+        font-weight: normal;
+        background: -webkit-linear-gradient(bottom, black 0%, transparent 100%);
+        background: linear-gradient(to top, black 0%, transparent 100%);
+        .title {
+            display: inline-block;
+            width: 6rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+        }
+        .author {
+            display: inline-block;
+            vertical-align: middle;
+            float: right;
+        }
+    }
+}

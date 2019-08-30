@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="personYouKnow.css"/>
+    <title></title>
+</head>
+<body>
+    <div class="box" style="width:270px;"></div>
+</body>
+<script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="module.personYouKnow.js"></script>
+<script src="/js/plugins/follow/plugin.follow.js"></script>
+<script>
+    var docList = [
+        {
+            "id": "1397586923931",
+            "author": "南京鼓楼医院",
+            "title": "主任医师",
+            "name": "蒋青",
+            "state": "1",
+            "relation": "1",
+            "logoUrl": "//img05.allinmd.cn/public1/M00/03/36/oYYBAFU830iABsMUAABfIaAIcWQ134_c_p_150_150.jpg"
+        },
+        {
+            "id": "1397586925150",
+            "author": "四川省人民医院",
+            "title": "副主任医师",
+            "name": "卢冰",
+            "state": "1",
+            "relation": "2",
+            "logoUrl": "//img05.allinmd.cn/public1/M00/03/34/ooYBAFU83v-AdAJTAACMu8PvE_Q136_c_p_150_150.jpg"
+        },
+        {
+            "id": "1397586925150",
+            "author": "四川省人民医院",
+            "title": "副主任医师",
+            "name": "卢df冰",
+            "state": "1",
+            "relation": "3",
+            "logoUrl": "//img05.allinmd.cn/public1/M00/03/34/ooYBAFU83v-AdAJTAACMu8PvE_Q136_c_p_150_150.jpg"
+        },
+        {
+            "id": "1397640854304",
+            "author": "北京大学第三医院",
+            "title": "主任医师",
+            "name": "敖英芳",
+            "state": "1",
+            "relation": "4",
+            "logoUrl": "//img05.allinmd.cn/public1/M00/03/3B/ooYBAFU84AKAFuCUAABWJTMuKKc705_c_p_150_150.gif"
+        }];
+    var o = [];
+    $.each(docList,function(i,e){
+        o.push(module.personYouKnow({
+            cid: e.id,
+            cIcon: e.logoUrl,
+            cName: e.name,
+            relation: parseInt(e.relation),
+            cTitle: e.title,
+            cCompany: e.author
+        }));
+    });
+
+    $('.box').html(o);
+</script>
+</html>

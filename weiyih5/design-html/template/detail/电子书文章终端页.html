@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>${bookDoc.docName} -医学文章-唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="keywords" content="医学资源分类，医学资源查找，手术视频,医学文献,病例讨论,骨科,唯医,allinmd">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/dest/pages/detail/detail_ebook.css">
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/video-js.css" rel="stylesheet" type="text/css"/>
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/videojs.allinmd-h5.css" rel="stylesheet" type="text/css"/>
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body style="margin:0" data-alcode="244">
+<input type="hidden" value="2" id="relationType"/>
+<input type="hidden" value="8" id="preferReviewType"/>
+<input type="hidden" value="${bookDoc.docId?c}" id="resourceId"/>
+<input type="hidden" id="refCustomerId" value="0"/>
+<input type="hidden" id="ebookType" value="18"/>
+
+
+<section class="al-mainInner">
+
+    <!--文章被删除开始-->
+    <#if bookDoc??>
+        <#if bookDoc.docIsValid??>
+            <#if bookDoc.docIsValid==3>
+                <figure class="al-terminalNone">
+                    <img src="/images/img50/pages/case/deleted.png" alt="">
+                    <figcaption>
+                        很抱歉，该文章已被作者删除
+                    </figcaption>
+                </figure>
+            </#if>
+            <!--文章被屏蔽开始-->
+            <#if bookDoc.docIsValid==0>
+                <figure class="al-terminalNone">
+                    <img src="/images/img50/pages/case/deleted.png" alt="">
+                    <figcaption>
+                        很抱歉，该文章已被管理员屏蔽
+                    </figcaption>
+                </figure>
+
+                <!--文章被屏蔽结束-->
+            </#if>
+        </#if>
+    </#if>
+    <!--文章被删除结束-->
+    <#if bookDoc.docIsValid==1>
+        <!--顶部悬浮-->
+        <header class="al-eBookController Ev-fixedHeader">
+            <article data-alcode-mod='406'>
+
+                <!--<a href="javascript:;" class="al-eBookAllBook icon-controllerAllBook Ev-AllBookBtn" style="display:none;"><span>全书</span></a>-->
+                <a href="javascript:;" class="al-eBookShare icon-controllerShare Ev-topShareBtn" data-alcode='e46'>分享<span></span></a>
+            </article>
+        </header>
+        <!--顶部悬浮结束-->
+
+        <!--书籍信息-->
+
+
+        <#if bookDoc.docBookId??>
+            <header class="al-terminalHeader" data-alcode-mod='503'>
+                <section>
+                    <figure class="al-terminalAuthorImg">
+                        <#if bookDoc??>
+                            <#if bookDoc.bookPicUrl??>
+                                <#if bookDoc.docBookId??>
+                                    <a  class="al-terminalEbookImg" href="//m.allinmd.cn/pages/eBook/eBook_details.html?bId=${bookDoc.docBookId}">
+                                        <img src="${bookDoc.bookPicUrl}" alt="">
+                                    </a>
+                                </#if>
+                            </#if>
+                        </#if>
+                    </figure>
+                    <figcaption class="al-terminalAuthorMsg">
+                        <#if bookDoc??>
+                            <#if bookDoc.docBookName??>
+                                <#if bookDoc.docBookId??>
+                                    <#if bookDoc.docCreateTime??>
+                                        <h2 class="Ev-authorName">
+                                            <a href="//m.allinmd.cn/pages/eBook/eBook_details.html?bId=${bookDoc.docBookId}">
+                                                ${bookDoc.docBookName}
+                                            </a>
+                                        </h2>
+                    <span class="al-terminalReleaseTime">
+                    ${bookDoc.docCreateTime?substring(0,10)}
+                </span>
+                                    </#if>
+                                </#if>
+                            </#if>
+                        </#if>
+                    </figcaption>
+                </section>
+                <!--综合评分-->
+                <ul class="al-littleScoreStarBox ev-scoreDetail"><li></li><li></li><li></li><li></li><li></li></ul>
+                <!--综合评分结束-->
+            </header>
+            <!--书籍信息结束-->
+            <#else>
+                <#assign customer_page="//m.allinmd.cn/pages/personal/others_contribution.html?cid=${customer_auth.customerId?c}">
+                    <#if customer_auth.customerId?length==1>
+                        <#assign customer_page="javascript:;">
+                    </#if>
+                <header class="al-terminalHeader">
+                    <section>
+                        <figure class="al-terminalAuthorImg">
+                            <a href="${customer_page}">
+                                <img src="${upload_author_logo.logoUrl}" alt=""/>
+                            </a>
+                        </figure>
+                        <figcaption class="al-terminalAuthorMsg">
+                            <h2><#if customer_auth??>
+                                <a class="Ev-authorName" href="${customer_page}"> ${customer_auth.lastName}${customer_auth.firstName}</a>
+                            </#if><i class="al-vipUser"></i>
+                            </h2>
+                            <p><#if customer_auth??><span>${customer_auth.medicalTitleShow}</span></#if><#if customer_auth??><span>${customer_auth.company}</span></#if></p>
+                    <span class="al-terminalReleaseTime">
+                    <#if doc.publishTime??><#if doc.publishTime?length gt 10>${doc.publishTime?substring(0,10)}</#if></#if>
+                </span>
+                        </figcaption>
+                    </section>
+                    <!--综合评分-->
+                    <ul class="al-littleScoreStarBox ev-scoreDetail"><li></li><li></li><li></li><li></li><li></li></ul>
+                    <!--综合评分结束-->
+                </header>
+        </#if>
+        <!--文章主体内容-->
+
+        <section class="al-terminalContent">
+
+            <!--标题，浏览，中英文切换-->
+            <header class="al-terminalContentTitle Ev-caseTitle">
+
+                <!--中文标题-->
+                <#if bookDoc??>
+                    <#if bookDoc.docName??>
+                        <h2 class="Ev-chContent"><a href="javascript:;">${bookDoc.docName}</a></h2>
+                    </#if>
+                </#if>
+                <!--中文标题结束-->
+
+
+                <article class="al-terminalContentSnsMsg">
+                    <#if bookDoc??>
+                        <span class="al-terminalBrowsedNum"><em class="Ev-browseNum"></em>浏览</span>
+                    </#if>
+                </article>
+
+            </header>
+            <!--标题，浏览，中英文切换-->
+
+            <!--文章主体内容-->
+            <section class="al-terminalContentContext">
+                <article class="al-terminalContextItem">
+                    <#if bookDoc??>
+                        <#if bookDoc.docContent??>
+                            ${bookDoc.docContent}
+                        </#if>
+                    </#if>
+                </article>
+                <!--我要评分-->
+                <div class="al-myScoreBox al-iAskScore">
+                    <span class="iScore">我要评分</span>
+                    <ul class="al-littleScoreStarBox">
+                        <li class="ev-startItem"></li>
+                        <li class="ev-startItem"></li>
+                        <li class="ev-startItem"></li>
+                        <li class="ev-startItem"></li>
+                        <li class="ev-startItem"></li>
+                    </ul>
+                    <p class="">已有<span class="scoreNum">0</span>人评分<b></b></p>
+                </div>
+                <!--我要评分结束-->
+                <!--标签开始-->
+                <article class="al-terminalContextItem al-terminalContentTags" data-alcode-mod='498'>
+                    <h3>标签</h3>
+                    <#list docPropertyList as property>
+                        <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=${property.propertyId?c}" class="al-terminalTags">${property.propertyName!''}</a>
+                    </#list>
+
+                </article>
+                <!--标签结束-->
+
+                <!--所属书籍-->
+                <article class="al-terminalVideoActivity Ev-article" style="display: none;" data-alcode-mod='501'><!--style="display: none;"-->
+                    <#if bookDoc??>
+                        <#if bookDoc.docBookName??>
+                            <#if bookDoc.docBookId??>
+                                <p><span>所属书籍：</span><a class="Ev-articleName" href="//m.allinmd.cn/pages/eBook/eBook_details.html?bId=${bookDoc.docBookId}">${bookDoc.docBookName}</a></p>
+                            </#if>
+                        </#if>
+                    </#if>
+                </article>
+                <!--所属书籍结束-->
+
+                <!--分享区-->
+                <section class="al-terminalShare" data-alcode-mod='406' data-alcode-item-selector="section">
+                    <h3>分享给好友 共同讨论</h3>
+                    <section class="al-terminalShareItem Ev-shareBtn" ref="trend">
+                        <figure class="al-bottomShareImg">
+                            <img src="/images/img50/pages/index/share_allin.png"
+                                 _mce_src="/images/img50/pages/index/share_allin.png" alt=""></figure>
+                        <figcaption>站内动态</figcaption>
+                    </section>
+                    <section class="al-terminalShareItem Ev-shareBtn" ref="qzone">
+                        <figure class="al-bottomShareImg">
+                            <img src="/images/img50/pages/index/share_kongjian.png"
+                                 _mce_src="//m.allinmd.cn/images/img50/pages/index/share_kongjian.png" alt="">
+                        </figure>
+                        <figcaption>QQ空间</figcaption>
+                    </section>
+                    <section class="al-terminalShareItem Ev-shareBtn" ref="sina">
+                        <figure class="al-bottomShareImg">
+                            <img src="/images/img50/pages/index/share_weibo.png" alt="">
+                        </figure>
+                        <figcaption>微博</figcaption>
+                    </section>
+                </section>
+                <!--分享区结束-->
+
+                <!--上一篇，下一篇-->
+                <footer class="al-terminalDocPagesChange" data-alcode-mod='502'>
+                    <section class="al-terminalDocPage Ev-prevArticle">
+                        <a href="javascript:;"><img src="//m.allinmd.cn/images/img50/pages/personal/arrow_back.png" alt=""/><span>上一篇</span></a>
+                    </section>
+                    <i class="line"></i>
+                    <section class="al-terminalDocPage Ev-nextArticle">
+                        <a href="javascript:;"><span>下一篇</span><img src="//m.allinmd.cn/images/img50/pages/personal/arrow_back.png" alt=""/></a>
+                    </section>
+                </footer>
+                <!--上一篇，下一篇结束-->
+
+            </section>
+            <!--文章主体内容结束-->
+
+        </section>
+    </#if>
+    <!--文章主体内容结束-->
+    <!--相关产品-->
+    <figure class="al-productRecommendPart">
+        <figcaption>相关产品(<span class="num"></span>)</figcaption>
+        <div class="al-productListMoveBox" data-alcode-mod='504'>
+            <ul class="al-productRecommendListBox" id="al-productRecommendListBox" style="width:3000px;position:relative;left:0;">
+            </ul>
+        </div>
+    </figure>
+    <!--相关产品结束-->
+    <!--评论区-->
+    <section class="al-terminalMainContent al-terminalCommentContent Ev-discussArea">
+        <h2>
+            评论(<span class="Ev-navReviewNum">0</span>)
+            <section class="al-terminalSortChange">
+                <button class="al-terminalSortChangeItem" sortType="3">最新</button>
+                <button class="al-terminalSortChangeItem active"  sortType="1">最旧</button>
+            </section>
+        </h2>
+        <section class="al-terminalComment">
+            <div id="EQ_newReplyList" data-alcode-mod='499'>
+
+            </div>
+            <section class="al-terminalNoComment" style="display: none;">
+                <span>暂无评论，快“加入讨论”参与进来~</span>
+            </section>
+        </section>
+    </section>
+    <!--评论区结束-->
+
+    <!--没有更多-->
+    <article class="al-terminalFinish"  style="display: none;">
+        ~<span>没有更多了</span>~
+    </article>
+    <!--没有更多-->
+
+    <!--底部悬浮-->
+    <footer class="al-terminalFooter" data-alcode-mod='500' data-alcode-item-selector="figure">
+        <figure class="al-terminalFooterItem Ev-backBtn">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalBack"></i>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem al-terminalJoinDiscuss Ev-discussBtn">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalJoin"><span>加入讨论</span></i>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-reviewNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalCommentNum"></i>
+                <span class="al-newsNum" style="display: none;"></span>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-praiseNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminallike"></i>
+                <span class="al-newsNum" style="display: none;"></span>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-collectNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalCollect"></i>
+                <span class="al-newsNum" style="display: none;"></span>
+            </a>
+        </figure>
+    </footer>
+    <!--底部悬浮结束-->
+
+    <#if (VideoInfoMap??)&&(VideoInfoMap?size>0)>
+        <#list VideoInfoMap as VideoInfoMap>
+            <div class="Ev-vAbsArticle" style="display:none;" data-videoId="${VideoInfoMap.videoId}"> ${VideoInfoMap.videoAbstract}</div>
+        </#list>
+    </#if>
+
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="//paas.allinmd.cn/modules/photoswipe/photoswipe.min.js"></script>
+<script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe-ui-default.js"></script>
+<script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+<script src="/js/react/JSXTransformer.js"></script>
+<script src="/js/react/react.js"></script>
+<script src="//paas.allinmd.cn/modules/allinmdplayer/video.js"></script>
+<script src="//paas.allinmd.cn/modules/allinmdplayer/videojs.allinmd.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<script>
+    var absVideoData=[];
+    <#if (VideoInfoMap??)&&(VideoInfoMap?size>0)>
+    <#list VideoInfoMap as VideoInfoMap>
+    absVideoData.push({"APPMp4Url":"${VideoInfoMap.APPMp4Url}","videoId":"${VideoInfoMap.videoId}","playTime":"${VideoInfoMap.playTime}"});
+    </#list>
+    </#if>
+</script>
+<script src="/dest/pages/detail/detail_ebook.js"></script>
+<script type="text/jsx" src="/js/scene/case/comment.jsx" charset="utf-8"></script>
+</body>
+</html>

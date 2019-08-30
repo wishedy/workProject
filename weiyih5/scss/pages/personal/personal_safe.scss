@@ -1,0 +1,77 @@
+@charset "UTF-8";
+//个人主页——帐号安全
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+.al-personalBrowsedPart {
+    background-color: #fff;
+    margin-top: rem(20px);
+    padding-left: rem(30px);
+}
+
+.al-personalBrowsedItem {
+    padding: rem(30px) rem(30px) rem(30px) 0;
+    border-bottom: 1px solid $innerBorderColor;
+    @include font-dpr(15px);
+    a {
+        color: #333333;
+        position: relative;
+        &:after {
+            content: "";
+            width: rem(28px);
+            height: rem(14px);
+            float: right;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAPCAMAAADNjy/UAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA2UExURUxpcbe3t7e3t7i4uP///7i4uLi4uLi4uLe3t9XV1bi4uLe3t7e3t7y8vLm5ubq6uri4uLe3t4lCWEwAAAARdFJOUwD5Tq8CobFe/QZW4CAXUBr3HPGeLgAAAE9JREFUGNN1yVsSwBAQBMAJCXli73/ZKCllMenfBp4VTATua2Nnkse5CzmziAU8uTzuALs687UZT09//egbp9089dh8F+iUEz7lfiaf1fMCGnED5O9wdaoAAAAASUVORK5CYII=') center center no-repeat;
+            transform: rotate(-90deg);
+            background-size: cover;
+            margin-top: 0.05rem;
+        }
+    }
+    p {
+        float: right;
+        @include font-dpr(13px);
+        color: #aaa;
+        margin-right: rem(20px);
+        span {
+            margin-left: rem(10px);
+        }
+    }
+    .btn-done {
+        @include font-dpr(13px);
+        padding: 0 rem(20px);
+        height: rem(55px);
+        line-height: rem(55px);
+        margin-left: rem(20px);
+        color: #aaa;
+        box-sizing: border-box;
+    }
+}
+
+.al-userQuit {
+    margin-top: rem(40px);
+    border-bottom: 1px solid $outerBorderColor;
+    text-align: center;
+    height: rem(100px);
+    line-height: rem(100px);
+    @include font-dpr(17px);
+    color: #f34b4b;
+    background-color: #fff;
+    display: block;
+    width: 100%;
+}
+
+.noArrow {
+    p{
+        margin-right: 0;
+    }
+    a:after {
+        display: none;
+    }
+}
+
+@import "../../components/_recordListModule"; //记录列表组件

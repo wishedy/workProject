@@ -1,0 +1,29 @@
+<import src="/components/provinceCityPicker$62c44391" />
+<import src="/components/LogoLoading$2b721f9a" /><template name="reportAddPatient$daa3d2be">
+  <view class="_div data-v-7ba08188 main">
+    <view class="_div data-v-7ba08188 error-tip" wx:if="{{!formValidState && tipShow}}">
+      <view class="_div data-v-7ba08188 close-btn" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></view>
+      {{errorInfo}}
+    </view>
+    <view class="_div data-v-7ba08188 head">
+      <image src="https://m.allinmed.cn/static/image/mp/index/1.2.0/smile.png" alt class="_img data-v-7ba08188 smile"></image> 添加就诊人信息 ，<label class="_span data-v-7ba08188">仅{{doctorName}}医生本人可见</label>
+    </view>
+    <view class="_section data-v-7ba08188 form-box">
+      <view class="_div data-v-7ba08188 center">
+        <view class="_div data-v-7ba08188 form-item row-1">
+          <view class="_div data-v-7ba08188 item-name {{[errorTip == 'name' ? 'error-tip-color' : '']}}"> 姓名 </view>
+          <view class="_div data-v-7ba08188 form-input"><input type="text" placeholder="请输入姓名" value="{{patientName}}" bindinput="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_input data-v-7ba08188" /></view>
+        </view>
+        <view class="_div data-v-7ba08188 form-item">
+          <view class="_div data-v-7ba08188 item-name {{[errorTip == 'card' ? 'error-tip-color' : '']}}"> 身份证号 </view>
+          <view class="_div data-v-7ba08188 form-input"><input type="text" placeholder="请输入身份证号" value="{{idCard}}" bindinput="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_input data-v-7ba08188" /></view>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-7ba08188 id-tips"> 仅用于用户认证，会严格保护您的隐私信息 </view>
+    <view class="_div data-v-7ba08188 address"><template binddataChange="handleProxy" wx:if="{{hackReset}}" data-eventid="{{'3'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="provinceCityPicker$62c44391"></template></view>
+    <view class="_div data-v-7ba08188 next-box">
+      <form action bindsubmit="handleProxy" report-submit="true" data-eventid="{{'5'}}" data-comkey="{{$k}}" class="_form data-v-7ba08188"><button class="_button data-v-7ba08188 next-btn" formType="submit" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">下一步</button></form>
+    </view> <template wx:if="{{loading}}" data="{{...$root[$kk+'1'], $root}}" is="LogoLoading$2b721f9a"></template>
+  </view>
+</template>

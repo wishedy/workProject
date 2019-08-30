@@ -1,0 +1,118 @@
+@charset "UTF-8";
+//表单组件
+//Created by qiangkailiang on 2016/07/31
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.al-selectorBarMask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition:opacity 0.2s linear;
+    -webkit-transition:opacity 0.2s linear;
+}
+.al-selectorBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFF;
+    opacity: 0;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+.ev-medBox .al-selectorBar {
+    //position: relative;
+    margin-top:10%;
+    overflow:auto;
+    height:70%;
+    padding-bottom:10%;
+}
+
+.al-selectorBarTitle {
+    border-bottom: 1px solid #d7dbde;
+    height: rem(88px);
+    background-color: #fff;
+    @include flex();
+    @include justify-content(space-between);
+    @include align-items(center);
+    padding: 0 rem(30px);
+    .al-selectorBarTitleItem {
+        @include font-dpr(15px);
+        &:nth-child(1) a {
+            color: #515c74;
+            text-align: left;
+        }
+        &:nth-child(2) h2 {
+            @include font-dpr(16px);
+            color: #333;
+            font-weight: normal;
+            text-align: center;
+        }
+        &:nth-child(3) a {
+            color: #3598db;
+            text-align: right;
+        }
+    }
+}
+
+.al-selectorBarList {
+    margin-bottom: rem(15px);
+    padding-left: rem(30px);
+    background-color: #fff;
+}
+
+.al-selectorBarItem {
+    border-bottom: 1px solid $innerBorderColor;
+    height: rem(100px);
+    line-height: rem(100px);
+    box-sizing: border-box;
+    background-color: #fff;
+    .al-selectorBarItemName {
+        margin-left: rem(30px);
+//        @include font-dpr(15px);
+        color: #333;
+        font-size: rem(32px);
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .al-selectorBarItemIcon {
+        @include circle(rem(38px), #fff);
+        border: 2px solid #b4b4b4;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.al-selectorBarItem.selected {
+    .al-selectorBarItemIcon {
+        @include circle(rem(38px), #fff);
+        border: 2px solid #2899e6;
+        display: inline-block;
+        vertical-align: middle;
+        background: transparent url('//img50.allinmd.cn/pages/personal/selected.png') center center no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+.al-selectorBarMask.on {
+    visibility: visible;
+    opacity: 1;
+    .al-selectorBar {
+        opacity: 1;
+        transform: translateY(0%);
+        -webkit-transform: translateY(0%);
+    }
+}
+
+
+

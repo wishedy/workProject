@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>个人首页认证三部曲</title>
+    <link href="/css/common/base.css" rel="stylesheet" type="text/css" />
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+    <link href="/js/module/trilogy/module.trilogy.css" rel="stylesheet" type="text/css" />
+    <link href="/js/module/user/module.user.css" rel="stylesheet" type="text/css" />
+    <link href="/js/third-party/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css" />
+    <link href="/js/plugins/ui-card/plugin.ui-card.css" rel="stylesheet" type="text/css" />
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css" />
+    <script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/comm.customer.js"></script>
+    <script src="/js/scene/scene.header.js"></script>
+    <script src="/js/module/user/module.user.js"></script>
+    <script src="/js/plugins/ui-card/plugin.ui-card.js"></script>
+    <script src="/js/plugins/scroll-box/plugin.scroll-box.js"></script>
+    <script src="/js/module/user/operator_auth.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+    <script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+    <script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+    <script src="/js/comm/comm.file.js"></script>
+    <script src="/js/comm/comm.lightBox.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+    <script src="/js/module/trilogy/module.trilogy.js"></script>
+
+    <link href="//css.allinmd.cn/common/base.css" rel="stylesheet" type="text/css" />
+
+</head>
+<script>
+    $(function () {
+        user.login({         // DEMO演示用。 实际使用环境中，用户应为已登录状态。
+            callback: function () {
+                var info = user.getUserInfo();
+                module.trilogy({                  // DEMO
+                    customerId:info.customerId
+                });
+            },
+            operateType:"share"
+        })
+
+    });
+</script>
+<body>
+	 <div id="trilogy" class="moduleTrilogy"></div>
+</body>
+</html>

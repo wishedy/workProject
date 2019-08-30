@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${conference.conName}特邀专家 - 唯医,allinmd</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="Keywords" content="${conference.conName}，医学会议，会议回放，会议日程，会议直播，主讲人，会议视频，骨科视频，手术视频，手术讲解，日程回顾">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<link rel="dns-prefetch" href="//comm.allinmd.cn">
+	<link rel="dns-prefetch" href="//other.allinmd.cn">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+	<link href="//comm.allinmd.cn/base.css" rel="stylesheet" type="text/css"/>
+
+<script>
+        /*跳WAP端*/
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        if(!IsPC()) {
+            window.location.href = '//m.allinmd.cn/html/pages/conference/meeting-place.html?conId=' + location.pathname.match(/\d*/g).join("").substr(0, 13) + '&conName=' +document.title.replace("特邀专家 - 唯医,allinmd", "");
+        }
+</script>
+</head>
+<body>
+
+<div fragment="//www.allinmd.cn/html/conference/${conference.conId?c}/1/meeting_header.html"></div>
+
+<div id="meeting_content">
+
+    <!-- 特邀专家 -->
+    <div class="m_main" >
+        <div class="m_content_expert">
+            <div class="m_title_news">
+                <div class="expert_l">特邀专家</div>
+                <div class="expert_r"></div>
+            </div>
+
+            <#list allin_customer_list as map>
+
+                <#list map?keys as itemKey>
+                    <#if itemKey='customer_name'>
+                        <#assign customer_name = map[itemKey]>
+                    </#if>
+                    <#if itemKey='summary'>
+                        <#assign summary = map[itemKey]>
+                    </#if>
+                    <#if itemKey='hospital_name'>
+                        <#assign hospital_name = map[itemKey]>
+                    </#if>
+                    <#if itemKey='customer_id'>
+                        <#assign customer_id = map[itemKey]?c>
+                    </#if>
+                    <#if itemKey='customer_logo_url'>
+                        <#assign customer_logo_url = map[itemKey]>
+                    </#if>
+
+                </#list>
+
+
+                <div class="expert_content">
+                    <div class="zj_cont">
+                        <div class="new_left">
+                            <a href="//www.allinmd.cn/pages/personal/home.html?cid=${customer_id?default('')}" target="_blank">
+                                <img src="${customer_logo_url?default('')}" data-original="${customer_logo_url?default('')}" style="display: inline;" />
+                            </a>
+                        </div>
+                        <div class="new_right">
+                            <div class="expert_r_title">
+                                <div class="expert_name">
+                                    <a href="//www.allinmd.cn/pages/personal/home.html?cid=${customer_id?default('')}" target="_blank">
+                                        ${customer_name?default('')}
+                                    </a>
+                                </div>
+                                <div class="expert_yy">${hospital_name?default('')}</div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="js_text color">${summary?default('')}</div>
+                            <div class="clear"></div>
+                            <div class="new_more">
+                                <a href="//www.allinmd.cn/pages/personal/home.html?cid=${customer_id?default('')}" target="_blank">查看更多 &gt;&gt;</a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="line_bottom"></div>
+                    </div>
+                    <div class="clear"></div>
+
+
+
+                </div>
+
+            </#list>
+
+
+            <div class="meeting_bottom"></div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<!--footer start-->
+<!--#include virtual="/includes/footer.jsp"-->
+<!--footer End-->
+
+<script src="//comm.allinmd.cn/base.js"></script>
+<script src="//other.allinmd.cn/jquery_lazyload/jquery.lazyload.js" type="text/javascript"></script>
+<script src="//other.allinmd.cn/jquery_lazyload/jquery.scrollstop.js" type="text/javascript"></script>
+<script src="//other.allinmd.cn/util/fragment-util.js" type="text/javascript"></script>
+<script>
+    $(function(){
+        getFragments();
+    })
+</script>
+
+</body>
+</html>

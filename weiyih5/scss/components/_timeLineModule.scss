@@ -1,0 +1,269 @@
+@charset "UTF-8";
+//评论时间轴组件
+//Created by qiangkailiang on 2016/08/12
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.al-timelineContent {
+    margin-top: rem(20px);
+    background-color: #fff;
+}
+
+.al-indexHeader .al-indexHeaderItem .al-timelineContentItemDelete {
+    @include font-dpr(20px);
+    font-weight: 900;
+    color: $smallTextColor;
+    position: relative;
+}
+
+.al-detailsDeleteBox {
+    @include font-dpr(15px);
+    position: absolute;
+    font-weight: normal;
+    background-color: #fff;
+    right: 0;
+    box-shadow: 0 0 rem(1px) #fff, 0 0 rem(2px) #fff, 0 0 rem(3px) #fff, 0 0 rem(4px) #fff, 0 0 rem(6px) #fff, 0 0 rem(8px) rgba(0, 0, 0, 0.7);
+    margin-top: rem(20px);
+    margin-left: rem(-200px);
+    line-height: 1;
+    text-align: center;
+    padding: rem(20px) rem(30px);
+    &:after {
+        content: "";
+        @include triangle(rem(30px), #fff, up);
+        display: inline-block;
+        position: absolute;
+        top: rem(-28px);
+        right: rem(20px);
+        z-index: 2;
+    }
+    &:before {
+        content: "";
+        @include triangle(rem(35px), #e4e4e4, up);
+        display: inline-block;
+        position: absolute;
+        top: -0.45rem;
+        right: 0.24rem;
+        z-index: 1;
+    }
+}
+
+.al-timelineTitle {
+    border-bottom: 1px solid $innerBorderColor;
+    padding: rem(40px) rem(30px);
+    @include clearfix();
+    h2 {
+        @include font-dpr(17px);
+        color: #222;
+        font-weight: normal;
+        vertical-align: middle;
+        display: inline-block;
+        width: 7.5rem;
+        @include ellipsis();
+    }
+    .btn-primary {
+        vertical-align: middle;
+        display: inline-block;
+        background-color: #3598db;
+        color: #fff;
+        float: right;
+    }
+}
+
+.al-timelineContentItemBox {
+    position: relative;
+    border-bottom: 1px solid $innerBorderColor;
+    .al-timeline {
+        width: rem(4px);
+        background-color: #e0ecf4;
+        display: block;
+        position: absolute;
+        left: rem(61.5px);
+        top: rem(40px);
+        bottom: rem(40px);
+        z-index: 1;
+    }
+}
+
+.al-timelineContentItem {
+    padding: rem(40px) rem(30px);
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-all;
+    &:nth-last-child(1) {
+        border-top: 1px solid $innerBorderColor;
+    }
+    @at-root {
+        .al-timelineUserImg {
+            display: table-cell;
+            padding-right: rem(18px);
+            position: relative;
+            z-index: 2;
+            border-radius: 50%;
+            a {
+                display: block;
+                padding: 0.05rem 0;
+                @include circle(rem(70px), #fff);
+                img {
+                    width: 100%;
+                    height: 100%;
+                    vertical-align: top;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .al-timelineContentTextBox {
+            display: table-cell;
+            width: 100%;
+            .al-timelineContentAuthor {
+                position: relative;
+                a {
+                    @include font-dpr(13px);
+                    color: #333;
+                    display: block;
+                }
+                span {
+                    @include font-dpr(12px);
+                    color: #777;
+                    display: block;
+                    margin-top: rem(5px);
+                }
+                .al-timelineTime {
+                    position: absolute;
+                    right: 0;
+                    top: 25%;
+                    color: $smallTextColor;
+                }
+            }
+        }
+        .al-timelineContentText {
+            line-height: 1.5;
+            @include font-dpr(15px);
+            color: #222;
+            margin-top: rem(20px);
+            a {
+                color: #777
+            }
+        }
+        .al-timelineImgBox {
+            @include clearfix();
+            padding-right: rem(50px);
+            margin-top: rem(30px);
+            .al-timelineImg {
+                @include square(rem(180px));
+                float: left;
+                margin-right: rem(10px);
+                margin-bottom: rem(10px);
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    vertical-align: top;
+                }
+            }
+        }
+        .al-moreImgMask {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .5);
+            color: #fff;
+            text-align: center;
+            &:before {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%;
+            }
+            span {
+                padding: 0 rem(3px);
+            }
+            p {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+.al-timelineFooter {
+    border-bottom: 1px solid $outerBorderColor;
+    text-align: center;
+    @include clearfix();
+    padding: rem(25px) 0;
+}
+
+.al-timelineFooterBtn {
+    float: left;
+    width: 33%;
+    box-sizing: border-box;
+    @include font-dpr(12px);
+    color: #626f8c;
+    border: 1px solid $innerBorderColor;
+    border-top: none;
+    border-bottom: none;
+    &.al-timelineShareBtn{
+        display: none;
+    }
+    &:nth-child(1){
+    	border-left: none;
+    }
+    &:nth-last-child(1){
+    	border-right: none;
+    }
+}
+.al-timelineContentCollected{
+	.icon-detailsCollect:before{
+		background-image: url('//img50.allinmd.cn/pages/details/details_collect_on.png');
+	}
+}
+.al-timelineContentLiked{
+	.icon-detailsLike:before{
+		background-image: url('//img50.allinmd.cn/pages/details/details_like_on.png');
+	}
+}
+.al-replayComment {
+    position: relative;
+    margin-top: rem(25px);
+    .al-timelineContentItem {
+        border-bottom: 1px solid $innerBorderColor;
+    }
+}
+
+.al-replayComment:before {
+    content: "";
+    @include triangle(rem(25px), #fff, up);
+    display: block;
+    position: absolute;
+    top: rem(-24px);
+    left: rem(50px);
+}
+
+.al-detailsBackToIndex {
+    position: fixed;
+    left: rem(25px);
+    bottom: rem(40px);
+    @include circle(rem(70px), #4ba2df);
+    text-align: center;
+    z-index: 5;
+    display: inline-block;
+    box-shadow: rem(3px) rem(3px) rem(5px) rgba(0, 0, 0, .2);
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+    img {
+        width: rem(34px);
+        height: rem(30px);
+        vertical-align: middle;
+    }
+}
+.al-timelineContentText.al-timelineContentDelete{
+	color: #bdbdbd;
+}

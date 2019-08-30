@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><#if cmsTheme.seoName ??>${cmsTheme.seoName}</#if></title>
+    <meta name="description" content="<#if cmsTheme.seoDesc ??>${cmsTheme.seoDesc}</#if>">
+    <meta name="Keywords" content="<#if cmsTheme.seoKeyWord ??>${cmsTheme.seoKeyWord}</#if>">
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <link rel="stylesheet" href="/css/column/SpTemplate/SpTemplate.css">
+    <script src="/js/third-party/flexible.js"></script>
+
+</head>
+
+<body>
+<input type='hidden' value='<#if cmsTheme.themeId ??>${cmsTheme.themeId}</#if>'  id='themeId'/>
+<!--
+    banner图
+    根据需求，请动态写入banner图片的链接地址。
+    回到首页按钮在点击后跳转至首页。
+-->
+
+<#assign banner0="0" banner1="0" banner2="0" bannerColor="0">
+    <#if cmsThemeAttachmentBannerList ??>
+        <#list cmsThemeAttachmentBannerList as bannerList >
+            <#if bannerList.siteId = 2 >
+                <#if bannerList.attScene = 2 >
+                    <#if bannerList.attPicUrl != "" >
+                        <#assign banner2 = bannerList.attPicUrl>
+                    </#if>
+                    <#if bannerList.bgColorStyle != "" >
+                        <#assign bannerColor = bannerList.bgColorStyle>
+                    </#if>
+                </#if>
+                <#if bannerList.attScene = 0 >
+                    <#assign banner0 = bannerList.attPicUrl>
+                </#if>
+                <#if bannerList.attScene = 1 >
+                    <#assign banner1 = bannerList.attPicUrl>
+                </#if>
+            </#if>
+        </#list>
+    </#if>
+
+    <header class="banner">
+        <figure class="bannerImg">
+            <img src="<#if banner0 != "0">${banner0}</#if>" alt="">
+        </figure>
+
+    </header>
+    <!--
+        主内容
+        "main"为全部内容的容器。
+    -->
+    <section class="main" style="<#if banner2 != "0">background:url('${banner2}') 0 0; <#elseif bannerColor != "0">background-color: ${bannerColor};<#else>background-color: #F0F5F8
+    ;</#if>">
+
+    <!--
+        “活动简介”标题图片
+        根据需求，请对img动态写入图片链接
+    -->
+    <header class="mainTitle">
+        <figure class="titleImg">
+            <img src="<#if banner1 != "0">${banner1}</#if>" alt="">
+        </figure>
+    </header>
+    <!--
+        导航栏区域
+        导航栏的每个选项均为图片，请根据需求动态传入。
+        请将常规状态的图片放置于a.normalImage标签内的img中，而选中状态的图片放置在a.activeImage的img中。
+        目前默认功能为点击锚点定位功能。如果需要修改为点击切换加载内容的功能，请将figure.navbarItem标签上的Ev-NavbarItemChange类删除。
+    -->
+    <nav class="navbar Ev-Navbar">
+        <#assign xz=0 wxz=0>
+            <#if cmsThemeMenuList ??>
+                <#list cmsThemeMenuList as menuList>
+                    <!--menu图片 -->
+                    <#if menuList.menuPicList ??>
+                        <#assign menuPicList = menuList.menuPicList>
+                            <#list menuPicList as menuPic>
+                                <#if menuPic.siteId == 2>
+                                    <#if menuPic.attScene == 1>
+                                        <#assign xz = menuPic.attPicUrl>
+                                    </#if>
+                                    <#if menuPic.attScene == 2>
+                                        <#assign wxz = menuPic.attPicUrl>
+                                    </#if>
+                                </#if>
+                            </#list>
+                    </#if>
+
+                    <figure class="navbarItem Ev-NavbarItem <#if cmsTheme.webMenuStyle ??><#if cmsTheme.webMenuStyle = 1 >Ev-NavbarItemChange</#if></#if>">
+                        <a href="javascript:void(0)" class="normalImage">
+                            <img src="<#if wxz ??>${wxz}</#if>" alt="">
+                        </a>
+                        <a href="javascript:void(0)" class="activeImage">
+                            <img src="<#if xz ??>${xz}</#if>" alt="">
+                        </a>
+                    </figure>
+                </#list>
+            </#if>
+    </nav>
+    <!-- 专题内容模块  专题内容包含拉伸图片，居于上方或下方的说明文本。根据实际需求，请保留所需的innerText模块，并删除不需要使用的。  -->
+
+    <!--内容标题说明-->
+
+    <#if cmsThemeMenuList ??>
+        <#list cmsThemeMenuList as menuList>
+
+            <section class="mainContent Ev-MainContent">
+
+                <#if menuList.menuPicList ??>
+                    <#assign menuPicList = menuList.menuPicList>
+                        <#list menuPicList as menuPic>
+                            <#if menuPic.refType = 1 >
+                                <#if menuPic.attScene == 0>
+                                    <#assign menuTitle = menuPic.attPicUrl>
+                                        <header class="contentTitle">
+                                            <figure class="tabTitleImg">
+                                                <img src="<#if menuTitle ??>${menuTitle}</#if>" alt="">
+                                            </figure>
+                                        </header>
+                                </#if>
+                            </#if>
+                        </#list>
+                </#if>
+
+
+                <#switch cmsTheme.themeRefStyle>
+                    <#case 0>
+                        <#if menuList.resourceList ??>
+                            <#assign resourceList = menuList.resourceList>
+                                <#list resourceList as resource>
+                                    <#if resource.resAttList ??>
+                                        <#assign resourceAttList = resource.resAttList>
+                                            <#assign coverPicUrl="" logoPicUrl="" webLinkUrl="">
+                                                <#list resourceAttList as ratt >
+                                                    <#assign coverPicUrl = ratt.coverPicUrl>
+                                                        <#assign logoPicUrl = ratt.logoPicUrl>
+                                                            <#assign webLinkUrl = ratt.webLinkUrl>
+                                                </#list>
+                                    </#if>
+
+                                    <!--左图右文  请在contentBox后添加类imageLeft  居中视频按钮videoImg视情况选择是否保留  右上角悬浮图标imgMark的图片动态传入-->
+                                    <section class="contentBox imageLeft" resourceType="${resource.refType}" resourceId="${resource.refId?c}" tplPath="${resource.tplPath}">
+                                        <section class="contentImgBox">
+                                            <figure class="contentImg">
+                                                <a href="javascript:;" data-ajax="false">
+                                                    <img src="<#if coverPicUrl ??>${coverPicUrl}</#if>" alt="">
+                                                </a>
+                                            </figure>
+                                            <#if resource.refType = 1>
+                                                <figure class="videoImg">
+                                                    <a href="javascript:;" data-ajax="false">
+                                                        <img src="/images/img50/column/SpTemplate/video.png" alt="">
+                                                    </a>
+                                                </figure>
+                                            </#if>
+                                            <#if logoPicUrl ??><#if logoPicUrl != ''>
+                                                <figure class="imgMark">
+                                                    <img src="${logoPicUrl}" alt="">
+                                                </figure>
+                                            </#if></#if>
+                                        </section>
+                                        <article class="content">
+                                            <a class="contentText" href="javascript:;" data-ajax="false">
+                                                <p>
+					                        <span class="contentType">
+					                        	<#if resource.refType = 1>视频</#if>
+												<#if resource.refType = 2>文库</#if>
+												<#if resource.refType = 4>话题</#if>
+												<#if resource.refType = 7>病例</#if>
+												<#if resource.refType = 99>专题</#if>
+					                        </span>
+
+                                                    <#if resource.refName ??>${resource.refName}</#if>
+
+                                                </p>
+                                            </a>
+                                            <p class="personalMsg">
+					                    <span class="user">
+					                    <#if resource.refAuthor ??>
+                                            <a href="javascript:;" style="color: #909090;">
+                                                ${resource.refAuthor}
+                                            </a>
+                                        </#if>
+					                    </span>
+                                                <span class="point">·</span>
+                                                <span class="hospital"><#if resource.refCompany ??>${resource.refCompany}</#if></span>
+                                            </p>
+                                        </article>
+                                    </section>
+                                </#list>
+                        </#if>
+                        <#break>
+
+                            <#case 1>
+                                <#if menuList.resourceList ??>
+                                    <#assign resourceList = menuList.resourceList>
+                                        <#list resourceList as resource>
+                                            <#if resource.resAttList ??>
+                                                <#assign resourceAttList = resource.resAttList>
+                                                    <#assign coverPicUrl="" logoPicUrl="" webLinkUrl="">
+                                                        <#list resourceAttList as ratt >
+                                                            <#assign coverPicUrl = ratt.coverPicUrl>
+                                                                <#assign logoPicUrl = ratt.logoPicUrl>
+                                                                    <#assign webLinkUrl = ratt.webLinkUrl>
+                                                        </#list>
+                                            </#if>
+
+                                            <!-- 左文右图   请在contentBox后添加类imageRight -->
+                                            <section class="contentBox imageRight" resourceType="${resource.refType}" resourceId="${resource.refId?c}" tplPath="${resource.tplPath}">
+                                                <article class="content">
+                                                    <a class="contentText" href="javascript:;" data-ajax="false">
+                                                        <p>
+					                        <span class="contentType">
+					                        	<#if resource.refType = 1>视频</#if>
+												<#if resource.refType = 2>文库</#if>
+												<#if resource.refType = 4>话题</#if>
+												<#if resource.refType = 7>病例</#if>
+												<#if resource.refType = 99>专题</#if>
+					                        </span>
+
+                                                            <#if resource.refName ??>${resource.refName}</#if>
+
+                                                        </p>
+                                                    </a>
+                                                    <p class="personalMsg">
+					                    <span class="user"><#if resource.refAuthor ??>
+                                            <a href="javascript:;" style="color: #909090;">
+                                                ${resource.refAuthor}
+                                            </a>
+                                        </#if></span>
+                                                        <span class="point">·</span>
+                                                        <span class="hospital"><#if resource.refCompany ??>${resource.refCompany}</#if></span>
+                                                    </p>
+                                                </article>
+                                                <section class="contentImgBox">
+                                                    <figure class="contentImg">
+                                                        <a href="javascript:;" data-ajax="false">
+                                                            <img src="<#if coverPicUrl ??>${coverPicUrl}</#if>" alt="">
+                                                        </a>
+                                                    </figure>
+                                                    <#if resource.refType = 1>
+                                                        <figure class="videoImg">
+                                                            <a href="javascript:;" data-ajax="false">
+                                                                <img src="/images/img50/column/SpTemplate/video.png" alt="">
+                                                            </a>
+                                                        </figure>
+                                                    </#if>
+                                                    <#if logoPicUrl ??><#if logoPicUrl != ''>
+                                                        <figure class="imgMark">
+                                                            <img src="${logoPicUrl}" alt="">
+                                                        </figure>
+                                                    </#if></#if>
+                                                </section>
+                                            </section>
+                                        </#list>
+                                </#if>
+                                <#break>
+
+                                    <#case 2>
+
+                                        <#if menuList.resourceList ??>
+                                            <#assign resourceList = menuList.resourceList>
+                                                <#list resourceList as resource>
+                                                    <#if resource.resAttList ??>
+                                                        <#assign resourceAttList = resource.resAttList>
+                                                            <#assign coverPicUrl="" logoPicUrl="" webLinkUrl="">
+                                                                <#list resourceAttList as ratt >
+                                                                    <#assign coverPicUrl = ratt.coverPicUrl>
+                                                                        <#assign logoPicUrl = ratt.logoPicUrl>
+                                                                            <#assign webLinkUrl = ratt.webLinkUrl>
+                                                                </#list>
+                                                    </#if>
+
+                                                    <#if resource_index % 2 = 0>
+                                                        <section class="imageUp">
+                                                    </#if>
+
+                                                    <section class="contentBox" resourceType="${resource.refType}" resourceId="${resource.refId?c}" tplPath="${resource.tplPath}">
+                                                        <section class="contentImgBox">
+                                                            <figure class="contentImg">
+                                                                <a href="javascript:;" data-ajax="false">
+                                                                    <img src="<#if coverPicUrl ??>${coverPicUrl}</#if>" alt="">
+                                                                </a>
+                                                            </figure>
+                                                            <#if resource.refType = 1>
+                                                                <figure class="videoImg">
+                                                                    <a href="javascript:;" data-ajax="false">
+                                                                        <img src="/images/img50/column/SpTemplate/video.png" alt="">
+                                                                    </a>
+                                                                </figure>
+                                                            </#if>
+                                                            <#if logoPicUrl ??>
+                                                                <#if logoPicUrl != ''>
+                                                                    <figure class="imgMark">
+                                                                        <img src="${logoPicUrl}" alt="">
+                                                                    </figure>
+                                                                </#if>
+                                                            </#if>
+                                                        </section>
+                                                        <article class="content">
+                                                            <a class="contentText" href="javascript:;" data-ajax="false">
+                                                                <p>
+				                            <span class="contentType">
+												<#if resource.refType = 1>视频</#if>
+												<#if resource.refType = 2>文库</#if>
+												<#if resource.refType = 4>话题</#if>
+												<#if resource.refType = 7>病例</#if>
+												<#if resource.refType = 99>专题</#if>
+											</span>
+
+                                                                    <#if resource.refName ??>${resource.refName}</#if>
+
+                                                                </p>
+                                                            </a>
+                                                            <p class="personalMsg">
+				                            <span class="user"><#if resource.refAuthor ??>
+                                                <a href="javascript:;" style="color: #909090;">
+                                                    ${resource.refAuthor}
+                                                </a>
+                                            </#if></span>
+                                                                <span class="point">·</span>
+                                                                <span class="hospital"><#if resource.refCompany ??>${resource.refCompany}</#if></span>
+                                                            </p>
+                                                        </article>
+                                                    </section>
+                                                    <#if resource_index % 2 != 0 || !resource_has_next>
+            </section>
+    </#if>
+    </#list>
+    </#if>
+    <#break>
+        </#switch>
+        </section>
+        </#list>
+        </#if>
+
+        <!--
+            过往推荐
+            过往推荐模块中，根据图片的数量不同，在布局样式上有区别。根据pastContent容器的数量，此处通过JS动态改变样式。
+            请注意，每个pastContent中有且仅有一张图片，pastContent的总数不能少于一个/多于四个，即支持的图片数量在1-4张之间。
+        -->
+        <!--<section class="pastContentBox Ev-PastContentBox">
+            <!–过往推荐 标题图–>
+
+            <#if cmsThemeAdTitle ??>
+                <#list cmsThemeAdTitle as adTitle >
+                    <figure class="advTitle">
+                        <img src="<#if adTitle.adPicUrl ??>${adTitle.adPicUrl}</#if>" alt="">
+                    </figure>
+                </#list>
+            </#if>
+
+
+            <#assign p1='0' p2='0' p3='0' p4='0'>
+                <#assign p1Url='' p2Url='' p3Url='' p4Url=''>
+                    <#if cmsThemeAdList ??>
+                        <#list cmsThemeAdList as adList >
+                            <#if adList_index = 0><#assign p1 = adList.adPicUrl><#assign p1Url = adList.webLinkUrl></#if>
+                            <#if adList_index = 1><#assign p2 = adList.adPicUrl><#assign p2Url = adList.webLinkUrl></#if>
+                            <#if adList_index = 2><#assign p3 = adList.adPicUrl><#assign p3Url = adList.webLinkUrl></#if>
+                            <#if adList_index = 3><#assign p4 = adList.adPicUrl><#assign p4Url = adList.webLinkUrl></#if>
+                        </#list>
+                    </#if>
+                    <!–推荐内容图片 数量不能多于4个/小于1个–>
+                    <#if p1 != '0'>
+                        <article class="pastContent Ev-PastContent">
+                            <figure class="pastContentImg">
+                                <a href="<#if p1Url ??>${p1Url}</#if>" data-ajax="false">
+                                    <img src="${p1}" alt="">
+                                </a>
+                            </figure>
+                        </article>
+                    </#if>
+
+                    <#if p2 != '0' >
+                        <article class="pastContent Ev-PastContent">
+                            <figure class="pastContentImg">
+                                <a href="<#if p2Url ??>${p2Url}</#if>" data-ajax="false">
+                                    <img src="${p2}" alt="">
+                                </a>
+                            </figure>
+                        </article>
+                    </#if>
+
+                    <#if p3 != '0'>
+                        <article class="pastContent Ev-PastContent">
+                            <figure class="pastContentImg">
+                                <a href="<#if p3Url ??>${p3Url}</#if>" data-ajax="false">
+                                    <img src="${p3}" alt="">
+                                </a>
+                            </figure>
+                        </article>
+                    </#if>
+
+                    <#if p4 != '0'>
+                        <article class="pastContent Ev-PastContent">
+                            <figure class="pastContentImg">
+                                <a href="<#if p4Url ??>${p4Url}</#if>" data-ajax="false">
+                                    <img src="${p4}" alt="">
+                                </a>
+                            </figure>
+                        </article>
+                    </#if>
+        </section>-->
+        <!--
+        悬浮按钮组
+        分享按钮shareBtn
+        -->
+        <!--<a href="javascript:void(0)" class="shareBtn Ev-ShareBtn" data-ajax="false">
+            分享
+        </a>-->
+
+        </section>
+
+        <script src='/js/lib/jquery/jquery-2.1.0.min.js'></script>
+        <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+        <script src="/js/appjs/SpTemplate.js"></script>
+</body>
+
+</html>

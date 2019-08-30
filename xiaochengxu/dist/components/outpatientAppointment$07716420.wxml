@@ -1,0 +1,34 @@
+<template name="outpatientAppointment$07716420">
+  <view class="_section data-v-6e2bb13b appointment-box">
+    <view class="_article data-v-6e2bb13b appointment-box-item">
+      <view class="_figcaption data-v-6e2bb13b appointment-content appointment-box">
+        <view class="_section data-v-6e2bb13b appointment-top">
+          <view class="_h3 data-v-6e2bb13b appointment-title">门诊预约</view>
+        </view>
+        <view class="_section data-v-6e2bb13b appointment-middle">
+          <view class="_ul data-v-6e2bb13b patient-info-list">
+            <view class="_li data-v-6e2bb13b patient-info-item">
+              <view class="_section data-v-6e2bb13b patient-info-top">患者：</view>
+              <view class="_section data-v-6e2bb13b patient-info-bottom"><label class="_span data-v-6e2bb13b">{{patientInfo.patientName}}</label><label class="_span data-v-6e2bb13b">{{patientInfo.sexName}}性</label><label class="_span data-v-6e2bb13b">{{patientInfo.age}}岁</label></view>
+            </view>
+            <view class="_li data-v-6e2bb13b patient-info-item">
+              <view class="_section data-v-6e2bb13b patient-info-top">身份证：</view>
+              <view class="_section data-v-6e2bb13b patient-info-bottom"><label class="_span data-v-6e2bb13b">{{certificateCodeEncrypt}}</label></view>
+            </view>
+            <view class="_li data-v-6e2bb13b patient-info-item">
+              <view class="_section data-v-6e2bb13b patient-info-top">就诊时间：</view>
+              <view class="_section data-v-6e2bb13b patient-info-bottom"><label class="_span data-v-6e2bb13b">{{contentData.clinicTime}}</label><label class="_span data-v-6e2bb13b">{{contentData.weekDay}}</label><label class="_span data-v-6e2bb13b">{{contentData.timeType}}</label></view>
+            </view>
+          </view>
+          <view wx:if="{{clinicType == 1}}" class="_section data-v-6e2bb13b appiontment-status pendding">预约中</view>
+          <view wx:if="{{clinicType == 2}}" class="_section data-v-6e2bb13b appiontment-status fail">预约失败</view>
+          <view wx:if="{{clinicType == 3}}" class="_section data-v-6e2bb13b appiontment-status success">预约成功</view>
+        </view>
+        <view class="_section data-v-6e2bb13b appointment-bottom"> 温馨提示：预约成功后以短信形式提醒，请保持手机畅通 </view>
+      </view>
+      <view class="_figure data-v-6e2bb13b appointment-img">
+        <image src="{{logoUrl}}" alt class="_img data-v-6e2bb13b"></image>
+      </view>
+    </view>
+  </view>
+</template>

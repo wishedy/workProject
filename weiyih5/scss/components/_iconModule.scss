@@ -1,0 +1,1597 @@
+@charset "UTF-8";
+//小型图标组件
+//Created by qiangkailiang on 2016/08/05
+//下载
+//搜索放大镜
+%icon-indexDownload:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    background: url('//img50.allinmd.cn/pages/index/index_download.png') center center no-repeat;
+    background-size: 100% 100%;
+    width: rem(32px);
+    height: rem(34px);
+    margin-right: rem(14px)
+}
+
+//搜索放大镜
+%icon-search:before {
+    content: "";
+    display: inline-block;
+    vertical-align: sub;
+    //background: url('//img50.allinmd.cn/pages/index/index_search.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAMAAAANmfvwAAAAY1BMVEUAAABRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHTi9BeoAAAAIHRSTlMAAQMGChAXHCJFSEtXZXWJjZylrbrN0NTY3N3w8vP1+/cwdHUAAADhSURBVDjLrZPZDoIwEEULyI5sCloBOf//lSYoBmkb5sH7Mm1zkt7ZlFp1Kpp+hLFvipOyKaonvprqyCTOA+gqT8IwySsNw3kHBC10mbdevayDNvghrsylv33xy5nrlml5pvuf0yftxgdzarpLZ75+ooHSlmPJsOZV0/k2xO+oPxWbyKyVUhnTu4YF2rMjnqZYDg2VcqiiWWJP7kJy+iWOJC4kYVwihC4kBCki+EhgV5C0oHSCBgjaKBkGwUg5B/NyON484oMluTzQ8cGqxXrHWBbWYCxrbzKm/sjc1RFzv70An38ZkshtiDMAAAAASUVORK5CYII=') center center no-repeat;
+    background-size: 100% 100%;
+    width: rem(34px);
+    height: rem(34px);
+}
+
+//有新内容 红色圆点
+%icon-newTips:after {
+    content: "";
+    @include circle(rem(14px),
+    red);
+    position: absolute;
+    top: 0;
+    right: 30%;
+    margin-right: rem(-5px);
+}
+
+//新内容数量
+/*%al-newsNum {
+    border-radius:rem(50px);
+    background-color: #F34B4B;
+    font-style: normal;
+    position: absolute;
+    top: rem(-10px);
+    right: rem(12px);
+    display: block;
+    height: rem(32px);
+    max-width: rem(42px);
+    line-height: rem(32px);
+    @include font-dpr(10px);
+    color: #fff;
+    padding: 0 rem(10px);
+}*/
+%al-newsNum {
+    font-size: rem(22px);
+    color: #666666;
+    display: block;
+}
+
+
+//作者
+%icon-contentAuthor:before {
+    content: "";
+    display: inline-block;
+    width: rem(22px);
+    height: rem(22px);
+    //background: url('//img50.allinmd.cn/pages/default/default_user.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAABs0lEQVR42qyVzytEURTH7zBmYaEsbAwWVoqF1BQW0pQFTeyUmmLLHzBRopEa9hprNZqyo4k0FrJghQ2bSU1Z+bFQFhYzw/gcnSS99+YO79Sn++be7/nec3+8NwFTI3K53DTNAgxp1wWkY7HYnldewMOwkWYX+iEJRzo0DqtwDXEmeHfKD3pMugxdMEDy24/+LJPu056oJmldMYkhmmcYxvTWRdNLcw5taEq/xxtcqh2EopuphI4VVWtsjTuhYGpHQbXWxk1QsjAuqdba+BE6LIxF81CP8SVEOKBmj+soYxG4sjbmYJ70xOc8qp0VjWqtKzb6EiSprN2hWulbU42py5hKpOIMrDgMS19GNabeiiXuIOzQH9Yx1wg6LFPexjH98IzApEPeJhygFV0a8lRfdXyl1TAOizrhNuyQ8OJyK1r1AOehAhu6PdVvY0TysclCCyzBIYIPi3ssubKdE5CCV5gh9z7AQA8/znRJ63RWzB8Cn6B+7b62UIyPeTjFMGV8CPxkxaOyjChsGf9CvKJiXIaQj8biVRbjPCT0Vvx3G8QjIZ6yx908yF9Nn08V38DUpwADAPoSiIXRuikcAAAAAElFTkSuQmCC') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: rem(-3px);
+    margin-right: rem(10px);
+}
+
+
+//观看次数
+%icon-contentWatchedNum:before {
+    content: "";
+    display: inline-block;
+    width: rem(29px);
+    height: rem(19px);
+    //background: url('//img50.allinmd.cn/pages/default/default_watch.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAATCAMAAABbR/ZNAAAAnFBMVEUAAAC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSkZPKXAAAAM3RSTlMAAQMEBg8QFhgZHDIzNDdCSExOVGRmaGxwc3WDmJmgoq+yxsnM0NLT2tvf4OHk5fLz9PZwUSWrAAAA4UlEQVQoz4VS2RaCIBRES4vcKs0lt1ITlyi0//+3FChTjyceuAPDXQcAPkvch3n7avNwL4LpWp2q0jegDA2/qE6rMakhdBQ4Fg450n5Jrzn/hhPPxBsO0V2lQDZdU6ZIqSP+fH1FWwocksQJcSjeZNc19bykEiOx3u06ZrSUXnrvADFSJjq1OmHBpVsAgP3YsQRmwstITGYhtsHT4pduzEHscmA9gY3hgu/uYXd5bwt5UfC35q7fbDPrd4tYv/2samUyK/UeDaP1yGTOjTfWKD98NTqisUZU34LrW870Xfgbb2STFQHe7MBlAAAAAElFTkSuQmCC') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: rem(-1.5px);
+    margin-right: rem(10px);
+}
+//书籍名
+%bookNameIcon:before {
+    content: "";
+    display: inline-block;
+    width: rem(20px);
+    height: rem(23px);
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAAAXNSR0IArs4c6QAAAQ1JREFUOBFj3Lp1axgDA8OU////iwJpogEjI+NroJ5sHx+f1ciaWIAckGEBQIljyBKE2Fu2bLECGroBqA7FQAagxH9CmnHJI+sFsm+B1DHhUkyGuCq1DQS7gZouHDWQjGjFpmU0UrCFCmliVA9DUGnDACzCEoBUGRBrAEseRiBNFACWNu/RFYINBBpSDpSI8fb2PgdURHbpAzIcbCALC0uah4fHWXTbyOGDDPwHdNU5kGZgmXYZyFYk1iCgz+4DC2ZdZPUsQAMuASWMgIKH0SWRFeJjX716le3+/fu/QGpAsdz158+fWUDXGZMSITALQIY9fPiwBMg/BBIDxyi5sQw1FOSyQ+zs7Mmurq6PAKuZXfChern4AAAAAElFTkSuQmCC) no-repeat;
+    background-size: contain;
+    vertical-align: -0.05rem;
+    margin-right: rem(10px);
+}
+
+//旗帜标签
+//此物为img,便于非开发人员自己更换图片
+%al-contentSeminarMark {
+    width: rem(40px);
+    height: rem(60px);
+    position: absolute;
+    right: rem(10px);
+    top: 0;
+    img {
+        width: 100%;
+        vertical-align: top;
+    }
+}
+
+//时间
+%icon-contentSeminarTime:before {
+    content: "";
+    display: inline-block;
+    width: rem(18px);
+    height: rem(20px);
+    background: url('//img50.allinmd.cn/pages/index/time_icon.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: rem(10px);
+}
+
+//地点
+%icon-contentSeminarPlace:before {
+    content: "";
+    display: inline-block;
+    width: rem(18px);
+    height: rem(22px);
+    background: url('//img50.allinmd.cn/pages/index/place_icon.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: rem(10px);
+}
+
+//圆形右侧箭头
+%icon-circleArrowRight:after {
+    content: "";
+    display: inline-block;
+    width: rem(28px);
+    height: rem(28px);
+    background: url('//img50.allinmd.cn/pages/index/title_arrow.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: -0.04rem;
+    margin-left: rem(10px);
+}
+
+//回到上一页箭头
+%icon-backArrow:before {
+    content: "";
+    display: inline-block;
+    width: rem(18px);
+    height: rem(32px);
+    background: url('//img50.allinmd.cn/pages/personal/arrow_back.png') center center no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+    margin: 0 rem(10px);
+}
+
+//最新、最热…… 类型标签
+%al-contentNewest {
+    color: #9bcc4e;
+    border: 1px solid #9bcc4e;
+    padding: rem(3px);
+    margin-right: rem(20px);
+    border-radius: rem(2px);
+    padding: 0 rem(8px);
+}
+
+%al-contentHotest {
+    color: #e84652;
+    border: 1px solid #e84652;
+    padding: rem(3px);
+    margin-right: rem(20px);
+    border-radius: rem(2px);
+    padding: 0 rem(8px);
+}
+
+%al-contentAward {
+    color: #bd97f7;
+    border: 1px solid #bd97f7;
+    padding: rem(3px);
+    margin-right: rem(20px);
+    border-radius: rem(2px);
+    padding: 0 rem(8px);
+}
+
+%al-contentJoin {
+    color: #44bbed;
+    border: 1px solid #44bbed;
+    padding: rem(3px);
+    margin-right: rem(20px);
+    border-radius: rem(2px);
+    padding: 0 rem(8px);
+}
+
+%al-contentPdf {
+    color: #cf0000;
+    border: 1px solid #cf0000;
+    padding: rem(3px);
+    margin-right: rem(20px);
+    border-radius: rem(2px);
+    padding: 0 rem(8px);
+}
+
+//hot指示牌
+%al-tagsRecommendHot {
+    content: "";
+    display: inline-block;
+    width: rem(40px);
+    height: rem(26px);
+    //background: url('//img50.allinmd.cn/pages/discover/tips_hot.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAaCAMAAADyku75AAAAbFBMVEXzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0vzS0v0XV31bW31e3v2iYn3lpb4oqL5rq75ubn6xMT7z8/82dn94+P97Oz+9vb////Fb2TWAAAAFHRSTlMABkJOW15sb36IiY+Qkezt7vn8/huqF7cAAADCSURBVDjLlZLrDoMgDEbr3N2pm5ahVAbC+7/jpphFExQ8fyBfTwqEQpKXGOSZJ/DAKO5QxoklYCR7RXrPFk40bgQ5xEy0zX9hykjSlpxo5aqoNBu62XZe8IiNdbeQfUDslEu45V5Rq4FfrGiqWOEV5fi+hUjbR0vpEuaidVEYNm6FCTwG+7ElNxQSea+p7YxEr7j4QtF9iOOisH8oIsTowc3ixBskWRHWiiyBicNrCKoUgqQVYn2ECE41niGKy3Wr+gVALEpysoXHrwAAAABJRU5ErkJggg==') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    position: absolute;
+    top: rem(-25px);
+    margin-left: rem(-10px)
+}
+
+//new指示牌
+%al-tagsRecommendNew {
+    content: "";
+    display: inline-block;
+    width: rem(40px);
+    height: rem(26px);
+    //background: url('//img50.allinmd.cn/pages/discover/tips_new.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAaCAMAAADyku75AAAAbFBMVEVVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNVyCNlzD500FOB1GaO13ea24am35Wx46O85rDG6rzQ7sja8dTk9d/t+Or2/PX///8tvhAsAAAAFHRSTlMABkJOW15sb36IiY+Qkezt7vn8/huqF7cAAAD0SURBVDjLldLLdoMgFEBRbPq2SdrkCMhVnv//jx1ojWZQyRnKXgLroprjmd2+j436oqpPda6DZ0VlD0EtBgDRaJnS1gEYAdAyQ1siAMViywz7BDAUDUhcYJAF/m1VNJCiAH5YoM7dPQwOdHIeyHaBiL+HMoIMXQZTuEGSnWEIIYQANoHviWb6yQJt6taXAbKmgAhe1pBRtlvjXe/BBLLewC7rLZRhcEA2iQ3EhS00MWrAj+MdJKzOaIEUAVzpVyNkmtRthBZw/fS1e/xR1MHqh9vWwQ/VtKd9dmobNff0A3A5qN0OF7g+q4perryqqt7e/1v9BXQiS99pKHHdAAAAAElFTkSuQmCC') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    position: absolute;
+    top: rem(-25px);
+    margin-left: rem(-10px)
+}
+
+//Vip
+%al-vipUser:after {
+    content: "";
+    display: inline-block;
+    width: rem(26px);
+    height: rem(20px);
+    //background: url('//img50.allinmd.cn/pages/personal/mark_vip.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAYCAMAAAGtsI0bAAABEVBMVEX/kiT/////kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiT/kiTPIb5fAAAAWnRSTlMAAAIDBAYHCAkMDRETFBUXHyMoLS4wNDU5Oz9AQUVGSExPWVtgY2VnbW9wdXh5enyLjZOaoKGio6WsrrGzt8HExcrLz9LT19na2+Dh5ufq7O7v8vf5+vv8/f5BPkpPAAABN0lEQVQYGU3Bh0JTQQAF0bkCghUs2LF3sYsVbCjNqPGJiPP/H+LuJoGcw8MuHZgA10L38dMX6J8O+C7wQxIDaEwoNAl2O0wrKHkZUGIA3+dcADWh0ARQFyCFFwMcVGdI4uuEYl4l2TEJ1V01S6ageWuRioHvejkVva5YWyLLW123uwg/VSCJJoA6B0m8kwB/9B8kt0wCzKqQuJmEQl0nUx5KQnFVJWumoFJfxQcpqJ6qZ01FY9FLRfNZPZaKATUNEyc/OPBkduYAJJk8PPdY3V44OkFxw2aFKs0l3UxBdd/mOUWqqd/uTqegeWazCKT6qmdSMbBscx1SvNB7aRhatTlPktv6JgOM9GxOJPO6lSFGJrdtkr96JEPsOW7zbUMvZIR9pxx6lD2MuWKzkn2Mu9n96vdXM+Y/8tVVgoaabSUAAAAASUVORK5CYII= ') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: rem(0.75px);
+    margin-left: rem(10px)
+}
+%al-vipUserV1:after {
+    content: "";
+    display: inline-block;
+    width: rem(36px);
+    height: rem(36px);
+    //background: url('//img50.allinmd.cn/pages/personal/mark_vip.png') center center no-repeat;
+    background: url('//img50.allinmd.cn/authentication/V1.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: rem(-3.75px);
+    margin-left: rem(10px)
+}
+%al-vipUserV2:after {
+    content: "";
+    display: inline-block;
+    width: rem(36px);
+    height: rem(36px);
+    //background: url('//img50.allinmd.cn/pages/personal/mark_vip.png') center center no-repeat;
+    background: url('//img50.allinmd.cn/authentication/V2.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: rem(-3.75px);
+}
+
+
+    //收藏
+%icon-collect:before {
+    content: "";
+    width: rem(34px);
+    height: rem(32px);
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    left: rem(-50px);
+    margin-top: 0.05rem;
+    //background: url('//img50.allinmd.cn/pages/personal/icon_collect.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAgCAMAAAE3VmptAAABm1BMVEWQkJD///+QkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJAhiXbNAAAAiHRSTlMAAAEDBAUGCgsNDg8QExQVFxgZGh0fISMkJSYnKSosLTAzNDU2OTo8Pj9CRUZISUtNTk9RU1VWV1hbXWRlZ2hrc3V3eH1/gYKDhYeIiouPkJaZmp6goaKkpaeqq6ytrrCxsrO0ubrDxMXHyczP0NTW19jb3t/h5OXm6Ovx8/T19vf4+fr7/P3+B8Qi5gAAAblJREFUGBl9wYtfS3Ecx+H3d6dGNDEiurlLriHW3Mm13EpCc9lC5B6hUqPZzufPtt92XmtH2vPAW2aMj4BwRkDkDN5dZ5khSIK3mSnKBIs4MooWEBi0ahszN+AXUA/iEIEuAqJkHPpx9kH0KJDG+b43gTPn9649qRml29vGdMzomqfaVqFGQsT5N4QIBr+xpEFGkQ4QyA1hOPUaBDwNA0ZgWFqDYxTdnP89AC0Ti5MdYNCjp5uaM5r1k/G+/E+MDtVRFE3iPJwztIFq+U5ESGISEdIoRMier4iQyXM8SlNNBoqx5Mttg+2i4lIBA+7kCBwWGEXjWUqOKwqGc18ecEseYJSc0n6mF3CMstXSKCWG05zyVeaPxJoe+Aqkt4AZkChoop2y3R+k9zsoa32tQo8ZvFImwgrqJvTMuKe71PBYAywqTg2tmiOnjdTQJJ+ULlPDRWWI57WLFe1Ubj20/dERVnBQ+RYDVn3W8wj/M6rpBjOcM1Ivy5zwdQHMKPHGlO0mpDurlAeYEYimlT9NxdmCnkRxzKiIXJNerqMo9kLqj1BmRrXOTypcuVrQVCcVZvyjb/ZHgmpmfwF0HG4bqvMRaAAAAABJRU5ErkJggg==') center center no-repeat;
+
+    background-size: 100% 100%;
+}
+
+//下载
+%icon-download:before {
+    content: "";
+    @include square(rem(34px));
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    left: rem(-50px);
+    margin-top: 0.07rem;
+    background: url('//img50.allinmd.cn/pages/personal/icon_download.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+//关注
+%icon-follow:before {
+    content: "";
+    @include square(rem(34px));
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    left: rem(-50px);
+    margin-top: 0.07rem;
+    //background: url('//img50.allinmd.cn/pages/personal/icon_follow.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAMAAAF6nstmAAAAUVBMVEWQkJD///+QkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJAlzxhsAAAAGnRSTlMAAAEQHR4fIClDSGNreHmNqrW+v9LU9Pb3/i164IkAAAGNSURBVBgZBcEBAoFAFAXA+bsJhRCld/+DmkEUKJFP8DEhU3F78qKRMIIE7YVxKTcE8UQQlgYp+G4nCIQViBUduiTBHR2Cxk7gAe/kAKxZr/18P3KhkBmAzEWAdLC8fa9AOhDbGb33jL03xOkA0sFwcAkAHr+COQsY9h8FnJ5bvjdQcMlxP/frmhWFJSPglaaYA8AcRRoAXmt5L6AFSAkgwHoTQIDrV/BJkiToEbTee3rvOG8CCHB/OgYgwHEy7cAHjCl+DwDkUsgDoGVR8NsHsGSmwHQkSd5QAEzvI0mSJDneE6AKMP+yLwMAw7LnN0MVWJJHAwBoj2ShCpdfHgAAwCO/SxVT9hEAn08DYNwzldNxDACQdAAMx3HyzB0AJB0A7nnacgYASQeAczZJBz5JkiRJknyAnvjmCgCSDgDXfN2yAoCkA8CaG+8sAJB0ACx5F9a8GgAA0F5Zq2BOZgAAmJNZFWhL8hoBgPGVLI0qgMuaHOv9eu79fL2vR7JeQBUAnG7P75Zs3+ftBKDqD5RwHBd7UbyvAAAAAElFTkSuQmCC') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+//历史记录
+%icon-history:before {
+    content: "";
+    @include square(rem(34px));
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    left: rem(-50px);
+    margin-top: 0.07rem;
+    //background: url('//img50.allinmd.cn/pages/personal/icon_history.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAMAAAF6nstmAAAAbFBMVEWQkJD///+QkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJDNkWb/AAAAI3RSTlMAAAEKDhAWHR4fICk3Q0hja3h5jZKmp6q1vr/U5ezx9Pb3/k8F9dMAAAGXSURBVBgZBcELApIAFATAeRj5QxGpFChB9v53bAZR+KNEBHJH7sXjxZsGOIMEzRvnsTwQxAtCGBtIwbKeIBBmIGa00OInDOgOCHQ2Ak+Ykh0wZ761l2HPlUJ6ANIXAdKCcbLcgLRArBegywHEaQfocuC4cw0Ant+CPiM4bl8KOL3WLA9QcM0+XNrbnBmFMWfAO42iDwB9FGnAH/CeyzQCAVICCDA/BBDgtgggQBsBfCZwWQXgM8Hwsh8BPhP2k/sG4PPbOcX3CYBcC3kCNBkVfLcjGNNT4L4nSSYoAO7TniRJkuzTHVAF6L/ZxiMAx3HLt4cqMCbPBgCgeSYjVbh+8wQAAJ75Xqu4ZzsDIPkBwHnLvZz2/QgASQuA476fvDIAgKQFgCEvay4AIGkB4JJV0gKAf5kOAGgTS24AQPfJdABwy+KRGQCg+2Q6AOY8mDICAOg+mQ4wZirMeTcAALq/v2jemaugT3oAAOiTXhVoxuR9BgDO72RsqAK4zsk+D7dL215uw7wn8xVUAcDp8VrWZF1ejxOAqv+s0iOd/2DnuwAAAABJRU5ErkJggg==') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+//草稿
+%icon-draft:before {
+    content: "";
+    width: rem(32px);
+    height: rem(34px);
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    left: rem(-50px);
+    margin-top: 0.07rem;
+    //background: url('//img50.allinmd.cn/pages/personal/draft_icon.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAiCAMAAAF+axtbAAAAw1BMVEWQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJDIhQzGAAAAQHRSTlMAAgMICg8QERMZHB0fICIkJi0vMjw9QEJPV1tgYmhucXZ4e3yIkpagpbrCycrP0Njc4uTl6Onr7/Dy9Pf6+/z97lCXLwAAAUZJREFUOMuNk9lWwkAQRMsoQeKCuCDGNYoaRDEi4G7u/3+VDzOZZBK3epq6Xd3TGQ4aAAIkIBfK0ZxYwkJJKJIk56zsoWMOuRASY2SagZnCIhoCICw5lsJPILUkVSKF0pUSSaHUfTUX8m4GrIdVIUJV1QDyQJoTVUCaS0nZYq1rGS2MLQB0j2znDE8D4e3Vpnwet1gT7Bb9198l5IFg6IOAx0xCO2bCZUCsbFImAmKJUweMT9wM5wvgvAM96w3oTVtYb8At0+X9YlOjkVtvzq+ai8YP5X05/w1s933trfiB6Gbi6+7QBPr9P66QfgwEKWRREdh6eC71dCYFKXkcZWSRnbC6UWptKUjJY0ka8vbNFa6cQNLcoVauBxrleuCDC7/sB042W2MWvWrZC5zDtNsae2UJ2vbUAeC+/mKD8h/zkh60Gi/6BXeNVw+HtX0FAAAAAElFTkSuQmCC') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+//评论
+%icon-comment:before {
+    content: "";
+    @include square(rem(32px));
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    left: rem(-50px);
+    margin-top: 0.07rem;
+    //background: url('//img50.allinmd.cn/pages/personal/comment_icon.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAAEzo7pQAAAAaVBMVEWQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJAB/q+hAAAAInRSTlMAAwkKDg8QERcfIDxAQkdPZnCgqrm+v9Dg6Onq6+7w8fb5i/lGJwAAANJJREFUOMutktF6gjAMRv/JrDpBXBQRNhXP+z/kLih+EIFvF5yr5jRp0oJyQJgdBVxVCwQgmUkCtSGKvC+UxiUtlUKXEWRmJvomHvcynDLajr9JdBv1QYQR8R05TGbMCyktM5K+TIdhxYC8d2VJ+sAJjYujRTpx6EafLHkT126I/5c4AdLP6y61JNQUw6xH4cqGcc0stXCP7E5juYSnb/5cvMXl7ri4hNWXY7XkDLsQPttwHRwbUF4BlFLWjHyKKo//c7lvKJLJTinMbUvb23ly+w8dOikkzMeCDwAAAABJRU5ErkJggg==') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+//设置
+%icon-config:before {
+    content: "";
+    display: inline-block;
+    width: rem(34px);
+    height: rem(34px);
+    //background: url('//img50.allinmd.cn/pages/personal/config_icon.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAAEEfUpiAAAEZklEQVR42mL8//8/AxSAGIxMDAjACCKYoDKeMFEWmAwMAAQQA8gMIG6E0mAV/5FUTYCpAGFzEM34H2IvTMUfgACCycr8RwAQ/weMDeIYIElYQ2kYH27+Pyj9CEr/hNJByI7oQlJoAVMEEECMSGEBCw8GZM8yIUlchUq0gl3PwPAYOSSw4TkgGmTCKjTjuaA0yMRIZB3Lkdg7ofQDmADIsfuAmBWIV0DFnsICyhCHG/RgbjgPxK+g9nIA8RsglgDi3yABgABC16WBxD4AxFZoQQ/C2sh6YAx+qCIuKF8Bi5O4oH4AsQ8D8WVkA8A+BmIBJE//+o8K5JHUwl0ES7SZQKwAxB+AWA6InwIxGzTmYDgSiHuRoloIiD8xINlQiGT7fyxeOAtKXUj8T+iK/iL5EYQjoWIg0I+m9j0Qi8EyEQzcB+LNQPwciBOAeCIQM0PlQPR3aCK0B2IBqBfxJsapQPwKGrj/cakDCCB8BiCDDlzqmBhQgS4aHxTaZlBnw4AOtpIFhO9AbfsLLRU60FxzFclFMuheuATEJ6FsUExwY3GuAlKKBAER5FjYBcTiUPZveEZBBQ+g9Dco/QbdC8ghXYcWiKeQ5PhheRnmhUhocVUGFfQF4s9ozt8KxHvRLFsLKgtgSVIYTZIJR7Qi89P/Q9P9A2hGQqkrsIQBNvH/oHQgD8SfkQQfAbEdlvSADHLhpSTUOV5A/BIpGkEgFMpXgfKtsHkHJiCMFnAgrx2BKgSFuDia//+hG/AbWmEwEIlBwATZACmoIKgu+wDE34GYGUlDD1R+IRBvgiZ7jNyoAi0HJaCmf4CKsyH5uROIX5OSnR9Ay4RZuNQBBOi86l0aiGL4DRUpqNRCHbR0cnEQlSI62EFBJ/0btAgugpOTk+DH5OSkq4hQ0EUEB0HRpZsIOvhFQaiHU9GhYqVWE/09DY/cRw38uCPJ5d69vPySc+r4bkk0LGWs8hn3LJv1xvMy8HYUQQs8hMRFu6vh9EeFfyOhBFsaujiefSW4iBm4gAThGl9zjLO3g6R+YqzYQF7sZyPYnQp8+ZkcTtcRdPf2kZQBeOVVOPb/IzVBSAvCHTB6e0ZKEJ4IZTTOqsIJnYQZwjChHTRwRcgR9gg1R5cSulmS4NozmJE+8Ma7EmhdzGoNWAQvZoSwT1gifCB4UuGiN1x77J4khQ/MAqhEbt857FMB29yEw8uSUezzomL+pl3Uq1fQUfjshsz1EPwPAvy+5wWTglZCltCi5O4R1y4nnBg/18PeTJjEOx0ztWfBkfagZjAHfUFhdokV+N2gLKVtVsTn3Znmd2tBHuAUs/TczA9FkBeMIwWhY1YcU2LGRGvyJaJVOG6HyDWzX0qwZBC2EHvNa7RjDpjAfYf4oTHlmvidSH+kgvZfsnLMPm1ismWJitIcRyzHa7pNiVKScit+G5aV5xZh4+Z+h74gpaj1A78t6xaNReIMAQcVms0r/r3mn01DxKecLj30J4QMIa/YThXdhV/NfgHAeXxyrR9ztgAAAABJRU5ErkJggg==') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: rem(10px);
+}
+
+//分享——白
+%icon-shareWhite:before {
+    content: "";
+    display: inline-block;
+    width: rem(34px);
+    height: rem(34px);
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAFMN540AAACbUlEQVR42mL8//8/AxJgYQISyCJ/mBjQAIYAQAAxopmBouIvEPuyQDkgZYwgGqaCEaYMIIAYgGasBZmDBav+hzL+o0m0Q+kuEM34H+IMRgbs4D/IEZpovkMGHwACiAGH/ZvBBgOJbTgU/MUmeAeIeYD4KXrw/ARidijbF1mHCLopyDoxvIYcyBh+ZsHjTwaAAIKZv/Y/doDuk0Co+HYQnwWbW3AAOyBeB8Q/gHgXWB8OG5DxbyBejcTnhOlhwWPTbiBmBmJWNPHvcJfisPk9EBsTcNF/Jhy2vgPis4QCAaT5ExBLookrExGADAABxEDAacgYlFqykMVgeecjEXEMwrehclowzSAgSYILOmCmwwLsORE+PAtNUHpA/BWI/YhJJPpQNb3oiYSQ5lioPA+S2FMg9iWk2QqH3G/kzIotY4CS5R9olvyLL5HgSmHB+DSCAg+bzTzQVMdEKH1hUzAPiDOJTZ7ogXINiDmISCz/CRXYJDubGCABxF9YwKU9vhISN9AECDBSsiQp2BMpd14FYg90NSBCHVpkkQKIdQAbEBcjmQ9K2ZOAWI0BqQyRpKKPGaF1y34cDv/IQIYvcGFeIJ4LxP+g5r0C4jIgFoTK50PFT4McRg2L/YD4M9SMG0BsiUUNiqXIJRA5FocB8R+o3j6YgcRYSq7FokD8GKpnGpF65NAdRqrF2VC1L4BYnJI0QYrFsIptG4WJ8D9yS5aQxbCq6iAVUv9/5AKXgUChex+IFaCN5RsMlIH/sA4CMRZTE/xnIKL2oxlggrZ8QWArtNqhFZCG2gEC65igDQYNaLP7FjQoaIGvQ+0A2RUMADihp7OrPVvAAAAAAElFTkSuQmCC') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: rem(10px);
+}
+
+//分享——深蓝
+%icon-shareDeepBlue:before {
+    content: "";
+    display: inline-block;
+    width: rem(34px);
+    height: rem(34px);
+    background: url('//img50.allinmd.cn/pages/personal/share_icon.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: rem(10px);
+}
+
+//编辑简介——蓝色
+%icon-pencilBlue:before {
+    content: "";
+    width: rem(28px);
+    height: rem(30px);
+    display: inline-block;
+    vertical-align: middle;
+    background: url('//img50.allinmd.cn/pages/personal/intro_full.png') center center no-repeat;
+    background-size: 100% 100%;
+    margin-right: rem(10px);
+}
+
+//编辑简介——深蓝色
+%icon-pencilDeepBlue:before {
+    content: "";
+    width: rem(28px);
+    height: rem(30px);
+    display: inline-block;
+    vertical-align: middle;
+    background: url('//img50.allinmd.cn/pages/personal/intro_full_off.png') center center no-repeat;
+    background-size: 100% 100%;
+    margin-right: rem(10px);
+}
+
+//搜索——白色
+%icon-searchWhite:before {
+    content: "";
+    @include square(rem(30px));
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: rem(3px);
+    //background: url('//img50.allinmd.cn/pages/personal/icon_searchWhite.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAACe0lEQVR42ryWy29MURzHT+sRmswMYSReRTRiI0JRWlQ9FiPxWIi0C/4CiUq8Qqy9Nja2EkGJiBKhhIRGp01EbZSIiGgtLBqhxJvyOfK9yc01Z3o6c80v+eSeudM5n/v73dNzfmXZbNbkiTGwGjbDMqiEJLyHXrgPV6EdfphhxEjH/dGwE/ZAOsf348R82AF9cBBaYNBHXJ7j3lx4CMckfaRJa2CKHnYiLIV98FSVOAMdMN1HXBYptZ2sTdk8h/3Q6vHwjXAUpsEbWAdPfDO2md6U9BIs8JAaldaWeKEynqx5pvqIR8FFSMFlZfDZDC/6YQ10KfNztqJDiZthnsq7HX6ZwuI7bFK562FbPrH9l9mtz3aFfjLFRX9ovkOOBfz35gaYBA/gtoknLsBLqIKVLvF6jc+b+GJQchsZl3iRxu0m3ujQdbFLXKnxi5jFr3Wd6RInNf4Ys/htaL/PKf6gcSJm8QRdv7jEfRpXxSwO9uxel7hb4/qYxXWRRfaP+LrGTTFKg4PDxi3XH1zTbrME1sYkttLZ0AOdLvFXOK7PJ6GiSGk6NN9h+J3vkDgBj2EOnIYRBUpt53JFDUNbvt0wENt+aSsMwBZtdxUFZHoHapXlLle20UbgmfbVd5J3q8nzWUhNapFWBJ2NKpfy7bm69MQ96kha9QAHoDq0y43XYtyrV9Siw98upOU6mWpU7pRPzxV+V806V9MeWVvRETilJsLu//dglpLJ6DUOKQ5iLGzU0VmtCROa5JX66hs6x39GfhuWd2qOAV9xsTED7obkmeBsKDf/N+w+3aDq1Ko6yVKIA/kqyeskT5RCHM3cys+WSmwkbVAL/e2PAAMAMvuN46wNqmkAAAAASUVORK5CYII=') center center no-repeat;
+    background-size: 100% 100%;
+    margin-right: rem(10px);
+}
+
+//搜索取消
+%icon-searchCancel:before {
+    content: "";
+    @include square(rem(28px));
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: rem(3px);
+    background: url('//img50.allinmd.cn/pages/personal/icon_searchCancel.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+//搜索条目选中
+%icon-selected:before {
+    content: "";
+    width: rem(26px);
+    height: rem(18px);
+    display: inline-block;
+    vertical-align: middle;
+    background: url('//img50.allinmd.cn/pages/personal/icon_selected.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+//显示更多
+%al-contentShow {
+    font-weight: normal;
+    @include font-dpr(12px);
+    color: #626f8c;
+    vertical-align: middle;
+    &:after {
+        content: "";
+        width: rem(18px);
+        height: rem(11px);
+        display: inline-block;
+        vertical-align: middle;
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAMAAACOlf6TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAbUExURW15kmNwjWNvjExpcWNvjGh0l2JvjWNwjWJvjPl7nuUAAAAIdFJOUxXU0wDMFsPLgMs18AAAAERJREFUCNdNzksSACAIAlAK+9z/xNEUpQsH3wbRB5imRUfMmgxlDmh9Q9UBJpMUAb8d2WS7QtBmOcQmsxCv3GLSi+G4AMS/AgoSQF7wAAAAAElFTkSuQmCC') center center no-repeat;
+        background-size: 100% 100%;
+        margin-left: rem(8px);
+    }
+}
+
+//评论数量
+%icon-commentNum:before {
+    content: "";
+    @include square(rem(30px));
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem(10px);
+    //background: url('//img50.allinmd.cn/pages/index/icon_commentNum.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABGUlEQVR42mJMyu9hY2BgaAfiNCDmYaAN+ALEs4C4kgVINAOxPRDbAvEDGlmoAMRzQHaxQH3mNm9iyQUG2oELwJDMBNK7mYCEABDfZqA9OA/E/EwMdALAEPwDoulmIQyMWjhq4aiFoxaOWjiELWSjtUXAClgQZiGopvelg+eCgPgSqIlRAsQbgC4wB9LXkBScBlaaR5FcyA+kYoCYlQzLtIA4EogDGKGGaQOpeCAWgypQAeI3QAsDoPJcQGoH1LKbZFj4CogXAs27yogjvBNArgFZCGSzA9nbgfgXEPsBxX7RLJVC26yrYXFAqWUgwIJHjhmIlwKxOBA7Ay37Rut86AXEytA26xdaZ3yQBVeA2B1o2Udq5g2AAAMAOJ1GMn35pDUAAAAASUVORK5CYII=') center center no-repeat;
+    background-size: 100%;
+}
+
+//点赞数量
+%icon-commentLikeNum:before {
+    content: "";
+    @include square(rem(30px));
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem(10px);
+    //background: url('//img50.allinmd.cn/pages/index/icon_commentLikeNum.png') center center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAcCAYAAACdz7SqAAACdUlEQVR42ryXW0gVURSGj8fBKLxQhF0QSR8kKhURgqJ60VIKFLxE+BJIESGYhJBiBIUKXiIFXyIU0SIfRCHwQSXRqB4SIUsEMYwgfRC8BUdUNP1WLEFOM8cjM86Gj8WZvWb/rjV777UM8TgwCh/Ux2AaIBMOwjjUtjSWtpv5ex0QjMJ8gEVIgWPwFF4wV2D2TogDos8wF+EqkW3ueJ4v0UL8zue2I2VhA3MXavwXZnTDSYhzOr1FsATv/Sf4I9YxPgj3nzNsRJmNqYIMBP6azB/BHIbftkVZTLLzGEqhAMFPFq7XZBczP29LFMFzmCY4IZuHBccCuN+H12YTRpBixzFP4DY0SloR9AXwv4E5DVl7FuXlQ5hH8BB6IBGxqV3eke/4EirxXbI8pzie128wB29w/qPn7Dn8FFGejQSZlbOYNkiCCfgI76CXNTb+ieIkG6IcuiBBz9VXSNXN0mFyBoMRl6NyCS7DTc3qPdbqE1G5vq7z47M6f9ONksCzBYfuZsnoHaiHHFGP0gt6e6zBtFOCelFIpl5p9HVmN5Ic9E3P/gy5GpOsRPdrnIJZr8elQWrDMNXQ6nVRsBNC5fwaLgVapWUujU21bLgQZbSWwAvbN5Qb6S2GQQRHbdfTPdxKUm1yHW3MdhkiOEmUg450DkFEKdWmDG5Z9UjhftfgUV4KtalbCcNE2f9faWPxL1p+KrTCiNOGzkvlGYAhq9poEWWalrNk3vthJiotyFsQu6rtiBTuKyAdQDpIjZyE78ovmJHCACvaaHu0EcvTLqMEweaAzTbiESKK45rF90lWzkCsHnYpgQcgUl19mjX5l2LAKhNbAgwAoz/SRvhBamIAAAAASUVORK5CYII=') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+//他人主页——关注图标
+%icon-othersFollow:before {
+    content: "";
+    @include square(rem(30px));
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem(10px);
+    background: url('//img50.allinmd.cn/pages/personal/others_follow.png') center center no-repeat;
+    background-size: 100%;
+}
+
+//他人主页——已关注图标
+%icon-othersFollowed:before {
+    content: "";
+    width: rem(28px);
+    height: rem(18px);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem(10px);
+    background: url('//img50.allinmd.cn/pages/personal/others_followed.png') center center no-repeat;
+    background-size: 100%;
+}
+
+//他人主页——回到上一页
+%icon-othersToIndex:before {
+    content: "";
+    width: rem(18px);
+    height: rem(32px);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem(10px);
+    background: url('//img50.allinmd.cn/pages/personal/others_back.png') center center no-repeat;
+    background-size: 100%;
+}
+
+%headerShare:before {
+    content: "";
+    display: inline-block;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABOUExURUxpcVRgdVFcdlFcdVFcdVVjgFJddVJmelJddFFcdVhidlJedVJcdFJcdVFddVFcdFNedVJddVFddFJddVFcdFFcdVFcdVFnd1FkfFFcdBN2+VIAAAAZdFJOUwA9d+XYEv0Zss8aeub5s7Z4dq232dP7Lyk4nisSAAAAn0lEQVQoz73TyxLCIAwF0ABKY0utb83//6gJrTWYdOvdZQ5ZwFwAIGAhzhFqkGoKBpmGPI8tEuWB9/IYOzB53h458MmTJeh2dCeERL1rhxcVIPJtL+LgbD4u5uLHPFzNwa9ZVAaILWpbljdNozGF1hRejSk8X1qbJvfhN+75H3RrUq/NNUGKPkYumFTT2e3jyNVcS/0bKbV8h2QpyXd4A6QSEau3i/DhAAAAAElFTkSuQmCC") no-repeat;
+    width: rem(28px);
+    height: rem(28px);
+    background-size:contain ;
+    vertical-align: middle;
+    margin-right: rem(10px);
+}
+
+//点赞数量
+%icon-likeNum:before {
+    content: "";
+    display: inline-block;
+    width: rem(21px);
+    height: rem(23px);
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAXCAYAAAGT2DQLAAACbElEQVR42mLcsmULAxR4MQEJFiinH8T5DWJ5e3urAwQQA0gZEBv+//+fASRjAMTnQbIgjgPMBIAAYkQyDQR4gLgXqD8dpOo/EBdAJb6ABLdu3foTJPEZiGNhWoCCH4CS7AABhG7Uf6AgIxOSQCHIPgaoi9OAOAWIzYDYCWjEf3TtIF8wMDGgAaDKkyBBTiiGqTQHCCAM7UjgAtT7q4AKw2BBgA72A7EqVCEDchCBXPsXiFmBuAWIq4DYEc2hYkB3cQOZE5mgpv8D4lcMuEEgEHeyMBAAQFMtgNQ6oA3fWKChB3LfBCBWAOIiIPaAuvshUJECTCNAAOELDVAi4AMqVsYVEiAQAcSGQKwMdEIhPoUdSGxebAqVgPga1L0gYA/yOUxhOMgt0BjiB2ItJI07gLgbFgGHoeHJgcUJnKCUAnTnDpCJ36CBjw+kMDEQB84xERFDyaD4Z4ImEnygB+ZrRWhUemNRZAsKdAakVMQFsgWI44F4LxB/hGZMXaC170AKAQIMX1xjA2xAfAeIpwHxLGhaXggKe6CBj2CKmBhIA3ug/gMlB5Cr1oLKEWgKZSDFUFC4NAHxayDOBeJJaPKgFLOdGENB2bUaVHABcR/UZaJAfBHNslNAPBfo9Z0orgCG6XIgrQPEb6AxJgLEbdDESyiqOaAx6Q6NuHNAHAwyFBRzgkD8AZpUq6C5mSgASudICU8TSJ0lNaIIAVCZvJuFGiZBi8SHQBwKdPl+arkUVFCXgAzEFfusJLoSVNDsAhq4ALnEr4M6/RvURlCMXoWmBFBhdAaILwPxAyB+CcTvoXpNgBhkUBvQwGnIFgEArgGoi/iQbzsAAAAASUVORK5CYII=') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: -0.05rem;
+    margin-right: rem(10px);
+}
+
+%icon-othersLike:before {
+    content: "";
+    display: inline-block;
+    width: rem(31px);
+    height: rem(34px);
+    background: url('//img50.allinmd.cn/pages/personal/others_like.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: rem(10px);
+}
+
+//右向箭头
+%icon-arrowRight:before {
+    content: "";
+    display: inline-block;
+    width: rem(15px);
+    height: rem(26px);
+    background: url('//img50.allinmd.cn/pages/personal/arrow_right.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+}
+
+//删除图标
+%icon-delete:before {
+    content: "";
+    display: inline-block;
+    width: rem(28px);
+    height: rem(28px);
+    background: url('//img50.allinmd.cn/pages/personal/icon_delete.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: -0.08rem;
+}
+
+//手机图标 未激活
+%icon-mobile:before {
+    content: "";
+    display: inline-block;
+    width: rem(17px);
+    height: rem(30px);
+    background: url('//img50.allinmd.cn/pages/personal/icon_mobile.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+}
+
+//手机图标 激活
+%icon-mobileOn:before {
+    content: "";
+    display: inline-block;
+    width: rem(17px);
+    height: rem(30px);
+    background: url('//img50.allinmd.cn/pages/personal/icon_mobileOn.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+}
+
+//邮箱图标
+%icon-mailbox:before {
+    content: "";
+    display: inline-block;
+    width: rem(36px);
+    height: rem(28px);
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAcCAYAAAAJKR1YAAACDklEQVR42uzXT0iUQRzG8fF1/RMJKtItPJQdAg8pkieDoujgogYZy3aQEi+hHuoS1tGEDkVp3VK87B4CBdFCIQh2odBM8BCFJ4MCBREh+4uZ34ln4WXRbdd31w3cgY+Hd2fmfXhn3t875oVCoXJjzCM046DJTvuKZ7jm408/gia7zT6IS9i0gVp08RxmsxToJKbgt4FKdNGGWUMVNrCY4RB/7xMMBhfD4XBE10qcuE4HMI8PuJqhIHm4jvd4ay8Q6kfsx/hA3zGJIgxiCMVpDFOKEdyDXZ3R+A7ONoMu4rbdYLiCVziShjAn9EQu4Bc60ZFMoD+4g/NYQY0mavQQph2vcRQf0YDH23V0EkzyQmGmUYYJ9CI/hSB2Tw7jiZb+OWoxs9MA5x8TfsIpFU7bbmmPHUoizDHduE3Lb8f6sZpokJPExHa9u3AZ33AWc6hPMKZVfaqxrDF92g7Ga6BYC6uALeAwotqY7laIh3iq+hbRZn6Z7E2cFDfnO9Tp1S3AAEIq/ZUK0K2+d3EGS6ncwNnFG/NFS3IDv/UdfONaRlvtm3BTv5tMB4qVhvs4rSdwHBUqD/YtGt9tffB5LHZRlYYH+Iwe/PQyoddARk8okK5vi2P+s5YLlAuUC7QvAnHIL3IXxnV9met1GNvrMEYfbNvWfToJBnTwynYb87nONH7X/2h73ewqjdmD4JYAAwDgGGrO2VqNUQAAAABJRU5ErkJggg==') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+}
+
+//消息主页图标
+//关注提醒
+%icon-msgFollow:before {
+    content: "";
+    display: inline-block;
+    width: rem(75px);
+    height: rem(75px);
+    background: url('//img50.allinmd.cn/pages/message/msg_follow.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: rem(24px);
+}
+
+//评论我的
+%icon-msgComment:before {
+    content: "";
+    display: inline-block;
+    width: rem(75px);
+    height: rem(75px);
+    background: url('//img50.allinmd.cn/pages/message/msg_comment.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: rem(24px);
+}
+
+//提醒谁看
+%icon-msgRemind:before {
+    content: "";
+    display: inline-block;
+    width: rem(75px);
+    height: rem(75px);
+    background: url('//img50.allinmd.cn/pages/message/msg_remind.png') center center no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: rem(24px);
+}
+
+//赞了我的
+%icon-msgLike:before {
+    content: "";
+    display: inline-block;
+    width: rem(75px);
+    height: rem(75px);
+    background: url('//img50.allinmd.cn/pages/message/msg_like.png') center center no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: rem(24px);
+}
+
+//为你推荐 小图标
+%icon-recommend:before {
+    content: "";
+    display: inline-block;
+    width: rem(32px);
+    height: rem(28px);
+    vertical-align: middle;
+    background-image: url('//img50.allinmd.cn/pages/index/comment_recommend.png');
+    background-size: contain;
+    margin-right: rem(10px);
+}
+
+//动态内容分享——分享图标
+%icon-commentShare:before {
+    content: "";
+    display: inline-block;
+    width: rem(28px);
+    height: rem(28px);
+    vertical-align: -0.03rem;
+    //background-image: url('//img50.allinmd.cn/pages/index/comment_share.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAACA0lEQVR42ryWSyhEURjH7zwsvBZqJMZiEhuaBqURVlOIUmJhpTwijwWxslU2HjUbRVJWMklszCxI41EoC2ambBArCxZjMylx/Y++W6fbzL13rjPz1a8zM/d0fnO+c853j2VoallCVIBF0AHyJGMRBZ5N/6ysfjA8vXKFpgS04vkD/8xKsmvQm4ZML+zABcKQV6qFbGYOcAPqQJFBPEBOIWSZigGnWmqlhyxGwC2IGySVTEIa39D4kkmtXBqfJYHBSe95qV2UAIOxP98EWkAzqAJloJC6MOmRXYCoFM0EGADlOt3j/xHmgjkwA/LpN5bGY3AOIrRc27Qp2Xq2mRW6wQ6opu+nwA8OsXZfNHO2ScKczMfW1YywHezTDF9YOjFQUJVmRebkZcoBTSc6wQHIIekgBvpI0i+YTJausB7skmwdTILvFH1jtJ7dvCwdYQHJ2CYIgHGdg9+jVfOMxBLV3Chtf9nE8YkYFdaCUUpfP/g0IbPQzv4rbXoxT/3WwJ3JMifzxVsrakAXzWpBRAnUE45RyzbKa6aFNtBHn7dEFXktYQMoppmdZUPoo/YE/GRD6Kb2UuSLWescrtJVIpAt4QUh4jZg41OaoM8uKXOhLE+CzTBEd9INurlFNd4CZmbmprFZhCy4eSsXYYeU2XgHjSylT8AL9rj0iowEje1FTX38FWAATT6XXDaH9JUAAAAASUVORK5CYII=');
+    background-size: contain;
+    margin-right: rem(10px);
+}
+
+//动态内容分享——收藏图标
+%icon-commentCollect:before {
+    content: "";
+    display: inline-block;
+    width: rem(28px);
+    height: rem(26px);
+    vertical-align: -0.03rem;
+    //background-image: url('//img50.allinmd.cn/pages/index/comment_collect.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAYAAACkVDyJAAACgUlEQVR42rSWXYgOURjH550Q64LYuJBEJClsIUpJCRdK6k2vfLTtxpKtXUntB5aQvaA20dqWG+V7k4Sw2JSiXLgRirQ+81FKKJ+7fk/9p07TzOy0+85Tv86cOWfOf85zPp4nV1Fz0AvZEMhDAeZDKfyBp3AVWuGN+o6HKlgKU2A4fIKHcBHOnmjZ9tsdPBcSXAxtMMmLNxtgP/jQAIMT+r6CCkTvBC98p3Ez3JDYB9gBs2AEjINV0CUP7IEmid2GNTAZxsJsaIS3MAE6K2sPVYVnaC68oHftsBV+xPx1QYJmjfx9R1QnREoojkI59MIy+t40wZFUnmutWiSW2hgksR3hY1rnd7bO5tJKiT2G7V7xrVabzJZlnQmuVIPN7m+x1fDAT4rDquZNsEyVLi8761RZZoIlqnzJUPC1ylJfh9pzhLOw4Kz+M8GXqszIUHC6ym4TfKDKkgwFl6u8Z4KXVFmfhVt1AZSr2mGCl+EFjNaZKbbZRTJKGtdMsAd2q3EnTC3i7CbqXjVr4kz2BJf3KZ2VoXBO5UDF7JI/DcPgLpwJRwvz82eYqQs8N0BNC3Pz4KuNzex6w4LvYbWdFVir8NPf2e3SBGy5Coh1R8VDT7GtOvA51PVDrM4JX9WIXXfb/YhvLJzU6/mAs6HSiO3TN2b1iLWG+wyK+bZZbXs1U9ttG+FXwgZpc86biTVH9c1FJFGubVFoMU/cVyj7GOozBs7DQq3ZJsTa4wb0+/CSpQgr4LsyuEewyGlfoHcm9s2usCSxJJe6dgXmKO2bBrfkck+bylcKmUfsSV+D+Sn3wzOJHnfSwwY9n4S5acTSzjAwy+I26EY6ojhaE5e1xdl/AQYAvpOofM1MsmcAAAAASUVORK5CYII=');
+    background-size: 100%;
+    background-repeat:no-repeat;
+    margin-right: rem(10px);
+}
+
+//动态内容分享——已收藏图标
+%icon-commentCollected:before {
+    content: "";
+    display: inline-block;
+    width: rem(29px);
+    height: rem(25px);
+    vertical-align: -0.03rem;
+    //background-image: url('//img50.allinmd.cn/pages/index/comment_collected.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAZCAYAAADNAiUZAAABqklEQVR42ryWTygEURjAZwbFQSg3jlsipWjtgdMeJBGSUiKJIrkgrYsLOXHnQsph47DEzU3U5uKySiElcZD8SyLh9+mlae3M7mDfV7++2bffm9++fc37xjTi4q5jNI/UDa1QCfL5BQ5hC+bzw3NXtvpiUg/UQxnkwg3EVP0y9bd2h2mbLNeDMA0FhnPID5gROQzABGS71D/COCwg//iWIswiLUGnkb5YhD4RW2pgNs1CiV6Y/Fopq/ST9w098Sb7LisdNvRFJgyJNGjojXqRFmmW+kT6rlmaIdILzdJLkUY1S6MiXdMsDYt0HU41CcUTsTiW5IENaZKGxGc/8FdJ7WkUbiBskQvLNtgPx2kSnsth/6O1qdWWkvaStDavcQ+1rDKWUKrENaRtyPkH4TPUIdxN2MTjxEHV9f8ifoAmhDvxX5hOMxAHlLjwF8JraESYsGWabjMR+5S4xIPwCBoQnjkVWG6zmXhCqobNFIURCLgJk0qVWPamGUbg1aFMxsegTdW7hullo/i7y0krUGEbllfTLmQHqd7H8iJVz5pfvaY+wRRUeRFKfAowAMQpdcK4yniPAAAAAElFTkSuQmCC');
+    background-size: 100%;
+    background-repeat:no-repeat;
+    margin-right: rem(10px);
+}
+
+//推荐用户——用户图标
+%icon-recommendUser:before {
+    content: "";
+    display: inline-block;
+    width: rem(41px);
+    height: rem(40px);
+    vertical-align: -0.03rem;
+    background-image: url('//img50.allinmd.cn/pages/index/recommend_users.png');
+    background-size: 100%;
+}
+
+//标签——编辑图标
+%icon-tagConfig:before {
+    content: "";
+    display: inline-block;
+    width: rem(22px);
+    height: rem(25px);
+    vertical-align: middle;
+    margin-right: rem(6px);
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAZCAYAAAA14t7uAAACCklEQVR42qzVTUgVURjG8Um9xDUwNKhEkLZSgRIUFFQuwjbZh2G0KzIICVwILhJpVRFBmBFECkKkLmoRtemDoKIMWtRCAtuoGYoblUQ3lVz/bzwTh8N8eL2+8PPMPXfmucczZ84EuVwuSLAPbzGNYRxOOf+/DfYnprbiI/7gCY6hAocwEaRVxK9lUYZzGulF9Z/R5zZ9X5o04qjObgWEjqp/v9ffnxRcooHvRSNe6/Mv3NbxqNpxXNVxq3PdCbzAe3cmbI6baO/iL7pQh4M4njCDjzCGZ+hGBp3od4O/0s7hJBZ0YnOQXi9xHpswgBrs0s3+NxXbMKRQq0F8WkXwlNolTYVNyxbMhMFWy84FnyWfWtb9mXWXm93h9tUu/Bg7kYlaFWFdRn0eI7X/7Ca+oRhXtHqG/OAsNucRXKrWQnu0AKzK12MqbArueQ/PSElQWNn67cMRp8+WbrMfvBtVKXM6p+ONeOCF2lI7i+9+8IWUh+M0hnUvHuKAF3oq3Pn84FvoTQgOt8suL3RCI/1RyDreg1p8cV4AlVHbZr7B7/AYNbiD7XH7sRt8A6MRnur7HTr/Jy45QdW4j6q4J29ENyZuw/mNFnxwNi2rBu3n18IOP3hQ4mpaUqtI+2d1gQ+KXW9v5Xl3xM/RpM+Tawit1Np/g0X3DVJGe12v98wagu2V9godzlMZrAgwAPRtkPbvPHFVAAAAAElFTkSuQmCC');
+    background-size: 100%;
+}
+
+//标签——评论人数
+%icon-tagComment:before {
+    content: "";
+    display: inline-block;
+    width: rem(20px);
+    height: rem(18px);
+    vertical-align: middle;
+    margin-right: rem(10px);
+    //background-image: url('//img50.allinmd.cn/pages/index/icon_comment.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAAx0lEQVR42uzUwQoBURSA4TPTUEoWJMUDeADJI3gGS2RhP0s7VrYslR3WmoWHsPAELDQLlNgopfhPXWVHdyzn1DfdbnP/bk2NEwRBQkQGaCIvdnPCFD3XxCqGY+l9vu/xaKOKvdiPnu1grTfMYSfRRxtZV/48cTAOWgYvKP2hVcRVg3OMkIkQ07NjzDTom1uG2CJpXipggfMPQtPw9edwQwtdHJFCA0NMUMbjyw21cdeF97GpG08skUYdm6hf+YAVajYxnZcAAwCQkS2RtCTTegAAAABJRU5ErkJggg==');
+    background-size: 100%;
+}
+
+//浮动分享图标
+%icon-scrollShare:before {
+    content: "";
+    display: inline-block;
+    width: rem(30px);
+    height: rem(30px);
+    vertical-align: middle;
+    margin-right: rem(10px);
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAFMN540AAACbUlEQVR42mL8//8/AxJgYQISyCJ/mBjQAIYAQAAxopmBouIvEPuyQDkgZYwgGqaCEaYMIIAYgGasBZmDBav+hzL+o0m0Q+kuEM34H+IMRgbs4D/IEZpovkMGHwACiAGH/ZvBBgOJbTgU/MUmeAeIeYD4KXrw/ARidijbF1mHCLopyDoxvIYcyBh+ZsHjTwaAAIKZv/Y/doDuk0Co+HYQnwWbW3AAOyBeB8Q/gHgXWB8OG5DxbyBejcTnhOlhwWPTbiBmBmJWNPHvcJfisPk9EBsTcNF/Jhy2vgPis4QCAaT5ExBLookrExGADAABxEDAacgYlFqykMVgeecjEXEMwrehclowzSAgSYILOmCmwwLsORE+PAtNUHpA/BWI/YhJJPpQNb3oiYSQ5lioPA+S2FMg9iWk2QqH3G/kzIotY4CS5R9olvyLL5HgSmHB+DSCAg+bzTzQVMdEKH1hUzAPiDOJTZ7ogXINiDmISCz/CRXYJDubGCABxF9YwKU9vhISN9AECDBSsiQp2BMpd14FYg90NSBCHVpkkQKIdQAbEBcjmQ9K2ZOAWI0BqQyRpKKPGaF1y34cDv/IQIYvcGFeIJ4LxP+g5r0C4jIgFoTK50PFT4McRg2L/YD4M9SMG0BsiUUNiqXIJRA5FocB8R+o3j6YgcRYSq7FokD8GKpnGpF65NAdRqrF2VC1L4BYnJI0QYrFsIptG4WJ8D9yS5aQxbCq6iAVUv9/5AKXgUChex+IFaCN5RsMlIH/sA4CMRZTE/xnIKL2oxlggrZ8QWArtNqhFZCG2gEC65igDQYNaLP7FjQoaIGvQ+0A2RUMADihp7OrPVvAAAAAAElFTkSuQmCC');
+    background-size: 100%;
+}
+
+//回复页面——更多箭头
+%icon-detailsArrow:before {
+    content: "";
+    display: inline-block;
+    width: rem(12px);
+    height: rem(22px);
+    vertical-align: middle;
+    margin-left: rem(10px);
+    background-image: url('//img50.allinmd.cn/pages/details/details_arrow.png');
+    background-size: 100%;
+}
+
+//回复页面——评论、分享、收藏赞
+%icon-detailsComment:before {
+    content: "";
+    display: inline-block;
+    width: rem(30px);
+    height: rem(28px);
+    vertical-align: -0.1rem;
+    margin-right: rem(10px);
+    background-image: url('//img50.allinmd.cn/pages/details/details_comment.png');
+    background-size: 100% 100%;
+}
+
+%icon-detailsCollect:before {
+    content: "";
+    display: inline-block;
+    width: rem(32px);
+    height: rem(28px);
+    vertical-align: -0.1rem;
+    margin-right: rem(10px);
+    background-image: url('//img50.allinmd.cn/pages/details/details_collect.png');
+    background-size: 100% 100%;
+}
+
+%icon-detailsShare:before {
+    content: "";
+    display: inline-block;
+    width: rem(30px);
+    height: rem(30px);
+    vertical-align: -0.1rem;
+    margin-right: rem(10px);
+    background-image: url('//img50.allinmd.cn/pages/details/details_share.png');
+    background-size: 100% 100%;
+}
+
+%icon-detailsLike:before {
+    content: "";
+    display: inline-block;
+    width: rem(32px);
+    height: rem(32px);
+    vertical-align: -0.1rem;
+    margin-right: rem(10px);
+    background-image: url('//img50.allinmd.cn/pages/details/details_like.png');
+    background-size: 100% 100%;
+}
+
+//回复页面——删除
+%icon-detailsDelete:before {
+    content: "";
+    display: inline-block;
+    width: rem(30px);
+    height: rem(32px);
+    vertical-align: middle;
+    margin-right: rem(10px);
+    background-image: url('//img50.allinmd.cn/pages/details/details_delete.png');
+    background-size: 100%;
+}
+
+// 发现首页 推荐入口图标
+// 按专业
+%icon-discoverTd:before {
+    content: "";
+    display: inline-block;
+    width: rem(36px);
+    height: rem(36px);
+    vertical-align: middle;
+    margin-right: rem(18px);
+    //background-image: url('//img50.allinmd.cn/pages/discover/discover_td.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAAWlBMVEUAAAAomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeYomeby8awkAAAAHXRSTlMAChEsLTY3RkhOW1xoamxtgKe+y83T2Nrr8fr8/Z8vsJwAAACuSURBVDjLzdTLEsIgDAVQrPbdamtflPb+/2+KShWGIWRceVcszoIkkwhhJ50xFYJOtgLYq7iJKGNI9TGEskxQOUarPG6AkWGwMQwGhpFnhrn8YFKGETPDCM/g5rdo8pAqPVTsvqrbrkkcVdlKXtXxykJK/7k81BpQr7pqkOpdewtKmf50CKl83AYz0wZB9U0iOcqZ+L+qhbHPUJyt7xn3436KXxnSGBUxWi2qf5oHNS85dAX3tPYAAAAASUVORK5CYII=');
+    background-size: 100%;
+}
+
+// 按疾病
+%icon-discoverDis:before {
+    content: "";
+    display: inline-block;
+    width: rem(36px);
+    height: rem(36px);
+    vertical-align: middle;
+    margin-right: rem(18px);
+    //background-image: url('//img50.allinmd.cn/pages/discover/discover_dis.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAiBAMAAADFd2a2AAAAFVBMVEUAAADwWHPwWHPwWHPwWHPwWHPwWHNI9jK9AAAABnRSTlMAMECAv9/Al4GYAAAAUklEQVQoz2NgYGBgDEuDghQBBghgTYODAKgQG0IogVShJCUgUEMRSkCmsQiZpaGBZIY0DEAvoQQ2agklKSkwgUICSSgBKdxoYONAhBd+IcyoBQDIWNC3aXs8/QAAAABJRU5ErkJggg==');
+    background-size: 100%;
+}
+
+// 按术式
+%icon-discoverPrepuce:before {
+    content: "";
+    display: inline-block;
+    width: rem(30px);
+    height: rem(36px);
+    vertical-align: middle;
+    margin-right: rem(18px);
+    //background-image: url('//img50.allinmd.cn/pages/discover/discover_prepuce.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAkCAMAAACpD3pbAAABFFBMVEUAAACskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuyskuwnhwZSAAAAW3RSTlMAAQMFBgoLEhMVGRobHB4hIikxMjQ1Njs+P0FDSUtNT1BSU1lbX2BpanF0d3l8gYKEjI2XmJmbnKCpq6+4vL6/xcvM0dLU1dfZ2uLk5evv8PHy8/T4+fr7/P3+jrXHvQAAAY9JREFUGBltwQs/mnEcxuFbUSzaQiw5bdTmmOV8zGKRSEmF7/t/H/s9/0/P00HXJSed14B8WoFwmbT6pCmH5cvCY1Q9oo+Qle8COFOPM+BCviomo0AGU5UPT/2rOr7V8chXw3MdkhO6xlOT7wpnR84OzpV8c2942kmZZBvP25wCOZxyRIqUcXLqChdxDqVDnGJYPRKvOMvLOK8J9dnAeXrC2VC/kQI9CiMaEK8TqMf1SYZARkOc03GuYSaqONUJDbP4jvO+qCFSDToaKQ0a3WoRaG2NqtdY9p4+99kx+aL5Zz55zkflJCsESiUClaTMTI1Ae3q6TaA+I0Ue6NqX9ul6iGgbc5yY2mwCd9Id0NqcShxjtnULnMr8wsTjmN8yp8CtmsCSTAST+o6JyCwBLTWBHzLjmPl5zLjMT6Cpf0AhJCmHiX3B5CSFCkBJe5jLlYUDTFH6izlYWLnE7GmyQdeqtEpXY1JaJ3Akc0RgXWbtBecjH5IJ/fnAeVmTE9u9abYqJ7PqmD2ptJo3uzFJ/wGvDrwsF8NmDQAAAABJRU5ErkJggg==');
+    background-size: 100%;
+}
+
+// 按类型
+%icon-discoverType:before {
+    content: "";
+    display: inline-block;
+    width: rem(36px);
+    height: rem(36px);
+    vertical-align: middle;
+    margin-right: rem(18px);
+    //background-image: url('//img50.allinmd.cn/pages/discover/discover_type.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiBAMAAADIaRbxAAAAKlBMVEUAAACMwVKMwVKMwVKMwVKMwVKMwVKMwVKMwVKMwVKMwVKMwVKMwVKMwVL8l0UUAAAADXRSTlMAJTdNu8Xb4OHl7e/wcUxcqAAAAGhJREFUKM9jsLwLAtcUGJhywazJDHPB9N0ABlYI4yYDhL67gYEDyoKJHGBgH+QiCxAiEP/ddWBggTCuMajuOQMESwQYGL1AjNNBDNQCquUgUAI02R3MCsJiO9yFQy9UNyBEMFMLRooCACX5b7AkkJtdAAAAAElFTkSuQmCC');
+    background-size: 100%;
+}
+
+// 按专题
+%icon-discoverSem:before {
+    content: "";
+    display: inline-block;
+    width: rem(36px);
+    height: rem(36px);
+    vertical-align: middle;
+    margin-right: rem(18px);
+    //background-image: url('//img50.allinmd.cn/pages/discover/discover_sem.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAACb0lEQVR42syYTUhVQRTHn49nUptclJgRSZ9+UZaIhRElaFYbMYWwjVCrgsezj1XbCKEWUou3CRctKiKKdtqihUszqCxaCGoLEc0gzFxoYr8TZ3G7cN/9GO/HgR/n8ubOzJ8z586ceZmUob14sLAF9xLa4A10dmW3LZuMmU6ZWx+cgSL1WdMBiwyjtAn3DcotP89AJdH6E1ekLtkEie2UJYxl+YiSRPm6Q3MurpySxK5zaDuO6IY4RN10ac9FmuhE4RDuo8trq7CLhJ+LKlI3PLxTDFcjiRRRqsBN66RuNq/RWgk7UjmPgsTKoCeUSBGdDO4gnIW7PkSJ/YBbMAKTRG3dtygElOIOW6iHWijZgCNpCcb1I/mkfhyhv/4TpSIkIZtUxO5U9DapIkchL8vyHFpT8doepQNOpxMgyG6tImosYaLei6gu+JAQQRPQnSbzpR46Aa9iFvQOmtEz9W/z5OE37gLciUnQEJxCx3enfeoibhA2RyToMVxB0KrjMUPjM9xJLWvDtnvQaxVU8JghYjtwr6ExJEF9iBnwdSDTYRbXArNRCnKtEui45KGYC2JPTEuX2hBEVQQWRV5tlyItBFE1JpGqDynJq0xENYQkqi6JoqqTuHz7yNdi36LotFU6e5xkEYbVezEpLg8EidRRD4PLJeAR7GVPa9fq8SGsmSxhpkCnIy6DSj19DTFjls1Wbi5ZopzH34dzQbaFdABRUl5chmNWQbaT4Cuc51Gi98XvtlBIlP0vwjVdmv1MOOjl/sY7w/qxyG1pwdZcGmT5bkuu6KH8Vm7GTPLZ72em/+jlWdKnOqYI/An9Tn3+CjAA7fqaHRRLXiUAAAAASUVORK5CYII=');
+    background-size: 100%;
+}
+
+// 按标签
+%icon-discoverTag:before {
+    content: "";
+    display: inline-block;
+    width: rem(36px);
+    height: rem(36px);
+    vertical-align: middle;
+    margin-right: rem(18px);
+    //background-image: url('//img50.allinmd.cn/pages/discover/discover_tag.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAABsElEQVR42szYP0vDQBgG8F6sCF0Ely4O+g0URETQokOh6ObqYhcRP4Sjs4tuoh9BcRLUTa1LkOquBT+AohXx73MhlZjY6917b5I7eDhIy/HjcnlzOVFgat+74wPoNpBVZIgwxDtyiKwVmUAldEfInMUw/cgS8iUYQIPoDpAK06S3iwygY2SywNdKnmOgoHmugUgoIqiJLCDDyAxyovqzyAB0h4yJuv8YGacvhFWsZsrilm1FQcFM1P1PdJtWt89yDbW6XL8noxgW9YThdfWaYnrKnpFp3LJmZNwyuktkxAjF/Ni/IDvINTKKrCNlo5lKuw4Z16m8QQmUC6A/KFdAaA+eYyDZ9kS4QZMlf8oB0BlSkzO17RBoEfXsTaKWHQK1Owv9xiVQB7WCPOUEuoiDAhQu+OirOcCu5KKOg37rFH5oZAyToGp8n5UonhnClKDEayYDWE/Qvy/kFGFaoK47zxRg2iDldjiE1ZDXLEE99+gY6FzWEQuYMUjrwwEDnhJhJJD2JxYBRgYZfYwawKxAxmcJGjBrEOmAQwFrcIDIR0EhbBa5RT6QfWSeAyTbjwADAL2lv7mrFGBnAAAAAElFTkSuQmCC');
+    background-size: 100%;
+}
+
+// 热门推荐
+%icon-discoverActive:before {
+    content: "";
+    display: inline-block;
+    width: rem(68px);
+    height: rem(50px);
+    vertical-align: middle;
+    margin-right: rem(20px);
+    //background-image: url('//img50.allinmd.cn/pages/discover/discover_active.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAAAyCAYAAADlaH1uAAAFaElEQVR42tSbf4gVVRTHZ1+7T7O1VbM0ckulbLVMaSMpMpa1BJd1SzdK+0OCqAz6gViUgdIPgiQqCoQCIYlUjMyUXDNSNNTNgjSXzfBXW2bbliFbb9X1V37Odh5eXzO+N3dm38wc+Hqe++bcufc75557zr3zSpwQZGbTkQpUDZgIqsBocBmo0EtOgAxoA7vBLrAR7FheN/C0EyMpCUDCxahGMAtMAimLZv4CK8ASiPk2kYRARDnqCTAXDA6xL5vBaxDzeWIIgYwZqLfA0F7s0zohHGIOxJYQiBgkbg2mFqlfx8EcSHk3doRARjVqFaiM4IEtBQ9DTHcsCIGMWiXj0gin9SZwL6R0RkoIZMgyuh6kYxD8t4NaSDma78KXWzIS9PuDowvGlneGQghkjEN9FbFnuAXbBkg5ZQxe+j8B3A9uB9LvvobNP6AVfAk+hqDvfROiSdZOMNyJnyyEkOeVjHrUK2C8D/tmMB9iNnhd4JZMLY4pGSLP8cDu1s/jfJIhcpt4C2QuBRV5PYSb3YP61Im3/AzGjK4sk5T/BzDSsp29YArest/VQzQVf8eJv1wD5jEQWYpfCtDOdZId4ynDvabMI+BqJxkyhwcoZcOH4KcA7VwlwVpXpnOE0Lgsrc84yZFLwJN4yRn0ooBtSXX+5nkxBEKmoT5xkiUd8oSJJbLN0G5ZbZsyAYK/yTYyy0meDAGTGcQfmmcElQU9Uwbv6Ieuc5IpjUbSFlTqiCWVKc3w0gkl5C7VG0MqYxpL+edOywakrvgCHAa3WCRJ3WovseAmcKvNEoyHV2p6fjwnbbeRWiFkrIXhFnAfaXSHkcfM1D2TQrztO61gDxr2DahluoL4kRuIIwdxdyGlOiAhN6Y0QfEjh7XI6jD/yP+Xo14owL4L1JtkqP0a1NMWg7jeyGCDyjAhZJhPo2V0/ojHd++BU3nsV2Lf7vHdB1qh+pErVbeHQEiZEFLu08gzM2SgGfUgW/uTqEM++5Pt/99hRGkh5CKfNqMusKkkFeTlAez7OP63KrOEnAgj2bPJ7h6k40M8vnuqAIKnYe+1vfCoRVDtUt0/BEJ2CyF+t9nEC5oY1AjjyUqC9zgfXyzAvq/aVxn2JUCy5dctBpFRHcbu3jZZdn9zzh05Fio3gz0MYovGDFnuRviwl6POVuy3GnnIKMtB/K56YAiErBFCDmgH/YrY1gSMXxNDGMQeo2oNIi3kM9ulUzudZEsrSVnayEds5dXsU2pOMBmHWKrbJFtVj7UVmbofZQnZpHVFEiVb9k8O0IbkLw8xXf7tIQSGZdnakFBCVqmuD9DGDMjYZwY2kfcTSIa8W9JE/LhCtzCsPAwy1uVG+p7lxli+kiKLNdV/zLHfPtzmtvRJDSFp78IEkSF7H2/jHaVKiK0MdiXEqFR/TQghi7Ri7qcV8o8XuFYOtHboLFgLvgbZav0BSB1gXpx7cieHxitiToYQUQUh51W3DEzqqzG6HZDWlF4q513Eia7cRrj+WtQUIAXlG9lVxu2weyVqeowJkZ221b3VeMqj4vwlxlNldW/eIOWySSPLWYNRVsdF5H2Vub19E9flClLkxZLZMSKjxflvH7c7EkJU5IW3/TEgQ17onVSsd8w8CaEDEnU/i5gMub+8W/ZnsW6YL8Nri4gIyR3m6TTJFPPG+UrmQRGQIen0bIhoieJJ5POQmiL2RTaq5PTvjqjIcE3MjARtvKa8biKHUZ3qYZLp2Z6pHtMSfolUnhq3IpVSDzLSWtuIyItt8kuFZv28Lzfic/1QLcEF1ZpCy4ss5pHEGef/v5fZSlvH4pTsuKXu8rdndTrJseNe28b1pyRlUp3GbeBeclaAAQDJn5GKXYHT3AAAAABJRU5ErkJggg==');
+    background-size: 100%;
+}
+
+// 权威专家
+%icon-discoverMaster:before {
+    content: "";
+    display: inline-block;
+    width: rem(66px);
+    height: rem(50px);
+    vertical-align: middle;
+    margin-right: rem(20px);
+    //background-image: url('//img50.allinmd.cn/pages/discover/discover_master.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAAAyCAYAAADodg0pAAAEbUlEQVR42tyaW0gUURjHz+hqNy21QoyyIgxKpOtLgRaED1kRoSSZdtGyixVFJFFhZkiUT5VFZVb0oJX1ZFhpoUgvBUWlpSXYg1F2UbtIJupu/489wiLOzs6cObvOfvDnCOeczzO//c7tm1GYBNtQ1bUExTooEYqFgqA/0CuoCrpXnhTewkaQKSYDWIMiD1qs0dQBVVJbAHntNyAAYDyKa1Cyzq4DUCGUDyAOS4MAhMkoqqH5Am7KoE2AMeArEAGCEIJpvgtCIEuDinwZEQGC/Q9D8SaN5QDArrDc1MCgI1F8hMaYOJ4GaJ4v1guRiNhmMgSyOGiZLyLCJtA3RdKYyG+dng4FDd3TUMyAeqDGvLiQf16ZGpgW4Sg6JYFowtSY68HDUzRvgfbRdHKp+ssX8EIAeS97asRKjNLZAB2kASECRS1UOgQC2VgoA3qDdlmyQUyXCCIQmuIGgo2fShM0/NDWfhXtU2SCmCB57QpzU7cLWqrD10XACJUFItiH2/penb7o5JsqC0SfZBAOlWkRjSLGgL9EWSB+SAah5j/GoL9ZskC0SYRA0fZVpS7UoM9RskC8VQtfE6wZ54h+lTq7QZ+jpYDAQH/RPi0JRL2bus+yIljkrlEpCcR9N3UfmDOZYySCpYEokwDhG/RErRJH5t8onhrw+0AaCEyPJhSPTAZRDL9aW/NlA9OiWnZiJs9ECB3QOQ/aVdDFTIfffERSv1QQ+PWeM2fS1gw7xBdh9+SdD5UO9Xs4Ja7LTswM2kGoVdAHLbw3PA7DuJCXTDvH2Qtloq3DKyDwK/5Esd7gak72CdpsID1Xr1HfAgjtsq/hQ2G8EJgix9C/S08H3DnoUpam0WwO2i3wKghujw32q9EBIABK4rtAhgd5jXq0P8lTeW7NZiKIMIP9IrROjHiQiSh2cEXr8B1CEQcdgY+HfFeqHm7dMOuVH+UnnjFjL3pKMDWyVQBE8QfZyszLmNMp8wR01xWIWa/8aH1YLeDmNA0OQHpcIKxEcVvgxqlldELdDhjNQiAAYBEPVVq0xpkwsC/QFagUQNo4DErJUbSkenKDNGDd5BswqhSdD08PvJEDWCjpl7LzozsdpSsBxQ4gk/D3bmgPc6bezM5/JCgeApiKIocDCGfeMzqonaWpByDdAELrBL1hOwpFmvh/ahQNAJQay+cHJhvzndHR+xJ0BkA6eVaa7jn7TRpXn6ICgH71AuZMnQeykWME5Dh0gbJYAEJf5tykw5OgX4cyDIS1fH5GspFr9LlROmA08ugoh1aJ+FNcANAp8xSUy6xh9KI3EzDKASOQR0aaQV9ZCocg6siXlgsYRRzGLaYv5U8ZrzvYPosHQdDL1ExmXcsGjBIRBwogLGfON8tWNvqGcyZgdBh1QOvCTmZ9CxWd1gQigfmHxYuCiPITENGiIOx+AqJXFESrn4BoFQVR6ycg6kRB0GXGYXEI35nzSzrjILD30juC8xYHkUPXdNGIYPw6S99Vt1sMwDsoGRAqRB39F2AA/ANMQ3AF66AAAAAASUVORK5CYII=');
+    background-size: 100%;
+}
+
+// 申请权威专家图标
+%icon-aplMaster:before {
+    content: "";
+    display: block;
+    width: rem(64px);
+    height: rem(64px);
+    background-image: url('//img50.allinmd.cn/pages/discover/master_applicaption.png');
+    background-size: 100%;
+}
+
+//消息——查看详情箭头
+%icon-messageMore:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(21px);
+    height: rem(12px);
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAMAAACOlf6TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAbUExURW15kmNwjWNvjExpcWNvjGh0l2JvjWNwjWJvjPl7nuUAAAAIdFJOUxXU0wDMFsPLgMs18AAAAERJREFUCNdNzksSACAIAlAK+9z/xNEUpQsH3wbRB5imRUfMmgxlDmh9Q9UBJpMUAb8d2WS7QtBmOcQmsxCv3GLSi+G4AMS/AgoSQF7wAAAAAElFTkSuQmCC');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-left: rem(10px);
+    transform: rotate(-90deg);
+}
+
+//搜索
+//热门搜索
+%icon-hotSearch:before {
+    content: "";
+    display: inline-block;
+    vertical-align: -0.05rem;
+    width: rem(26px);
+    height: rem(28px);
+    background-image: url('//img50.allinmd.cn/pages/search/search_hot.png');
+    background-size: 100%;
+    margin-right: rem(14px);
+}
+
+//历史搜索
+%icon-historySearch:before {
+    content: "";
+    display: inline-block;
+    vertical-align: -0.05rem;
+    width: rem(24px);
+    height: rem(24px);
+    background-image: url('//img50.allinmd.cn/pages/search/search_history.png');
+    background-size: 100%;
+    margin-right: rem(14px);
+}
+
+// 搜索更多用户
+%icon-searchMoreUser:before {
+    content: "";
+    display: inline-block;
+    vertical-align: -0.02rem;
+    width: rem(10px);
+    height: rem(18px);
+    background-image: url('//img50.allinmd.cn/pages/search/search_moreUser.png');
+    background-size: 100%;
+    margin: 0 rem(14px);
+}
+
+// 搜索结果读取中
+%icon-searchLoading:before {
+    content: "";
+    display: inline-block;
+    vertical-align: -0.05rem;
+    width: rem(25px);
+    height: rem(25px);
+    background-image: url('//img50.allinmd.cn/pages/search/search_loading.png');
+    background-size: 100%;
+    margin-right: rem(10px);
+}
+
+// 无搜索结果 推荐内容
+%icon-searchRecommend:before {
+    content: "";
+    display: inline-block;
+    vertical-align: -0.05rem;
+    width: rem(32px);
+    height: rem(28px);
+    background-image: url('//img50.allinmd.cn/pages/search/search_recommend.png');
+    background-size: 100%;
+    margin-right: rem(10px);
+}
+
+// Coas绑定
+// 用户名未输入
+%icon-userNameNoInput:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(30px);
+    height: rem(30px);
+    background-image: url('//img50.allinmd.cn/pages/personal/user_no.png');
+    background-size: 100%;
+    margin-right: rem(30px);
+    margin-left: rem(15px);
+}
+
+// 用户名有输入
+%icon-userNameHasInput:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(30px);
+    height: rem(30px);
+    background-image: url('//img50.allinmd.cn/pages/personal/user_has.png');
+    background-size: 100%;
+    margin-right: rem(30px);
+    margin-left: rem(15px);
+}
+
+// 密码未输入
+%icon-pwNoInput:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(28px);
+    height: rem(30px);
+    background-image: url('//img50.allinmd.cn/pages/personal/pw_no.png');
+    background-size: 100%;
+    margin-right: rem(30px);
+    margin-left: rem(15px);
+}
+
+// 密码有输入
+%icon-pwHasInput:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(28px);
+    height: rem(30px);
+    background-image: url('//img50.allinmd.cn/pages/personal/pw_has.png');
+    background-size: 100%;
+    margin-right: rem(30px);
+    margin-left: rem(15px);
+}
+
+// 密码可见
+%icon-pwCanWatch:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(44px);
+    height: rem(24px);
+    background-image: url('//img50.allinmd.cn/pages/personal/pw_can_watch.png');
+    background-size: 100%;
+}
+
+// 密码不可见
+%icon-pwCanotWatch:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(44px);
+    height: rem(32px);
+    background-image: url('//img50.allinmd.cn/pages/personal/pw_canot_watch.png');
+    background-size: 100%;
+}
+
+// 邮箱验证
+// 成功
+%icon-validateSuccess:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(90px);
+    height: rem(90px);
+    background-image: url('//img50.allinmd.cn/pages/personal/mailbox_success.png');
+    background-size: 100%;
+}
+
+// 失败
+%icon-validateFail:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(90px);
+    height: rem(90px);
+    background-image: url('//img50.allinmd.cn/pages/personal/mailbox_fail.png');
+    background-size: 100%;
+}
+
+// 白色加号
+%icon-whitePlus:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(18px);
+    height: rem(18px);
+    background-image: url('//img50.allinmd.cn/pages/discover/follow_plus.png');
+    background-size: 100%;
+}
+
+// APP唤醒提示
+%icon-appWakeUp:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(22px);
+    height: rem(33px);
+    margin-right: rem(12px);
+    //background-image: url('//img50.allinmd.cn/pages/index/wake_up.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAhBAMAAAAv5UYdAAAAG1BMVEVRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHRRXHQrceHsAAAACHRSTlMASUrDxOTm5weM+5YAAAAsSURBVBjTYxDrgIFEhgw4u42hgwEGOkY2GwHwqzdGYpvgNxMRzu0M6nB2EADISzntPda4SAAAAABJRU5ErkJggg==');
+    background-size: 100% 100%;
+}
+
+// 终端
+// 编辑按钮
+%icon-terminalConfig:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(30px);
+    height: rem(30px);
+    margin-right: rem(12px);
+    background-image: url('//img50.allinmd.cn/pages/case/button_config.png');
+    background-size: 100% 100%;
+}
+
+// 终端页评论/点赞
+%icon-terminalLike:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(22px);
+    height: rem(22px);
+    margin-right: rem(6px);
+    background-image: url('//img50.allinmd.cn/pages/case/icon_terminalLike.png');
+    background-size: 100% 100%;
+}
+%icon-terminalLiked:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(22px);
+    height: rem(22px);
+    margin-right: rem(6px);
+    background-image: url('//img50.allinmd.cn/pages/details/details_like_on.png');
+    background-size: 100% 100%;
+}
+
+// 终端页评论/点赞
+%icon-terminalComment:before {
+    content: "";
+    display: inline-block;
+    vertical-align: -0.07rem;
+    width: rem(20px);
+    height: rem(18px);
+    margin-right: rem(6px);
+    background-image: url('//img50.allinmd.cn/pages/case/icon_termianlComment.png');
+    background-size: 100% 100%;
+}
+
+// 终端页返回
+%icon-terminalBack:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(18px);
+    height: rem(32px);
+    background-image: url('//img50.allinmd.cn/pages/case/back.png');
+    background-size: 100% 100%;
+}
+
+// 加入讨论
+%icon-terminalJoin:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(24px);
+    height: rem(24px);
+    margin-right: rem(12px);
+//    background-image: url('//img50.allinmd.cn/pages/case/join_discuss.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAjZJREFUSA29lbtrU1EYwHMfiYNtoQ5KXQLiEKiu4iBoaFEboaiDULdeQh6LivgXODgLSsl7cZEMxkfJIIggKggOdejWKRmKS3QQUZKb+PuC93JycvtIGr1w+B7nfL/vu+d8595Q6B8/xrj8arVqtVqtx71eb8myrJupVOpjEGusBPV6/VCj0XgK/KpADcP4jriQyWS+6ElGTkDlU1T+HPiCCiPJV9u2zyWTyS3Vb6rGXnqpVDoC/I0Olzh8x9rtdk1n7DtBuVw+3ul03gE6o0M8W97C0z25rwSVSuUE1b0HPu8F6hL423A4fG3Irzt0m205ReWvgc/pc4r9MhqN3kgkEr8VX1/d9ZCLxeJZ4HVWzuqBiv0kFos58Xi8o/h8dccEhUJhsdvtSrcc9ldrCtvyKJ1O30b2tCnfDDyDXC533XXd9T3g9+n7W7vBJYvtp/qrAF9FLTIsfU5sATLuUvnDoHndNwDJ5/N3WLBG5YFvBthlOMDzOmgn2z8D+nyaVvwGfCCpEigdspLNZocuk7JmSO3DaMWTgI8ypFtOD60KhX5Q+TJw6aiRnv4Z0IoPgF/iqyidM4t+2aMAbjESbMsnzzeKNOXLCHCJoBngL0zTvAfwg0CQ23zAzo8LF4bdbDYXkVNikGiOJM+AXuStrkQikVeO4zRlbtzHBrrsBVOxi/2LOzBDj695/oNIOYN1tmUT+GfgG4B/HgT432MNbm6Nyvu/vklnZ1dqgTd2gon8izxB5iDqD9eE4/rHd32mAAAAAElFTkSuQmCC');
+    background-size: 100% 100%;
+}
+
+// 评论
+%icon-terminalCommentNum:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(34px);
+    height: rem(34px);
+//    background-image: url('//img50.allinmd.cn/pages/case/comment.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAApRJREFUWAntWM1rE0EUz+42ieYg0lva9KZgr4IXQSIGAtWLeIj+AW2+cEtEiiiCQaQHQXrIIR+nSqGHePEighg1XrxJL/24tyaCXrwkzSbZ+HslTybrZssm3bKHDAzvzXtv3u/H29nZmfV4XNIk5pFMJq/3er2H6Jdhm2G7Q7ImSdJ39FeFQuELYRwRicfjL6A/4TE5Tqn1gLNaKpWeSolE4iaq8O6UgE1hUJlbU/AsC963fr9fzeVyB4LtxFVVVUOtViuHxLf7yZdlVOOKgLTkNAnC6mMsMS5xkDGYZgOe1W/WnZYGrGki4oo2IWJ8DJOKuLYitKENbalUaqHb7ZYoQFGUeD6ffy8Gj+sXc1mukT6JECaEmJA4eVy/mMuSiBjotG5JhB4HCNB356CvD/AZ1y8mk3AEoE/xUcO2++98wjYnpYhtWREnSRhzT4i4uiKHzC6bzZ5h3WlpwDqUcV7cYtB6vX6fdaeliEUc6PVdAehLAXgX+j6PEaSjf8Cxf41tZjKdTl/odDoqfBfRFbMYwTYHfZ7HyL8ilctlpVKpfMa58Ro7hsh57DN7Zj7cie5h/jq638xvZQOJr5FI5IYci8W6wWAwKsvyKozNIZN+BQKBn2Y+XEce67q+aZcEYRGmz+eLEoeBnZSqU61WL7Xb7VkGxTau4+O2ZTjserDYpmq1Wh5xixyL5Dvoj0BMY5uZ9Hq9P8Lh8B4RYP8AETYeJ3EvOYd7yRvERTkWBD6hKndA+A/b7MjjFtV/ubAo51CxChxXBedr6HdBoiHYbKm2KpLJZM43Go1tIMwwCirxrFgsPufxqNLyhGZM2mw2F2BjEhoW2yJe6w1j3ChjW0Swwj9qmvYNa+EsSDzgXwqjALt2zl90WP8zf2+RJgAAAABJRU5ErkJggg==');
+    background-size: 100% 100%;
+}
+
+// 收藏
+%icon-terminallike:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(34px);
+    height: rem(34px);
+//    background-image: url('//img50.allinmd.cn/pages/case/like.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAABG5JREFUWAntl19oU1ccx5ub0q5xOE2xQ3Qg3eb8MwWZYz4MqjZDnXvYJvShzj1J06ZWW4Q5NgYFYUwRi7Q0bd8GIjSiU5hs64JNwbGXjm0y/LOHPUx0bPgHNCbU/tvne3tPuLnGLM0an3rg5PzO79/3m3N+595zy8rmW/YK+LKnM7O2traFY2Nju30+39vT09PrGZ/HkqLfpA9blnUmGo2OzHhn/7a0tNRNTU3tQruFvoweIMff5LiMfKGiouJUd3f3feSslkWEAF84HD6Ax2f0YJbn45MRCO3r6+v7Tabm5uZXIdCDWPe4a5bmLrPD/f39JyA3bSwZIk1NTQEMJyHznjEWMD4k5kO6DxJf4r+ggBjbhZCvwPpgYGBAK11m6UcrQfOS+B1TpLy8/OXKyspn/H5/kL4ZXZT+iK4m4NPExxxZOtmi8lWMYpUDXYSunHbTH3Yw7cWwf1iNg1iPOT4ajoZCoU8aGhomXbqMSB28Mjk5eQ7FqoxyRrgG+LvUz3WP3p7GYjF/PB7/nMlHxg6Zg2zTcV97e/uidDr9BwwXy4jhCIaPjeOTxo6OjmAqlYoTt8GJ+zkQCIS6urpUA3kbdfgFcYfkBN69qqqqWotkuw0J9Ffr6+s/zZvFMQqQYq0n0TF1yYWQULiDcU2ysMVBp+QbJtulJGGY1RiQXOrGKQtT4H3CAfdbFetaA8q/ihu51CPg37sw1opIjVFQ3XpgPZXmwaoRkaRBZqmeNXKpRw9W0qI+bhjQ8fHx14xc6tGNJQ4We5WpC+Q9pSZg8ruxxEFbM2iMjI08rDa55iURHYxGV/JBi+M6CqPzUrJEFk/MszjWupzmVFRuYQhLiYUtDvYE5X4U/ziISymkBI/9F+eUAcmUU7kRlyq3MIUt2SbCG/BPlO/T01JifIEhEYlEXtJ8LpqTK+HkFom0MIWt/DYRCdwrfsDwDqL9WmZczhImePLqzfm/mnIoF0mWO4lSwhKmSZwhIgWGizxddyLaZGC/jJ5obW1daQJmOypWOZTLiU0JQ1juXPY1wK2QTEHV8Q8uIJqLzl+83rc86fXujTdz8ui6MMzcrgnGh+TZmeuambUiJoEcCdjB8pmnrl3A7PNq4/Nfo3w9hZlUzlwklCvnihgQqvxNyOjtbB79ugRv5bhdMT65RmpiDTFael26VZhJ5jsozEu5/KXLuSLGWYEk0RXhgaNT4mH2PfPGNr5m5PW+Qj50mwTjA+XIRwKf/ETk4JymbSSzPwH4ZzW8J4Z1a5fd29iOvfKRXjH0be7T4fU387wrYpzYih+p9AwZ9EsAvMjWrTM+ZgRYq6HjeVMxijW2fGPeGvEGAvwGuu/ozzm22wCGAPvV7asPtOrq6lRnZ+eEW59PnhURJeI0vD4xMTGEuEhziNzhNIR6e3t/0bzYNmsiAuJUbGQYohbsmz/yXT4l1/X09NySvZhWUI14E7MVo+z/W6zGPccWZJX0RC66FUVEaDyYfoKIPid0jRileL8umsV8YI4V+BcOjtDepSuADwAAAABJRU5ErkJggg==');
+    background-size: 100% 100%;
+}
+
+// 点赞
+%icon-terminalCollect:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(34px);
+    height: rem(34px);
+//    background-image: url('//img50.allinmd.cn/pages/case/collection.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAABC9JREFUWAnNl0loFFEQhjOTjHEjg3iJEREU9aQeFMRDLolXdwzuBxMnCSGKoCh6SBREyDGRbO6CCy7ggh5cQD3qQRTBLQEFzUQUgnGJJJmMX7Vdj5eetmeSiWDDm6pXVe+v/9Vbuicn5z95QmPBo76+Ptzd3V2eTCY3gzcbWRAKhZ4jm9vb289nkiNrIrFYLErSeyRd7JcQXyu+HRAa8POrLazKaCQJZCJnbRIk7sP2U/HwVaHHtP83mRWRqqqqYoBXCDgEvtNWtba2TioqKopi2il2ebDvpXKRPz3/36yIALnGgq1ra2u7TtIke2aQpWjE90T8VGVGOByeZ8WmqNkSWW4h3rR0R4XUJ7VBZILqfnLURCj1fGY6S0BJ+I5qvPVJMENtubm5cdX95KiJMMP1Cgihi6qrxCYbea7b/9HY2PhRfX4yz8+YzkY1lgwNDe3ROCqSQqSyslKq4SwH/je0pMb7yRFXRJYEoEs05xSQ4BzL8swLjt3enK+8fm8/44pAYBrg2yn5AUDGuUAd0Wi02gsqfeJ0WUR/7Rdj24YRcWcrR1JmPd4KnIM+F0DLlNMZiURWNTQ0fLONlm6IYFvmLpW4E+B8yMvLu9Lc3PxS480VD4n9zPggQcPIaaBHXs7Pz69oamrq9dhNl8Q3wLKPt/GJQq5BRIxlPSV9Z48waCX64TQkPhNzlGO4lMuqLIiEAPM8/SP8fyUX7SS381qJcGaPYZeGw/Qs+gWalPCOZd8E+7vaTyeJrSPJLfAKPLGRRCKxAdsWsbun76pDhOBFJJVy9ZaWlm4rKytLSBDLJcJ58I34hPHeeazjbckr4G48Hl9NzsngLhCfAy4GN/CbkpA+QUOuXfQRE9GxXtnT0zMV20TX/lVk4MaEoFRGyea6A7MWfX19Wy1cZ7kDZ/mvKgJuuc6GV8VJ0QOJ4DdLwwZLF6vYgbK6urqYSuut29HS0vJQBgSCM8AQGas9woRMNch/AlznlgwkQpBzeoQxpLLeI7W1tXKU1wke2HKhnRFdnkAiY12R/v7+jeR0TgvYt7kYzTdKIBEGmaVJRxp/Jo9ZFipy3B6QMREGpou1cVN0XiMLqYL+5Yhzcd62gwLBSW4qku0eYXyFJgb3tH1xij2QCH5DJJuKcKWPZ/wmlwickidc3QgloqfDezLULgM01gzOVOnq6lpD8ilu/AM2aad3rAMO2xfiILiQN2aJFWQqwltyVERqamrkvVKnmNykKdUQn34GXEVfKAYS3mNjdUFqkFYkNnkAGFYt3sz7MMu6B76vBgYGBEP/5b0vLCy8TD/lcWbJX8QjVOWR6w1BYDr6TJpJLsR0NLp82R2izaZJXFBTEr/IUc5+6Sc+5XGIyF9EjlMJ3t00+Zv4y46UpePL7Jba6Cdpx2iGnPp85Bds1/hGXcrH0n0f//9l+g1eXIZxEt6mPQAAAABJRU5ErkJggg==');
+    background-size: 100% 100%;
+}
+
+// 相似病例
+%icon-simCase:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(30px);
+    height: rem(34px);
+    margin-right: rem(12px);
+    background-image: url('//img50.allinmd.cn/pages/case/simCase.png');
+    background-size: 100% 100%;
+}
+
+// 顶部分享按钮
+%icon-fixedTopShare:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(30px);
+    height: rem(30px);
+    margin-right: rem(12px);
+    background-image: url('//img50.allinmd.cn/pages/case/topShare.png');
+    background-size: 100% 100%;
+}
+
+// 已关注按钮
+%icon-terminalFollowed:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(28px);
+    height: rem(19px);
+    margin-right: rem(12px);
+    background-image: url('//img50.allinmd.cn/pages/case/icon_followed.png');
+    background-size: 100% 100%;
+}
+
+// 视频终端 下载
+%icon-videoDownload:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(29px);
+    height: rem(28px);
+    margin-right: rem(6px);
+    background-image: url('//img50.allinmd.cn/pages/video/icon_download.png');
+    background-size: 100% 100%;
+}
+
+// 视频终端 回复
+%icon-videoReply:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(28px);
+    height: rem(28px);
+    margin-right: rem(6px);
+    background-image: url('//img50.allinmd.cn/pages/video/icon_reply.png');
+    background-size: 100% 100%;
+}
+
+// 视频终端 点赞
+%icon-videoLike:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(28px);
+    height: rem(28px);
+    margin-right: rem(6px);
+    background-image: url('//img50.allinmd.cn/pages/video/icon_like.png');
+    background-size: 100% 100%;
+}
+
+// 视频终端 分享
+%icon-videoShare:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(28px);
+    height: rem(28px);
+    margin-right: rem(6px);
+    background-image: url('//img50.allinmd.cn/pages/video/icon_share.png');
+    background-size: 100% 100%;
+}
+
+// 视频终端 收藏
+%icon-videoCollect:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(29px);
+    height: rem(27px);
+    margin-right: rem(6px);
+    background-image: url('//img50.allinmd.cn/pages/video/icon_collect.png');
+    background-size: 100% 100%;
+}
+
+// 视频终端 展开
+%icon-videoOpen:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(18px);
+    height: rem(10px);
+    margin-left: rem(6px);
+    background-image: url('//img50.allinmd.cn/pages/video/icon_open.png');
+    background-size: 100% 100%;
+}
+
+// 视频终端 浏览数
+%icon-videoBrowseNum:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(28px);
+    height: rem(18px);
+    margin-right: rem(6px);
+    background-image: url('//img50.allinmd.cn/pages/video/icon_browsed.png');
+    background-size: 100% 100%;
+}
+
+// 发现入口 热门提示
+%icon-discoverEntryHot:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(36px);
+    height: rem(36px);
+    //background-image: url('//img50.allinmd.cn/pages/index/icon_hot.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAAM1BMVEUAAADnTE3nTE3nTE3nTE3nTE3nTE3nTE3nTE3nTE3nTE3nTE3nTE3nTE3nTE3nTE3nTE1FTpzKAAAAEHRSTlMAECAwQFBgcICPn6+/z9/vIxqCigAAAalJREFUOMuNlN1yrDAMg+UQgiE//t7/ac9Fwpbd9nTqCwaIJlEkW9K32pJ+rf3sANB8+xlhHjxqlJ92CaCfe05bLtcARv7cpgLX44zcAH/HdGhfhJPvUh5wfWBOKdf1c9DW7g9UhSKpw/yGJkm6Hice6x2GZIdf836H1GDxtKBJuztEjPoSwSUL+gQ5JF0vfZ4g7ZOILDiltiBnLnmAjrXaJr0CScqeL2ht6zhUOeSvVV33sV9sKDrnohQckgYuyUoFiDIAdrVbjkqVBFlK01y3xa40orQsyRlSBpMcgK4bHo0WFEkZ1kOpHQXacijoDcDeQVMSV+pQtbk1lnE3yKR9GmEB3ZZtkV4gRdi6fqR8Y2S95uXHuD0uHeomq24qsyP8KcGjSrh0wC5B2ENMny1pfSQI6YAutcV7n8pPk6xDbpBlAVkZYhrcJSXIq8nl4NIJruXLapWDkLYB3ZTBpQS7tDWXbEz3B5eOW5562tug19m+BdrgdZf3ugdhdmt7ifgxsNeSgbg2XdA/MuIxnJbTPQ1c6dcxfwbGlv8XGH+Mnr+F2CtSvsXhP1mvH621NbqAAAAAAElFTkSuQmCC');
+    background-size: 100% 100%;
+    position: absolute;
+    top: rem(-15px);
+    right: rem(12px);
+}
+
+
+// 个人中心 我的直播
+%icon-myLiving:before {
+    content: "";
+    display: inline-block;
+    width: rem(39px);
+    height: rem(23px);
+    position: absolute;
+    left: rem(-50px);
+    margin-top: 0.11rem;
+    background-image: url('//img50.allinmd.cn/pages/living/MyLive_Customer.png');
+    background-size: 100% 100%;
+}
+%icon-myOrder:before {
+    content: "";
+    display: inline-block;
+    width: rem(38px);
+    height: rem(38px);
+    position: absolute;
+    left: rem(-50px);
+    //margin-top: 0.11rem;
+    //background-image: url('//img50.allinmd.cn/pages/living/MyLive_Order.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAkCAMAAAA0AnPTAAAB71BMVEUAAAD///////+qqqq/v7+ZmZmqqqqSkpKfn5+qqqqZmZmioqKVlZWSkpKZmZmUlJSSkpKXl5eQkJCVlZWZmZmTk5OXl5eSkpKXl5eTk5OVlZWRkZGUlJSTk5OVlZWSkpKQkJCSkpKVlZWSkpKRkZGTk5OQkJCUlJSSkpKTk5ORkZGSkpKSkpKTk5ORkZGTk5OSkpKTk5ORkZGRkZGQkJCSkpKRkZGTk5ORkZGQkJCQkJCRkZGRkZGSkpKRkZGQkJCSkpKRkZGSkpKRkZGSkpKRkZGSkpKQkJCRkZGQkJCRkZGQkJCRkZGQkJCSkpKRkZGRkZGQkJCSkpKRkZGSkpKRkZGQkJCRkZGRkZGRkZGQkJCRkZGQkJCSkpKRkZGQkJCRkZGRkZGRkZGRkZGQkJCRkZGRkZGRkZGQkJCRkZGRkZGRkZGRkZGQkJCRkZGQkJCRkZGQkJCRkZGQkJCRkZGRkZGQkJCQkJCRkZGQkJCQkJCRkZGRkZGQkJCRkZGQkJCRkZGRkZGQkJCRkZGRkZGQkJCRkZGRkZGRkZGRkZGQkJCRkZGRkZGRkZGQkJCRkZGQkJCRkZGRkZGQkJCRkZGQkJCRkZGRkZGRkZGRkZGRkZGQkJCRkZGRkZGQkJCRkZGQkJCRkZGQkJCRkZGQkJDE6BX/AAAApHRSTlMAAQIDBAUGBwgJCgsMDg8TFRYXGBkaGxwgISQlJigpKi4vMDEzNDU3ODs8PT9AQUJGR0hKTE1PUFFTVVZYWVpcXl9gYWVmaWprbG1xcnN3eHl6fH1+gIGChoeIiYqMjY+SlJWWmJudnp+go6SlpqeqrK2ur7W3uL2+v8HCxcbHyMnKy8zOz9DS09rb3uDh4uPm5+jp6u3u8PHz9fb3+Pn6+/z9/hdMimYAAAIiSURBVBgZbcELQ0thAAbgd7VNNRXJGIlyIopkjIS5VFtLcieVSySsG0kUi04uCa3QbK1mO+8PtbOdr521PQ+EgrbJ/UipmfDkIZ254zfpREoTudhugs6uT+S7o9A7/oH8uANrLoQ4W4e4Ck/ns+EHV05uRFz9HINnoWkh+y2A9f4PalbGHAAKvVQuIqFZUVxAUXeYnO/rOH/Kc2ciSvoOArjE2DnE1cboBspnqQxK0BS7/Yx1AGhntBoo/M6bwJG/lCuhU3A7xiEj0MVvFjyhLxcVQXrzkc4e4CPANMNefA7sxOaffIoM+5bZCuwO+rBpK9DPSTOSTEhpVEJWwFqMuD2xVRuS7i1YkDLEfmiG2QONTAkptpXYdiTkh5RSaGRK0BlgGxIcfA9BpgSdBk4ioYvXIMiUoGNRIgaovHRCkClBb5ElUL3hYQgyJejNcC9UE6yFIFOC3jSroBrkGQgy60uTjFD5WQpVDy9DWKDgLwKwIRrNheo0xyF4l/2a12YAdk4joXD1XzGy6+NVJL3idWRVEmQ5kg4wWIJsHvMlhBccNSBTXTRSBsH2h53IULbEW0g5FOHdHKSrmueIATrOCMes0MlpCvNtAdLU/OJy9xZojI4v5EMj1tk2qFCZuuGsqz7hGlgi5xqxnhmoHAlR+NpqAsxI4wo3Acg71vV83Dfa67Ehrjnsgk4L6cB6DrIFawwBupHJzYABaxrsyMbeANV/G+a3V2DdNB0AAAAASUVORK5CYII=');
+    background-size: 100% 100%;
+}
+
+// 个人中心 开播提醒
+%icon-livingRemind:before {
+    content: "";
+    display: inline-block;
+    width: rem(34px);
+    height: rem(38px);
+    position: absolute;
+    left: rem(-50px);
+    margin-top: 0.02rem;
+    background-image: url('//img50.allinmd.cn/pages/living/StartRemind_Customer.png');
+    background-size: 100% 100%;
+}
+
+// 我的直播 观看人数
+%icon-livingWatcherNum:before {
+    content: "";
+    display: inline-block;
+    width: rem(36px);
+    height: rem(28px);
+    vertical-align: middle;
+    margin-right: rem(6px);
+    background-image: url('//img50.allinmd.cn/pages/living/PeopleNumber_LiveDetail.png');
+    background-size: 100% 100%;
+}
+
+// 直播时间
+%icon-livingTime:before {
+    content: "";
+    display: inline-block;
+    width: rem(32px);
+    height: rem(32px);
+    vertical-align: middle;
+    margin-right: rem(16px);
+    background-image: url('//img50.allinmd.cn/pages/living/Time_LiveDetail.png');
+    background-size: 100% 100%;
+}
+
+// 直播分类
+%icon-livingClass:before {
+    content: "";
+    display: inline-block;
+    width: rem(32px);
+    height: rem(32px);
+    vertical-align: middle;
+    margin-right: rem(16px);
+    background-image: url('//img50.allinmd.cn/pages/living/Classify_LiveDetail.png');
+    background-size: 100% 100%;
+}
+
+// 直播内容公开
+%icon-livingOpen:before {
+    content: "";
+    display: inline-block;
+    width: rem(26px);
+    height: rem(26px);
+    vertical-align: middle;
+    margin-right: rem(10px);
+    background-image: url('//img50.allinmd.cn/pages/living/Collect.png');
+    background-size: 100% 100%;
+}
+
+// 看直播 系统消息
+%icon-systemMark:before {
+    content: "";
+    display: inline-block;
+    width: rem(83px);
+    height: rem(30px);
+    vertical-align: middle;
+    margin-right: rem(9px);
+    background-image: url('//img50.allinmd.cn/pages/living/system_Live.png');
+    background-size: 100% 100%;
+}
+
+// 看直播 主播
+%icon-livingMaster:before {
+    content: "";
+    display: inline-block;
+    width: rem(83px);
+    height: rem(30px);
+    vertical-align: middle;
+    margin-right: rem(9px);
+    background-image: url('//img50.allinmd.cn/pages/living/Anchor_Live.png');
+    background-size: 100% 100%;
+}
+
+// 看直播 直播公告喇叭
+%icon-livingNoticeIcon:before {
+    content: "";
+    display: inline-block;
+    width: rem(28px);
+    height: rem(24px);
+    vertical-align: middle;
+    margin-right: rem(14px);
+    background-image: url('//img50.allinmd.cn/pages/living/Notice_Live.png');
+    background-size: 100% 100%;
+}
+%icon-livingNoticeIconGray:before {
+    content: "";
+    display: inline-block;
+    width: rem(28px);
+    height: rem(24px);
+    vertical-align: middle;
+    margin-right: rem(14px);
+    background-image: url('//img50.allinmd.cn/pages/living/Notice_LiveDetail.png');
+    background-size: 100% 100%;
+}
+
+// 电子书 点击阅读
+%icon-eBookRead:before {
+    content: "";
+    display: inline-block;
+    width: rem(32px);
+    height: rem(22px);
+    vertical-align: middle;
+    margin-right: rem(5px);
+    background-image: url('//img50.allinmd.cn/pages/eBook/Visitors_Btn.png');
+    background-size: 100% 100%;
+}
+
+// 电子书 中英切换
+%icon-languageChange:before {
+    content: "";
+    display: inline-block;
+    width: rem(32px);
+    height: rem(33px);
+    vertical-align: middle;
+    margin-right: rem(10px);
+    background-image: url('//img50.allinmd.cn/pages/eBook/change.png');
+    background-size: 100% 100%;
+}
+
+// 电子书 控制头切换语言
+%icon-controllerChange:before {
+    content: "";
+    display: inline-block;
+    width: rem(32px);
+    height: rem(32px);
+    vertical-align: middle;
+    margin-right: rem(10px);
+    background-image: url('//img50.allinmd.cn/pages/eBook/Zhongying_Switchover.png');
+    background-size: 100% 100%;
+}
+
+// 电子书 控制头全书
+%icon-controllerAllBook:before {
+    content: "";
+    display: inline-block;
+    width: rem(32px);
+    height: rem(32px);
+    vertical-align: middle;
+    margin-right: rem(10px);
+    background-image: url('//img50.allinmd.cn/pages/eBook/WholeBook.png');
+    background-size: 100% 100%;
+}
+
+// 电子书 控制头分享
+%icon-controllerShare:before {
+    content: "";
+    display: inline-block;
+    width: rem(32px);
+    height: rem(32px);
+    vertical-align: middle;
+    margin-right: rem(10px);
+    background-image: url('//img50.allinmd.cn/pages/eBook/share.png');
+    background-size: 100% 100%;
+}
+// 电子书 视频终端看更多
+%icon-videoDetailsMore:after{
+     content: "";
+    display: inline-block;
+    width: rem(12px);
+    height: rem(22px);
+    vertical-align: middle;
+    margin-right: rem(10px);
+    background-image: url('//img50.allinmd.cn/pages/eBook/Arrow_All.png');
+    background-size: 100% 100%;
+}

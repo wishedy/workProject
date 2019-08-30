@@ -1,0 +1,301 @@
+@charset "utf-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+@import "../../components/_contentModule"; //主内容区域
+@import "../../components/_deletePop";//删除提示弹层
+@import "../../components/_feedbackModule";
+//页面结构布局：begin
+.al-personal {
+  width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  @include clearfix();
+  .al-personalInnerContent {  //主体内容
+    float: left;
+    width: 710px;
+  }
+  .al-discover_sidebar {  //侧边栏
+    float: right;
+    width: 270px;
+    margin-top: 20px;
+  }
+  .al_search_siteSwitch{
+    float: left;
+    height:20px;
+    width:75px;
+    padding:7px 0 7px 8px;
+    background-color: #fff;
+    vertical-align: top;
+    position:relative;
+    .al_search_siteName{
+      font-size: 15px;
+      line-height: 18px;
+      padding-left: 7px;
+      color:#666666;
+      border:0.5px solid #DBDBDB;
+      border-radius: 4px;
+      position: relative;
+      cursor: pointer;
+      &:hover{
+        color: #2899e6;
+        border:0.5px solid #2899e6;
+        &:after{
+          width:0;
+          height:0;
+          position: absolute;
+          content: '';
+          border-color:#2899e6 transparent transparent transparent;
+          border-style:solid;
+          border-width:4px;
+          top:8px;
+          right:4px;
+        }
+      }
+      &:after{
+        width:0;
+        height:0;
+        position: absolute;
+        content: '';
+        border-color:#333 transparent transparent transparent;
+        border-style:solid;
+        border-width:4px;
+        top:8px;
+        right:4px;
+      }
+    }
+    .al_search_siteBar{
+      display:none;
+      width:120px;
+      border-radius:4px;
+      position:absolute;
+      top:27px;
+      left:8px;
+      background: #fff;
+      padding-top: 23px;
+      padding-bottom: 11.5px;
+      box-shadow: 4px 4px 8px rgba(197, 206, 214, 0.5);
+      z-index: 2;
+      li{
+        cursor: pointer;
+        width:96px;
+        height:30px;
+        line-height: 30px;
+        font-size: 15px;
+        color:#333333;
+        margin-bottom:5px;
+        padding-left:24px;
+        &:hover{
+          background-color:#F6F9FB ;
+        }
+      }
+      .active{
+        color:#3598DB;
+        background: url('//img10.allinmd.cn/v3/common/icon/xiala_dui.png') no-repeat 8px 12px;
+      }
+    }
+  }
+}
+//页面结构布局：end
+
+
+
+
+
+
+      //页面主体内容区：导航栏：begin
+.al-contentItemTitle{padding:0;}
+.al-searchMain_ul{
+  background-color:#F9FBFD;
+  height:52px;
+  li{
+    float:left;
+    color:#aaaaaa;
+    width:14.28%;
+    text-align:center;
+    height:52px;
+    line-height:52px;
+    a:hover{
+      color: #2899e6;
+    }
+  }
+  .active{
+    color:#2899e6;
+    background-color:#fff;
+    border-top:2px solid #2899e6;
+    margin-top:-1px;
+    a{color:#3598DB;}
+  }
+}
+.al_contentItemCondition{
+  @include clearfix()
+}
+.al_contentItemCondition ul{
+  height:60px;
+  padding-left: 16px;
+  float: left;
+  width: 100%;
+  li{
+    float:left;
+    color:#909090;
+    text-align: center;
+    padding:22px 14px;
+    font-size:16px;
+    cursor: pointer;
+    &:hover{
+      color: #2899e6;
+    }
+  }
+  .active{
+    color:#2899e6;
+  }
+  .al_contentItemBoder{
+    float: left;
+    width:1px;
+    height:16px;
+    margin-top:22px;
+    border-left:1px solid #dfdfdf;
+  }
+}
+.al-searchMain_head{  //图片左上方文字样式
+  text-align:left;
+  font-size:14px;
+  color:#909090;
+  padding:25px;
+  background-color:#fff;
+  border-left:1px solid #efefef;
+  border-right:1px solid #efefef;
+  //border-bottom:none;
+  //margin-top:-1px;
+}
+
+.al-searchMain_imgBox{  //图片样式
+  background-color:#fff;
+  border:1px solid #efefef;
+  border-top:none;
+  text-align: center;
+  padding:157px 0;
+  img{
+    width:280px;
+    height:235px;
+  }
+  .al_searchMain_error{
+    width:179px;
+    height:38px;
+    border:1px solid #626f8c;
+    border-radius: 39px;
+    line-height: 38px;
+    font-size: 16px;
+    color:#626f8c;
+    text-align: center;
+    margin-top: 25px;
+    cursor: pointer;
+    margin-left: 264.5px;
+  }
+}
+.al-contentItemTitle{ //为你推荐
+  h2{
+    padding: 15px 25px;
+  }
+}
+    //页面主体内容区：导航栏：end
+
+//热门搜索：begin
+.al-sideBar_HotSearch{
+  border: 1px solid #E0E8EF;
+  background-color: #fff;
+  margin-bottom:20px;
+  header{
+    font-size:18px;
+    padding:17px 20px;
+    .al-hotSearchIcon{
+      display:inline-block;
+      width:20px;
+      height:20px;
+      background:url("//img10.allinmd.cn/v3/search/hotSearchIcon.png") no-repeat;
+      margin-bottom:-3px;
+    }
+  }
+  .al-hotSearch_ul{
+    border-top: 1px solid #E0E8EF;
+    padding:20px;
+    a{
+      display:inline-block;
+      line-height:35px;
+      color:#626F8C;
+      cursor: pointer;
+      .icon{
+        vertical-align: middle;
+        display: inline-block;
+        background: url("//img10.allinmd.cn/v3/search/fire.png") no-repeat center center;
+        background-size: contain;
+        width: 11px;
+        height: 14px;
+        margin-right: 4px;
+      }
+      &:hover{
+        color:#3598DB;
+      }
+      &.recommend{
+        color:#2899E7;
+      }
+    }
+  }
+}
+//热门搜索：end
+
+//历史搜索：begin
+.al-sideBar_HotSearch{
+  .al-searchHistoryIcon{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    background:url("//img10.allinmd.cn/v3/search/search_History.png") no-repeat;
+    margin-bottom:-3px;
+  }
+  .al-clearAll{ //清空
+    float:right;
+    font-size:14px;
+    color:#A7B0C0;
+    margin-top:3px;
+    cursor: pointer;
+  }
+  .al-searchHistory_ul{
+    a {color: #909090;word-break: break-all;   overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;display: block;width: 228px;}
+  }
+}
+//历史搜索:end
+
+//清空弹层样式
+.al-systemMes_deleteMain{
+  figure{
+    padding-bottom:35px;
+    span{
+      font-weight:600;
+    }
+    p{
+      color:#494949;
+      margin-top:8px;
+      text-indent:-50px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

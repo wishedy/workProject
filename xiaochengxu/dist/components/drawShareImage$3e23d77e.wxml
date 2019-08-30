@@ -1,0 +1,26 @@
+<import src="/components/canvasCreator2$370038e7" />
+<import src="/components/ensure$5e95f728" /><template name="drawShareImage$3e23d77e">
+  <view class="_section data-v-55dc42c3 shareCanvasMask" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">
+    <view catchtap="handleProxy" class="_article data-v-55dc42c3 main {{[journalMessage.fullName ? 'longer' : '']}}" data-eventid="{{'3'}}" data-comkey="{{$k}}"><template ref="canvas" wx:if="{{showFlag&&shareImg.length==0}}" bindsuccess="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="canvasCreator2$370038e7"></template>
+      <view class="_div data-v-55dc42c3 main-header {{[journalMessage.fullName ? 'longer' : '']}}">{{journalMessage.diaryName}}</view>
+      <view class="_div data-v-55dc42c3 main-content {{[journalMessage.fullName ? 'longer' : '']}}">{{journalMessage.content}}</view>
+      <view class="_p data-v-55dc42c3 reading {{[journalMessage.fullName ? 'longer' : '']}}">我正在阅读这篇文章</view>
+      <view class="_div data-v-55dc42c3 main-doctor" wx:if="{{journalMessage.fullName}}">
+        <image src="{{journalMessage.customerLogo}}" class="_img data-v-55dc42c3"></image>
+        <view class="_div data-v-55dc42c3 doctorName">主诊医生: {{journalMessage.fullName}}</view>
+        <view class="_div data-v-55dc42c3 doctorTitle">{{journalMessage.medicalTitle}} {{journalMessage.company}}</view>
+      </view>
+      <view class="_div data-v-55dc42c3 main-QrCode {{[journalMessage.fullName ? 'longer' : '']}}">
+        <image src="{{journalMessage.qrCode}}" class="_img data-v-55dc42c3"></image>
+        <view class="_p data-v-55dc42c3">长按小程序码查看详情<view class="_br data-v-55dc42c3"></view>分享自 「 唯医骨科 」</view>
+      </view>
+      <view class="_figure data-v-55dc42c3 close-btn {{[journalMessage.fullName ? 'longer' : '']}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+        <image src="/static/image/canvasClose.png" alt class="_img data-v-55dc42c3"></image>
+      </view>
+      <view class="_section data-v-55dc42c3 saveQrCode {{[journalMessage.fullName ? 'longer' : '']}}" catchtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+        <view class="_p data-v-55dc42c3">保存图片</view> <label class="_span data-v-55dc42c3">点击按钮，图片将自动保存至手机相册</label>
+      </view>
+    </view>
+    <view style="display: inline-block" class="_p data-v-55dc42c3"><template wx:if="{{ensureShow}}" bindensureClickEvent="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="ensure$5e95f728"></template></view>
+  </view>
+</template>

@@ -1,0 +1,107 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+@import "../../components/_message_rightSideBar";//右侧栏组件
+@import "../../components/_makeSurePopup";
+@import "../../components/_focusOnTagsPerson"; //关注标签的人
+@import "../../components/_tableModule";
+
+
+td{
+  padding: 0;
+  /*text-align: center;*/
+  font-size: 14px;
+  color: #555;
+  line-height: 20px;
+
+}
+tr{
+  &:nth-child(odd)
+  {
+    background:#eee;
+  }
+  &:nth-child(even)
+  {
+    background:#fff;
+  }
+
+}
+table{
+  border-radius: 0 28px 28px 28px;
+}
+.userList{
+  width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+}
+.userListCont{
+  /*width: 880px;
+  margin: 0 auto;*/
+  padding-top: 40px;
+  .title{
+    width: 142px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-image: linear-gradient(90deg, #03AAEE 0%, #0063DC 100%);
+    border-radius: 17px 17px 0 0;
+    font-size: 18px;
+    color: #fff;
+    margin-left: 60px;
+  }
+  .userListBorder{
+    border: solid 1px #0065DC;
+    border-radius: 0 28px 28px 28px;
+    overflow: hidden;
+    width: 880px;
+    margin: 0 auto 40px;
+  }
+  .name{
+    width: 45px;
+    overflow: hidden;
+  }
+  .titleTd{
+    width: 73px;
+    overflow: hidden;
+  }
+  .hospital{
+    width: 205px;
+    padding-right: 30px;
+  }
+  .openMore{
+    height: 50px;
+    line-height: 50px;
+    border-top: 1px solid #ecf0f3;
+    text-align: center;
+    color: #74829d;
+    font-size: 16px;
+    cursor: pointer;
+    i{
+      display: inline-block;
+      width: 13px;
+      height: 7px;
+      background: url("//img10.allinmd.cn/v3/common/icon/icon_downArrow.png") no-repeat;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+    &.pickUp{
+      i{
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+.paddingLeft30{
+  padding: 10px 0 10px 30px;
+}
+.userListCont .floatRight{
+    .title{
+      float: right;
+      margin-right: 60px;
+    }
+  .userListBorder{
+    border-radius: 28px 0 28px 28px;
+  }
+}

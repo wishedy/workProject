@@ -1,0 +1,1050 @@
+@charset "UTF-8";
+.fixedHeader {
+    position: fixed;
+    top: 0;
+    z-index: 6;
+    width: 100%;
+}
+
+.al-indexHeader {
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 0.4rem;
+    height: 1.17333rem;
+    overflow: hidden;
+}
+
+.al-indexHeader h1 {
+    font-size: 17px;
+    color: #222222;
+}
+
+[data-dpr="2"] .al-indexHeader h1 {
+    font-size: 34px;
+}
+
+[data-dpr="3"] .al-indexHeader h1 {
+    font-size: 51px;
+}
+
+.al-indexHeader a {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    color: #515c74;
+}
+
+[data-dpr="2"] .al-indexHeader a {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-indexHeader a {
+    font-size: 39px;
+}
+
+.al-indexHeader a:link {
+    color: #515c74;
+}
+
+.al-indexHeader a:visited {
+    color: #515c74;
+}
+
+.al-indexHeader a:hover {
+    color: #515c74;
+}
+
+.al-indexHeader a:active {
+    color: #515c74;
+}
+
+.al-indexHeader .al-indexHeaderItem {
+    width: 3rem;
+    height: 100%;
+    line-height: 1.17333rem;
+    white-space: nowrap;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-last-child(1) {
+    text-align: right;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-child(1) {
+    text-align: left;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-child(2) {
+    text-align: center;
+}
+
+.al-indexHeaderItem:nth-child(1) a {
+    display: block;
+    height: 100%;
+    width: 1rem;
+    margin-left: -0.25rem;
+}
+
+.al-indexHeaderItem:nth-child(1) a:before {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.al-indexHeaderItem:nth-child(1) a img {
+    width: 0.8rem;
+    height: 0.8rem;
+    vertical-align: middle;
+}
+
+.al-indexHeaderItem:nth-child(3) a {
+    color: #626f8c;
+    font-size: 14px;
+}
+
+[data-dpr="2"] .al-indexHeaderItem:nth-child(3) a {
+    font-size: 28px;
+}
+
+[data-dpr="3"] .al-indexHeaderItem:nth-child(3) a {
+    font-size: 42px;
+}
+
+/*搜索框*/
+.searchCont {
+    background: #fff;
+    padding: 0 0 0 0.4rem;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    overflow: hidden;
+}
+
+.searchCont:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.searchCont .searchInput {
+    float: left;
+    width: 7.81333rem;
+    height: 1.12rem;
+    overflow: hidden;
+    background: rgba(205, 205, 205, 0.2) url("//img50.allinmd.cn/index/searchBorder.png") no-repeat;
+    background-size: contain;
+    font-size: 0.4rem;
+    color: #a0a0a0;
+}
+
+.searchCont .searchInput i {
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url("//img50.allinmd.cn/index/search.png") no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin: 0 0.17333rem 0 0.29333rem;
+}
+
+.searchCont button {
+    float: left;
+    background: #3CAEFA;
+    border-radius: 0 6px 6px 0;
+    width: 1.4rem;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    font-size: 0.4rem;
+    color: #FFFFFF;
+}
+
+html {
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+strike,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+header,
+section,
+footer {
+    font-family: PingFang SC,"微软雅黑", Arial, Tahoma, "Hiragino Sans GB W3";
+    border: 0;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+dfn {
+    font-style: italic;
+}
+
+hr {
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    height: 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: Monaco, Consolas, monospace;
+}
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+q {
+    quotes: none;
+}
+
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+nav ul,
+nav ol {
+    list-style: none;
+    list-style-image: none;
+}
+
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+form {
+    margin: 0;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+    white-space: normal;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    outline: medium;
+}
+
+button,
+input {
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button {
+    font-family: "microsoft yahei";
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+    -webkit-appearance: none;
+}
+
+textarea {
+    -webkit-appearance: none;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden] {
+    display: none;
+}
+
+mark {
+    background: #ff0;
+    color: #666666;
+}
+
+figure {
+    margin: 0;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+a,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    max-height: 100%;
+}
+
+.al-mainInner {
+    background-color: #ffffff;
+}
+
+.grayBgLine {
+    height: 0.21333rem;
+    width: 100%;
+    display: inline-block;
+    background: #f0f1f2;
+}
+
+.payDetailContent {
+    font-size: 0;
+}
+
+.payDetailContent .payHeaderInfo {
+    height: 3.86667rem;
+    background-color: #ffffff;
+    padding: 0 0.4rem;
+    position: relative;
+}
+
+.payDetailContent .payHeaderInfo.vipBg {
+    background: url("/static/images/payDetail/vipBgImg.png") no-repeat center center;
+    background-size: contain;
+}
+
+.payDetailContent .payHeaderInfo .payImgInfo {
+    width: 1.97333rem;
+    height: 2.48rem;
+    display: inline-block;
+    border-radius: 0.10667rem;
+    margin-top: 0.64rem;
+    margin-right: 0.37333rem;
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo {
+    display: inline-block;
+    vertical-align: top;
+    width: 6.85333rem;
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo .payTitle {
+    margin: 0.85333rem 0 0;
+    font-size: 0.42667rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #222222;
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo .payDescCont {
+    position: absolute;
+    left: 2.74667rem;
+    bottom: 0.85333rem;
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo .payDescCont article {
+    display: inline-block;
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo .payDescCont .payVipDesc span:nth-child(1) {
+    font-size: 0.48rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #d82b2b;
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo .payDescCont .payVipDesc span:nth-child(1) i {
+    font-size: 0.32rem;
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo .payDescCont .payVipDesc span:nth-child(2) {
+    font-size: 0.34667rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: gray;
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo .payDescCont .payVipDesc span:nth-child(3) {
+    font-size: 0.34667rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: gray;
+    margin-left: 0.13333rem;
+    text-decoration: line-through;
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo .payDescCont .payVipDesc .redTip {
+    font-size: 0.29333rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: white;
+    background: url("/static/images/payDetail/redBgTip.png") no-repeat center center;
+    background-size: contain;
+    width: 1.6rem;
+    height: 0.48rem;
+    display: inline-block;
+    margin-left: 0.26667rem;
+    text-align: center;
+    line-height: 0.48rem;
+    vposition: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo .payDescCont .payCourseDesc {
+    position: relative;
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo .payDescCont .payCourseDesc span:nth-child(1) {
+    font-size: 0.32rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #d82b2b;
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo .payDescCont .payCourseDesc span:nth-child(2) {
+    font-size: 0.48rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #d82b2b;
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo .payDescCont .payCourseDesc span:nth-child(3) {
+    font-size: 0.34667rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: gray;
+    text-decoration: line-through;
+    margin-left: 0.13333rem;
+}
+
+.payDetailContent .payHeaderInfo .payTextInfo .payDescCont .payCourseDesc .redTip {
+    font-size: 0.29333rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: white;
+    background: url("/static/images/payDetail/redBgTip.png") no-repeat center center;
+    background-size: contain;
+    width: 1.6rem;
+    height: 0.48rem;
+    display: inline-block;
+    margin-left: 0.26667rem;
+    text-align: center;
+    line-height: 0.48rem;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+}
+
+.payDetailContent .vipPayItem {
+    height: 1.94667rem;
+    width: 100%;
+    position: relative;
+}
+
+.payDetailContent .vipPayItem img {
+    width: 1.33333rem;
+    height: 1.09333rem;
+    display: inline-block;
+    margin: 0.4rem 0.26667rem 0 0.4rem;
+}
+
+.payDetailContent .vipPayItem .vipPayItemInfo {
+    font-size: 0.37333rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #624d18;
+    max-width: 3.84rem;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+}
+
+.payDetailContent .vipPayItem section {
+    font-size: 0;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #d82b2b;
+    position: absolute;
+    right: 0.4rem;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+}
+
+.payDetailContent .vipPayItem section span {
+    font-size: 0.48rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #d82b2b;
+    margin-right: 0.10667rem;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.payDetailContent .vipPayItem section span:nth-child(1) i {
+    font-size: 0.34667rem;
+}
+
+.payDetailContent .vipPayItem section span:nth-child(2) {
+    font-size: 0.34667rem;
+    color: #808080;
+}
+
+.payDetailContent .vipPayItem section span:nth-child(3) {
+    float: right;
+    width: 0.58667rem;
+    height: 0.58667rem;
+    background: url("/static/images/payDetail/payNotChecked.png") no-repeat center center;
+    background-size: contain;
+    margin-left: 0.21333rem;
+}
+
+.payDetailContent .vipPayItem section span:nth-child(3).active {
+    background: url("/static/images/payDetail/payChecked.png") no-repeat center center;
+    background-size: contain;
+}
+
+.payDetailContent .payRightInterests {
+    height: 5.09333rem;
+    background-color: #ffffff;
+    padding: 0 0.4rem;
+}
+
+.payDetailContent .payRightInterests .rightTitle span:nth-child(1) {
+    font-size: 0.4rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #333333;
+    margin-top: 0.53333rem;
+    display: inline-block;
+}
+
+.payDetailContent .payRightInterests .rightTitle span:nth-child(2) {
+    font-size: 0.37333rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #895f39;
+    float: right;
+    margin-top: 0.53333rem;
+    display: inline-block;
+}
+
+.payDetailContent .payRightInterests .rightTitle span:nth-child(2) i {
+    display: inline-block;
+    width: 0.32rem;
+    height: 0.32rem;
+    background: url("/static/images/payDetail/lookMore.png") no-repeat center center;
+    background-size: contain;
+    margin-left: 0.13333rem;
+}
+
+.payDetailContent .payRightInterests .rightItem {
+    margin-bottom: 0.21333rem;
+    margin-left: 0.4rem;
+}
+
+.payDetailContent .payRightInterests .rightItem li {
+    display: inline-block;
+    width: 1.6rem;
+    margin: 0.53333rem 0.74667rem 0 0;
+}
+
+.payDetailContent .payRightInterests .rightItem li:last-child {
+    margin-right: 0;
+}
+
+.payDetailContent .payRightInterests .rightItem li img {
+    display: inline-block;
+    width: 1.33333rem;
+    height: 1.33333rem;
+    border-radius: 50%;
+}
+
+.payDetailContent .payRightInterests .rightItem li span {
+    font-size: 0.37333rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #333333;
+    margin-top: 0.26667rem;
+    text-align: center;
+    display: inline-block;
+}
+
+.payDetailContent .payTypeCont {
+    background-color: #ffffff;
+    padding: 0 0.4rem;
+}
+
+.payDetailContent .payTypeCont li {
+    height: 1.49333rem;
+    border-bottom: 0.02667rem solid #e3e5e9;
+}
+
+.payDetailContent .payTypeCont li:last-child {
+    border: none;
+}
+
+.payDetailContent .payTypeCont li.payType {
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #333333;
+    font-size: 0.4rem;
+    line-height: 1.49333rem;
+}
+
+.payDetailContent .payTypeCont li.payType span:nth-child(2) {
+    float: right;
+}
+
+.payDetailContent .payTypeCont li.payDiscount {
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #333333;
+    font-size: 0.4rem;
+    line-height: 1.49333rem;
+}
+
+.payDetailContent .payTypeCont li.payDiscount span i {
+    margin-left: 0.10667rem;
+    color: #aaaaaa;
+}
+
+.payDetailContent .payTypeCont li.payDiscount span.nothingCoupon {
+    float: right;
+    color: #cccccc;
+}
+
+.payDetailContent .payTypeCont li.payDiscount span.couponNum, .payDetailContent .payTypeCont li.payDiscount span.availableCoupon, .payDetailContent .payTypeCont li.payDiscount span.canCollectCoupon {
+    float: right;
+    font-size: 0.4rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #d82b2b;
+}
+
+.payDetailContent .payWayCont {
+    background-color: #ffffff;
+    padding: 0 0.4rem;
+    height: 100%;
+}
+
+.payDetailContent .payWayCont .payWayTitle {
+    font-size: 0.37333rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #555555;
+    margin: 0.53333rem 0;
+    display: inline-block;
+}
+
+.payDetailContent .payWayCont .payWayItem {
+    position: relative;
+}
+
+.payDetailContent .payWayCont .payWayItem li {
+    border-bottom: 0.02667rem solid #e3e5e9;
+    height: 1.52rem;
+    line-height: 1.52rem;
+}
+
+.payDetailContent .payWayCont .payWayItem li:nth-child(1) span {
+    display: inline-block;
+}
+
+.payDetailContent .payWayCont .payWayItem li:nth-child(1) span:nth-child(1) {
+    width: 0.61333rem;
+    height: 0.56rem;
+    background: url("/static/images/payDetail/weixinIcon.png") no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+}
+
+.payDetailContent .payWayCont .payWayItem li:nth-child(1) span:nth-child(2) {
+    font-size: 0.42667rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #333333;
+    vertical-align: super;
+    margin-left: 0.90667rem;
+}
+
+.payDetailContent .payWayCont .payWayItem li:nth-child(1) span:nth-child(3) {
+    float: right;
+    width: 0.58667rem;
+    height: 0.58667rem;
+    background: url("/static/images/payDetail/payNotChecked.png") no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+}
+
+.payDetailContent .payWayCont .payWayItem li:nth-child(1) span:nth-child(3).active {
+    border-radius: 50%;
+    background: url("/static/images/payDetail/payChecked.png") no-repeat center center;
+    background-size: contain;
+}
+
+.payDetailContent .paySubmitBtn {
+    height: 1.30667rem;
+    width: 100%;
+    background: #f6f6f6;
+    line-height: 1.30667rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.payDetailContent .paySubmitBtn .vipTip {
+    font-size: 0.37333rem;
+    width: 100%;
+    height: 0.96rem;
+    background: #fefced;
+    padding-left: 0.4rem;
+    line-height: 0.96rem;
+    position: fixed;
+    left: 0;
+    bottom: 1.30667rem;
+    color: #895423;
+}
+
+.payDetailContent .paySubmitBtn span {
+    display: inline-block;
+}
+
+.payDetailContent .paySubmitBtn span:nth-child(1) {
+    font-size: 0.29333rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #dd9933;
+    width: 62%;
+    margin-left: 0.4rem;
+    vertical-align: unset;
+}
+
+.payDetailContent .paySubmitBtn span:nth-child(1) .moneyNum {
+    font-size: 0.74667rem;
+    vertical-align: inherit;
+}
+
+.payDetailContent .paySubmitBtn span:nth-child(1) .grayLine {
+    width: 0.02667rem;
+    height: 0.4rem;
+    background: #aaaaaa;
+    margin: 0 0.13333rem;
+    display: inline-block;
+}
+
+.payDetailContent .paySubmitBtn span:nth-child(1) .discount {
+    font-size: 0.37333rem;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: gray;
+    line-height: 0.53333rem;
+    vertical-align: text-bottom;
+}
+
+.payDetailContent .paySubmitBtn span:nth-child(2) {
+    width: 34%;
+    height: 100%;
+    background: #6483e9;
+    font-size: 0.45333rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: white;
+    float: right;
+    text-align: center;
+}
+
+.payDetailContent .rightInterestsTip {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 4;
+}
+
+.payDetailContent .rightInterestsTip .rightInterestsCont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 9.2rem;
+    height: 10.66667rem;
+    margin: 0 auto;
+    background-color: #ffffff;
+    background-size: contain;
+    border-radius: 0.32rem;
+    overflow: hidden;
+}
+
+.payDetailContent .rightInterestsTip .rightInterestsCont i {
+    width: 100%;
+    height: 1.49333rem;
+    background: url("/static/images/payDetail/tipBg.png") no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    font-size: 0.50667rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #222222;
+    text-align: center;
+    line-height: 1.49333rem;
+    margin-bottom: 0.4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.payDetailContent .rightInterestsTip .rightInterestsCont .rigthDesc {
+    overflow-y: scroll;
+    margin-top: 1.86667rem;
+    max-height: 9.17333rem;
+}
+
+.payDetailContent .rightInterestsTip .rightInterestsCont .rigthDesc li {
+    padding: 0 0.66667rem;
+    margin-bottom: 0.4rem;
+}
+
+.payDetailContent .rightInterestsTip .rightInterestsCont .rigthDesc li span {
+    font-size: 0.42667rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #222222;
+    line-height: 0.58667rem;
+    margin-bottom: 0.16rem;
+    display: inline-block;
+}
+
+.payDetailContent .rightInterestsTip .rightInterestsCont .rigthDesc li span:before {
+    content: '';
+    width: 0.10667rem;
+    height: 0.37333rem;
+    display: inline-block;
+    background: #222222;
+    margin-right: 0.10667rem;
+}
+
+.payDetailContent .rightInterestsTip .rightInterestsCont .rigthDesc li p {
+    font-size: 0.4rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #555555;
+    line-height: 0.56rem;
+}
+
+.payDetailContent .rightInterestsTip .tipCloseBtn {
+    width: 1.06667rem;
+    height: 1.06667rem;
+    display: inline-block;
+    background: url("//img50.allinmd.cn/index/close_small_popup.png") no-repeat center 50%;
+    background-size: contain;
+    margin: 0 auto;
+    margin-top: 0.77333rem;
+    position: fixed;
+    left: 50%;
+    bottom: 0.77333rem;
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+}

@@ -1,0 +1,275 @@
+@charset "UTF-8";
+//个人中心云云
+//Created by qiangkailiang on 2016/07/31
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.boneCloud{
+    margin: 0 rem3(15px);
+    padding-top: rem3(28px);
+    border-bottom: 1px solid #E5E6ED;
+}
+.boneAutor{
+    margin-bottom: rem3(12px);
+    .autorHead{
+        position: relative;
+        font-size: 0;
+        img{
+            width: rem3(44px);
+            height: rem3(44px);
+            display: inline-block;
+            vertical-align: top;
+            border-radius: 50%;
+        }
+        .autorInfo{
+            margin-left: rem3(12px);
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: rem3(2px);
+            .autorName{
+                font-size: rem3(16px);
+                color: #506AB4;
+                letter-spacing: 0;
+                line-height: rem3(17px);
+                margin-bottom: rem3(7px);
+                display: block;
+                i{
+                    width: rem3(20px);
+                    height: rem3(20px);
+                    margin-left: rem3(5px);
+                    display: inline-block;
+                    vertical-align: middle;
+                    background: url("/static/images/personal/v1.png") 100% 100% no-repeat;
+                    background-size: contain;
+                    margin-top: rem3(-3px);
+                    &.autorIcon{
+                        //width: rem3(12px);
+                        background: url("/static/images/personal/v2.png") 100% 100% no-repeat;
+                        background-size: contain;
+                    }
+                }
+            }
+            .autorMedical,.autorHospital{
+                font-size: rem3(14px);
+                color: #888888;
+                letter-spacing: 0;
+                line-height: rem3(14px);
+            }
+        }
+        .publicTime{
+            font-size: rem3(14px);
+            color: #AAAAAA;
+            letter-spacing: 0;
+            line-height: rem3(14px);
+            position: absolute;
+            right: 0;
+            top:rem3(10px);
+        }
+    }
+    .autorDesc{
+        margin-top: rem3(18px);
+        font-size: rem3(18px);
+        color: #222222;
+        letter-spacing: 0;
+        line-height:rem3(22px);
+    }
+    .autorDescAll{
+        font-size: rem3(18px);
+        color: #506AB4;
+        letter-spacing: 0;
+        margin-top: rem3(12px);
+    }
+}
+.oneImgCon{
+    img{
+        width: rem3(180px);
+        height: rem3(180px);
+        border-radius: rem3(3px);
+    }
+}
+.moreImgCon{
+    font-size: 0;
+    line-height: 1;
+    img{
+        width: rem3(112px);
+        height: rem3(112px);
+        margin-right: rem3(3px);
+        margin-bottom: rem3(3px);
+        border-radius: rem3(3px);
+      &:nth-child(3n){
+        margin-right: 0;
+      }
+    }
+}
+.oneVideoCon{
+    position: relative;
+    width: rem3(180px);
+    height: rem3(102px);
+    img{
+        width: rem3(180px);
+        height: rem3(102px);
+        border-radius: rem3(3px);
+    }
+    span{
+        position: absolute;
+        width: rem3(40px);
+        height: rem3(40px);
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background: url("/static/images/personal/start_p.png") 100% 100% no-repeat;
+        background-size: contain;
+    }
+}
+.nodeCon{
+    position: relative;
+   img{
+       width: rem3(345px);
+       height: rem3(194px);
+   }
+    span{
+       position: absolute;
+        top: 0;
+        right: 0;
+        background: rgba(100,131,233,.8);
+        font-size: rem3(13px);
+        color: #FFFFFF;
+        line-height: rem3(23px);
+        width: rem3(90px);
+        text-align: center;
+    }
+}
+.boneFooter{
+    @include clearfix;
+    margin-bottom: rem3(30px);
+    margin-top: rem3(21px);
+    .boneTag{
+        float: left;
+        font-size: rem3(13px);
+        color: #777777;
+        letter-spacing: 0;
+        line-height: rem3(23px);
+        background: #F5F6F8;
+        border-radius: rem3(3px);
+        //padding: 0 rem3(8px);
+        padding-right: rem3(8px);
+        max-width: rem3(145px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        &:before{
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: rem3(25px);
+            height: rem3(23px);
+            margin-right: rem3(8px);
+            margin-top: rem3(1px);
+        }
+        &.warLock{
+            &:before {
+                background: url("/static/images/personal/Warlock.png") 100% 100% no-repeat;
+                background-size: contain;
+            }
+        }
+        &.disease{
+            &:before{
+                background: url("/static/images/personal/disease.png") 100% 100% no-repeat;
+                background-size: contain;
+            }
+
+        }
+    }
+    .nodeAuthor{
+        width: rem3(345px);
+        margin: auto;
+        background: #F5F6F8;
+        border-radius: rem3(3px);
+        padding: rem3(10px);
+        margin-bottom: rem3(18px);
+        box-sizing: border-box;
+        font-size: 0;
+        img{
+            width: rem3(40px);
+            height: rem3(40px);
+            vertical-align: middle;
+        }
+        .nodeAuthorDesc{
+            width: rem3(272px);
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: rem3(10px);
+            font-size: 0;
+            .descTitle{
+                font-size: rem3(16px);
+                color: #000000;
+                letter-spacing: 0;
+                line-height: rem3(16px);
+                margin-bottom: rem3(7px);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .descName{
+                font-size: rem3(14px);
+                color: #777777;
+                letter-spacing: 0;
+                line-height: rem3(14px);
+            }
+        }
+    }
+    .boneNum{
+        float: right;
+        margin-top: rem3(2px);
+        span{
+            font-size: rem3(13px);
+            color: #888888;
+            letter-spacing: 0;
+            line-height: rem3(13px);
+            &:before{
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                width: rem3(21px);
+                height: rem3(21px);
+                margin-right: rem3(5px);
+                margin-top: rem3(-3px);
+            }
+        }
+        .reviewNum{
+            margin-right: rem3(34px);
+            &:before{
+                background: url("/static/images/personal/comment.png") 100% 100% no-repeat;
+                background-size: contain;
+            }
+        }
+        .likeNum{
+            &:before{
+                background: url("/static/images/personal/like-on.png") 100% 100% no-repeat;
+                background-size: contain;
+            }
+            &.active{
+                &:before{
+                    background: url("/static/images/personal/like-off.png") 100% 100% no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+
+
+}
+.moreBoneCloud{
+    display: block;
+    font-size: rem3(17px);
+    color: #6483E9;
+    letter-spacing: 0;
+    line-height: rem3(17px);
+    background: #EFF2FC;
+    border-radius: rem3(3px);
+    width: rem3(345px);
+    height: rem3(51px);
+    margin: auto;
+    margin-top: rem3(10px);
+}

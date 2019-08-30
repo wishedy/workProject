@@ -1,0 +1,29 @@
+<import src="/components/toast$1074ede9" /><template name="orderEditPerson$6e7d7f46">
+  <view class="_section data-v-1e7b2e38 add-patient-content">
+    <view class="_article data-v-1e7b2e38 add-patient-content-item">
+      <view class="_aside data-v-1e7b2e38">姓名</view>
+      <view class="_figure data-v-1e7b2e38 add-patient-input"><input type="text" placeholder="请填写真实姓名" id="patientName" bindblur="handleProxy" bindinput="handleProxy" maxlength="10" placeholder-style="color:#aaaaaa;" disabled="{{updateInfo}}" name="username" value="{{username}}" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_input data-v-1e7b2e38" /></view>
+    </view>
+    <view class="_article data-v-1e7b2e38 add-patient-content-item">
+      <view class="_aside data-v-1e7b2e38">性别</view>
+      <view class="_figure data-v-1e7b2e38 add-patient-input">
+        <view class="_section data-v-1e7b2e38 add-patient-sex-selector  {{[sexSelect == 1 ? 'on' : '']}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+          <view class="_i data-v-1e7b2e38 add-patient-selector"></view> <label class="_span data-v-1e7b2e38">男</label>
+        </view>
+        <view class="_section data-v-1e7b2e38 add-patient-sex-selector women {{[sexSelect == 2 ? 'on' : '']}}" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+          <view class="_i data-v-1e7b2e38 add-patient-selector"></view> <label class="_span data-v-1e7b2e38">女</label>
+        </view>
+      </view>
+    </view>
+    <view class="_article data-v-1e7b2e38 add-patient-content-item">
+      <view class="_aside data-v-1e7b2e38">出生日期</view>
+      <view class="_figure data-v-1e7b2e38 add-patient-input birth-box">
+        <view class="_p data-v-1e7b2e38 contentMessage {{[birthClickNum > 1 ? 'on' : '']}}">{{birthClickNum > 1 ? birthInput : '请选择'}}</view>
+        <picker class="_picker data-v-1e7b2e38 time-picker" mode="date" value="{{defaultTime}}" start="1900-01-01" end="{{currTime}}" style="position: absolute;top: 0;width: 100%;height: 100%;" bindchange="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">
+          <view class="_view data-v-1e7b2e38 picker" style="position: absolute;top: 0;width: 100%;height: 100%;"></view>
+        </picker>
+      </view>
+    </view>
+    <form class="_form data-v-1e7b2e38 add-patient-btn" bindsubmit="handleProxy" report-submit="true" data-eventid="{{'5'}}" data-comkey="{{$k}}"><button class="_button data-v-1e7b2e38 disabled" wx:if="{{!infoFlag}}">完成</button> <button wx:if="{{infoFlag}}" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}" class="_button data-v-1e7b2e38">完成</button></form> <template wx:if="{{toastShow}}" data="{{...$root[$kk+'0'], $root}}" is="toast$1074ede9"></template>
+  </view>
+</template>

@@ -1,0 +1,800 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+
+//资源列表模块
+@import "../../components/classes/_classes_resourceList";
+//相关课程
+@import "../../components/classes/_classes_course";
+//右侧输入框
+@import "../../components/_rightTextarea";
+@import "../../components/classes/classes_doc";
+@import "../../components/_makeSurePopup";
+.classesCont{
+  width: 1000px;
+  margin: 20px auto 0;
+}
+.columnLeft{
+  width: 708px;
+  float: left;
+  .header{
+    width: 708px;
+    height: 274px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    img{
+      width: 100%;
+      height:100%;
+    }
+  }
+  nav{
+    background: #fff;
+    ul{
+      overflow: hidden;
+    }
+    li{
+      margin: 0 24px;
+      float: left;
+      width: 112px;
+      text-align: center;
+      border-bottom: solid 2px #fff;
+      height: 51px;
+      line-height: 51px;
+      font-size: 18px;
+      color: #777777;
+      cursor: pointer;
+      &.active{
+        border-bottom: solid 2px #2899E6;
+        color: #3598DB;
+      }
+      &:hover{
+        color: #2899e6;
+      }
+    }
+  }
+
+  .classesList{
+    background: #fff;
+    margin-top: 20px;
+    /*.classesListUl{
+      overflow: hidden;
+      margin-left: 3px;
+      padding-bottom: 30px;
+    }
+    li{
+      width: 206px;
+      float: left;
+      margin:30px 0 0  21px;
+      .title{
+        font-size: 16px;
+        color: #333333;
+        line-height: 16px;
+        margin-top: 14px;
+      }
+      .classNum{
+        font-size: 13px;
+        color: #909090;
+        line-height: 13px;
+        margin-top: 8px;
+        i{
+          display: inline-block;
+          background: url("/images/img10/v3/classes/read.png") no-repeat;
+          width: 18px;
+          height: 12px;
+          vertical-align: bottom;
+          margin-right: 6px;
+        }
+        span{
+          margin-left: 14px;
+        }
+      }
+      .function{
+        overflow: hidden;
+        margin-top: 15px;
+        span{
+          font-size: 14px;
+          color: #FF9224;
+        }
+        .collection{
+          font-size: 13px;
+          color: #C5C5C5;
+          float: right;
+          i{
+            display: inline-block;
+            background: url("/images/img10/v3/classes/collect_pressed.png") no-repeat;
+            width: 14px;
+            height: 12px;
+            vertical-align: bottom;
+            margin-right: 6px;
+          }
+        }
+      }
+    }*/
+  }
+}
+
+.columnRight{
+  float: right;
+  width: 268px;
+}
+.al_dis_professor {
+  margin: 30px 0 5px 20px;
+  font-size: 18px;
+  color: #333;
+  position: relative;
+  .al_dis_more {
+    position: absolute;
+    top: 3px;
+    font-size: 13px;
+    color: #9ea7bb;
+    font-family: "Helvetica Neue";
+    &:hover{
+      color: #2899e6;
+      i{
+        content: "";
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        margin-left: 5px;
+        position: relative;
+        top: 2px;
+        background: url(//img10.allinmd.cn/v3/classes/changeHover.png) no-repeat;
+      }
+    }
+    &:after{
+      content: "";
+      width: 6px;
+      height: 10px;
+      display: inline-block;
+      margin-left: 5px;
+      position: relative;
+      top: 2px;
+      background: url(//img10.allinmd.cn/v3/common/icon/content_title_more.png) no-repeat;
+    }
+  }
+}
+/*受欢迎讲师*/
+.al-discover_know{
+  margin-top: 0;
+  border: 1px solid #e4e9ed;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+
+/*课程详情*/
+.courseIntroduction{
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(215,222,229,0.50), 0 0 2px 0 #C7D3DF;
+  padding: 20px 24px;
+  margin-top: 20px;
+  .text{
+    display: inline-block;
+    .title{
+      font-size: 22px;
+      color: #333333;
+      line-height: 22px;
+    }
+    .num{
+      font-size: 14px;
+      color: #909090;
+      line-height: 14px;
+      margin-top: 14px;
+      span{
+        margin-right: 14px;
+      }
+    }
+    .freeTime{
+      font-size: 18px;
+      color: #FF9224;
+      line-height: 18px;
+      margin-top: 20px;
+    }
+  }
+  .btn{
+    display: inline-block;
+    float: right;
+    border: 1px solid #2899E7;
+    border-radius: 100px;
+    width: 88px;
+    height:34px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 14px;
+    color: #2899E7;
+    cursor: pointer;
+    i{
+      display: inline-block;
+      background: url("/images/img10/v3/classes/collect_normal.png") no-repeat;
+      width: 14px;
+      height: 12px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+  .active{
+    display: inline-block;
+    float: right;
+    border: 1px solid #dfdfdf;
+    border-radius: 100px;
+    width: 88px;
+    height:34px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 14px;
+    color: #dfdfdf;
+    i{
+      display: inline-block;
+      background: url("/images/img10/v3/classes/collect_pressed.png") no-repeat;
+      width: 14px;
+      height: 12px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+}
+
+.teacherIntroduction{
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(215,222,229,0.50), 0 0 2px 0 #C7D3DF;
+  margin-top: 20px;
+  .title{
+    height: 52px;
+    line-height: 52px;
+    border-bottom: solid 1px #E4E9ED;
+    padding-left: 24px;
+  }
+  ul{
+    @include  clearfix();
+    margin:10px 0 0 4px;
+    padding-bottom: 25px  ;
+    li{
+      float: left;
+      margin-left: 20px;
+      margin-top: 20px;
+      border: 1px solid #F2F5F7;
+      border-radius: 4px;
+      width: 150px;
+      height: 180px;
+      text-align: center;
+      img{
+        width: 54px;
+        height: 52.7px;
+        border-radius: 50%;
+        margin-top: 21.3px;
+      }
+      .name{
+        font-size: 15px;
+        color: #333333;
+        line-height: 15px;
+        margin-top: 20px;
+      }
+      .doctorTitle,.hospital{
+        font-size: 14px;
+        color: #909090;
+        line-height: 14px;
+        margin-top: 11px;
+      }
+      .hospital{
+        margin-top: 6px;
+      }
+      &:hover{
+        border: 1px solid rgba(98,111,140,0.15);
+        box-shadow: 0 3px 8px 0 rgba(178,183,187,0.35);
+        border-radius: 4px;
+        margin-top: 12px;
+      }
+    }
+  }
+  .teacherMore{
+    display: block;
+    background: url("/images/img10/v3/classes/arrow-more.png") no-repeat;
+    width: 18px;
+    height: 9px;
+    margin:0 auto;
+    padding-bottom: 20px;
+    cursor: pointer;
+    &:hover{
+      background: url("/images/img10/v3/classes/arrow-more-hover.png") no-repeat;
+    }
+  }
+  .teacherUp{
+    display: block;
+    background: url("/images/img10/v3/classes/arrow-unfold.png") no-repeat;
+    width: 18px;
+    height: 9px;
+    margin:25px auto 0;
+    padding:0 0 20px 0;
+    cursor: pointer;
+    &:hover{
+      background: url("/images/img10/v3/classes/arrow-unfold-hover.png") no-repeat;
+    }
+  }
+}
+.courseColumn{
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(215,222,229,0.50), 0 0 2px 0 #C7D3DF;
+  margin-top: 20px;
+  .title{
+    border-bottom: solid 1px #E4E9ED;
+    height: 52px;
+    line-height: 52px;
+    padding-left: 24px;
+    font-size: 18px;
+    color: #333333;
+  }
+  ul{
+    li{
+      padding: 30px 0 0 0;
+      font-size: 0;
+      &:after{
+        content: '';
+        border-bottom: solid 1px #E4E9ED;
+        display: inline-block;
+        margin: 20px 24px 0;
+        width: 93%;
+      }
+      &:last-child{
+        &:after{
+          border: none;
+        }
+      }
+    }
+    .name{
+      font-size: 18px;
+      color: #333333;
+      line-height: 18px;
+      padding: 0 24px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      margin-bottom: 14px;
+    }
+    span{
+      font-size: 14px;
+      color: #9EA7BB;
+      position: absolute;
+      right: 24px;
+      top:0;
+    }
+    .listPdf,.listVideo{
+      position: relative;
+      font-size: 14px;
+      color: #777777;
+      line-height: 35px;
+      padding: 0 24px 0 46px;
+      cursor: pointer;
+      i{
+        display: inline-block;
+        //width: 30px;
+        padding: 0 5px;
+        height: 15px;
+        line-height: 15px;
+        margin-right: 8px;
+        font-size: 10px;
+        color:#aaa;
+        border:1px solid #c5c5c5;
+        text-align: center;
+        border-radius: 1px;
+        vertical-align: baseline;
+      }
+      b{
+        display: inline-block;
+        background: url("/images/img10/v3/classes/new.png") no-repeat;
+        width: 28px;
+        height: 10px;
+        vertical-align: middle;
+        margin-left: 6px;
+      }
+      &:hover{
+        a{
+        color:#2899e6;
+          i{
+            color:#626f8c;
+            border-color: #9ea7bb;
+          }
+        }
+        background: #F2F5F7;
+        height: 35px;
+        line-height: 35px;
+      }
+    }
+    .listNone{
+      font-size: 14px;
+      color: #aaa;
+      line-height: 35px;
+      padding: 0 24px 0 46px;
+      i{
+        display: inline-block;
+        width: 32px;
+        height: 24px;
+        line-height: 15px;
+        margin-bottom: -6px;
+        margin-right: 8px;
+        font-size: 10px;
+        color:#aaa;
+        border:none;
+        text-align: center;
+        border-radius: 1px;
+        vertical-align: baseline;
+        background: url("/images/img10/v3/classes/comingsoon.png") no-repeat 50% 50%;
+        background-size: contain;
+      }
+      b{
+        display: inline-block;
+        background: url("/images/img10/v3/classes/new.png") no-repeat;
+        width: 28px;
+        height: 10px;
+        vertical-align: middle;
+        margin-left: 6px;
+      }
+
+    }
+    .listVideo{
+      cursor: pointer;
+      i{
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+
+.btnMod{
+  background: #FFFFFF;
+  border: 1px solid rgba(199,211,223,0.34);
+  text-align: center;
+  padding: 25px 0 30px;
+  margin-bottom: 20px;
+  p{
+    font-size: 16px;
+    color: #555555;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin-bottom: 10px;
+  }
+  button{
+    background: #2899E6;
+    border-radius: 100px;
+    width: 180px;
+    height:40px;
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 40px;
+    margin-top: 14px;
+  }
+  textarea{
+    font-size: 16px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 30px;
+    width: 203px;
+    height: 153px;
+    margin: 0 auto;
+    border: 1px solid #DBDBDB;
+    border-radius: 4px;
+    padding: 7px 13px 40px;
+  }
+  aside{
+    position: relative;
+    span{
+      position: absolute;
+      right:31px;
+      bottom: 7px;
+      font-family: '宋体';
+      font-size: 13px;
+      color: #AAAAAA;
+    }
+  }
+
+  .thinkBtn{
+    text-align: left;
+    margin:15px 0 0 20px;
+    button{
+      background: rgba(40,153,230,0.40);
+      border-radius: 27px;
+      width: 80px;
+      height: 34px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.70);
+      text-align: center;
+      line-height: 34px;
+      &.activation{
+        background: #2899E6;
+        color: #FFFFFF;
+      }
+    }
+    span{
+      font-size: 14px;
+      color: #AAAAAA;
+      line-height: 34px;
+      margin-left: 15px;
+    }
+  }
+}
+
+.think::-webkit-input-placeholder{
+  font-size: 14px;
+  color: #AAAAAA;
+}
+.courseXg .al_dis_professor .al_dis_more {
+  i {
+    content: "";
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+    background: url(/images/img10/v3/classes/change.png) no-repeat;
+  }
+  &:after{
+    background: none;
+  }
+  &:hover{
+    i{
+      background: url(//img10.allinmd.cn/v3/classes/changeHover.png) no-repeat;
+      background-size: contain;
+    }
+  }
+}
+.courseXg{
+  fieldset p{
+    span{
+      float: right;
+      color: #FF9224;
+      display: none;
+    }
+  }
+}
+
+
+
+/*详情*/
+.al-advContent figcaption{
+  span{
+    font-size: 16px;
+    color: #999999;
+  }
+}
+
+.al-advContent_videoBox{
+  ul{
+    @include  clearfix();
+    width: 1000%;
+  }
+  li{
+    float: left;
+    width: 192px;
+    margin-right: 8px;
+    .resultAds {
+      position: relative;
+      img {
+        width: 192px;
+        height: 128px;
+        border: 3px solid #fff;
+      }
+      i {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        margin-left: -25px;
+        margin-top: -25px;
+        top: 50%;
+        left: 50%;
+        display: inline-block;
+        background: url(/images/img10/v3/common/icon/video_btn.png) no-repeat;
+        background-size: contain;
+      }
+      b {
+        display: block;
+        position: absolute;
+        right: 3px;
+        bottom: 3px;
+        width: 70px;
+        height: 25px;
+        line-height: 25px;
+        text-align: right;
+        padding-right: 8px;
+        color: #fefefe;
+        font-size: 14px;
+        font-weight: normal;
+        background: url(//img00.allinmd.cn/column/videoPK_v2/videoPlayTime.png) no-repeat;
+      }
+    }
+    .name{
+      font-size: 16px;
+      color: #555555;
+      line-height: 26px;
+    }
+  }
+  .al-videoHighLight{
+    .resultAds{
+      img{
+        border: 3px solid #2899E7;
+      }
+    }
+    .name{
+      color: #2899E7;
+    }
+  }
+}
+
+
+
+.columnRight{
+  .al-discover_subjectSideBar{
+    float:none;
+    margin-top:0;
+    background-color:#fff;
+    border:1px solid #e4e9ed;
+    width:268px;
+    padding:30px 0;
+    text-align:center;
+    p{
+      color:#555555;
+      line-height:26px;
+    }
+    a{
+      display:inline-block;
+      background-color:#2899E6;
+      padding:12px 40px;
+      border-radius:30px;
+      color:#fff;
+      margin-top:12px;
+      behavior: url('/js/third-party/pie/pie.htc');
+      position: relative;
+      float: none;
+      margin-left: 0;
+      &.ev_submit:hover{background-color:#52A9E4;}
+    }
+    .al-sub_aTag{
+      background: none;
+      color:#aaa;
+      display: inline-block;
+      margin-right: 15px;
+      padding: 8px 20px;
+      border-radius: 20px;
+      //margin-left:-80px;
+      margin-top: 0;
+      &:hover{
+        background: none;
+        color:#aaa;
+      }
+    }
+    .ev_submit{
+      background-color: #2899E6;
+      color: #fff;
+      cursor: default;
+      opacity: 0.7;
+      padding: 8px 20px;
+      border-radius: 20px;
+      margin-left:-60px;
+      margin-top: 0;
+    }
+    .ev_submit-high-light{
+      opacity: 1;
+    }
+  }
+  .al-followCase{
+    //margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid rgba(199, 211, 223, 0.45);
+    padding: 30px 14px 24px;
+    margin: 20px 0;
+    text-align: center;
+    color: #777777;
+     .btnBox img {
+       width: 180px;
+      height: 40px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  }
+}
+.al-downContainer{
+  top:50%;
+  left:50%;
+  margin-left: -225px;
+  margin-top:-131px;
+}
+//视频下载弹层：begin
+.al-downLoad_PopBox{
+  display:none;
+  //display:flex;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:7;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);  /*IE8支持*/
+}
+.al-downContainer{
+  width:450px;
+  height:262px;
+  background-color:#fff;
+  border-radius:6px;
+  //behavior:url("/js/third-party/pie/pie.htc");
+  position: relative;
+  .closePopBtn{ //关闭按钮
+    float:right;
+    width:13px;
+    height:13px;
+    background:url("//img10.allinmd.cn/v3/terminal/popCloseBtn.png") center center no-repeat;
+    margin:20px;
+    cursor: pointer;
+  }
+}
+.al-downLoadContent{
+  @include clearfix();
+  padding:40px 50px 45px;
+  figcaption{
+    color:#555;
+    margin-bottom:20px;
+  }
+  .downLoadWay{
+    float:left;
+    margin-top:10px;
+    p{
+      padding:25px 0 0 25px;
+      i{
+        display:inline-block;
+        width:28px;
+        height:32px;
+        background:url("//img10.allinmd.cn/v3/terminal/AndroidIcon.png") center center no-repeat;
+        vertical-align: middle;
+        margin-right:15px;
+        margin-top:-5px;
+      }
+      .iPhoneIcon{
+        width:25px;
+        height:31px;
+        background:url("//img10.allinmd.cn/v3/terminal/iPhoneIcon.png") center center no-repeat;
+        margin-top:-10px;
+      }
+      span{font-size:20px;}
+      .AndroidText{color:#49BD38;}
+      .iPhoneText{color:#14A7F0;}
+    }
+  }
+  .downLoad_QR{ //下载二维码
+    float:right;
+    img{
+      width:140px;
+      height:140px;
+      box-shadow:8px 8px 10px rgba(83,101,119,0.2),-5px -5px 10px rgba(83,101,119,0.2);
+    }
+  }
+}
+//视频下载弹层：end
+
+.clearBoth{
+  clear: both;
+}
+
+.downloadBtn{
+  width: 180px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  margin: 0 auto;
+  background: #2899e6;
+  border-radius: 100px;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+  &:before{
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 17px;
+    background: url("/images/img10/v3/terminal/icon_download.png") no-repeat;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+}

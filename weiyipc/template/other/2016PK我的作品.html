@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>我的作品专题页－唯医，allinmd</title>
+    <meta name="Keywords" content="病例专题，视频专题，视频pk-我的作品，骨科专题，学术专题，文献专题，手术汇总，">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<link rel="dns-prefetch" href="//comm.allinmd.cn">
+	<link rel="dns-prefetch" href="//modules.allinmd.cn">
+	<link rel="dns-prefetch" href="//plugins.allinmd.cn">
+	<link rel="dns-prefetch" href="//other.allinmd.cn">
+	<link rel="dns-prefetch" href="//scene.allinmd.cn">
+	<link rel="dns-prefetch" href="//img00.allinmd.cn">
+	<link rel="dns-prefetch" href="//img10.allinmd.cn">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+	<link href="//comm.allinmd.cn/base.css" rel="stylesheet" type="text/css"/>
+    <link href="//modules.allinmd.cn/lib.css" rel="stylesheet" type="text/css"/>
+    <link href="//other.allinmd.cn/pagination/pager.css "rel="stylesheet" type="text/css"/>
+    <link href="//other.allinmd.cn/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css"/>
+    <link href="//other.allinmd.cn/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <link href="//other.allinmd.cn/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<!--#include virtual="/includes/header.jsp"-->
+<input type="hidden" id="activityId">
+<div class="video_pk"><!--最大的块-->
+    <div class="middledasai_qr-code" ><!--二维码-->
+        <div class="erweima_nav" style="margin:0;"><img src="//img00.allinmd.cn/column/videoPK/erweima.png" /></div>
+    </div>
+   
+<!--新版广告位-->
+<#if adPosition_list??>
+	<#list adPosition_list as adPositionList>
+		<#if adPositionList_index==0>
+		<#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+			<#if v_adPositionAttachmentList??>
+				<#list v_adPositionAttachmentList as list>
+					<div class="video_pk_shouye_lunbo" style="background: url(//img99.allinmd.cn/${list.adAttUrl}) no-repeat center;">
+				</#list>
+			</#if>
+		</#if>	 
+	</#list>
+</#if>
+    <div class="video_pk_shouye_center">
+        <div class="video_pk_shouye_share" id="hr_share">
+            <span>分享至:</span>
+            <a href="javascript:;" class="share_ico_tsina"><img src="//img00.allinmd.cn/column/videoPK/homepageweibo.png" /></a>
+            <a href="javascript:;" class="share_ico_tqq"><img src="//img00.allinmd.cn/column/videoPK/homepageqq.png" /></a>
+            <a href="javascript:;" class="share_ico_qzone"><img src="//img00.allinmd.cn/column/videoPK/homepageqqkongjian.png" /></a>
+        </div>
+    </div>
+</div>
+<div class="video_pk_shouye_navhuodongjianjie"><!-- 导航和活动简介-->
+    <ul class="video_pk_shouye_nav" >
+        <#if (activityMenu??)&&(activityMenu?size>0)>
+            <#list activityMenu as MenuList>
+                <#if MenuList_index  ==4>
+                    <li class="nav_zx nav_zx_hover myWork"><a href="${MenuList.activityMenuUrl}" class="nav_zx_a">${MenuList.activityMenuName}</a></li>
+                    <#else>
+                        <li><a href="${MenuList.activityMenuUrl}">${MenuList.activityMenuName}</a></li>
+                </#if>
+            </#list>
+        </#if>
+
+        <li class="nav_bm"><a href="javascript:;">立即报名</a><div></div></li>
+        <div class="clear"></div>
+    </ul>
+</div>
+<div class="gr_center_con">
+    <div class="gr_center_main gr_center_con_ts" style="display: none;">
+        <div class="gr_cen_ts" style="display:none;">
+            <p class="mark_words">你还没有上传过作品！</p>
+            <div class="gr_btn"><a href="javascript:;" class="gr_upload" id="gr_upload_now"></a></div>
+        </div>
+        <div class="gr_cen_ts" style="display:none;">
+            <p class="mark_words mark_words_dl">你还没有登录！</p>
+            <div class="gr_btn"><a href="javascript:;" class="gr_upload gr_upload_dl" id="login_now"></a></div>
+        </div>
+    </div>
+
+    <div class="gr_center_main" style="display: none;">
+        <div class="gr_top">
+            <h2>我的作品</h2>
+        </div>
+        <div class="gr_down_list">
+
+        </div>
+        <div class="ewm_area"></div>
+        <div class="pagination">
+            <div class="pager"></div>
+        </div>
+    </div>
+</div>
+
+
+</div><!-- 详情的内容 -->
+</div><!--最大的块-->
+<!--#include virtual="/includes/footer.jsp"-->
+</body>
+<script src="//comm.allinmd.cn/base.js"></script>
+<script src="//modules.allinmd.cn/lib.js"></script>
+<script src="//scene.allinmd.cn/column/scene.column.vPK_main.js" type="text/javascript" charset="utf-8"></script>
+<script src="//scene.allinmd.cn/column/scene.column.vPK_center.js" type="text/javascript" charset="utf-8"></script>
+<script src="//other.allinmd.cn/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="//other.allinmd.cn/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu-con.js"></script>
+<script src="//other.allinmd.cn/jquery-validate/jquery.validate.js"></script>
+<script src="//other.allinmd.cn/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src="//other.allinmd.cn/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="//other.allinmd.cn/uploadReplace/uploadReplace.js"></script>
+<script src="//other.allinmd.cn/ajaxfileupload.js"></script>
+<script src="//other.allinmd.cn/uploadify/jquery.uploadify.js"></script>
+<script src="//other.allinmd.cn/jquery_lazyload/jquery.lazyload.js"></script>
+<script src="//other.allinmd.cn/jquery-qrcode-master/jquery.qrcode.min.js"></script>
+<script src="//other.allinmd.cn/pagination/jquery.pager.js" type="text/javascript" charset="utf-8"></script>
+<script src="//other.allinmd.cn/qiniu/qiniu.js"></script>
+<script src="//other.allinmd.cn/qiniu/ui.js"></script>
+<script src="//other.allinmd.cn/plupload/plupload.full.min.js"></script>
+<script src="//other.allinmd.cn/plupload/i18n/zh_CN.js"></script>
+
+</html>

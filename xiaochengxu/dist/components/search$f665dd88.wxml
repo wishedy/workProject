@@ -1,0 +1,9 @@
+<import src="/components/searchHistory$d4cf1430" /><template name="search$f665dd88">
+  <view class="_div data-v-335e427e">
+    <view class="_section data-v-335e427e sd_searchHeaderBox"><label class="_span data-v-335e427e sd_searchBack" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></label>
+      <view class="_div data-v-335e427e sd_searchGroup"><input class="_input data-v-335e427e sd_searchInput" type="text" value="{{searchVal}}" bindinput="handleProxy" placeholder="请输入关键词" data-eventid="{{'1'}}" data-comkey="{{$k}}" /> <label class="_span data-v-335e427e sd_searchClear" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+          <image hidden="{{!(searchVal.length>0)}}" class="_img data-v-335e427e sd_delete_icon" src="https://m.allinmed.cn/dist/static/image/img00/DrList/delete_01.png"></image>
+        </label> <label class="_span data-v-335e427e sd_searchBtn" bindtap="handleProxy" sps-data="{{'keyword:'+searchVal}}" data-eventid="{{'3'}}" data-comkey="{{$k}}">搜索</label></view>
+    </view> <template wx:if="{{historyShow}}" bindhistoryClickCallBack="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="searchHistory$d4cf1430"></template>
+  </view>
+</template>

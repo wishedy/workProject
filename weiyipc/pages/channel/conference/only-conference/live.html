@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:gs="http://www.gensee.com/gsml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会场</title>
+<link rel="dns-prefetch" href="//comm.allinmd.cn">
+<link rel="dns-prefetch" href="//modules.allinmd.cn">
+<link rel="dns-prefetch" href="//plugins.allinmd.cn">
+<link rel="dns-prefetch" href="//other.allinmd.cn">
+<link rel="dns-prefetch" href="//scene.allinmd.cn">
+<link rel="dns-prefetch" href="//img00.allinmd.cn">
+<link rel="dns-prefetch" href="//img10.allinmd.cn">
+<!-- build:css /dest/channel/conference/only-conference/live.css -->
+<link rel="stylesheet" href="/css/v3/base.css">
+<link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css" />
+<link rel="stylesheet" href="/css/v3/pageFooter.css" />
+<link href="/css/common/base.css" rel="stylesheet" type="text/css"/>
+<link href="/css/conference/4/common.css" type="text/css" rel="stylesheet">
+<link href="/css/conference/4/main.css" type="text/css" rel="stylesheet">
+<link href="/css/conference/gensee.css" rel="stylesheet" type="text/css"/>
+<link href="/css/conference/4/live.css" rel="stylesheet" type="text/css">
+<link href="/css/conference/css/meeting_t.css" rel="stylesheet" type="text/css">
+<link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css"/>
+<link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css"/>
+<link href="/js/modules/auth/module.auth.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="/js/modules/find-password-v2/module.find-password-v2.css" />
+<link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css"/>
+<link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+<link href="/js/modules/publish/publish.css" rel= "stylesheet" type="text/css" />
+<link href="/js/third-party/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css" />
+<link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css" />
+<!--<link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>-->
+<link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+<!--<link href="/css/column/videoPK_v2/apply_zhezhao.css" rel="stylesheet" type="text/css"/>-->
+<link href="/js/third-party/gensee/jquery-ui-1.10.3.custom.gs.min.css" type="text/css" rel="stylesheet">
+<!-- endbuild -->
+
+<!--[if lte IE 8]>
+<script src="/js/third-party/html5shiv.js"></script>
+<![endif]-->
+
+<style>
+body{height:auto; overflow:normal;}
+#widget-qa{
+	 border-top: 1px solid #000;
+    height: 393px;
+    left: 0px !important;
+    padding: 10px;
+    top: 0px !important;
+    visibility: visible;
+    width:auto !important;
+	z-index:2 !important;
+}
+.state-tips{
+	display:none !important;
+}
+.phiz-btn{
+	background: url(/js/third-party/gensee/image/btn-icon-25x25.png);
+}
+
+.phiz-btn{
+	background-position: 0 -647px;
+}
+
+.phiz-btn:hover{
+	background-position: 0 -667px;
+}
+.qa-show-mine .not-mine{display:none;}
+.not-mine-hide .not-mine{display:none;}
+</style>
+
+</head>
+
+<body>
+<!--全内容容器——mainInner-->
+<section class="al-mainInner">
+	<!-- 页头——视场景加入跳转链接 -->
+	<header class="al-header">
+		<section class="al-headerContainer">
+			<ul class="al-headerTopNav">
+				<li class="al-backBtn">
+					<a href="javascript:void(0);">返回</a>
+				</li>
+			</ul>
+		</section>
+	</header>
+	<!--top start-->
+<!--#include virtual="/includes/header.jsp"-->
+	<!--top End--> 
+
+<div class="live_main">
+  <div class="live_top">
+    <div class="live_going">
+      <div class="live_content"> 
+        <div>
+            <div class="live_going ev-currColumn"></div>
+            <div class="live_wait">
+                <ul class="ev-conList cursor">
+                </ul>
+                <!-- <div class="zk_sq ev-conListMore-btn cursor">更多</div> -->
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    
+      <div class="live_left">
+        <div class="live_height"> 
+          <!--video s-->
+          <div class="document3  Ev-Show" style="display:none;">
+            <div id="ifr-2"  style="width:100%;height: 100%;"><!--id="gsVideo"-->
+              <gs:video-live id="videoComponent" class="gsVideo" site="weiyiwang.gensee.com" ctx="webcast" ownerid="3f674c281e704fe598c6b7dde1fa72b5" uname="usl" authcode="333333"/>
+            </div>
+            <div class="overlay"></div>
+          </div>
+          <!--video e--> 
+        </div>
+        <div class="people">
+          <div class="people_num">同步观看: <span id="peopleNum">0</span>人</div>
+                    <span id="gs-handup-countdown" class="handle-time" style="color: white;font-size: 12px;line-height: 62px;float: left;width: 40px;display: block;height: 62px;"></span>
+          <a id="gs-handup" href="javascript:;" title="举手" style="background-image: url(//img00.allinmd.cn/conference/handup.png);float: left;font-family: microsoft yahei;font-size: 14px;color: #6e6e6e;width: 15px;height: 17px;margin-top: 22px;"></a>
+          <div class="qiehuan" id="changeWindows">
+            <div class="qh_img"></div>
+            <div class="qh_text" >切换</div>
+          </div>
+        </div>
+      </div>
+      <div class="live_right">
+        <div class="live_r_t">
+          <div class="live_caos"> 
+            <!--doc s-->
+            <div class="video3  Ev-Show" style="display:none;">
+              <div id="ifr-1" style="width:100%;height: 100%;">
+                <gs:doc id="docComponent" site="weiyiwang.gensee.com" class="gsVideo" ctx="webcast" ownerid="3f674c281e704fe598c6b7dde1fa72b5" uname="usl" authcode="333333"/>
+              </div>
+              <div class="overlay"></div>
+            </div>
+            <!--doc e--> 
+          </div>
+         <!-- Area-->
+	<div class="main" style="background-color: #1d1d1d; height:320px; ">
+		<!--QA Area 问答区
+		<div id="widget-qa" class="qa-container" style="  visibility: visible; width: 300px !important; height: 300px !important; left: 0 !important; top: 0 !important; padding:10px; border-top:#000 solid 1px;">
+	      <div class="my-qa"><span style="color:#fff;">公共聊天</span></div>
+			<div class="qa-main">
+				
+				<div id="qa-list" class="qa-list" style="height:240px !important;"><ul></ul></div>
+		
+			</div>
+            <div class="ask-input">
+						<div class="text-area">
+							<input id="qa-text-area" placeholder="我们在处理你的请求时遇到了问题？"></input>
+						</div>
+						<div class="qa-send-btn-wrap">
+							<input id="qa-submit" style="background:url(//img00.allinmd.cn/conference/send.png);width:45px;height:40px;border:none;" value="" type="submit">
+						</div>
+					</div>
+		</div>
+		QA Area End 问答区结束-->
+
+ <!--QA Area 公共聊天区 -->
+		<div id="widget-chat" class="qa-container" style="  visibility: visible; width: 300px !important; left: 0 !important; top: 0 !important; padding:10px; border-top:#000 solid 1px;">
+			<div class="comm-title">
+				<span style="font-size: 12px;">公共聊天区域</span>
+				<div class="s-btn">
+					<a id="userListBtn" class="user-icon tran" href="javascript:;" style="display:none;"></a>
+					<a class="close-icon tran" href="javascript:;"></a>
+				</div>
+			</div>
+			<div id="userListBox" class="user-list-wrap">
+				<h4>用户<span id="userOnlineNumber"></span></h4>
+				<ul id="userList" class="user-list">
+				</ul>
+			</div>
+			<div class="chat-main">
+				<!-- <div class="my-qa"><label class="checkbox"><input type="checkbox" id="cb-chat-show-mine">只看我的聊天</label></div> -->
+				<div class="chat-cnt" style="height: 201px !important">
+					<ul id="chat-list" class="msg-list">
+					</ul>
+				</div>
+				<div class="">
+				<div class="chat-btm">
+					<div class="chat-input">
+						<div class="phiz">
+                            <a class="phiz-btn" href="javascript:;"></a>
+                            <div id="chat-area" class="edit-area" contenteditable="true" style="width: 88% !important;float:left !important;"></div>
+                            <ul id="phizList" class="phiz-list">
+                                <li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/emotion.smile.gif"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/emotion.goodbye.gif"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/emotion.laugh.gif"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/emotion.cry.gif"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/emotion.angerly.gif"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/emotion.nod.gif"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/emotion.lh.gif"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/emotion.question.gif"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/emotion.bs.gif"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/rose.up.png"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/rose.down.png"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/chat.gift.png"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/feedback.quickly.png"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/feedback.slowly.png"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/feedback.agreed.png"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/feedback.against.gif"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/feedback.applaud.png"></a></li>
+								<li><a href="javascript:;"><img src="/js/third-party/gensee/image/emotion/feedback.think.png"></a></li>
+                            </ul>
+                        </div>
+					</div>
+					<div class="chat-submit">
+						<div class="select-obj">
+							<span class="d"  style="font-size: 12px;">对</span>
+							<div id="chatto-box" class="select-box">
+								<div id="selectedUser" class="name" style="font-size: 12px;">所有人</div>
+								<div class="arrow"></div>
+								<div id="chatto-list" class="select-option">
+									<ul>
+										<li style="font-weight: bold;font-size: 12px;"><a href="javascript:;">所有人</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<input id="chat-submit" class="chat-send-btn" style="font-size: 12px;" type="submit" value="发送">
+					</div>
+				</div>
+				</div>
+			</div>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>
+		<!-- QA Area End 公共聊天区结束-->
+
+
+		</div>
+
+<!--QA Area End-->
+        </div>
+        
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  
+  <input id="liveType" type="hidden" value="trauma" />
+  <div class="live_bottom">
+    <div class="live_b_cont">
+      <div class="live_b_left">
+		<div class="live_time_day">
+          <ul class="time_title">
+          </ul>
+        </div>  
+        <div class="richeng">
+           <ul class="ev-conSubList">
+ 		  </ul>
+        </div>
+      </div>
+      <div class="live_b_right">
+          <div class="live_ads"><img src="//img00.allinmd.cn/conference/4/live/weixin.jpg" /></div>
+		<!--
+          <div class="live_ads"><img src="//img00.allinmd.cn/conference/ads.jpg" /></div>
+          -->
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+
+  	<!--footer start-->
+<!--#include virtual="/includes/footer.jsp"-->
+	<!--footer End-->
+</section>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+
+<!-- build:js /dest/channel/conference/only-conference/live.js -->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.equipment.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.ajaxExistHtml.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.getUrlParams.js"></script>
+<script src="/js/comm/comm.textChange.js" ></script>
+<script src="/js/comm/comm.Log.js"></script>
+<!--<script src="/js/comm/comm.track.js"></script>-->
+<script src="/js/scene/scene.header.js"></script>
+
+<script src="/js/modules/user/module.user.js"></script>
+<!--<script src="/js/modules/auth/module.auth.js"></script>-->
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+<script src="/js/modules/weixin/module.welcome.js"></script>
+<script src="/js/modules/weixin/module.weixin.js"></script>
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<!--<script src="/js/scene/column/videoPK_v2/scene.column.videoPK_2.process.js"></script>-->
+<!--<script src="/js/modules/publish/module.select-type.js"></script>-->
+<script src="/js/modules/publish/module.video-upload.js" ></script>
+<script src="/js/modules/publish/module.doc-upload.js" ></script>
+<!--<script src="/js/modules/publish/module.topic-upload.js" ></script>-->
+<!--<script src="/js/modules/publish/module.case-upload.js" ></script>-->
+<script src="/js/plugins/top-tip/plugin.top-tip.js"> </script>
+
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script><script src='/js/third-party/md5.js'></script>
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<script src="/js/third-party/jquery_lazyload/jquery.lazyload.js"></script>
+<script src="/js/third-party/jquery_lazyload/jquery.scrollstop.js"></script>
+<script src="/js/third-party/uploadify/swfobject2.2.js" ></script>
+<script src="/js/third-party/uploadify/jquery.uploadify.js" ></script>
+<script src="/js/third-party/ajaxfileupload.js" ></script>
+<script src="/js/third-party/qiniu/qiniu.js" ></script>
+<script src="/js/third-party/qiniu/ui.js" ></script>
+<script src="/js/third-party/plupload/plupload.full.min.js" ></script>
+<script src="/js/third-party/plupload/i18n/zh_CN.js" ></script>
+
+<script src="/js/third-party/util/fragment-util.js"></script>
+<script src="/js/third-party/trimPath/TrimPath.js"></script>
+<script src="/js/scene/conference/scene.conference.gssdk_native.js"></script>
+<script src="/js/scene/conference/scene.conference.new_player_chat.js"></script>
+<script src="/js/scene/conference/scene.conference.only_live.js"></script>
+<script src="/js/scene/conference/scene.conference.genseeToggle.js"></script>
+<script src="/js/third-party/pagination/jquery.pager.js"></script>
+<script src="/js/third-party/gensee/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="/js/third-party/gensee/new-player/json2.js"></script>
+<script src="/js/third-party/gensee/new-player/lang.zh_CN.js"></script>
+<script src="/js/third-party/gensee/new-player/new-player.base.js"></script>
+<script src="/js/third-party/gensee/new-player/new-player.common.js"></script>
+<script src="/js/third-party/gensee/new-player/new-player.live.js"></script>
+<script src="/js/third-party/gensee/new-player/new-player.survey.js"></script>
+<script src="/js/third-party/gensee/new-player/webplayer.live.js"></script>
+<script src="/js/third-party/gensee/new-player/webplayer.common.js"></script>
+<!-- endbuild -->
+<script>
+	if("false"=="true"){
+	    window.webPriChat = false;
+	}
+</script>
+
+</body>
+</html>

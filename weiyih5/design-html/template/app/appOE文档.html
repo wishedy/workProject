@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><base href="//m.allinmd.cn/html/m/doc/2014/09/26/1411652398683.html">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>${seoTitle!''}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+    <meta name="description" content="${seoMetaDescription!''}">
+    <meta name="Keywords" content="${seoMetaKeyword!''}">
+    <link rel="stylesheet" href="//m.allinmd.cn/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
+    <link href="//m.allinmd.cn/css/common/main.css?t_=1445925569591" rel="stylesheet" type="text/css">
+    <script src="//m.allinmd.cn/js/lib/jquery/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+
+        //切换成中文123
+        function changeCH(){
+            $(".oe_ch").show();
+            $(".oe_en").hide();
+        }
+        //切换成英文
+        function changeEN(){
+            $(".oe_ch").hide();
+            $(".oe_en").show();
+        }
+        //修改字体大小
+        function changeFontSize(size){
+            $("body").css("font-size",size);
+        }
+    </script>
+</head>
+<body class="">
+
+<section data-role="page" class="content-page case_content page-detail page-detail-doc">
+    <input type="hidden" value="4" id="relationType"/>
+    <input type="hidden" value="8" id="preferReviewType"/>
+    <input type="hidden" value="${doc.docId?c}" id="resourceId"/>
+    <input type="hidden" id="refId" value="${doc.docId?c}">
+    <input type="hidden" id="docName" value="${doc.docName}">
+    <input type="hidden" id="docAbstract" value="${doc.docAbstract}">
+
+    <div id="art_content" style="background:#fff; min-width:100%;">
+        <div class="main_width" style="width:100%;">
+
+            <div class="case_detail_cont setting-font-size">
+
+                <div class="oe_content  setting-font-size"
+                     style="text-align:left; width:100%; margin:0 auto; padding:1.3em 0;">
+                    <div class="floor03">
+
+                        <#assign is_prqPopulation=''>
+                            <#list cooperationInvokeElementList as home>
+                                <#if home.invokeElement=='prqPopulation'>
+                                    <#assign is_prqPopulation = home.content>
+                                </#if>
+                            </#list>
+
+
+                            <div class="oe_en">
+                                <div class="oe_title"> <#list cooperationInvokeElementList as home><#if home.invokeElement=='name'>The original title：${home.content}</#if></#list></div>
+                                <div class="oe_title_blue">FullCitation</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList as home>
+                                        <#if home.invokeElement=='fullCitation'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_title_blue">Publication date</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList as home>
+                                        <#if home.invokeElement=='publishedDate'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_title_blue">Authors</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList as home>
+                                        <#if home.invokeElement=='firstAuthor'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_title_blue">Study Type</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList as home>
+                                        <#if home.invokeElement=='studyType'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_title_blue">Evidence Level</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList as home>
+                                        <#if home.invokeElement=='evidenceLevel'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_title_blue">Synopsis</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList as home>
+                                        <#if home.invokeElement=='synopsis'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="zizhu_cont">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td width="15%" align="center" bgcolor="#388ad7" class="bold_fff">Funding</td>
+                                            <td bgcolor="#8fbfec" width="85%" class="zhizhu_right">
+                                                <#list cooperationInvokeElementList as home>
+                                                    <#if home.invokeElement=='funding'>${home.content}</#if>
+                                                </#list>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="15%" align="center" bgcolor="#388ad7" class="bold_fff">Sponsor</td>
+                                            <td bgcolor="#8fbfec" width="85%" class="zhizhu_right">
+                                                <#list cooperationInvokeElementList as home>
+                                                    <#if home.invokeElement=='sponsor'>${home.content}</#if>
+                                                </#list>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="15%" align="center" bgcolor="#388ad7" class="bold_fff">Conflicts</td>
+                                            <td bgcolor="#8fbfec" width="85%" class="zhizhu_right">
+                                                <#list cooperationInvokeElementList as home>
+                                                    <#if home.invokeElement=='conflicts'>${home.content}</#if>
+                                                </#list>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="oe_title_blue">Why was this study needed now?</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList as home>
+                                        <#if home.invokeElement=='studyPurpose'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_title_blue">What was the principal research question?</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList as home>
+                                        <#if home.invokeElement=='principleResearchQuestion'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_background">
+
+                                    <#if is_prqPopulation==''>
+                                        <div class="oe_background_q">
+                                            <div class="oe_q_left" style="width:30%;">DataSource</div>
+                                            <div class="oe_q_right" style="width:70%;">
+                                                <#list cooperationInvokeElementList as home>
+                                                    <#if home.invokeElement=='prqDataSource'>${home.content}</#if>
+                                                </#list>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_s">
+                                            <div class="oe_s_left" style="width:30%;">IndexTerms</div>
+                                            <div class="oe_s_right" style="width:70%;">
+                                                <#list cooperationInvokeElementList as home>
+                                                    <#if home.invokeElement=='prqIndexTerms'>${home.content}</#if>
+                                                </#list>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_q">
+                                            <div class="oe_q_left" style="width:30%;">StudySelection</div>
+                                            <div class="oe_q_right" style="width:70%;">
+                                                <#list cooperationInvokeElementList as home>
+                                                    <#if home.invokeElement=='prqStudySelection'>${home.content}</#if>
+                                                </#list>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_s">
+                                            <div class="oe_s_left" style="width:30%;">DataExtraction</div>
+                                            <div class="oe_s_right" style="width:70%;">
+                                                <#list cooperationInvokeElementList as home>
+                                                    <#if home.invokeElement=='prqDataExtraction'>${home.content}</#if>
+                                                </#list>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_q">
+                                            <div class="oe_q_left" style="width:30%;">DataSynthesis</div>
+                                            <div class="oe_q_right" style="width:70%;">
+                                                <#list cooperationInvokeElementList as home>
+                                                    <#if home.invokeElement=='prqDataSynthesis'>${home.content}</#if>
+                                                </#list>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <#else>
+                                            <div class="oe_background_q">
+                                                <div class="oe_q_left" style="width:30%;">Population</div>
+                                                <div class="oe_q_right" style="width:70%;">
+                                                    <#list cooperationInvokeElementList as home>
+                                                        <#if home.invokeElement=='prqPopulation'>${home.content}</#if>
+                                                    </#list>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="oe_background_s">
+                                                <div class="oe_s_left" style="width:30%;">Intervention</div>
+                                                <div class="oe_s_right" style="width:70%;">
+                                                    <#list cooperationInvokeElementList as home>
+                                                        <#if home.invokeElement=='prqIntervention'>${home.content}</#if>
+                                                    </#list>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="oe_background_q">
+                                                <div class="oe_q_left" style="width:30%;">Comparison</div>
+                                                <div class="oe_q_right" style="width:70%;">
+                                                    <#list cooperationInvokeElementList as home>
+                                                        <#if home.invokeElement=='prqComparison'>${home.content}</#if>
+                                                    </#list>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="oe_background_s">
+                                                <div class="oe_s_left" style="width:30%;">Outcomes</div>
+                                                <div class="oe_s_right" style="width:70%;">
+                                                    <#list cooperationInvokeElementList as home>
+                                                        <#if home.invokeElement=='prqOutcomes'>${home.content}</#if>
+                                                    </#list>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="oe_background_q">
+                                                <div class="oe_q_left" style="width:30%;">Methods</div>
+                                                <div class="oe_q_right" style="width:70%;">
+                                                    <#list cooperationInvokeElementList as home>
+                                                        <#if home.invokeElement=='prqMethods'>${home.content}</#if>
+                                                    </#list>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                    </#if>
+
+                                    <div class="oe_background_s">
+                                        <div class="oe_s_left" style="width:30%;">Time</div>
+                                        <div class="oe_s_right" style="width:70%;">
+                                            <#list cooperationInvokeElementList as home>
+                                                <#if home.invokeElement=='prqTime'>${home.content}</#if>
+                                            </#list>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_title_blue">What were the important findings?</div>
+                                    <div class="yw_title">
+                                        <#list cooperationInvokeElementList as home>
+                                            <#if home.invokeElement=='importantFindings'>${home.content}</#if>
+                                        </#list>
+                                    </div>
+                                    <div class="oe_title_blue">What should I remember most?</div>
+                                    <div class="yw_title">
+                                        <#list cooperationInvokeElementList as home>
+                                            <#if home.invokeElement=='rememberMost'>${home.content}</#if>
+                                        </#list>
+                                    </div>
+                                    <div class="oe_title_blue">How will this affect the care of patients?</div>
+                                    <div class="yw_title">
+                                        <#list cooperationInvokeElementList as home>
+                                            <#if home.invokeElement=='affectCare'>${home.content}</#if>
+                                        </#list>
+                                    </div>
+
+                                </div>
+                                <#assign link_en = "">
+                                    <#assign name_en = "">
+                                        <#list cooperationInvokeElementList as home>
+                                            <#if home.invokeElement=='linkToJournal'>
+                                                <#assign link_en = home.content>
+                                            </#if>
+                                        </#list>
+
+                                        <#list cooperationInvokeElementList as home>
+                                            <#if home.invokeElement=='name'>
+                                                <#assign name_en = home.content>
+                                            </#if>
+                                        </#list>
+                                        <#if link_en != "" && name_en != "">
+                                            <div class="oe_title_blue">Link to the original</div>
+                                            <!-- <div class="yw_title"><a href="${link_en}" target="_blank">${name_en}</a></div> -->
+                                            <div class="yw_title"><a>${name_en}</a></div>
+                                        </#if>
+                            </div>
+                            <div class="oe_ch">
+                                <div class="oe_title"> <#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='name'>原文标题：${home.content}</#if></#list> </div>
+                                <div class="oe_title_blue">引用信息</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList_zh as home>
+                                        <#if home.invokeElement=='fullCitation'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_title_blue">出版日期</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList_zh as home>
+                                        <#if home.invokeElement=='publishedDate'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_title_blue">作者</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList_zh as home>
+                                        <#if home.invokeElement=='firstAuthor'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_title_blue">研究类型</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList_zh as home>
+                                        <#if home.invokeElement=='studyType'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_title_blue">循证等级</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList_zh as home>
+                                        <#if home.invokeElement=='evidenceLevel'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_title_blue">摘要</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList_zh as home>
+                                        <#if home.invokeElement=='synopsis'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="zizhu_cont">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td width="20%" align="center" bgcolor="#388ad7" class="bold_fff">资助</td>
+                                            <td bgcolor="#8fbfec" width="80%" class="zhizhu_right">
+                                                <#list cooperationInvokeElementList_zh as home>
+                                                    <#if home.invokeElement=='funding'>${home.content}</#if>
+                                                </#list>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20%" align="center" bgcolor="#388ad7" class="bold_fff">赞助商</td>
+                                            <td bgcolor="#8fbfec" width="80%" class="zhizhu_right">
+                                                <#list cooperationInvokeElementList_zh as home>
+                                                    <#if home.invokeElement=='sponsor'>${home.content}</#if>
+                                                </#list>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20%" align="center" bgcolor="#388ad7" class="bold_fff">利益冲突</td>
+                                            <td bgcolor="#8fbfec" width="80%" class="zhizhu_right">
+                                                <#list cooperationInvokeElementList_zh as home>
+                                                    <#if home.invokeElement=='conflicts'>${home.content}</#if>
+                                                </#list>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="oe_title_blue">研究目的</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList_zh as home>
+                                        <#if home.invokeElement=='studyPurpose'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_title_blue">主要研究问题</div>
+                                <div class="yw_title">
+                                    <#list cooperationInvokeElementList_zh as home>
+                                        <#if home.invokeElement=='principleResearchQuestion'>${home.content}</#if>
+                                    </#list>
+                                </div>
+                                <div class="oe_background">
+                                    <#if is_prqPopulation==''>
+                                        <div class="oe_background_q">
+                                            <div class="oe_q_left" style="width:20%;">人数</div>
+                                            <div class="oe_q_right" style="width:80%;">
+                                                <#list cooperationInvokeElementList_zh as home>
+                                                    <#if home.invokeElement=='prqDataSource'>${home.content}</#if>
+                                                </#list>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_s">
+                                            <div class="oe_s_left" style="width:20%;">干预</div>
+                                            <div class="oe_s_right" style="width:80%;">
+                                                <#list cooperationInvokeElementList_zh as home>
+                                                    <#if home.invokeElement=='prqIndexTerms'>${home.content}</#if>
+                                                </#list>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_q">
+                                            <div class="oe_q_left" style="width:20%;">对照</div>
+                                            <div class="oe_q_right" style="width:80%;">
+                                                <#list cooperationInvokeElementList_zh as home>
+                                                    <#if home.invokeElement=='prqStudySelection'>${home.content}</#if>
+                                                </#list>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_s">
+                                            <div class="oe_s_left" style="width:20%;">结果</div>
+                                            <div class="oe_s_right" style="width:80%;">
+                                                <#list cooperationInvokeElementList_zh as home>
+                                                    <#if home.invokeElement=='prqDataExtraction'>${home.content}</#if>
+                                                </#list>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_q">
+                                            <div class="oe_q_left" style="width:20%;">方法</div>
+                                            <div class="oe_q_right" style="width:80%;">
+                                                <#list cooperationInvokeElementList_zh as home>
+                                                    <#if home.invokeElement=='prqDataSynthesis'>${home.content}</#if>
+                                                </#list>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <#else>
+                                            <div class="oe_background_q">
+                                                <div class="oe_q_left" style="width:20%;">人数</div>
+                                                <div class="oe_q_right" style="width:80%;">
+                                                    <#list cooperationInvokeElementList_zh as home>
+                                                        <#if home.invokeElement=='prqPopulation'>${home.content}</#if>
+                                                    </#list>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="oe_background_s">
+                                                <div class="oe_s_left" style="width:20%;">干预</div>
+                                                <div class="oe_s_right" style="width:80%;">
+                                                    <#list cooperationInvokeElementList_zh as home>
+                                                        <#if home.invokeElement=='prqIntervention'>${home.content}</#if>
+                                                    </#list>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="oe_background_q">
+                                                <div class="oe_q_left" style="width:20%;">对照</div>
+                                                <div class="oe_q_right" style="width:80%;">
+                                                    <#list cooperationInvokeElementList_zh as home>
+                                                        <#if home.invokeElement=='prqComparison'>${home.content}</#if>
+                                                    </#list>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="oe_background_s">
+                                                <div class="oe_s_left" style="width:20%;">结果</div>
+                                                <div class="oe_s_right" style="width:80%;">
+                                                    <#list cooperationInvokeElementList_zh as home>
+                                                        <#if home.invokeElement=='prqOutcomes'>${home.content}</#if>
+                                                    </#list>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="oe_background_q">
+                                                <div class="oe_q_left" style="width:20%;">方法</div>
+                                                <div class="oe_q_right" style="width:80%;">
+                                                    <#list cooperationInvokeElementList_zh as home>
+                                                        <#if home.invokeElement=='prqMethods'>${home.content}</#if>
+                                                    </#list>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                    </#if>
+                                    <div class="oe_background_s">
+                                        <div class="oe_s_left" style="width:20%;">时间</div>
+                                        <div class="oe_s_right" style="width:80%;">
+                                            <#list cooperationInvokeElementList_zh as home>
+                                                <#if home.invokeElement=='prqTime'>${home.content}</#if>
+                                            </#list>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_title_blue">重要发现</div>
+                                    <div class="yw_title">
+                                        <#list cooperationInvokeElementList_zh as home>
+                                            <#if home.invokeElement=='importantFindings'>${home.content}</#if>
+                                        </#list>
+                                    </div>
+                                    <div class="oe_title_blue">最应该记住的</div>
+                                    <div class="yw_title">
+                                        <#list cooperationInvokeElementList_zh as home>
+                                            <#if home.invokeElement=='rememberMost'>${home.content}</#if>
+                                        </#list>
+                                    </div>
+                                    <div class="oe_title_blue">研究对病人的影响</div>
+                                    <div class="yw_title">
+                                        <#list cooperationInvokeElementList_zh as home>
+                                            <#if home.invokeElement=='affectCare'>${home.content}</#if>
+                                        </#list>
+                                    </div>
+                                </div>
+                                <#assign link_zh = "">
+                                    <#assign name_zh = "">
+                                        <#list cooperationInvokeElementList_zh as home>
+                                            <#if home.invokeElement=='linkToJournal'>
+                                                <#assign link_zh = home.content>
+                                            </#if>
+                                        </#list>
+
+                                        <#list cooperationInvokeElementList_zh as home>
+                                            <#if home.invokeElement=='name'>
+                                                <#assign name_zh = home.content>
+                                            </#if>
+                                        </#list>
+
+
+                                        <#if link_zh != "" && name_zh != "">
+                                            <div class="oe_title_blue">原文链接</div>
+                                            <!-- <div class="yw_title"><a href="${link_zh}" target="_blank">${name_zh}</a></div> -->
+                                            <div class="yw_title"><a>${name_zh}</a></div>
+                                        </#if>
+                            </div>
+
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+</section>
+
+</body>
+</html>

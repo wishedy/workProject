@@ -1,0 +1,361 @@
+@charset "UTF-8";
+//首页——热门 
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_indexNavbar"; //首页导航栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_indexAdDelivery"; //按钮组件
+.al-mainInner {
+    transition: blur 0.2s linear;
+    -webkit-transition: blur 0.2s linear;
+}
+
+body {
+    padding-top: rem(270px);
+}
+
+.al-indexHeader,
+.al-indexNavbar {
+    //position: fixed;
+    z-index: 6;
+    left: 0;
+    right: 0;
+    top: rem(-1px)
+}
+
+.al-indexHeader {
+    height: rem(105px);
+    border-bottom:none;
+}
+
+.al-indexHeaderItem {
+    height: 100%;
+    line-height: rem(112.5px);
+    h1 {
+        @include font-dpr(20px);
+        height: 100%;
+        line-height: 1.4rem;
+    }
+    &:nth-child(1) {
+        a {
+            display: block;
+            width: auto;
+            height: auto;
+            &:before {
+                height: 0.45333rem;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                vertical-align: top;
+            }
+        }
+    }
+    &:nth-child(3) {
+        a {
+            color: #626f8c;
+            @include font-dpr(14px);
+        }
+    }
+}
+
+.icon-download:before {
+    position: static;
+}
+.btn-primary{
+    padding: rem(10px) rem(30px);
+}
+//首页个性推荐
+.al-indexRecommend {
+    //@include flex();
+    //@include justify-content(center);
+    //@include align-items(center);
+    padding: rem(10px) 0 0 0;
+    background-color: #fff;
+    // padding:rem(28px) 0;
+    padding-bottom: rem(40px);
+    margin-bottom: rem(16px);
+    border-bottom: 1px solid $outerBorderColor;
+    @include font-dpr(12px);
+    .al-indexRecommendItem {
+        position: relative;
+        float:left;
+        width:25%;
+//        padding:0 0 rem(15px) 0;
+//        height: rem(132px);
+        &.fourItem{
+            width:25%;
+            //padding: rem(16px) rem(10px);
+            //font-size:rem(26px);
+        }
+        &.threeItem{
+            width:33%;
+            //padding: rem(16px) rem(37.5px);
+        }
+        &.twoItem{
+            width: 50%;
+            //padding: rem(16px) rem(90px);
+        }
+        &.oneItem{
+            //padding: rem(16px) rem(0px);
+        }
+    }
+    &:after{
+        clear:both;
+        display:block;
+        content:'';
+        width:0;
+        height: 0;
+    }
+    a {
+        display: block;
+        text-align: center;
+        @include unstyled-link();
+        color: #5d5d5d;
+        position: relative;
+        margin: 0 auto;
+    }
+    img {
+        width: rem(140px);
+        height: rem(100px);
+    }
+    .al-indexRecommendItemTitle {
+        @include font-dpr(13px);
+        margin-top: rem(8px);
+        span {
+            white-space: nowrap;
+            display: block;
+        }
+    }
+}
+.swiper-container.al-downSwiper{
+    margin:rem(30px) 0;
+}
+.swiper-slide.downSlide{
+    height: rem(105px);
+    width : rem(210px);
+    margin-left:rem(20px);
+    border-radius:rem(10px);
+    overflow:hidden;
+    a{
+        display:inline-block;
+        width:100%;
+        height: 100%;
+    }
+    img{
+        width:100%;
+        height: 100%;
+    }
+}
+.swiper-slide.downSlide:last-child{
+    margin-right:rem(20px);
+}
+.listNoMore{
+    width:100%;
+    text-align: center;
+    padding:50px 0;
+    font-size: rem(26px);
+    color:#626f8c;
+}
+.al-footerBarItemBackToTop {
+    position: absolute;
+    width: rem(160px);
+    height: 100%;
+    background-color: rgba(40, 153, 230, .8);
+    left: 0;
+    bottom: 0;
+    display: none;
+
+    figure {
+        width: rem(25px);
+        height: rem(14px);
+        margin: 0 auto;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+    figcaption {
+        @include font-dpr(12px);
+        color: #fff;
+        text-align: center;
+        margin-top: rem(10px);
+        white-space: nowrap;
+    }
+}
+
+.icon-circleArrowRight{
+    @extend %icon-circleArrowRight;
+}
+.icon-indexDownload {
+    @extend %icon-indexDownload;
+}
+
+.icon-search {
+    @extend %icon-search;
+}
+
+.al-indexRecommendItem .icon-newTips{
+    right:25%;
+    content: "";
+    width:rem(15px);
+    height:rem(15px);
+    overflow:hidden;
+    border-radius:50%;
+    background:red;
+    position: absolute;
+    top: 0;
+}
+.al-contentSeminarImg + .al-contentBottomPart{
+    margin-bottom: rem(-30px);
+}
+.icon-contentAuthor {
+    @extend %icon-contentAuthor;
+}
+
+.icon-contentWatchedNum {
+    @extend %icon-contentWatchedNum;
+}
+
+.icon-contentSeminarTime {
+    @extend %icon-contentSeminarTime;
+}
+
+.icon-contentSeminarPlace {
+    @extend %icon-contentSeminarPlace;
+}
+
+.al-newsNum {
+    @extend %al-newsNum;
+}
+
+.al-contentSeminarMark {
+    @extend %al-contentSeminarMark;
+}
+
+.al-contentNewest {
+    @extend %al-contentNewest;
+}
+
+.al-contentHotest {
+    @extend %al-contentHotest;
+}
+
+.al-contentAward {
+    @extend %al-contentAward;
+}
+
+.al-contentJoin {
+    @extend %al-contentJoin;
+}
+
+.al-contentPdf {
+    @extend %al-contentPdf;
+}
+
+.al-tagsRecommendHot {
+    @extend %al-tagsRecommendHot;
+}
+
+.al-tagsRecommendNew {
+    @extend %al-tagsRecommendNew;
+}
+
+/*.al-vipUser {
+    @extend %al-vipUser;
+}*/
+.icon-circleArrowRight{
+    @extend %icon-circleArrowRight;
+}
+.icon-discoverEntryHot{
+    @extend %icon-discoverEntryHot;
+    display: none;
+}
+@import '../../components/_releaseModule'; //发布内容
+@import "../../components/_cancelModal"; //取消关注弹层
+@import "../../components/_bannerCarousel"; //轮播banner
+@import "../../components/_contentModule"; //内容组件
+@import "../../components/_classSelector"; //类型筛选
+.al-personalContributionSelector{
+    position:absolute;
+    top:1.4rem;
+    z-index: 7;
+    right:rem(30px);
+}
+.platformChange{
+    width: rem(75px);
+    text-align: center;
+    overflow:hidden;
+    //margin-right:rem(40px);
+    span{
+        float:left;
+        display:block;
+        line-height: rem(34px);
+        @include font-dpr(12px);
+    }
+    &:after{
+        display:block;
+        content:'';
+        clear:both;
+
+    }
+    .platformName{
+        width:100%;
+
+    }
+    .platformIcon{
+        margin:0 auto;
+        margin-left:rem(20px);
+        display:inline-block;
+        width:rem(34px);
+        height: rem(34px);
+        //background:url('//img50.allinmd.cn/callApp/platformChange.png') no-repeat center;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAArZJREFUSA3FVk1oE0EUnje7xmIaSksOehAKKnixgrWgeBAvihfB6gYUUyVopdRb0ya3bkWwBhFvQhGt7cVujB48ePTgH0i1KOJB7M1roZSUJpvdHd9sMjVk2XG2BF3Ynbfvve99b/7eDBDFx7AszXm5OAXMyzBCdinC6m4AKwDESnbEs5oqcH9H7zhh7Cb6J1QxTX47CCMDGzW7W29SSkVGWMp3AO3Ci/k7T6XOLUZjKHvU8ch7HJkUbbGF/gIjSW6EmP4h1CnEUJy7KzBJZcKQWJHV6oRAPD861NzILE0A5TkEQgsM2MHnDwu/mvCRRYiM2CLg7KUsrhlC1Id0i0StsMCQGqYZ27nSI+15tbrdm5m5XmsNpvLvB744ku+ulN1p3GuncYPuVgAyIPATP6UuLT41O2tW/obZHFJjONe1UXY/M8aGORkGsgmQquzFMuVgcvuw8uTXnPXXpmkGRiosAd2tuLeQqJcAfIyBnl6Yu/0jzFnoMTk4P5Trx3YBiY98XS7fQNt9YZe1lHhwijvoGr2qQsZ9AYCV5guLOBpj/B81foy6LP9SzHAvd7EeT3+TuwatlNAGph4j6BHU8G3hLxyeddAs13ixRvVhIN1e59ITh/1IeEwpT7ac+o8VFxD9srz+FtPvF1qPedu4jD0rtZ0Q41JchJ04VTFBiO0aTvwzLREfazsh9tBBgj5eQAShNTlZE1PWdkJBUjRNW8hgmkL897VUuro202qj8F8I/f3Hy1XUjlC7MSV4d1TFYg/Br52D6XyfKkj4MfAamHoMoZe1FJfrK+6AV5ZHxpXcAZWe8kvx4OXxY7ih7/lYVo8hIxI2yGQmEqs2++QfN0IbqYU3+pmBE8VUSulypS0tvbMPHT/5xKnWOrH69yAXf6XziUYXz8TvQOkDfU/8WnF0lG92pec37CLcGnyIRKwAAAAASUVORK5CYII=") no-repeat center;
+        background-size: 100% 100%;
+    }
+}
+.searchIconWrap{
+    width:rem(60px);
+    text-align: center;
+    overflow:hidden;
+    span{
+        float:left;
+        line-height: rem(34px);
+        @include font-dpr(12px);
+        display:inline-block;
+        margin:0 auto;
+    }
+    &:after{
+        display:block;
+        content:'';
+        clear:both;
+
+    }
+    .icon-search{
+        margin-left:rem(5px);
+    }
+}
+.al-littleScoreStarBox li{
+    float:left;
+}
+
+
+.al-cancelModalItem{
+   i{
+       right: rem(20px);
+   } 
+}
+
+
+.interested{
+    right: 8.5%;
+    i{
+        right: 36%;
+    }
+}

@@ -1,0 +1,520 @@
+@charset "UTF-8";
+//个人主页——基础样式
+//Created by qiangkailiang on 2016/08/02
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV3-variables";
+//头部信息
+.al-personal {
+    width: 100%;
+}
+
+.al-personalInner {
+    width: 1000px;
+    margin:20px auto 0;
+}
+
+.al-personalHeader {
+    width: 100%;
+    text-align: center;
+    background: transparent url('//img00.allinmd.cn/v3/personal/head_bg.jpg') center center no-repeat;
+    background-size: 100% 100%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/img00/v3/personal/head_bg.jpg',sizingMethod='scale')";
+    position: relative;
+    padding: 20px 0;
+}
+//新增他人主页头像预览
+.logoPreView{
+    position: fixed;
+    width:450px;
+    height: 450px;
+    background:#fff;
+    border-radius:4px;
+    top:50%;
+    left:50%;
+    margin:-225px 0 0 -225px;
+    z-index: 10;
+}
+.logoPreViewClose{
+    position:absolute;
+    right:20px;
+    top: 13px;
+    width:13px;
+    height: 13px;
+    background:url('//img10.allinmd.cn/login/close.png') no-repeat;
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='//img10.allinmd.cn/login/close.png',sizingMethod='scale')";
+    background-size:100%;
+}
+.logoPreViewImg{
+    width:200px;
+    height: 200px;
+    position: absolute;
+    top:125px;
+    left:125px;
+    display: block;
+}
+.al-personalLogoMsg {
+    margin-top: 22px;
+    color: #fff;
+    position: relative;
+    /*提示信息：begin*/
+    .al-promptContentPop{
+        &:before{
+            content: "";
+            height: 0;
+            width: 0;
+            border:8px solid transparent;
+            border-bottom:8px solid #fff;
+            position: absolute;
+            left:50%;
+            top: -15px;
+        }
+        position:absolute;
+        top:58%;
+        left:32%;
+        margin-left:-6px;
+        margin-top:20px;
+        background-color:#fff;
+        z-index:3;
+        padding:44px 50px 30px;
+        text-align: center;
+        line-height:normal;
+        cursor: auto;
+        border:1px solid #e4e9ed;
+        box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.14), -3px -2px 8px rgba(0, 0, 0, 0.14);
+        border-radius:4px;
+        behavior: url("/js/third-party/pie/pie.htc");
+        div{ color:#333;}
+        .al-promptHead{
+            font-weight: bold;
+            margin-bottom:20px;
+            margin-left:-20px;
+            b{
+                display:inline-block;
+                width:20px;
+                height:20px;
+                background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_success.png') center center no-repeat;
+                vertical-align: text-top;
+                margin-right:8px;
+            }
+        }
+        span{
+            display:block;
+            margin-top:26px;
+            color:#b4b4b4;
+        }
+    }
+    /*提示信息：end*/
+    .al-personalLogo {
+        display: inline-block;
+        width: 103px;
+        height: 103px;
+        border: 6px solid rgba(255,255,255,0.2);
+        border-radius: 50%;
+        behavior: url("/js/third-party/pie/pie.htc");
+        cursor: pointer;
+        position: relative;
+        overflow:hidden;
+        & > img{
+            width:100%;
+            height:100%;
+            vertical-align:middle;
+        }
+    }
+    .al-personalLogoMask{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.7);
+        border-radius: 50%;
+        img{
+            position: absolute;
+            width: 39px;
+            height: 30px;
+            left: 50%;
+            top: 50%;
+            margin-left: -19.5px;
+            margin-top: -15px;
+        }
+    }
+    .al-personalName {
+        font-size: 20px;
+        margin-top: 12px;
+        span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    .al-personalJobMsg {
+        margin-top: 15px;
+        p {
+            behavior: url("/js/third-party/pie/pie.htc");
+            display: inline-block;
+            padding: 5px 20px;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            margin-right:10px;
+        }
+    }
+
+}
+
+
+.al-personalFollowMsg {
+    text-align: center;
+    margin-top:22px;
+    .al-personalFollowNum {
+        color: #fff;
+        font-size: 16px;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        /*&:hover{
+            color: #2899e6;
+        }*/
+        span {
+            padding-left: 5px;
+        }
+    }
+    hr {
+        display: inline-block;
+        vertical-align: middle;
+        height: 16px;
+        width: 1px;
+        background-color: #fff;
+        margin: 0 48px;
+        border: none;
+    }
+}
+.al-certification-status{
+    margin: 0 auto;
+    height: 34px;
+    background: #000000;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    p{
+        font-family: MicrosoftYaHei;
+        font-size: 14px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        line-height: 34px;
+    }
+}
+.al-certification-v1Status{
+    width: 298px;
+    display: block;
+}
+.al-certification-v2Status{
+    width: 373px;
+    margin-top: 22px;
+    display: block;
+}
+.newNum:after {
+    content: "";
+    behavior: url("/js/third-party/pie/pie.htc");
+    @include circle(8px,
+    #f44b3d);
+    position: relative;
+    display: inline-block;
+    margin-left: 4px;
+    margin-top: -3px;
+}
+
+.al-personalNavbar {
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    border: 1px solid #e4e9ed;
+}
+
+.al-personalNavbarItem {
+    font-size: 16px;
+    padding: 20px;
+    margin: 0 40px;
+    display: inline-block;
+    cursor: pointer;
+    color: $blackTextColor1;
+    box-sizing: border-box;
+    a {
+        display: inline-block;
+        vertical-align:middle;
+        font-size:17px;
+        &:hover{
+            color: #2899e6;
+        }
+    }
+    &.active {
+        border-bottom: 2px solid #3598db;
+        a{color:#3598db;}
+    }
+    img {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+}
+
+
+.al-personalConfig {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+}
+
+//主内容边栏
+.al-personalInnerSidebar {
+    float: left;
+    width: 270px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    .al-personalInnerSidebarItem {
+        box-sizing: border-box;
+        color: $deepTextColor;
+        cursor: pointer;
+        padding:18px 24px 18px 20px;
+        margin-top:-1px;
+        border-bottom:1px solid #f5f5f5;
+        p{
+          &:hover{
+            color:#3598db;
+          }
+        }
+        p i {
+            content: "";
+            display: inline-block;
+            @include square(20px);
+            margin-right:8px;
+            margin-bottom:-4px;
+        }
+        .al-iconMyWebcast{   //直播按钮
+            width:25px;
+            height:13px;
+            margin:0 6px -2px -3px;
+        }
+        span {
+            float: right;
+            color:#a1a9ba;
+            font-size:13px;
+            margin-top:4px;
+        }
+    }
+    .al-personalInnerSidebarItem.active {
+        background-color: #3898db;
+        color: #fff;
+        span{color:#fff;}
+        p{
+          &:hover{
+            color:#fff;
+          }
+        }
+    }
+    .al-personalInnersidebarBox {
+        background-color: #fff;
+        border: 1px solid #E4E9ED;
+    }
+}
+
+
+//内容区块
+.al-personalInnerContent {
+    margin-top: 20px;
+    margin-left: 290px;
+}
+
+.al-personalMsgCompletion {
+    padding-bottom:30px;
+    background-color:#fff;
+    border:1px solid #e4e9ed;
+    border-top:none;
+}
+
+//邮箱认证提示
+@keyframes around{
+    0% {
+        transform: translate(0,0);
+    }
+
+    100%{
+        transform: translate(0,60px);
+    }
+}
+.al-personalUserNoQualification {
+    width: 100%;
+    position: fixed;
+    top: 10px;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #3698db;
+    @include opacity(0.9);
+    color: #fff;
+    font-size: 16px;
+    text-align: left;
+    line-height: 50px;
+
+    animation-name:around;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-iteration-count:1;
+    animation-delay: 1s;
+    animation-fill-mode:forwards;
+
+    article {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    a {
+        font-size: 16px;
+        color: #fef5ad;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    .al-close {
+        font-size: 16px;
+        color: #fff;
+        font-style: normal;
+        float: right;
+        cursor: pointer;
+    }
+} //个人资料完整度 进度条
+.al-personalMsgCompletionLine {
+    behavior: url("/js/third-party/pie/pie.htc");
+    width: 500px;
+    height:6px;
+    background-color: #e1e1e1;
+    margin-left:24px;
+    margin-top: 70px;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+    .al-personalMsgCompletionLineMask {
+        behavior: url("/js/third-party/pie/pie.htc");
+        width: 0%;
+        height: 100%;
+        border-radius: 3px;
+        background-color:#2899e6;
+        display: block;
+        position: relative;
+        font-style: normal;
+    }
+    .al-personalMsgCompletionLinePoint {
+        behavior: url("/js/third-party/pie/pie.htc");
+        @include circle(13px,
+        #2899e6);
+        display: inline-block;
+        position: absolute;
+        right: -6.5px;
+        top: 50%;
+        margin-top:-7px;
+    }
+    .al-personalMsgCompletionLineTips {
+        behavior: url("/js/third-party/pie/pie.htc");
+        @include circle(33px,
+        #ff9224);
+        font-size: 13px;
+        font-family: Arial;
+        font-weight: 300;
+        display: block;
+        line-height:33px;
+        text-align: center;
+        color: #fff;
+        right: 0;
+        position: absolute;
+        top: 0;
+        margin-top:-45px;
+        margin-right:-15px;
+        &:after {
+            content: "";
+            @include triangle(15px,
+            #ff9224,
+            down);
+            display: inline-block;
+            position: absolute;
+            bottom:-12px;
+            right:8.5px;
+        }
+    }
+}
+
+.al-personalMsgCompletionBtn {
+    padding:9px 21px;
+    font-size: 13px;
+    color: $linkContentColor;
+    display: inline-block;
+    margin-left: 50px;
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative;
+    float: none !important;
+    i {
+        width:10px;
+        height: 10px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_msgConfig.png') center center no-repeat;
+        background-size: 100% 100%;
+        display: inline-block;
+        margin-right:6px;
+    }
+}
+
+.al-personalInnerSidebarChange {
+    display: none;
+}
+
+.al-personalInnerSidebarChange.active {
+    display: block;
+}
+//tabs切换
+.al-contentTabsChange{
+    background-color: #f9fbfd;
+    height: 52px;
+    line-height: 52px;
+    border:1px solid #e4e9ed;
+    @include clearfix();
+    .al-contentTabsItem{
+        width: 98px;
+        text-align: center;
+        font-size: 17px;
+        color: #aaa;
+        float: left;
+        cursor: pointer;
+        &:hover{
+            color: #2899e6;
+        }
+    }
+    .al-contentTabsItem.active{
+        background-color: #fff;
+        color: #3598db;
+        font-size: 18px;
+        margin-top:-2px;
+        border-bottom: 1px solid #fff;
+        border-right: 1px solid #e8edf0;
+        border-left: 1px solid #e8edf0;
+        border-top: 2px solid #3598db;
+    }
+}
+/*  他人动态 9/28
+.al-contentItem{
+    border-top: none;
+}
+*/
+.al-contentTabPages{
+    display: none;
+}
+.al-contentTabPages.active{
+    display: block;
+}

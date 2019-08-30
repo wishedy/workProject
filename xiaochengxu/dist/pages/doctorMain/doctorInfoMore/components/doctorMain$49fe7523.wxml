@@ -1,0 +1,62 @@
+<import src="/components/loading$2ff823fe" />
+<import src="/components/confirm$5251c782" /><template name="doctorMain$49fe7523">
+  <view class="_section data-v-946ab984 doctorHome-main"><template wx:if="{{finish}}" data="{{...$root[$kk+'0'], $root}}" is="loading$2ff823fe"></template>
+    <view class="_section data-v-946ab984 doc-topInfo"><button open-type="getUserInfo" bindgetuserinfo="handleProxy" class="_button data-v-946ab984 doc-shareBtn" wx:if="{{false}}" data-eventid="{{'0'}}" data-comkey="{{$k}}"></button>
+      <view class="_section data-v-946ab984 top-left">
+        <image src="{{doctorLogo}}" alt class="_img data-v-946ab984"></image>
+      </view>
+      <view class="_section data-v-946ab984 top-right">
+        <view class="_p data-v-946ab984 top-docInfoContent"><label class="_span data-v-946ab984 doc-name">{{authMap.fullName}}</label></view>
+        <view class="_section data-v-946ab984"><label class="_span data-v-946ab984 doc-medical">{{medicalTitle}}</label><label class="_span data-v-946ab984 doc-degree" wx:if="{{false}}">{{department}}</label></view>
+        <view class="_p data-v-946ab984 doc-right-content2"><label class="_span data-v-946ab984 doc-hospitalGrade" wx:if="{{authMap.hospitalLevelId==1}}">三甲</label><label class="_span data-v-946ab984 doc-hospitallName">{{company}}</label></view>
+        <view class="_p data-v-946ab984 doc-cureTime">{{jobDoctorYear}}</view>
+      </view>
+      <view class="_section data-v-946ab984 doc-borderLine"></view>
+    </view>
+    <view class="_section data-v-946ab984 doc-listComm doc-goodAt" wx:if="{{expertise.length}}">
+      <view class="_section data-v-946ab984 doc-listTitle">医生擅长</view>
+      <view class="_section data-v-946ab984 doc-listContent">{{expertise}}</view>
+    </view>
+    <view class="_section data-v-946ab984 doc-border-hightLine"></view>
+    <view class="_section data-v-946ab984 doc-listComm doc-goodAt" wx:if="{{achievement.length}}">
+      <view class="_section data-v-946ab984 doc-listTitle">执业成就</view>
+      <view class="_section data-v-946ab984 doc-listContent">{{achievement}}</view>
+    </view>
+    <view class="_section data-v-946ab984 doc-border-hightLine"></view>
+    <view class="_section data-v-946ab984 doc-listComm doc-goodAt" wx:if="{{honor.length}}">
+      <view class="_section data-v-946ab984 doc-listTitle">获得荣誉</view>
+      <view class="_section data-v-946ab984 doc-listContent">
+        <view class="_p data-v-946ab984 doc-listGoodItem" wx:key="index" key="{{index}}" wx:for="{{honorMore ? honor : honorLess}}" wx:for-index="index" wx:for-item="item">{{item}}</view>
+      </view>
+      <view class="_section data-v-946ab984 doc-listShowBtn" bindtap="handleProxy" hidden="{{!(showHonier)}}" data-eventid="{{'1'}}" data-comkey="{{$k}}">{{honorMore ? "收起" : "展开"}}
+      </view>
+    </view>
+    <view class="_section data-v-946ab984 doc-border-hightLine"></view>
+    <view class="_section data-v-946ab984 doc-listComm doc-goodAt" wx:if="{{academicLess.length}}">
+      <view class="_section data-v-946ab984 doc-listTitle">学术能力</view>
+      <rich-text class="_section data-v-946ab984 doc-listContent " nodes="{{academicMore ? academic : academicLess}}"></rich-text>
+      <view class="_section data-v-946ab984 doc-listShowBtn" bindtap="handleProxy" wx:if="{{academicMoreShow}}" data-eventid="{{'2'}}" data-comkey="{{$k}}">{{academicMore ? "收起" :
+        "展开"}}
+      </view>
+    </view>
+    <view class="_section data-v-946ab984 doc-border-hightLine"></view>
+    <view class="_section data-v-946ab984 doc-listComm doc-goodAt" wx:if="{{work.length}}">
+      <view class="_section data-v-946ab984 doc-listTitle">社会任职</view>
+      <view class="_section data-v-946ab984 doc-listContent">
+        <view class="_p data-v-946ab984 doc-listGoodItem" wx:key="index" key="{{index}}" wx:for="{{workMore ? work : workLess}}" wx:for-index="index" wx:for-item="item">{{item}}</view>
+      </view>
+      <view class="_section data-v-946ab984 doc-listShowBtn" bindtap="handleProxy" wx:if="{{workMoreShow}}" data-eventid="{{'3'}}" data-comkey="{{$k}}">{{workMore ? "收起" : "展开"}}</view>
+    </view>
+    <view class="_section data-v-946ab984 doc-goConsult">
+      <form bindsubmit="handleProxy" report-submit="true" wx:if="{{ensureShare&&showShareBtn}}" data-eventid="{{'5'}}" data-comkey="{{$k}}" class="_form data-v-946ab984"><button class="_button data-v-946ab984 shareBtn wx-contact-text" open-type="share" type="submit" formType="submit" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}"><label class="_span data-v-946ab984">分享</label></button></form>
+      <view class="_section data-v-946ab984 invite-consult" hidden="{{!(openState==2&&showBottom)}}">
+        <view class="_p data-v-946ab984">医生暂不在线，点击[预约咨询]医生助理会为您联系医生，并在医生上线后第一时间通知您。</view>
+      </view>
+      <view class="_section data-v-946ab984 doc-go-left">
+        <view class="_p data-v-946ab984 doc-goLone"><label class="_span data-v-946ab984 doc-goFreeText {{[openState == 2 ? 'notOnline' : '']}}" wx:if="{{openState==1&&inquiryState==1&&payType=='free'}}">{{openState==1?"前3次回复免费":"暂不在线"}}</label> <label class="_span data-v-946ab984 doc-goFreeText {{[openState == 2 ? 'notOnline' : '']}}" wx:if="{{openState==2}}">{{openState==1?"前3次回复免费":"暂不在线"}}</label><label wx:if="{{openState==1}}" class="_span data-v-946ab984 doc-goPrice {{[payType !== 'free' ? 'charge' : '']}}">￥{{generalPrice}} <label class="_span data-v-946ab984 doc-priceIcon" wx:if="{{payType=='free'}}"></label></label></view>
+        <view class="_p data-v-946ab984 doc-goLTwo">已有<label class="_span data-v-946ab984 doc-goNum">{{count}}</label>人咨询过</view>
+      </view> <button class="_button data-v-946ab984 doc-go-right" open-type="getUserInfo" bindgetuserinfo="handleProxy" wx:if="{{openState==1}}" data-eventid="{{'6'}}" data-comkey="{{$k}}">去咨询</button> <button class="_button data-v-946ab984 doc-go-right" open-type="getUserInfo" bindgetuserinfo="handleProxy" wx:if="{{openState==2}}" data-eventid="{{'7'}}" data-comkey="{{$k}}">预约咨询</button>
+    </view>
+    <ensure-confirm wx:if="{{ensureShow}}" ensureParams="{{ensureParams}}" bindensureClickEvent="handleProxy" data-eventid="{{'8'}}" data-comkey="{{$k}}" class="_ensure-confirm data-v-946ab984"></ensure-confirm> <template wx:if="{{confirmShow}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'9'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="confirm$5251c782"></template>
+  </view>
+</template>

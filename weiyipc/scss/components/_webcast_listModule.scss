@@ -1,0 +1,335 @@
+@charset "UTF-8";
+//直播列表
+//Created by zhangxiangfeng 2016/11/09
+//公共方法模块调用
+@import "../modules/common-modules";
+@import "../components/_makeSurePopup";      //仿confirm弹层
+
+
+.al-webcast_listBox{
+  width:710px;
+  margin-left:290px;
+  margin-top:20px;
+  background-color:#fff;
+}
+.al-webcast_listTitle{
+  border:1px solid #E4E9ED;
+  box-sizing: border-box;
+  padding:16px 24px;
+  h2{
+    font-size:18px;
+    color:#333;
+    font-weight: 400;
+    display: inline-block;
+  }
+  .al-headerSearch{ //直播搜索样式
+    margin:-8px 0 0;
+    b{
+      width:16px;
+      height:16px;
+      background: transparent url("//img10.allinmd.cn/v3/common/icon/icon_comment_search.png") center center no-repeat;
+    }
+  }
+}
+
+
+.al-videoItemBox{
+  padding:0 24px;
+  border-left:1px solid #e4e9ed;
+  border-right:1px solid #e4e9ed;
+  .al-videoItem{
+    padding:30px 0;
+    border-bottom:1px solid #ecf0f2;
+    //height:110px;
+    //@include clearfix();
+    overflow: hidden;
+    &:hover{
+      .al-deleteLivingBtn{display:block;}
+    }
+  }
+}
+
+
+
+//中间内容:begin
+.al-videoLivingContent{
+  float:left;
+  margin-left:20px;
+  h4{
+    color:#333;
+    font-weight: 400;
+    width: 200px;
+    line-height:20px;
+    height:39px;
+    &:hover{
+      color: #2899e6;
+    }
+  }
+  .al-livingTimeAndUser{
+    margin:18px 0 22px;
+    color:#909090;
+    font-size:14px;
+    .al-livingTime,.al-livingUser{
+      margin-right:22px;
+      display: inline-block;
+      b{
+        display: inline-block;
+        width: 17px;
+        margin-right:4px;
+        vertical-align: text-bottom;
+      }
+    }
+    .al-livingTime{
+      b{
+        height: 17px;
+        background: transparent url("//img10.allinmd.cn/v3/webcast/Time.png") center center no-repeat;
+      }
+    }
+    .al-livingUser{
+      b{
+        height: 14px;
+        background: transparent url("//img10.allinmd.cn/v3/webcast/livingUser.png") center center no-repeat;
+        vertical-align: bottom;
+      }
+    }
+  }
+  .al-livingDate{
+    font-size:13px;
+    color:#aaa;
+    font-family: "宋体";
+    p{display: inline-block;}
+    .al-livingDate_endTime{margin-left:15px;}
+    span{padding-left:2px;}
+  }
+}
+//中间内容:end
+
+
+
+
+//左侧视频
+.al-videoDemo{
+  float:left;
+  width:201px;
+  height:110px;
+  position:relative;
+  b{
+    position: absolute;
+    top:0;
+    left:0;
+    width:70px;
+    height:54px;
+  }
+  .al-videoLivingImg{  background:transparent url("//img10.allinmd.cn/v3/webcast/videoLivingImg.png") center center no-repeat;}
+  .al-videoEndImg{  background:transparent url("//img10.allinmd.cn/v3/webcast/videoEndImg.png") center center no-repeat;}
+  .al-videoOrderImg{  background:transparent url("//img10.allinmd.cn/v3/webcast/videoOrderImg.png") center center no-repeat;}
+  img{
+    width:100%;
+    height:100%;
+    vertical-align: middle;
+  }
+}
+
+
+
+
+//立即直播按钮
+.al-videoLivingBtn{
+  float:left;
+  a{
+    display: inline-block;
+    width:100px;
+    height:30px;
+    text-align: center;
+    line-height:30px;
+    color:#2899e6;
+    font-size:14px;
+    border:1px solid #2899e6;
+    box-sizing: border-box;
+    border-radius:100px;
+    behavior: url("/js/third-party/pie/pie.htc");
+  }
+}
+.al-alreadyOrderBtn{  //已预约按钮
+  a{
+    color:#c5c5c5;
+    border:1px solid #c5c5c5;
+  }
+}
+
+//删除按钮
+.al-deleteLivingBtn{
+  display: none;
+  font-size:15px;
+  color:#acb4c3;
+  float:right;
+  margin-top:95px;
+  margin-right:-40px;
+  cursor: pointer;
+}
+
+
+//分享
+.al-videoShare{
+  float:right;
+  font-size:14px;
+  color:#73859e;
+  cursor: pointer;
+  padding-top:10px;
+  .al-shareBtn{margin-right:3px;}
+  &:hover{
+    span{color:#3598db;}
+  }
+}
+
+
+
+//立即直播弹层:begin
+.al-livingPopBox{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:5;
+  width:100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  .al-livingPopContent{
+    background-color:#fff;
+    width:500px;
+    height:210px;
+    border:1px solid #e4e9ed;
+    margin:380px auto 0;
+    border-radius: 4px;
+    behavior:url('/js/third-party/pie/pie.htc');
+    b{
+      display: block;
+      float: right;
+      cursor: pointer;
+      width: 13px;
+      height: 13px;
+      background: url("//img10.allinmd.cn/v3/common/icon/icon_close.png") center center no-repeat;
+      margin:18px 20px 0 0;
+    }
+    p{
+      padding:55px 40px 0 40px;
+      color:#333;
+      line-height:30px;
+      height:90px;
+    }
+    span{
+      font-size:15px;
+      display: inline-block;
+      border-radius:4px;
+      behavior:url('/js/third-party/pie/pie.htc');
+      height:34px;
+      line-height:34px;
+      text-align: center;
+      color:#fff;
+      width:100px;
+      cursor: pointer;
+    }
+    .al-livingPop_playBtn{
+      background-color:#2899e6;
+      margin:0 15px 0 150px;
+      &:hover{background-color:#52a9e4;}
+    }
+    .al-livingPop_cancelBtn{background-color:#a1a9ba;}
+  }
+}
+//立即直播弹层:end
+
+
+
+//直播列表：我的预约——begin
+  .al-webcast_orderBox{
+    .al-videoItem{
+      position:relative;
+      .al-deleteLivingBtn{
+        position:absolute;
+        right:0;
+        bottom:30px;
+        margin:0;
+      }
+    }
+    .al-moreLivingOrder{
+      float:right;
+      font-size:15px;
+      color:#acb4c3;
+      margin-top:3px;
+      &:after{
+        content: "";
+        display: inline-block;
+        width:6px;
+        height: 10px;
+        background: transparent url("//img10.allinmd.cn/v3/common/icon/moreIcon.png") center center no-repeat;
+        margin-left: 5px;
+        vertical-align: inherit;
+      }
+    }
+    .al-videoLivingContent{
+      h4{
+        width:340px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        height:20px;
+      }
+    }
+    .al-livingOrderUser{
+      display: inline-block;
+      margin-right:20px;
+      .al-orderUserHeadImg{
+        display:inline-block;
+        width:24px;
+        height:24px;
+        border-radius: 50%;
+        behavior:url('/js/third-party/pie/pie.htc');
+        img{
+          width:100%;
+          height:100%;
+          vertical-align: middle;
+        }
+      }
+      .al-orderUserName{
+        display: inline-block;
+        color:#555555;
+        font-size:14px;
+        margin-left:3px;
+        margin-bottom:-3px;
+        max-width:68px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .al-livingTimeAndUser{height:32px;}
+
+    .al-livingTheme{
+      font-size:12px;
+      font-family:"宋体";
+      padding:2px 4px;
+      border-radius:2px;
+      margin-right:18px;
+      margin-bottom: -1px;
+      vertical-align: bottom;
+    }
+    .al-hickeyColor{border:1px solid #9bcc4E;color:#9bcc4E;}
+    .al-conferenceColor{border:1px solid #e84652;color:#e84652;}
+    .al-caseColor{border:1px solid #44bbed;color:#44bbed;}
+
+    .al-videoLivingBtn{   //预约按钮
+      position: absolute;
+      top:32px;
+      right:0;
+    }
+    .al-alreadyOrderBtn{  //已预约按钮
+      position: absolute;
+      top:32px;
+      right:0;
+      a{
+        color:#c5c5c5;
+        border:1px solid #c5c5c5;
+      }
+    }
+  }
+//直播列表：我的预约——end

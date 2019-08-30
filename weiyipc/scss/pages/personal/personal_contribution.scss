@@ -1,0 +1,38 @@
+@charset "UTF-8";
+//个人主页——贡献
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+//公共组件引用
+
+
+@import "../../components/_personalBasic";  //个人主页基础样式
+@import "../../components/_contentModule"; //主内容区域
+@import "../../components/_iconsModule";   //小图标
+
+
+//未认证用户情况
+.al-NoContributionUser{
+	padding:132px 0 142px;		// 9/27		贡献无资源时
+	color: $smallContentColor;
+	font-size: 17px;
+	text-align: center;
+    background-color:#fff;
+  	border:1px solid #e4e9ed;
+  	margin-top:-1px;		//	9/18	全部动态页面     ***9/28
+	p{margin-bottom:20px;}
+	a{
+	  color: #3598db;
+	  font-size: 17px;
+	  &:hover{text-decoration: underline;}
+	}
+}
+
+
+@import "../../components/_shareBoxModule"; //分享按钮盒
+@import "../../components/_uploadBox"; //上传弹窗
+//变更信息提示弹框：begin
+@import "../../components/_authenticationNew"; //认证四证齐全改版样式
+
+

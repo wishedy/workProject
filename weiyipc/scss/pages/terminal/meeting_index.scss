@@ -1,0 +1,118 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+
+.al-mainContentBox{
+  width:1000px;
+  margin:0 auto 60px;
+}
+
+.al-mainContentHead{
+  height:388px;
+  width:100%;
+  margin-left:80px;
+}
+//主体内容：begin
+.al-meetingContent_head{
+  padding:0 210px;
+  font-size:18px;
+  color:#7A7A7A;
+  background-color:#fff;
+  margin-bottom:20px;
+  border:1px solid #E2E9F0;
+  span{
+    display:inline-block;
+    padding:0 42px;
+    height:60px;
+    line-height:60px;
+  }
+  .al-meetingAgenda{
+    float:right;
+  }
+  .active{
+    color:#3598DB;
+    cursor: pointer;
+    border-bottom:2px solid #3598DB;
+    box-sizing: border-box;
+  }
+}
+
+
+.al-meetMainBox{
+  border:1px solid #E2E9F0;
+}
+.al-meetingContent{
+  background-color:#fff;
+  padding:30px 30px 50px;
+  @include clearfix();
+  h6{
+    font-weight: normal;
+    font-size:17px;
+  }
+  b{  //横线
+    display:block;
+    width:34px;
+    margin:19px 0 18px;
+    border-bottom:1px solid #ECF0F2;
+  }
+  .al-news{ //新闻通告
+    width:47%;
+    float:left;
+    p{
+      font-size:15px;
+      color:#777;
+      line-height:26px;
+    }
+  }
+  .al-date{ //重要日期
+    float:left;
+    margin-left:65px;
+    p{
+      font-size:15px;
+      color:#777;
+    }
+  }
+  .al-expertIntr{
+    display:block;
+    width:100%;
+  }
+}
+                //专家介绍:begin
+.al-expertIntr{
+  background-color:#fff;
+  padding:0 30px 40px;
+  @include clearfix();
+  h6{
+    font-weight: normal;
+    font-size:17px;
+  }
+  b{  //横线
+    display:block;
+    width:34px;
+    margin:19px 0 30px;
+    border-bottom:1px solid #ECF0F2;
+  }
+}
+.expert_headImgBox{
+  height:106px;
+  overflow:hidden;
+  .expert_headImg{
+    float:left;
+    text-align:center;
+    margin-right:24px;
+    img{
+      width:80px;
+      height:80px;
+      border-radius: 50%;
+      display:block;
+      margin-bottom:10px;
+    }
+    span{
+      font-size:13px;
+      color:#626F8C;
+      cursor: pointer;
+    }
+  }
+}
+                //专家介绍:begin
+//主体内容：end

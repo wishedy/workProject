@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>${fellowshipInfo.fellowshipName}—项目介绍－唯医，allinmd</title>
+    <meta name="Keywords" content="${fellowshipInfo.fellowshipName}，fellowship，医师进修，免费进修">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <link rel="stylesheet" href="/dest/fellowship/fellowship_main.css">
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+
+<body data-alcode="122">
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <!--<ul class="al-headerTopNav">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>-->
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+    <div id="meeting">
+        <div class="fellowship_main nopb">
+            <#if ad_data_list_fellowship??>
+                <#list ad_data_list_fellowship as list>
+                    <#if list_index==0>
+                        <div class="fs_nass_banner" style="background:url(//img99.allinmd.cn/${list.adAttUrl}) no-repeat center;height: 450px;"></div>
+                    </#if>
+                </#list>
+
+            </#if>
+
+            <div class="fs_nass_nav">
+                <div class="fs_nass_nav_main font_yahei">
+                    <ul data-alcode-mod='228'>
+                        <#if cms_mainmenu_map_list??>
+                            <#list cms_mainmenu_map_list as menulsit>
+                                <#assign fellowMenu = menulsit.fellowship_main_menu >
+                                    <li><a href="${fellowMenu.menuUrlAllin!''}">${fellowMenu.fellowshipMainName!''}</a>
+
+                                        <#if fellowMenu.fellowship_main_second_menu??>
+                                            <!--往届回顾的下拉菜单-->
+                                            <div class="fs_old_review" style="display:none;">
+                                                <ol>
+                                                    <#assign secondMenu= fellowMenu.fellowship_main_second_menu>
+
+                                                        <#list secondMenu as secondMenu>
+
+                                                            <li>
+                                                                <a href="${secondMenu.fellowship_main_second_menu.menuUrlAllin}" target="_self">${secondMenu.fellowship_main_second_menu.fellowshipMainName}</a>
+                                                            </li>
+
+                                                        </#list>
+
+
+                                                </ol>
+                                            </div>
+
+                                        </#if>
+
+                                    </li>
+                            </#list>
+
+
+                        </#if>
+                        <div class="clear"></div>
+
+                    </ul>
+                    <a href="javascript:;" class="fs_nassSign Ev-NowApplyBtn hide"  data-flag="1" data-alcode-mod='e43'>立即报名</a>
+                </div>
+            </div>
+            <div class="fs_nass_main">
+
+                <#if cms_news_menu_list??>
+
+                    <#list cms_news_menu_list as menunewslsit>
+                        <#if menunewslsit.menu_id_news??>
+                            <#assign menunewobj = menunewslsit.menu_id_news>
+                                ${menunewobj.newsBody!''}
+                        </#if>
+                    </#list>
+                </#if>
+
+                <div class="fs_nass_syn">
+                    <div class="fs_nass_syn_top">
+                        <div class="nass_title"><div class="fs_font_b">选拔流程</div><div class="choose bg_e">PROCEDURE</div>
+                        </div>
+                    </div>
+                    <div class="fs_nass_syn_down"><div class="fs_sign_con fs_choose_con">
+
+
+
+                        <#if (fellowshipConfigs??)&&(fellowshipConfigs?size>0)>
+                            <ul>
+                                <#list fellowshipConfigs as cList>
+                                    <#if  cList_index==0>
+                                        <li>
+                                            <#elseif (cList_index==fellowshipConfigs?size)>
+                                                <li class="no_p pb">
+                                                    <#else>
+                                                        <li class="no_p">
+                                    </#if>
+                                    <#if  cList_index % 2 == 0>
+                                        <div class="fs_choose_l fl_l">
+                                            <div class="fs_choose_floor fl_r">
+                                                <div class="floor_w  Ev-timeCtrl">
+                                                    <span class="font_big">${cList.configTitle}</span> ：
+                                                    <#if  cList.configStartTime?? ><span class="Ev-startTime">${cList.configStartTime}</span></#if>
+                                                    <#if  (cList.configStartTime??) && (cList.configEndTime??)>  - </#if>
+                                                    <#if  cList.configEndTime??><span class="Ev-endTime"> ${cList.configEndTime} </span></#if>
+                                                    <#if  (cList.configStartTime??) && !(cList.configEndTime??)>起 </#if>
+                                                </div>
+                                                <div class="sj"></div><div class="dian"></div>
+                                            </div>
+                                        </div>
+                                        <div class="fs_choose_r fl_r"> ${cList.configIntro} </div>
+                                        <div class="clear"></div>
+                                        <#else>
+                                            <div class="fs_choose_l fl_r">
+                                                <div class="fs_choose_floor fl_l">
+                                                    <div class="floor_w  Ev-timeCtrl">
+                                                        <span class="font_big">${cList.configTitle}</span> ：
+                                                        <#if  cList.configStartTime?? ><span class="Ev-startTime">${cList.configStartTime}</span></#if>
+                                                        <#if  (cList.configStartTime??) && (cList.configEndTime??)> - </#if>
+                                                        <#if  cList.configEndTime??> <span class="Ev-endTime">${cList.configEndTime}</span></#if>
+                                                        <#if  (cList.configStartTime??) && !(cList.configEndTime??)>起 </#if>
+                                                    </div>
+                                                    <div class="sj_l"></div><div class="dian_l"></div>
+                                                </div>
+                                            </div>
+                                            <div class="fs_choose_r fl_l text_r">
+                                                ${cList.configIntro}
+                                            </div>
+                                            <div class="clear"></div>
+                                    </#if>
+                                    </li>
+                                </#list>
+                                <li>&nbsp;</li>
+                            </ul>
+                        </#if>
+
+                    </div>
+                    </div>
+                </div>
+                <#if cms_news_menu_list??>
+                    <#list cms_news_menu_list as menunewslsit>
+                        <#if menunewslsit.menu_id_news2??>
+                            <#assign menunewobj = menunewslsit.menu_id_news2>
+                                ${menunewobj.newsBody!''}
+                        </#if>
+                    </#list>
+                </#if>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="fellowShipHiddenId" value="${felloshipId}"/>
+    <!--#include virtual="/includes/footer.jsp"-->
+</section>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+
+<script src="/dest/fellowship/fellowship_main.js"></script>
+
+</body>
+</html>

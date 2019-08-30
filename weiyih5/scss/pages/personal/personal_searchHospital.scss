@@ -1,0 +1,46 @@
+@charset "UTF-8";
+//个人主页——搜索医院
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule";	//按钮组件
+@import "../../components/_searchList";     //搜索列表组件
+//搜索结果
+.al-searchResult{
+	transition : margin-top 0.2s linear;
+	-webkit-transition : margin-top 0.2s linear;	
+}
+html,body{
+	height: 100%;
+}
+.ev-summaryInner{
+	background-color: #fff;
+}
+.ev-areasSave{
+	font-size: rem(30px)!important;
+	color: #909090!important;
+  &.focus{
+	color: #2899e6!important;
+  }
+}
+.ev-areasCon{
+	//margin-top: -2.7333333rem !important;
+}
+.icon-scrollShare{
+    @extend %icon-scrollShare;
+}
+.icon-searchWhite{
+    @extend %icon-searchWhite;
+}
+.icon-searchCancel{
+    @extend %icon-searchCancel;
+}
+.icon-aplMaster{
+    @extend %icon-aplMaster;
+}
+.icon-backArrow{
+	@extend %icon-backArrow;
+}

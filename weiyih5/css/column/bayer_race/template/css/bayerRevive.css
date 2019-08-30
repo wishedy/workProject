@@ -1,0 +1,237 @@
+@charset "UTF-8";
+/*复活赛规则*/
+html,
+body {
+  font-family: "microsoft yahei" !important;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.reviveRules {
+  margin-top: 0;
+}
+
+.headTitle {
+  position: relative;
+  background-color: #7f6bae;
+}
+
+.reviveRulesText {
+  padding: 0.26667rem 0.4rem 0.48rem 0.4rem;
+  word-break: break-all;
+}
+
+/*精彩复活*/
+.broveShowList {
+  margin: 0.53333rem 0 0 0.4rem;
+  overflow: hidden;
+  padding-bottom: 0.26667rem;
+  border-bottom: 1px solid #d9d9e1;
+}
+.broveShowList:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.broveShowImg {
+  width: 2.8rem;
+  height: 1.85333rem;
+  float: left;
+  border: 0.04rem solid #d5d5d5;
+  overflow: hidden;
+  text-align: center;
+  padding: 1px;
+  position: relative;
+}
+.broveShowImg img {
+  width: 100%;
+  vertical-align: middle;
+}
+.broveShowImg figure.levelUpIcon {
+  width: 1.33333rem;
+  height: 0.88rem;
+  position: absolute;
+  top: -1px;
+  left: -2px;
+  display: none;
+}
+.broveShowImg figure.levelUpIcon img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.broveShowList.levelUp .levelUpIcon {
+  display: block;
+}
+
+.broveShowText {
+  margin-left: 3.17333rem;
+  margin-right: 0.4rem;
+}
+.broveShowText a:nth-child(1) {
+  font-size: 0.4rem;
+  line-height: 0.58667rem;
+  color: #66657f;
+}
+.broveShowText a:nth-child(1) span {
+  font-size: 0.4rem;
+  color: #66657f;
+}
+.broveShowText .authorName {
+  font-size: 0.33333rem;
+  color: #fff;
+  background: transparent url("//img50.allinmd.cn/column/bayer_race/authorBg.png") left top no-repeat;
+  padding: 0 0.2rem;
+  margin-right: 0.13333rem;
+}
+.broveShowText p {
+  margin-top: 0.13333rem;
+}
+.broveShowText span {
+  font-size: 0.29333rem;
+  color: #969696;
+}
+.broveShowText .hospital,
+.broveShowText .raceArea {
+  display: inline-block;
+  width: 3rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.broveShowText .raceArea {
+  margin-right: 0.4rem;
+  width: 2rem;
+}
+.broveShowText .raceArea:before {
+  content: "";
+  width: 0.28rem;
+  height: 0.26667rem;
+  display: inline-block;
+  background: transparent url("//img50.allinmd.cn/column/bayer_race/place.png") center center no-repeat;
+  background-size: contain;
+  margin-right: 0.13333rem;
+  vertical-align: middle;
+}
+.broveShowText .hospital:before {
+  content: "";
+  width: 0.32rem;
+  height: 0.26667rem;
+  display: inline-block;
+  background: transparent url("//img50.allinmd.cn/column/bayer_race/hospital.png") center center no-repeat;
+  background-size: contain;
+  margin-right: 0.13333rem;
+  vertical-align: middle;
+}
+
+.broveMore {
+  border-top: 1px solid #eae8ee;
+}
+
+/*顶部页码*/
+.paginationTop {
+  position: absolute;
+  height: 100%;
+  right: 0.4rem;
+  bottom: 0;
+}
+.paginationTop ul {
+  height: 100%;
+  overflow: hidden;
+}
+.paginationTop .paginationTopItem {
+  text-align: center;
+  float: left;
+  width: 0.8rem;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #7d7d7d;
+  border-left: 1px solid #dfdde4;
+  border-right: 1px solid #dfdde4;
+  line-height: 1;
+}
+.paginationTop .paginationTopItem a {
+  display: block;
+  width: 100%;
+}
+.paginationTop .on {
+  color: #7f5fc8;
+}
+.paginationTop .on:after {
+  content: "";
+  width: 100%;
+  display: block;
+  height: 0.13333rem;
+  background: transparent url("//img50.allinmd.cn/column/bayer_race/pageCodeBtm.png") center center no-repeat;
+  background-size: contain;
+  position: absolute;
+  margin-top: 0.17333rem;
+}
+
+/*点赞数目与按钮*/
+.clickLike {
+  float: right;
+  font-size: 0.29333rem;
+  margin-top: 0.26667rem;
+}
+.clickLike .clickLikeLink {
+  color: #d05195;
+  font-size: 0.29333rem;
+  vertical-align: middle;
+  font-weight: 600;
+}
+.clickLike .clickLikeLink:after {
+  content: "";
+  width: 0.28rem;
+  height: 0.24rem;
+  display: inline-block;
+  background: transparent url("//img50.allinmd.cn/column/bayer_race/gotoLike.png") center center no-repeat;
+  background-size: contain;
+  margin-left: 0.10667rem;
+}
+.clickLike > span {
+  color: #715ca5;
+  padding-right: 0.4rem;
+  vertical-align: middle;
+}
+.clickLike > span:first-child:before {
+  content: "赞";
+  border: 1px solid #8a77b5;
+  padding: 0;
+  border-radius: 0.06667rem;
+  margin-right: 0.13333rem;
+  vertical-align: middle;
+}
+
+/*底部分页*/
+.paginationBottom {
+  color: #c3c2d0;
+  text-align: center;
+  padding: 0.4rem 0;
+  border-top: 1px solid #d9d9e1;
+}
+.paginationBottomItem {
+  display: inline-block;
+  border: 1px solid #c3c2d0;
+  padding: 0.13333rem 0.26667rem;
+  border-radius: 5px;
+  margin: 0 0.13333rem;
+}
+.paginationBottom .on {
+  background-color: #715ca5;
+}
+.paginationBottom .on a {
+  color: #fff !important;
+}
+.paginationBottom a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

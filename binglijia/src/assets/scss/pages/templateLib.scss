@@ -1,0 +1,718 @@
+﻿@charset "UTF-8";
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/emr-variables";
+
+
+html,body{
+    height: 100%;
+
+}
+.alEmr-mainInner{
+    height: 100%;
+    background: white;
+    overflow: auto;
+    padding-top: 0;
+    &.mainHide{
+        overflow: hidden;
+    }
+    &.alEmr-mainCase{
+        padding-top: 71px;
+        box-sizing: border-box;
+        .alEmr-mainIndex{
+            padding-top: 0;
+            padding-left: 0;
+        }
+        .alEmr-innerLeft{
+            width: 270px;
+        }
+        .alEmr-innerRight{
+            margin-top: 0;
+            padding-top: 41px;
+            //margin-left:400px;
+            .callOur{
+                //width: 1050px;
+                //margin-left: 0;
+                //left: auto;
+                //transform:none;
+                z-index: 2;
+            }
+        }
+    }
+}
+//主容器
+.alEmr-mainIndex{
+    //height: 100%;
+    padding-top: 81px;
+    @include clearfix();
+    .alEmr-innerLeft{
+        float: left;
+    }
+}
+//左侧容器
+.alEmr-innerLeft{
+    width: 130px;
+    background: #F2F2F2;
+    height: 100%;
+    position: fixed;
+    z-index: 4;
+    ul{
+        height: 100%;
+        li{
+            cursor: pointer;
+            font-size: 16px;
+            color: #222222;
+            line-height: 60px;
+            text-align: center;
+            &.active{
+                color: #2888FF;
+                background: #fff;
+                position: relative;
+                &:before{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    display: inline-block;
+                    height: 60px;
+                    width: 4px;
+                    background: #2888FF;
+                }
+            }
+        }
+    }
+}
+//右侧模板
+.alEmr-innerRight{
+    width: 1010px;
+    //padding-left: 60px;
+    height: 100%;
+    //margin: 41px 0 0 130px;
+    //padding-bottom: 125px;
+    //padding:0 0  140px 60px;
+    padding:0 0  140px 0;
+    margin: 41px auto 0;
+    /* margin: auto; */
+    float: none;
+    //overflow: auto;
+    .alEmr-moudel {
+        h4{
+            font-size: 16px;
+            color: #666666;
+            font-weight: normal;
+            padding: 0 0 12px 0;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #EEEEEE;
+        }
+        .modelItem,.modelItemNew{
+            width: 210px;
+            height: 110px;
+            text-align: center;
+            //line-height: 110px;
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            border-radius: 8px;
+            margin: 0 40px 40px 0;
+            font-size:16px;
+            cursor: pointer;
+            .modelText{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                -ms-transform: translate(-50%,-50%);
+                -moz-transform:translate(-50%,-50%);
+                -webkit-transform: translate(-50%,-50%);
+                -o-transform:translate(-50%,-50%);
+                width: 76%;
+                line-height: 24px;
+                letter-spacing: 1px;
+            }
+            &.active{
+                position: relative;
+                i{
+                    position: absolute;
+                    left: 0;
+                    width: 210px;
+                    height: 110px;
+                    background: url("/static/images/pages/templateLib/selectActive.png") 100% 100% no-repeat;
+                }
+            }
+        }
+    }
+    //全部模板
+    .allMajor{
+        .modelItem{
+            //background: #3FAEEE;
+            background: url("/static/images/pages/templateLib/allMajor.png") 100% 100% no-repeat;
+            color: #FFFFFF;
+        }
+    }
+    //    创伤 定制
+    .orderMajor{
+        .modelItem{
+            //background: #E9F3FF;
+            //border: 1px solid #277DFF;
+            color: #4A90E2;
+            background: url("/static/images/pages/templateLib/orderMajor.png") 100% 100% no-repeat;
+        }
+        .modelItemNew{
+            color: #4A90E2;
+            background: url("/static/images/pages/templateLib/orderMajorNew.png") 100% 100% no-repeat;
+        }
+    }
+    //    关节
+    .jointMajor{
+        .modelItem{
+            //background: #E2F6F2;
+            //border: 1px solid #7AC6B5;
+            color: #55A18D;
+            background: url("/static/images/pages/templateLib/jointMajor.png") 100% 100% no-repeat;
+        }
+        .modelItemNew{
+            color: #55A18D;
+            background: url("/static/images/pages/templateLib/jointMajorNew.png") 100% 100% no-repeat;
+        }
+    }
+    //    脊柱
+    .spineMajor{
+        .modelItem{
+            //background: #FFF0F0;
+            //border: 1px solid #D57676;
+            color: #C97474;
+            background: url("/static/images/pages/templateLib/spineMajor.png") 100% 100% no-repeat ;
+        }
+        .modelItemNew{
+            color: #C97474;
+            background: url("/static/images/pages/templateLib/spineMajorNew.png") 100% 100% no-repeat;
+        }
+    }
+     //    创伤
+    //.vulnusMajor{
+    //    .modelItem{
+    //        background: #E9F3FF;
+    //        border: 1px solid #277DFF;
+    //        color: #4A90E2;
+    //    }
+    //}
+    //更多模板
+    .alEmr-innerMore{
+        line-height: 28px;
+        font-size: 14px;
+        color: #909090;
+        margin:100px 0 31px ;
+        text-align: center;
+    }
+    //告诉我们
+    .callOur{
+        height: 100px;
+        line-height: 100px;
+        font-size: 14px;
+        text-align: right;
+        border-top: 1px solid #EEEEEE;
+        position: absolute;
+        bottom: 0;
+        width: 1010px;
+        background: #fff;
+        z-index: 1;
+        //margin-left: 156px;
+        //left: 50%;
+        //transform: translateX(-50%);
+        //margin-bottom: 15px;
+        .callText{
+            color: #666666;
+        }
+        .callContainer{
+            position: relative;
+            display: inline-block;
+            .callLink{
+                color: #2888FF;
+                cursor: pointer;
+            }
+            .callModule{
+                text-align: left;
+                //width: 600px;
+                //height: 510px;
+                background: #FFFFFF;
+                position: absolute;
+                z-index: 2;
+                padding: 40px 50px;
+                right: 0;
+                bottom: 85px;
+                line-height: 1;
+                //box-shadow: 0 2px 10px 0 rgba(3,3,3,0.16);
+                box-shadow: 0 0 16px 0 rgba(204,214,231,0.80);
+                &:before{
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    right: 6%;
+                    bottom: -19px;
+                    margin-left: -5px;
+                    height: 0;
+                    width: 0;
+                    border: 9px solid transparent;
+                    border-top: 9px solid #eceff2;
+                }
+                &:after{
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    right: 6%;
+                    margin-left: -5px;
+                    bottom: -18px;
+                    height: 0;
+                    width: 0;
+                    border: 9px solid transparent;
+                    border-top: 9px solid #fff;
+                }
+                h4{
+                    font-size: 14px;
+                    color: #222222;
+                    line-height: 20px;
+                    font-weight: normal;
+                }
+                .textDiv{
+                    position: relative;
+                    span{
+                        position: absolute;
+                        right: 15px;
+                        bottom: 50px;
+                        font-size: 14px;
+                        color: #999;
+                    }
+                }
+                textarea,input{
+                    background: rgba(216,216,216,0.10);
+                    border: 1px solid #C8C8C8;
+                    border-radius: 4px;
+                    font-size: 13px;
+                    width: 400px;
+                    box-sizing: border-box;
+                    margin: 14px 0 20px;
+                }
+                textarea{
+                    resize: none;
+                    height: 120px;
+                    //color: #909090;
+                    padding: 12px;
+                    font-family: "Microsoft YaHei";
+                }
+                input{
+                    height: 40px;
+                    padding: 0 12px;
+                }
+                //.linkYour{
+                //    height: 54px;
+                //    //overflow-y: hidden;
+                //    //white-space: nowrap;
+                //    padding: 10px 20px;
+                //    //line-height: 54px;
+                //}
+                .btnModule{
+                    height: 40px;
+                    text-align: right;
+                    button{
+                        width: 104px;
+                        line-height: 40px;
+                        text-align: center;
+                        font-size: 16px;
+                        background: none;
+                        outline: none;
+                        border: none;
+                    }
+                    .btnCancel{
+                        color: #222222;
+                    }
+                    .btnSubmit{
+                        background: rgba(40,136,255,0.70);
+                        box-shadow: 0 2px 10px 0 rgba(67,130,241,0.16);
+                        border-radius: 4px;
+                        color: #FFFFFF;
+                        opacity: 0.7;
+                        cursor: pointer;
+                        &.active{
+                            opacity: 1;
+                        }
+                    }
+                }
+                .closeCall{
+                    width: 14px;
+                    height: 14px;
+                    background: url("/static/images/pages/templateLib/close.png") center center no-repeat;
+                    float: right;
+                    margin: -20px -25px 0 0;
+                    cursor: pointer;
+                }
+                //提交成功
+                .subSuccess{
+                    width: 400px;
+                    height: 223px;
+                    text-align: center;
+                    padding-top: 116px;
+                    h2{
+                        font-size: 16px;
+                        color: #222222;
+                        line-height: 20px;
+                        font-weight: normal;
+                        i{
+                            background: url("/static/images/pages/templateLib/btnSuccess.png") 100% 100% no-repeat;
+                            width: 26px;
+                            height: 26px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-right: 20px;
+                            //border-radius: 50%;
+                        }
+                    }
+                    p{
+                        font-size: 16px;
+                        color: #909090;
+                        margin-top: 20px;
+                    }
+
+                }
+            }
+
+        }
+        .baseInfoCotainer{
+            @include clearfix();
+            padding-top: 30px;
+            .baseInfoBack{
+                font-size: 16px;
+                color: #2888FF;
+                border: 1px solid #2888FF;
+                border-radius: 4px;
+                width: 160px;
+                line-height: 40px;
+                text-align: center;
+                float: left;
+                cursor: pointer;
+            }
+            .btnBase{
+                display: inline-block;
+                float: right;
+                line-height: 1;
+                font-size: 0;
+                opacity: 0.7;
+                &.active{
+                    opacity: 1;
+                }
+                button{
+                    width: 100px;
+                    line-height: 40px;
+                    background: rgba(40,136,255,0.70);
+                    box-shadow: 0 2px 10px 0 rgba(67,130,241,0.16);
+                    border-radius: 4px;
+                    font-size: 16px;
+                    color: #FFFFFF;
+                    text-align: center;
+                    cursor: pointer;
+                }
+                .BtnUse{
+                    margin-left: 30px;
+                }
+            }
+        }
+        //新建病历告诉我们
+        .caseCallTop{
+            position: fixed;
+            top: 27px;
+            font-size: 16px;
+            color: #666666;
+            line-height: 16px;
+            right: 213px;
+            //margin-right: 225px;
+            .callContainer{
+                .callModule{
+                    right: -142px;
+                    top: 40px;
+                    width: 400px;
+                    height: 310px;
+                    //.contentCon{
+                    //    background: #fff;
+                    //}
+                    &:before{
+                        top: -19px;
+                        border-bottom: 9px solid #eceff2;
+                        left: 64%;
+                    }
+                    &:after{
+                        top: -19px;
+                        border-bottom: 10px solid #fff;
+                        left: 64%;
+                    }
+                }
+            }
+        }
+    }
+}
+//预览模板
+.alEmr-thickness{
+    position: fixed;
+    z-index: 5;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.thickMaster{
+    opacity: 0.8;
+    background: #304364;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+.thickCotainer{
+    @include clearfix();
+    opacity: 1;
+    width: 1200px;
+    height: 700px;
+    position: absolute;
+    background: #fff;
+    z-index: 3;
+    left: 50%;
+    top:50%;
+    //transform: translateX(-50%) translateY(-50%);
+    //-ms-transform: translateX(-50%) translateY(-50%);
+    //-moz-transform: translateX(-50%) translateY(-50%);
+    //-webkit-transform: translateX(-50%) translateY(-50%);
+    //-o-transform: translateX(-50%) translateY(-50%);
+    margin-left: -600px;
+    margin-top: -350px;
+    //margin: 0 auto;
+    .thickTitle{
+        line-height: 70px;
+        border: 1px solid #EEEEEE;
+        padding: 0 20px 0 30px;
+        @include clearfix();
+        .titleName{
+            float: left;
+            font-size: 20px;
+            color: #000000;
+            width: 881px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .titleDesc{
+            float: right;
+            font-size: 16px;
+            color: #666666;
+            i{
+                width: 14px;
+                height: 14px;
+                display: inline-block;
+                background: url("/static/images/pages/templateLib/close.png") center center no-repeat;
+                vertical-align: middle;
+                margin-left: 40px;
+                cursor: pointer;
+            }
+        }
+    }
+    .thickLeft,.thickRight{
+        float: left;
+        height: 89.5%;
+        overflow: auto;
+    }
+    .thickLeft{
+        width: 270px;
+        background: #F2F2F2;
+        //&::-webkit-scrollbar {display:none}
+        ul{
+            li{
+               text-align: center;
+                //line-height: 68px;
+                line-height: 30px;
+                padding: 19px 5px;
+                font-size: 16px;
+                color: #222222;
+                cursor: pointer;
+                &.active{
+                    color: #2888FF;
+                    background: #fff;
+                    //position: relative;
+                    border-left: 4px solid #2888FF;
+                    //&:before{
+                    //    content: '';
+                    //    position: absolute;
+                    //    left: 0;
+                    //    top: 0;
+                    //    display: inline-block;
+                    //    height: 70px;
+                    //    width: 4px;
+                    //    background: #2888FF;
+                    //}
+                }
+            }
+        }
+    }
+    .thickRight{
+        width: 929px;
+        padding:43px 0 0 0;
+        box-sizing: border-box;
+        .newCases{
+            margin: 0 auto;
+            width: 710px;
+        }
+    }
+}
+.newCases{
+    .thickCotainer{
+        .thickLeft,.thickRight{
+            height: 92.6%;
+        }
+    }
+}
+.alEmr-mainCase{
+    //.thickLeft{
+    //    padding-bottom: 78px;
+    //}
+    //.thickRight{
+    //    padding-bottom: 78px;
+    //}
+    .thickCotainer{
+        padding-bottom: 86px;
+        box-sizing: border-box;
+    }
+    .thickFooter{
+        position: absolute;
+        bottom: 0;
+        line-height: 59px;
+        background: #fff;
+        width: 100%;
+        text-align: right;
+        border-top: 1px solid #DFDFDF;
+        button{
+            background: #2888FF;
+            box-shadow: 0 2px 10px 0 rgba(67,130,241,0.16);
+            border-radius: 4px;
+            line-height: 40px;
+            width: 104px;
+            text-align: center;
+            margin-right: 135px;
+            font-size: 16px;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+    }
+}
+//弹层屏幕适配
+@media screen and (max-width:1200px){
+    .alEmr-thickness{
+        overflow: auto;
+    }
+    .thickCotainer{
+        left: 0;
+        //transform: translateX(0) translateY(-50%);
+        //-ms-transform: translateX(0) translateY(-50%);
+        //-moz-transform: translateX(0) translateY(-50%);
+        //-webkit-transform: translateX(0) translateY(-50%);
+        //-o-transform: translateX(0) translateY(-50%);
+        margin-left: 0;
+        margin-top: -350px;
+    }
+    .thickMaster{
+        width: 1200px;
+    }
+}
+@media screen and (max-height:700px){
+    .alEmr-thickness{
+        overflow: auto;
+    }
+    .thickCotainer{
+        top: 0;
+        //transform: translateX(-50%) translateY(0);
+        //-ms-transform: translateX(-50%) translateY(0);
+        //-moz-transform: translateX(-50%) translateY(0);
+        //-webkit-transform: translateX(-50%) translateY(0);
+        //-o-transform: translateX(-50%) translateY(0);
+        margin-left: -600px;
+        margin-top: 0;
+    }
+    .thickMaster{
+        height: 700px;
+    }
+}
+@media screen and (max-height:700px) and (max-width:1200px){
+    .alEmr-thickness{
+        overflow: auto;
+    }
+    .thickCotainer{
+        left: 0;
+        top: 0;
+        //transform: translateX(0) translateY(0);
+        //-ms-transform: translateX(0) translateY(0);
+        //-moz-transform: translateX(0) translateY(0);
+        //-webkit-transform: translateX(0) translateY(0);
+        //-o-transform:translateX(0) translateY(0);
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .thickMaster{
+        width: 1200px;
+        height: 700px;
+    }
+}
+//end
+@media screen and (max-width:1540px){
+    .alEmr-mainIndex{
+        padding-left: 120px;
+    }
+}
+@media screen and (max-width:1240px){
+    .alEmr-innerRight .callOur{
+        bottom: 17px;
+    }
+    .newCases .alEmr-innerRight .callOur{
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width:1155px){
+    .newCases .alEmr-innerRight .callOur{
+        bottom: 17px;
+    }
+}
+@media screen and (max-width:1264px){
+    .alEmr-innerRight .callOur{
+        //bottom: 17px;
+        width: 100%;
+        right: 17px;
+        padding-right: 30px;
+        min-width: 650px;
+    }
+    .alEmr-mainCase .alEmr-innerRight .callOur .baseInfoCotainer{
+        padding-left: 170px;
+    }
+    .alEmr-mainCase .alEmr-innerRight .callOur .caseCallTop{
+        min-width: 230px;
+    }
+}
+@media screen and (max-width:1570px){
+    .alEmr-mainInner.alEmr-mainCase {
+        .alEmr-innerLeft{
+            width: 100px;
+        }
+    }
+}
+@media screen and (max-width:1400px){
+    .alEmr-innerRight{
+        padding-left: 130px;
+    }
+}
+@media screen and (max-width:1540px){
+    .alEmr-mainCase .alEmr-logo{
+        background: url("/static/images/common/logo.png") no-repeat center 50%;
+        width: 240px;
+        height: 70px;
+    }
+    .alEmr-logo {
+        background: url(/static/images/common/logoSmall.png) no-repeat center 50%;
+        width: 37px;
+        height: 37px;
+    }
+}

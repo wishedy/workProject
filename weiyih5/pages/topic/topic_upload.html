@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>新建话题</title>
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <link href="/css/scene/case.css" type="text/css" rel="stylesheet" />
+    <link href="/css/scene/topic.css" type="text/css" rel="stylesheet" />
+    <script src="/js/comm/domain.js"></script>
+    <script src="/js/third-party/uploadReplace.js"></script>
+    <script src="/js/scene/topic/topic_upload.js"></script>
+</head>
+
+<body class="ui-mobile-viewport ui-overlay-a">
+<section data-role="page" class="content-page case_content">
+	<!-- 取消弹层 -->
+	<div id="cancel_mask">
+		<div class="jxl_mask"></div>
+		<div class="jsx_parent">
+			<div class="jxl_want">
+		        <div class="jxl_want_top" style="line-height:5.93em;">接下来你想？</div>
+		        <div class="jxl_want_bottom">
+		            <div class="jix_l">取消发布</div>
+		            <div class="jix_r" id="continue_pub">继续发布</div>
+		            <div class="clear"></div>
+		        </div>
+		    </div>
+	    </div>
+    </div>
+    
+    <div class="case_header">
+        <div class="nav-head">
+            <div class="case_fh" id="back"><img src="//img50.allinmd.cn/case/fanhui.png"></div>
+            <div class="new_case_title" style="width:74%;">新建话题</div>
+            <div class="quxiao" id="cancel">取消</div>
+            <div class="clear"></div>
+        </div>
+  	</div>
+    <div class="new_topic">
+        <div class="case_title">
+            <div class="input_title">
+            	<input type="text" id="topic_name" placeholder="标      题" data-role="none" min="1" max="25">
+            </div>
+            <div class="case_mr_title" style="display:none;">标题</div>
+        </div>
+        <div class="case_title">
+            <div class="input_title">
+            	<textarea id="topic_discuss" placeholder="讨      论" data-role="none" min="1" max="1000"></textarea>
+            </div>
+            <div class="case_mr_title" style="display:none;">讨论</div>
+        </div>
+        <div class="photo_case">
+            <div id="img_list">
+	            
+            </div>
+            <input type="file" name="uploadify" id="uploadify" data-role=none  accept="image/*"/>
+            <div class="clear"></div>
+        </div>
+        <div class="case_bc">
+        <!--<div class="case_tag">
+            <div class="tag_cont">
+            	<div id="tag_title">标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签</div>
+            	<div class="case_mr_title"  id="showTitle">标签</div>
+                <ul class="tag_li">
+                    
+                </ul>
+            </div>
+        </div>-->
+        <div class="remind">
+            <div class="tag_cont">
+            	<div id="rem_title">提醒谁看</div>
+            	<div class="case_mr_title"  id="rem_show">提醒谁看</div>
+                <ul class="rem_list"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="xyb_but">
+        <img id="upload_btn" src="//img50.allinmd.cn/case/fabu.png" />
+        <div class="upload_del" id="delete">删除话题</div>
+    </div>
+    </div> 
+</section>
+
+</body>
+</html>

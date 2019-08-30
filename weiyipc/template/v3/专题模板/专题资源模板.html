@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><#if cmsTheme.seoName ??>${cmsTheme.seoName}</#if></title>
+    <meta name="description" content="<#if cmsTheme.seoDesc ??>${cmsTheme.seoDesc}</#if>">
+    <meta name="Keywords" content="<#if cmsTheme.seoKeyWord ??>${cmsTheme.seoKeyWord}</#if>">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+
+    <link href="//css.allinmd.cn/common/base.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/css/v3/base.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css" />
+    <link rel="stylesheet" href="/css/v3/pageFooter.css" />
+    <link href="//css.allinmd.cn/column/SpTemplate/SpTem_index.css" rel="stylesheet" type="text/css" />
+    <link href="//css.allinmd.cn/pager.css" rel="stylesheet" type="text/css"/>
+    <link href="//css.allinmd.cn/column/videoPK/pk_v3.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="/js/modules/find-password-v2/module.find-password-v2.css" />
+    <link href="/js/modules/video-case-pk/module.video-case-pk.css" rel="stylesheet" type="text/css">
+    <link href="/js/modules/publish/publish.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/auth/module.auth.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/publish/publish.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/ui-card/plugin.ui-card.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/reply-remindV3/plugin.reply-remind.css" rel="stylesheet" type="text/css"/>
+
+    <link href="/js/third-party/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css">
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="//other.allinmd.cn/videoPKCss/videoPK.forTemplate.css" rel="stylesheet" type="text/css">
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href="<#if showPagePath??>${showPagePath}</#if>";
+        }
+    </script>
+</head>
+
+<body>
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox">
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+    <input type='hidden' value='<#if cmsTheme.themeId ??>${cmsTheme.themeId}</#if>'  id='themeId'/>
+    <#assign banner0="0" banner1="0" banner2="0" bannerColor="0">
+        <#if cmsThemeAttachmentBannerList ??>
+            <#list cmsThemeAttachmentBannerList as bannerList >
+                <#if bannerList.siteId = 1 >
+                    <#if bannerList.attScene = 2 >
+                        <#if bannerList.attPicUrl != "" >
+                            <#assign banner2 = bannerList.attPicUrl>
+                        </#if>
+                        <#if bannerList.bgColorStyle != "" >
+                            <#assign bannerColor = bannerList.bgColorStyle>
+                        </#if>
+                    </#if>
+                    <#if bannerList.attScene = 0 >
+                        <#assign banner0 = bannerList.attPicUrl>
+                    </#if>
+                    <#if bannerList.attScene = 1 >
+                        <#assign banner1 = bannerList.attPicUrl>
+                    </#if>
+                </#if>
+            </#list>
+        </#if>
+
+        <#if cmsTheme.pageMenuStyle == 1 >
+            <!-- float Nav -->
+            <div class="SpTem_wrap SpTemClear" style="padding-bottom:0;">
+                <!--banner-->
+                <div class="SpTem_banner" style="width: 100%;background: url('<#if banner1 != "0">${banner1}<#else></#if>') no-repeat center center;background-size:cover;margin-bottom:0;"><!--没有图片的时候加background-color:#fff;-->
+        <!--分享-->
+        <div class="SpBanMain" style="background: url('<#if banner0 != "0">${banner0}<#else></#if>') no-repeat center center;background-size:cover;">
+        <div class="soundShare SpTemClear" id='hr_share'>
+            <span>分享至:</span>
+            <a href="javascript:;" class="share_ico_tsina"><img src="//img00.allinmd.cn/column/bayer/micro-blog.png"></a>
+            <a href="javascript:;" class="share_ico_tqq"><img src="//img00.allinmd.cn/column/bayer/QQ.png"></a>
+            <a href="javascript:;" class="share_ico_qzone"><img src="//img00.allinmd.cn/column/bayer/QQk.png"></a>
+
+        </div>
+        </div>
+        </div>
+
+        <div class="SpTem_main" style="background-size:100%;padding-top:40px;padding-bottom:60px;<#if banner2 != "0">background:url('${banner2}') repeat 0 0; <#elseif bannerColor != "0">background-color: ${bannerColor};<#else>background-color: #efeff4;</#if>"><!--当背景图是图片的时候要加此样式 background:url('') no-repeat center center;  并且把background-color: #efeff4;属性去掉-->
+            <!--列表-->
+            <div class="SpTemp_main">
+                <!--悬浮导航-->
+                <div class="suNav">
+                    <ul id="Ev-NavList">
+                    </ul>
+                </div>
+
+
+                <#if cmsThemeMenuList ??>
+                    <#list cmsThemeMenuList as menuList>
+
+                        <div class="show_anchor">
+
+                            <#if menuList.menuPicList ??>
+                                <#assign menuPicList = menuList.menuPicList>
+                                    <#list menuPicList as menuPic>
+                                        <#if menuPic.refType = 1 >
+                                            <#if menuPic.attScene == 0>
+                                                <#assign menuTitle = menuPic.attPicUrl>
+                                                    <div class="intTop" id="${menuList.menuId}" style="width: 1000px;<#if menuList_index != 0>margin-top:20px;</#if>"><img src="<#if menuTitle ??>${menuTitle}</#if>" alt="" style="display: block"/></div>
+                                            </#if>
+                                        </#if>
+                                    </#list>
+                            </#if>
+
+                            <#switch cmsTheme.themeRefStyle>
+                                <#case 0>
+                                    <ul class="SpTempInt01 SpTempInt02">
+                                        <#if menuList.resourceList ??>
+                                            <#assign resourceList = menuList.resourceList>
+                                                <#list resourceList as resource>
+                                                    <#if resource.resAttList ??>
+                                                        <#assign resourceAttList = resource.resAttList>
+                                                            <#assign coverPicUrl=0 logoPicUrl=0>
+                                                                <#list resourceAttList as ratt >
+                                                                    <#assign coverPicUrl = ratt.coverPicUrl>
+                                                                        <#assign logoPicUrl = ratt.logoPicUrl>
+                                                                            <#assign pageLinkUrl = ratt.pageLinkUrl>
+                                                                </#list>
+                                                    </#if>
+
+                                                    <#if resource_has_next>
+                                                        <li class="SpTemClear">
+                                                            <#else><li class="SpTemClear" style="border-bottom: none;">
+                                                    </#if>
+                                                    <div class="intLeft" style="float: right;">
+                                                        <div class="intTit">
+						                            <span class="intTit01" href="">
+						                            	<#if resource.refType = 1>视频</#if>
+														<#if resource.refType = 2>文库</#if>
+														<#if resource.refType = 4>话题</#if>
+														<#if resource.refType = 7>病例</#if>
+														<#if resource.refType = 99>专题</#if>
+						                            </span>
+                                                            <a class="intTit02" href="<#if pageLinkUrl ??>${pageLinkUrl}</#if>">
+
+                                                                <#if resource.refName ??>${resource.refName}</#if>
+
+                                                            </a>
+                                                            <div class="SpTemClear"></div>
+                                                        </div>
+                                                        <div class="intMid">
+                                                            <#if resource.refAuthor ??>
+                                                                <#if resource.refAuthor!= ''>
+                                                                    <a href="//www.allinmd.cn/v2/pages/personal/others_contribution.html?cid=<#if resource.refCustomerId ??>${resource.refCustomerId}</#if>" style="color: #909090;">
+                                                                        ${resource.refAuthor}
+                                                                    </a>
+                                                                    <#else>
+                                                                        <a href="//www.allinmd.cn/v2/pages/personal/others_contribution.html?cid=1407837049840" style="color: #909090;">唯医小编 </a>
+                                                                </#if>
+                                                            </#if>
+						                        	<span><#if resource.refCompany ??><#if resource.refCompany != ''>
+                                                        ${resource.refCompany}
+                                                        <#else>
+                                                            唯医
+                                                    </#if></#if></span>
+                                                        </div>
+                                                        <div class="intbot"><#if resource.refIntroduce ??>${resource.refIntroduce}</#if></div>
+                                                    </div>
+                                                    <!--定位 number new time-->
+                                                    <div class="intRit" style="float: left;">
+                                                        <a href="<#if pageLinkUrl ??>${pageLinkUrl}</#if>">
+                                                            <img src="<#if coverPicUrl ??>${coverPicUrl}</#if>" alt=""/>
+                                                        </a>
+                                                        <#if logoPicUrl ??><#if logoPicUrl != ''>
+                                                            <a class="new" href=""><img src="${logoPicUrl}" alt=""/></a>
+                                                        </#if></#if>
+                                                        <#if resource.refType = 1>
+                                                            <#if resource.videoPlayTime ??>
+                                                                <a class="time" href=""></a>
+                                                                <a class="timeText" href="">${resource.videoPlayTime}</a>
+                                                            </#if>
+                                                        </#if>
+                                                    </div>
+                                                    </li>
+                                                </#list>
+                                        </#if>
+                                    </ul>
+                                    <#break>
+                                        <#case 1>
+                                            <ul class="SpTempInt01">
+                                                <#if  menuList.resourceList ??>
+                                                    <#assign resourceList = menuList.resourceList>
+                                                        <#list resourceList as resource>
+                                                            <#if resource.resAttList ??>
+                                                                <#assign resourceAttList = resource.resAttList>
+                                                                    <#assign coverPicUrl=0 logoPicUrl=0>
+                                                                        <#list resourceAttList as ratt >
+                                                                            <#assign coverPicUrl = ratt.coverPicUrl>
+                                                                                <#assign logoPicUrl = ratt.logoPicUrl>
+                                                                                    <#assign pageLinkUrl = ratt.pageLinkUrl>
+                                                                        </#list>
+                                                            </#if>
+
+                                                            <#if resource_has_next>
+                                                                <li class="SpTemClear">
+                                                                    <#else><li class="SpTemClear" style="border-bottom: none;">
+                                                            </#if>
+                                                            <div class="intLeft">
+                                                                <div class="intTit">
+                                                                    <sapn class="intTit01" href="">
+                                                                        <#if resource.refType = 1>视频</#if>
+                                                                        <#if resource.refType = 2>文库</#if>
+                                                                        <#if resource.refType = 4>话题</#if>
+                                                                        <#if resource.refType = 7>病例</#if>
+                                                                        <#if resource.refType = 99>专题</#if>
+                                                                    </sapn><!--类型-->
+                                                                    <a class="intTit02" href="<#if pageLinkUrl ??>${pageLinkUrl}</#if>">
+
+                                                                        <#if resource.refName ??>${resource.refName}</#if>
+
+                                                                    </a>
+                                                                    <div class="SpTemClear"></div>
+                                                                </div>
+                                                                <div class="intMid">
+                                                                    <#if resource.refAuthor ??>
+                                                                        <#if resource.refAuthor!= ''>
+                                                                            <a href="//www.allinmd.cn/v2/pages/personal/others_contribution.html?cid=<#if resource.refCustomerId ??>${resource.refCustomerId}</#if>" style="color: #909090;">
+                                                                                ${resource.refAuthor}
+                                                                            </a>
+                                                                            <#else>
+                                                                                <a href="//www.allinmd.cn/v2/pages/personal/others_contribution.html?cid=1407837049840" style="color: #909090;">唯医小编 </a>
+                                                                        </#if>
+                                                                    </#if>
+					                        		<span><#if resource.refCompany ??><#if resource.refCompany != ''>
+                                                        ${resource.refCompany}
+                                                        <#else>
+                                                            唯医
+                                                    </#if></#if></span>
+                                                                </div>
+                                                                <div class="intbot"><#if resource.refIntroduce ??>${resource.refIntroduce}</#if></div>
+                                                            </div>
+                                                            <!--定位 number new time-->
+                                                            <div class="intRit">
+                                                                <a href="<#if pageLinkUrl ??>${pageLinkUrl}</#if>"><img src="<#if coverPicUrl ??>${coverPicUrl}</#if>" alt=""/></a>
+                                                                <#if logoPicUrl ??><#if logoPicUrl != ''><a class="new" href=""><img src="${logoPicUrl}" alt=""/></a></#if></#if>
+                                                                <#if resource.refType = 1>
+                                                                    <#if resource.videoPlayTime ??>
+                                                                        <a class="time" href=""></a>
+                                                                        <a class="timeText" href="">${resource.videoPlayTime}</a>
+                                                                    </#if>
+                                                                </#if>
+                                                            </div>
+                                                            </li>
+                                                        </#list>
+                                                </#if>
+                                            </ul>
+                                            <#break>
+                                                <#case 2>
+                                                    <ul class="SpTempInt03 SpTemClear">
+                                                        <#if menuList.resourceList ??>
+                                                            <#assign resourceList = menuList.resourceList>
+                                                                <#if menuList.ctrCount??>
+                                                                    <#assign ctrSize = menuList.ctrCount>
+                                                                </#if>
+                                                                <#list resourceList as resource>
+                                                                    <#if resource.resAttList ??>
+                                                                        <#assign resourceAttList = resource.resAttList>
+                                                                            <#assign coverPicUrl=0 logoPicUrl=0>
+                                                                                <#list resourceAttList as ratt >
+                                                                                    <#assign coverPicUrl = ratt.coverPicUrl>
+                                                                                        <#assign logoPicUrl = ratt.logoPicUrl>
+                                                                                            <#assign pageLinkUrl = ratt.pageLinkUrl>
+                                                                                </#list>
+                                                                    </#if>
+
+                                                                    <#assign osRow="" lastRow="">
+                                                                        <#if resource_has_next>
+                                                                            <#if resource_index % 2 !=0 >
+                                                                                <#assign osRow="margin-left: 40px;">
+                                                                                    <#else>
+                                                                                        <#if resource_index = ctrSize - 2 >
+                                                                                            <#assign lastRow="border-bottom: none;">
+                                                                                        </#if>
+                                                                            </#if>
+                                                                            <#else>
+                                                                                <#if resource_index % 2 !=0 >
+                                                                                    <#assign osRow="margin-left: 40px;" lastRow="border-bottom: none;">
+                                                                                        <#else><#assign lastRow="border-bottom: none;">
+                                                                                </#if>
+                                                                        </#if>
+
+                                                                        <li class="SpTemClear" style="${osRow}${lastRow}">
+                                                                            <div class="TempIntL intRit">
+                                                                                <a href="<#if pageLinkUrl ??>${pageLinkUrl}</#if>"><img src="<#if coverPicUrl ??>${coverPicUrl}</#if>" alt=""/></a>
+                                                                                <#if logoPicUrl ??><#if logoPicUrl != ''><a class="new" href=""><img src="${logoPicUrl}" alt=""/></a></#if></#if>
+                                                                                <#if resource.refType = 1>
+                                                                                    <#if resource.videoPlayTime ??>
+                                                                                        <a class="time" href=""></a>
+                                                                                        <a class="timeText" href="">${resource.videoPlayTime}</a>
+                                                                                    </#if>
+                                                                                </#if>
+                                                                            </div>
+                                                                            <div class="TempIntR">
+                                                                                <div class="intTit">
+						                        <span class="intTit01 intTit03" href="">
+						                        	<#if resource.refType = 1>视频</#if>
+													<#if resource.refType = 2>文库</#if>
+													<#if resource.refType = 4>话题</#if>
+													<#if resource.refType = 7>病例</#if>
+													<#if resource.refType = 99>专题</#if>
+						                        </span>
+                                                                                    <a class="intTit02"href="<#if pageLinkUrl ??>${pageLinkUrl}</#if>">
+                                                                                        <#if resource.refName ??>${resource.refName}</#if>
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="intMi">
+                                                                                    <#if resource.refAuthor ??>
+                                                                                        <#if resource.refAuthor!= ''>
+                                                                                            <a href="//www.allinmd.cn/v2/pages/personal/others_contribution.html?cid=<#if resource.refCustomerId ??>${resource.refCustomerId}</#if>" style="color: #909090;">
+                                                                                                ${resource.refAuthor}
+                                                                                            </a>
+                                                                                            <#else>
+                                                                                                <a href="//www.allinmd.cn/v2/pages/personal/others_contribution.html?cid=1407837049840" style="color: #909090;">唯医小编 </a>
+                                                                                        </#if>
+                                                                                    </#if>
+                                                                                </div>
+                                                                                <div class="intadd"><#if resource.refCompany ??><#if resource.refCompany != ''>
+                                                                                    ${resource.refCompany}
+                                                                                    <#else>
+                                                                                        唯医
+                                                                                </#if></#if></div>
+                                                                            </div>
+                                                                        </li>
+                                                                </#list>
+                                                        </#if>
+                                                    </ul>
+                                                    <#break>
+                            </#switch>
+
+                        </div>
+
+
+                    </#list>
+                </#if>
+
+                <#if cmsThemeAdTitle ??>
+                    <#list cmsThemeAdTitle as adTitle >
+                        <div class="actRec" style="padding:50px 0 0 0;"><img src="<#if adTitle.adPicUrl ??>${adTitle.adPicUrl}</#if>" alt="" style="display: block;"/></div>
+                    </#list>
+                </#if>
+
+                <#if cmsThemeAdList ??>
+                    <#switch cmsThemeAdListSize>
+                        <#case 1>
+                            <!--活动推荐标题   1张图片-->
+                            <#list cmsThemeAdList as adList >
+                                <div class="actRecLs" style="padding-top:30px;">
+                                    <a href="<#if adList.pageLinkUrl ??>${adList.pageLinkUrl}</#if>"><img src="<#if adList.adPicUrl ??>${adList.adPicUrl}</#if>" alt=""/></a>
+                                </div>
+                            </#list>
+                            <#break>
+
+                                <#case 2>
+                                    <!--活动推荐标题   2张图片-->
+                                    <ul class="actRecLis SpTemClear" style="padding-top:30px;">
+                                        <#list cmsThemeAdList as adList >
+                                            <li><a href="<#if adList.pageLinkUrl ??>${adList.pageLinkUrl}</#if>"><img src="<#if adList.adPicUrl ??>${adList.adPicUrl}</#if>" alt=""/></a></li>
+                                        </#list>
+                                    </ul>
+                                    <#break>
+
+                                        <#case 3>
+                                            <!--活动推荐标题   3张图片-->
+                                            <ul class="actRecList SpTemClear" style="padding-top:30px;">
+                                                <#list cmsThemeAdList as adList >
+                                                    <li><a href="<#if adList.pageLinkUrl ??>${adList.pageLinkUrl}</#if>"><img src="<#if adList.adPicUrl ??>${adList.adPicUrl}</#if>" alt=""/></a></li>
+                                                </#list>
+                                            </ul>
+                                            <#break>
+
+                                                <#case 4>
+                                                    <!--活动推荐标题   4张图片-->
+                                                    <#assign p1='0' p2='0' p3='0' p4='0'>
+                                                        <#assign p1Url='' p2Url='' p3Url='' p4Url=''>
+                                                            <#list cmsThemeAdList as adList >
+                                                                <#if adList_index = 0><#assign p1 = adList.adPicUrl><#assign p1Url = adList.pageLinkUrl></#if>
+                                                                <#if adList_index = 1><#assign p2 = adList.adPicUrl><#assign p2Url = adList.pageLinkUrl></#if>
+                                                                <#if adList_index = 2><#assign p3 = adList.adPicUrl><#assign p3Url = adList.pageLinkUrl></#if>
+                                                                <#if adList_index = 3><#assign p4 = adList.adPicUrl><#assign p4Url = adList.pageLinkUrl></#if>
+                                                            </#list>
+
+                                                            <ul class="actRecLis SpTemClear" style="padding-top:30px;">
+                                                                <li><a href="<#if p1Url !='0'>${p1Url}</#if>"><img src="<#if p1 !='0'>${p1}</#if>" alt=""/></a></li>
+                                                                <li><a href="<#if p2Url !='0'>${p2Url}</#if>"><img src="<#if p2 !='0'>${p2}</#if>" alt=""/></a></li>
+                                                                <li class="actlastLi"><a href="<#if p3Url !='0'>${p3Url}</#if>"><img src="<#if p3 !='0'>${p3}</#if>" alt=""/></a></li>
+                                                                <li class="actlastLi"><a href="<#if p4Url !='0'>${p4Url}</#if>"><img src="<#if p4 !='0'>${p4}</#if>" alt=""/></a></li>
+                                                            </ul>
+                                                            <#break>
+                    </#switch>
+                </#if>
+            </div>
+            </div>
+            </div>
+            <!-- float Nav end -->
+            </#if>
+
+            <#if cmsTheme.pageMenuStyle == 0 >
+                <div class="SpTem_wrap SpTemClear"  style="background-size:cover;<#if banner2 != "0">background:url('${banner2}') repeat 0 0; <#elseif bannerColor != "0">background-color: ${bannerColor};<#else>background-color: #efeff4;</#if>"><!--当背景图是图片的时候要加此样式 background:url() no-repeat center center;-->
+            <!--banner-->
+            <div class="SpTem_banner" style="width: 100%;background: url('<#if banner1 != "0">${banner1}<#else></#if>') no-repeat center center;background-size:cover;"><!--没有图片的时候加background-color:#fff;-->
+                <!--分享-->
+                <div class="SpBanMain" style="background: url('<#if banner0 != "0">${banner0}<#else></#if>') no-repeat center center;background-size:cover;">
+                    <div class="soundShare SpTemClear" id='hr_share'>
+                        <span>分享至:</span>
+                        <a href="javascript:;" class="share_ico_tsina"><img src="//img00.allinmd.cn/column/bayer/micro-blog.png"></a>
+                        <a href="javascript:;" class="share_ico_tqq"><img src="//img00.allinmd.cn/column/bayer/QQ.png"></a>
+                        <a href="javascript:;" class="share_ico_qzone"><img src="//img00.allinmd.cn/column/bayer/QQk.png"></a>
+
+                    </div>
+                    </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="spTem_nav_wrap" style="margin-top: -40px;">
+                        <div class="SpTemp_nav">
+                            <div class="SpTemp_navMain SpTemClear">
+                                <#assign hxxz=0 hxwxz=0>
+                                    <#if cmsThemeMenuList ??>
+                                        <#list cmsThemeMenuList as menuList>
+                                            <#if menuList.ctmCount != 1 >
+
+                                                <!--menu图片 -->
+                                                <#if menuList.menuPicList ??>
+                                                    <#assign menuPicList = menuList.menuPicList>
+                                                        <#list menuPicList as menuPic>
+                                                            <#if menuPic.siteId == 1>
+                                                                <#if menuPic.attScene == 1>
+                                                                    <#assign hxxz = menuPic.attPicUrl>
+                                                                </#if>
+                                                                <#if menuPic.attScene == 2>
+                                                                    <#assign hxwxz = menuPic.attPicUrl>
+                                                                </#if>
+                                                            </#if>
+                                                        </#list>
+                                                </#if>
+
+                                                <div class="navPart" style="float:left;">
+                                                    <a href="javascript:;" class="onShow" style='' ><img src="<#if hxwxz ??>${hxxz}</#if>" alt=""/></a>
+                                                    <a href="javascript:;" class="onHide"  style='' ><img src="<#if hxwxz ??>${hxwxz}</#if>" alt=""/></a>
+                                                </div>
+
+                                            </#if>
+                                        </#list>
+                                    </#if>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="SpTem_main">
+                        <!--列表-->
+                        <div class="SpTemp_main" style="padding-top:40px;">
+                            <#if cmsThemeMenuList ??>
+                                <#list cmsThemeMenuList as menuList>
+
+
+                                    <div class="SpTemp_main_tab" style="display:none;">
+
+                                        <#if menuList.menuPicList ??>
+                                            <#assign menuPicList = menuList.menuPicList>
+                                                <#list menuPicList as menuPic>
+                                                    <#if menuPic.refType = 1 >
+                                                        <#if menuPic.attScene == 0>
+                                                            <#assign menuTitle = menuPic.attPicUrl>
+                                                                <div class="SpTempTit" style="width: 1000px;margin-bottom:20px;"><img src="<#if menuTitle ??>${menuTitle}</#if>" style="display:block;" alt=""/></div>
+                                                        </#if>
+                                                    </#if>
+                                                </#list>
+                                        </#if>
+
+
+
+                                        <#switch cmsTheme.themeRefStyle>
+                                            <#case 0>
+
+                                                <ul class="SpTempInt01 SpTempInt02" style="margin-top:20px;">
+                                                    <#if menuList.resourceList ??>
+                                                        <#assign resourceList = menuList.resourceList>
+                                                            <#list resourceList as resource>
+                                                                <#if resource.resAttList ??>
+                                                                    <#assign resourceAttList = resource.resAttList>
+                                                                        <#assign coverPicUrl=0 logoPicUrl=0>
+                                                                            <#list resourceAttList as ratt >
+                                                                                <#assign coverPicUrl = ratt.coverPicUrl>
+                                                                                    <#assign logoPicUrl = ratt.logoPicUrl>
+                                                                                        <#assign pageLinkUrl = ratt.pageLinkUrl>
+                                                                            </#list>
+                                                                </#if>
+
+                                                                <#if resource_has_next>
+                                                                    <li class="SpTemClear">
+                                                                        <#else><li class="SpTemClear" style="border-bottom: none;">
+                                                                </#if>
+                                                                <div class="intLeft" style="float: right;">
+                                                                    <div class="intTit">
+						                            <span class="intTit01" href="">
+						                            	<#if resource.refType = 1>视频</#if>
+														<#if resource.refType = 2>文库</#if>
+														<#if resource.refType = 4>话题</#if>
+														<#if resource.refType = 7>病例</#if>
+														<#if resource.refType = 99>专题</#if>
+						                            </span>
+                                                                        <a class="intTit02" href="<#if pageLinkUrl ??>${pageLinkUrl}</#if>">
+                                                                            <#if resource.refName ??>${resource.refName}</#if>
+                                                                        </a>
+                                                                        <div class="SpTemClear"></div>
+                                                                    </div>
+                                                                    <div class="intMid">
+                                                                        <#if resource.refAuthor ??>
+                                                                            <#if resource.refAuthor!= ''>
+                                                                                <a href="//www.allinmd.cn/v2/pages/personal/others_contribution.html?cid=<#if resource.refCustomerId ??>${resource.refCustomerId}</#if>" style="color: #909090;">
+                                                                                    ${resource.refAuthor}
+                                                                                </a>
+                                                                                <#else>
+                                                                                    <a href="//www.allinmd.cn/v2/pages/personal/others_contribution.html?cid=1407837049840" style="color: #909090;">唯医小编 </a>
+                                                                            </#if>
+                                                                        </#if>
+						                        <span><#if resource.refCompany ??><#if resource.refCompany != ''>
+                                                    ${resource.refCompany}
+                                                    <#else>
+                                                        唯医
+                                                </#if></#if></span></div>
+                                                                    <div class="intbot"><#if resource.refIntroduce ??>${resource.refIntroduce}</#if></div>
+                                                                </div>
+                                                                <!--定位 number new time-->
+                                                                <div class="intRit" style="float: left;">
+                                                                    <a href="<#if pageLinkUrl ??>${pageLinkUrl}</#if>"><img src="<#if coverPicUrl ??>${coverPicUrl}</#if>" alt=""/></a>
+                                                                    <#if logoPicUrl ??><#if logoPicUrl != ''><a class="new" href=""><img src="${logoPicUrl}" alt=""/></a></#if></#if>
+                                                                    <#if resource.refType = 1>
+                                                                        <#if resource.videoPlayTime ??>
+                                                                            <a class="time" href=""></a>
+                                                                            <a class="timeText" href="">${resource.videoPlayTime}</a>
+                                                                        </#if>
+                                                                    </#if>
+                                                                </div>
+                                                                </li>
+                                                            </#list>
+                                                    </#if>
+                                                </ul>
+
+                                                <#break>
+                                                    <#case 1>
+
+                                                        <ul class="SpTempInt01">
+                                                            <#if menuList.resourceList ??>
+                                                                <#assign resourceList = menuList.resourceList>
+                                                                    <#list resourceList as resource>
+                                                                        <#if resource.resAttList ??>
+                                                                            <#assign resourceAttList = resource.resAttList>
+                                                                                <#assign coverPicUrl=0 logoPicUrl=0>
+                                                                                    <#list resourceAttList as ratt >
+                                                                                        <#assign coverPicUrl = ratt.coverPicUrl>
+                                                                                            <#assign logoPicUrl = ratt.logoPicUrl>
+                                                                                                <#assign pageLinkUrl = ratt.pageLinkUrl>
+                                                                                    </#list>
+                                                                        </#if>
+
+                                                                        <#if resource_has_next>
+                                                                            <li class="SpTemClear">
+                                                                                <#else><li class="SpTemClear" style="border-bottom: none;">
+                                                                        </#if>
+                                                                        <div class="intLeft">
+                                                                            <div class="intTit">
+                                                                                <sapn class="intTit01" href="">
+                                                                                    <#if resource.refType = 1>视频</#if>
+                                                                                    <#if resource.refType = 2>文库</#if>
+                                                                                    <#if resource.refType = 4>话题</#if>
+                                                                                    <#if resource.refType = 7>病例</#if>
+                                                                                    <#if resource.refType = 99>专题</#if>
+                                                                                </sapn><!--类型-->
+                                                                                <a class="intTit02" href="<#if pageLinkUrl ??>${pageLinkUrl}</#if>">
+                                                                                    <#if resource.refName ??>${resource.refName}</#if>
+                                                                                </a>
+                                                                                <div class="SpTemClear"></div>
+                                                                            </div>
+                                                                            <div class="intMid">
+                                                                                <#if resource.refAuthor ??>
+                                                                                    <#if resource.refAuthor!= ''>
+                                                                                        <a href="//www.allinmd.cn/v2/pages/personal/others_contribution.html?cid=<#if resource.refCustomerId ??>${resource.refCustomerId}</#if>" style="color: #909090;">
+                                                                                            ${resource.refAuthor}
+                                                                                        </a>
+                                                                                        <#else>
+                                                                                            <a href="//www.allinmd.cn/v2/pages/personal/others_contribution.html?cid=1407837049840" style="color: #909090;">唯医小编 </a>
+                                                                                    </#if>
+                                                                                </#if>
+					                        			<span><#if resource.refCompany ??><#if resource.refCompany != ''>
+                                                            ${resource.refCompany}
+                                                            <#else>
+                                                                唯医
+                                                        </#if></#if></span></div>
+                                                                            <div class="intbot"><#if resource.refIntroduce ??>${resource.refIntroduce}</#if></div>
+                                                                        </div>
+                                                                        <!--定位 number new time-->
+                                                                        <div class="intRit">
+                                                                            <a href="<#if pageLinkUrl ??>${pageLinkUrl}</#if>"><img src="<#if coverPicUrl ??>${coverPicUrl}</#if>" alt=""/></a>
+                                                                            <#if logoPicUrl ??><#if logoPicUrl != ''><a class="new" href=""><img src="${logoPicUrl}" alt=""/></a></#if></#if>
+                                                                            <#if resource.refType = 1>
+                                                                                <#if resource.videoPlayTime ??>
+                                                                                    <a class="time" href=""></a>
+                                                                                    <a class="timeText" href="">${resource.videoPlayTime}</a>
+                                                                                </#if>
+                                                                            </#if>
+                                                                        </div>
+                                                                        </li>
+                                                                    </#list>
+                                                            </#if>
+                                                        </ul>
+
+                                                        <#break>
+                                                            <#case 2>
+
+                                                                <ul class="SpTempInt03 SpTemClear">
+                                                                    <#if menuList.resourceList ??>
+                                                                        <#assign resourceList = menuList.resourceList>
+                                                                            <#if menuList.ctrCount??>
+                                                                                <#assign ctrSize = menuList.ctrCount>
+                                                                            </#if>
+                                                                            <#list resourceList as resource>
+                                                                                <#if resource.resAttList ??>
+                                                                                    <#assign resourceAttList = resource.resAttList>
+                                                                                        <#assign coverPicUrl=0 logoPicUrl=0>
+                                                                                            <#list resourceAttList as ratt >
+                                                                                                <#assign coverPicUrl = ratt.coverPicUrl>
+                                                                                                    <#assign logoPicUrl = ratt.logoPicUrl>
+                                                                                                        <#assign pageLinkUrl = ratt.pageLinkUrl>
+                                                                                            </#list>
+                                                                                </#if>
+
+                                                                                <#assign osRow="" lastRow="">
+                                                                                    <#if resource_has_next>
+                                                                                        <#if resource_index % 2 !=0 >
+                                                                                            <#assign osRow="margin-left: 40px;">
+                                                                                                <#else>
+                                                                                                    <#if resource_index = ctrSize - 2 >
+                                                                                                        <#assign lastRow="border-bottom: none;">
+                                                                                                    </#if>
+                                                                                        </#if>
+                                                                                        <#else>
+                                                                                            <#if resource_index % 2 !=0 >
+                                                                                                <#assign osRow="margin-left: 40px;" lastRow="border-bottom: none;">
+                                                                                                    <#else><#assign lastRow="border-bottom: none;">
+                                                                                            </#if>
+                                                                                    </#if>
+
+                                                                                    <li class="SpTemClear" style="${osRow}${lastRow}">
+                                                                                        <div class="TempIntL intRit">
+                                                                                            <a href="<#if pageLinkUrl ??>${pageLinkUrl}</#if>"><img src="<#if coverPicUrl ??>${coverPicUrl}</#if>" alt=""/></a>
+                                                                                            <#if logoPicUrl ??><#if logoPicUrl != ''><a class="new" href=""><img src="${logoPicUrl}" alt=""/></a></#if></#if>
+                                                                                            <#if resource.refType = 1>
+                                                                                                <#if resource.videoPlayTime ??>
+                                                                                                    <a class="time" href=""></a>
+                                                                                                    <a class="timeText" href="">${resource.videoPlayTime}</a>
+                                                                                                </#if>
+                                                                                            </#if>
+                                                                                        </div>
+                                                                                        <div class="TempIntR">
+                                                                                            <div class="intTit">
+						                        <span class="intTit01 intTit03" href="">
+						                        	<#if resource.refType = 1>视频</#if>
+													<#if resource.refType = 2>文库</#if>
+													<#if resource.refType = 4>话题</#if>
+													<#if resource.refType = 7>病例</#if>
+													<#if resource.refType = 99>专题</#if>
+						                        </span>
+                                                                                                <a class="intTit02"href="<#if pageLinkUrl ??>${pageLinkUrl}</#if>">
+                                                                                                    <#if resource.refName ??>${resource.refName}</#if>
+                                                                                                </a>
+                                                                                            </div>
+                                                                                            <div class="intMi">
+                                                                                                <#if resource.refAuthor ??>
+                                                                                                    <#if resource.refAuthor!= ''>
+                                                                                                        <a href="//www.allinmd.cn/v2/pages/personal/others_contribution.html?cid=<#if resource.refCustomerId ??>${resource.refCustomerId}</#if>" style="color: #909090;">
+                                                                                                            ${resource.refAuthor}
+                                                                                                        </a>
+                                                                                                        <#else>
+                                                                                                            <a href="//www.allinmd.cn/v2/pages/personal/others_contribution.html?cid=1407837049840" style="color: #909090;">唯医小编 </a>
+                                                                                                    </#if>
+                                                                                                </#if>
+                                                                                            </div>
+                                                                                            <div class="intadd">
+                                                                                                <#if resource.refCompany ??>
+                                                                                                    <#if resource.refCompany != ''>
+                                                                                                        ${resource.refCompany}
+                                                                                                        <#else>
+                                                                                                            唯医
+                                                                                                    </#if>
+                                                                                                </#if>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </li>
+                                                                            </#list>
+                                                                    </#if>
+                                                                </ul>
+
+                                                                <#break>
+                                        </#switch>
+
+                                    </div>
+
+
+                                </#list>
+                            </#if>
+
+
+
+                            <#if cmsThemeAdTitle ??>
+                                <#list cmsThemeAdTitle as adTitle >
+                                    <div class="actRec" style="padding:50px 0 0 0;"><img src="<#if adTitle.adPicUrl ??>${adTitle.adPicUrl}</#if>" alt="" style="display: block;"/></div>
+                                </#list>
+                            </#if>
+
+                            <#if cmsThemeAdList ??>
+                                <#switch cmsThemeAdListSize>
+                                    <#case 1>
+                                        <!--活动推荐标题   1张图片-->
+                                        <#list cmsThemeAdList as adList >
+                                            <div class="actRecLs" style="padding-top:30px;">
+                                                <a href="<#if adList.pageLinkUrl ??>${adList.pageLinkUrl}</#if>"><img src="<#if adList.adPicUrl ??>${adList.adPicUrl}</#if>" alt=""/></a>
+                                            </div>
+                                        </#list>
+                                        <#break>
+
+                                            <#case 2>
+                                                <!--活动推荐标题   2张图片-->
+                                                <ul class="actRecLis SpTemClear" style="padding-top:30px;">
+                                                    <#list cmsThemeAdList as adList >
+                                                        <li><a href="<#if adList.pageLinkUrl ??>${adList.pageLinkUrl}</#if>"><img src="<#if adList.adPicUrl ??>${adList.adPicUrl}</#if>" alt=""/></a></li>
+                                                    </#list>
+                                                </ul>
+                                                <#break>
+
+                                                    <#case 3>
+                                                        <!--活动推荐标题   3张图片-->
+                                                        <ul class="actRecList SpTemClear" style="padding-top:30px;">
+                                                            <#list cmsThemeAdList as adList >
+                                                                <li><a href="<#if adList.pageLinkUrl ??>${adList.pageLinkUrl}</#if>"><img src="<#if adList.adPicUrl ??>${adList.adPicUrl}</#if>" alt=""/></a></li>
+                                                            </#list>
+                                                        </ul>
+                                                        <#break>
+
+                                                            <#case 4>
+                                                                <!--活动推荐标题   4张图片-->
+                                                                <#assign p1='0' p2='0' p3='0' p4='0'>
+                                                                    <#assign p1Url='' p2Url='' p3Url='' p4Url=''>
+                                                                        <#list cmsThemeAdList as adList >
+                                                                            <#if adList_index = 0><#assign p1 = adList.adPicUrl><#assign p1Url = adList.pageLinkUrl></#if>
+                                                                            <#if adList_index = 1><#assign p2 = adList.adPicUrl><#assign p2Url = adList.pageLinkUrl></#if>
+                                                                            <#if adList_index = 2><#assign p3 = adList.adPicUrl><#assign p3Url = adList.pageLinkUrl></#if>
+                                                                            <#if adList_index = 3><#assign p4 = adList.adPicUrl><#assign p4Url = adList.pageLinkUrl></#if>
+                                                                        </#list>
+
+                                                                        <ul class="actRecLis SpTemClear" style="padding-top:30px;">
+                                                                            <li><a href="<#if p1Url !='0'>${p1Url}</#if>"><img src="<#if p1 !='0'>${p1}</#if>" alt=""/></a></li>
+                                                                            <li><a href="<#if p2Url !='0'>${p2Url}</#if>"><img src="<#if p2 !='0'>${p2}</#if>" alt=""/></a></li>
+                                                                            <li class="actlastLi"><a href="<#if p3Url !='0'>${p3Url}</#if>"><img src="<#if p3 !='0'>${p3}</#if>" alt=""/></a></li>
+                                                                            <li class="actlastLi"><a href="<#if p4Url !='0'>${p4Url}</#if>"><img src="<#if p4 !='0'>${p4}</#if>" alt=""/></a></li>
+                                                                        </ul>
+                                                                        <#break>
+                                </#switch>
+                            </#if>
+
+
+                        </div>
+                    </div>
+                    </div>
+                    </#if>
+
+                    <!--#include virtual="/includes/footer.jsp"-->
+</section>
+</body>
+
+<script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/lib/jquery/jquery.cookie.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.getUrlParams.js"></script>
+<script src="/js/comm/comm.equipment.js"></script>
+<script src="/js/comm/comm.autoHeight.js"></script>
+<script src="/js/comm/comm.checkAddress.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.getLogo.js"></script>
+<script src="/js/comm/comm.scrollFloating.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.ajaxExistHtml.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/lib/jquery/jquery.form.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+
+<script src="/js/modules/user/module.user.js"></script>
+<script src="/js/modules/weixin/module.welcome.js"></script>
+<script src="/js/modules/weixin/module.weixin.js"></script>
+<script src="/js/modules/auth/module.auth.js"></script>
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/plugins/ui-card/plugin.ui-card.js"></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+<script src= "/js/plugins/reply-remindV3/plugin.reply-remind.js" ></script>
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/video-case-pk/module.video-case-pk.js"></script>
+<script src= "/js/modules/publish/module.video-upload.js" ></script>
+<script src= "/js/modules/publish/module.doc-upload.js" ></script>
+<script src= "/js/modules/publish/module.topic-upload.js" ></script>
+<script src= "/js/modules/publish/module.case-upload.js" ></script>
+<script src="/js/modules/videoPK-share/module.videoPK-share.js"></script>
+
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-X-Menu//js/jquery-powerFloat-min.js"></script>
+<script src="/js/third-party/jquery-X-Menu//js/jquery-xmenu.js"></script>
+<script src="/js/third-party/jquery-X-Menu//js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-X-Menu//js/jquery-xmenu-con.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<script src="/js/third-party/ajaxfileupload.js"></script>
+<script src="/js/third-party/uploadify/jquery.uploadify.js"></script>
+<script src="/js/third-party/jquery_lazyload/jquery.lazyload.js"></script>
+<script src="/js/third-party/pagination/jquery.pager.js"></script>
+<script src="/js/third-party/qiniu/qiniu.js"></script>
+<script src="/js/third-party/qiniu/ui.js"></script>
+<script src="/js/third-party/plupload/plupload.full.min.js"></script>
+<script src="/js/third-party/plupload/i18n/zh_CN.js"></script>
+<script src="/js/third-party/jquery-qrcode-master/src/jquery.qrcode.js"> </script>
+<script src="/js/third-party/jquery-qrcode-master/src/qrcode.js"> </script>
+
+<script>
+    $(function(){
+        var listNavArr= [
+                <#assign xz=0 wxz=0>
+        <#if cmsTheme.pageMenuStyle == 1 >   <!--纵向-->
+        <#if cmsThemeMenuList ??>
+        <#list cmsThemeMenuList as menuList>
+        <#if menuList.ctmCount != 1 >
+
+            <!--menu图片 -->
+        <#if menuList.menuPicList ??>
+        <#assign menuPicList = menuList.menuPicList>
+        <#list menuPicList as menuPic>
+        <#if menuPic.siteId == 1>
+        <#if menuPic.attScene == 1>
+        <#assign xz = menuPic.attPicUrl>
+        </#if>
+        <#if menuPic.attScene == 2>
+        <#assign wxz = menuPic.attPicUrl>
+        </#if>
+        </#if>
+        </#list>
+        </#if>
+
+        <#if menuList_index != 0 >,</#if>
+        {
+            normal: { color: "#73859e", bgImg: "${wxz}"},
+            active: { color: "#fff", bgImg: "${xz}"},
+            anchor: "#${menuList.menuId}",
+                    width: "200px",
+                height: "48px",
+                total: ${menuList.ctrCount}, <!--资源数目-->
+        }
+
+        </#if>
+        </#list>
+        </#if>
+        </#if>
+        ];
+
+        var navHandleFn= {
+            config: {
+                outerParentPlace: $("#Ev-NavList"), //外部列表位置
+                innerChildName: ".Ev-Nav"  //内部子元素名称
+            },
+            control: function(data){
+                this.apply(data,this.config.outerParentPlace, this.config.innerChildName);
+            },
+            template: function(kv){
+                return '<a class="Ev-Nav" href="'+kv.anchor+'">'+
+                        '<li class="SpTemClear" '+
+                        'data-enabled="false" '+
+                        'data-normal="color:'+kv.normal.color+';background:url('+kv.normal.bgImg+') no-repeat 0 0;" '+
+                        'data-active="color:'+kv.active.color+';background:url('+kv.active.bgImg+') no-repeat 0 0;" style="'+
+                        'color:'+kv.normal.color+';'+
+                        'background:url('+kv.normal.bgImg+') no-repeat 0 0;'+
+                        'width:'+kv.width+';'+
+                        'height:'+kv.height+';'+
+                        '">'+
+                        '<div class="suNavNum" style="line-height: 48px;">('+kv.total+')</div>'+
+                        '</li>'+
+                        '</a>'
+            },
+            apply: function(data,OPPEle,ICN){
+                var html= "";
+                for(var i=0;i< data.length;i++){
+                    html+= this.template(data[i]);
+                }
+
+                var _this= this;
+                OPPEle.html(html).find(ICN).on("click",function(e){
+                    _this.initSytle(OPPEle);
+                    $("li",this).attr("data-enabled", true);
+                    $("li",this).css(_this.arrConvertObj($("li", this).attr("data-active").split(";")));
+                    var index = $(this).index('#Ev-NavList a');
+                    var anchorTop = $('.show_anchor').eq(index).offset().top;
+                    //var anchorName = $(this).attr('href');
+                    //var anchorTop = $(anchorName).offset().top;
+                    $(window).scrollTop(anchorTop-($('.SpTemp_nav').length?80:10));
+                    return false;
+                });
+            },
+            initSytle: function(OPPEle){
+                var tempEle= $("[data-enabled=true]", OPPEle);
+                if(tempEle.length > 0){
+                    tempEle.css(this.arrConvertObj(tempEle.attr("data-normal").split(";")));
+                    tempEle.attr("data-enabled",false);
+                }
+            },
+            arrConvertObj: function(arr){
+                var obj= {};
+                for(var i=0;i<arr.length;i++){
+                    if(arr[i].length>1){
+                        obj[arr[i].split(":")[0]]= arr[i].split(":")[1];
+                    }
+                }
+                return obj;
+            }
+
+        };
+        navHandleFn.control(listNavArr);
+
+    });
+
+</script>
+
+<script>
+    $.each($(".Ev-CupNavClickBtn"),function(i,e){
+        $(e).on("click",function(){
+            $(this).find("img").eq(0).attr("src","//img00.allinmd.cn/column/SpTemplate/lineNav01.jpg");//hover效果的图，需要替换变量
+            $(this).siblings().find("img").eq(0).attr("src","//img00.allinmd.cn/column/SpTemplate/lineNav02.jpg");//正常效果的图，需要替换变量
+        });
+    });
+    //侧边导航
+    var wScrTop =0;
+    var mainLeft = $('.SpTemp_main').offset().left;
+    var mTop = parseInt($('.SpTem_banner').offset().top+$('.SpTem_banner').height());
+    var navTop = $('.SpTemp_nav').length?$('.SpTemp_nav').offset().top:0;
+    var wWidth = $(window).width();
+    $(window).on('load scroll resize',function(){
+        wScrTop = $(window).scrollTop();
+        wWidth =  $(window).width();
+        mainLeft = $('.SpTemp_main').offset().left;
+        if(wScrTop>mTop){
+            $('.suNav').css({
+                top:80+"px",left:(wWidth<1500?0:mainLeft-243+"px"),zIndex:3,position:'fixed'
+            });
+        }else{
+            $('.suNav').css({
+                top:0,left:(wWidth<1500?-mainLeft:-243+"px"),zIndex:3,position:'absolute'
+            });
+        }
+        if(wScrTop>navTop){//顶部导航
+            $('.SpTemp_nav').css({
+                position:'fixed',top:0,left:0,zIndex:3
+            });
+        }else{
+            $('.SpTemp_nav').css({
+                position:'relative',top:0,left:0,zIndex:3
+            });
+        }
+    });
+
+    //顶部导航 切换
+    $('.SpTemp_main_tab').eq(0).show();
+    $('.navPart').find('a.onShow').hide();
+    $('.navPart').find('a.onHide').show();
+    $('.navPart').eq(0).find('a.onShow').show();
+    $('.navPart').eq(0).find('a.onHide').hide();
+    $('.navPart').on('click',function(e){
+        var el = $(e.target).parent()[0].className;
+        var ind=$(this).index();
+        if(el=='onShow'){
+            return false;
+        }else{
+            $(this).find('a.onShow').show().siblings('a').hide();
+            $(this).siblings('.navPart').find('a.onShow').hide();
+            $(this).siblings('.navPart').find('a.onHide').show();
+            $('.SpTemp_main_tab').eq(ind).show().siblings('.SpTemp_main_tab').hide();
+            if( $('.SpTemp_nav').css('position')=="fixed"){
+                $(window).scrollTop($('.SpTemp_main').offset().top);
+            }
+
+        }
+    });
+    //顶部导航 悬浮
+    //日志
+    $.ajax({
+        type:"post",
+        url:PC_CALL+"log/customer/browse/createBrowse/",
+        data:{paramJson:$.toJSON({browseUrl:window.location.href,browseType:34,opDesc:"专题页面"})},
+        success:function(){}
+    });
+
+    //分享
+    var themeId =$('#themeId').val().replace(/,/g,'');
+    var info,imgData,shareImg='http://img10.allinmd.cn/common/header/logo.png';
+    $.ajax({
+        url:"//www.allinmd.cn/call/cms/theme/getMapById/",
+        data:{paramJson: $.toJSON({themeId:themeId})},
+        dataType:'json',
+        type:"post",
+        async:false,
+        success:function(data){
+            if(data&&data.responseObject&&data.responseObject.responseData&&!$.isEmptyObject(data.responseObject.responseData)){
+                info = data.responseObject.responseData.bo_data;
+                imgData = data.responseObject.responseData.bo_data_attachment;
+            }
+        }
+    });
+    if(imgData!=undefined&&imgData.length){
+        for(var im=0;im<imgData.length;im++){
+            if(imgData[im].refType==2){
+                shareImg='http:'+imgData[im].attPicUrl;
+                break;
+            }
+        }
+    }
+    module.videoPKShare({
+        title:(info!=undefined&&info.shareTitle!="")?info.shareTitle:document.title,
+        pic:shareImg,
+        sina:(info!=undefined&&info.shareTitle!="")?info.shareTitle:document.title,
+        qqZone:(info!=undefined&&info.shareContent!="")?info.shareContent:"汇集海量手术视频、医学文献、病例讨论、会议回放资源。医生专业互动社区。",
+        url:window.location.href,
+        qqFriend:(info!=undefined&&info.shareContent!="")?info.shareContent:"汇集海量手术视频、医学文献、病例讨论、会议回放资源。医生专业互动社区。"
+    });
+</script>
+
+</html>

@@ -1,0 +1,194 @@
+@charset "UTF-8";
+@import "../modules/common-modules";
+.alEmr-aside{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100%;
+    background: #303F5B;
+    z-index: 5;
+    text-align: center;
+    .alEmr-commlogo{
+        width: 143px;
+        height: 36.4px;
+        margin: 51px auto 0 auto;
+        background: url("/static/images/common/commLogo.png") no-repeat center 50%;
+        cursor: pointer;
+        a{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .navSideBarLi{
+        margin-top: 60.6px;
+        a{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+        li{
+            text-align: center;
+            cursor: pointer;
+            font-size: 0;
+            span{
+                @include fontSize(14px, #FEFEFE);
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+        .navLeftNormal{
+            width: 195px;
+            height: 44px;
+            line-height: 44px;
+            background: #4B6EA6;
+            border-radius: 100px;
+            margin: 0 20px 30px 25px;
+            i{
+                @include iconImgI();
+                margin-right: 10px;
+                &.caseIcon{
+                    background: url("/static/images/aside/buildCase.png") no-repeat center 50%;
+                    width: 16px;
+                    height: 16px;
+                }
+                &.patientsIcon{
+                    background: url("/static/images/aside/selectPatients.png") no-repeat center 50%;
+                    width: 16px;
+                    height: 17px;
+                }
+            }
+        }
+        .navLeftSpecial{
+            height: 68px;
+            line-height: 68px;
+            text-align: left;
+            padding-left: 74px;
+            span{
+                position: relative;
+                i{
+                    position: absolute;
+                    right: -32px;
+                    top: 24px;
+                    width: 8px;
+                    height: 8px;
+                    background: #f34b4b;
+                    border-radius: 100px;
+                }
+            }
+            &.active{
+                background: #2586FF;
+                position: relative;
+                &:after{
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-width: 8px;
+                    border-style: solid;
+                    border-color: transparent #fff transparent transparent;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    -moz-transform:translateY(-50%);
+                    -webkit-transform: translateY(-50%);
+                    -o-transform:translateY(-50%);
+                }
+            }
+            i{
+                @include iconImgI();
+                margin-right: 20px;
+                &.templateIcon{
+                    background: url("/static/images/aside/templateIcon.png") no-repeat center 50%;
+                    width: 16px;
+                    height: 19px;
+                }
+                &.allCaseIcon{
+                    background: url("/static/images/aside/caseIcon.png") no-repeat center 50%;
+                    width: 16px;
+                    height: 19px;
+                }
+                &.teamIcon{
+                    background: url("/static/images/aside/teamIcon.png") no-repeat center 50%;
+                    width: 20px;
+                    height: 17px;
+                }
+            }
+            &.position{
+                position: fixed;
+                left: 0;
+                bottom: 76px;
+                width: 166px;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width:1540px){
+    .alEmr-aside {
+        width: 120px;
+        .alEmr-commlogo{
+            width: 80px;
+            height: 21px;
+            margin: 55px auto 0 auto;
+            background: url("/static/images/common/logoSmall.png") no-repeat center 50%;
+        }
+        .navSideBarLi{
+            margin-top: 60px;
+            .navLeftNormal{
+                width:90px;
+                height:30px;
+                line-height: 30px;
+                margin: 0 15px 30px 15px;
+                i{
+                    display: none;
+                }
+            }
+            .navLeftSpecial{
+                width: 88px;
+                padding-left: 32px;
+                background: transparent;
+                margin: 0 auto;
+                height: 68px;
+                line-height: 68px;
+                span{
+                    position: relative;
+                    i{
+                        display: inline-block;
+                        position: absolute;
+                        right: -32px;
+                        top: 0;
+                        width: 8px;
+                        height: 8px;
+                        background: #f34b4b;
+                        border-radius: 100px;
+                    }
+                }
+                &.active{
+                    background: #2888FF;
+                }
+                i{
+                    display: none;
+                }
+                span{
+                    line-height: 26px;
+                }
+            }
+            .navLeftSpecial.position{
+                width: 88px;
+                padding-left: 32px;
+                background: transparent;
+                margin: 0 auto;
+                height: 68px;
+                line-height: 68px;
+                &.active{
+                    background: #2888FF;
+                }
+            }
+        }
+    }
+}

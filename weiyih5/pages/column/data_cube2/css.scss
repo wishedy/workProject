@@ -1,0 +1,1172 @@
+/*
+  z-index:
+  bg
+  -shader
+  stars
+  svg
+    wave1
+    boat
+    wave2
+    wave3
+    -green dots
+  banner
+  btns
+  ufo
+  logo
+
+
+*/
+@import "../../../scss/modules/_common-modules/";
+
+*{
+  max-height: 100%;
+}
+
+body {
+  background: url("images/bg-no-mountain.png");
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.fix:after {
+  clear: both;
+  content: "clear";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.clear {
+  clear: both;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.mod_loading {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #b9ccd5;
+  display: -webkit-box;
+  -webkit-box-align: center;
+}
+
+.mod_loading .content {
+  text-align: center;
+  -webkit-box-flex: 1;
+  margin: 0 rem(80px);
+}
+
+.mod_loading .content .progress {
+  height: 13px;
+  padding: 2px;
+  -webkit-border-radius: 17px;
+  border-radius: 17px;
+  background-color: #242a39;
+}
+
+.mod_loading .content .progress span {
+  display: block;
+  height: 13px;
+  -webkit-border-radius: 13px;
+  border-radius: 13px;
+  background-color: #65cfd5;
+}
+
+.mod_loading .content p {
+  line-height: 34px;
+  color: #5f696a;
+}
+
+.slider {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  margin-left: -18px;
+  left: 50%;
+  bottom: 10px;
+  z-index: 9999;
+}
+
+.slider span {
+  position: absolute;
+  width: 24px;
+  height: 35px;
+  left: 50%;
+  top: 50%;
+  margin: -17px 0 0 -12px;
+  background-position: -158px -46px;
+  -webkit-animation: slide_up 2s infinite ease-out;
+}
+
+.item, .item .box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: url("images/bg-no-mountain.png") no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  position: relative;
+  .mountain {
+    width: 100%;
+    height: rem(140px);
+    background: url(images/mountain.png) no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    position: fixed;
+    bottom: rem(100px)
+  }
+}
+
+/*svg*/
+.sceneSvg {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  path {
+    fill: green;
+  }
+  .bubblesCon {
+    div {
+      fill: white;
+      position: absolute;
+    }
+  }
+}
+
+.data-cube2 {
+  $orangeColor: #FCAF04;
+  $green: #07D287;
+  $borderGreen: #06EB8E;
+  svg {
+    z-index: 3;
+  }
+  .con {
+    font-family: "microsoft yahei";
+    position: relative;
+    z-index: 9;
+    height: 100%;
+    .logo {
+      background: url(images/logo.png);
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      width: rem(152px);
+      height: rem(58px);
+      float: right;
+      margin-top: rem(22px);
+      margin-right: rem(22px);
+      clear: both;
+    }
+
+
+    .loginMask{
+      background: rgba(9,8,59,0.8);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top:0;
+      left: 0;
+      @include flex();
+      align-items: center;
+      justify-content: center;
+      .loginTextBox{
+        width:rem(508px);
+        height:rem(278px);
+        text-align: center;
+        background: url(images/mask-box-bg_02.png) center no-repeat;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        color: $orangeColor;
+        font-size: rem(38px);
+        line-height: rem(280px);
+      }
+    }
+
+    .index-title {
+      background: url(images/index-title.png);
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      width: rem(640px);
+      height: rem(490px);
+      margin: rem(24px) auto;
+      clear: both;
+      .index-ufo {
+        float: right;
+        margin: rem(56px) rem(52px);
+        width: rem(150px);
+        height: rem(150px);
+        background: url(images/ufo/index-ufo.png);
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        -webkit-animation: ufo-1 1s;
+        -o-animation: ufo-1 1s;
+        animation: ufo-1 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes ufo-1 {
+        from {
+          transform-origin: rem(130px) rem(10px);
+          transform: rotate(-5deg);
+        }
+        to {
+          transform-origin: rem(130px) rem(10px);
+          transform: rotate(5deg);
+        }
+      }
+    }
+
+
+    .login_btns{
+      width: rem(538px);
+      margin: 0 auto;
+      .btn{
+        width: rem(538px);
+        background: url("images/login-btn_02.png") no-repeat center;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        text-align: center;
+        height:rem(100px);
+        line-height:rem(80px);
+        font-size: rem(40px);
+        margin-bottom: rem(40px);
+        a{
+          color: #fff;
+        }
+      }
+      .text{
+        text-align: center;
+        font-size: rem(30px);
+        color: $orangeColor;
+        a{
+          clear:both;
+          display: block;
+          margin-bottom: rem(15px);
+        }
+      }
+    }
+
+    .lastYear {
+      background: url(images/lastYear.png) no-repeat top;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      width: rem(510px);
+      height: rem(280px);
+      margin: rem(-44px) auto 0;
+      clear: both;
+    }
+
+    .lastyearTable {
+      background: url(images/lastyear-table.png);
+      -webkit-background-size: contain;
+      background-size: contain;
+      width: rem(750px);
+      height: rem(420px);
+      margin: rem(43px) auto;
+      &.noPub{
+        background: url(images/lastyear-table2.png);
+        -webkit-background-size: contain;
+        background-size: contain;
+        height:rem(280px);
+      }
+      ul {
+        width: rem(620px);
+        margin: 0 auto;
+        li {
+          line-height: rem(116px);
+          height: rem(136px);
+          font-size: rem(36px);
+          padding-left: rem(110px);
+          span {
+            color: $orangeColor;
+            .s {
+              font-size: rem(44px);
+            }
+            .b {
+              font-size: rem(36px);
+            }
+          }
+        }
+      }
+
+    }
+
+
+    .learn-ufo{
+      position: absolute;
+      top: rem(300px);
+      right: rem(60px);
+      width: rem(150px);
+      height: rem(150px);
+      background: url(images/ufo/index-ufo.png);
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      -webkit-animation: ufo-pie 1s;
+      -o-animation: ufo-pie 1s;
+      animation: ufo-pie 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+
+    .learnList {
+      .imgBox {
+        @include flex();
+        justify-content: center;
+        img {
+
+        }
+      }
+
+      width: 80%;
+      margin: 0 auto;
+      header {
+        margin: rem(25px) 0 0 0;
+        color: #DEDEE3;
+        font-size: rem(26px);
+        span {
+          color: #09CD84;
+          font-size: rem(38px);
+          margin: 0 rem(14px);
+        }
+      }
+      .fighting {
+        margin: 0 auto;
+        color: $green;
+        width: rem(454px);
+        height: rem(66px);
+        line-height: rem(33px);
+        font-size: rem(24px);
+        font-weight: bold;
+        border-top: 1px solid $borderGreen;
+        border-left: 1px solid $borderGreen;
+        border-bottom: 1px solid $borderGreen;
+        padding: rem(10px) rem(20px);
+        background-image: -webkit-linear-gradient(left, rgba(8, 235, 143, 0.3) 0%, rgba(255, 255, 255, 0.0) 100%);
+      }
+      .type-1 {
+        header {
+          text-align: center;
+        }
+        article {
+          margin-top: rem(18px) ;
+          .imgBox {
+            width: rem(410px);
+            height: rem(270px);
+            border: rem(2px) solid $borderGreen;
+            margin: 0 auto;
+            @include flex();
+            align-items: center;
+            .img-wrap {
+              width: rem(380px);
+              height: rem(240px);
+              img {
+                margin: 0 auto;
+                width: rem(380px);
+                height: rem(240px);
+                border: rem(1px) solid $borderGreen;
+              }
+            }
+          }
+          .infoBox {
+            text-align: center;
+            margin:  0 auto;
+            p.name {
+              margin-top: rem(20px);
+              font-size: rem(36px);
+              line-height: rem(64px);
+            }
+            div.visit {
+              margin: 0 auto rem(37px);
+              @include flex();
+              align-items: center;
+              justify-content: center;
+
+              img {
+                width: rem(66px);
+                height: rem(66px);
+                margin-right: rem(20px);
+              }
+              .text {
+                font-size: rem(28px);
+                span {
+                  color: $orangeColor;
+                  .t {
+                    font-size: rem(40px);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      }
+      .type-2 {
+
+        .fighting {
+          margin: rem(80px) auto;
+        }
+        article {
+          @include flex();
+          display: -webkit-flex; /* Safari */
+          flex-direction: row;
+          justify-content: flex-start;
+          margin-top: rem(60px);
+        }
+      }
+      .type-3 {
+        article {
+          @include flex();
+          display: -webkit-flex; /* Safari */
+          flex-direction: row;
+          justify-content: flex-start;
+          margin-top: rem(45px) ;
+        }
+      }
+
+      .type-2,.type-3{
+        .imgBox {
+          min-width: rem(196px);
+          border: rem(3px) solid $borderGreen;
+          @include flex();
+          align-items: center;
+          .img-wrap{
+            width: rem(180px);
+            height: rem(116px);
+            position: relative;
+            margin:rem(5px);
+            border: rem(1px) solid $borderGreen;
+            img.resourceImg{
+              width: rem(180px);
+              height: rem(116px);
+            }
+            img.award{
+              width: rem(90px);
+              height: rem(90px);
+              position:absolute;
+              top:rem(-40px);
+              right: rem(-30px);
+            }
+          }
+        }
+        .infoBox {
+          width: rem(438px);
+          margin-left: rem(50px);
+          p.name {
+            font-size: rem(34px);
+          }
+          div.visit {
+            @include flex();
+            align-items: flex-end;
+            img {
+              width: rem(66px);
+              height: rem(66px);
+              margin-right: rem(20px);
+            }
+            .text {
+              font-size: rem(28px);
+              span {
+
+                color: $orangeColor;
+
+                .t {
+                  font-size: rem(40px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .no-record-text {
+      ul {
+        margin: rem(50px) auto;
+        background: url(images/text-lines-bg_02.png) no-repeat;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        width: rem(536px);
+        height: rem(480px);
+
+        li {
+          line-height: rem(106px);
+          font-size: rem(42px);
+          text-align: left;
+          font-family: "microsoft yahei";
+          color: #ffffff;
+          padding-left: rem(30px);
+        }
+      }
+    }
+
+    .view-btn {
+      position: relative;
+      margin: 0 auto;
+      width: rem(460px);
+      .arrow {
+        position: absolute;
+        background: url(images/btn-arrow.svg) no-repeat;
+        right: rem(-18px);
+        top: rem(24px);
+        width: rem(56px);
+        height: rem(56px);
+        -webkit-background-size: 100%;
+        background-size: 100%;
+      }
+      .text-box {
+        border-left: rem(2px) solid #1AE595;
+        border-top: rem(2px) solid #1AE595;
+        border-bottom: rem(2px) solid #1AE595;
+        width: rem(400px);
+        height: rem(96px);
+        padding-left: rem(40px);
+        line-height: rem(96px);
+        letter-spacing: rem(2px);
+        background-image: -webkit-linear-gradient(left, rgba(6, 235, 142, 0.35) 0%, rgba(0, 0, 0, 0.05) 100%);
+        color: $borderGreen;
+        font-size: rem(52px);
+        font-family: "microsoft yahei";
+      }
+    }
+
+    .next-page {
+
+      position: fixed;
+      bottom: rem(40px);
+      width: 100%;
+      height: rem(44px);
+
+      div {
+        background: url("images/next.svg") center;
+        height: rem(44px);
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        width: rem(44px);
+        margin: 0 auto;
+        animation: arrow-shake 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes arrow-shake {
+        from {
+          transform: translate(0, rem(-20px));
+        }
+        to {
+          transform: translate(0, rem(20px));
+        }
+      }
+    }
+
+    .youLearn-title {
+      background: url(images/youLearn.png) no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      width: rem(440px);
+      height: rem(220px);
+      margin: 0 auto;
+    }
+
+    .dashed-lines {
+      position: absolute;
+      top: rem(0px);
+      left: rem(0px);
+      background: url(images/dashed-line-bg.png) no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      width: rem(750px);
+      height: rem(1334px);
+      .star {
+        position: absolute;
+        bottom: rem(40px);
+        right: rem(160px);
+      }
+    }
+
+    .dear-text {
+      margin: rem(132px) auto;
+      background: url(images/dear-teacher-text_04.png) no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      width: rem(576px);
+      height: rem(568px);
+      li {
+        line-height: rem(78px);
+        font-size: rem(40px);
+        font-family: "microsoft yahei";
+        padding-left: rem(42px);
+        &.orange, .orange {
+          color: $orangeColor;
+        }
+      }
+    }
+
+    .teacher-ufo {
+      position: absolute;
+      top: rem(40px);
+      left: rem(40px);
+      margin: rem(56px) rem(26px);
+      width: rem(150px);
+      height: rem(150px);
+      background: url(images/ufo/teacher-ufo.png);
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      -webkit-animation: ufo-teacher 1s;
+      -o-animation: ufo-teacher 1s;
+      animation: ufo-teacher 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    @keyframes ufo-teacher {
+      from {
+        transform-origin: rem(10px) rem(16px);
+        transform: rotate(-10deg);
+      }
+      to {
+        transform-origin: rem(10px) rem(16px);
+        transform: rotate(5deg);
+      }
+    }
+  }
+  .relation {
+
+    .year-2014 {
+      position: absolute;
+      top: rem(20px);
+      left: 55%;
+      font-size: rem(30px);
+      color: #766886;
+    }
+    .year-2015 {
+      position: absolute;
+      top: rem(70px);
+      left: 45%;
+      font-size: rem(34px);
+      color: #857C98;
+    }
+    .relation-bg {
+      background: url(images/net.png) no-repeat center;
+      -webkit-background-size: 85%;
+      background-size: 85%;
+      width: rem(750px);
+      height: rem(470px);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .title {
+      margin: rem(60px) auto 0;
+      font-size: rem(44px);
+      color: #fff;
+      text-align: center;
+    }
+    .title-2 {
+      margin: rem(62px) auto 0px;
+      width: rem(520px);
+      text-align: left;
+      font-size: rem(52px);
+    }
+
+    .title-3 {
+      width: rem(520px);
+      text-align: left;
+      font-size: rem(32px);
+      margin: 6px auto;
+      span {
+        color: $orangeColor;
+        font-size: rem(40px);
+      }
+    }
+
+    .customerSocial {
+      ul {
+        width: rem(500px);
+        margin: rem(140px) auto;
+        li {
+          margin: rem(130px) auto;
+          width: rem(500px);
+          height: rem(210px);
+          background: url("images/doctor-bg1.png") no-repeat;
+          -webkit-background-size: 100%;
+          background-size: 100%;
+          position: relative;
+          .award {
+            position: absolute;
+            top: rem(50px);
+            right: rem(44px);
+            width: rem(46px);
+            height: rem(80px);
+          }
+          &.twoLine {
+            background: url("images/doctor-bg-2.png") no-repeat center;
+            -webkit-background-size: 100%;
+            background-size: 100%;
+            height: rem(242px);
+          }
+
+          .imgBox {
+            width: rem(209px);
+            height: rem(200px);
+            float: left;
+            img {
+              width: rem(126px);
+              height: rem(126px);
+              margin: rem(42px);
+              -webkit-border-radius: rem(63px);
+              -moz-border-radius: rem(63px);
+              border-radius: rem(63px);
+            }
+          }
+          .name {
+            width: rem(245px);
+            height: rem(60px);
+            margin-top: rem(30px);
+            line-height: rem(60px);
+            font-size: rem(33px);
+            float: left;
+            clear: right;
+
+          }
+          .medicalTitle {
+            width: rem(245px);
+            float: left;
+            clear: right;
+            color: #CCCED6;
+          }
+          .company {
+            width: rem(245px);
+            float: left;
+            clear: right;
+            color: #CCCED6;
+          }
+        }
+        &.two {
+          margin: rem(50px) auto 0;
+          -webkit-background-size: 100%;
+          background-size: 100%;
+          li {
+            margin: rem(40px) auto 0;
+          }
+        }
+      }
+    }
+
+    .title-no-2 {
+      margin: rem(60px) 0 0 17%;
+      width: rem(560px);
+      text-align: left;
+      font-size: rem(32px);
+    }
+    .title-no-3 {
+      margin: rem(40px) 0 0 17%;
+      width: rem(560px);
+      text-align: left;
+      font-size: rem(32px);
+      color: #fff;
+      span {
+        display: block;
+        color: #BDBDCD;
+      }
+    }
+  }
+
+
+  .pieChart{
+    .piChart-title {
+      background: url(images/picChart.png) no-repeat center;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      width: rem(500px);
+      height: rem(120px);
+      margin: 0 auto;
+      position: relative;
+      .rocket{
+        position: absolute;
+        top:rem(68px);
+        left:rem(-20px);
+        img{
+          width: rem(70px);
+          height: rem(60px);
+        }
+      }
+    }
+
+    .time-text{
+      height: rem(74px);
+      width:rem(530px);
+      line-height: rem(30px);
+      font-size: rem(26px);
+      color: #D6D5DD;
+      text-align: left;
+      margin: rem(38px) auto;
+    }
+    .svg-wrap{
+      @include flex();
+      justify-content: center;
+      .pieSvg {
+        .rect-title{
+          color: #fff07e;
+        }
+
+        circle.pie1{
+          stroke-width:3;
+          stroke: #096463;
+        }
+        circle.pie2{
+          stroke-width:3;
+          stroke: #11437A;
+        }
+        .arc1 path {
+          stroke: #096463;
+          stroke-width: 1;
+          fill:none;
+        }
+
+        .arc1{
+          path {
+            stroke: #096463;
+            stroke-width: 1;
+            fill:none;
+          }
+          .selected{
+            stroke:#0AE68F;
+            stroke-width:3;
+            fill:url(#pie1BrighterGradient);
+            //filter:url(#greenFilter)
+          }
+        }
+
+        .arc2{
+          path {
+            stroke: #11437A;
+            stroke-width: 1;
+            fill:none;
+          }
+          .selected{
+            stroke:#08C7EB;
+            stroke-width:3;
+            fill:url(#pie2BrighterGradient);
+            //filter:url(#blueFilter)
+          }
+        }
+      }
+    }
+
+
+    .pie-ufo{
+      position: absolute;
+      top: rem(360px);
+      right: rem(44px);
+      width: rem(150px);
+      height: rem(150px);
+      background: url(images/ufo/index-ufo.png);
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      -webkit-animation: ufo-pie 1s;
+      -o-animation: ufo-pie 1s;
+      animation: ufo-pie 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    @keyframes ufo-pie {
+      from {
+        transform-origin: rem(130px) rem(10px);
+        transform: rotate(-5deg);
+      }
+      to {
+        transform-origin: rem(130px) rem(10px);
+        transform: rotate(5deg);
+      }
+    }
+  }
+
+  .yourCard {
+    .card-title {
+      position: relative;
+      margin-top: rem(60px);
+      .card-ufo {
+        position: absolute;
+        top: rem(-60px);
+        right: rem(40px);
+        width: rem(150px);
+        height: rem(150px);
+        background: url(images/ufo/index-ufo.png);
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        -webkit-animation: ufo-card 1s;
+        -o-animation: ufo-card 1s;
+        animation: ufo-card 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes ufo-card {
+        from {
+          transform-origin: rem(130px) rem(10px);
+          transform: rotate(-5deg);
+        }
+        to {
+          transform-origin: rem(130px) rem(10px);
+          transform: rotate(5deg);
+        }
+      }
+      width: 100%;
+      .thumb-box {
+        width: 35%;
+        float: left;
+        .thumb {
+          float: right;
+          width: rem(120px);
+          height: rem(120px);
+          border: rem(2px) solid $green;
+          border-radius: rem(60px);
+          position: relative;
+          img {
+            width: rem(118px);
+            height: rem(118px);
+            border-radius: rem(59px);
+            margin: 1px;
+          }
+          .crown{
+            width:rem(80px);
+            height:rem(80px);
+            top:rem(-50px);
+            right:rem(-20px);
+            position: absolute;
+            background: url("images/crown.png") no-repeat center;
+            -webkit-background-size: 100%;
+            background-size: 100%;
+          }
+        }
+      }
+      .name-box {
+        width: 65%;
+        float: left;
+        text-align: left;
+        font-size: rem(36px);
+        .name {
+
+          margin-left: rem(40px);
+        }
+        .company {
+          margin-left: rem(40px);
+          color: #8786A1;
+        }
+      }
+      .title_bg {
+        margin-top: rem(40px);
+        clear: both;
+        text-align: center;
+        font-size: rem(60px);
+        background: url("images/title-line-bg.png") no-repeat center;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+      }
+      .win {
+        margin: 0 auto;
+        text-align: center;
+        font-size: rem(32px);
+        color: #F8F8FA;
+        span {
+          font-family: Consolas;
+          color: $orangeColor;
+          font-size: rem(48px);
+        }
+      }
+    }
+    .planet-bg {
+      background: url("images/planet.png") no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      width: 100%;
+      height: rem(730px);
+      margin-top: rem(60px);
+      .tagBall {
+        width: rem(720px);
+        height: rem(400px);
+        margin: rem(60px) auto;
+        position: relative;
+      }
+      .tag {
+        display: block;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        color: $orangeColor;
+        text-decoration: none;
+        font-size: 15px;
+        font-family: "微软雅黑";
+        font-weight: bold;
+      }
+     /* .tag:hover {
+        border: 1px solid #666;
+      }*/
+    }
+    footer {
+      @include flex();
+      position: fixed;
+      bottom: rem(50px);
+      left: 0;
+      width: 100%;
+      height: rem(189px);
+      align-items: flex-end;
+      justify-content: center;
+      .erweima {
+        $rate : 1.4;
+        width: rem(114px * $rate);
+        height: rem(114px * $rate);
+        background: url(images/erweima-bg.svg) no-repeat center;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        #Qrcode{
+          border:rem(4px) solid white;
+          width: rem(93px  * $rate);
+          height: rem(93px  * $rate);
+        }
+      }
+      p {
+        padding-bottom: rem(20px);
+        margin: 0 rem(38px);
+        span{
+          color: $orangeColor;
+        }
+      }
+      .weixiaobao{
+        width: rem(100px);
+        height:rem(170px);
+      }
+    }
+  }
+
+  .share{
+    .shareMask{
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background: rgba(0,0,0,0.55);
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      .share-ufo {
+        position: absolute;
+        top:rem(20px);
+        right: 5%;
+        margin: rem(56px) rem(52px);
+        width: rem(584px);
+        height: rem(450px);
+        background: url(images/ufo/share-ufo.png);
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        -webkit-animation: ufo-1 1s;
+        -o-animation: ufo-1 1s;
+        animation: ufo-1 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes ufo-1 {
+        from {
+          transform-origin: 95% rem(20px);
+          transform: rotate(-5deg);
+        }
+        to {
+          transform-origin: 95% rem(20px);
+          transform: rotate(5deg);
+        }
+      }
+      .text_box{
+        margin: 0 auto;
+        text-align: left;
+        width:rem(510px);
+        height:rem(278px);
+
+        background: url(images/mask-box-bg_02.png) no-repeat center;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        .line_1{
+          margin-left: rem(90px);
+          color: #ffffff;
+          margin-top: rem(50px);
+          line-height: rem(70px);
+          font-size: rem(30px);
+        }
+        p{
+          margin-left: rem(90px);
+          color: $orangeColor;
+          margin-top: rem(5px);
+          font-size: rem(36px);
+          line-height: rem(50px);
+        }
+      }
+    }
+  }
+
+  .downloadApp{
+    .slogan{
+      width:rem(440px);
+      height: rem(105px);
+      background:url(images/slogan.png) center no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      margin: rem(80px) auto 0;
+    }
+    .erweima-big{
+      background:  url(images/erweima2-bg.svg) center no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      width: rem(345px);
+      height: rem(345px);
+      margin: rem(80px) auto 0;
+      @include flex();
+      align-items: center;
+      justify-content: center;
+      img{
+        width: rem(280px);
+        height: rem(280px);
+      }
+    }
+    .down-text{
+      h2{
+        color: #FFFEFE;
+        line-height:rem(61px);
+        font-size:rem(42px) ;
+        margin:rem(45px) auto;
+        text-align: center;
+        display: block;
+      }
+      p{
+        text-align: center;
+        font-size:rem(28px);
+        margin:rem(24px) auto;
+        color: #FFFEFE;
+        display: block;
+      }
+    }
+  }
+}
+
+.loadingMask {
+  background: #000;
+  width: 100%;
+  height: 100%;
+  @include flex();
+  align-items: center;
+  .center {
+    background: url("images/loding-logo.png") no-repeat center;
+    margin: 0 auto;
+  }
+}

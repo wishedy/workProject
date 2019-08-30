@@ -1,0 +1,145 @@
+@charset "UTF-8";
+//消息主页
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+.al-mainInner {
+    transition: blur 0.2s linear;
+    -webkit-transition: blur 0.2s linear;
+ 
+}
+
+//主内容——首页
+.al-personalBrowsedPart {
+    background-color: #fff;
+    padding-left: rem(30px);
+    border-bottom: 1px solid $innerBorderColor;
+}
+
+.al-personalBrowsedItem {
+    padding-right: rem(30px);
+    height: rem(122px);
+    line-height: rem(122px);
+    border-bottom: 1px solid $innerBorderColor;
+    @include font-dpr(15px);
+    &:nth-last-child(1){
+        border-bottom: none;
+    }
+    a {
+        color: #333333;
+        position: relative;
+        display: block;
+        &:after {
+            content: "";
+            width: rem(28px);
+            height: rem(14px);
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: rem(-7px);
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAPCAMAAADNjy/UAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA2UExURUxpcbe3t7e3t7i4uP///7i4uLi4uLi4uLe3t9XV1bi4uLe3t7e3t7y8vLm5ubq6uri4uLe3t4lCWEwAAAARdFJOUwD5Tq8CobFe/QZW4CAXUBr3HPGeLgAAAE9JREFUGNN1yVsSwBAQBMAJCXli73/ZKCllMenfBp4VTATua2Nnkse5CzmziAU8uTzuALs687UZT09//egbp9089dh8F+iUEz7lfiaf1fMCGnED5O9wdaoAAAAASUVORK5CYII=') center center no-repeat;
+            background-size: cover;
+            transform: rotate(-90deg);
+        }
+    }
+    .al-newsNum {
+        text-align: center;
+        top: 50%;
+        margin-top: rem(-15px);
+        margin-right: rem(30px);
+        @include font-dpr(10px);
+        border-radius: 0.66667rem;
+        background-color: #F34B4B;
+        font-style: normal;
+        position: absolute;
+        right: 0.16rem;
+        display: block;
+        height: 0.42667rem;
+        max-width: 0.56rem;
+        line-height: 0.42667rem;
+        font-size: 10px;
+        color: #fff;
+        padding: 0 0.13333rem;
+    }
+}
+
+.al-msgRemindPart {
+    margin-top: rem(16px);
+    background-color: #fff;
+}
+
+.al-msgRemindItem {
+    padding: rem(40px) rem(30px);
+    padding-bottom: rem(14px);
+    @include clearfix();
+    border-bottom: 1px solid $innerBorderColor;
+}
+
+.al-msgRemindIcon {
+    float: left;
+    position: relative;
+    .icon-newTips:after{
+        right: 0;
+        top: rem(-5px);
+    }
+}
+
+.al-msgRemindContent {
+    margin-left: rem(70px);
+}
+
+.al-msgRemindTitle {
+    @include font-dpr(15px);
+    color: #333;
+    font-weight: normal;
+    margin: 0;
+    .al-msgRemindTime {
+        float: right;
+        @include font-dpr(12px);
+        color: $smallTextColor;
+
+    }
+}
+.al-msgRemindContentText{
+    @include font-dpr(14px);
+    color: #808080;
+    margin: rem(20px) 0;
+}
+.al-msgRemindContentTextHide{
+    color: #5f6f8f;
+    margin: rem(26px) 0;
+    @include font-dpr(14px);
+}
+
+.icon-msgFollow{
+    @extend %icon-msgFollow;
+}
+.icon-msgComment{
+    @extend %icon-msgComment;
+}
+.icon-msgRemind{
+    @extend %icon-msgRemind;
+}
+.icon-msgLike{
+    @extend %icon-msgLike;
+}
+.icon-mailbox{
+    @extend %icon-mailbox;
+}
+.icon-newTips{
+    @extend %icon-newTips;
+
+}
+
+.icon-discoverEntryHot{
+    @extend %icon-discoverEntryHot;
+    display: none;
+}
+@import '../../components/_releaseModule'; //发布内容
+@import "../../components/_footerBar"; //页脚功能栏

@@ -1,0 +1,147 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+
+.al-mainContentBox{
+  width:1000px;
+  margin:0 auto 60px;
+}
+
+.al-mainContentHead{
+  height:388px;
+  width:100%;
+  margin-left:80px;
+}
+
+//主体内容：begin
+.al-meetingContent_head{
+  font-size:18px;
+  color:#7A7A7A;
+  background-color:#fff;
+  margin-bottom:20px;
+  text-align:center;
+  border:1px solid #E2E9F0;
+  .al-meetingAgenda{
+    padding:0 42px;
+    height:60px;
+    line-height:60px;
+    &:hover{
+      color:#3598DB;
+      cursor: pointer;
+    }
+  }
+}
+
+             //左侧栏样式：begin
+.al-meetMainBox{
+  @include clearfix();
+}
+.al-meetAgenda_sidebar{
+  float:left;
+  border:1px solid #E0E8EF;
+  width:268px;
+  background-color:#fff;
+  h6{
+    font-weight:normal;
+    font-size:18px;
+    padding-left:18px;
+    height:52px;
+    line-height:52px;
+    border-bottom:1px solid #E4E9ED;
+  }
+  p{
+    padding-left:18px;
+    height:52px;
+    line-height:52px;
+    border-bottom:1px solid #F5F5F5;
+    cursor: pointer;
+    color:#626F8C;
+    &:hover{
+      background-color:#3598DB;
+      color:#fff;
+    }
+  }
+  .border-bottom{
+    border-bottom:none;
+  }
+}
+            //左侧栏样式：end
+
+
+
+.al-meetPlaceBox{
+  float:right;
+  height:1000px;
+  width:710px;
+  .al-meetPlace_head{
+    height:80px;
+    background:url("//img10.allinmd.cn/v3/terminal/meetPlace_head.png") center center no-repeat;
+    border:1px solid #E4E9ED;
+    h4{
+      text-align:center;
+      color:#fff;
+      font-size:22px;
+      line-height:80px;
+    }
+  }
+}
+
+.al-meetPlace_tableBox{
+  .al-table_TopHead{
+    background-color:#fff;
+    @include clearfix();
+    border-left:1px solid #E4E9ED;
+    border-right:1px solid #E4E9ED;
+    p{
+      float:left;
+      i{  //时间图标
+        display:inline-block;
+        width:14px;
+        height:15px;
+        background:url("//img10.allinmd.cn/v3/terminal/meetTime.png") center center no-repeat;
+        margin:0 5px -1px 25px;
+      }
+      b{  //地点图标
+        display:inline-block;
+        width:13px;
+        height:16px;
+        background:url("//img10.allinmd.cn/v3/terminal/meetPlace.png") center center no-repeat;
+        margin:0 5px -2px 35px;
+      }
+      span{
+        display:inline-block;
+        padding:18px 0;
+        font-size:17px;
+        color:#333;
+      }
+    }
+  }
+}
+
+              //表格主体：begin
+.al-meeting_table{
+  td{
+    border:1px solid #E4E9ED;
+    text-align:center;
+    padding:14px 0;
+  }
+  thead{
+    td{color:#909090;}
+  }
+  .table_time{width:134px;}
+  .table_speaker{width:99px;}
+  .table_theme{width:318px;}
+  .table_guest{width:110px;}
+  tbody{
+    .table_theme{
+      text-align:left;
+      line-height:20px;
+      padding:22px 24px;
+    }
+  }
+}
+              //表格主体：end
+
+
+
+//主体内容：end

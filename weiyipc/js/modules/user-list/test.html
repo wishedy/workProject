@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="//css.allinmd.cn/common/base.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/pagination/pager.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/module/user-list/module.user-list.css" rel="stylesheet" type="text/css"/>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/comm.cutArray.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/pagination/jquery.pager.js"></script>
+    <script src="/js/plugins/follow/plugin.follow.js"></script>
+    <script src="/js/third-party/jquery_lazyload/jquery.lazyload.min.js" type="text/javascript"></script>
+    <script src="/js/third-party/jquery_lazyload/jquery.scrollstop.js" type="text/javascript"></script>
+    <script src="/js/module/user-list/module.user-list.js"></script>
+    <script>
+        $(function(){
+            module.userList({
+                customerId:"1397640872703",
+                type:"follow",
+                container:"#list",
+                pageTotal:30,
+                pageSize:16,
+                pagination:".pager"
+            });
+        })
+
+    </script>
+</head>
+<body>
+<div class="userList" style="width:776px; margin:0 auto">
+    <div id="list">
+
+    </div>
+    <div class="clear"></div>
+    <!-- 分页 -->
+    <div class="pagination">
+        <div class="pager"></div>
+    </div>
+</div>
+</body>
+</html>

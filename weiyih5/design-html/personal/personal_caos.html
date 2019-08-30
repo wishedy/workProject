@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CAOS帐号绑定</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_caos.css">
+</head>
+
+<body>
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem">
+                <a href="/design-html/personal/personal_safe.html">
+                    <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>CAOS</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)">
+                </a>
+            </figure>
+        </header>
+        <section class="al-changeMobileBox">
+            <article class="al-changeMobileContent">
+                <figcaption>授权访问你的CAOS帐号</figcaption>
+                <figure class="al-linkCaosImg">
+                    <img src="/images/img50/pages/personal/caos_title.png" alt="">
+                </figure>
+            </article>
+            <figure class="al-changeMobileInput">
+                <i class="icon-userNameNoInput al-user"></i>
+                <input type="text" placeholder="用户名" class="EV-userNameInput">
+                <i class="icon-searchCancel"></i>
+            </figure>
+            <figure class="al-changeMobileInput">
+                <i class="icon-pwNoInput al-pw"></i>
+                <input type="text" placeholder="密码" class="EV-pwInput">
+                <i class="icon-pwCanWatch EV-changePwPattern"></i>
+                <i class="icon-searchCancel"></i>
+            </figure>
+            <button class="btn-primary-lg al-msgWriting">绑定</button>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script>
+    FastClick.attach(document.body);
+    $(function() {
+        $(".EV-userNameInput").on("keyup", function() {
+            if ($(this).val().length > 0) {
+                $(".al-user").removeClass('icon-userNameNoInput').addClass('icon-userNameHasInput');
+                $(".al-user").siblings('.icon-searchCancel').show();
+            } else {
+                $(".al-user").addClass('icon-userNameNoInput').removeClass('icon-userNameHasInput');
+                $(".al-user").siblings('.icon-searchCancel').hide();
+            }
+        });
+        $(".EV-pwInput").on("keyup", function() {
+            if ($(this).val().length > 0) {
+                $(".al-pw").removeClass('icon-pwNoInput').addClass('icon-pwHasInput');
+                $(".al-pw").siblings('.icon-searchCancel').show();
+            } else {
+                $(".al-pw").addClass('icon-pwNoInput').removeClass('icon-pwHasInput');
+                $(".al-pw").siblings('.icon-searchCancel').hide();
+            }
+        });
+
+        $(".EV-changePwPattern").on("click", function() {
+            if ($(this).hasClass('icon-pwCanWatch')) {
+                $(this).removeClass('icon-pwCanWatch').addClass('icon-pwCanotWatch');
+                $(".EV-pwInput").attr('type','password')
+            } else {
+                $(this).removeClass('icon-pwCanotWatch').addClass('icon-pwCanWatch');
+                $(".EV-pwInput").attr('type','text')
+            }
+        })
+    });
+    </script>
+</body>
+
+</html>

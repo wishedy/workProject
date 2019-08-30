@@ -1,0 +1,21 @@
+<import src="/components/confirm$5251c782" />
+<import src="/components/loading$2ff823fe" /><template name="meinian$2064340a">
+  <view class="_section data-v-32144362 main-inner">
+    <view class="_section data-v-32144362 loginMain">
+      <view class="_header data-v-32144362 logo"></view>
+      <view class="_h1 data-v-32144362">请填写您在美年大健康的体检信息</view>
+      <view class="_section data-v-32144362 formContent">
+        <view class="_aside data-v-32144362 labelBox"><label class="_span data-v-32144362 labelName">姓名</label> <input class="_input data-v-32144362 labelText" type="text" placeholder="请填写真实姓名" value="{{inputPatientName}}" bindinput="handleProxy" catchblur="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" /></view>
+        <view class="_aside data-v-32144362 labelBox"><label class="_span data-v-32144362 labelName">身份证号</label> <input class="_input data-v-32144362 labelText" type="text" placeholder="方便准确查询体检报告" value="{{identityCardNum}}" bindinput="handleProxy" catchblur="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" /></view>
+        <view class="_aside data-v-32144362 labelBox" wx:if="{{!verifyPhoneNumber}}"><label class="_span data-v-32144362 labelName">手机号</label> <input class="_input data-v-32144362 labelText" type="text" placeholder="请填写手机号" value="{{inputPatientPhoneNum}}" bindinput="handleProxy" catchblur="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" /></view>
+        <view class="_aside data-v-32144362 labelBox sCode" wx:if="{{!verifyPhoneNumber}}"><label class="_span data-v-32144362 labelName">验证码</label>
+          <view class="_p data-v-32144362 sendCodeBox"><input class="_input data-v-32144362 labelText getCode" type="text" catchblur="handleProxy" placeholder="请填写" value="{{codeNum}}" bindinput="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" /> <label class="_span data-v-32144362 sendCode {{[verificationCodeIng ? 'onSend' : '']}}" catchtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">
+              <view class="_i data-v-32144362">{{verificationCodeIng?'重新发送':codeDes}}</view>
+              <view wx:if="{{limit}}" class="_i data-v-32144362">{{verificationCodeNum+'s'}}</view>
+            </label></view>
+        </view>
+        <view class="_p data-v-32144362 sureBtn" catchtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">查询体检报告</view>
+      </view> <template wx:if="{{confirmOnOff}}" bindensureClickEvent="handleProxy" bindcancelClickEvent="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="confirm$5251c782"></template> <template wx:if="{{reportDialog}}" bindensureClickEvent="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="confirm$5251c782"></template> <template wx:if="{{loading}}" data="{{...$root[$kk+'2'], $root}}" is="loading$2ff823fe"></template>
+    </view>
+  </view>
+</template>

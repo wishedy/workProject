@@ -1,0 +1,518 @@
+@charset "UTF-8";
+//评分组件
+//Created by zhangxiangfeng  on 2016/12/25
+//公共方法模块调用
+@import "../modules/common-modules";
+
+.al-scorePopBox {
+  display: none;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:9;
+  width:100%;
+  height:100%;
+  background-color: rgba(10, 30, 43, 0.7);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B20A1E2B, endColorstr=#B20A1E2B); /*IE8支持*/
+}
+
+.al-scoreContentBox{
+  border:1px solid #e4e9ed;
+  box-sizing: border-box;
+  width:450px;
+  width:470px\9!important;
+  border-radius:5px;
+  background-color:#fff;
+  text-align: center;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left: -275px;
+  margin-top: -304px;
+  //-webkit-transform: translate(-50%,-50%);
+  //-ms-transform: translate(-50%,-50%);
+  //transform: translate(-50%,-50%);
+  .al-bigScoreStarBox{
+    margin:0 0 24px 20px;
+  }
+  .al-closeContent{
+    height:40px;
+    >b{
+      float:right;
+      cursor: pointer;
+      width: 13px;
+      height: 13px;
+      background: url("//img10.allinmd.cn/v3/common/icon/icon_close.png") center center no-repeat;
+      margin-top: 20px;
+      margin-right: 40px;
+    }
+  }
+  .al-contentBox{
+    padding:0 30px 20px 30px;
+    height:548px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    >figcaption{
+      color:#777;
+      margin:20px 0 40px;
+    }
+  }
+}
+
+
+.al-scoreText{
+  font-size:14px;
+  color:#3598db;
+}
+
+//匿名评分
+.al-anonymousScore{
+  text-align:right;
+  margin:30px 0;
+  span{
+    font-size:13px;
+    font-family:"宋体";
+    color:#909090;
+    cursor: pointer;
+    >b{
+      display: inline-block;
+      width:12px;
+      height:12px;
+      border:1px solid #B4B4B4;
+      margin-right:6px;
+      vertical-align: bottom;
+    }
+    .active{
+      border:none;
+      width:14px;
+      height:14px;
+      background: url("//img10.allinmd.cn/v3/terminal/scoreSelectedIcon.png") center center no-repeat;
+    }
+  }
+}
+
+//内容有问题
+.al-contentDefect{
+  .al-scopeFeedback{
+    position: relative;
+    margin-top:10px;
+    margin-bottom:30px;
+    span{
+      position:absolute;
+      bottom:10px;
+      right:10px;
+      font-size:13px;
+      color:#909090;
+    }
+    .active{color:#F04B4B;}
+    textarea{
+      border:1px solid #DBDBDB;
+      width:390px;
+      height:80px;
+      padding:10px 12px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: none;
+      color:#333;
+      font-size:14px;
+      &:focus{
+        border:1px solid #2899e6;
+        box-shadow: 1px 1px 2px rgba(40, 153, 230, 0.6), -1px -1px 2px rgba(40, 153, 230, 0.6);
+
+      }
+    }
+  }
+  .al-scoreBtn{
+    >span{
+      display: inline-block;
+      font-size:15px;
+      color:#aaa;
+      margin-left:40px;
+      cursor: pointer;
+    }
+    .al-submitBtn{
+      background-color:#2899e6;
+      padding:10px 25px;
+      color:#fff;
+      border-radius: 20px;
+      ////behavior:url("/js/third-party/pie/pie.htc");
+    }
+      //正在提交按钮
+    .al-submitIngBtn{
+      margin-left:30px;
+      &:before{
+        content:'';
+        display: inline-block;
+        width:14px;
+        height:14px;
+        background: url("//img10.allinmd.cn/v3/terminal/submit_Loading.png") center center no-repeat;
+        margin-right:3px;
+        margin-bottom:-2px;
+        animation: submitIng 2s linear 0s infinite;
+        @keyframes submitIng {
+          0% {-webkit-transform:rotate(0deg);}
+          100% {-webkit-transform:rotate(360deg);}
+        }
+      }
+    }
+      //提交成功按钮
+    .al-submitSuccessBtn{
+      margin-left:30px;
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background: transparent url("//img10.allinmd.cn/v3/terminal/submit_success.png") center center no-repeat;
+        margin-right: 3px;
+        margin-bottom: -2px;
+      }
+    }
+  }
+  figcaption{
+    font-size:14px;
+    color:#333333;
+    text-align: center;
+    width: 100%;
+    &:before{
+      content:'';
+      display: inline-block;
+      width:105px;
+      border-bottom:1px solid #e4e9ed;
+      vertical-align: middle;
+      margin-right:10px;
+      margin-top: 6px;
+      float: left;
+    }
+    &:after{
+      content:'';
+      display: inline-block;
+      width:105px;
+      border-bottom:1px solid #e4e9ed;
+      vertical-align: middle;
+      margin-left:10px;
+      margin-top: 6px;
+      float: right;
+    }
+  }
+}
+.al-contentMatterItem{
+  @include clearfix();
+  margin-top:30px;
+  li{
+    float:left;
+    cursor: pointer;
+    border:1px solid #EFF4F8;
+    margin:0 10px 10px 0;
+    border-radius:30px;
+    ////behavior:url("/js/third-party/pie/pie.htc");
+    padding:10px 13px;
+    color:#777;
+  }
+  .active{
+    color:#2899e6;
+    border:1px solid #2899e6;
+  }
+}
+
+
+
+
+//评分详情弹层:begin
+.al-scoreDetailsPopBox{
+  display: none;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:9;
+  width:100%;
+  height:100%;
+  background-color: rgba(10, 30, 43, 0.7);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B20A1E2B, endColorstr=#B20A1E2B); /*IE8支持*/
+}
+.al-scoreDetailsContentBox{
+  border:1px solid #e4e9ed;
+  border-radius:4px;
+  width:654px;
+  height:72%;
+  box-sizing:border-box;
+  background-color:#fff;
+  margin:0 auto;
+  position:absolute;
+  top:50%;
+  left:50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  .al-closeContent{
+    height:50px;
+    width:100%;
+    .al-scorePopCloseBtn{
+      float: right;
+      cursor: pointer;
+      width: 13px;
+      height: 13px;
+      background: url("//img10.allinmd.cn/v3/common/icon/icon_close.png") center center no-repeat;
+      margin:20px 25px 0 0;
+    }
+  }
+  .al-scoreContent{
+    height:92%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  figcaption{
+    margin:0 auto 20px;
+    text-align:center;
+    .al-scoreDetailsTitle{
+      display: inline-block;
+      font-size:15px;
+      color:#555;
+      max-width:270px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .al-scoreDetailsArrowIcon{
+      display: inline-block;
+      width:8px;
+      height:14px;
+      background: transparent url("//img10.allinmd.cn/v3/terminal/scoreDetailsArrow.png") center center no-repeat;
+      margin-left:3px;
+      vertical-align: top;
+    }
+    a{
+      &:hover{
+        .al-scoreDetailsTitle{color:#3598db;}
+        .al-scoreDetailsArrowIcon{background: transparent url("//img10.allinmd.cn/v3/terminal/scoreDetailsArrowOn.png") center center no-repeat;}
+      }
+    }
+  }
+}
+
+          //综合评分
+.al-overallScoreBox{
+  header{
+    text-align: center;
+    font-size:15px;
+    color:#909090;
+    span{
+      padding-left:6px;
+      font-size:22px;
+      color:#3598db;
+    }
+  }
+  .al-bigScoreStarBox{
+    margin:20px 0 46px 156px;
+  }
+}
+
+          //评分详情：标签列表
+.al-overallTagListBox{
+  @include clearfix();
+  margin:0 40px 20px;
+  li{
+    floaT:left;
+    border:1px solid #EFF4F8;
+    height:36px;
+    line-height:35px;
+    border-radius:30px;
+    padding:0 12px 0 15px;
+    color:#808080;
+    font-size:15px;
+    margin:0 10px 10px 0;
+    b{
+      display: inline-block;
+      width:15px;
+      height:15px;
+      background:transparent url("//img10.allinmd.cn/v3/terminal/scoreDetails_goodIcon.png") center center no-repeat;
+      margin-left:6px;
+      margin-bottom:-1px;
+    }
+    .active{
+      background:transparent url("//img10.allinmd.cn/v3/terminal/scoreDetails_BadIcon.png") center center no-repeat;
+      margin-bottom:-2px;
+    }
+  }
+}
+.al-scoreDetailsPopLine{
+  height:16px;
+  margin:0 -1px;
+  background-color:#EEF3F8;
+  border:1px solid #D7DEE5;
+}
+      //评分详情：评论
+.al-scoreCommentPartBox{
+  //height:292px;
+  //overflow-x: hidden;
+}
+.al-scoreDetailsCommentPart{
+  padding:30px 30px 20px;
+  border-bottom:1px solid #ecf0f2;
+  @include clearfix();
+  .al-scoreCommentUserImg{
+    float:left;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    overflow: hidden;
+    margin-top:-2px;
+    img{
+      width:100%;
+      height:100%;
+    }
+  }
+  .al-scoreUserCommentInfo{
+    margin-left:55px;
+    @include clearfix();
+    .al-scoreCommentUserName{
+      color:#555;
+      font-size: 15px;
+      font-weight: 400;
+    }
+    >p{
+      font-size:13px;
+      color:#909090;
+      font-family: "宋体";
+      margin-top:8px;
+    }
+    .al-scoreCommentTime{
+      float:right;
+      color:#909090;
+      font-size:14px;
+      margin-right:10px;
+    }
+  }
+  .al-littleScoreStarBox{margin:20px 10px 14px;}
+  .al-overallTagListBox{
+    margin:0;
+    li{
+      height:31px;
+      line-height:31px;
+      b{background:transparent url("//img10.allinmd.cn/v3/terminal/scoreComment_goodIcon.png") center center no-repeat;}
+      .active{background:transparent url("//img10.allinmd.cn/v3/terminal/scoreComment_badIcon.png") center center no-repeat;}
+    }
+  }
+  .al-userScoreCommentText{
+    color:#555;
+    line-height:28px;
+    word-wrap: break-word;
+  }
+}
+//评分详情弹层:end
+
+
+
+
+
+
+
+
+//星星通用样式:begin
+.al-bigScoreStarBox{
+  @include clearfix();
+  li{
+    float:left;
+    width:44px;
+    height:42px;
+    background-image:url("//img10.allinmd.cn/v3/terminal/pop_starDefault.png");
+    margin-left: 20px;
+    cursor: pointer;
+    >b{
+      display: block;
+      width:100%;
+      height:100%;
+      background-image:url("//img10.allinmd.cn/v3/terminal/pop_starGet.png");
+    }
+  }
+}
+
+.al-littleScoreStarBox{
+  @include clearfix();
+  li{
+    float:left;
+    width:13px;
+    height:12px;
+    background-image:url("//img10.allinmd.cn/v3/terminal/star_gray.png");
+    margin-right:4px;
+    >b{
+      display: block;
+      width:100%;
+      height:100%;
+      background-image: url("//img10.allinmd.cn/v3/terminal/star_blue.png");
+    }
+  }
+}
+//星星通用样式:end
+
+
+
+//滚动条：begin
+::-webkit-scrollbar {width:10px;height:10px;}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+  border-radius:50px;
+  border: 2px solid transparent;
+  behavior: url("/js/third-party/pie/pie.htc");
+  position:relative;
+}
+//::-webkit-scrollbar-track {box-shadow: 1px 1px 5px rgba(0, 0, 0, .2) inset;}  //滚动条轨道
+::-webkit-scrollbar-thumb {
+  min-height: 20px;
+  background-clip: content-box;
+  box-shadow: 0 0 0 5px #DBDBDB inset;
+}
+//滚动条：end
+
+.al-libraryInfo_head{
+  .al-littleScoreStarBox{
+    display: inline-block;
+    margin-right:15px;
+    margin-bottom:-1px;
+  }
+}
+//评分详情部分
+.al-myScorePart{
+  @include clearfix();
+  margin-top:40px;
+  figure{
+    float:left;
+    font-size:15px;
+    a{color:#AAA; }
+  }
+  .al-littleScoreStarBox{
+    display: inline-block;
+    margin-left:8px;
+    li{             //我已评分：深灰色星星
+      b{background-image:url("//img10.allinmd.cn/v3/terminal/star_darkGray.png");}
+    }
+  }
+}
+
+//我要评分
+.al-demandScorePart{
+  a{color:#777;}
+  .al-littleScoreStarBox{
+    li{
+      width:27px;
+      height:25px;
+      margin-bottom:-4px;
+      background-image:url("//img10.allinmd.cn/v3/terminal/noScoreIcon.png");
+      >b{display: none;}
+    }
+    .al-colorFull{
+      background: url("//img10.allinmd.cn/v3/terminal/markScoreIcon.png");
+    }
+  }
+  .al-scoreNumber{margin-top:8px;}
+}
+
+//已有XX人评分
+.al-scoreNumber{
+  float:right;
+  font-size:14px;
+  a{color:#626f8c;}
+}
+.al-scoreNumberLess{
+  a{color:#909090;}
+}

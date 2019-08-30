@@ -1,0 +1,19 @@
+<template name="doctorItem$7814c800">
+  <view style="margin-top:20px;" class="_section data-v-ce76c04a">
+    <view class="_section data-v-ce76c04a main-inner-item" wx:key="index" key="{{index}}" wx:for="{{organization}}" wx:for-index="index" wx:for-item="item">
+      <view class="_div data-v-ce76c04a main-inner-item-img" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}">
+        <image src="{{item.logoUrl}}" class="_img data-v-ce76c04a dp"></image>
+      </view>
+      <view class="_div data-v-ce76c04a ProMark" bindtap="handleProxy" wx:if="{{item.jobDoctorYear>5}}" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}">
+        {{item.jobDoctorYear>=10?'从医'+item.jobDoctorYear+'年':'从医5年以上'}}
+      </view>
+      <view class="_div data-v-ce76c04a main-inner-item-baseMessage" bindtap="handleProxy" data-eventid="{{'3-'+index}}" data-comkey="{{$k}}">
+        <view class="_p data-v-ce76c04a"><label class="_span data-v-ce76c04a main-inner-item-baseMessage-name">{{item.fullName}}</label> <label class="_span data-v-ce76c04a main-inner-item-baseMessage-title">{{item.medicalTitle}}</label></view>
+        <view style="margin-top: 1.1vw" bindtap="handleProxy" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}" class="_p data-v-ce76c04a"><label class="_span data-v-ce76c04a sanjia" hidden="{{!(item.hospitalLevelId==1)}}">三甲</label><label class="_span data-v-ce76c04a main-inner-item-baseMessage-hospital">{{item.company}}</label></view>
+      </view>
+      <view class="_p data-v-ce76c04a main-inner-item-baseMessage-Pro" bindtap="handleProxy" data-eventid="{{'4-'+index}}" data-comkey="{{$k}}"><label style="color: #222222;" class="_span data-v-ce76c04a">擅长：</label><label class="_span data-v-ce76c04a">{{(item.expertise&&item.expertise.length >0)?item.expertise:showChinese(item)}}</label></view>
+      <view class="_div data-v-ce76c04a priceBar" style="float: left" bindtap="handleProxy" data-eventid="{{'5-'+index}}" data-comkey="{{$k}}"><label class="_span data-v-ce76c04a price {{[item.adviceStatus == 0 ? 'offLine' : '']}}" hidden="{{!(item.adviceStatus==1&&item.isFreeTimes==1)}}">前3次回复免费</label> <label class="_span data-v-ce76c04a price {{[item.adviceStatus == 0 ? 'offLine' : '']}}" hidden="{{!(item.adviceStatus==0)}}">暂不在线</label> <label class="_span data-v-ce76c04a freeSug {{[item.isFreeTimes == 1 ? 'lineThrough' : '']}}" hidden="{{!(item.adviceStatus==1&&item.isFreeTimes==1)}}">￥{{item.generalPrice}}</label> <label class="_span data-v-ce76c04a noFreeSug" hidden="{{!(item.adviceStatus==1&&item.isFreeTimes!==1)}}">￥{{item.generalPrice}}</label></view> <button hoverStopPropagation="{{hoverStopPropagation}}" class="_button data-v-ce76c04a proMark1" open-type="getUserInfo" catchgetuserinfo="handleProxy" data-eventid="{{'6-'+index}}" data-comkey="{{$k}}">{{item.adviceStatus==1?'去咨询':'预约咨询'}}
+      </button>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="/js/comm/domain.js"></script>
+    <script src="/js/wx/wanshan.js"></script>
+    <title>绑定唯医帐号</title>
+    <script>
+	$(function(){
+		$(".l_logo").css("margin","" + $(window).height()*0.07 +"px auto "+  $(window).height()*0.07 + "px");
+		//$("body").css("min-height",$(window).height());
+		})
+	</script>
+</head>
+<body>
+
+<script>
+    registPageInit();
+</script>
+    <section id="loginPage" data-role="page" class="login content-page bg-white">
+        <div class="login_width">
+            <div class="v3-login-return">  返回</div>
+
+            <div class="clear"></div>
+            <div class="para">您已使用<span id="account"></span>注册过唯医 <br/>请输入当时设置的密码</div>
+
+
+            <div class="errorInfo"></div>
+            <form id="loginForm">
+
+                <div class="v3-input_parent">
+                    <div class="v3-input-wrap fix">
+                        <div class="left-img pwd"></div>
+                        <input type="password" name="passwd" placeholder="你在唯医的登录密码" data-role="none" />
+                    </div>
+                    <div class="l_warning"></div>
+                </div>
+
+                <!--  <input type="submit" value="登录" />-->
+                <div class="v3-blue-btn mt-1em" id="loginBtn">绑定</div>
+                <div class="v3-links"><a href="javascript:void(0)" onclick="window.location.href='/mcall/customer/reset/password/send_email_input/?resetSite=2'">忘记密码?</a></div>
+            </form>
+        </div>
+
+    </section>
+    <!--#include file="footer.jsp"-->
+</body>
+</html>

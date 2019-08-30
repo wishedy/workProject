@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${seoTitle!''}</title>
+	<link href="//paas.allinmd.cn/modules/allinmdplayer/css/video-js.css" rel="stylesheet" type="text/css"/>
+	<link href="//paas.allinmd.cn/modules/allinmdplayer/css/videojs.allinmd.css" rel="stylesheet" type="text/css"/>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.cookie.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+	<!--为保证IE8下正常使用，需要引入-->
+	<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/ie8/videojs-ie8.min.js"></script>
+	<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/video.js"></script>
+	<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/videojs.allinmd.js"></script>
+<script src="module.background-video.js"></script>
+
+</head>
+
+<script>
+ 	$(function() {
+ 		$("#test").on("click",function(){
+ 			module.backgroundVideo({videoSrc:"https://vpro01.allinmd.cn/1508118379662_1280_720.mp4?1508118740"});
+ 		});
+	}); 
+</script>
+<body class="">
+ <a id="test" href="javascript:;">黑背景视频</a>
+
+
+</body>
+</html>

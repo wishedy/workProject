@@ -1,0 +1,36 @@
+<import src="/components/toast$1074ede9" />
+<import src="/components/filterBuilder$08dba4c5" />
+<import src="/components/doctorItem$7814c800" />
+<import src="/components/loading$2ff823fe" />
+<import src="/components/ensure$5e95f728" />
+<import src="/components/confirm$5251c782" />
+<import src="/components/backIndex$640b7ced" />
+<import src="/components/BlackList$219144df" />
+<import src="/components/authorization$8245c8b6" /><template name="doctorList$7a2b2599">
+  <view class="_section data-v-2b609934 main">
+    <transition name="fade" class="_transition data-v-2b609934">
+      <view class="_section data-v-2b609934 masker" wx:if="{{maskerShow}}" catchtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></view>
+    </transition>
+    <view class="_section data-v-2b609934 header">
+      <view class="_section data-v-2b609934 input-box">
+        <view class="_div data-v-2b609934 sd_searchGroup" data-alcode-mod="759">
+          <image class="_img data-v-2b609934 search-icon {{[!indexShow ? 'change' : '']}}" src="https://m1.allinmed.cn/static/image/mp/index/1.5.0/index_search.png"></image>
+          <view class="_section data-v-2b609934 sd_searchInput" data-alcode="e174" value="{{searchVal}}" bindchange="handleProxy" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">输入医院、医生、疾病关键词搜索 </view>
+          <image class="_img data-v-2b609934 sd_delete_icon" src="https://m.allinmed.cn/static/image/mp/personal/delet.png" catchtap="handleProxy" wx:if="{{searchVal.length>0}}" data-eventid="{{'2'}}" data-comkey="{{$k}}"></image>
+        </view>
+        <transition name="fade" class="_transition data-v-2b609934"><template wx:if="{{errorShow}}" data="{{...$root[$kk+'1'], $root}}" is="toast$1074ede9"></template></transition>
+      </view>
+    </view>
+    <view class="_section data-v-2b609934 navBar" style="font-size:0" hidden="{{!(indexShow)}}"><template bindselectFilter="handleProxy" bindfilterShowCallback="handleProxy" ref="filterBuilder" data-eventid="{{'3'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'3'], $root}}" is="filterBuilder$08dba4c5"></template> <template bindselectFilter="handleProxy" bindfilterShowCallback="handleProxy" ref="filterBuilder" data-eventid="{{'4'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'4'], $root}}" is="filterBuilder$08dba4c5"></template></view>
+    <view wx:if="{{indexShow}}" class="_section data-v-2b609934 main-inner1">
+      <image class="_img data-v-2b609934 noResult-img" hidden="{{!(noResult&&indexShow)}}" src="https://m1.allinmed.cn/static/image/mp/index/1.6.0/default.png"></image>
+      <view class="_p data-v-2b609934 Noresult" hidden="{{!(noResult&&indexShow)}}">未找到符合条件的结果</view> <template bindFromChild="handleProxy" bindclickCallback="handleProxy" bindauthEvent="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'5'], $root}}" is="doctorItem$7814c800"></template> <label class="_span data-v-2b609934 no-more" wx:if="{{extraShow&&(doctorList.length>0&&toBottom)}}">--到底了--</label><label class="_span data-v-2b609934 no-more" wx:elif="{{extraShow&&(doctorList.length>0&&!toBottom)}}">正在加载...</label>
+    </view> <template wx:if="{{finish}}" data="{{...$root[$kk+'6'], $root}}" is="loading$2ff823fe"></template> <template wx:if="{{ensureShow}}" bindensureClickEvent="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'7'], $root}}" is="ensure$5e95f728"></template>
+    <view class="_figure data-v-2b609934 dr_searchHistory" wx:if="{{!indexShow && historyInfo.length>0}}">
+      <view class="_figcaption data-v-2b609934">历史记录<view class="_i data-v-2b609934 dr_deleteBtnIcon" catchtap="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}"></view>
+      </view>
+      <view class="_ul data-v-2b609934 dr_searchList"><label class="_span data-v-2b609934 history-item" bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'8-'+index}}" data-comkey="{{$k}}" wx:for="{{historyInfo}}" wx:for-index="index" wx:for-item="item">{{item.keyWord}}</label></view>
+      <transition name="fade" class="_transition data-v-2b609934"><template wx:if="{{confirmShow}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'9'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'8'], $root}}" is="confirm$5251c782"></template></transition>
+    </view> <template wx:if="{{backIndexShow}}" data="{{...$root[$kk+'10'], $root}}" is="backIndex$640b7ced"></template> <template data="{{...$root[$kk+'11'], $root}}" is="BlackList$219144df"></template> <template data="{{...$root[$kk+'12'], $root}}" is="authorization$8245c8b6"></template>
+  </view>
+</template>

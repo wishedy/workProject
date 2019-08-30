@@ -1,0 +1,43 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+@import "../../components/_selectAll";  //全选组件
+@import "../../components/_iconsModule";  //微型图标组件
+//全选
+.al-contentItem{height:auto;}
+.al-contentItemTitle{
+  span{
+    float:right;
+    font-size:16px;
+    color:#626F8C;
+    cursor: pointer;
+  }
+}
+  .al-contentCommentText{
+    margin-bottom:0;
+    span{
+      color:#626F8C;
+    }
+  }
+
+  //小圆圈
+.al-contentComment_round{
+  float:left;
+  width:16px;
+  height:16px;
+  border:1px solid #b4b4b4;
+  border-radius: 50%;
+  margin:16px 15px 0 0;
+  //display:none;
+}
+.al-contentComment{
+  .al-selectAll{  // 已选
+    background: transparent url("//img10.allinmd.cn/v3/message/delete_redBtn.png") center center no-repeat;
+    border: none;
+  }
+}
+  .al-contentCommentUserImg{
+    margin-right:15px;
+  }

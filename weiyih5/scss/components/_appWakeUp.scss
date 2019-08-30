@@ -1,0 +1,72 @@
+@charset "UTF-8";
+//APP唤醒组件
+//Created by qiangkailiang on 2016/09/19
+
+// 横幅式
+.al-appWakeUpFigure{
+	width: 100%;
+	background-color: #fff;
+	padding:rem(14px) rem(30px);
+	display: table;
+	box-sizing:border-box;
+	.al-appWakeUpImg{
+		display: table-cell;
+		vertical-align: bottom;
+		width: 100%;
+		@include clearfix();
+		& > img{
+			@include square(rem(80px));
+			vertical-align: top;
+		}
+		figcaption{
+			margin-left: rem(16px);
+			margin-top: rem(5px);
+			display: inline-block;
+			vertical-align: top;
+			h2{
+				margin-bottom: rem(5px);
+
+				height: 0.56rem;
+				font-size: 0.4rem;
+				font-family: PingFangSC-Medium;
+				font-weight: 500;
+				color: black;
+				line-height: 0.96rem;
+			}
+			p{
+				font-size: rem(24px);
+			}
+		}
+	}
+	.al-appWakeUpFigureBtn{
+		display: table-cell;
+		vertical-align: bottom;
+		white-space: nowrap;
+		float: left;
+		width: 2.24rem;
+		height: 0.85333rem;
+		line-height: 0.85333rem;
+		text-align: center;
+		background: #6483e9;
+		box-shadow: 0px 0.05333rem 0.10667rem 0px rgba(100, 131, 233, 0.5);
+		border-radius: 0.10667rem;
+		font-size: 0.37333rem;
+		font-family: PingFangSC-Medium;
+		font-weight: 500;
+		color: white;
+	}
+}
+// 按钮式
+.al-appWakeUpBtn {
+	@include font-dpr(13px);
+	color: #515c74;
+	//margin-left: rem(35px);
+	height: 100%;
+	span{
+		vertical-align: middle;
+	}
+}
+
+.icon-appWakeUp{
+	@extend %icon-appWakeUp;
+}

@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+.columnList{
+  li{
+    background: #FFFFFF;
+    box-shadow: 0 4px 24px 0 rgba(39,169,255,0.15);
+    border-radius: 10px;
+    width: rem(671px);
+    height: rem(248px);
+    margin: 0 auto rem(20px);
+    @include clearfix();
+    div{
+      float: left;
+      margin-top: rem(29px);
+      width: rem(440px);
+    }
+    img{
+      width: rem(180px);
+      height: rem(206px);
+      margin: rem(29px) rem(39px) 0 rem(-20px);
+      float: left;
+    }
+    p{
+      @include clearfix();
+      &:first-child{
+        span:first-child{
+          font-size: rem(36px);
+          color: #222222;
+          line-height: rem(36px);
+          float: left;
+          display: inline-block;
+        }
+        span:last-child{
+          background: rgba(159,161,255,0.10);
+          border-radius: rem(4px);
+          height: rem(36px);
+          line-height: rem(36px);
+          font-size: rem(22px);
+          color: #9FA1FF;
+          padding: 0 rem(9px);
+          vertical-align: bottom;
+          float: right;
+          display: inline-block;
+        }
+      }
+      &:nth-child(2){
+        font-size: rem(28px);
+        color: #AAAAAA;
+        line-height: rem(28px);
+        margin-top: rem(13px);
+        &:after{
+          width: rem(30px);
+          height: rem(4px);
+          display: block;
+          content: '';
+          opacity: 0.3;
+          background: #AAAAAA;
+          border-radius: 100px;
+          margin: rem(16px) 0 rem(6px);
+        }
+      }
+      &:nth-child(3){
+        font-size: rem(26px);
+        color: #909090;
+        line-height: rem(26px);
+        span{
+          display:block;
+          white-space:nowrap;
+          overflow:hidden;
+          text-overflow:ellipsis;
+          margin-top: rem(12px);
+          &:before{
+            content: '';
+            display: inline-block;
+            width: rem(8px);
+            height: rem(8px);
+            background: #9FA1FF;
+            border-radius: 100px;
+            vertical-align: super;
+            margin-right: rem(10px);
+          }
+        }
+      }
+    }
+  }
+}

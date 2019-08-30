@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${conference.conName}会议概况 - 唯医,allinmd</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="Keywords" content="${conference.conName}，医学会议，会议回放，会议日程，会议直播，主讲人，会议视频，骨科视频，手术视频，手术讲解，日程回顾">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+	<link rel="dns-prefetch" href="//other.allinmd.cn">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+	<link href="//comm.allinmd.cn/base.css" rel="stylesheet" type="text/css"/>
+
+<script>
+        /*跳WAP端*/
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        if(!IsPC()) {
+            window.location.href = '//m.allinmd.cn/html/pages/conference/meeting-place.html?conId=' + location.pathname.match(/\d*/g).join("").substr(0, 13) + '&conName=' +document.title.replace("会议概况 - 唯医,allinmd", "");
+        }
+</script>
+</head>
+<body>
+
+<div fragment="//www.allinmd.cn/html/conference/${conference.conId?c}/1/meeting_header.html"></div>
+<div id="meeting_content">
+
+
+    <!--会议概况-->
+    <div class="m_main">
+        <div class="m_content">
+            <div class="m_left"> <#list cms_news_list as list>
+                <div class="m_gaikuang"> <a name="gk${list.id}"></a>
+                    <div class="m_title">${list.newsName}</div>
+                    <div class="m_line"></div>
+                    <div class="gk_content">
+                        ${list.newsBody}
+                    </div>
+                </div>
+            </#list> </div>
+            <div class="m_right" style="top: 30px;">
+                <div class="yuan_top"><img src="//img00.allinmd.cn/conference/4/meeting_content/top_yuan.jpg"></div>
+                <div class="meeting_line"> <#list cms_news_list as list>
+                    <div class="hy_gk link"><a href="#gk${list.id}">${list.newsName}</a></div>
+                </#list> </div>
+                <div class="yuan_bottom"><img src="//img00.allinmd.cn/conference/4/meeting_content/yuan_bottom.png"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="meeting_bottom"></div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--footer start-->
+<!--#include virtual="/includes/footer.jsp"-->
+<!--footer End-->
+
+<script src="//comm.allinmd.cn/base.js"></script>
+<script src="//other.allinmd.cn/jquery_lazyload/jquery.lazyload.js" type="text/javascript"></script>
+<script src="//other.allinmd.cn/jquery_lazyload/jquery.scrollstop.js" type="text/javascript"></script>
+<script src="//other.allinmd.cn/util/fragment-util.js" type="text/javascript"></script>
+<script>
+    $(function(){
+        getFragments();
+    })
+</script>
+
+</body>
+</html>

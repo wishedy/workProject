@@ -1,0 +1,609 @@
+@charset "UTF-8";
+@import "../../base";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+/*BANNER部分*/
+.al-orgBanner{
+  width: rem3(345px);
+  min-height: rem3(324px);
+  background: url("/static/images/organization/orgBannerDefult.png") no-repeat;
+  background-size: 100% 100%;
+  -moz-background-size:100% 100%;
+  padding:0 rem3(15px);
+  position: relative;
+  /*组织头部分享和返回按钮*/
+  .al-headerBox{
+    font-size: 0;
+    padding-top: rem3(18px);
+    .al-backBtn{
+      display: inline-block;
+      vertical-align: middle;
+      width: rem3(22px);
+      height: rem3(22px);
+      margin-left: rem3(-5px);
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .al-shareBtn{
+      display: inline-block;
+      vertical-align: middle;
+      float: right;
+      width: rem3(17px);
+      height: rem3(17px);
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAFMN540AAACbUlEQVR42mL8//8/AxJgYQISyCJ/mBjQAIYAQAAxopmBouIvEPuyQDkgZYwgGqaCEaYMIIAYgGasBZmDBav+hzL+o0m0Q+kuEM34H+IMRgbs4D/IEZpovkMGHwACiAGH/ZvBBgOJbTgU/MUmeAeIeYD4KXrw/ARidijbF1mHCLopyDoxvIYcyBh+ZsHjTwaAAIKZv/Y/doDuk0Co+HYQnwWbW3AAOyBeB8Q/gHgXWB8OG5DxbyBejcTnhOlhwWPTbiBmBmJWNPHvcJfisPk9EBsTcNF/Jhy2vgPis4QCAaT5ExBLookrExGADAABxEDAacgYlFqykMVgeecjEXEMwrehclowzSAgSYILOmCmwwLsORE+PAtNUHpA/BWI/YhJJPpQNb3oiYSQ5lioPA+S2FMg9iWk2QqH3G/kzIotY4CS5R9olvyLL5HgSmHB+DSCAg+bzTzQVMdEKH1hUzAPiDOJTZ7ogXINiDmISCz/CRXYJDubGCABxF9YwKU9vhISN9AECDBSsiQp2BMpd14FYg90NSBCHVpkkQKIdQAbEBcjmQ9K2ZOAWI0BqQyRpKKPGaF1y34cDv/IQIYvcGFeIJ4LxP+g5r0C4jIgFoTK50PFT4McRg2L/YD4M9SMG0BsiUUNiqXIJRA5FocB8R+o3j6YgcRYSq7FokD8GKpnGpF65NAdRqrF2VC1L4BYnJI0QYrFsIptG4WJ8D9yS5aQxbCq6iAVUv9/5AKXgUChex+IFaCN5RsMlIH/sA4CMRZTE/xnIKL2oxlggrZ8QWArtNqhFZCG2gEC65igDQYNaLP7FjQoaIGvQ+0A2RUMADihp7OrPVvAAAAAAElFTkSuQmCC") no-repeat;
+      background-size: contain;
+    }
+  }
+  /*组织标题*/
+  .al-orgTitle{
+    font-size: rem3(20px);
+    font-weight: 500;
+    line-height: rem3(28px);
+    color:rgba(255,255,255,1);
+    margin: rem3(18px) 0 rem3(14px);
+  }
+  /*组织简介*/
+  .al-orgInfo{
+    font-size:rem3(14px);
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    line-height:rem3(20px);
+    position: relative;
+    @include ellipsis(3);
+
+  }
+  .afterLine {
+    display: inline-block;
+    width: rem3(30px);
+    height: rem3(1px);
+    background:#ffffff;
+    border-radius:1px;
+    opacity:0.5003;
+    margin-top: rem3(22px);
+    margin-left: rem3(1px);
+  }
+  /*关注，成员，粉丝列表*/
+  .al-socialBtn{
+    position: absolute;
+    bottom: rem3(34px);
+      li{
+        float: left;
+        margin-right: rem3(36px);
+        &:last-child{
+          margin-right: 0;
+        }
+        vertical-align: middle;
+        .num{
+          font-size:rem3(16px);
+          font-weight:500;
+          color:rgba(255,255,255,1);
+          line-height:rem3(22px);
+        }
+        .member{
+          font-size:rem3(12px);
+          font-weight:400;
+          color:rgba(255,255,255,0.75);
+          line-height:rem3(17px);
+        }
+      }
+  }
+  .followBtn{
+    position: absolute;
+    bottom: rem3(37px);
+    right: rem3(15px);
+    width:rem3(68px);
+    height:rem3(30px);
+    background:rgba(251,135,90,1);
+    border-radius:rem3(3px);
+    font-size:rem3(14px);
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    &:before{
+      display: inline-block;
+      content: "";
+      width: rem3(10px);
+      height: rem3(10px);
+      margin-right: rem3(2px);
+      background: url("/static/images/organization/org_notFollowIcon.png") no-repeat;
+      background-size: contain;
+    }
+    &.active{
+      background:rgba(255,255,255,0.05);
+      &:before{
+        width: rem3(13px);
+        height: rem3(10px);
+        margin-right:0;
+        background: url("/static/images/organization/org_followIcon.png") no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}
+/*新闻公告部分*/
+.al-newsNotice{
+  height: rem3(106px);
+  background-color: rgba(255,255,255,1);
+  padding: rem3(22px) rem3(15px) 0;
+  .al-newsTitle{
+    font-size: 0;
+    position: relative;
+    span{
+      font-size:rem3(18px);
+      font-weight:500;
+      color:rgba(102,102,102,1);
+      line-height:rem3(25px);
+    }
+    i{
+      font-size:rem3(14px);
+      font-weight:500;
+      color:rgba(144,144,144,1);
+      line-height:rem3(20px);
+      position: absolute;
+      right: 0;
+      bottom: rem3(1px);
+    }
+  }
+  .al-carousel{
+    width: rem3(345px);
+    height: rem3(58px);
+    margin-top: rem3(13px);
+    position: relative;
+    .newsBody{
+      width: 100%;
+      height: rem3(50px);
+      background:rgba(100,131,233,0.1005);
+      border-radius:rem3(25px);
+      line-height:rem3(50px);
+      text-align: center;
+      font-size: 0;
+      display: inline-block;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      i{
+        display: inline-block;
+        width: rem3(18px);
+        height: rem3(18px);
+        vertical-align: middle;
+        margin-right: rem3(15px);
+        background: url("/static/images/organization/org_newsIcon.png") no-repeat;
+        background-size:contain;
+      }
+      span{
+        //display: inline-block;
+        vertical-align: middle;
+        font-size:rem3(14px);
+        font-weight:400;
+        color:rgba(51,51,51,1);
+      }
+
+    }
+    .newsLine{
+      text-align: center;
+      position: absolute;
+      font-size: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: rem3(2px);
+      .swiper-pagination-bullet {
+        display: inline-block;
+        width: rem3(6px);
+        height: rem3(2px);
+        background-color:#909090;
+        border-radius:rem3(2px);
+        &:first-child{
+          margin-right: rem3(6px);
+        }
+        &.swiper-pagination-bullet-active{
+          background:rgba(100,131,233,1);
+        }
+      }
+    }
+  }
+}
+/*专栏部分  头部和列表*/
+.al-column{
+  padding-bottom: 2.5rem;
+  .headerTitle{
+    height: rem3(70px);
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(230,230,230,1);
+    border-radius:1px;
+    position: relative;
+    padding: rem3(28px) rem3(15px) 0;
+    font-size: 0;
+    .titleShow{
+      display: inline-block;
+      vertical-align: bottom;
+      font-size:rem3(25px);
+      font-weight:500;
+      color:rgba(0,0,0,1);
+      position: relative;
+      &:after{
+        content: '';
+        display: inline-block;
+        width:rem3(16px);
+        height:rem3(3px);
+        background:rgba(100,131,233,1);
+        border-radius:rem3(2px);
+        position: absolute;
+        bottom: rem3(-6.5px);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .numShow{
+      display: inline-block;
+      vertical-align: bottom;
+      margin-left: rem3(6px);
+      font-size:rem3(14px);
+      font-weight:500;
+      color:rgba(34,34,34,1);
+      margin-bottom: rem3(2px);
+    }
+    .tagShow{
+      display: inline-block;
+      vertical-align: bottom;
+      position: absolute;
+      bottom: rem3(10px);
+      right: rem3(15px);
+      font-size:rem3(16px);
+      font-weight:400;
+      color:rgba(119,119,119,1);
+      &:after{
+        content: "";
+        display: inline-block;
+        width:rem3(16px);
+        height:rem3(16px);
+        vertical-align: middle;
+        background: url(/static/images/personal/All-on.png) 100% 100% no-repeat;
+        background-size: contain;
+        margin-left: rem3(3px);
+        margin-top: rem3(-2px);
+      }
+      &.active{
+        &:after{
+          background: url(/static/images/personal/All-off.png) 100% 100% no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+    /*标签筛选*/
+    .al-tagList{
+      background-color: #fff;
+      position: absolute;
+      top: rem3(70px);
+      right: rem3(8px);
+      z-index: 1;
+      width: rem3(80px);
+      box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.2), -1px -1px 5px rgba(51, 51, 51, 0.2);
+      &:before{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: rem3(12.5px);
+        height: rem3(12.5px);
+        background-color: #fff;
+        border: solid #e4e9ed;
+        border-width: 1px 0 0 1px;
+        left: 43%;
+        top: -0.17333rem;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        z-index: 9;
+      }
+      li{
+        border-bottom: 1px solid #e4e9ed;
+        text-align: center;
+        padding: rem3(10px) rem3(15px);
+        color: #555555;
+        font-size: rem3(16px);
+        font-weight: normal;
+        &:active{
+          color: #6483e9;
+        }
+        &.active{
+          color: #6483e9;
+        }
+      }
+    }
+  }
+  .al-listParent{
+    width: 92%;
+    display: table;
+    margin-left: 4%;
+    padding: 4% 4% 4% 0;
+    border-bottom: 1px solid rgba(230,230,230,1);
+  }
+  .al-itemList{
+    display: table-cell;
+    vertical-align: top;
+    &.paddingRig{
+      padding-right: rem3(24px);
+    }
+    .al-itemListName{
+      height: rem3(52px);
+      font-size:rem3(18px);
+      font-weight:500;
+      color:rgba(34,34,34,1);
+      line-height:rem3(25px);
+     @include ellipsis(2);
+    }
+    .al-social{
+      font-size:rem3(13px);
+      font-weight:400;
+      color:rgba(153,153,153,1);
+      line-height:rem3(18px);
+      .timeSocial{
+        margin-right: rem3(15px);
+      }
+    }
+  }
+  .al-itemListImg{
+    display: table-cell;
+    vertical-align: top;
+    width: rem3(105px);
+    height: rem3(70px);
+    position: relative;
+    border-radius:rem3(3px);
+    overflow: hidden;
+    a{
+      display: block;
+      width: rem3(105px);
+      height: rem3(70px);
+    }
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    .al-videoBtn{
+      width: rem3(30px);
+      height: rem3(30px);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+  .listNotMore{
+    text-align: center;
+    margin-top: rem3(40px);
+    font-size: rem3(16px);
+    color: #555555;
+    letter-spacing: 0;
+    line-height:rem3(16px);
+  }
+  .notList{
+    padding: rem3(90px) 0;
+    text-align: center;
+    img{
+      display: block;
+      width: rem3(120px);
+      height: rem3(120px);
+      margin: 0 auto;
+    }
+    .textTips{
+      font-size: rem3(16px);
+      color: #777;
+      margin-top: rem3(24px);
+      text-align: center;
+    }
+  }
+  &.contentTabFix{
+    padding-top: rem3(70px);
+    .headerTitle{
+      position: fixed;
+      top: 0;
+      background: #fff;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+}
+/*简介遮罩弹层部分*/
+.newsPopBox{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  background-color:rgba(255,255,255,0) ;
+  .al-fixedTransPop{
+    width: rem3(375px);
+    height: rem3(88px);
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    //@include linear-gradient(to bottom,);
+    background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+  }
+  .bigImgContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: #000;
+    header{
+      margin-top: rem3(14px);
+      position: relative;
+      span{
+        display: block;
+        text-align: center;
+        font-size: rem3(16px);
+        font-weight: 400;
+        color: white;
+        line-height: rem3(24px);
+      }
+      .bigImgClose{
+        position: absolute;
+        left: rem3(15px);
+        bottom: 0;
+        height: rem3(22px);
+        width: rem3(22px);
+        background: url("/static/images/personal/return-White.png") no-repeat;
+        background-size: contain;
+      }
+    }
+    figure{
+      width: 100%;
+      max-height: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+  }
+}
+.al-orgIntroduce{
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  width: rem3(375px);
+  height: 80%;
+  background-color: #ffffff;
+  padding: 0 rem3(15px);
+  box-sizing: border-box;
+  overflow: auto;
+  &.popActiveBo{
+    padding-bottom: rem3(88px);
+  }
+  .marginTopBox{
+    margin-top: rem3(71px);
+  }
+  .introTitle{
+    display: block;
+    width: rem3(345px);
+    height: rem3(71px);
+    line-height: rem3(71px);
+    position: fixed;
+    top: 20%;
+    font-size:rem3(19px);
+    font-weight:500;
+    color:rgba(0,0,0,1);
+    background-color: #ffffff;
+    i{
+      width: rem3(15px);
+      height: rem3(15px);
+      background: url("/static/images/organization/org_closeIcon.png") no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+  .titleAbstract,.imgInfo{
+    font-size:rem3(16px);
+    font-weight:400;
+    color:rgba(119,119,119,1);
+    line-height:rem3(22px);
+    margin-bottom: rem3(24px);
+  }
+  .imgBox{
+    text-align: center;
+    margin-bottom: rem3(24px);
+    img{
+      max-width: 92%;
+    }
+  }
+
+  .al-noNewsInfo{
+    width: rem3(375px);
+    height: rem3(324px);
+    margin-top: rem3(100px);
+    text-align: center;
+    img{
+      width: rem3(120px);
+      height: rem3(120px);
+    }
+    p{
+      margin-top: rem3(20px);
+      font-size:rem3(16px);
+      font-weight:400;
+      color:rgba(119,119,119,1);
+    }
+  }
+}
+/*头部定位条*/
+.al-personalScrollHead {
+  background-color: #fff;
+  height: rem3(44px);
+  line-height: rem3(44px);
+  font-size: rem3(17px);
+  color: #333333;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  .scrollBack {
+    float: left;
+    img{
+      vertical-align: middle;
+      width: rem3(30px);
+      height: rem3(30px);
+    }
+  }
+  .al-personalShare{
+    position: absolute;
+    right: rem3(15px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem3(15px);
+    height: rem3(15px);
+    background:url("//img50.allinmd.cn/pages/personal/share_hide.png") no-repeat;
+    background-size: contain;
+  }
+}
+.al-personalHeadFixed {
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  .namecenter {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+/*组织找不到页面*/
+.al-notOrgInfo{
+  width: rem3(375px);
+  .not_found_img{
+    margin-left: rem3(7.5px);
+  }
+  figure{
+    width: rem3(375px);
+    height: rem3(324px);
+    margin-top: rem3(100px);
+    text-align: center;
+    img{
+      width: rem3(120px);
+      height: rem3(120px);
+    }
+    p{
+      margin-top: rem3(20px);
+      font-size:rem3(16px);
+      font-weight:400;
+      color:rgba(119,119,119,1);
+    }
+  }
+
+}

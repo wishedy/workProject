@@ -1,0 +1,17 @@
+<template name="telephoneVerify$034675df">
+  <view wx:if="{{verifyFlag}}" class="_section data-v-6c16a2e4 telephone-box">
+    <view class="_section data-v-6c16a2e4 content">
+      <view class="_div data-v-6c16a2e4 input"><input type="text" placeholder="请输入新手机号" value="{{mobile}}" bindinput="handleProxy" bindblur="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_input data-v-6c16a2e4" />
+        <view wx:if="{{codeFlag}}" class="_div data-v-6c16a2e4 sendcode" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">发送验证码</view>
+        <view wx:if="{{!codeFlag}}" class="_div data-v-6c16a2e4 sendcode disabled">发送验证码({{ seconds }})</view>
+      </view>
+      <view class="_div data-v-6c16a2e4 input"><input type="text" placeholder="请输入验证码" bindblur="handleProxy" value="{{code}}" bindinput="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_input data-v-6c16a2e4" /></view>
+      <view class="_div data-v-6c16a2e4"></view>
+      <view class="_div data-v-6c16a2e4 submit-box">
+        <form class="_form data-v-6c16a2e4 cancle" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}"><button class="_button data-v-6c16a2e4">取消</button></form>
+        <form wx:if="{{buttonFlag}}" class="_form data-v-6c16a2e4 confirm" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}"><button class="_button data-v-6c16a2e4">确认</button></form>
+        <form wx:if="{{!buttonFlag}}" class="_form data-v-6c16a2e4 confirm disabled"><button class="_button data-v-6c16a2e4">确认</button></form>
+      </view>
+    </view>
+  </view>
+</template>

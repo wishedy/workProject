@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/discover/discover_expert.html';
+        }
+    </script>
+    <title>权威专家－骨科权威,都在这里,唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="keywords" content="权威专家，医学专家，医学大佬，主任医师，权威医师，医生沟通，学术专栏，唯医,allinmd">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/discover/discover_expert.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/discover/discover_master.css">
+    <!--endbuild-->
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="200">
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-searchHead">
+            <header class="al-indexHeader" data-alcode-mod='401'>
+                <figure class="al-indexHeaderItem">
+                    <a href="javascript:history.back(-1);" class="ev_digHole" data-alcode='e45'>
+                        <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                    </a>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                    <h1>权威专家</h1>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                </figure>
+            </header>
+            <section class="al-searchInputBar" data-alcode-mod='418'>
+                <i class="icon-searchWhite"></i>
+                <input type="search" placeholder="请输入专家姓名" id="EV-SearchInput">
+                <a class="al-searchCancel" data-alcode='e50'>
+                    <i class="icon-searchCancel"></i> 取消
+                </a>
+            </section>
+        </header>
+        <section class="al-content al-doctorRecommend EV-searchResultBox">
+            <section class="al-noContentTips" style="display:none">
+                <figure>
+                    <img src="//img50.allinmd.cn/pages/discover/no_master.png" alt="">
+                </figure>
+            </section>
+            <section id="EV-searchResultContent" data-alcode-mod='420'></section>
+        </section>
+        <!-- 申请权威专家 -->
+        <section class="al-content al-doctorRecommend EV-listResultBox" data-alcode-mod='419'>
+        </section>
+        <section class="al-applicaptionMaster" data-alcode-mod='421' data-alcode-item-selector="a">
+            <i class="icon-aplMaster"></i>
+            <p>申请权威专家，帮助更多的人</p>
+            <a href="" class="EV-goToApplyMaster" data-alcode='e51'>立即申请</a>
+        </section>
+    </section>
+    <!-- 分享按钮 -->
+    <section class="al-scrollShareBtn" data-alcode-mod='406'>
+        <i class="icon-scrollShare" data-alcode="e46"></i>分享
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+    <script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+    <!--build:js /dest/pages/discover/discover_expert.js-->
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+    <script src="/js/scene/discover/discoverMaster.js"></script>
+    <!--endbuild-->
+</body>
+
+</html>

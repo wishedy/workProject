@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if (!IsPC()) {
+            window.location.href = '//m.allinmd.cn/dist/college/college.html#/collegeHome';
+        }
+    </script>
+    <title>唯医学院,唯医,allinmd</title>
+    <meta name="keywords" content="医学资源分类，医学资源查找，手术视频,医学文献,病例讨论,骨科,唯医,allinmd">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <!-- build:css /dest/college/college_index.css -->
+    <link rel="stylesheet" href="/css/v3/base.css" />
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css" />
+    <link rel="stylesheet" href="/css/v3/pageFooter.css" />
+    <link rel="stylesheet" href="/js/modules/indexLogin/module.indexLogin.css">
+    <link rel="stylesheet" href="/js/modules/auth/module.auth.css" />
+    <link rel="stylesheet" href="/js/modules/user/module.user.css" />
+    <link rel="stylesheet" href="/js/modules/user/module.user-v2.css" />
+    <link rel="stylesheet" href="/js/modules/personYouKnow/personYouKnow.css" />
+    <link rel="stylesheet" href="/js/modules/find-password-v2/module.find-password-v2.css" />
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/publish/publish.css" rel="stylesheet" type="text/css" />
+    <!--    <link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>-->
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css" />
+    <link href="/css/column/videoPK_v2/apply_zhezhao.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/v3/pages/college/college_index.css" />
+    <!--endbuild-->
+    <!--videojs相关样式-->
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/video-js.css" rel="stylesheet" type="text/css" />
+    <!--allinmdplayer相关样式-->
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/videojs.allinmd.css" rel="stylesheet" type="text/css" />
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+
+<body data-alcode="499">
+    <!--全内容容器——mainInner-->
+    <section class="al-mainInner">
+        <!-- 页头——视场景加入跳转链接 -->
+        <header class="al-header al-dis_header">
+            <section class="al-headerContainer">
+                <ul class="al-headerTopNav" data-alcode-mod="123" data-alcode-item-selector="li">
+                    <li class="al-backBtn">
+                        <a href="javascript:;">返回</a>
+                    </li>
+                </ul>
+                <!--浏览记录：begin-->
+                <div class="al-headerSearchRecord">
+                    浏览记录
+                    <div class="al-browseRecordBox" data-alcode-mod='61'>
+
+                    </div>
+                </div>
+                <!--浏览记录：end-->
+                <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                    <input type="text" />
+                    <b></b>
+                </figure>
+            </section>
+        </header>
+        <!-- 主侧边栏——Logo于此放置 -->
+        <aside class="al-mainSidebar al-mainSidebarCollapse">
+            <header class="al-mainLogo">
+                <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+            </header>
+            <header class="al-collapseLogo">
+                <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+            </header>
+            <section class="al-mainSidebarList">
+                <ul data-alcode-mod='52'>
+                    <li class="al-mainSidebarItem">
+                        <a href="/">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                            <figcaption>首页</figcaption>
+                            <article class="al-collapseItem">
+                                <p class="al-collapseItemText">
+                                    <h4>首页</h4>
+                                    <p>HOME</p>
+                                </p>
+                            </article>
+                        </a>
+                    </li>
+                    <li class="al-mainSidebarItem  active">
+                        <a href="/pages/college/college_index.html">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_college.png" alt="">
+                            <figcaption>唯医学院</figcaption>
+                            <article class="al-collapseItem">
+                                <p class="al-collapseItemText">
+                                    <h4>唯医学院</h4>
+                                    <p>HOME</p>
+                                </p>
+                            </article>
+                        </a>
+                    </li>
+                    <li class="al-mainSidebarItem">
+                        <a href="/pages/discover/discover_index.html">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find.png" alt="">
+                            <figcaption>发现</figcaption>
+                            <article class="al-collapseItem">
+                                <p class="al-collapseItemText">
+                                    <h4>发现</h4>
+                                    <p>DISCOVERY</p>
+                                </p>
+                            </article>
+                        </a>
+                    </li>
+                    <li class="al-mainSidebarItem al-release">
+                        <a href="javascript:void(0)">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                            <figcaption>发布</figcaption>
+                            <article class="al-collapseItem">
+                                <p class="al-collapseItemText">
+                                    <h4>发布</h4>
+                                    <p>RELEASE</p>
+                                </p>
+                            </article>
+                        </a>
+                    </li>
+                    <li class="al-mainSidebarItem al-navMes">
+                        <a href="/pages/message/message_main.html">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                            <figcaption>消息</figcaption>
+                            <article class="al-collapseItem">
+                                <p class="al-collapseItemText">
+                                    <h4>消息</h4>
+                                    <p>MESSAGE</p>
+                                </p>
+                            </article>
+                        </a>
+                    </li>
+                    <li class="al-mainSidebarItem al-navIndex">
+                        <a href="/pages/personal/personal_index.html">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                            <figcaption>我的</figcaption>
+                            <article class="al-collapseItem">
+                                <p class="al-collapseItemText">
+                                    <h4>我的</h4>
+                                    <p>PROFILE</p>
+                                </p>
+                            </article>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="al-mainSidebarOtherList" data-alcode-mod='72'>
+                    <li class="al-mainSidebarItem al-siteEmr">
+                        <a href="javascript:void(0)">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_emrIcon.png" alt="">
+                            <figcaption>病历管理</figcaption>
+                        </a>
+                    </li>
+                    <!--<li class="al-mainSidebarItem al-siteSwitch">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_siteSwitch.png" alt="">
+                        <figcaption class="ev_siteSwitchName">骨科</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4 class="ev_siteSwitchName">骨科</h4>
+                                <p>SITE SWITCH</p>
+                            </div>
+                        </article>
+                    </a>
+                    <div class="al_siteSwitch_popBox">
+                        <div class="al_siteSwitch_orthopaedics"><i></i>骨科</div>
+                        <div class="al_siteSwitch_handSurgery"><i></i>手外科</div>
+                    </div>
+                </li>-->
+                    <li class="al-mainSidebarItem al-allinmdService">
+                        <a href="javascript:void(0)">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                            <figcaption>唯客服</figcaption>
+                            <article class="al-collapseItem">
+                                <p class="al-collapseItemText">
+                                    <h4>小唯</h4>
+                                    <p>SERVICE</p>
+                                </p>
+                            </article>
+                        </a>
+                    </li>
+                    <li class="al-mainSidebarItem al-navPhone">
+                        <a href="/pages/singlePage/iphone-app-download.html">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                            <figcaption>手机端</figcaption>
+                            <article class="al-collapseItem">
+                                <p class="al-collapseItemText">
+                                    <h4>手机端</h4>
+                                    <p>MOBILES</p>
+                                </p>
+                            </article>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <section class="al-college-container">
+            <section class="al-college-banner">
+                <!--<div class="al-college-logo"></div>
+            <div class="al-college-quotationMark"></div>
+            <article class="al-college-introduction">
+                <p class="introduction-item">勤奋积累 日渐精进</p>
+                <p class="introduction-item">像一只永不停息的箭</p>
+                <p class="introduction-item">将专业积累成信誉</p>
+                <p class="introduction-item">以付出换来每一位患者的痊愈</p>
+                <p class="introduction-item">我们希望在唯医学院</p>
+                <p class="introduction-item">可以成就每一位骨科人的行医生涯</p>
+                <p class="introduction-item">一同守护患者健康</p>
+            </article>-->
+            </section>
+            <section class="al-college-produce" style="display: none;">
+                <section class="produce-content">
+                    <section class="produce-rich-content">
+                        <!--<section class="produce-inner-content">
+                        <article class="product-titleInfo">
+                            <h1 class="title">唯医学院的初心</h1>
+                            <p class="authorInfo">
+                                <span class="authorName">刘峥嵘</span>
+                                <span class="authorPosition">唯医骨科创始人&CEO</span>
+                            </p>
+                        </article>
+                        <section class="play-icon"></section>
+                        <section class="authorLogo"></section>
+                    </section>-->
+                        <section class="produce-inner-video">
+
+                        </section>
+                    </section>
+                    <article class="product-introduction">
+                        <span class="introduction-title">
+                        唯医学院的初心
+                        <i class="column-line">|</i>
+                        刘峥嵘
+                    </span>
+                    </article>
+                </section>
+                <section class="produce-list">
+                    <!--<section class="produce-item">
+                    <figure class="produce-author-logo"></figure>
+                    <article class="product-author-info">
+                        <p class="author-position">唯医骨科创始人&CEO</p>
+                        <p class="author-name">刘峥嵘</p>
+                    </article>
+                </section>
+                <section class="produce-item">
+                    <figure class="produce-author-logo"></figure>
+                    <article class="product-author-info">
+                        <p class="author-position">唯医骨科创始人&CEO</p>
+                        <p class="author-name">刘峥嵘</p>
+                    </article>
+                </section>
+                <section class="produce-item">
+                    <figure class="produce-author-logo"></figure>
+                    <article class="product-author-info">
+                        <p class="author-position">唯医骨科创始人&CEO</p>
+                        <p class="author-name">刘峥嵘</p>
+                    </article>
+                </section>
+                <section class="produce-item">
+                    <figure class="produce-author-logo"></figure>
+                    <article class="product-author-info">
+                        <p class="author-position">唯医骨科创始人&CEO</p>
+                        <p class="author-name">刘峥嵘</p>
+                    </article>
+                </section>
+                <section class="produce-item">
+                    <figure class="produce-author-logo"></figure>
+                    <article class="product-author-info">
+                        <p class="author-position">唯医骨科创始人&CEO</p>
+                        <p class="author-name">刘峥嵘</p>
+                    </article>
+                </section>
+                <section class="produce-item">
+                    <figure class="produce-author-logo"></figure>
+                    <article class="product-author-info">
+                        <p class="author-position">唯医骨科创始人&CEO</p>
+                        <p class="author-name">刘峥嵘</p>
+                    </article>
+                </section>
+                <section class="produce-item">
+                    <figure class="produce-author-logo"></figure>
+                    <article class="product-author-info">
+                        <p class="author-position">唯医骨科创始人&CEO</p>
+                        <p class="author-name">刘峥嵘</p>
+                    </article>
+                </section>-->
+                </section>
+            </section>
+            <section class="al-college-develop">
+                <!--唯医学院的愿景-->
+                <section class="al-college-develop-module al-college-aspiration">
+                    <section class="al-college-title">
+                        <i class="icon"></i>
+                        <span>
+                        唯医学院的愿景
+                    </span>
+                    </section>
+                    <section class="al-aspiration-word">
+                        <i class="icon"></i>
+                        <span>引领国际“医教研”一体的共创平台</span>
+                    </section>
+                    <!--                <section class="al-aspiration-author">-->
+                    <!--                    <span><i></i> 刘峥嵘</span>-->
+                    <!--                </section>-->
+                </section>
+                <section class="al-college-develop-module al-college-team">
+                    <section class="al-college-title">
+                        <i class="icon"></i>
+                        <span>
+                        首期顾问团队
+                    </span>
+                    </section>
+                    <section class="team-introduction">
+                        <span>
+                        甄选业界顶级专家
+                    </span>
+                    </section>
+                    <div class="team-turn-direction team-turn-left"></div>
+                    <div class="team-turn-direction team-turn-right"></div>
+                    <section class="team-list-wrapper">
+                        <section class="team-list">
+                        </section>
+                    </section>
+
+                </section>
+                <section class="al-college-develop-module al-college-list">
+                    <section class="al-college-title">
+                        <i class="icon"></i>
+                        <span>
+                        唯医学院
+                    </span>
+                    </section>
+                    <section class="teamd-introduction">
+                        <span>
+                            精心打磨，资深专家亲自实操与讲授
+                    </span>
+                    </section>
+                    <section class="college-list-wrapper">
+                        <section class="college-list">
+                            <section class="college-item arthrosis">
+                                <section class="college-logo"></section>
+                            </section>
+                            <section class="college-item trauma">
+                                <section class="college-logo"></section>
+                            </section>
+                            <section class="college-item exercise">
+                                <section class="college-logo"></section>
+                            </section>
+                            <section class="college-item knee">
+                                <section class="college-logo"></section>
+                            </section>
+                            <section class="college-item more">
+                                <section class="college-logo">敬请期待...</section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+                <section class="al-college-develop-module al-college-schedule">
+                    <section class="al-college-title">
+                        <i class="icon"></i>
+                        <span>
+                        专栏课程
+                    </span>
+                    </section>
+                    <section class="teamd-introduction">
+                        <span>
+                            <!-- 已上线2位讲师课程，持续更新中 -->
+                    </span>
+                    </section>
+                    <div class="schedule-turn-direction schedule-turn-left" style="display: none;"></div>
+                    <div class="schedule-turn-direction schedule-turn-right" style="display: none;"></div>
+                    <section class="schedule-list-wrapper">
+                        <section class="schedule-list">
+                        </section>
+                    </section>
+                </section>
+                <section class="al-college-develop-module al-college-inviteTeacher">
+                    <section class="al-college-title">
+                        <i class="icon"></i>
+                        <span>
+                        讲师招募计划
+                    </span>
+                    </section>
+                    <section class="inviteTeacher-introduction">
+                        我们正在寻找严谨优秀的骨科医学讲师，<br/>量身打造每一节精品课程。
+                    </section>
+                    <section class="inviteTeacher-contactUs">
+                        联系我们： <br/>南区: zhangdanqing@allinmd.cn<br/>北区 :luoliang@allinmd.cn
+                    </section>
+                    <section class="footer-college-logo"></section>
+                </section>
+            </section>
+            <div class="al-loadMoreImg" style="display:none;">
+                <img src="//img10.allinmd.cn/loading/xubox_loading0.gif" alt="" />
+            </div>
+        </section>
+
+        <!--下载视频弹层：begin-->
+        <div class="al-downLoad_PopBox Ev-al-downLoad_PopBox">
+            <div class="al-downContainer Ev-al-downContainer">
+                <h6 class="closePopBtn Ev-closePopBtn"></h6>
+                <figure class="al-downLoadContent">
+                    <figcaption>扫一扫，安装手机客户端免费下载视频</figcaption>
+                    <div class="downLoadWay">
+                        <p class="Ev-ADownBtn">
+                            <i></i>
+                            <span class="AndroidText">Android版</span>
+                        </p>
+                        <p class="Ev-IDownBtn">
+                            <i class="iPhoneIcon"></i>
+                            <span class="iPhoneText">iPhone版</span>
+                        </p>
+                    </div>
+                    <section class="downLoad_QR Ev-downLoad_QR">
+                        <img src="//img10.allinmd.cn/v3/terminal/downLoad-QR.png" alt="" />
+                    </section>
+                </figure>
+            </div>
+        </div>
+        <!--下载视频弹层：end-->
+        <!--公共底部 start-->
+        <!--#include virtual="/includes/footer.jsp"-->
+        <!--公共底部 End-->
+        <section class="discountCoupon" style="display: none;">
+            <div class="discountCouponPrice">
+                <i class="icon">￥</i>
+                <i class="priceNum">60</i>
+            </div>
+            <div class="discountCouponDes">
+                领取优惠券
+            </div>
+        </section>
+        <script id="secondCollege" type="text/x-handlebars-template">
+            {{#each departmentList}}
+            {{#checkLast departmentId}}
+            <section class="college-item" data-departmentId="{{departmentId}}" data-departmentName="{{departmentName}}">
+                <section class="college-logo" style="background:url('{{departmentPic}}') no-repeat center center/cover;"></section>
+            </section>
+            {{/checkLast}}
+            {{/each}}
+        </script>
+        <script id="produceTemplate" type="text/x-handlebars-template">
+            {{#each dataList}}
+            <section class="produce-item" data-videoUrl="{{videoUrl}}" data-cid="{{customerId}}">
+                <figure class="produce-author-logo" style="background:url('{{imageUrl}}') no-repeat center center/cover;"></figure>
+                <article class="product-author-info">
+                    <p class="author-position">{{showTitle}}</p>
+                    <p class="author-name">{{positionTitle}}</p>
+                </article>
+            </section>
+            {{/each}}
+        </script>
+        <script id="courseTemplate" type="text/x-handlebars-template">
+            {{#each seriesCourseList}}
+            <a class="schedule-item" data-courseId="{{courseId}}" data-courseType="{{courseType}}" href="javaScript:;" target="_blank">
+                <figure class="class-logo" style="background:url('{{pcCoverPicUrl}}') no-repeat center center/cover;"></figure>
+                <article class="class-introduction">
+                    {{#state courseType 1}}
+                        <section class="introduction-title greyColor">
+                            {{courseName}}
+                        </section>
+                        <section class="introduction-content greyColor">
+                            {{noticeDesc}}
+                        </section>
+                    {{/state}}
+                    {{#state courseType 2}}
+                        <section class="introduction-title">
+                            {{courseName}}
+                        </section>
+                        <section class="introduction-content">
+                            {{courseDesc}}
+                        </section>
+                    <section class="introduction-detail">
+                        <section class="course-num">{{totalNum}}讲</section>
+                        <!--<section class="learn-schedule">已学习 56%</section>-->
+                        <section class="update-schedule {{checkCourseNum newestNum totalNum}}">更新至{{newestNum}}讲</section>
+                    </section>
+                    {{/state}}
+                </article>
+            </a>
+            {{/each}}
+        </script>
+        <script id="teamItem" type="text/x-handlebars-template">
+            {{#each dataList}}
+            <a class="team-item" href="{{jumpCustomer customerId}}" style="background:url('{{profile}}') no-repeat center center/cover;" target="_blank">
+                <!--<figure class="team-member-logo"></figure>
+            <figure class="team-member-name">{{doctorName}}</figure>-->
+            </a>
+            {{/each}}
+        </script>
+    </section>
+    <script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+    <script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+    <script src='/js/lib/jquery/jquery.cookie.js'></script>
+    <script src='/js/third-party/handlebars/handlebars-v4.0.10.js'></script>
+    <!--为保证IE8下正常使用，需要引入-->
+    <script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/ie8/videojs-ie8.min.js"></script>
+    <!--修改过的videojs文件-->
+    <script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/video.js"></script>
+    <!--allinmdplayer逻辑代码-->
+    <script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/videojs.allinmd.js"></script>
+    <!-- build:js /dest/college/college_index.js -->
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/comm.file.js"></script>
+    <script src="/js/comm/comm.lightBox.js"></script>
+    <script src="/js/comm/comm.ajax.js"></script>
+    <script src="/js/comm/comm.localData.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm.ajaxExistHtml.js"></script>
+    <script src="/js/comm/comm.customer.js"></script>
+    <script src="/js/comm/comm.textChange.js"></script>
+    <script src="/js/comm/comm.Log.js"></script>
+    <!--<script src="/js/comm/comm.track.js"></script>-->
+    <script src="/js/scene/scene.header.js"></script>
+
+    <script src="/js/modules/user/module.user.js"></script>
+    <!--<script src="/js/modules/auth/module.auth.js"></script>-->
+    <script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+    <script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+    <script src="/js/modules/weixin/module.welcome.js"></script>
+    <script src="/js/modules/weixin/module.weixin.js"></script>
+    <script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+    <script src="/js/modules/weixin/module.welcome.auth.js"></script>
+    <script src="/js/modules/weixin/module.weixin.auth.js"></script>
+    <!--<script src="/js/scene/column/videoPK_v2/scene.column.videoPK_2.process.js"></script>-->
+    <!--<script src="/js/modules/publish/module.select-type.js"></script>-->
+    <script src="/js/modules/publish/module.video-upload.js"></script>
+    <script src="/js/modules/publish/module.doc-upload.js"></script>
+    <script src="/js/modules/share/module.share.js"></script>
+    <!--<script src="/js/modules/publish/module.topic-upload.js" ></script>-->
+    <!--<script src="/js/modules/publish/module.case-upload.js" ></script>-->
+    <script src="/js/plugins/top-tip/plugin.top-tip.js">
+    </script>
+    <script src="/js/plugins/make-sure-popup/plugin.make-sure-popup.js">
+    </script>
+    <script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+
+    <script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+    <script src='/js/third-party/md5.js'></script>
+    <script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+    <script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+    <script src="/js/third-party/jquery-qrcode-master/src/jquery.qrcode.js"></script>
+    <script src="/js/third-party/jquery-qrcode-master/src/qrcode.js"></script>
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+    <!--<script src="/js/third-party/uploadify/swfobject2.2.js" ></script>
+<script src="/js/third-party/uploadify/jquery.uploadify.js" ></script>-->
+    <script src="/js/third-party/ajaxfileupload.js"></script>
+    <script src="/js/third-party/qiniu/qiniu.js"></script>
+    <script src="/js/third-party/qiniu/ui.js"></script>
+    <script src="/js/third-party/plupload/plupload.full.min.js"></script>
+    <script src="/js/third-party/plupload/i18n/zh_CN.js"></script>
+
+    <script src="/js/scene/college/scene.college.index.js">
+    </script>
+    <!--endbuild-->
+
+</body>
+
+</html>

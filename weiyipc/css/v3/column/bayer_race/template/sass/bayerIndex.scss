@@ -1,0 +1,289 @@
+@charset "UTF-8";
+@import "method.scss";
+
+/*主内容 活动主旨部分*/
+
+.subjectText {
+    border-bottom: 1px solid $borderInnerBottom;
+    padding: rem(20px) rem(30px) rem(36px) rem(30px);
+    font-size: rem(30px);
+    word-break: break-all;
+    a {
+        width: 40%;
+        float: left;
+        margin-right: 0.4rem;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+    span {
+        color: $textColor;
+    }
+}
+
+
+/*优秀病例部分*/
+
+.caseListBox {
+    box-sizing: border-box;
+    border-bottom: 1px solid $borderInnerBottom;
+}
+
+ol.caseList {
+    position: relative;
+    left: 0.8rem;
+    li.caseText {
+        list-style-type: disc;
+        border-bottom: 1px solid $borderInnerBottom;
+        padding: rem(40px) 0;
+        padding-right: rem(100px);
+        &:nth-last-child(1) {
+            border: none;
+        }
+    }
+}
+
+.caseText {
+    a {
+        width: 100%;
+        font-size: rem(30px);
+        color: $textColor;
+        vertical-align: middle;
+    }
+    p {
+        padding-top: rem(10px);
+    }
+    span {
+        font-size: rem(22px);
+        color: $smallTextColor;
+        position: relative;
+    }
+    .area {
+        font-size: rem(30px);
+        color: #7f5fc8;
+    }
+    .doctor {
+        &:before {
+            content: "";
+            width: rem(21px);
+            height: rem(20px);
+            display: inline-block;
+            background: transparent url('/image/column/bayer_race/doctor.png') center center no-repeat;
+            background-size: contain;
+            margin-right: rem(10px);
+        }
+    }
+    .hospital {
+        &:before {
+            content: "";
+            width: rem(25px);
+            height: rem(20px);
+            display: inline-block;
+            background: transparent url('/image/column/bayer_race/hospital.png') center center no-repeat;
+            background-size: contain;
+            margin-right: rem(10px);
+            margin-left: rem(30px);
+        }
+    }
+}
+
+
+/*赛区图片*/
+
+.raceLiveBox {
+    margin-top: rem(20px);
+    background-color: #fff;
+    overflow: hidden;
+    padding: rem(20px) rem(30px);
+    .raceLiveTitle {
+        width: rem(122px);
+        height: rem(87px);
+        float: left;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+    .raceLive {
+        position: absolute;
+        left: rem(170px);
+        overflow: hidden;
+        width: rem(543px);
+    }
+}
+
+.liveImg {
+    img {
+        width: 100%;
+        height: 1rem;
+    }
+}
+
+
+/*复活banner*/
+
+
+/*精彩现场*/
+
+.broveShowList {
+    margin: rem(40px) 0 0 rem(30px);
+    overflow: hidden;
+    padding-bottom: rem(40px);
+    border-bottom: 1px solid #d9d9e1;
+    &:nth-last-child(4) {
+        border: none;
+    }
+}
+
+.broveShowImg {
+    width: rem(210px);
+    height: rem(139px);
+    float: left;
+    border: rem(3px) solid #d5d5d5;
+    overflow: hidden;
+    text-align: center;
+    padding: 1px;
+    position: relative;
+    img {
+        width: 100%;
+        vertical-align: middle;
+    }
+    figure.levelUpIcon {
+        width: rem(100px);
+        height: rem(66px);
+        position: absolute;
+        top: -1px;
+        left: -2px;
+        display: none;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.broveShowList.levelUp {
+    .levelUpIcon {
+        display: block;
+    }
+}
+
+.broveShowText {
+    margin-left: rem(238px);
+    margin-right: rem(30px);
+    a {
+        font-size: rem(30px);
+        line-height: rem(44px);
+        color: #66657f;
+        //overflow: hidden;
+        //text-overflow: ellipsis;
+        //display: -webkit-box;
+        //-webkit-line-clamp: 2;
+        //-webkit-box-orient: vertical;
+        span{
+            font-size: rem(30px);
+            color: #66657f;
+        }
+    }
+    p {
+        margin-top: rem(20px);
+    }
+    span {
+        font-size: rem(22px);
+        color: #969696;
+    }
+    .userName {
+        margin-right: rem(30px);
+        &:before {
+            content: "";
+            width: rem(21px);
+            height: rem(20px);
+            display: inline-block;
+            background: transparent url('/image/column/bayer_race/doctor.png') center center no-repeat;
+            background-size: contain;
+            margin-right: rem(10px);
+            vertical-align: middle;
+        }
+    }
+    .watchNum:before {
+        content: "";
+        width: rem(24px);
+        height: rem(20px);
+        display: inline-block;
+        background: transparent url('/image/column/bayer_race/place.png') center center no-repeat;
+        background-size: contain;
+        margin-right: rem(10px);
+        vertical-align: middle;
+    }
+}
+
+.broveMore {
+    border-top: 1px solid $borderOuter;
+}
+
+
+/*总决赛精彩瞬间*/
+
+.broveShowFinal {
+    display: none;
+}
+
+.finalMore {
+    display: none;
+}
+
+.finalPart {
+    .broveShowTitle {
+        border-bottom: none;
+    }
+    .broveShowList {
+        display: none;
+    }
+    .broveShowFinal {
+        display: block;
+    }
+    .broveMore {
+        display: none;
+    }
+    .finalMore {
+        display: block;
+    }
+}
+
+.broveShowFinal {
+    padding: rem(30px);
+    padding-top: 0;
+    .finalImg {
+        width: 100%;
+        position: relative;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+    .videoBtn {
+        $r: rem(82px);
+        width: rem(82px);
+        height: rem(82px);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: - $r/2;
+        margin-top: - $r/2;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+    .finalShowText {
+        font-size: rem(30px);
+        color: $textColor;
+        line-height: 1.7;
+        padding-top: rem(20px);
+    }
+}
+
+.finalMore {
+    border-top: 1px solid $borderOuter;
+}

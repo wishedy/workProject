@@ -1,0 +1,39 @@
+const mutaions = {
+    nowMouthChange(state,data){//头部月份点击
+        state.nowMouth=data;
+    },
+    meetingStateChange(state,data){//点击的月份判断是否是当前月份
+        state.meetingState=data;
+    },
+    subjectTeamIdChange(state,data){//筛选的专业
+        state.subjectTeamId=data;
+    },
+    runStateChange(state,data){//会议状态（0-未进行 1-已进行）
+        state.runState=data;
+    },
+    shootStateChange(state,data){//拍摄状态（0-不拍摄，1-拍摄）
+        state.shootState=data;
+    },
+    scrNoReChange(state,data){//筛选无结果
+        state.scrNoRe=data;
+    },
+    monthNoReChange(state,data){//本月无会议
+        state.monthNoRe=data;
+    },
+    monthChangeFun(state,data){//区分月份和筛选点击
+        state.monthChange=data;
+    },
+    scrChangeFun(state,data){//筛选点击，
+        state.scrChange=data;
+    },
+    majorNameChange(state,data){//专业头部名称
+        state.majorName=data;
+    },
+    stateNameChange(state,data){//会议状态头部名称，
+        state.stateName=data;
+    },
+    isLiveChange(state,data){//唯医合作按钮是否激活，
+        state.isLive=data;
+    },
+};
+export default mutaions;

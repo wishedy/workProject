@@ -1,0 +1,435 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+@import "../../components/_message_rightSideBar";//右侧栏组件
+@import "../../components/_makeSurePopup";
+@import "../../components/_focusOnTagsPerson"; //关注标签的人
+@import "../../components/_tableModule";
+
+
+.signUpBackground{
+    background-color: rgba(0,0,0,.6);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    z-index: 8;
+    .signUpMain{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        &:after{
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        //如果填写个人信息不是第一步，则可以进行上一步，下一步
+        .nextBtn{
+            margin-top: 30px;
+            width: 160px;
+            height: 54px;
+            border-radius: 5px;
+            color: #fff;
+            text-align: center;
+            line-height: 54px;
+            font-size: 20px;
+            opacity:1;
+            background: #68b7ed;
+            margin-left: 20px;
+            &.active{
+                background-color: #2899e6;
+
+            }
+        }
+        .prevBtn{
+            width: 160px;
+            height: 54px;
+            background: #9da9bb;
+            border-radius: 5px;
+            color: #fff;
+            text-align: center;
+            line-height: 54px;
+            font-size: 24px;
+            opacity:1;
+        }
+
+    }
+}
+.signUpCont{
+    display: inline-block;
+    vertical-align: middle;
+    width: 730px;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    padding: 70px 0 50px;
+    .title{
+        font-size: 18px;
+        color: #333;
+        line-height: 18px;
+        margin-bottom: 27px;
+    }
+    .formCont{
+        width: 427px;
+        height: 50px;
+        border: solid 1px #dbdbdb;
+        border-radius: 3px;
+        margin: 10px auto 0;
+        text-align: left;
+        line-height: 50px;
+        position: relative;
+        .title{
+            margin:0 20px 0 14px;
+            display: inline-block;
+            font-size: 16px;
+            color: #aaa;
+        }
+        input{
+            border: none;
+            height: 45px;
+            line-height: 48px;
+            font-size: 16px;
+            color: #555;
+            width: 270px;
+        }
+        .textVal{
+            font-size: 16px;
+            color: #555;
+            width: 330px;
+            display: inline-block;
+            height: 45px;
+            div{
+                display: inline-block;
+                width: 500px;
+            }
+        }
+        figure{
+            border: solid 1px #dbdbdb;
+            padding: 0 8px;
+            height: 26px;
+            border-radius: 3px;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 26px;
+            font-size: 16px;
+            color: #555;
+        }
+        select{
+            font-size: 16px;
+            color: #555;
+            border: none;
+            background: 0 0;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            margin-right: 5px;
+        }
+        b{
+            font-weight: normal;
+        }
+        .soFar{
+            margin-left: 10px;
+        }
+        i{
+            display: inline-block;
+            background: url("/images/img10/v3/avtivity/dpwn.png") no-repeat;
+            width: 8px;
+            height: 6px;
+            margin: 22px 20px 0 0;
+            float: right;
+        }
+    }
+    button{
+        cursor: pointer;
+        &.prev{
+            width: 340px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: #2899e6;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 24px;
+            opacity: .6;
+            margin-top: 30px;
+            display: block;
+            margin: 0 auto;
+        }
+        &.active{
+            opacity: 1;
+        }
+        &.ev-actNextBtn{
+            &.active{
+                background-color: #2899e6;
+            }
+        }
+    }
+    .sourceList{
+        li{
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+.signUpBackground .signUpMain .signUpCont{
+    ul{
+        overflow: hidden;
+        display: inline-block;
+        text-align: center;
+        padding-bottom: 330px;
+        li{
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            float: left;
+            border: solid 1px #2899e6;
+            border-radius: 3px;
+            color: #2899e6;
+            margin-right: 10px;
+        }
+    }
+    .selectCheck{
+        position: absolute;
+        left: -1px;
+        top: 49px;
+        z-index:2;
+        width: 500px;
+        border: solid 1px #dbdbdb;
+        background: #fff;
+        padding: 15px 15px 15px 5px;
+
+        @include clearfix();
+        ul{
+            position: relative;
+            padding-bottom: 0;
+            width: 492px;
+            padding-left: 5px;
+            /*float: left;*/
+            &:after{
+                content: '';
+                position: absolute;
+                border-bottom:solid 3px #2899e6;
+                display: inline-block;
+                width: 490px;
+                left: 0;
+                bottom: 0;
+            }
+            li{
+                border:solid 1px #dbdbdb;
+                border-bottom: none;
+                width: auto;
+                color: #aaa;
+                font-size: 16px;
+                border-radius: 0;
+                &.active{
+                    border:solid 3px #2899e6;
+                    border-bottom: none;
+                    position: relative;
+                    background: #fff;
+                    z-index: 5;
+                }
+                i{
+                    display: inline-block;
+                    background: url("/images/img10/v3/avtivity/dpwn.png") no-repeat;
+                    width: 8px;
+                    height: 6px;
+                    margin: 18px 10px 0 0;
+                    float: right;
+                }
+                span{
+                    margin: 0 13px 0 13px;
+                }
+            }
+        }
+
+        .divisionName{
+            width: auto;
+            margin: 0 0 0 -9px;
+            max-height: 156px;
+            overflow: auto;
+            &:after{
+                border: none;
+            }
+            li{
+                margin: 0 40px;
+                font-size: 16px;
+                color: #555;
+                border: none;
+                margin-top: 16px;
+                height: auto;
+                cursor: pointer;
+                text-align: left;
+                line-height: 24px;
+            }
+            .acti{
+                color: #2899e6;
+            }
+        }
+        .divNam{
+            margin-left:-9px;
+            width: auto;
+            padding: 0 0 15px 0;
+            &:after{
+                border: none;
+            }
+            li{
+                margin:0 40px;
+                font-size: 16px;
+                color: #555;
+                border:none;
+                margin-top: 20px;
+                height: 20px;
+                line-height: 16px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.signUpCont{
+    .divisionBtn{
+        margin-top: 60px;
+        button{
+            width: 160px;
+            height: 54px;
+            background: #9da9bb;
+            border-radius: 5px;
+            color: #fff;
+            text-align: center;
+            line-height: 54px;
+            font-size: 24px;
+            opacity:1;
+            cursor: pointer;
+        }
+        .nextBtn{
+            background: #68b7ed;
+            margin-left: 20px;
+            &.active{
+                background-color: #2899e6;
+            }
+        }
+
+        .prev{
+            width: 340px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: #9da9bb;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 24px;
+            opacity: .6;
+            margin-top: 30px;
+        }
+    }
+}
+
+.empty{
+    width: 1000px;
+    position: absolute;
+    left: 50%;
+    margin-left: -500px;
+    height: 100px;
+    i{
+        display: inline-block;
+        background: url(/images/img10/v3/avtivity/close.png) no-repeat;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 40px;
+        right: -70px;
+        z-index: 3;
+    }
+}
+
+.warningBg{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,.3);
+    z-index: 9;
+}
+
+.divisionClose{
+    position: absolute;
+    right:10px;
+    top:10px;
+    z-index:10;
+    width: 13px;
+    height: 13px;
+    background: transparent url(//img10.allinmd.cn/v3/common/icon/icon_close.png) no-repeat;
+}
+.signUpBackground .signUpMain .signUpCont .selectCheck .divisionName ul{
+    &:after{
+        border:none;
+    }
+}
+.naver_lists .nav_apply {
+    position: absolute;
+    right: 7px;
+    top: 0;
+    width: 160px;
+    height: 66px;
+    line-height: 66px;
+    text-align: center;
+    background: #f34b4b;
+}
+
+.naver_lists .nav_apply a {
+    display: block;
+    color: #fff;
+    font-size: 26px;
+    padding: 0;
+}
+
+.naver_lists .nav_apply div {
+    width: 174px;
+    height: 8px;
+    background: url(//img00.allinmd.cn/column/videoPK_v2/nav_bm.png) no-repeat;
+    position: absolute;
+    left: -7px;
+    top: -8px;
+    z-index: 4;
+}
+.ev-repeat{
+    height: 48px;
+    background: #d4ebfa;
+    color: #333333;
+    line-height: 50px;
+    width: 342px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    margin-left: -170px;
+    margin-top: -25px;
+    border: 1px solid #93ccf2;
+    font-size: 16px;
+    display: none;
+}
+.signUpBackground .signUpMain .actError{
+    border: 1px solid #f00;
+}
+//我的信息表单错误提示
+.errorTip{
+    position: absolute;
+    right: -180px;
+    width: 170px;
+    color: #f00;
+    display: none;
+    font-size: 14px;
+}
+.sp_container_l .works_mine_content{
+    overflow: visible;
+}

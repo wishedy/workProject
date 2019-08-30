@@ -1,0 +1,274 @@
+@charset "UTF-8";
+@import "../../base";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader";
+//首页头部信息栏
+@import "../../components/_iconModule";
+//小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+
+html, body {
+  height: 100%;
+}
+
+
+.al-payHelp {
+  min-height: 100%;
+  background: #fff;
+}
+
+/*header样式重置*/
+
+.al-indexHeader {
+  .al-indexHeaderItem {
+    &:nth-child(3) {
+      a {
+        &.feedback:first-child {
+          font-weight: 400;
+          font-size: rem3(16px);
+          color: rgba(85, 85, 85, 1);
+          line-height: rem3(15px);
+        }
+
+        &.share:first-child {
+          font-weight: 400;
+          font-size: rem3(16px);
+          color: rgba(85, 85, 85, 1);
+          line-height: rem3(15px);
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      width: rem3(234px);
+
+      h1 {
+        width: rem(340px);
+        overflow: hidden; /*超出部分隐藏*/
+        text-overflow: ellipsis; /* 超出部分显示省略号 */
+        white-space: nowrap; /*规定段落中的文本不进行换行 */
+      }
+    }
+  }
+}
+
+/*section样式*/
+.al-payHelp-container {
+  background: #fff;
+  min-height: rem3(300px);
+  width: 100%;
+  height: auto;
+  position: relative;
+  box-sizing: border-box;
+
+  h3 {
+    width: 100%;
+    height: rem3(47px);
+    font-size: rem3(15px);
+    font-weight: 400;
+    color: rgba(128, 128, 128, 1);
+    line-height: rem3(47px);
+    background: rgba(241, 244, 249, 1);
+    position: relative;
+
+    img{
+      width: rem3(19px);
+      height: rem3(19px);
+    }
+
+    .combined-shape {
+      position: absolute;
+      top: rem3(14px);
+      left: rem3(15px);
+      bottom: rem3(17px);
+      width: rem3(19px);
+      height: rem3(19px);
+    }
+
+    .combined-text {
+      position: absolute;
+      top: rem3(13px);
+      left: rem3(42px);
+      bottom: rem3(13px);
+      //width: rem3(60px);
+      line-height: rem3(21px);
+    }
+
+  }
+
+  ul {
+    width: 100%;
+
+    li {
+
+      a {
+        display: block;
+        padding-top: rem3(18px);
+        padding-bottom: rem3(18px);
+        margin-left: rem3(15px);
+        margin-right: rem3(16px);
+        border-bottom: rem3(1px) solid rgba(241,242,244,1);
+        font-size: rem3(16px);
+        font-weight: 400;
+        color: rgba(34, 34, 34, 1);
+        line-height: rem3(22px);
+        position: relative;
+        &:after {
+          content: '';
+          display: inline-block;
+          width: rem3(8px);
+          height: rem3(8px);
+          border-top: rem3(2px) solid rgba(204, 204, 204, 1);
+          border-right: rem3(2px) solid rgba(204, 204, 204, 1);
+          float: right;
+          position: absolute;
+          top:50%;
+          right: 0;
+          transform: rotate(45deg) translate(-50%,-50%);
+          -webkit-transform: rotate(45deg) translate(0,-50%);
+        }
+        &.ios-pay-help:after{
+          content: '';
+          display: inline-block;
+          width: rem3(8px);
+          height: rem3(8px);
+          border-top: rem3(2px) solid rgba(204, 204, 204, 1);
+          border-right: rem3(2px) solid rgba(204, 204, 204, 1);
+          float: right;
+          position: absolute;
+          top:50%;
+          right: 0;
+          transform: rotate(45deg) translate(-50%,-50%);
+          -webkit-transform: rotate(45deg) translate(0,-50%);
+        }
+
+      }
+
+      &:last-child {
+        a {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .foot-container {
+    padding-top: rem3(32px);
+    padding-bottom: rem3(90px);
+    font-size: rem3(15px);
+    font-weight: 400;
+    color: rgba(100, 131, 233, 1);
+    text-align: center;
+    line-height: rem3(21px);
+
+    span {
+      display: inline-block;
+      width: rem3(15px);
+      height: rem3(16px);
+      //background: rgba(253, 103, 103, 0.75);
+      vertical-align: middle;
+      background: url("data:image/png;base64,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") no-repeat center center;
+      //background: url("/static/images/payHelp/c2.png") no-repeat center center;
+      background-size: cover;
+      margin-bottom: rem3(4px);
+    }
+  }
+
+}
+
+
+//问题详情样式
+
+//.al-payHelp-header2 {
+//  width: 100%;
+//  height: rem3(17px);
+//  font-size: rem3(18px);
+//  color: rgba(34, 34, 34, 1);
+//  line-height: rem3(17px);
+//  padding-left: rem3(17px);
+//  padding-right: rem3(15px);
+//  padding-top: rem3(34px);
+//  padding-bottom: rem3(29px);
+//  display: flex;
+//  display: -webkit-flex;
+//}
+//
+//.al-payHelp-header2 .left {
+//  -webkit-box-flex: 1;
+//  flex: 1
+//}
+//
+//.al-payHelp-header2 .right {
+//  -webkit-box-flex: 1;
+//  flex: 1
+//}
+//
+//.al-payHelp-header2 .main {
+//  width: rem3(234px);
+//  overflow: hidden;
+//  text-overflow: ellipsis;
+//  white-space: nowrap
+//}
+
+.al-payDetails-container {
+  background: #fff;
+  min-height: rem3(300px);
+  width: 100%;
+  height: auto;
+  position: relative;
+  box-sizing: border-box;
+  padding: rem3(16px) rem3(15px);
+
+  .de-title {
+    font-size: rem3(19px);
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+    padding-bottom: rem3(14px);
+  }
+
+  p {
+    font-size: rem3(17px);
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: rem3(24px);
+    margin-bottom: rem3(18px);
+
+    &:last-child {
+      font-size: rem3(15px);
+      margin-bottom: rem3(176px);
+
+      a {
+        font-size: rem3(15px);
+        font-weight: 400;
+        color: rgba(100, 131, 233, 1);
+        line-height: rem3(21px);
+      }
+    }
+  }
+
+}
+
+
+//.al-payDetails-container p {
+//  font-size: rem3(17px);
+//  font-weight: 400;
+//  color: rgba(51, 51, 51, 1);
+//  line-height: rem3(24px);
+//  margin-bottom: rem3(18px);
+//}
+
+//.al-payDetails-container p:last-child {
+//  font-size: rem3(15px);
+//  margin-bottom: rem3(176px);
+//}
+//
+//.al-payDetails-container p:last-child a {
+//  font-size: rem3(15px);
+//  font-weight: 400;
+//  color: rgba(100, 131, 233, 1);
+//  line-height: rem3(21px);
+//}

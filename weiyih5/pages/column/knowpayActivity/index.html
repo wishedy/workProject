@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <title>参与互动赢好礼</title>
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <script type="text/javascript">
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    if (IsPC()) {
+        window.location.href = '//www.allinmd.cn';
+    }
+    </script>
+</head>
+<body>
+<section class="container">
+    <section class="background-decoration">
+        <img class="decoration-1" src="./images/background-decoration-1.png">
+        <img class="decoration-2" src="./images/background-decoration-2.png">
+        <img class="decoration-3" src="./images/background-decoration-3.png">
+        <img class="decoration-4" src="./images/background-decoration-4.png">
+        <img class="decoration-5" src="./images/background-decoration-5.png">
+        <img class="decoration-6" src="./images/background-decoration-1.png">
+        <img class="decoration-7" src="./images/background-decoration-6.png">
+        <img class="decoration-8" src="./images/background-decoration-7.png">
+    </section>
+    <header>
+        <div class="header-logo"></div>
+        <!--<img class="header-share" src="./images/header-share.png">-->
+    </header>
+    <section class="main-title">
+        <img src="./images/goldMiner-28.png"/>
+    </section>
+    <section class="main-discuss-total">
+        <img src="./images/icon-discuss-fire.png">
+        <span id="discussTotal"></span>
+    </section>
+    <section class="main-picture">
+        <img src="./images/main-picture.png"/>
+    </section>
+    <section class="activity-desc panel-container">
+        <section class="activity-desc-header panel-header">
+            <span>活动说明</span>
+        </section>
+        <section class="activity-desc-content">
+            <ul>
+                <li>
+                    <div class="item-header item-header-1">独家豪礼</div>
+                    <p>获赞数由高到低排名，只要您推荐的资源进入前三名，您可获得【<span>价值千元AAOS骨科书籍+精品定制笔记本+无线充电鼠标+骨科主题抱枕</span>】大礼包！</p>
+                </li>
+                <li>
+                    <div class="item-header item-header-2">百赞重赏</div>
+                    <p>
+                        只要您推荐的资源获赞数超过100，您可获<span>唯医公众号推广机会一次</span>（文章题材不限，需主编审核后发布）。
+                    </p>
+                </li>
+                <li>
+                    <div class="item-header item-header-4">推荐有奖</div>
+                    <p>只要您参与评论，就有机会向唯医骨科app的15万同行发送推荐信息，评论格式为【推荐语+唯医资源链接】，例如：1分钟看懂椎间孔镜入路！链接：https://t1.allinmd.cn/gObiT6</p>
+                    <p><span style="font-weight:400;">打开资源播放页，点击右上角第二位的图标可转发，在弹出框内选择“短信”分享，在短信内可复制链接。</span></p>
+                </li>
+                <li>
+                    <div class="item-header item-header-3">活动时间 2019.07.15－2019.07.29</div>
+                    <p>活动结束后3个工作日内公布中奖名单，由工作人员电话联系中奖者，请您确保注册手机号准确，如有问题可咨询唯医小助手微信（微信号：allinmd2013）</p>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <section class="favorite-rank  panel-container">
+        <section class="activity-desc-header panel-header">
+            <span>点赞排行榜</span>
+        </section>
+        <section class="favorite-rank-content">
+            <ul id="favoriteRankContent">
+                <!--<li>-->
+                <!--<div class="item-content">-->
+                <!--<div class="item-content-icon">-->
+                <!--<div class="icon-top"><img src="./images/icon-favorite-top.png"></div>-->
+                <!--<div class="icon"><img src="./images/icon-user-default.png"></div>-->
+                <!--</div>-->
+                <!--<h3>用户名</h3>-->
+                <!--<div class="item-content-favorite">-->
+                <!--<img src="./images/icon-favorite-orange.png">-->
+                <!--258-->
+                <!--</div>-->
+
+                <!--</div>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<div class="item-content">-->
+                <!--<div class="item-content-icon">-->
+                <!--<div class="icon-top"><img src="./images/icon-favorite-top.png"></div>-->
+                <!--<div class="icon"><img src="./images/icon-user-default.png"></div>-->
+                <!--</div>-->
+                <!--<h3>用户名</h3>-->
+                <!--<div class="item-content-favorite">-->
+                <!--<img src="./images/icon-favorite-orange.png">-->
+                <!--258-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<div class="item-content">-->
+                <!--<div class="item-content-icon">-->
+                <!--<div class="icon-top"><img src="./images/icon-favorite-top.png"></div>-->
+                <!--<div class="icon"><img src="./images/icon-user-default.png"></div>-->
+                <!--</div>-->
+                <!--<h3>用户名</h3>-->
+                <!--<div class="item-content-favorite">-->
+                <!--<img src="./images/icon-favorite-orange.png">-->
+                <!--258-->
+                <!--</div>-->
+
+                <!--</div>-->
+
+                <!--</li>-->
+            </ul>
+        </section>
+    </section>
+    <section class="user-discuss panel-container">
+        <section class="user-discuss-header panel-header">
+            <span>用户评论</span>
+        </section>
+        <section class="user-discuss-content">
+            <section class="discuss-content-featured discuss-content-panel">
+                <section class="discuss-content-header discuss-header-featured">精选评论<span>(点赞，拿豪礼)</span></section>
+                <ul id="discussContentFeatured">
+                    <!--<li>-->
+                        <!--<div class="content-detail-icon">-->
+                            <!--<img src="./images/icon-user-default.png">-->
+                        <!--</div>-->
+                        <!--<div class="content-detail-info">-->
+                            <!--<div class="detail-info-header">-->
+                                <!--<h5>用户名</h5>-->
+                                <!--<div class="favorite-total">-->
+                                    <!--<span>258</span>-->
+                                    <!--<img src="./images/icon-favorite-orange.png">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<p>用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论</p>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="content-detail-icon">-->
+                            <!--<img src="./images/icon-user-default.png">-->
+                        <!--</div>-->
+                        <!--<div class="content-detail-info">-->
+                            <!--<div class="detail-info-header">-->
+                                <!--<h5>用户名</h5>-->
+                                <!--<div class="favorite-total">-->
+                                    <!--<span>258</span>-->
+                                    <!--<img src="./images/icon-favorite-orange.png">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<p>用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论</p>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="content-detail-icon">-->
+                            <!--<img src="./images/icon-user-default.png">-->
+                        <!--</div>-->
+                        <!--<div class="content-detail-info">-->
+                            <!--<div class="detail-info-header">-->
+                                <!--<h5>用户名</h5>-->
+                                <!--<div class="favorite-total">-->
+                                    <!--<span>258</span>-->
+                                    <!--<img src="./images/icon-favorite-orange.png">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<p>用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论</p>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                </ul>
+            </section>
+            <section class="discuss-content-new discuss-content-panel">
+                <section class="discuss-content-header discuss-header-new">最新评论<span>(点赞，拿豪礼)</span></section>
+                <ul id="discussContentRecent">
+                    <!--<li>-->
+                        <!--<div class="content-detail-icon">-->
+                            <!--<img src="./images/icon-user-default.png">-->
+                        <!--</div>-->
+                        <!--<div class="content-detail-info">-->
+                            <!--<div class="detail-info-header">-->
+                                <!--<h5>用户名</h5>-->
+                                <!--<div class="favorite-total">-->
+                                    <!--<span>258</span>-->
+                                    <!--<img src="./images/icon-favorite-orange.png">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<p>用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论</p>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="content-detail-icon">-->
+                            <!--<img src="./images/icon-user-default.png">-->
+                        <!--</div>-->
+                        <!--<div class="content-detail-info">-->
+                            <!--<div class="detail-info-header">-->
+                                <!--<h5>用户名</h5>-->
+                                <!--<div class="favorite-total">-->
+                                    <!--<span>258</span>-->
+                                    <!--<img src="./images/icon-favorite-orange.png">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<p>用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论</p>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="content-detail-icon">-->
+                            <!--<img src="./images/icon-user-default.png">-->
+                        <!--</div>-->
+                        <!--<div class="content-detail-info">-->
+                            <!--<div class="detail-info-header">-->
+                                <!--<h5>用户名</h5>-->
+                                <!--<div class="favorite-total">-->
+                                    <!--<span>258</span>-->
+                                    <!--<img src="./images/icon-favorite-orange.png">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<p>用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论</p>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                </ul>
+                <div class="discuss-content-more" id="discussContentMore">
+                    <img src="./images/icon-look-more.png">
+                    <span>查看更多</span>
+                </div>
+            </section>
+        </section>
+    </section>
+    <footer>
+        <img class="footer-logo" src="./images/footer-logo.png">
+        <img class="decoration-9" src="./images/background-decoration-8.png">
+    </footer>
+    <section class="discuss-success activity-dialog" style="display: none" id="discussSuccessDialog">
+        <div class="activity-dialog-mask"></div>
+        <div class="discuss-success-content">
+            <img src="./images/owner-discuss-success.png">
+            <div class="success-content-desc">
+                <p>分享本活动给您的好友并邀请点赞，排名前三可获得价值千元大礼包</p>
+            </div>
+            <div class="success-content-button" id="discussSuccessDialogBtn">我知道了</div>
+        </div>
+    </section>
+    <div class="owner-discuss-btn" id="ownerDiscussBtn"><img src="./images/icon-discuss.png"><span>我要评论</span></div>
+    <section class="owner-discuss activity-dialog" style="display: none" id="ownerDiscussContainer">
+        <div class="activity-dialog-mask"></div>
+        <div class="owner-discuss-container">
+            <div id="ownerDiscussCloseBtn" class="owner-discuss-close"><img src="./images/icon-close-btn.png"></div>
+            <div class="discuss-input">
+                <textarea id="discussTextArea" placeholder="请输入..."  rows="10" maxlength="200" ></textarea>
+                <div class="discuss-input-remain"><span id="discussWordsTotal">0</span>/200</div>
+            </div>
+            <div class="discuss-phone-number" id="discussPhoneNumberPanel" style="display: none">
+                <label>手机号码</label>
+                <input id="discussPhoneNumber" maxlength="11" oninput="value=value.replace(/[^\d]/g,'')"/>
+                <p>请准确填写您的手机号，活动结束后，我们会以电话的形式联系获奖者。</p>
+            </div>
+            <div class="discuss-publish-btn discuss-publish-btn-disabled" id="discussPublishBtn">
+                <span>发布</span>
+            </div>
+        </div>
+    </section>
+    <section class="app-share-btn" id="appShareBtn" style="display: none">
+        <i></i>分享
+    </section>
+    <section id="activityOverDialog" class="activity-over activity-dialog" style="display: none">
+        <div class="activity-dialog-mask"></div>
+        <div class="activity-over-content">
+            <img class="over-content-header" src="./images/activity-over-header.png">
+            <div class="over-content-desc">
+                <p>活动已结束，查看获奖名单，</p>
+                <p>可关注【唯医】公众号，</p>
+                <p>回复关键字【名单】查看获奖详情</p>
+            </div>
+           <div class="over-content-footer"><img src="./images/footer-logo.png"></div>
+        </div>
+    </section>
+</section>
+</body>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/comm/log.js"></script>
+
+<script src="./js/main.js"></script>
+
+</html>

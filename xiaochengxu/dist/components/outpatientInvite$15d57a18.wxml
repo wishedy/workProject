@@ -1,0 +1,53 @@
+<template name="outpatientInvite$15d57a18">
+  <view class="_div data-v-2120281d">
+    <view class="_section data-v-2120281d outpatient-nvite-box">
+      <view class="_header data-v-2120281d outpatient-header">
+        <view class="_h2 data-v-2120281d outpatient-title"> 门诊邀约单 </view>
+      </view>
+      <view class="_section data-v-2120281d outpatient-content">
+        <view class="_section data-v-2120281d outpatient-content-top">
+          <view class="_article data-v-2120281d outpatient-item-time">
+            <view class="_p data-v-2120281d"><label class="_span data-v-2120281d">有效期</label> <label class="_span data-v-2120281d">一次加号机会</label></view>
+            <view class="_h3 data-v-2120281d time-area">{{oiMessage.validPeriod}}</view>
+          </view>
+          <view class="_article data-v-2120281d outpatient-patient-msg">
+            <view class="_article data-v-2120281d outpatient-patient-item">
+              <view class="_h4 data-v-2120281d outpatient-patient-item-title">患者</view>
+              <view class="_p data-v-2120281d outpatient-patient-item-msg"><label class="_span data-v-2120281d">{{patientName}}</label> <label class="_span data-v-2120281d">{{oiMessage.patientSex == 1 ? '男' : '女'}}</label> <label class="_span data-v-2120281d">{{oiMessage.patientAge}}岁</label></view>
+            </view>
+            <view class="_article data-v-2120281d outpatient-patient-item">
+              <view class="_h4 data-v-2120281d outpatient-patient-item-title">证件号码</view>
+              <view class="_p data-v-2120281d outpatient-patient-item-msg"><label class="_span data-v-2120281d">{{cardId}}</label></view>
+            </view>
+          </view>
+          <view class="_article data-v-2120281d outpatient-patient-msg no-border">
+            <view class="_article data-v-2120281d outpatient-patient-item">
+              <view class="_h4 data-v-2120281d outpatient-patient-item-title">医生</view>
+              <view class="_p data-v-2120281d outpatient-patient-item-msg"><label class="_span data-v-2120281d">{{doctorName}}</label> <label class="_span data-v-2120281d">{{oiMessage.doctorPosition}}</label></view>
+            </view>
+            <view class="_article data-v-2120281d outpatient-patient-item">
+              <view class="_h4 data-v-2120281d outpatient-patient-item-title">医院</view>
+              <view class="_p data-v-2120281d outpatient-patient-item-msg content-overflow"><label class="_span data-v-2120281d">{{oiMessage.doctorHospital}}</label></view>
+            </view>
+          </view>
+        </view>
+        <view class="_section data-v-2120281d outpatient-tips-box">
+          <view class="_article data-v-2120281d outpatient-base-explanation part-one">
+            <view class="_p data-v-2120281d">请以医院官网的专家出诊时间为准，停诊信息以医院当天公布为准</view>
+          </view>
+          <view class="_article data-v-2120281d outpatient-base-explanation part-two">
+            <view class="_p data-v-2120281d">有效期内患者到医生诊室出示邀约单，领取加号条后，到医院挂号处缴费。挂号费以医院门诊价格为准</view>
+          </view>
+          <view class="_article data-v-2120281d outpatient-base-explanation part-three">
+            <view class="_p data-v-2120281d">请以上方有效期为准，逾期就诊，医生有权拒绝加号</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_section data-v-2120281d main-message-box grey-tips">
+      <view class="_figcaption data-v-2120281d first-message">
+        <view class="_p data-v-2120281d">此条信息不消耗医生回复次数</view>
+      </view>
+    </view>
+  </view>
+</template>

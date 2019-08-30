@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>全部评论</title>
+
+    <link rel="stylesheet"  href="/css/common/base.css">
+    <link rel="stylesheet"  href="/css/common/main.css">
+    <link href="/css/scene/case.css" type="text/css" rel="stylesheet"/>
+    <link href="/css/scene/personal.css" type="text/css" rel="stylesheet">
+    <link href="/js/social_intercourse/relation.css" type="text/css" rel="stylesheet"/>
+
+    <script src="/js/comm/domain.js"></script>
+    <script src="/js/social_intercourse/relation.source.js"></script>
+    <script src="/js/social_intercourse/require.js"></script>
+    <link href="/js/third-party/sweetalert-master/lib/sweet-alert.css" rel="stylesheet" type="text/css"/>
+    <script src="/js/third-party/sweetalert-master/lib/sweet-alert.min.js"></script>
+    <script type="text/javascript"
+            src="/js/third-party/jqueryscrollpagination/js/scrollpagination_noconvertjson.js"></script>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <script>
+        $(function () {
+
+            $(".case_fh").find("a").attr("href", document.referrer);
+
+            $("#appRefReplyParent").relation({
+                isNeverFixedChat: true,
+                isIgnoreFontSize: true,
+                refId: $.getUrlParam("refId"),
+                relationType: $.getUrlParam("relationType")
+            });
+
+            if (window.location.pathname == "/pages/common/all_reply.html") {
+                $("#EQ_replyTab li:eq(0)").trigger("tap");
+            }
+
+
+            //初始化
+            var cHeight = $(window).height();
+            var chatHeight = $("#appRefReplyParent").height();
+            $("#appRefReplyParent").css("top", cHeight - chatHeight);
+
+            $(".space_H").css("height", chatHeight);
+
+            $(window).on("scroll", function () {//滚动
+                var cHeight = $(window).height();
+                var chatHeight = $("#appRefReplyParent").height();
+                $("#appRefReplyParent").css("top", cHeight - chatHeight);
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+<div id="h5_detail"></div>
+<section data-role="page" class="content-page case_content">
+    <div class="case_header">
+        <div class="nav-head">
+            <div class="case_fh"><a href="" data-ajax="false"><img src="//img50.allinmd.cn/case/fanhui.png"/></a></div>
+            <div class="new_case_title">全部评论</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="comment_content">
+        <div class="comment_nav">
+            <ul id="EQ_replyTab">
+                <li class="comment_hover">最新评论</li>
+                <li>热门评论</li>
+            </ul>
+        </div>
+        <div class="hot_comment">
+            <!-- 最新评论 S -->
+            <ul class="v3-comment-list" id="EQ_newReplyList">
+
+            </ul>
+            <div class="clear"></div>
+            <!-- 最新评论 Ｅ -->
+
+            <!-- 最热评论 Ｓ 原hot_comment_li替换为v3-comment-list-->
+            <ul class="v3-comment-list" id="EQ_hotReplyList" style="display:none;">
+
+            </ul>
+            <div class="clear"></div>
+            <!-- 最热评论 Ｅ-->
+
+            <li style="height: 4em;line-height: 4em;text-align:center;" class="EQ_Flag"></li>
+        </div>
+
+    </div>
+
+    <div class="space_H"></div>
+
+    <!--reply S-->
+    <div id="appRefReplyParent" class="all_replyH">
+        <div id="appRefReply"><!-- class="comment_sr" -->
+            <textarea id="fixedChat" type="text" placeholder="我来说几句..." data-role=none/></textarea>
+        </div>
+    </div>
+    <!--reply E-->
+</section>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<import src="/components/ensure$5e95f728" /><template name="changeName$ed9c8a4e">
+  <view style="width:100%;height: 100%;overflow: hidden" class="_section data-v-3a672e74"><input value="{{newName}}" bindinput="handleProxy" placeholder="请填写昵称" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_input data-v-3a672e74" />
+    <image class="_img data-v-3a672e74 cleanUp" src="https://m.allinmed.cn/static/image/mp/personal/delet.png" hidden="{{!(newName.length>0)}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}"></image>
+    <view class="_p data-v-3a672e74 tips">提示</view>
+    <view class="_p data-v-3a672e74 tips">· 默认使用微信昵称</view>
+    <view class="_p data-v-3a672e74 tips">· 修改昵称需输入1～20个字，不包含特殊符号 </view> <button class="_button data-v-3a672e74 save" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">保存</button> <template wx:if="{{ensureShow}}" bindensureClickEvent="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="ensure$5e95f728"></template>
+  </view>
+</template>

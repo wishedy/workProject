@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            function getpara(symbol){
+                var url=document.URL;
+                var param={};
+                var str,item;
+                if(url.lastIndexOf(symbol?symbol:"?")>0)
+                {
+                    str=url.substring(url.lastIndexOf(symbol?symbol:"?")+1,url.length);
+                    var arr=str.split("&");
+                    for(var i=0;i<arr.length;i++)
+                    {
+                        item =  arr[i].split("=");
+                        param[item[0]] = decodeURI(item[1]);
+                    }
+                }
+                return param;
+            };
+            window.location.href='//www.allinmd.cn/pages/discover/discover_tagFollowers.html?tId='+getpara().tId;
+        }
+    </script>
+    <title>关注标签的人－唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/discover/tag_followerList.css">
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="203">
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader" data-alcode-mod='401'>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)" class="EV-backToTagSeminar" data-alcode='e45'>
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>关注此标签的人</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)">
+                </a>
+            </figure>
+        </header>
+        <section class="al-content al-doctorRecommend" data-alcode-mod='429'>
+        </section>
+    </section>
+
+
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/plugins/plugin.follow.js"></script>
+    <script src="/js/modules/module.list-template.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+    <script src="/js/scene/discover/tagFollowList.js"></script>
+
+</body>
+
+</html>

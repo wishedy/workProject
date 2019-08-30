@@ -1,0 +1,214 @@
+﻿@charset "UTF-8";
+//公共方法模块调用
+@import "modules/common-modules";
+//公共变量引用
+@import "variables/_allinmdV3-variables";
+
+@import "components/_utilities";
+
+/*弹层*/
+@import "components/_popup";
+/**开屏弹层*/
+@import "components/openGuid/_openGuid";
+
+//清除基础样式
+input{
+  padding: 0;
+}
+@include normalize(pc);
+.al-mainInner {
+    width: 100%;
+    min-width:1200px;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    background-color: #eef3f8;
+    padding-bottom: 180px;
+  padding-top: 70px;
+}
+.al-mainInner.al-index{
+    padding-bottom:0;
+}
+@media screen and (max-width: 1278px) {
+    .al-pageMainBox,.al_dis_mainContent,.al-personal,.main_width,.fellowship_content{
+        position:relative;
+//        left:72px;
+    }
+    .al-header,.al-mainIndex{
+        margin-left: 72px;
+    }
+}
+
+
+
+#ctrollerLoading{
+  img{
+    animation: rotate 1s linear infinite;
+    -webkit-animation: rotate 1s linear infinite;
+  }
+}
+
+.loadingAnimate{
+  img{
+    animation: rotate 1s linear infinite;
+    -webkit-animation: rotate 1s linear infinite;
+  }
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0)
+  }
+
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg)
+  }
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0)
+  }
+
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg)
+  }
+}
+
+
+body,html{
+  font-size: 16px;
+}
+
+
+/*升级浏览器提示*/
+@import "components/_browserUpgrade";
+
+/*引导提示*/
+@import "components/discover/_promptPopup";
+
+
+
+/*遮罩的控制后面body不能滚动*/
+.bodyScrollNone{
+  height: 100%;
+  overflow: hidden;
+}
+
+//弹层提示
+.uploadCaseError {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 7;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 340px;
+  height: 46px;
+  text-align: center;
+  line-height: 46px;
+  background: #FCE3E3;
+  border: 1px solid #FEB5B5;
+  border-radius: 2px;
+  font-size: 16px;
+  color: #333333;
+  display: none;
+  &.success{
+    position: absolute;
+    background: #111;
+    border:1px solid #111;
+    width: 150px;
+    color: white;
+    opacity: 0.6;
+    filter:alpha(opacity=60);
+  }
+}
+
+.uploadCaseError i {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("/images/img10/v3/upload_case/caution.png") no-repeat;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.al-mainSidebarItem .myQuitBox {
+  position: absolute;
+  top: 0;
+  left: 105px;
+  width: 228px;
+  height: 154px;
+  background: #fff;
+  border: 1px solid #e4e9ed;
+  box-shadow: 0 8px 20px 0 rgba(197,206,214,.8);
+  border-radius: 2px;
+  z-index: 5
+}
+
+.al-mainSidebarItem .myQuitBox .bubble-close {
+  height: 13px;
+  margin-top: 18px
+}
+
+.al-mainSidebarItem .myQuitBox .bubble-close i {
+  width: 13px;
+  height: 13px;
+  display: block;
+  float: right;
+  margin-right: 21px;
+  background: url(//img10.allinmd.cn/authentication/close_grey.png) no-repeat
+}
+
+.al-mainSidebarItem .myQuitBox .bubble-title {
+  color: #000;
+  width: 144px;
+  height: 30px;
+  margin-top: 16px;
+  margin-right: 54px;
+  float: right;
+  font-size: 16px;
+  font-family: MicrosoftYaHei;
+  color: #333;
+  line-height: 30px
+}
+
+.al-mainSidebarItem .myQuitBox .quit-button {
+  width: 108px;
+  height: 30px;
+  background: #2899e6;
+  border-radius: 27px;
+  color: #fff;
+  float: right;
+  text-align: center;
+  font-size: 15px;
+  line-height: 29px;
+  margin: 18px 54px 0 0
+}
+
+.al-mainSidebarItem .myQuitBox:before {
+  border: 9px solid transparent;
+  border-right: 9px solid #eceff2
+}
+
+.al-mainSidebarItem .myQuitBox:after,.al-mainSidebarItem .myQuitBox:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: -18px;
+  top: 50px;
+  height: 0;
+  width: 0
+}
+
+.al-mainSidebarItem .myQuitBox:after {
+  border: 9px solid transparent;
+  border-right: 9px solid #fff
+}
+

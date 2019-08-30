@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>认证</title>
+		<meta name="data-alcode" content="a1">
+    <script type="text/javascript">
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    if (!IsPC()) {
+        window.location.href = '//m.allinmd.cn/pages/passport/auth/auth.html';
+    }
+    </script>
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <!--build:css /dest/singlePage/user/userAuth.css -->
+    <link rel="stylesheet" href="/css/v3/base.css"/>
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css"/>
+    <link rel="stylesheet" href="/css/v3/pageFooter.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/authentication/exception.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/authentication/authentication.css"/>
+
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/publish/publish.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/weixin/module.weixin.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>-->
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/css/column/videoPK_v2/apply_zhezhao.css" rel="stylesheet" type="text/css"/>-->
+    <!--endbuild-->
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body   data-alcode="492">
+<section class="al-mainInner">
+    <!-- 页头——本页面无超链接-->
+    <header class="al-header al-dis_header">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox">
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text"/>
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+		<!--厂商认证-->
+		<section  class="authentication companyAuth" >
+        <section class="authError ev-firstError secAuthError" style="display: none"><i>!</i><span
+            class="ev-errorText"></span></section>
+			<section class="authHelp">
+				<div class="helpText"  data-alcode-mod='826' data-alcode-item-selector=".ev-help">
+					<p class="ev-help">帮助</p>
+				</div>
+				<!--认证时医生帮助提示-->
+				<div class="helpInfo hide ev-helpInfo secondHelp" id="doctorSecondStepHelpInfo">
+					<p class="arrow"></p>
+					<h4 class="headTitle">帮助</h4>
+					<h4 class="seconTile">认证权益</h4>
+					<p class="helpDesc">提交以下资料信息，完成过认证后您可享受以下权益。</p>
+
+					<h4 class="seconTile al-indent">资质</h4>
+					<p class="helpDesc al-indent"><i></i>上传两项资质证明：<span>工作证或名片、身份证人像面 </span></p>
+					<h4 class="seconTile al-indent">权益</h4>
+					<p class="helpDesc al-indent"><i></i><span>免费学习海量骨科知识</span></p>
+					<p class="helpDesc al-indent"><i></i><span>可将自家产品在唯医骨科平台进行展示 </span></p>
+					<p class="helpDesc al-indent"><i></i><span>免费浏览其他家骨科产品</span></p>
+					<p class="helpDesc al-indent"><i></i><span>足不出户参加多场骨科线上会议 </span></p>
+					<p class="helpDesc al-indent"><i></i><span>可浏览收藏大量高清视频、权威课件  </span></p>
+					<p class="helpDesc al-indent"><i></i><span>可关注喜欢医生并点赞相关视频、课件等 </span></p>
+					<h4 class="seconTile helpPerson">客服</h4>
+					<p class="helpDate helpDesc">服务时间：工作日9:00-18:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+					<p class="helpPhone helpDesc">客服电话：010-59007006</p>
+					<p class="helpPhone helpDesc">客服微信：weiyizs123</p>
+				</div>
+				<!--认证时护士帮助提示-->
+			</section>
+			<section class="seStepTitle ev-seStepTitle">
+				<h3>认证信息</h3>
+				<p>(保持边角齐全字迹清晰，确保姓名证件对应)</p>
+			</section>
+			<!--输入表单-->
+			<section class="authInput">
+				<span class="auth_title">姓名</span>
+				<input type="text" id="fullName" name="fullName" placeholder="请输入真实姓名"/>
+				<p class="al-tableErrorTips" id="name_error"><i>!</i>请输入姓名！</p>
+			</section>
+			<section class="authInput">
+				<span class="auth_title">企业</span>
+        <input type="text" id="company" name="company" placeholder="请输入企业名称" companyId=""/>
+				<p class="al-tableErrorTips" id="med_error"><i>!</i>请输入企业名称！</p>
+			</section>
+			<!--上传证件照容器 内容由证件接口返回的列表控制-->
+			<section class="ev-container"></section>
+      <section class="submitBtn"  data-alcode-mod='827' data-alcode-item-selector=".submit">
+        <div class="submit">提交</div>
+      </section>
+		</section>
+    <!-- 公共页脚部分 -->
+    <!--#include virtual="/includes/footer.jsp"-->
+</section>
+
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src="//paas.allinmd.cn/modules/uploadCompressedImg/uploadCompressedImg.js"></script>
+<!--build:js /dest/singlePage/user/companyAuth.js -->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.ajaxExistHtml.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<script src="/js/plugins/make-sure-popup/plugin.make-sure-popup.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+<script src="/js/modules/user/module.user.js"></script>
+<script src="/js/modules/publish/module.doc-upload.js"></script>
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+<script src="/js/modules/weixin/module.welcome.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+
+
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.new.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.new.js"></script>
+
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src='/js/third-party/md5.js'></script>
+<!--<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>-->
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/uploadify/swfobject2.2.js"></script>
+<script src="/js/third-party/uploadify/jquery.uploadify.js"></script>
+<script src="/js/third-party/ajaxfileupload.js"></script>
+<script src="/js/third-party/plupload/plupload.full.min.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="/js/scene/singlePage/user/companyAuth.js"></script>
+<!-- endbuild -->
+</body>
+
+</html>

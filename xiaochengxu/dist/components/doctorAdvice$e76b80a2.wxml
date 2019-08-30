@@ -1,0 +1,16 @@
+<template name="doctorAdvice$e76b80a2">
+  <view class="_section data-v-e1828f98 advice-box">
+    <view class="_figcaption data-v-e1828f98 advice-title">
+      <view class="_section data-v-e1828f98 advice-top">
+        <view class="_h3 data-v-e1828f98 advice-title">医嘱提醒</view>
+      </view>
+      <view class="_ul data-v-e1828f98 advice-content">
+        <view class="_li data-v-e1828f98 content-top" wx:if="{{adviceContent.length}}">
+          <view class="_section data-v-e1828f98 content-top-left">医嘱内容</view>
+          <view class="_section data-v-e1828f98 content-top-right">{{adviceContent}}<label wx:if="{{moreShowFlag}}" class="_span data-v-e1828f98 more" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></label></view>
+        </view>
+        <view class="_li data-v-e1828f98 content-bottom" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">请及时查看<label class="_span data-v-e1828f98">{{contentData.educationTitle}}</label><label class="_span data-v-e1828f98 more"></label></view>
+      </view>
+    </view>
+  </view>
+</template>

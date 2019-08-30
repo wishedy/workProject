@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+    <title>分会场-唯医,allinmd</title>
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <meta name="description" content="由唯医（allinmd.cn）提供的最新医学会议在线直播、会后回放。免费观看。">
+    <meta name="Keywords" content="医学会议，会议回放，会议日程，会议直播，主讲人，会议视频，骨科视频，手术视频，手术讲解，日程回顾">
+    <meta name="data-alcode" content="a2">
+    <script>
+        /*跳PC端*/
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        if(IsPC()){
+            window.location.href = '//www.allinmd.cn/html/conference/'+location.search.split("&")[0].split("=")[1]+'/1/meeting_agenda.html';
+        }
+    </script>
+    <script src="/js/comm/domain.js"></script><!--?df-->
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+    <script src="/js/react/JSXTransformer.js"></script>
+    <script src="/js/react/react.js"></script>
+    <script type="text/jsx" src="/js/scene/conference/meeting-place.jsx"></script>
+    <script src="/js/comm/Weixin_share.js"></script>
+    <script src="/js/social_intercourse/share.js"></script>
+    <script charset="utf-8">
+        var conId = 0;
+        if (typeof comm.getpara() != null && !$.isEmptyObject(comm.getpara())) {
+            conId = comm.getpara().conId;
+        }
+
+        $(function () {
+            var result;
+
+            /**
+             * 绑定唤醒APP
+             * */
+            var callAppOptions = {
+                el: "#callAppBtn",
+                ios: "allinmdios://app.allinmd.cn/applinks.html?scene=resourceList&index=3&conId=" + conId,
+                android: "allin://com.allin.social:75235?data={scene:2,conId:"+ conId +",type:3,categoryType:11}",
+                ios9: "http://app.allinmd.cn/applinks.html?scene=resourceList&index=3&conId=" + conId,
+                runAtOnce: false
+            };
+            comm.recognizeAppShareLink(callAppOptions);
+
+            //comm.bindCallApp(openAppconfig);
+            /**
+             * 绑定唤醒APP ends
+             * */
+
+
+            $.ajax({
+                url: "/mcall/conference/index/getConferenceSubList/",
+                type: "POST",
+                dataType: "json",
+                data: {paramJson: $.toJSON({pageIndex: 1, pageSize: 200, conId: conId})},
+                async: false,
+                success: function (data) {
+                    if (data != null && data != undefined && data.responseObject && data.responseObject.responseStatus) {
+                        result = data.responseObject;
+                    }
+                }
+            });
+            var data = result.responseMessage;
+            var info = result.responseData;
+            var infoConIntro = '';
+            var isOnline=false;
+            for(var i= 0;i<data.length;i++){
+                if(data[i].isOnline==1||data[i].isOnline==2){//在线直播(0-不直播、1-展视互动-直播、2-厂商-直播、3-展视互动-回播；)
+                    isOnline=true;
+                    break;
+                }
+            }
+            if(info.conIntro!=""&&info.conIntro!='undefined'){
+                infoConIntro = (comm.getLength(info.conIntro)>70?comm.cutstr(info.conIntro,70)+"...":info.conIntro);
+            }
+            mobileShare($('.footerBtn a'),{
+                title:"["+info.conName+"]"+(isOnline?"直播进行中，就在唯医。":"完整授课视频，就在唯医。"),
+                pic:"https://m.allinmd.cn/image/allin_logo.png",
+                summary:infoConIntro,
+                sinaTitle:"["+info.conName+"]"+(isOnline?"直播进行中，就在唯医。":"完整授课视频，就在唯医。")+(info.startTime!='undefined'?info.startTime.substring(0,10)+",":"")+info.country+info.city+""+(infoConIntro!=""?','+infoConIntro:"")+" 点击查看:",
+                desc:infoConIntro,
+                fnMessageSuc:function(){
+                    comm.shareLog({
+                        shareType: 3,
+                        resourceId:conId ,
+                        resourceType: 3,
+                        refId: conId,
+                        isValid: 1,
+                        shareSence:25,
+                        shareChannel:4,
+                        shareContent:"["+info.conName+"]"+(isOnline?"直播进行中，就在唯医。":"完整授课视频，就在唯医。")
+                    });
+                },
+                fnTimelineSuc:function(){
+                    comm.shareLog({
+                        shareType: 3,
+                        resourceId:conId ,
+                        resourceType: 3,
+                        refId: conId,
+                        isValid: 1,
+                        shareSence:25,
+                        shareChannel:5,
+                        shareContent:"["+info.conName+"]"+(isOnline?"直播进行中，就在唯医。":"完整授课视频，就在唯医。")
+                    });
+                },
+                qShareLog:function(o){
+                    comm.shareLog({
+                        shareType: 3,
+                        resourceId:conId ,
+                        resourceType: 3,
+                        refId: conId,
+                        isValid: 1,
+                        shareSence:25,
+                        shareChannel:o=='sina'?3:1,
+                        shareContent:o=='sina'?
+                            "["+info.conName+"]"+(isOnline?"直播进行中，就在唯医。":"完整授课视频，就在唯医。")+(info.startTime!='undefined'?info.startTime.substring(0,10)+",":"")+info.country+info.city+""+(infoConIntro!=""?','+infoConIntro:"")+" 点击查看:"
+                            :"["+info.conName+"]"+(isOnline?"直播进行中，就在唯医。":"完整授课视频，就在唯医。")
+                    });
+                }
+            });
+            var conName = comm.getpara().conName;
+            $("title").text(conName+"分会场-唯医,allinmd");
+
+            $(".new_case_title").text(conName.length > 8 ? conName.substring(0, 9) : conName);
+            if (data.length == 1) {
+                var val = data[0];
+                switch (val.isOnline) {
+                    case 1:
+                        href = '/pages/conference/live-wrap.html?conSubId=' + val.id + '&conId=' + conId + '&liveId=' + val.liveId + "&token=" + val.authcode + '&title=' + val.conSubName + '-' + conName;
+                        break;
+                    case 2:
+                        href = '/pages/conference/live.html?conSubId=' + val.id + '&title=' + val.conSubName;
+                        break;
+                    case 3:
+                        href = '/pages/conference/live-wrap.html?conSubId=' + val.id + '&conId=' + conId + '&playBackId=' + val.playBackId + "&token=" + val.authcode + '&title=' + val.conSubName + '-' + conName;
+                        break;
+                    default:
+                        href = '/pages/conference/schedule.html?conSubId=' + val.id + '&conId=' + conId + '&conSubName=' + val.conSubName;
+
+                }
+
+                window.location.href = href;
+                return;
+            }
+            window.onload = Log.createBrowse(25,'直播列表页面');
+            $('.ev_backBtn').on('click',function(){
+                comm.creatEvent({
+                    triggerType:'全站功能按钮点击',
+                    keyword:comm.getpara().conName,
+                    actionId:41,
+                    refId:comm.getpara().conId,
+                    async:false
+                });
+                if(/allinmd.cn\/$/.test(document.referrer)||/_index/.test(document.referrer)||/search/.test(document.referrer)){    //来自首页，频道首页，搜索页返回
+                    window.location.href = document.referrer;
+                }else{
+                    window.location.href='/pages/channel/conference/meeting_index.html';
+                }
+            });
+        });
+
+
+    </script>
+</head>
+
+<body>
+<div data-role="page" class="content-page video_list meeting_detail01" data-alcode="274">
+    <div class="case_header">
+        <div class="nav-head">
+            <!--/pages/conference/meeting_index.html-->
+            <div class="case_fh"><a class='ev_backBtn' href="javascript:;" data-ajax="false"><img id="back"
+                                                                                                    src="//img50.allinmd.cn/case/fanhui.png"/></a>
+            </div>
+            <div class="new_case_title"></div>
+          <!--  <div class="app_iphone_my"><a href="javascript:void(0)" data-ajax="false">
+                <div class="app_iphone_text">打开APP</div>
+            </a></div>-->
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="meeting_detail_content">
+        <div class="meeting_revise" id="meeting_list" data-alcode-mod="552">
+
+        </div>
+    </div>
+</div>
+<div class="videoPK_share_pop Ev-BayerShareCasePopShow">
+    <div id="videoPK_sharebtn" class="vPK_share_cont">
+        <div class="vPK_share_list">
+            <div class="share_dao">分享到</div>
+            <a class="share_sina Ev-BayerShareSina ui-link" target="_blank" ref="sina">
+                <div class="share_sina_icon"><img src="//img50.allinmd.cn/column/videoPK/xinlang.png" _mce_src="//img50.allinmd.cn/column/videoPK/xinlang.png" alt=""></div>
+                <div class="share_sina_text">新浪微博</div>
+            </a> <a class="share_qzone Ev-BayerShareQzone ui-link" target="_blank" ref="qzone">
+            <div class="share_qzone_icon"><img src="//img50.allinmd.cn/column/videoPK/kongjian.png" _mce_src="//img50.allinmd.cn/column/videoPK/kongjian.png" alt=""></div>
+            <div class="share_sina_text">QQ空间</div>
+        </a></div>
+    </div>
+    <div class="share_quxiao Ev-BayerShareHideBtn">取消</div>
+</div>
+<footer class="footerBtn">
+    <a class="share Ev-BayerShareCaseBtn ui-link">
+        分享
+    </a>
+</footer>
+</body>
+
+</div>
+</html>

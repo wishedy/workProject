@@ -1,0 +1,9 @@
+//@method-name:rem
+//@desc:px-rem单位换算函数
+//	    默认换算比1:75，基于lib-flexible.js自适应库使用
+//		比例为设计图宽度十分之一，若有改动，请依照本函数格式重写，以免多次重设基础值而增大工作量
+
+@import "../../../../css/base.css";
+@function rem($px, $base-font-size: 75px) {
+  @return ($px / $base-font-size) * 1rem;
+}

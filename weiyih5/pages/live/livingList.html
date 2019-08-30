@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/live/livingList.html';
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>全部直播 - 唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="description" content="全部直播 - 唯医,allinmd">
+    <meta name="keywords" content="在线直播，医学直播，手术直播，医生直播，医师直播，唯医，allinmd">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/living/personal_livingList.css">
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="356">
+<section class="al-mainInner">
+    <!-- 头部信息 -->
+    <header class="al-indexHeader">
+        <figure class="al-indexHeaderItem">
+            <a class='ev_digHole' href="/">
+                <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+            </a>
+        </figure>
+        <figure class="al-indexHeaderItem">
+            <h1>直播</h1>
+        </figure>
+        <figure class="al-indexHeaderItem">
+            <a href="javascript:void(0)">
+            </a>
+        </figure>
+    </header>
+    <section class="al-myLivingContent ev_MyLiveBox" style="display: none;">
+        <header class="al-myLivingContentTitle">
+            <h2>我的预约</h2>
+        </header>
+        <section class="ev_MyLive">
+
+        </section>
+    </section>
+    <a href="/pages/live/livingOrder.html?from=//m.allinmd.cn/pages/live/livingList.html" class="al-checkMore" style="display: none;">
+        <span>查看更多</span><i class="icon-arrowRight"></i>
+    </a>
+    <section class="al-myLivingContent ev_allLiveBox">
+        <header class="al-myLivingContentTitle">
+            <h2>全部直播</h2>
+        </header>
+        <section class="ev_allLive">
+
+        </section>
+    </section>
+    <section class="al-noLoginTips" style="display: none;">
+        <figure>
+            <img src="//img50.allinmd.cn/pages/living/LiveList_no@2x.png" alt="">
+        </figure>
+        <button class="btn-primary ev_app">我要直播</button>
+    </section>
+
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+
+
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/plugins/plugin.follow.js"></script>
+<script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+<script src="/js/scene/live/scene.live.liveList.js"></script>
+
+</body>
+
+</html>

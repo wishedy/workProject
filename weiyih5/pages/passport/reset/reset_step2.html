@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/passport/reset/reset_step2.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/login_register/login.css">
+    <!--endbuild-->
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body style="background:#fff" data-alcode="357">
+    <section class="al-mainInner" style="background:#fff" >
+
+        <section class="identifyingCode">
+            <header class="al-indexHeader">
+                <figure class="al-indexHeaderItem">
+                    <a href="javascript:history.back(-1);" id="back">
+                        <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                    </a>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                    <h1>验证手机</h1>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                    <a href="javascript:void(0)">
+                    </a>
+                </figure>
+            </header>
+            <section class="alIdentifyingText">验证码已发至<span id="account"></span>请查收输入收到的验证码，即可快速登录：</section>
+            <section class="alLoginWidth">
+                <form id="updateMobile" novalidate="novalidate">
+                    <figure class="al-validateInput">
+                        <input type="text" maxlength="4" name="validCode" id="validCode" class="valid">
+                    </figure>
+                </form>
+                <section class="alsend">
+                    <article class="alSended"></article>
+                    <article class="alSendNum">今天剩余 <span class="codeSendLeftTime"></span> 次</article>
+                </section>
+            </section>
+        </section>
+
+    </section>
+
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+    <!--build:js /dest/pages/passport/reset/reset_step2.js-->
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+    <script src="/js/third-party/md5.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/passport/reset/reset_step2.js"></script>
+    <!--endbuild-->
+</body>
+
+</html>

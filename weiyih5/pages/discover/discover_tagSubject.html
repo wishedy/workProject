@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            function getpara(symbol){
+                var url=document.URL;
+                var param={};
+                var str,item;
+                if(url.lastIndexOf(symbol?symbol:"?")>0)
+                {
+                    str=url.substring(url.lastIndexOf(symbol?symbol:"?")+1,url.length);
+                    var arr=str.split("&");
+                    for(var i=0;i<arr.length;i++)
+                    {
+                        item =  arr[i].split("=");
+                        param[item[0]] = decodeURI(item[1]);
+                    }
+                }
+                return param;
+            };
+            window.location.href='//www.allinmd.cn/pages/discover/discover_tagSubject.html#tId='+getpara().tId+'&type='+(getpara().type!=undefined?getpara().type:0);
+        }
+    </script>
+    <title>－关注标签,资源更新提醒,唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="keywords" content="［title］，关注标签，［title］病例，［title］视频，［title］文库，［title］话题，唯医,allinmd">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/discover/tag_seminar.css">
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="201">
+
+    <section class="al-mainInner">
+        <header class="al-tagSeminarHeader" data-alcode-mod='422'>
+            <a href="javascript:;" data-alcode='e52' class="ev-digHole">
+                <img src="//img50.allinmd.cn/pages/personal/others_back.png" alt="">
+            </a>
+            <section class="al-tagSeminarHeaderContent">
+                <article class="al-tagSeminarHeaderTitle EV-tagTitleMessage">
+                </article>
+                <figure class="al-tagSeminarFollow">
+                    <button class="al-whiteBtn" data-alcode='e53'></button>
+                </figure>
+            </section>
+        </header>
+        <nav class="al-tagSeminarFollowMsg">
+            <h3 class="al-tagSeminarFollowNum">已有<span></span>人关注</h3>
+            <ul class="al-tagSeminarFollowList EV-tagSeminarFollowList" data-alcode-mod='423'>
+
+            </ul>
+        </nav>
+        <section class="al-scrollBox">
+            <!-- 滚动距离时——顶部信息 -->
+            <header class="al-tagScrollHead" data-alcode-mod='422'>
+                <a href="/pages/discover/discover_tag.html" data-alcode='e52' >
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+                <h2 class="EV-scrollTitle"></h2>
+                <a href="javascript:void(0)" class="EV-scrollFollowBtn" data-alcode='e53'></a>
+            </header>
+            <section class="al-tagSeminarChange">
+                <section class="al-tagSeminarSelection"  data-alcode-mod='424' data-alcode-item-selector="a">
+                    <a href="javascript:void(0)" class="al-tagSeminarSelectionItem active" data-role="relaese" data-flag="1">最新发布</a>
+                    <a href="javascript:void(0)" class="al-tagSeminarSelectionItem" data-role="comment" data-flag="2">最多评论</a>
+                    <a href="javascript:void(0)" class="al-tagSeminarSelectionItem" data-role="browse" data-flag="3">最多浏览</a>
+                </section>
+                <!--al-personalSelectorOn-->
+                <section class="al-personalContributionSelector">
+                    <h2>全部</h2>
+                    <ul data-alcode-mod='425' data-alcode-item-selector="li">
+                        <li class="al-personalContributionSelectorItem active" data-type="0">全部</li>
+                        <li class="al-personalContributionSelectorItem" data-type="1">视频</li>
+                        <li class="al-personalContributionSelectorItem" data-type="7">病例</li>
+                        <li class="al-personalContributionSelectorItem" data-type="2">文库</li>
+                        <li class="al-personalContributionSelectorItem" data-type="4">话题</li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+        <section class="al-content active" style="margin-top:0" data-role="relaese" data-alcode-mod='426'>
+            
+        </section>
+        <section class="al-content" style="margin-top:0" data-role="comment" data-alcode-mod='426'>
+            
+        </section>
+        <section class="al-content" style="margin-top:0" data-role="browse" data-alcode-mod='426'>
+            
+        </section>
+        <section class="al-noContentTips" style="display:none">
+            <figure>
+                <img src="//img50.allinmd.cn/pages/index/no_tag_seminar.png" alt="">
+            </figure>
+        </section>
+        <!-- 分享按钮 -->
+        <section class="al-scrollShareBtn" data-alcode-mod='406'>
+            <i class="icon-scrollShare" data-alcode="e46"></i>分享
+        </section>
+        <!-- 底部选项 -->
+        <section class="al-bottomSelectorListMask al-unfollow">
+            <section class="al-bottomSelectorListBox" data-alcode-mod='427' data-alcode-item-selector="a">
+                <section class="al-bottomSelectorList">
+                    <figure class="al-bottomSelectorItem al-bottomSelectorTitle"><a href="javascript:void(0)">确定不再关注此标签？</a></figure>
+                    <figure class="al-bottomSelectorItem" id="EV-unfollowBtn"><a href="javascript:void(0)">确定</a></figure>
+                </section>
+                <section class="al-bottomSelectorList mgt">
+                    <figure class="al-bottomSelectorItem" id="EV-cancelUploadImg"><a href="javascript:void(0)">取消</a></figure>
+                </section>
+            </section>
+        </section>
+    </section>
+
+    
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+    <script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/scene/discover/tagSeminar.js"></script>
+
+</body>
+
+</html>

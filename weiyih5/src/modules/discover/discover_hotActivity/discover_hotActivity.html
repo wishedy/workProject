@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/discover/discover_hotActivity.html';
+        }
+    </script>
+    <title>热门活动－唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="keywords" content="活动列表，医学活动，学术活动，厂商活动，唯医,allinmd，">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="//m.allinmd.cn/js/third-party/flexible.js"></script>
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="199">
+    <div id="app">
+
+    </div>
+
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+
+    <script src="//paas.allinmd.cn/modules/sps/sps.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<template name="filterBuilder$08dba4c5">
+  <view class="_section data-v-612561ec filter-inner">
+    <view class="_section data-v-612561ec filter-bar">
+      <view class="_article data-v-612561ec filter-item {{[  listShow || selectItem !== -1 || selectMItem !== -1 || pageInitial    ? 'on'    : '',  listShow ? 'arrowRotate' : '']}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"><label class="_span data-v-612561ec">{{param.changeTitle.length>0?selectTitle:param.title}}</label>
+        <view class="_i data-v-612561ec icon-filter-arrow" wx:if="{{param.index!==3}}"></view>
+        <view class="_i data-v-612561ec icon-filter-hospital" wx:if="{{param.index===3}}"></view>
+      </view>
+    </view>
+    <transition name="fadeDown" class="_transition data-v-612561ec">
+      <view class="_section data-v-612561ec filter-list-inner" data-alcode-mod="760" data-alcode-item-selector=".filter-list-item" wx:if="{{param.index!==3}}" hidden="{{!(listShow&&selectIndex==param.index && maskerShow)}}" catchtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+        <view class="_section data-v-612561ec filter-list">
+          <view class="_article data-v-612561ec filter-list-item {{[selectItem === index ? 'on' : '']}}" catchtap="handleProxy" sps-data="{{getLocationId(item,index)}}" wx:key="index" key="{{index}}" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}" wx:for="{{param.dataList}}" wx:for-index="index" wx:for-item="item"><label class="_span data-v-612561ec">{{item[param.itemName]}}</label>
+            <view class="_i data-v-612561ec icon-selected-item"></view>
+          </view>
+        </view>
+      </view>
+      <view class="_section data-v-612561ec filter-list-mulit-inner" wx:if="{{param.index===3}}" hidden="{{!(listShow&&selectIndex==param.index)}}">
+        <view class="_section data-v-612561ec filter-list-mulit-box">
+          <view class="_p data-v-612561ec filter-list-mulit-title"><label class="_span data-v-612561ec">医生级别（可多选）</label></view>
+          <view class="_ul data-v-612561ec filter-list-mulit">
+            <view class="_li data-v-612561ec filter-list-mulit-item {{[item.selected ? 'on' : '']}}" catchtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'3-'+index}}" data-comkey="{{$k}}" wx:for="{{param.dataList}}" wx:for-index="index" wx:for-item="item"><label class="_span data-v-612561ec">{{item[param.itemName]}}</label></view>
+          </view>
+        </view>
+        <view class="_section data-v-612561ec filter-list-mulit-box">
+          <view class="_p data-v-612561ec filter-list-mulit-title"><label class="_span data-v-612561ec">医院级别</label></view>
+          <view class="_ul data-v-612561ec filter-list-mulit">
+            <view class="_li data-v-612561ec filter-list-mulit-item {{[selectItem === index ? 'on' : '']}}" catchtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'4-'+index}}" data-comkey="{{$k}}" wx:for="{{param.levelList}}" wx:for-index="index" wx:for-item="item"><label class="_span data-v-612561ec">{{item.itemName}}</label></view>
+          </view>
+        </view>
+        <view class="_section data-v-612561ec submit-button-box" data-alcode-mod="763"><button class="_button data-v-612561ec submit-button" data-alcode="e179" sps-data="{{keyword}}" catchtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">确认 </button></view>
+      </view>
+    </transition>
+  </view>
+</template>

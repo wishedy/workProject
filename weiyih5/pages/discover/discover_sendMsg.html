@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/discover/discover_subject.html';
+        }
+    </script>
+    <title>告诉我们</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/discover/discover_sendMsg.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/discover/discover_sendMsg.css">
+    <!--endbuild-->
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="351">
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem">
+                <a href="/pages/discover/discover_seminar.html" id="EV-backToLast">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>告诉我们</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)">
+                </a>
+            </figure>
+        </header>
+        <section class="al-personalContent">
+            <section class="al-tableModule EV-textarea">
+                <article class="al-tableModuleItem">
+                    <textarea name="" cols="" rows="" placeholder="写下你想看的..." id="EV-userNeedSeminar"></textarea>
+                    <i class="al-inputLengthTips EV-inputLengthTips"></i>
+                </article>
+            </section>
+            <section class="al-tableModule al-buttonBox">
+                <article class="al-tableModuleItem">
+                    <button class="btn-primary-lg al-msgWriting" id="EV-sendMessageBtn">发送</button>
+                </article>
+            </section>
+        </section>
+    </section>
+    <!-- 删除提示弹框 -->
+    <section class="al-confirmModalMask">
+        <section class="al-confirmModal">
+            <article class="al-confirmModalContent">
+                <article>
+                    <p>感谢您的反馈</p>
+                    <p>我们会尽快处理</p>
+                </article>
+            </article>
+            <footer class="al-confirmModalBtns">
+                <button class="al-confirmModalCancelBtn">继续浏览</button>
+            </footer>
+        </section>
+    </section>
+
+    <!-- 底部选项 -->
+    <section class="al-bottomSelectorListMask">
+        <section class="al-bottomSelectorListBox">
+            <section class="al-bottomSelectorList">
+                <figure class="al-bottomSelectorItem">
+                    <a href="javascript:void(0)" class="EV-continue">继续</a>
+                </figure>
+                <figure class="al-bottomSelectorItem al-cancelSend">
+                    <a href="javascript:void(0)" class=" EV-giveUp">放弃</a>
+                </figure>
+            </section>
+            <section class="al-bottomSelectorList mgt">
+                <figure class="al-bottomSelectorItem EV-cancel">
+                    <a href="javascript:void(0)" class="EV-cancel">取消</a>
+                </figure>
+            </section>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+    <!--build:js /dest/pages/discover/discover_sendMsg.js-->
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/scene/discover/discoverSendMsg.js"></script>
+    <!--endbuild-->
+</body>
+
+</html>

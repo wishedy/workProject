@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>微信绑定</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0">
+<script src="/js/comm/domain.js" type="text/javascript"></script>
+ <script type="text/javascript">
+  	domain.get(
+  			  '/css/common/weixin.css',
+ 		      '/js/wx/weixin_bind.js'
+		    
+	);
+</script> 
+</head>
+<body>
+<section data-role="page" class="content-page case_content" style="height:100%; background:#f9f9f9;">
+    <div class="login_xz">
+        <div class="login_xz_text">绑定后你可免登录通过微信直接浏览唯医的所有内容，在微信中接收唯医的信息提示。</div>
+        <div class="login_xz_text">我们不会得到你的微信帐号和密码，请放心使用。</div>
+        <form id="allinLoginForm">
+            <div class="login_cont">
+                <div class="allin_login_name"><div class="login_content"><div class="login_user_img"></div><input type="text" name="email" placeholder="你的唯医用户名" /><div class="clear"></div></div></div>
+                <div class="allin_login_name"><div class="login_content02"><div class="login_password_img"></div><input type="password"  name="password" placeholder="你的唯医密码" /><div class="clear"></div></div></div>
+            </div>
+            <div class="wx_bd_but but_jh" id="loginBtn" onclick="loginBtn()">绑定</div>
+            <div class="wx_reg"><a  id="toRegist" target="_blank"  onclick="toRegist();">还没有唯医帐号？去注册</a></div>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>产品列表页</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/score/productListPage.css">
+</head>
+
+<body>
+<section class="al-mainInner">
+    <header class="al-indexHeader">
+        <figure class="al-indexHeaderItem ev-backToMain">
+            <a href="javascript:;">
+                <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+            </a>
+        </figure>
+        <figure class="al-indexHeaderItem">
+            <h1>相关产品</h1>
+        </figure>
+        <figure class="al-indexHeaderItem">
+        </figure>
+    </header>
+    <p class="al-SplitLine"></p>
+    <ul class="al-productPageListBox">
+        <li>
+            <img src="/images/img50/score/productNoImg.png" alt=""/>
+            <div class="al-productInfoIntr">
+                <a href="" class="al-productName">颈椎治疗器颈椎治疗器颈椎治疗器颈椎治疗器颈椎治疗器</a>
+                <span class="al-productCompany">闻泰医疗</span>
+            </div>
+        </li>
+        <li>
+            <img src="/images/img50/score/headDemoImg.jpg" alt=""/>
+            <div class="al-productInfoIntr">
+                <a href="" class="al-productName">颈椎治疗器颈椎治疗器颈椎治疗器颈椎治疗器颈椎治疗器</a>
+                <span class="al-productCompany">闻泰医疗</span>
+            </div>
+        </li>
+        <li>
+            <img src="/images/img50/score/headDemoImg.jpg" alt=""/>
+            <div class="al-productInfoIntr">
+                <a href="" class="al-productName">颈椎治疗器颈椎治疗器颈椎治疗器颈椎治疗器颈椎治疗器</a>
+                <span class="al-productCompany">闻泰医疗</span>
+            </div>
+        </li>
+        <li>
+            <img src="/images/img50/score/headDemoImg.jpg" alt=""/>
+            <div class="al-productInfoIntr">
+                <a href="" class="al-productName">颈椎治疗器颈椎治疗器颈椎治疗器颈椎治疗器颈椎治疗器</a>
+                <span class="al-productCompany">闻泰医疗</span>
+            </div>
+        </li>
+        <li>
+            <img src="/images/img50/score/headDemoImg.jpg" alt=""/>
+            <div class="al-productInfoIntr">
+                <a href="" class="al-productName">颈椎治疗器颈椎治疗器颈椎治疗器颈椎治疗器颈椎治疗器</a>
+                <span class="al-productCompany">闻泰医疗</span>
+            </div>
+        </li>
+    </ul>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+
+
+ <script src="/js/third-party/fastclick.js"></script>
+<script>
+    FastClick.attach(document.body);
+    comm.slideTabs();
+    $(".al-personalContributionSelector h2").on("click", function() {
+        if ($(".al-personalContributionSelector").hasClass('al-personalSelectorOn')) {
+            $(".al-personalContributionSelector").removeClass('al-personalSelectorOn');
+        } else {
+            $(".al-personalContributionSelector").addClass('al-personalSelectorOn');
+        }
+
+    });
+    $(".al-personalContributionSelectorItem").on("click", function() {
+        $(this).addClass('active').siblings().removeClass('active');
+        $(this).parents(".al-personalContributionSelector").removeClass('al-personalSelectorOn');
+        $(this).parents(".al-personalContributionSelector").find('h2').text($(this).text());
+    });
+</script>
+</body>
+
+</html>

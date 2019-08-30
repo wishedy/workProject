@@ -1,0 +1,92 @@
+@charset "UTF-8";
+//分享按钮盒组件
+//Created by qiangkailiang on 2016/08/08
+//公共方法模块调用
+@import "../modules/_common-modules";
+//公共变量引用
+@import "../variables/_allinmdV3-variables";
+
+
+
+.al-shareBox {
+    max-width:267px;
+    cursor: auto;
+    height:90px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #e4e9ed;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 2; //避免页面底部遮挡
+    margin-left: -160px;
+    margin-top:16px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.14), -3px -2px 8px rgba(0, 0, 0, 0.14);
+    behavior:url('/js/third-party/pie/pie.htc');
+    &:before {
+        content: "";
+        @include triangle(15px,
+        #fff,
+        up);
+        position: absolute;
+        right: 72px;
+        top: -14px;
+    }
+    .al-shareListItem {
+        display: inline-block;
+        margin:20px 0;
+        cursor: pointer;
+
+        img {
+            width: 30px;
+            height: 30px;
+            display: block;
+            margin: 0 auto;
+        }
+        figcaption {
+            margin-top:10px;
+            font-size: 12px;
+            font-family:"宋体";
+            color: #777;
+            white-space: nowrap;
+        }
+    }
+    .al-weixinErweiCodeBox{
+        background:transparent url('//img10.allinmd.cn/v3/friends/weixin_boxbg.png') center center no-repeat;
+        width: 268px;
+        height: 232px;
+        padding: 25px 0;
+        box-sizing:border-box;
+        text-align: center;
+        box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.14), -3px 4px 8px rgba(0, 0, 0, 0.14);
+        margin-top:-15px;
+        margin-left:-1px;
+        & > span{
+            display: inline-block;
+            font-size: 14px;
+            color: $smallContentColor;
+            margin-left: 2px !important;
+            margin-bottom:12px;
+            margin-top:5px;
+            line-height:1;
+        }
+        & > img{
+            width: 150px;
+            height: 150px;
+            vertical-align: top;
+
+        }
+    }
+}
+
+
+//终端页及消息页评论区——点击分享只显示朋友圈
+.al-onlyFriendCircle{
+    display: none !important;
+    margin-left:-18px;
+   &:before{
+        right: 30px;
+    }
+    .al-shareListItem{
+        margin-right:8px;
+    }
+}

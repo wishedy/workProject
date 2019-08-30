@@ -1,0 +1,21 @@
+<template name="recureJournal$16132301">
+  <view class="_section data-v-46b66574 journalMain"><button class="_button data-v-46b66574 main-inner" open-type="getUserInfo" wx:key="index" key="{{index}}" bindgetuserinfo="handleProxy" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" wx:for="{{journalData}}" wx:for-index="index" wx:for-item="item">
+      <view class="_ul data-v-46b66574 journalTagList">
+        <view class="_li data-v-46b66574 journalTagItem">{{item.patientSex==1?'男':'女'}} {{item.patientAgeShow || ageArray[index]}}</view>
+        <view class="_li data-v-46b66574 journalTagItem" wx:if="{{item.postoperativeTime > 0}}">术后{{item.postoperativeTime}}天</view>
+        <block wx:if="{{item.popularizeTagList&&item.popularizeTagList.length}}">
+          <view class="_li data-v-46b66574 journalTagItem" wx:key="indexTwo" key="{{indexTwo}}" wx:for="{{item.popularizeTagList}}" wx:for-index="indexTwo" wx:for-item="itemTwo">{{itemTwo}}</view>
+        </block>
+      </view>
+      <view class="_h3 data-v-46b66574 journalItemTitle">{{item.diaryName}}</view>
+      <image class="_img data-v-46b66574 journalCover" src="{{item.diaryAttUrl}}" mode="aspectFill" alt></image>
+      <view class="_section data-v-46b66574 journalBottom">
+        <view class="_div data-v-46b66574 doctorBox" wx:if="{{item.fullName}}">
+          <image class="_img data-v-46b66574 doctorIcon" src="https://m1.allinmed.cn/static/image/mp/index/1.6.0/doctor-icon.png" alt></image> <label class="_span data-v-46b66574 doctorName">主刀：{{item.fullName}}</label> <label class="_span data-v-46b66574 doctorTitle">{{item.medicalTitle}}</label>
+        </view>
+        <view class="_div data-v-46b66574 give-like">
+          <image src="https://m.allinmed.cn/static/image/mp/index/1.1.4/praise.png" alt class="_img data-v-46b66574 like-icon"></image> <label class="_span data-v-46b66574 praiseNum">{{item.preferUpNum}}</label>
+        </view>
+      </view>
+    </button></view>
+</template>

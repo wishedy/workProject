@@ -1,0 +1,39 @@
+<import src="/components/toast$1074ede9" />
+<import src="/components/doctorItem$7814c800" />
+<import src="/components/recureJournal$16132301" />
+<import src="/components/loading$2ff823fe" />
+<import src="/components/ensure$5e95f728" /><template name="indexSearch$0ff9106f">
+  <view class="_section data-v-49a0094a main" id="contain">
+    <view class="_section data-v-49a0094a" style=" {{('height:' + '100vh' + ';')}}">
+      <view class="_section data-v-49a0094a header">
+        <view class="_section data-v-49a0094a input-box">
+          <view class="_div data-v-49a0094a sd_searchGroup">
+            <image class="_img data-v-49a0094a search-icon" src="https://m.allinmed.cn/static/image/img00/DrList/search.png" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></image> <input class="_input data-v-49a0094a sd_searchInput" type="text" value="{{searchVal}}" bindinput="handleProxy" placeholder="搜索医生、康复日记" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" />
+            <image class="_img data-v-49a0094a sd_delete_icon" src="https://m.allinmed.cn/static/image/mp/personal/delet.png" hidden="{{!(searchVal.length>0)}}" catchtap="handleProxy" bindconfirm="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}"></image> <label class="_span data-v-49a0094a sd_searchBtn" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">搜索</label>
+          </view>
+          <transition name="fade" class="_transition data-v-49a0094a"><template wx:if="{{errorShow}}" data="{{...$root[$kk+'0'], $root}}" is="toast$1074ede9"></template></transition>
+        </view>
+      </view>
+      <view class="_p data-v-49a0094a traderText"> 为您找到以下<label style="color:#02B5AC" class="_span data-v-49a0094a">{{HttpParams.searchParam}}</label>相关结果 </view>
+      <view class="_section data-v-49a0094a">
+        <view class="_div data-v-49a0094a _box" wx:if="{{doctorList1.length>0||majorList.length>0||majorListAll.length>0}}"><label wx:key="index" key="{{index}}" wx:for="{{tabsName}}" wx:for-index="index" wx:for-item="item" class="_span data-v-49a0094a">
+            <view class="_a data-v-49a0094a tab-link {{[isActive === index ? 'active' : '']}}" bindtap="handleProxy" data-eventid="{{'4-'+index}}" data-comkey="{{$k}}">{{item.name}}</view>
+          </label></view>
+      </view>
+      <view wx:if="{{isActive==0}}" class="_section data-v-49a0094a">
+        <view class="_p data-v-49a0094a all-title doctor-title" wx:if="{{doctorList1.length>0}}">医生</view> <template bindFromChild="handleProxy" bindclickCallback="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="doctorItem$7814c800"></template> <button class="_button data-v-49a0094a showMore" bindtap="handleProxy" wx:if="{{doctorList1.length>1}}" data-eventid="{{'6'}}" data-comkey="{{$k}}"><label class="_span data-v-49a0094a">查看更多相关医生</label></button>
+        <view class="_p data-v-49a0094a all-title" wx:if="{{majorList.length>0}}">康复日记</view> <template bindFromChild="handleProxy" bindclickCallback="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'3'], $root}}" is="recureJournal$16132301"></template> <label class="_span data-v-49a0094a no-more" wx:if="{{moreFinish}}">正在加载...</label> <label class="_span data-v-49a0094a no-more" wx:if="{{!moreFinish&&allDiaryGot}}">--到底了--</label>
+        <image class="_img data-v-49a0094a noResult-img" hidden="{{!(!finish&&majorList.length===0&&doctorList1.length===0)}}" src="https://m1.allinmed.cn/static/image/mp/index/1.6.0/default.png"></image>
+        <view class="_p data-v-49a0094a Noresult" hidden="{{!(!finish&&majorList.length===0&&doctorList1.length===0)}}">未找到符合条件的结果</view>
+      </view>
+      <view wx:if="{{indexShow&&isActive==1}}" class="_section data-v-49a0094a main-inner"><template bindFromChild="handleProxy" bindclickCallback="handleProxy" data-eventid="{{'8'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'4'], $root}}" is="doctorItem$7814c800"></template> <label class="_span data-v-49a0094a no-more" wx:if="{{moreFinish}}">正在加载...</label> <label class="_span data-v-49a0094a no-more" wx:if="{{!moreFinish&&allMsgGot}}">--到底了--</label>
+        <image class="_img data-v-49a0094a noResult-img" hidden="{{!(!finish&&doctorList.length===0)}}" src="https://m1.allinmed.cn/static/image/mp/index/1.6.0/default.png"></image>
+        <view class="_p data-v-49a0094a Noresult" hidden="{{!(!finish&&doctorList.length===0)}}">未找到符合条件的结果</view>
+      </view>
+      <view wx:if="{{isActive==2}}" class="_section data-v-49a0094a"><template bindFromChild="handleProxy" bindclickCallback="handleProxy" data-eventid="{{'9'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'5'], $root}}" is="recureJournal$16132301"></template> <label class="_span data-v-49a0094a no-more" wx:if="{{moreFinish}}">正在加载...</label> <label class="_span data-v-49a0094a no-more" wx:if="{{!moreFinish&&allDiaryGot}}">--到底了--</label>
+        <image class="_img data-v-49a0094a noResult-img" hidden="{{!(!finish&&majorListAll.length===0)}}" src="https://m1.allinmed.cn/static/image/mp/index/1.6.0/default.png"></image>
+        <view class="_p data-v-49a0094a Noresult" hidden="{{!(!finish&&majorListAll.length===0)}}">未找到符合条件的结果</view>
+      </view> <template wx:if="{{finish}}" data="{{...$root[$kk+'6'], $root}}" is="loading$2ff823fe"></template>
+    </view> <template wx:if="{{ensureShow}}" bindensureClickEvent="handleProxy" data-eventid="{{'10'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'7'], $root}}" is="ensure$5e95f728"></template>
+  </view>
+</template>

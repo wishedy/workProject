@@ -1,0 +1,22 @@
+<import src="/components/toast$1074ede9" />
+<import src="/components/doctorItem$7814c800" />
+<import src="/components/loading$2ff823fe" /><template name="listResult$7eaa3ad9">
+  <view class="_section data-v-2fdfae74 main" style="height: 100vh; overflow:hidden">
+    <transition name="fade" class="_transition data-v-2fdfae74">
+      <view class="_section data-v-2fdfae74 masker" wx:if="{{maskerShow}}" catchtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></view>
+    </transition>
+    <view class="_section data-v-2fdfae74 header">
+      <view class="_section data-v-2fdfae74 input-box">
+        <view class="_div data-v-2fdfae74 sd_searchGroup" data-alcode-mod="759">
+          <image class="_img data-v-2fdfae74 search-icon {{[!indexShow ? 'change' : '']}}" src="https://m.allinmed.cn/static/image/img00/DrList/search.png"></image> <input class="_input data-v-2fdfae74 sd_searchInput" data-alcode="e174" type="text" value="{{searchVal}}" bindinput="handleProxy" placeholder="输入医院、医生、疾病关键词搜索" data-eventid="{{'1'}}" data-comkey="{{$k}}" />
+          <image class="_img data-v-2fdfae74 sd_delete_icon" src="https://m.allinmed.cn/static/image/mp/personal/delet.png" catchtap="handleProxy" wx:if="{{searchVal.length>0}}" data-eventid="{{'2'}}" data-comkey="{{$k}}"></image> <label class="_span data-v-2fdfae74 sd_searchBtn" data-alcode="e175" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">搜索</label>
+        </view>
+        <transition name="fade" class="_transition data-v-2fdfae74"><template wx:if="{{errorShow}}" data="{{...$root[$kk+'1'], $root}}" is="toast$1074ede9"></template></transition>
+      </view>
+    </view>
+    <scroll-view wx:if="{{indexShow}}" class="_scroll-view data-v-2fdfae74 main-inner1" scroll-y="true" bindscrolltolower="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">
+      <image class="_img data-v-2fdfae74 noResult-img" hidden="{{!(noResult&&indexShow)}}" src="https://m1.allinmed.cn/static/image/mp/index/1.6.0/default.png"></image>
+      <view class="_p data-v-2fdfae74 Noresult" hidden="{{!(noResult&&indexShow)}}">未找到符合条件的结果</view> <template bindFromChild="handleProxy" bindclickCallback="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'3'], $root}}" is="doctorItem$7814c800"></template> <label class="_span data-v-2fdfae74 no-more" wx:if="{{extraShow&&doctorList.length!=0&&toBottom}}">--到底了--</label> <label class="_span data-v-2fdfae74 no-more" wx:if="{{extraShow&&doctorList.length>20&&!toBottom}}">正在加载...</label>
+    </scroll-view> <template wx:if="{{finish}}" data="{{...$root[$kk+'4'], $root}}" is="loading$2ff823fe"></template>
+  </view>
+</template>

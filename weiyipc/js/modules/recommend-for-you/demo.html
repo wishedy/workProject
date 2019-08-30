@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> 为你推荐示例 </title>
+    <link href="/css/common/base.css" rel="stylesheet" type="text/css" />
+    <link href="/js/module/recommend-for-you/module.recommend-for-you.css" rel="stylesheet" type="text/css" />
+    <script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/plugins/jquery-validation-1.11.1/dist/jquery.validate.js"></script>
+    <script src="/js/common/user.js"></script>
+    <script src="/js/plugins/scroll-box/plugin.scroll-box.js"></script>
+    <script src="/v2\js\module\recommend-for-you\module.recommend-for-you.js"></script>
+    <script>
+        $(function () {
+            module.recommendForYou({
+                container:"#recommendForYou"
+            });
+        })
+    </script>
+</head>
+<body>
+
+<div class="video_tj" id="recommendForYou">
+    <div class="video_tj_cont">
+        <div class="video_tj_text font_yahei">为你推荐</div>
+        <div class="video_tj_li">
+            <ul>
+                <li>
+                    <div class="weini_tj hover">猜你喜欢</div>
+                </li>
+                <li>
+                    <div class="weini_tj">观看记录</div>
+                </li>
+                <li style="border:none;">
+                    <div class="weini_tj">我的收藏</div>
+                </li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div class="l_r_but">
+            <div class="v2_detail_pages_left_mr prev"></div>
+            <div class="v2_detail_pages_right_mr next"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="v_tj_list">
+        <div class="tab-list">
+            <div class="tab-item guess">
+                <div class="spinner loading-margin">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+            <div class="tab-item history hide">
+                <div class="v_tj_list v_tj_list_no_jilu ">
+                    <div class="small_tuijie_text font_yahei"> 你还没有观看过视频哦！</div>
+                    <div class="small_tuijie_but">登录</div>
+                </div>
+            </div>
+            <div class="tab-item favourite hide">
+                <div class="v_tj_list v_tj_list_no_jilu ">
+                    <div class="small_tuijie_but">登录</div>
+                    <div class="small_tuijie_text font_yahei"> 即可收藏精彩视频！</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="video_tj">
+    <div class="">
+        <div class="video_tj_text font_yahei">为你推荐</div>
+        <div class="video_tj_li">
+            <ul>
+                <li>
+                    <div class="weini_tj">猜你喜欢</div>
+                </li>
+                <li>
+                    <div class="weini_tj hover">观看记录</div>
+                </li>
+                <li style="border:none;">
+                    <div class="weini_tj">我的收藏</div>
+                </li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div class="l_r_but">
+            <div class="v2_detail_pages_left_mr"></div>
+            <div class="v2_detail_pages_right_mr"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="v_tj_list v_tj_list_no_jilu ">
+        <div class="small_tuijie_text font_yahei"> 你还没有观看过视频哦！</div>
+        <div class="small_tuijie_but">登录</div>
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+</body>
+</html>

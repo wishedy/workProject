@@ -1,0 +1,92 @@
+<import src="/components/healthItem$7f5834ba" />
+<import src="/components/recureJournal$16132301" />
+<import src="/components/loading$2ff823fe" />
+<import src="/components/ensure$5e95f728" />
+<import src="/components/confirm$5251c782" />
+<import src="/components/backIndex$640b7ced" />
+<import src="/components/BlackList$219144df" />
+<import src="/components/authorization$8245c8b6" /><template name="doctorMain$6282e6b9">
+  <view class="_section data-v-13b85a54 doctorHome-main">
+    <view class="_section data-v-13b85a54 doc-topInfo">
+      <view class="_section data-v-13b85a54 doc-name-big">{{doctorName}}医生</view>
+      <view class="_section data-v-13b85a54 top-left {{[!videoUrl.length > 0 ? 'no-background' : '']}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+        <view class="_section data-v-13b85a54 doc-playVideo" wx:if="{{videoUrl.length>0}}"></view>
+        <image src="{{doctorLogo}}" alt class="_img data-v-13b85a54"></image>
+      </view>
+      <view class="_section data-v-13b85a54 top-right">
+        <view class="_section data-v-13b85a54"><label class="_span data-v-13b85a54 doc-medical">{{medicalTitle}}</label><label class="_span data-v-13b85a54 doc-degree" wx:if="{{false}}">{{formatDepartment}}</label></view>
+        <view class="_section data-v-13b85a54 doc-right-content2"><label class="_span data-v-13b85a54 doc-hospitallName">{{company}}</label></view> <label class="_span data-v-13b85a54 doc-hospitalGrade" wx:if="{{authMap.hospitalLevelId==1}}">三甲</label>
+        <view class="_section data-v-13b85a54 doc-cureTime">{{jobDoctorYear}}</view>
+      </view>
+    </view>
+    <view class="_section data-v-13b85a54 doc-listComm doc-goodAt" wx:if="{{expertiseFiled.length>0}}">
+      <view class="_section data-v-13b85a54 doc-listTitle">擅治疾病</view>
+      <view class="_section data-v-13b85a54 doc-listContent"><label class="_span data-v-13b85a54 doc-goodTips" wx:key="index" key="{{index}}" wx:for="{{expertiseFiled}}" wx:for-index="index" wx:for-item="item">{{item}}</label></view>
+    </view>
+    <view class="_section data-v-13b85a54 doc-listComm doc-practice">
+      <view class="_section data-v-13b85a54 doc-listTitle">执业简介<button class="_button data-v-13b85a54 doc-infoMore" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">更多</button></view>
+      <view class="_section data-v-13b85a54 doc-listContent" wx:if="{{practiceIntroduction.length>0}}">{{practiceIntroduction}}</view>
+    </view>
+    <view class="_section data-v-13b85a54 doc-listComm allSuggestion" hidden="{{!(abilityPatientList.length>0)}}">
+      <view class="_section data-v-13b85a54 doc-listTitle">全部评价</view>
+      <view class="_section data-v-13b85a54 doc-listContent doc-listContent-tag" wx:key="index" key="{{index}}" wx:if="{{isMoreClick||((!isMoreClick)&&index<5)}}" wx:for="{{abilityPatientList}}" wx:for-index="index" wx:for-item="item">
+        <view class="_section data-v-13b85a54 doc-evaluateTitle">
+          <image src="{{item.patientLogo}}" alt class="_img data-v-13b85a54"></image>
+          <view class="_section data-v-13b85a54 doc-evalUserName">{{item.patientName}}</view>
+        </view>
+        <view class="_section data-v-13b85a54 doc-evaluateContent">
+          <view wx:if="{{item.tag}}" class="_p data-v-13b85a54 doc-evaluate-tag">{{item.tag}}</view>
+          <view wx:if="{{item.patientReputation}}" class="_p data-v-13b85a54 doc-evaluate-text {{[item.tag ? 'doc-evaluate-top' : '']}}">{{'“'+item.patientReputation+'”'}}</view>
+          <view wx:if="{{(!item.patientReputation)&&(!item.tag)}}" class="_p data-v-13b85a54 doc-evaluate-text">“该用户给出好评，对医生非常满意”</view> <label class="_span data-v-13b85a54 circle"></label>
+        </view>
+      </view>
+      <view wx:if="{{abilityPatientList.length>5&&(!isMoreClick)}}" bindtap="handleProxy" class="_section data-v-13b85a54 more-reputation" data-eventid="{{'2'}}" data-comkey="{{$k}}">更多评价</view>
+    </view>
+    <view class="_section data-v-13b85a54 doc-border-hightLine" wx:if="{{doctorGuideList && doctorGuideList.length>0}}"></view>
+    <view class="_section data-v-13b85a54 doc-listComm doc-guide" wx:if="{{doctorGuideList.length}}">
+      <view class="_section data-v-13b85a54 doc-listTitle">专家指南<label wx:if="{{doctorGuideList.length > 2}}" class="_span data-v-13b85a54 doc-infoMore" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">更多</label></view>
+      <view class="_ul data-v-13b85a54 doc-guide-list">
+        <view class="_li data-v-13b85a54 doc-guide-item" wx:key="index" key="{{index}}" wx:if="{{index < 2}}" bindtap="handleProxy" data-eventid="{{'4-'+index}}" data-comkey="{{$k}}" wx:for="{{doctorGuideList}}" wx:for-index="index" wx:for-item="item">
+          <view class="_div data-v-13b85a54 doc-guide-left">
+            <image src="{{item.coverUrl}}" alt="图片加载失败" class="_img data-v-13b85a54 node-img"></image>
+          </view>
+          <view class="_div data-v-13b85a54 doc-guide-middle">
+            <view class="_h3 data-v-13b85a54 guide-title">{{item.manualName}}</view>
+            <view class="_p data-v-13b85a54 guide-content">共{{item.articleNum}}篇</view>
+          </view>
+          <view class="_div data-v-13b85a54 doc-guide-right"></view>
+        </view>
+      </view>
+    </view>
+    <view class="_section data-v-13b85a54 doc-border-hightLine" wx:if="{{recommendLists && recommendLists.length>0}}"></view>
+    <view class="_section data-v-13b85a54 doc-listComm doc-healthContent" wx:if="{{recommendLists&&recommendLists.length>0}}" id="stroke-info">
+      <view class="_section data-v-13b85a54 doc-listTitle">专家文章<label class="_span data-v-13b85a54 doc-infoMore" wx:if="{{recommendLists && recommendLists.length>2}}" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">更多</label></view> <template from="doctorMain" bindclickCallback="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="healthItem$7f5834ba"></template>
+    </view>
+    <view class="_section data-v-13b85a54 doc-border-hightLine"></view>
+    <view class="_figure data-v-13b85a54 doctorMainHistory">
+      <view class="_header data-v-13b85a54 {{[recureJournalList.length ? 'padding-bottom' : '']}}">
+        <view class="_h3 data-v-13b85a54 journalTitle">手术康复日记</view> <button wx:if="{{recureJournalList.length}}" class="_button data-v-13b85a54 addJournal" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}">
+          <image class="_img data-v-13b85a54 addIcon" src="https://m1.allinmed.cn/static/image/mp/index/1.6.0/write.png"></image> <label class="_span data-v-13b85a54 addText">我也要写</label>
+        </button>
+      </view>
+      <block wx:if="{{recureJournalList.length}}"><template bindFromChild="handleProxy" bindclickCallback="handleProxy" data-eventid="{{'8'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="recureJournal$16132301"></template>
+        <view class="_section data-v-13b85a54 extraLine" hidden="{{!(recureJournalList.length>0)}}">{{toBottom?'正在加载..':'--到底了--'}}</view>
+      </block> <button wx:if="{{!recureJournalList.length}}" class="_button data-v-13b85a54 goJournal" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'9'}}" data-comkey="{{$k}}"><label class="_span data-v-13b85a54 space"></label>
+        <view class="_section data-v-13b85a54 out-box">
+          <image class="_img data-v-13b85a54 goIcon" src="https://m.allinmed.cn/static/image/mp/index/1.1.4/add-blue.jpg" alt></image> <label class="_span data-v-13b85a54 goText">写我的手术康复日记</label>
+        </view>
+      </button>
+    </view> <template wx:if="{{finish}}" data="{{...$root[$kk+'3'], $root}}" is="loading$2ff823fe"></template>
+    <view class="_section data-v-13b85a54 doc-goConsult">
+      <form bindsubmit="handleProxy" report-submit="true" wx:if="{{showShareBtn}}" data-eventid="{{'10'}}" data-comkey="{{$k}}" class="_form data-v-13b85a54"><button class="_button data-v-13b85a54 shareBtn wx-contact-text" open-type="share" type="submit" formType="submit"><label class="_span data-v-13b85a54">分享</label></button></form>
+      <view class="_section data-v-13b85a54 invite-consult" hidden="{{!((authMap.state!=8||openState==2)&&showBottom)}}">
+        <view class="_p data-v-13b85a54"> 医生暂不在线，点击[预约咨询]医生助理会为您联系医生，并在医生上线后第一时间通知您。</view>
+      </view>
+      <view class="_section data-v-13b85a54 doc-go-left">
+        <view class="_p data-v-13b85a54 doc-goLone"><label class="_span data-v-13b85a54 doc-goFreeText {{[authMap.state != 8 || openState == 2 ? 'notOnline' : '']}}" wx:if="{{authMap.state==8&&openState==1&&inquiryState>0&&payType=='free'}}">{{(authMap.state==8&&openState==1)?"前3次回复免费":"暂不在线"}}</label> <label class="_span data-v-13b85a54 doc-goFreeText {{[authMap.state != 8 || openState == 2 ? 'notOnline' : '']}}" wx:if="{{authMap.state!=8||openState==2}}">{{(authMap.state==8&&openState==1)?"前3次回复免费":"暂不在线"}}</label> <label class="_span data-v-13b85a54 doc-goPrice {{[payType !== 'free' ? 'charge' : '']}}" wx:if="{{authMap.state==8&&openState==1}}">¥{{generalPrice}} <label class="_span data-v-13b85a54 doc-priceIcon" wx:if="{{payType=='free'}}"></label></label></view>
+        <view class="_p data-v-13b85a54 doc-goLTwo">已有<label class="_span data-v-13b85a54 doc-goNum">{{count}}</label>人咨询过</view>
+      </view>
+      <form bindsubmit="handleProxy" report-submit="true" data-eventid="{{'13'}}" data-comkey="{{$k}}" class="_form data-v-13b85a54"><button class="_button data-v-13b85a54 doc-go-right" open-type="getUserInfo" formType="submit" bindgetuserinfo="handleProxy" wx:if="{{authMap.state==8&&openState==1}}" data-eventid="{{'11'}}" data-comkey="{{$k}}">去咨询 </button> <button class="_button data-v-13b85a54 doc-go-right" open-type="getUserInfo" formType="submit" bindgetuserinfo="handleProxy" wx:if="{{authMap.state!=8||openState==2}}" data-eventid="{{'12'}}" data-comkey="{{$k}}">预约咨询 </button></form>
+    </view> <template wx:if="{{ensureShow}}" bindensureClickEvent="handleProxy" data-eventid="{{'14'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'4'], $root}}" is="ensure$5e95f728"></template> <template wx:if="{{confirmShow}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'15'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'5'], $root}}" is="confirm$5251c782"></template> <template wx:if="{{backIndexShow}}" data="{{...$root[$kk+'6'], $root}}" is="backIndex$640b7ced"></template> <template data="{{...$root[$kk+'7'], $root}}" is="BlackList$219144df"></template> <template data="{{...$root[$kk+'8'], $root}}" is="authorization$8245c8b6"></template>
+  </view>
+</template>

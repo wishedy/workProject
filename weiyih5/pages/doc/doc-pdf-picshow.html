@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--build:css /dest/pages/doc/docPdfPicshow.css-->
+    <link rel="stylesheet" href="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.css">
+    <link rel="stylesheet" href="/js/third-party/photoswipe/photoswipe-master/dist/default-skin-blue/default-skin.css">
+    <link rel="stylesheet" href="/js/third-party/photoswipe/photoswipe-master/dist/thumbnails.css">
+    <!--endbuild-->
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,user-scalable=0">
+</head>
+
+<body>
+<script>
+
+</script>
+</body>
+</html>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.min.js"></script>
+<script>(typeof PhotoSwipe=='undefined')&&document.write(unescape("%3Cscript src='/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.js' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!--build:js /dest/pages/doc/docPdfPicshow.js-->
+<script src="/js/third-party/photoswipe/photoswipe-master/dist/default-skin-blue/photoswipe-ui-default.js"></script>
+<script src="/js/third-party/photoswipe/photoswipe-master/dist/Thumbnails.js"></script>
+<!--endbuild-->
+<script>
+    /*解决微信横屏幕问题*/
+    var gallery = null;
+    (function(){
+        var supportsOrientation = (typeof window.orientation == 'number' && typeof window.onorientationchange == 'object');
+        var HTMLNode = document.body.parentNode;
+        var updateOrientation = function() {
+            // rewrite the function depending on what's supported
+            if(supportsOrientation) {
+                updateOrientation = function() {
+                    var orientation = window.orientation;
+
+                    switch(orientation) {
+                        case 90: case -90:
+                        orientation = 'landscape';
+                        break;
+                        default:
+                            orientation = 'portrait';
+                    }
+
+                    // set the class on the HTML element (i.e. )
+                    HTMLNode.setAttribute('class', orientation);
+                }
+            } else {
+                updateOrientation = function() {
+                    // landscape when width is biggest, otherwise portrait
+                    var orientation = (window.innerWidth > window.innerHeight) ? 'landscape': 'portrait';
+
+                    // set the class on the HTML element (i.e. )
+                    //HTMLNode.setAttribute('class', orientation);
+                    if(gallery!=null){
+                        gallery.updateSize();
+                    }
+
+                }
+            }
+
+            updateOrientation();
+        };
+        var init = function() {
+            // initialize the orientation
+            updateOrientation();
+
+            if(supportsOrientation) {
+                window.addEventListener('orientationchange', updateOrientation, false);
+            } else {
+                // fallback: update every 5 seconds
+                setInterval(updateOrientation, 5000);
+            }
+
+        };
+        window.addEventListener('DOMContentLoaded', init, false);
+    })();
+
+
+
+
+
+    function getparaNew(){
+        var url = document.URL;
+        var param = {};
+        var str, item;
+        str = url;
+        if (url.lastIndexOf("?") > 0) {
+            str = url.substring(url.lastIndexOf("?") + 1, url.length);
+        }
+        if (url.lastIndexOf("#") > 0) {
+            str = str.split("#")[1];
+        }
+        if (url.indexOf("=") == "-1") {
+            return false;
+        }
+        if (str.length > 0) {
+            var arr = str.split("&");
+            if (arr.length > 0) {
+                for (var i = 0; i < arr.length; i++) {
+                    item = arr[i].split("=");
+                    param[item[0]] = decodeURI(item[1]);
+                }
+                return param;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    var param = getparaNew();
+    if(param!=null && param!=undefined){
+        if(param.resourceId && param.resourceType){
+            $.ajax({
+                url: "/mcall/cms/pdf/pic/json_list/",
+                type: "GET",
+                data: {paramJson: $.toJSON({resourceId: param.resourceId, resourceType: param.resourceType, pageIndex: 1, pageSize: 10000,sortType:3})},
+                success: function (data) {
+                    if(data && data.responseObject){
+                        var list = data.responseObject.responseData.data_list;
+                        if(list.length>0){
+                            var items = [];
+                            for (var i = 0; i < list.length; i++) {
+                                var obj = list[i];
+                                items.push({
+                                    src:obj.attUrl, //url[0]+"."+format[0],
+                                    msrc:obj.attUrl,
+                                    title:"",
+                                    w:obj.attWidth,
+                                    h:obj.attHeight
+                                })
+                            }
+
+                            if(!$(".pswp").length){
+                                $(".pswp").remove();
+                                $("body").append('<!-- Root element of PhotoSwipe. Must have class pswp. -->' +
+                                        '           <div class="pswp pswp--thumbs" tabindex="-1" role="dialog" aria-hidden="true">' +
+                                        '                    <!-- Background of PhotoSwipe. ' +
+                                        '                         It,s a separate element as animating opacity is faster than rgba(). -->' +
+                                        '                <div class="pswp__bg"></div>' +
+                                        '                    <!-- Slides wrapper with overflow:hidden. -->' +
+                                        '                <div class="pswp__scroll-wrap">' +
+                                        '                    <!--   Container that holds slides.' +
+                                        '                           PhotoSwipe keeps only 3 of them in the DOM to save memory.' +
+                                        '                           Don t modify these 3 pswp__item elements, data is added later on. -->' +
+                                        '                    <div class="pswp__container">' +
+                                        '                            <div class="pswp__item"></div>' +
+                                        '                            <div class="pswp__item"></div>' +
+                                        '                            <div class="pswp__item"></div>' +
+                                        '                    </div>' +
+                                        '                    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->' +
+                                        '                    <div class="pswp__ui pswp__ui--hidden">' +
+                                        '                        <div class="pswp__top-bar">' +
+                                        '                                            <!--  Controls are self-explanatory. Order can be changed. -->' +
+                                        '                            <a href="javascript:history.back()"><button class="pswp__button--back" title="Back " onclick="history.back(); return false;"></button></a>' +
+                                          //     '                            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>' +
+                                            //'                            <button class="pswp__button pswp__button--share" title="Share"></button>' +
+                                            //'                            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>' +
+                                        '                            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>' +
+                                        '                            <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->' +
+                                        '                            <!-- element will get class pswp__preloader--active when preloader is running -->' +
+                                        '                            <div class="pswp__preloader">' +
+                                        '                                <div class="pswp__preloader__icn">' +
+                                        '                                    <div class="pswp__preloader__cut">' +
+                                        '                                        <div class="pswp__preloader__donut"></div>' +
+                                        '                                    </div>' +
+                                        '                                </div>' +
+                                        '                            </div>' +
+                                        '                        </div>' +
+                                        '                        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">' +
+                                        '                           <div class="pswp__share-tooltip"></div>' +
+                                        '                        </div> ' +
+                                        '                        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">' +
+                                        '                           </button>' +
+                                        '                        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">' +
+                                        '                           </button>' +
+                                        '                        <div class="pswp__caption">' +
+                                        '                            <div class="pswp__caption__center"></div>' +
+                                        '                        </div>' +
+                                        '                       <div class="pswp__index-bar">' +
+                                        '                               <div class="pswp__counter"></div>' +
+                                        '                       </div>' +
+                                        '                    </div>' +
+                                        '                </div>' +
+                                        '               <div class="pswp__thumbs">' +
+                                        '                     <div class="pswp__thumbs-container">' +
+                                        '                          <div class="pswp__thumbs-wrapper">' +
+                                        '                              <ul class="pswp__thumbs-list"></ul>' +
+                                        '                              <ul class="pswp__thumbs-list"></ul>' +
+                                        '                              <ul class="pswp__thumbs-list"></ul>' +
+                                        '                          </div>' +
+                                        '                     </div>' +
+                                        '                     <ul class="pswp__thumbs-list-nav">' +
+                                        '                     </ul>' +
+                                        '               </div>'+
+                                        '         </div>');
+                            }
+
+                            var pswpElement = document.querySelectorAll('.pswp')[0];
+
+
+                            var options = {
+                                /* optionName: 'option value'
+                                 for example:
+                                 history: false,
+                                 focus: false,
+                                 */
+                                history: false,
+                                showAnimationDuration: 0,
+                                hideAnimationDuration: 0,
+                                allowPanToNext:true,
+                                clickToCloseNonZoomable:false,
+                                /*maxSpreadZoom:2,*/
+                                loop:false,
+                                pinchToClose:false,
+                                closeOnVerticalDrag:false,
+                                index: 0 // start at first slide
+                            };
+                            // Initializes and opens PhotoSwipe
+                            gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+                            gallery.init();
+                            gallery = new ArdoExtensions.PhotoSwipeThumbnails(gallery,{});
+                            $(window).on("orientationchange resize", function () {
+                                if($(".pswp").size()>0){
+                                    gallery.updateSize();
+                                }
+                            });
+                        }else{
+                            alert("本文档不包含pdf图片")
+                        }
+                    }
+                }
+            })
+        }
+    }
+</script>

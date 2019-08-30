@@ -1,0 +1,333 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+@import "discover_billboard";
+.al_dis_mainContent{
+  width:1000px;
+  margin:0 auto;
+  margin-top: 20px;
+  &:after{
+    content:'';
+    width:0;
+    height: 0;
+    clear:both;
+    display:block;
+  }
+}
+.al_dis_left{
+  width:708px;
+  float:left;
+}
+.al_dis_banner {
+  width: 708px;
+  height: 274px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom:20px;
+}
+.al_dis_banner>a{
+  display:block;
+  width:100%;
+  height: 100%;
+}
+  .al_dis_banner  i{
+    width: 100px;
+    height: 100px;
+    display: block;
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+  .al_dis_banner img{
+    width:100%;
+    height:100%;
+  }
+  .al_dis_searchLists{
+    width:100%;
+    border:1px solid #e4e9ed;
+  }
+  .al_dis_item{
+      width: 708px;
+      height:119px;
+      background:#fff;
+      border-bottom:1px solid #e4e9ed;
+      &:hover{
+          //.al_dis_firstTag{
+              background:#fafbfd;
+          //}
+      }
+  }
+  .al_dis_item:after{
+      content: "";
+      width: 0;
+      display: block;
+      height:0;
+
+  }
+  .al_dis_firstTag{
+    width:100px;
+    height:100%;
+    float:left;
+    font-size:18px;
+    font-family:'microsoft yahei' ;
+    color:  #333;
+    text-align: center;
+    &>a{
+        display:block;
+    }
+  }
+.al_dis_firstTag.active{
+  background:#f4f6f7;
+}
+  .al_dis_secTag{
+    width:548px;
+    padding-left:30px;
+    padding-right:30px;
+    float:left;
+    margin-top:35px;
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+    .al_dis_cen{
+      width:530px;
+    }
+    a{
+      font-size: 15px;
+      color:#666;
+      font-family: 'microsoft yahei';
+      display:inline-block;
+      margin-right:22px;
+      margin-bottom:20px;
+      &:hover{
+        color:#3598db;
+
+      }
+    }
+    .al_dis_more{
+      position: absolute;
+      right:5px;
+      bottom:-17px;
+      font-size: 13px;
+      color:#9ea7bb;
+      font-family: "Helvetica Neue";
+      &:after{
+        content:"";
+        background: url("//img10.allinmd.cn/v3/common/icon/content_title_more.png") no-repeat;
+        width:6px;
+        height:10px;
+        display:inline-block;
+        margin-left:5px;
+        position: relative;
+        top:2px;
+      }
+    }
+    &.al_dis_secTag_single{
+        line-height:120px;
+        margin:0;
+        height:120px;
+        .al_dis_more{
+            bottom:-20px;
+        }
+        .al_dis_sub_img{
+            height:57px;
+            display:inline-block;
+            margin-top:22px;
+            margin-right:6px;
+            width:160px;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+        }
+    }
+    &.al_dis_secTag_tag{
+        //margin-top:10px;
+        height:100px;
+        width:513px;
+        padding-right:50px;
+        a.al_dis_tag{
+          display: inline-block;
+          height:36px;
+          line-height: 36px;
+          padding:0 15px;
+          border:1px solid #e6e8ed;
+          color:#808080;
+          margin:5px 12px 12px 0;
+          position: relative;
+          border-radius:20px;
+          behavior: url('/js/third-party/pie/pie.htc');
+          &:hover{
+            background: rgba(224,225,231,0.2);
+          }
+        }
+        .al_dis_more{
+          bottom:0;
+          margin-right:10px;
+        }
+    }
+  }
+  .al_dis_icon{
+    display:block;
+    margin:0 auto;
+    margin-bottom:8px;
+    text-align:center;
+    width:30px;
+    height:30px;
+    background-size:100%;
+    margin-top:33px;
+  }
+.al_icon_pref{
+  background:url("//img10.allinmd.cn/v3/discover/profession.png") no-repeat center center;
+}
+.al_icon_disease{
+  background:url("//img10.allinmd.cn/v3/discover/disease.png") no-repeat center center;
+}
+.al_icon_class{
+  background:url("/images/img10/v3/classes/class.png") no-repeat center center;
+}
+.al_icon_method{
+  background:url("//img10.allinmd.cn/v3/discover/method.png") no-repeat center center;
+}
+.al_icon_format{
+  background:url("//img10.allinmd.cn/v3/discover/format.png") no-repeat center center;
+}
+.al_icon_subject{
+  background:url("//img10.allinmd.cn/v3/discover/subject.png") no-repeat center center;
+}
+.al_icon_tag{
+  background:url("//img10.allinmd.cn/v3/discover/tag.png") no-repeat center center;
+}
+.al_dis_right{
+  width:270px;
+  float:right;
+  .al-discover_know{
+    margin-top: 0;
+    height:auto;
+    margin-bottom:20px;
+    .al-discover_knowZj{
+      padding: 0 20px 10px 20px;
+      margin-top: 20px;
+    }
+  }
+  .al_dis_professor{
+    margin-top:30px;
+    margin-left:20px;
+    font-size: 18px;
+    color:#333;
+    position: relative;
+    .al_dis_more{
+      position: absolute;
+      top:3px;
+      font-size: 13px;
+      color:#9ea7bb;
+      font-family: "Helvetica Neue";
+      &:after{
+        content:"";
+        width:6px;
+        height:10px;
+        display:inline-block;
+        margin-left:5px;
+        position: relative;
+        top:2px;
+        background: url("//img10.allinmd.cn/v3/common/icon/content_title_more.png") no-repeat;
+      }
+    }
+  }
+  .al_dis_activities{
+    height:auto;
+    padding-bottom:0;
+  }
+  .al_dis_act_wrap{
+    margin:24px 20px;
+    img{
+      width:228px;
+      height: 110px;
+    }
+    p{
+      margin-top:10px;
+    }
+    a{
+      font-size:15px;
+      color:#666;
+      font-family: 'microsoft yahei';
+      &:hover{
+        color: #2899e6;
+      }
+    }
+  }
+  .al_dis_allWatch{
+    //max-height:380px;
+    height: auto;
+  }
+  .al_dis_allW_wrap{
+    padding:24px 20px 0 20px;
+    a{
+      color:#666;
+      font-size: 15px;
+      display: block;
+      position: relative;
+      padding-right:5px;
+      &:hover{
+        color: #2899e6;
+      }
+      &:after{
+        /*
+        content:">";
+        width:3px;
+        height:10px;
+        display:inline-block;
+        position: absolute;
+        right:0;
+        color:#aaa;
+        font-family: "Helvetica Neue";
+        */
+        content:"";
+        display:inline-block;
+        width:5px;
+        height:9px;
+        background: url("//img10.allinmd.cn/v3/common/icon/content_title_more.png") no-repeat center center;
+        position: absolute;
+        right:0;
+        top:4px;
+      }
+    }
+    section{
+      margin-bottom:20px;
+    }
+    p{
+      margin-top:10px;
+      font-size: 15px;
+      color:#aaaaaa;
+    }
+    .al-orange{
+      color:#ff9224;
+    }
+  }
+}
+.al_hLine{
+  display: inline-block;
+  margin:5px;
+  width:100px;
+  height:1px;
+  background:#E4E9ED;
+}
+.al-discover_know {
+  border: 1px solid #e4e9ed;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+.al-discover_know h4 {
+  padding: 18px 20px;
+  border-bottom: 1px solid #E4E9ED;
+  font-size: 18px;
+  color:#333;
+  font-weight: normal;
+}
+
+
+.discoverTab{
+  padding-right: 50px;
+}

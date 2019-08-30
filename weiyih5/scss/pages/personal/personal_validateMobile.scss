@@ -1,0 +1,75 @@
+@charset "UTF-8";
+//个人主页——绑定手机
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_recordListModule"; //记录列表组件
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.al-changeMobileBox {
+    background-color: #fff;
+    margin-top: rem(20px);
+    padding: rem(60px) rem(30px);
+    padding-bottom: 0;
+    height: 100%;
+    .al-changeMobileContent {
+        @include font-dpr(15px);
+        color: #808080;
+        line-height: 1.5;
+    }
+}
+
+.al-validateInput {
+    margin-top: rem(200px);
+    margin-bottom: rem(90px);
+    padding-bottom: rem(20px);
+    position: relative;
+    overflow: hidden;
+    input {
+        width: 100%;
+        height: rem(60px);
+        border: none;
+        background: none;
+        outline: none;
+        font-family: "microsoft yahei";
+        letter-spacing: 2.3rem;
+        padding-left: rem(35px);
+        box-sizing: border-box;
+        font-size: rem(32px);
+    }
+    &:after {
+        content: "";
+        width: 100%;
+        height: rem(4px);
+        display: block;
+        background: transparent url('//img50.allinmd.cn/pages/personal/validate_bottom.png') center center no-repeat;
+        background-size: cover;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.al-changeMobileContent.sended {
+    text-align: center;
+    span {
+        padding: 0 rem(10px);
+    }
+}
+
+.icon-searchCancel {
+    @extend %icon-searchCancel;
+}
+
+.icon-mobile {
+    @extend %icon-mobile;
+}

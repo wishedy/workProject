@@ -1,0 +1,8 @@
+<import src="/components/jkParseVideo$7772e4f2" /><template name="jkParse$9e7fc512">
+  <view class="_div data-v-19904a7c wxParse {{className}}" wx:if="{{!loading}}">
+    <view wx:key="index" key="{{index}}" wx:for="{{dataArr}}" wx:for-index="index" wx:for-item="item" class="_section data-v-19904a7c">
+      <view class="_p data-v-19904a7c p" wx:if="{{item.type=='text'}}">{{item.content}}</view>
+      <image lazy-load="{{lazyLoad}}" class="_img data-v-19904a7c img image" mode="widthFix" wx:if="{{item.type=='img'}}" src="{{item.content}}" alt bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}"></image> <template wx:if="{{item.type=='video'}}" data="{{...$root[$kk+'0-'+index], $root}}" is="jkParseVideo$7772e4f2"></template> <text wx:if="{{item.type=='br'}}" class="_text data-v-19904a7c">\n</text>
+    </view>
+  </view>
+</template>

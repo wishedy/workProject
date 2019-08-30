@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>话题</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/css/v3/base.css">
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css"/>
+    <link rel="stylesheet" href="/css/v3/pageFooter.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/terminal/topic.css"/>
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <li>
+                    <a href="javascript:void(0);">< 返回</a>
+                </li>
+            </ul>
+            <div class="al-headerSearchRecord">
+                浏览记录
+            </div>
+            <figure class="al-headerSearch">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar al-mainSidebarCollapse" onmousemove="aa();">
+        <header class="al-mainLogo">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+
+        <section class="al-mainSidebarList">
+            <ul>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn/pages/channel/index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>首页</h4>
+                                <p>HOME</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn/pages/discovery/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>发现</h4>
+                                <p>DISCOVERY</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release active">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>发布</h4>
+                                <p>RELEASE</p>
+                            </div>
+                        </article>
+                    </a>
+                    <!-- 点击发布图标弹出框 -->
+                    <div class="al-release_popBox">
+                        <a href="">
+                            <b></b>
+                            <span>病例</span>
+                        </a>
+                        <a href="">
+                            <b class="topicIcon"></b>
+                            <span>话题</span>
+                        </a>
+                        <a href="">
+                            <b class="libraryIcon"></b>
+                            <span>文库</span>
+                        </a>
+                        <a href="">
+                            <b class="videoIcon"></b>
+                            <span>视频</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>消息</h4>
+                                <p>MESSAGE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                        <figcaption>个人</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>我的</h4>
+                                <p>PROFILE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList">
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>小唯</h4>
+                                <p>SERVICE</p>
+                            </div>
+                        </article>
+                    </a>
+                    <!--小唯客服弹出框：begin-->
+                    <div class="al-customerService">
+                        <figure class="al-cusServiceBox">
+                            <header>
+                                小唯客服 <b></b>
+                            </header>
+                            <section class="al-cusServiceMain">
+                                <i></i>
+                                <article class="al-service_answer">
+                                    <h5>您的问题我们已经收到</h5>
+                                    <p>我们会尽快帮您解决</p>
+                                    <span>3秒后消失</span>
+                                </article>
+                            </section>
+                        </figure>
+
+                        <figure class="al-cusServiceBox">
+                            <header>
+                                小唯客服 <b></b>
+                            </header>
+                            <section class="al-cusServiceMain">
+                                <h6>反馈内容</h6>
+                                <article class="al-feedbackContent">
+                                    <textarea name="" id="" cols="42" rows="4" placeholder="请尽可能详细的描述您遇到的问题"></textarea>
+                                    <span>500</span>
+                                    <p>提交</p>
+                                </article>
+                            </section>
+                        </figure>
+                    </div>
+                    <!--小唯客服弹出框：end-->
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>手机端</h4>
+                                <p>MOBILES</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+
+        </section>
+    </aside>
+
+    <section class="al-pageMainBox">
+        <!--页面主体内容：begin -->
+        <section class="al-mainContent">
+            <div class="al-libraryInfoBox">
+                <figure class="al-libraryInfo_head">
+                    <h4>脊柱骨折合并脊髓损伤，取出内固定后为何疼痛？</h4>
+                    <a href="">唯医小编</a>
+                    <p>
+                        发布于：<span>2014-1-12</span>
+                    </p>
+                    <p>
+                        更新于：<span>2014-1-12</span>
+                    </p>
+                </figure>
+                <div class="al-browseData">
+                    <h4>1260</h4>
+                    <span>浏览</span>
+                </div>
+                <figure class="al-textDetailsBox">
+                    <p>成人脊柱侧凸为复杂脊柱疾病，源于骨质疏松和椎间盘非对称性退变所致的腰椎多节段旋转半脱位。特点为进行性、非对称性椎间盘和关节突复合体的退变。椎体冠状面既有椎体不对称性倒塌，又有侧方滑移。</p>
+                    <section class="al-textDetails_main">
+                        <img src="//img10.allinmd.cn/v3/terminal/topic_img1.jpg" alt=""/>
+                        <h5>缩短手术时间术中尽可能覆盖器械减少</h5>
+                        <p>随着肱骨髓内钉以及肩关节置换技术的成熟，目前关于需手术干预的肱骨近端骨折治疗方案选讨论也越来越多微创技术是治疗
+                            <a href="">@王岩</a><a href="">@王岩</a><a href="">@王岩</a><a href="">@王岩</a><a href="">@王岩</a><a href="">@王岩</a>
+                            关于需手术干预的肱骨近端骨折治疗方案选择的讨论
+                        </p>
+                    </section>
+                    <section class="al-textDetails_main">
+                        <img src="//img10.allinmd.cn/v3/terminal/topic_img1.jpg" alt=""/>
+                        <b class="videoPlayBtn"></b>
+                        <span>04:24</span>
+                        <h5>缩短手术时间术中尽可能覆盖器械减少</h5>
+                        <p>成人脊柱侧凸为复杂
+                            <a href="">@王岩</a><a href="">@王岩</a>
+                            脊柱疾病，源于骨质疏松和椎间盘非对称性退变所致的腰椎多节段旋转半脱位。
+                        </p>
+                    </section>
+                    <section class="al-textDetails_main">
+                        <img class="littleImg" src="//img10.allinmd.cn/v3/terminal/topic_img2.jpg" alt=""/>
+                        <p>成人脊柱侧凸为复杂
+                            <a href="">@王岩</a><a href="">@王岩</a>
+                            脊柱疾病，源于骨质疏松和椎间盘非对称性退变所致的腰椎多节段旋转半脱位。
+                        </p>
+                        <i></i>
+                        <p class="active">
+                            成人脊柱侧凸为复杂
+                            <a href="">@王岩</a><a href="">@王岩</a>
+                            脊柱疾病，源于骨质疏松和椎间盘非对称性退变所致的腰椎多节段旋转半脱位。特点为进行性、非对称性椎间盘和关节突复合体的退变。椎体冠状面既有椎体不对称性倒塌，又有侧方滑移。
+                        </p>
+                    </section>
+                    <figure class="errorRecovery">纠错 · 报错</figure>
+                </figure>
+                <figure class="al-tagBox">
+                    <figcaption>标签</figcaption>
+                    <span>中西医结合</span>
+                    <span>颈椎</span>
+                    <span>人工髋关节置换</span>
+                    <span>中西医结合</span>
+                    <span>小儿骨科</span>
+                    <span>颈椎</span>
+                    <span>颈椎</span>
+                    <span>人工髋关节置换</span>
+                    <span>中西医结合</span>
+                    <span>颈椎</span>
+                    <span>精神病内科</span>
+                </figure>
+            </div>
+
+            <!--发表评论：begin-->
+            <div class="al-appearComment">
+                <a href="">
+                    <img src="//img10.allinmd.cn/v3/common/icon/comment_user.png" alt=""/>
+                </a>
+                <input type="text" placeholder="评论张晓梦"/>
+            </div>
+            <!--发表评论：end-->
+
+            <div class="al-commentAll">
+                <figure class="al-commentAll_head">
+                    <figcaption>全部评论</figcaption>
+                    <span>最旧</span>
+                    <span>最新</span>
+                </figure>
+                <section class="al-commentAll_body">
+                    <p>暂无评论，快“加入讨论”参与进来~</p>
+                </section>
+            </div>
+        </section>
+        <!--页面主体内容：end -->
+
+
+        <!--页面侧边栏：begin-->
+        <aside class="al-sideBarContent">
+            <figure class="al-sideBarRoll_box">
+                <div class="expertInfo">
+                    <a href="" class="expert_userImg">
+                        <img src="//img10.allinmd.cn/v3/common/icon/comment_user.png" alt=""/>
+                    </a>
+                    <span class="expertName">张晓梦</span>
+                    <img class="followBtn" src="//img10.allinmd.cn/v3/common/followBtn/expert_follow.png" alt="" />
+                    <p>
+                        <span>副主任医师</span>
+                        <span class="expert_workPlace">北京大学第三医人民代表北京大学第三医人民代表</span>
+                    </p>
+                </div>
+
+                <div class="al-commentBox">
+                    <i class="leftArrow"></i>
+                    <figure class="discuss_container">
+                        <b></b>
+                        <figcaption>
+                            加入讨论
+                            <span>364</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="like_container likeActive">
+                        <b></b>
+                        <figcaption>
+                            收藏
+                            <span>123</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="zan_container zanActive">
+                        <b></b>
+                        <figcaption>
+                            点赞
+                            <span>32</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </figure>
+
+            <div class="al-followCase">
+                <figure class="btnBox">
+                    <figcaption>帮您了解病例更新及最新评论</figcaption>
+                    <img class="followCaseBtn" src="//img10.allinmd.cn/v3/terminal/followTopicBtn.png" alt=""/>
+                    <img class="followed_bigImg" src="//img10.allinmd.cn/v3/terminal/followedBtn_bigImg.png" alt=""/>
+                </figure>
+
+                <figure class="al-followCaseInfo">
+                    <a href=""><img src="//img10.allinmd.cn/v3/terminal/follow_userImg.png" alt=""/></a>
+                    <a href=""><img src="//img10.allinmd.cn/v3/terminal/follow_userImg.png" alt=""/></a>
+                    <a href=""><img src="//img10.allinmd.cn/v3/terminal/follow_userImg.png" alt=""/></a>
+                    <a href=""><img src="//img10.allinmd.cn/v3/terminal/follow_userImg.png" alt=""/></a>
+                    <div>
+                        已有<span>10038</span>人关注 >
+                    </div>
+                </figure>
+                <figure class="al-noFollow">
+                    已有<span>0</span>人关注
+                </figure>
+            </div>
+
+            <div class="al-shareBox">
+                <figure class="al-shareBox_head">
+                    <b class="line"></b>
+                    <span class="shareText">分享到</span>
+                    <b class="line"></b>
+                </figure>
+                <div class="shareBox_icon">
+                    <figure class="shareLink_track">
+                        <a href="">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_inset.png" alt=""/>
+                        </a>
+                        <figcaption>站内动态</figcaption>
+                    </figure>
+                    <figure class="shareLink_wx">
+                        <a href="">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_weixin.png" alt=""/>
+                        </a>
+                        <figcaption>微信</figcaption>
+                    </figure>
+                    <figure class="shareLink_wb">
+                        <a href="">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_weibo.png" alt=""/>
+                        </a>
+                        <figcaption>微博</figcaption>
+                    </figure>
+                    <figure class="shareLink_qqSpace">
+                        <a href="">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_zone.png" alt=""/>
+                        </a>
+                        <figcaption>QQ空间</figcaption>
+                    </figure>
+                    <figure class="shareLink_qq">
+                        <a href="">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_qq.png" alt=""/>
+                        </a>
+                        <figcaption>QQ</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="al-resource">
+                <h6>相关资源</h6>
+                <figure class="al-resourceInfo">
+                    <img src="//img10.allinmd.cn/v3/terminal/resourceImg.jpg" alt=""/>
+                    <div>
+                        <p>小儿脊柱退变侧段融合手术融合手术融合手术</p>
+                        <span>刘铁根</span>
+                    </div>
+                </figure>
+                <figure class="al-resourceInfo">
+                    <img src="//img10.allinmd.cn/v3/terminal/resourceImg.jpg" alt=""/>
+                    <div>
+                        <p>小儿脊柱退变侧段融合手术融合手术融合手术</p>
+                        <span>刘铁根</span>
+                    </div>
+                </figure>
+                <figure class="al-resourceInfo">
+                    <img src="//img10.allinmd.cn/v3/terminal/resourceImg.jpg" alt=""/>
+                    <div>
+                        <p>小儿脊柱退变</p>
+                        <span>刘铁根</span>
+                    </div>
+                </figure>
+                <figure class="al-resourceInfo">
+                    <img src="//img10.allinmd.cn/v3/terminal/resourceImg.jpg" alt=""/>
+                    <div>
+                        <p>小儿脊柱退变</p>
+                        <span>刘铁根</span>
+                    </div>
+                </figure>
+                <figure class="al-resourceInfo">
+                    <img src="//img10.allinmd.cn/v3/terminal/resourceImg.jpg" alt=""/>
+                    <div>
+                        <p>小儿脊柱退变</p>
+                        <span>刘铁根</span>
+                    </div>
+                </figure>
+            </div>
+        </aside>
+        <!--页面侧边栏：end-->
+    </section>
+
+    <!--返回顶部：begin-->
+    <section class="al-backToTop">
+        <figure class="al-backToTopItem al-backToTopFirst">
+            <i class="al-backToTopIcon"></i>
+        </figure>
+        <figure class="al-backToTopItem">
+            分享
+            <section class="al-shareBox">
+                <figure class="al-shareListItem">
+                    <img src="//img10.allinmd.cn/v3/common/icon/share_inset.png" alt="">
+                    <figcaption>站内动态</figcaption>
+                </figure>
+                <figure class="al-shareListItem">
+                    <img src="//img10.allinmd.cn/v3/common/icon/share_weixin.png" alt="">
+                    <figcaption>微信</figcaption>
+                </figure>
+                <figure class="al-shareListItem">
+                    <img src="//img10.allinmd.cn/v3/common/icon/share_weibo.png" alt="">
+                    <figcaption>微博</figcaption>
+                </figure>
+                <figure class="al-shareListItem">
+                    <img src="//img10.allinmd.cn/v3/common/icon/share_zone.png" alt="">
+                    <figcaption>QQ空间</figcaption>
+                </figure>
+                <figure class="al-shareListItem">
+                    <img src="//img10.allinmd.cn/v3/common/icon/share_qq.png" alt="">
+                    <figcaption>QQ</figcaption>
+                </figure>
+            </section>
+        </figure>
+        <figure class="al-backToTopItem al-clickToShowErweiCode">
+            <i class="icon-erweiCodeBottom"></i>
+            <section class="al-shareBox al-erweiCodeShareBox">
+                <figure class="al-shareListItem">
+                    <img src="//img10.allinmd.cn/v3/common/icon/erweiCode_1.png" alt="">
+                </figure>
+                <figcaption>唯医骨科官方微信</figcaption>
+            </section>
+        </figure>
+    </section>
+    <!--返回顶部：end-->
+
+    <!-- 公共页脚：begin-->
+    <footer class="al-mainFooter">
+        <section class="al-mainFooterInner">
+            <section class="al-mainFooterContent">
+                <section class="al-mainFooterLinks">
+                    <a href="javascript:void(0)" class="al-mainFooterLinkItem" style="padding-left: 0;">隐私声明</a>
+                    <a href="javascript:void(0)" class="al-mainFooterLinkItem">服务条款</a>
+                    <a href="javascript:void(0)" class="al-mainFooterLinkItem">关于我们</a>
+                    <a href="javascript:void(0)" class="al-mainFooterLinkItem" style="padding-right: 0;border-right: none;">联系我们</a>
+                </section>
+                <article class="al-mainFooterMsg">
+                    <figure class="al-mainFooterMsgImg">
+                        <img src="//img10.allinmd.cn/v3/common/icon/site_1.png" alt="">
+                    </figure>
+                    <figure class="al-mainFooterMsgImg">
+                        <img src="//img10.allinmd.cn/v3/common/icon/site_2.png" alt="">
+                    </figure>
+                </article>
+                <article class="al-mainFooterRecordMsg">
+                    <p>京ICP证150380号 | 京ICP备14007118号-2号 京公网安备11010802014986号京卫计网审[2014] 第0378号 </p>
+                    <p>Copyright©2019 Allinmd.cn All Rights Reserved.版权所有©北京欧应科技有限公司</p>
+                </article>
+            </section>
+            <figure class="al-mainFooterErWeiCode">
+                <img src="//img10.allinmd.cn/v3/common/icon/erweiCode_1.png" alt="">
+            </figure>
+        </section>
+    </footer>
+    <!-- 公共页脚：end-->
+</section>
+<script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+<script>
+    $(function(){
+        setTimeout(function() {
+            $(".al-mainSidebar").removeClass("al-mainSidebarCollapse");
+            $(".al-mainSidebar").animate({
+                "width": "80px"
+            });
+        }, 3000);
+
+        $(".al-release a").click(function(){    //点击主导航栏发布图标显示弹出框
+            $(".al-release_popBox").show();
+        });
+
+        $(".al-allinmdService a").click(function(){     //小唯客服弹出框
+            $(".al-customerService").show();
+        });
+        $(".al-customerService b").click(function(){    //小唯客服关闭弹出框
+            $(this).parents(".al-customerService").hide();
+        })
+    });
+
+    function aa(){
+        $(".al-mainSidebar").addClass("al-mainSidebarCollapse");
+        $(".al-mainSidebar").css("width","152px");
+    }
+</script>
+</body>
+</html>

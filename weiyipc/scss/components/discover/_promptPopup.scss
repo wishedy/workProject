@@ -1,0 +1,81 @@
+@charset "UTF-8";
+//按钮组件
+//Created by qiangkailiang on 2016/08/04
+//公共方法模块调用
+@import "../../modules/_common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+
+
+.al-promptPopup{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(10,30,43,0.7);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#bb0A1E2B, endColorstr=#bb0A1E2B); BOTTOM: 0px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+.al-promptPopupCont{
+  position: fixed;
+  width: 1000px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  margin-left: -500px;
+  z-index: 5;
+  .promptIndex{
+    margin: 384px 0 0 -3px;
+  }
+  .iKnow{
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border: solid 1px #fff;
+    border-radius: 100px;
+    font-size: 20px;
+    color: #fff;
+    margin: 35px 0 0 280px;
+    cursor: pointer;
+  }
+  .promptBoneClass{
+    position: absolute;
+    right: -390px;
+    top: 164px;
+    z-index: 6;
+    display: block;
+  }
+}
+
+.al-mainSidebarItem{
+  position: relative;
+  .promptLeftNav{
+    position: absolute;
+    left: 70px;
+    top: -11px;
+    background: url("//img10.allinmd.cn/v3/discover/discoverV2/base_discovertips.png") no-repeat;
+    width: 313px;
+    height: 144px;
+    font-size: 20px;
+    color: #fff;
+    text-align: left;
+    span{
+      display: inline-block;
+      margin: 40px 0 0 40px;
+      b{font-size: 16px;display: block;font-weight: normal;margin-top: 16px;margin-left: 10px}
+      i{
+        position: absolute;
+        right: 33px;
+        top: 45px;
+        display: inline-block;
+        background: url("//img10.allinmd.cn/v3/discover/discoverV2/icon-delet.png") no-repeat;
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ckplayer简单调用演示</title>
+<style type="text/css">
+	#bg{
+		width:100%;height:100%;background: #000;position: fixed;top:0;left:0;display: none;
+	}
+	#a1{
+		position: relative;z-index: 2;
+	}
+</style>
+</head>
+
+<body>
+<div id="a1"></div>
+<div id="bg"></div>
+<script type="text/javascript" src="ckplayer/ckplayer.js" charset="utf-8"></script>
+<script type="text/javascript">
+	var flashvars={
+		f:'http://7xl1fx.com2.z0.glb.qiniucdn.com/1449586934_1280_720.mp4', //http://movie.ks.js.cn/flv/other/1_0.flv
+		c:0,
+		p:0,
+		//d:"https://www.baidu.com/img/bd_logo1.png",
+		i:"https://www.baidu.com/img/bd_logo1.png",
+		};
+	var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+	CKobject.embedSWF('ckplayer/ckplayer.swf','a1','ckplayer_a1','600','400',flashvars,params);
+	/*
+	CKobject.embedSWF(播放器路径,容器id,播放器id/name,播放器宽,播放器高,flashvars的值,其它定义也可省略);
+	下面三行是调用html5播放器用到的
+	*/
+ 	//var video=['http://movie.ks.js.cn/flv/other/1_0.mp4->video/mp4','http://www.ckplayer.com/webm/0.webm->video/webm','http://www.ckplayer.com/webm/0.ogv->video/ogg'];
+	//禁用H5
+	//var support=['iPad','iPhone','ios','android+false','msie10+false'];
+	//CKobject.embedHTML5('a1','ckplayer_a1',600,400,video,flashvars,support);
+	
+	
+	function closelights(){//关灯
+//		alert(' 本演示不支持开关灯');
+		document.getElementById('bg').style.display='block';
+	}
+	function openlights(){//开灯
+//		alert(' 本演示不支持开关灯');
+		document.getElementById('bg').style.display='none';
+	}
+	
+	
+	
+	
+	
+	
+	
+	var time = 180;
+	setTimeout(function(){
+		CKobject.getObjectById('ckplayer_a1').videoPlay();
+	},3000)
+	function checkAuth(data) {
+	    html = "";
+	    if (data == null || data == "" ||
+	        data.responseObject == undefined ||
+	        $.isEmptyObject(data.responseObject) ||
+	        data.responseObject.state == -1 ||
+	        data.responseObject.state == 0 ||
+	        data.responseObject.state == 3) {	//未认证
+	        html = "<img id=\"goLogin\" src=\"//img00.allinmd.cn/detail/video/immediatelyAccreditation.png\" style=\"width:722px;height:450px;\">";
+	    } else {
+	        var state = data.responseObject.state;
+
+	        var company = data.responseObject.company;
+	        var areasExpertise = data.responseObject.areasExpertise;
+	        var medicalTitle = data.responseObject.medicalTitle;
+	        if (state == 1 || state == 2) {
+	            //认证已经通过，此时不允许再次认证
+	            if (!company || !areasExpertise || !medicalTitle) {
+	                //认证已经通过，但资料未完善。
+	                html = "<img id=\"goLogin\" src=\"//img00.allinmd.cn/detail/video/immediatelyWs.png\" style=\"width:722px;height:450px;\">";
+	            }
+	        }
+	    }
+
+	    return html;
+	}
+
+	//SWF
+	function ckplayer_status(str) {
+		console.log(str);
+		if(str.indexOf("time:")===0){
+		    var nowTime = str.substr(str.lastIndexOf(":") + 1);
+		    if(time < nowTime){ console.log(111)}
+		}
+		/* if(str.indexOf("time:")>-1){
+		    var nowTime = str.substr(str.lastIndexOf(":") + 1);
+		    if (time < nowTime) {
+		        var html = "";
+		        if (!user.getLoginStatus()) { //未登录
+		            html = "<img id=\"goLogin\" src=\"//img00.allinmd.cn/detail/video/immediatelyLogin.png\" style=\"width:722px;height:450px;\"/>";
+		        } else {
+		            if (!authDataObject) {
+		                $.ajax({
+		                    url: "//www.allinmd.cn/call/customer/auth/getAuthBycustomerId/",
+		                    dataType: "json",
+		                    type: "post",
+		                    async: false,
+		                    success: function (data) {
+		                        authDataObject = data;
+		                    }
+		                })
+		            }
+		
+		            html = checkAuth(authDataObject);
+		
+		        }
+		
+		        if (html.length > 0) {
+		            CKobject.getObjectById('CKa1').videoPause();
+		            //$("#a1").hide();
+		            $("#a1").css("position", "absolute").css("top", "-10000px");
+		            $("#video").prepend(html);
+		            $("#video img").on("click", function () {
+		                user.login({
+		                    callback: function () {
+		                        $("#a1").css("position", "static");
+		                        $("#goLogin").remove();
+		                        CKobject.getObjectById('CKa1').videoPlay();
+		                        time = 50000000;
+		                    }, operateType: "auth"
+		                });
+		            });
+		        }
+		    }
+		}     */
+	}
+  </script>
+</body>
+</html>

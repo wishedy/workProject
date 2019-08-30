@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+//轮播组件
+//Created by qiangkailiang on 2016/07/31
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+
+//自身需引入swiper.css
+
+.al-carouselBanner {
+    a {
+        display: block;
+        height: 100%;
+    }
+    .al-carouselBannerItem {
+        height: rem(290px);
+    }
+    img {
+        max-height: 100%;
+        width: 100%;
+        vertical-align: top;
+    }
+    .swiper-pagination-bullet {
+        width: rem(10px);
+        height: rem(10px);
+        opacity: 1;
+        background-color: #fff;
+        opacity: 0.5;
+        transition: all 0.2s linear;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: #fff;
+        width: rem(15px);
+        height: rem(15px);
+        opacity: 1;
+    }
+    .swiper-slide{
+        position: static;
+    }
+}

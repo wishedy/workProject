@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>登录－骨科学术讨论社区allinmd</title>
+    <!--build:css /dest/singlePage/user/login.css -->
+    <link href="//css.allinmd.cn/common/base.css" rel="stylesheet" type="text/css" />
+	<link href="/js/plugins/ui-card/plugin.ui-card.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css" />
+
+    <link href="/js/third-party/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css" />
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css" />
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+    <!-- endbuild -->
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="60">
+ <!--<div class="elevator_item" style="z-index:100">
+    <a href="javascript:;" class="custom_service" onclick="mechatClick()" >在线客服</a>
+</div>-->
+<!-- 返回顶部end -->
+
+    <script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+    <script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+    <script src='/js/lib/jquery/jquery.cookie.js'></script>
+    <!--build:js /dest/singlePage/user/login.js -->
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/comm.customer.js"></script>
+	<script src="/js/comm/comm.file.js"></script>
+    <script src="/js/comm/comm.lightBox.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+
+    <script src="/js/modules/user/module.user.js"></script>
+    <script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+
+    <script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script><script src='/js/third-party/md5.js'></script>
+    <script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+    <script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+    <!-- endbuild -->
+<script>
+
+    $(function () {
+        if(comm.getpara().action && comm.getpara().action =="union"){
+            user.showUnionPage();
+        }else{
+            user.showLoginPage();
+        }
+
+    })
+</script>
+
+</body>
+</html>

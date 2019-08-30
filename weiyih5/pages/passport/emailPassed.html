@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <link href="/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.css" rel="stylesheet">
+    <!--build:css /dest/pages/passport/emailPassed.css-->
+    <link rel="stylesheet"  href="/css/common/base.css">
+    <link rel="stylesheet"  href="/css/common/main.css">
+    <!--endbuild-->
+</head>
+<body>
+<section id="setNewPwd" data-role="page" class="login content-page bg-white">
+<form id="loginForm">
+    <div class="login_width">
+        <div class="l_title">重置密码</div>
+        <div class="ts">
+            <div class="ts_t"></div>
+            <div class="ts_c" style="text-align:left;"><div>
+            很抱歉，我们在处理你的请求时遇到了问题。
+            这可能是由于你正在访问的链接已失效。
+            </div></div>
+            <div class="ts_b"></div>
+        </div>
+        <!-- 
+        <div class="email_input l_input_margin">
+          <input type="text" placeholder="邮箱" />
+        </div>
+         -->        
+        <a href="/" data-ajax="false" data-role="button"><div class="login_btn">进入首页</div></a>
+    </div>
+ </form>    
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.js"></script>
+<!--build:js /dest/pages/passport/emailPassed.js-->
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/jweixin-1.0.0.js"></script>
+<script src="/js/comm/WeixinJSApi.js"></script>
+<script src="/js/comm/Weixin_share.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/passport/resetPwd.js"></script>
+<!--endbuild-->
+    <script>
+        var resetSite = $.mobile.path.parseUrl(window.location).search.split("=")[1];
+       // $("#sendEmail").attr('href',"/mcall/customer/reset/password/send_email_input/?resetSite="+resetSite);
+    </script>
+</body>
+</html>

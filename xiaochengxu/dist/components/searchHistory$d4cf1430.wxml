@@ -1,0 +1,9 @@
+<import src="/components/confirm$5251c782" /><template name="searchHistory$d4cf1430">
+  <view class="_figure data-v-53a058c3 sd_searchHistory" wx:if="{{historyInfo.length>0}}">
+    <view class="_figcaption data-v-53a058c3">历史记录<view class="_i data-v-53a058c3 sd_deleteBtnIcon" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></view>
+    </view>
+    <view class="_ul data-v-53a058c3 sd_searchHistoryList">
+      <view class="_li data-v-53a058c3 sd_searchHistoryItem" bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}" wx:for="{{historyInfo}}" wx:for-index="index" wx:for-item="item">{{item.keyWord.length>20?item.keyWord.substring(0,20)+'...':item.keyWord}}</view>
+    </view> <template wx:if="{{confirmShow}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="confirm$5251c782"></template>
+  </view>
+</template>

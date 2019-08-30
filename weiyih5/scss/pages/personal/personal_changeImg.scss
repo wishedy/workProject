@@ -1,0 +1,160 @@
+@charset "UTF-8";
+//个人主页——设置头像 
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+.ev-uploadInner{
+    background-color: #fff;
+    margin-bottom: 0 !important;
+}
+.al-personalChangeImgHeader {
+    background-color: #fff;
+    height: rem(88px);
+    line-height: rem(88px);
+    @include font-dpr(17px);
+    font-weight: normal;
+    color: #333333;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid $outerBorderColor;
+    h2 {
+        font-weight: normal;
+    }
+    .al-personalChangeImgBack {
+        position: absolute;
+        width: rem(60px);
+        height: rem(60px);
+        left: rem(30px);
+        top: 50%;
+        margin-top: rem(-16px);
+        
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.al-personalChangeImgInner{
+	margin-top: rem(102px);
+	width: 100%;
+	height: rem(750px);
+    .al-personalImg{
+        width: 100%;
+        height: 100%;
+    }
+	img{
+		width: 100%;
+		height: 100%;
+		vertical-align: top;
+	}
+}
+.al-personalChangeImgBtn{
+	margin: rem(60px) 0;
+    text-align: center;
+	button{
+		width: rem(330px);
+		height: rem(80px);
+		border: 1px solid #cdcdcd;
+		@include font-dpr(16px);
+		color: $smallTextColor;
+        border-radius: rem(50px);
+        position: relative;
+	}
+}
+.al-personalChangeImg{
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;height: 100%;
+    width: 100%;
+}
+
+//裁剪图片
+.newState{
+  position: fixed;
+  bottom:0.6933rem;
+  width:100%;
+  z-index: 2;
+  span,.btn{
+    /*color: #93a1aa;*/
+    /*font-size:0.4533rem;*/
+    color: #fff;
+    font-size: rem(37px);
+  }
+  :first-child{
+    float:left;
+    margin-left:0.5333rem;
+  }
+  :last-child{
+    float:right;
+    margin-right:0.5333rem;
+  }
+}
+.ChangeCropper{
+  margin-top: 0;
+  position: fixed;
+  //top:rem(88px);
+  top:0;
+  /*padding-top: rem(88px);*/
+  bottom: 0;
+  z-index: 1;
+  //height: 90%;
+  height: 100%;
+  background: #000;
+  .al-personalImg{
+    /*display: table;*/
+    /*position: relative;*/
+  }
+  .cropperImg{
+    /*<!--border: 1px solid #fff;-->*/
+    /*<!--position: absolute;-->*/
+    /*<!--top: 40%;-->*/
+    /*<!--left: 50%;-->*/
+    /*<!--transform: translateX(-50%)  translateY(-50%);-->*/
+  }
+  .cropperImg{
+    /*display: table-cell;*/
+    /*vertical-align: middle;*/
+  }
+  .cropper-point{
+      width: rem(15px);
+      height: rem(15px);
+  }
+  .cropper-point.point-ne{
+    right: rem(-7.5px);
+    top: rem(-7.5px);
+  }
+  .cropper-point.point-e{
+    margin-top: rem(-7.5px);
+    right: rem(-7.5px);
+  }
+  .cropper-point.point-n{
+    margin-left: rem(-7.5px);
+    top: rem(-7.5px);
+  }
+  .cropper-point.point-w{
+    left: rem(-7.5px);
+    margin-top: rem(-7.5px);
+  }
+  .cropper-point.point-s{
+    bottom: rem(-7.5px);
+    margin-left: rem(-7.5px);
+  }
+  .cropper-point.point-nw {
+    left: rem(-7.5px);
+    top: rem(-7.5px);
+  }
+  .cropper-point.point-sw {
+    bottom:  rem(-7.5px);
+    left:  rem(-7.5px);
+  }
+  .cropper-point.point-se{
+    width: rem(30px);
+    height: rem(30px);
+    bottom: rem(-15px);
+    right: rem(-15px);
+  }
+}

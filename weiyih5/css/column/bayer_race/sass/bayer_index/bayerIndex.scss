@@ -1,0 +1,143 @@
+@charset "UTF-8";
+@import "../method.scss";
+
+/*主内容 活动主旨部分*/
+
+.subjectText {
+    border-bottom: 1px solid $borderInnerBottom;
+    padding: rem(20px) rem(30px) rem(36px) rem(30px);
+    font-size: rem(30px);
+    a {
+        width: 40%;
+        float: left;
+        margin-right: 0.4rem;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+
+/*活动时间轴部分*/
+
+.timeLineList {
+    padding: rem(40px) rem(30px);
+    position: relative;
+    ul {
+        overflow: hidden;
+        text-align: center;
+    }
+    .line {
+        width: rem(679px);
+        height: rem(4px);
+        position: absolute;
+        margin-top: rem(-63px);
+        left: 50%;
+        margin-left: rem(-679px / 2);
+        z-index: 1;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.timeLineMain.on {
+    color: #D71181;
+}
+
+.timeLineMain {
+    display: inline-block;
+    text-align: center;
+    width: 1.7rem;
+    .timeLineTitle {
+        font-size: rem(24px);
+        h2 {
+            font-weight: 700;
+        }
+    }
+    .activeTime {
+        font-size: rem(17px);
+        white-space: nowrap;
+    }
+    .timeLinePoint {
+        $r: rem(24px);
+        width: $r;
+        height: $r;
+        display: inline-block;
+        padding: rem(20px) rem(15px);
+        position: relative;
+        background-color: #fff;
+        z-index: 2;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+
+/*优秀病例部分*/
+
+.caseListBox {
+    box-sizing: border-box;
+    border-bottom: 1px solid $borderInnerBottom;
+}
+
+ol.caseList {
+    position: relative;
+    left: 0.8rem;
+    li.caseText {
+        list-style-type: disc;
+        border-bottom: 1px solid $borderInnerBottom;
+        padding: rem(40px) 0;
+        padding-right: rem(40px);
+        &:nth-last-child(1){
+            border: none;
+        }
+    }
+}
+
+.caseText {
+    a {
+        width: 100%;
+        font-size: rem(30px);
+        color: $textColor;
+        vertical-align: middle;
+        //overflow: hidden;
+        //text-overflow: ellipsis;
+        //white-space: nowrap;
+    }
+    p {
+        padding-top: rem(10px);
+    }
+    span {
+        font-size: rem(22px);
+        color: $smallTextColor;
+        position: relative;
+    }
+    .doctor {
+        &:before {
+            content: "";
+            width: rem(21px);
+            height: rem(20px);
+            display: inline-block;
+            background: transparent url('//img50.allinmd.cn/column/bayer_race/doctor.png') center center no-repeat;
+            background-size: contain;
+            margin-right: rem(10px);
+        }
+    }
+    .hospital {
+        &:before {
+            content: "";
+            width: rem(25px);
+            height: rem(20px);
+            display: inline-block;
+            background: transparent url('//img50.allinmd.cn/column/bayer_race/hospital.png') center center no-repeat;
+            background-size: contain;
+            margin-right: rem(10px);
+            margin-left: rem(30px);
+        }
+    }
+}

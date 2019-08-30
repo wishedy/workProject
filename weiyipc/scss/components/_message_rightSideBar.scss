@@ -1,0 +1,134 @@
+@charset "UTF-8";
+//页面右侧栏 组件
+//Created by zhangxiangfeng 2016/08/4
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV3-variables";
+
+
+//页面右侧边栏：begin
+.al-mesMainR {
+  width:268px;
+  float: right;
+  border-radius:3px;
+  behavior: url("/js/third-party/pie/pie.htc");
+  border:1px solid rgba(199,211,223,0.45);
+  margin-top:20px;
+//  cursor: pointer;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+  img {
+    margin:36px 0 20px;
+    width:86px;
+    height:86px;
+    border-radius: 50%;
+    behavior: url("/js/third-party/pie/pie.htc");
+    display:inline-block;
+    position:relative;
+  }
+  &.al-index-mesMainR{
+    margin:0 0 20px;
+    &:hover{
+      box-shadow:none;
+    }
+  }
+  &:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .1), -2px -2px 4px rgba(0, 0, 0, 0.1)
+  }
+  .al-mesMainR-userName { //欧阳娜娜
+    display:block;
+    color: #333;
+    margin-bottom:14px;
+    padding-left:15px;
+    font-size:18px;
+    &:hover{
+      color: #2899e6;
+    }
+    i{      //图标V
+      display: inline-block;
+      width: 14px;
+      height: 12px;
+      background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_vip2.png') center center no-repeat;
+      background-size: 100% 100%;
+      margin-left: 6px;
+    }
+  }
+  .al-mesMainR-userTitle, //主任医师
+  .al-mesMainR-userUnit { //北京大学
+    font-size: 13px;
+    color: #909090;
+    font-family:"宋体";
+    line-height:18px;
+  }
+  .al-mesMainR-userUnit {
+    padding-bottom:30px;
+  }
+}
+
+.al-mesMainR {
+  ul {
+    @include clearfix();
+    background-color:#f9fbfd;
+    padding:8px 0;
+    border-top:1px solid #ECF0F2;
+  }
+  li {
+    display: inline-block;
+    position:relative;
+    span {
+      display:inline-block;
+      font-size:20px;
+      color:#626F8C;
+      font-family: Arial;
+      margin-bottom:8px;
+    }
+    a {
+      font-size: 14px;
+      display: block;
+      color: #626F8C;
+      padding: 10px;
+      &:hover{
+        color: #2899e6;
+      }
+    }
+    a.al-indexPersonal{
+      margin-top:0;
+    }
+  }
+  .al-mesMain-ul_Notice {    //中间Li添加边框
+    padding: 0 12px;
+    margin: 0 12px;
+    position:relative;
+    &:before{
+      content:'';
+      position:absolute;
+      width:0;
+      height:24px;
+      border-right:1px solid #dfdfdf;
+      left:0;
+      top:12px;
+    }
+    &:after{
+      content:'';
+      position:absolute;
+      width:0;
+      height:24px;
+      border-right:1px solid #dfdfdf;
+      right:0;
+      top:12px;
+    }
+  }
+  .al-followBtn,
+  .al-followedBtn,
+  .al-doubleFollowBtn {
+    float: none;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .al-hrLine {
+    margin: 0 2px;
+  }
+}
+//页面右侧边栏：end

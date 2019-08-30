@@ -1,0 +1,547 @@
+@charset "UTF-8";
+.fixedHeader {
+    position: fixed;
+    top: 0;
+    z-index: 6;
+    width: 100%;
+}
+
+.al-indexHeader {
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 0.4rem;
+    height: 1.17333rem;
+    overflow: hidden;
+}
+
+.al-indexHeader h1 {
+    font-size: 17px;
+    color: #222222;
+}
+
+[data-dpr="2"] .al-indexHeader h1 {
+    font-size: 34px;
+}
+
+[data-dpr="3"] .al-indexHeader h1 {
+    font-size: 51px;
+}
+
+.al-indexHeader a {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    color: #515c74;
+}
+
+[data-dpr="2"] .al-indexHeader a {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-indexHeader a {
+    font-size: 39px;
+}
+
+.al-indexHeader a:link {
+    color: #515c74;
+}
+
+.al-indexHeader a:visited {
+    color: #515c74;
+}
+
+.al-indexHeader a:hover {
+    color: #515c74;
+}
+
+.al-indexHeader a:active {
+    color: #515c74;
+}
+
+.al-indexHeader .al-indexHeaderItem {
+    width: 3rem;
+    height: 100%;
+    line-height: 1.17333rem;
+    white-space: nowrap;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-last-child(1) {
+    text-align: right;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-child(1) {
+    text-align: left;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-child(2) {
+    text-align: center;
+}
+
+.al-indexHeaderItem:nth-child(1) a {
+    display: block;
+    height: 100%;
+    width: 1rem;
+    margin-left: -0.25rem;
+}
+
+.al-indexHeaderItem:nth-child(1) a:before {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.al-indexHeaderItem:nth-child(1) a img {
+    width: 0.8rem;
+    height: 0.8rem;
+    vertical-align: middle;
+}
+
+.al-indexHeaderItem:nth-child(3) a {
+    color: #626f8c;
+    font-size: 14px;
+}
+
+[data-dpr="2"] .al-indexHeaderItem:nth-child(3) a {
+    font-size: 28px;
+}
+
+[data-dpr="3"] .al-indexHeaderItem:nth-child(3) a {
+    font-size: 42px;
+}
+
+/*搜索框*/
+.searchCont {
+    background: #fff;
+    padding: 0 0 0 0.4rem;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    overflow: hidden;
+}
+
+.searchCont:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.searchCont .searchInput {
+    float: left;
+    width: 7.81333rem;
+    height: 1.12rem;
+    overflow: hidden;
+    background: rgba(205, 205, 205, 0.2) url("//img50.allinmd.cn/index/searchBorder.png") no-repeat;
+    background-size: contain;
+    font-size: 0.4rem;
+    color: #a0a0a0;
+}
+
+.searchCont .searchInput i {
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url("//img50.allinmd.cn/index/search.png") no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin: 0 0.17333rem 0 0.29333rem;
+}
+
+.searchCont button {
+    float: left;
+    background: #3CAEFA;
+    border-radius: 0 6px 6px 0;
+    width: 1.4rem;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    font-size: 0.4rem;
+    color: #FFFFFF;
+}
+
+.al-indexHeader h1 {
+    text-indent: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.al-bigScoreStarBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-flex-flow: row nowrap;
+}
+
+.al-bigScoreStarBox li {
+    width: 0.90667rem;
+    height: 0.85333rem;
+    margin-left: 0.33333rem;
+    background-image: url("//img50.allinmd.cn/score/scoreDetails_starGrayIcon.png");
+    background-size: 100% 100%;
+}
+
+.al-bigScoreStarBox li b {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("//img50.allinmd.cn/score/scoreDetails_starBlueIcon.png");
+    background-size: 0.90667rem 0.85333rem;
+}
+
+.al-littleScoreStarBox {
+    display: inline-block;
+    float: left;
+    vertical-align: middle;
+    /*  display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;*/
+}
+
+.al-littleScoreStarBox li {
+    width: 0.29333rem;
+    height: 0.29333rem;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAMAAAC+oj0CAAAArlBMVEUAAAD////////////////////////////r6+vs7Ozt7e3u7u7w8PDr6+vr6+vs7Ozs7Ozt7e3t7e3u7u7u7u7r6+vt7e3t7e3u7u7s7Ozt7e3r6+vs7Ozs7Ozs7Ozs7Ozs7Ozr6+vs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozr6+vr6+vs7Ozs7Ozs7Ozs7Ozr6+vr6+vs7Ozs7Ozs7Ozr6+vr6+vs7Ozs7Ozr6+s4GmWcAAAAOXRSTlMAAwQFBgcICg0pKy4yMzQ1Njg5Oz1BVFdYfH2AhJ+hoqWpq6ytrq+wsbK2t7q7vL/Aw8fI19zm/P3HL89fAAAAlklEQVQYGW3BDVvBYABA0RspH5OSSKSmpBIqxP3/f6xnz9irrXMIWj9X/GPpF0Ud9YaCubokr22iQ87MxJxMNer1R9+mVg93vagKLCz6hNiiCVTezHs/A8oT/3o9JVGKPfZcJnXyaBCXOOga3JIZGAzJjA2mZNYGGw4qW3U3ur7fqrtz9hrqSx2oPalN9houLkldfBgBvyFOL0tGOE9OAAAAAElFTkSuQmCC");
+    background-size: 100% 100%;
+    display: inline-block;
+}
+
+.al-littleScoreStarBox li b {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAMAAAC+oj0CAAAArlBMVEUAAABVqv9Av/8zmf8rqv9Jtv9An/8zmf87nessm+Yqmucsm+kpmesom+YsneYrmucrnOcpm+gonekrnOkqm+ormecrm+cpm+gpmugpmuYpmecqmecpm+gomucpmucpmucomeYpmucomucomucpmecpmuYpmeYpmuYomucomecpmucomecpmuYpmuYpmecomucpmucpmeYpmucpmecomeYpmecpmecomucomecomea6gG4+AAAAOXRSTlMAAwQFBgcICg0pKy4yMzQ1Njg5Oz1BVFdYfH2AhJ+hoqWpq6ytrq+wsbK2t7q7vL/Aw8fI19zm/P3HL89fAAAAlklEQVQYGW3BDVvBYABA0RspH5OSSKSmpBIqxP3/f6xnz9irrXMIWj9X/GPpF0Ud9YaCubokr22iQ87MxJxMNer1R9+mVg93vagKLCz6hNiiCVTezHs/A8oT/3o9JVGKPfZcJnXyaBCXOOga3JIZGAzJjA2mZNYGGw4qW3U3ur7fqrtz9hrqSx2oPalN9houLkldfBgBvyFOL0tGOE9OAAAAAElFTkSuQmCC");
+    background-size: 0.29333rem 0.29333rem;
+}
+
+.al-indexHeader {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+}
+
+.al-scoreDetailsFoot, .al-myScorePart {
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+    left: 0;
+    right: 0;
+}
+
+.al-overallScorePart {
+    background-color: #fff;
+    margin: 1.38667rem 0 0.21333rem;
+}
+
+.al-overallScorePart h3 {
+    font-weight: 400;
+    padding-top: 0.66667rem;
+    padding-bottom: 0.4rem;
+    color: #909090;
+    font-size: 13px;
+    text-align: center;
+}
+
+[data-dpr="2"] .al-overallScorePart h3 {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-overallScorePart h3 {
+    font-size: 39px;
+}
+
+.al-overallScorePart h3 span {
+    color: #3598db;
+    font-size: 22px;
+    padding-left: 0.13333rem;
+}
+
+[data-dpr="2"] .al-overallScorePart h3 span {
+    font-size: 44px;
+}
+
+[data-dpr="3"] .al-overallScorePart h3 span {
+    font-size: 66px;
+}
+
+.al-overallScorePart .al-bigScoreStarBox {
+    margin: 0 1.6rem 0.8rem;
+}
+
+.al-scoreDetailsTagBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-flow: row wrap;
+    -o-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    margin: 0 0.4rem;
+}
+
+.al-scoreDetailsTagBox .al-scoreDetailsTagItem {
+    border: 1px solid #DFDFDF;
+    border-radius: 0.4rem;
+    color: #909090;
+    font-size: 13px;
+    padding: 0.16rem 0.34667rem;
+    box-sizing: border-box;
+    margin: 0 0.26667rem 0.26667rem 0;
+}
+
+[data-dpr="2"] .al-scoreDetailsTagBox .al-scoreDetailsTagItem {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-scoreDetailsTagBox .al-scoreDetailsTagItem {
+    font-size: 39px;
+}
+
+.al-scoreDetailsTagBox .al-scoreDetailsTagItem b {
+    display: inline-block;
+    width: 0.32rem;
+    height: 0.32rem;
+    margin-left: 0.26667rem;
+    background-image: url("//img50.allinmd.cn/score/scoreDetailsTag_goodIcon.png");
+    margin-top: 0.06667rem;
+    background-size: 100% 100%;
+}
+
+.al-scoreDetailsTagBox .al-scoreDetailsTagItem .badIcon {
+    background-image: url("//img50.allinmd.cn/score/scoreDetailsTag_badIcon.png");
+    margin-bottom: -0.04rem;
+}
+
+.al-scoreDetailsTag {
+    text-align: center;
+    padding-bottom: 0.26667rem;
+    color: #626f8c;
+    font-size: 12px;
+}
+
+[data-dpr="2"] .al-scoreDetailsTag {
+    font-size: 24px;
+}
+
+[data-dpr="3"] .al-scoreDetailsTag {
+    font-size: 36px;
+}
+
+.al-scoreDetailsTag i {
+    content: "";
+    display: inline-block;
+    width: 0.24rem;
+    height: 0.13333rem;
+    margin-left: 0.08rem;
+    margin-bottom: 0.05333rem;
+    background-image: url("//img50.allinmd.cn/pages/video/icon_open.png");
+    background-size: 100% 100%;
+}
+
+.al-scoreDetailsTag .al-scoreTagOpenIcon {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.al-scoreCommentBox {
+    margin-bottom: 1.2rem;
+}
+
+.al-scoreCommentItem {
+    background-color: #fff;
+    padding: 0.4rem 0.4rem 0.33333rem;
+    border-bottom: 1px solid #e4e9ed;
+}
+
+.al-scoreCommentItem .al-littleScoreStarBox {
+    float: none;
+    display: block;
+}
+
+.al-scoreCommentItem .al-littleScoreStarBox li {
+    margin-right: 0.08rem;
+}
+
+.al-scoreCommentUserBox {
+    margin-bottom: 0.4rem;
+}
+
+.al-scoreCommentUserBox:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.al-scoreCommentUserBox > a {
+    float: left;
+    width: 0.93333rem;
+    height: 0.93333rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 0.05333rem;
+}
+
+.al-scoreCommentUserBox > a img {
+    width: 100%;
+    height: 100%;
+}
+
+.al-scoreUserDetails {
+    margin-left: 1.14667rem;
+}
+
+.al-scoreUserDetails .al-userName {
+    color: #222;
+    font-size: 13px;
+}
+
+[data-dpr="2"] .al-scoreUserDetails .al-userName {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-scoreUserDetails .al-userName {
+    font-size: 39px;
+}
+
+.al-scoreUserDetails .al-userName i {
+    content: "";
+    display: inline-block;
+    width: 0.34667rem;
+    height: 0.26667rem;
+    background: url("//img50.allinmd.cn/pages/personal/mark_vip.png") center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: 0.01rem;
+    margin-left: 0.08rem;
+}
+
+.al-scoreUserDetails .al-commentTime {
+    float: right;
+}
+
+.al-scoreUserDetails .al-userTitle, .al-scoreUserDetails .al-commentTime {
+    color: #808080;
+    font-size: 12px;
+    margin-top: 0.13333rem;
+}
+
+[data-dpr="2"] .al-scoreUserDetails .al-userTitle, [data-dpr="2"] .al-scoreUserDetails .al-commentTime {
+    font-size: 24px;
+}
+
+[data-dpr="3"] .al-scoreUserDetails .al-userTitle, [data-dpr="3"] .al-scoreUserDetails .al-commentTime {
+    font-size: 36px;
+}
+
+.al-scoreCommentText {
+    color: #333;
+    line-height: 0.66667rem;
+    font-size: 15px;
+    margin-top: 0.2rem;
+    word-wrap: break-word;
+}
+
+[data-dpr="2"] .al-scoreCommentText {
+    font-size: 30px;
+}
+
+[data-dpr="3"] .al-scoreCommentText {
+    font-size: 45px;
+}
+
+.al-scoreCommentItem .al-scoreDetailsTagBox {
+    margin: 0;
+}
+
+.al-scoreCommentItem .al-scoreDetailsTagBox .al-scoreDetailsTagItem {
+    margin: 0.26667rem 0.26667rem 0 0;
+}
+
+.al-scoreCommentItem .al-scoreDetailsTagBox .al-scoreDetailsTagItem b {
+    background-image: url("//img50.allinmd.cn/score/scoreComment_goodIcon.png");
+}
+
+.al-scoreCommentItem .al-scoreDetailsTagBox .al-scoreDetailsTagItem .badIcon {
+    background-image: url("//img50.allinmd.cn/score/scoreComment_badIcon.png");
+}
+
+.al-scoreDetailsFoot {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    background-color: rgba(40, 153, 230, 0.9);
+}
+
+[data-dpr="2"] .al-scoreDetailsFoot {
+    font-size: 30px;
+}
+
+[data-dpr="3"] .al-scoreDetailsFoot {
+    font-size: 45px;
+}
+
+.al-myScorePart {
+    box-shadow: 0px 4px 8px rgba(223, 223, 223, 0.7), 0px -4px 8px rgba(223, 223, 223, 0.7);
+    height: 1.2rem;
+    font-size: 13px;
+    color: #555;
+    background-color: rgba(248, 248, 248, 0.9);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+[data-dpr="2"] .al-myScorePart {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-myScorePart {
+    font-size: 39px;
+}
+
+.al-myScorePart .al-littleScoreStarBox {
+    margin-left: 0.05333rem;
+}
+
+.al-myScorePart .al-littleScoreStarBox li {
+    width: 0.37333rem;
+    height: 0.37333rem;
+    background-image: url("//img50.allinmd.cn/score/footer_GrayStar.png");
+    background-size: 100% 100%;
+    margin-left: 0.08rem;
+}
+
+.al-myScorePart .al-littleScoreStarBox li b {
+    background-image: url("//img50.allinmd.cn/score/footer_blueStar.png");
+    background-size: 0.37333rem 0.37333rem;
+}

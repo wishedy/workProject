@@ -1,0 +1,249 @@
+@charset "UTF-8";
+//二级筛选列表组件
+//Created by qiangkailiang on 2016/08/13
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.al-headFilterBox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+}
+
+//组件1 总筛选项目navbar
+.al-typeFilterNavbar {
+    background-color: #fff;
+    padding: rem(20px) 0;
+    box-sizing: border-box;
+    @include clearfix();
+    border-bottom: 1px solid $outerBorderColor;
+    &Item {
+        float: left;
+        box-sizing: border-box;
+        width: 33.33333%;
+        border-right: 1px solid #e4e9ed;
+        text-align: center;
+        @include font-dpr(16px);
+        color: #555;
+        span {
+            vertical-align: middle;
+            position: relative;
+        }
+        span:after {
+            content: "";
+            @include triangle(rem(15px), #909090, down);
+            position: absolute;
+            top: 50%;
+            margin-left: rem(8px);
+            transition: all 0.2s linear;
+            -webkit-transition: all 0.2s linear;
+            transform:rotate(0deg);
+            -webkit-transform:rotate(0deg);
+            transform-origin:50% 15%;
+            -webkit-transform-origin:50% 15%;
+        }
+    }
+    &Item.active {
+        &>span {
+            color: #3598db;
+            &:after {
+                @include triangle(rem(15px), #3598db, down);
+                transform: rotate(-180deg);
+                -webkit-transform: rotate(-180deg);
+
+            }
+        }
+    }
+}
+
+//组件2 筛选组件体
+.al-typeFilterMainMask {
+    // border-top: 1px solid $innerBorderColor;
+    //background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transition: all 0.2s linear;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.al-indexHeader,
+.al-typeFilterNavbar {
+    position: relative;
+    z-index: 3;
+}
+
+.al-typeFilterMainMask.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+}
+
+.al-twoFloorFilter {
+    background-color: #f8f8f8;
+    width: 100%;
+    max-height: rem(900px);
+    overflow: hidden;
+    position: relative;
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: rem(38px);
+        background-color: #f4f4f4;
+        position: absolute;
+        bottom: rem(-38px);
+        border-top: 1px solid $innerBorderColor;
+        border-bottom: 1px solid $innerBorderColor;
+    }
+}
+
+.al-twoFloorFirstFilter {
+    width: rem(260px);
+    border: 1px solid $innerBorderColor;
+    box-sizing: border-box;
+    float: left;
+    .al-twoFloorFirstFilterItem {
+        border-bottom: 1px solid $innerBorderColor;
+        height: rem(100px);
+        line-height: rem(100px);
+        text-align: center;
+        @include font-dpr(15px);
+        color: #666;
+        background-color: #f8f8f8;
+        box-sizing: border-box;
+        @include ellipsis();
+    }
+    .al-twoFloorFirstFilterItem.selected {
+        background-color: #fff;
+        border-right: 1px solid #fff;
+        box-sizing: border-box;
+        margin-right: -1px;
+        & > span {
+            color: #3598db;
+        }
+    }
+}
+
+.al-twoFloorSecondFilter {
+    padding: 0 rem(30px);
+    box-sizing: border-box;
+    text-align: left;
+    background-color: #fff;
+    // // max-height: 12rem;
+    // min-height: 23rem;
+    overflow: auto;
+    .al-twoFloorSecondFilterBox {
+        display: none;
+        // height: 15rem;
+    }
+    .al-twoFloorSecondFilterBox.selected {
+        display: block;
+    }
+    .al-twoFloorSecondFilterItem {
+        padding: rem(29px) 0;
+        @include font-dpr(15px);
+        line-height: 1.5;
+        color:#222;
+        max-height: 100%;
+    }
+    .al-twoFloorSecondFilterItem.active {
+        color: #3598db;
+    }
+    .al-choiceLine {
+        @include font-dpr(14px);
+        color: #b4b4b4;
+        text-align: center;
+        position: relative;
+        &:after,
+        &:before {
+            content: "";
+            width: rem(152px);
+            height: 1px;
+            background-color: #b4b4b4;
+            position: absolute;
+            top: 50%;
+            margin-top: rem(0.5px);
+        }
+        &:after {
+            right: 0;
+        }
+        &:before {
+            left: 0;
+        }
+        span:before,
+        span:after {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            @include square(rem(4px));
+            margin: 0 rem(16px);
+            background-color: #b4b4b4;
+        }
+    }
+}
+
+// 单层筛选项
+.al-oneFloorFilterItem {
+    padding: rem(30px) rem(60px);
+    color: #333;
+    @include font-dpr(15px);
+    background-color: #fff;
+    border-bottom: 1px solid $innerBorderColor;
+    &:active {
+        background-color: #eff4f8;
+    }
+}
+
+.al-oneFloorFilterItem.active {
+    color: #3598db;
+}
+
+// 遮罩层
+.al-discoverMask{
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    opacity: 0;
+    visibility: hidden;
+    transition:all 0.2s linear;
+    -webkit-transition:all 0.2s linear;
+    z-index: 4;
+}
+.al-discoverMask.show{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+#wrapper_first{
+    height: 12rem;
+    //width: 3.46667rem;
+    width: 30%;
+    float: left;
+    overflow-x:hidden;
+    overflow-y:auto;
+    left:0;
+    top:0;
+}
+#wrapper_second{
+    height: 12rem;
+    //width: 10rem;
+    width: 70%;
+    position:absolute;
+    overflow-x:hidden;
+    overflow-y:auto;
+    right:0;
+    top:0;
+}

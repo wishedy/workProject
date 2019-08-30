@@ -1,0 +1,238 @@
+@charset "UTF-8";
+@import "../method.scss";
+html,
+body {
+    font-family: 'Microsoft Yahei', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: $textColor;
+    background-color: #F6F6FA;
+}
+
+
+/*主内容 活动主旨*/
+
+.subjectText {
+    border-bottom: 1px solid $borderInnerBottom;
+    p {
+        padding: rem(20px) rem(30px) rem(36px) rem(30px);
+        text-indent: 2em;
+    }
+}
+
+
+/*参赛资格内容*/
+
+.quaText {
+    padding: rem(20px) rem(30px) rem(36px) rem(30px);
+    ol {
+        list-style-type: decimal;
+        margin-left: rem(40px);
+    }
+}
+
+
+/*赛程赛制内容*/
+
+.ruleText {
+    padding: rem(20px) rem(30px) rem(36px) rem(30px);
+}
+
+.ruleImg {
+    width: 100%;
+    img {
+        width: 100%;
+        vertical-align: top;
+    }
+}
+
+.cityMsg {
+    font-size: rem(22px);
+    padding: rem(20px);
+    padding-bottom: 0;
+    line-height: 2;
+    h3 {
+        display: inline;
+        font-weight: 700;
+    }
+}
+
+
+/*活动时间轴部分*/
+
+.timeLineList {
+    padding: rem(40px) rem(30px);
+    position: relative;
+    ul {
+        overflow: hidden;
+        text-align: center;
+    }
+    .line {
+        width: rem(679px);
+        height: rem(4px);
+        position: absolute;
+        margin-top: rem(-60px);
+        left: 50%;
+        margin-left: rem(-679px / 2);
+        z-index: 1;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.timeLineMain {
+    display: inline-block;
+    text-align: center;
+    width: 1.7rem;
+    .timeLineTitle {
+        font-size: rem(24px);
+        h2{
+            font-weight: 700;
+        }
+    }
+    .activeTime {
+        font-size: rem(16px);
+        white-space: nowrap;
+    }
+    .timeLinePoint {
+        $r: rem(24px);
+        width: $r;
+        height: $r;
+        display: inline-block;
+        padding: rem(20px) rem(15px);
+        position: relative;
+        background-color: #fff;
+        z-index: 2;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+.timeLineMain.on{
+  color:#D71181;
+}
+
+/*复活机制*/
+
+.reviveText {
+    padding: rem(20px) rem(30px) rem(46px) rem(30px);
+    ol {
+        list-style-type: decimal;
+        margin-left: rem(40px);
+    }
+}
+
+
+/*奖励机制*/
+
+.award {
+    position: relative;
+    padding-bottom: rem(100px);
+    overflow: hidden;
+}
+
+.titleList {
+    font-family: "Microsoft Yahei";
+    text-align: center;
+    background-color: #7F5FC8;
+    display: block;
+    width: rem(150px);
+    height: rem(70px);
+    line-height: rem(70px);
+    color: #fff;
+    border-radius: rem(10px);
+    font-size: rem(22px);
+    font-weight: 700;
+    border: none;
+    position: absolute;
+    top: 50%;
+    margin-top: rem(-35px);
+    margin-left: rem(-270px);
+    text-shadow:none;
+    &:after {
+        content: "";
+        width: rem(25px);
+        display: block;
+        position: absolute;
+        top: rem(5px);
+        right: 0;
+        margin-right: rem(-67px);
+        border: {
+            left: rem(25px) solid #7F5FC8;
+            right: rem(25px) solid transparent;
+            top: rem(25px) solid transparent;
+            bottom: rem(25px) solid transparent;
+        }
+    }
+}
+
+.awardText {
+    padding-right: rem(20px);
+    position: relative;
+    width: 55%;
+    float: right;
+    margin-top: 0.8rem;
+    .awardLine {
+        width: rem(3px);
+        height: 105%;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        margin-left: rem(-60px);
+        z-index: 2;
+        background-color: #66657F;
+        &:before {
+            content: "";
+            width: rem(13px);
+            height: rem(13px);
+            position: absolute;
+            background: transparent url('//img50.allinmd.cn/column/bayer_race/awardCircle.png') center center no-repeat;
+            background-size: 100% 100%;
+            top: rem(-13px);
+            left: 50%;
+            margin-left: rem(-6.5px);
+        }
+        &:after {
+            content: "";
+            width: rem(13px);
+            height: rem(13px);
+            position: absolute;
+            background: transparent url('//img50.allinmd.cn/column/bayer_race/awardCircle.png') center center no-repeat;
+            background-size: 100% 100%;
+            bottom: rem(-13px);
+            left: 50%;
+            margin-left: rem(-6.5px);
+        }
+    }
+}
+
+.instruction {
+    color: #E1007E;
+    margin-top: rem(30px);
+    line-height: 1.5;
+    position: relative;
+    z-index: auto;
+    h3 {
+        font-weight: 700;
+        font-size: rem(24px);
+    }
+    p {
+        font-size: rem(22px);
+        color: #66657f;
+    }
+    &:before {
+        content: "";
+        width: rem(67px);
+        height: rem(24px);
+        display: block;
+        position: absolute;
+        left: rem(-70px);
+        top: 50%;
+        margin-top: rem(-12px);
+        z-index: 4;
+        background: #fff url('//img50.allinmd.cn/column/bayer_race/linePoint.png') center center no-repeat;
+        background-size: 100% 100%;
+    }
+}

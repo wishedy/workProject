@@ -1,0 +1,35 @@
+<import src="/components/backIndex$640b7ced" /><template name="myOrderList$c86898a0">
+  <view class="_section data-v-4544c70b order-list-main {{[!orderList.length ? 'order-list-tip' : '']}}">
+    <view class="_section data-v-4544c70b order-top">
+      <view class="_figure data-v-4544c70b select-out">
+        <form bindsubmit="handleProxy" report-submit="true" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_form data-v-4544c70b"><button type="submit" formType="submit" class="_button data-v-4544c70b select-text" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"><label class="_span data-v-4544c70b">{{currentSelect}}</label>
+            <view class="_i data-v-4544c70b select-down {{[isShowSelect ? 'active' : '']}}"></view>
+          </button></form>
+        <view class="_ul data-v-4544c70b select-container" hidden="{{!(isShowSelect)}}">
+          <view wx:key="index" key="{{index}}" class="_li data-v-4544c70b select-item {{[item === currentSelect ? 'active' : '']}}" bindtap="handleProxy" data-eventid="{{'3-'+index}}" data-comkey="{{$k}}" wx:for="{{typeSelect}}" wx:for-index="index" wx:for-item="item">
+            <form bindsubmit="handleProxy" report-submit="true" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}" class="_form data-v-4544c70b"><button type="submit" formType="submit" class="_button data-v-4544c70b">{{item}}</button></form>
+          </view>
+        </view>
+      </view>
+      <form bindsubmit="handleProxy" report-submit="true" data-eventid="{{'5'}}" data-comkey="{{$k}}" class="_form data-v-4544c70b"><button type="submit" formType="submit" class="_button data-v-4544c70b rule-btn" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">
+          <image class="_img data-v-4544c70b order-img" src="https://m.allinmed.cn/static/image/mp/index/1.5.0/order_rule.png"></image>预约须知
+        </button></form>
+    </view>
+    <view class="_article data-v-4544c70b order-list" wx:if="{{orderList.length}}">
+      <view class="_figure data-v-4544c70b order-list-item" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'6-'+index}}" data-comkey="{{$k}}" wx:for="{{orderList}}" wx:for-index="index" wx:for-item="item">
+        <view class="_p data-v-4544c70b list-item-top"><label class="_span data-v-4544c70b item-name">{{item.patientName}}</label> <label class="_span data-v-4544c70b item-state {{[item.visitState == 2 ? 'active' : '']}}">{{item.visitState==2?'已就诊':(item.visitState==1?'待就诊':'')}}</label></view>
+        <view class="_section data-v-4544c70b item-content-con">
+          <view class="_p data-v-4544c70b list-item-content"><label class="_span data-v-4544c70b content-title">就诊时间：</label> <label class="_span data-v-4544c70b content-text">{{item.registDate+' '+item.clinicDuration}}</label></view>
+          <view class="_p data-v-4544c70b list-item-content"><label class="_span data-v-4544c70b content-title">科室：</label> <label class="_span data-v-4544c70b content-text">{{item.deptName}}</label></view>
+          <view class="_p data-v-4544c70b list-item-content"><label class="_span data-v-4544c70b content-title">医生：</label> <label class="_span data-v-4544c70b content-text">{{item.doctorName+' '+item.doctorTitle}}</label></view>
+        </view>
+      </view>
+    </view>
+    <view class="_section data-v-4544c70b no-order-list" wx:if="{{!orderList.length}}">
+      <view class="_figure data-v-4544c70b no-tip-con">
+        <image src="https://m.allinmed.cn/static/image/mp/index/1.5.0/no-order.png" class="_img data-v-4544c70b tip-img"></image>
+        <view class="_p data-v-4544c70b tip-text">暂无预约挂号</view>
+      </view>
+    </view> <template wx:if="{{backIndexShow}}" data="{{...$root[$kk+'0'], $root}}" is="backIndex$640b7ced"></template>
+  </view>
+</template>

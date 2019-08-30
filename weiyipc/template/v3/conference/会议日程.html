@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${conference.conName}会议日程 - 唯医,allinmd</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="Keywords" content="${conference.conName}，医学会议，会议回放，会议日程，会议直播，主讲人，会议视频，骨科视频，手术视频，手术讲解，日程回顾">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+
+    <link href="/dest/conference/meeting.css" rel="stylesheet" type="text/css" />
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <script>
+
+        /*跳WAP端*/
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        if(!IsPC()) {
+            window.location.href = '//m.allinmd.cn/pages/conference/meeting-place.html?conId=' + location.pathname.match(/\d*/g).join("").substr(0, 13) + '&conName=' + document.title.replace("会议日程 - 唯医,allinmd", "");
+        }
+    </script>
+
+
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="135">
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav" data-alcode-mod='123' data-alcode-item-selector="li">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+    <div fragment="//www.allinmd.cn/html/conference/${conference.conId?c}/1/meeting_header.html"></div>
+
+    <div id="meeting_content">
+
+
+        <!-- 会议日程 -->
+        <div class="m_main" >
+            <div class="m_content_v2">
+                <div class="rc_left_v2" style="top: 30px;">
+                    <div class="rc_title_v2"></div>
+                    <div class="rc_l_content_v2">
+                        <ul data-alcode-mod='234' data-alcode-item-selector="li">
+                            <#if conference_sub_list??>
+                                <#list conference_sub_list as list>
+                                    <li><div class="jc_bg"><a href="#main${list.id}">${list.conSubName}</a></div></li>
+                                </#list>
+                            </#if>
+                        </ul>
+                    </div>
+                </div>
+                <div class="rc_right_v2">
+                    <div class="rc_r_content_v2">
+                        <#if conference_sub_list??>
+                            <#list conference_sub_list as conference_sub>
+                                <a name="main${conference_sub.id}"></a>
+                                <table width="791" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                    <tr>
+                                        <td height="80" colspan="5" align="center" bgcolor="#e9f4fb" style="font-size:20px; font-weight:bold; line-height:25px;"><br>
+                                            ${conference_sub.conSubName}   会场日程</td>
+                                    </tr>
+                                    <#list conference_date_list as conference_date>
+                                        <#assign temp_string_1 = conference_date+"">
+                                            <#assign temp_string_2 = conference_sub.id+"_">
+                                                <#if temp_string_1?index_of(temp_string_2)==0>
+                                                    <#assign temp_string_3 = temp_string_1?split("_")[1]>
+                                                        <tr bgcolor="#ffffff">
+                                                            <td height="70" colspan="5">
+                                                                <div class="rc_time">${temp_string_3[0..3]}年${temp_string_3[5..6]}月${temp_string_3[8..9]}日</div>
+                                                                <div class="rc_address">${conference_sub.conSubPlace} </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="123" height="38" align="center" bgcolor="#FAFAFA">时间</td>
+                                                            <td width="110" height="38" align="center" bgcolor="#FAFAFA">主讲人</td>
+                                                            <td width="327" height="38" align="center" bgcolor="#FAFAFA">题目</td>
+                                                            <td height="38" align="center" bgcolor="#FAFAFA">主持/嘉宾</td>
+                                                        </tr>
+                                                        <#list conference_agenda_list as conference_agenda>
+                                                            <#if conference_agenda.conSubId=conference_sub.id && temp_string_3== conference_agenda.startTime[0..9]>
+                                                                <#assign video_url ="">
+                                                                    <#list cms_video_list as cms_video>
+                                                                        <#if cms_video.videoId?c=conference_agenda.refVideoId?c >
+                                                                            <#assign video_url = cms_video.videoUrl>
+                                                                        </#if>
+                                                                    </#list>
+                                                                    <#if conference_agenda_index%2==0>
+                                                                        <tr align="center" bgcolor="#ffffff">
+                                                                    </#if>
+                                                                    <#if conference_agenda_index%2==1>
+                                                                        <tr align="center" bgcolor="#FAFAFA">
+                                                                    </#if>
+                                                                    <td height="38">${conference_agenda.startTime[11..15]}-${conference_agenda.endTime[11..15]}</td>
+
+                                                                    <#if (conference_agenda.conType=4)>
+                                                                        <td width="110" height="38" align="center" colSpan="3" >茶歇</td>
+                                                                        <#else>
+                                                                            <#if ((conference_agenda.liveId?number)=1)>
+                                                                                <td width="110" height="38" align="center" rowspan="${conference_agenda.liveId}" >${conference_agenda.lecturer}</td>
+                                                                            </#if>
+                                                                            <#if ((conference_agenda.liveId?number)>1)>
+                                                                                <td width="110" height="38" align="center" bgcolor="#ffffff" rowspan="${conference_agenda.liveId}" >${conference_agenda.lecturer}</td>
+                                                                            </#if>
+
+
+                                                                            <td width="327" height="38" align="center">
+                                                                                <#if video_url!=''>
+	                                <span class="live">
+	                                  <a href="//www.allinmd.cn/html/${video_url?default('')}" target="_blank">${conference_agenda.conName}</a>
+	                                </span>
+                                                                                    <#else>
+                                                                                        ${conference_agenda.conName}
+                                                                                </#if>
+                                                                            </td>
+
+                                                                            <#if (conference_agenda.sortId=1)>
+                                                                                <td width="120" height="38" align="center" rowspan="${conference_agenda.sortId}" >${conference_agenda.moderator}</td>
+                                                                            </#if>
+                                                                            <#if (conference_agenda.sortId>1)>
+                                                                                <td width="120" height="38" align="center" bgcolor="#ffffff" rowspan="${conference_agenda.sortId}" >${conference_agenda.moderator}</td>
+                                                                            </#if>
+                                                                    </#if>
+                                                                    </tr>
+                                                            </#if>
+                                                        </#list>
+                                                </#if>
+                                    </#list>
+                                    </tbody>
+                                </table>
+                                <br>
+                            </#list>
+                        </#if>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!--footer start-->
+            <!--#include virtual="/includes/footer.jsp"-->
+            <!--footer End-->
+
+</section>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src="/dest/conference/meeting.js"></script>
+<script>
+    $(function(){
+        getFragments();
+        $('.rc_l_content_v2 a').each(function(i,e){
+            if($(e).text().length>10){
+                $(e).css('lineHeight','25px');
+            }
+        })
+
+    })
+</script>
+
+</body>
+</html>

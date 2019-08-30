@@ -1,0 +1,255 @@
+@charset "UTF-8";
+//新闻模板
+//公共方法模块调用
+@import "../../modules/common-modules";
+
+li{list-style: none;}
+h4{font-weight:400;}
+
+/*上图下文*/
+.al-imgTopText{
+  background-color:#fff;
+  padding:rem(40px) rem(30px) rem(30px);
+  a{
+    img{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+  }
+  >h4{
+    color:#222;
+//    @include font-dpr(17px);
+    font-size: rem(34px);
+    margin-top:rem(30px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  >p{
+    margin-top:rem(20px);
+    color:#555;
+//    @include font-dpr(13px);
+    font-size: rem(30px);
+    line-height:rem(50px);
+  }
+}
+
+//医师列表:左图右文
+.al-doctorListPart{
+  background-color:#fff;
+  li{
+    padding:rem(33px) rem(30px);
+    border-bottom:1px solid #e4e9ed;
+    a{
+      img{
+        width:rem(80px);
+        height:rem(80px);
+        border-radius: 50%;
+        vertical-align: sub;
+      }
+    }
+  }
+  .al-doctorInfo{
+    display: inline-block;
+    margin-left:rem(18px);
+    h4{
+      color:#222;
+      @include font-dpr(15px);
+      margin-bottom:rem(15px);
+      &:after{
+        content: "";
+        display: inline-block;
+        width: rem(30px);
+        height:rem(24px);
+        background: url("/images/img50/pages/personal/mark_vip.png") center center no-repeat;
+        background-size: 100% 100%;
+        margin-left:rem(12px);
+      }
+    }
+    span{
+      color:#808080;
+      @include font-dpr(13px);
+      font-family: "宋体";
+      padding-right:rem(20px);
+    }
+  }
+}
+
+
+//医师列表:上图下文
+.al-doctorListBox{
+  background-color:#fff;
+  padding:rem(40px) rem(30px) rem(45px) rem(4px);
+  @include clearfix();
+  li{
+    float:left;
+    width:45.79%;
+    border:1px solid #e4e9ed;
+    text-align: center;
+    padding:rem(60px) 0;
+    margin-left:rem(26px);
+    margin-bottom:rem(26px);
+    box-sizing:border-box;
+    a>img{
+      width:rem(120px);
+      height:rem(120px);
+      border-radius: 50%;
+    }
+    h4{
+      color:#333;
+      @include font-dpr(15px);
+      margin:rem(24px) 0;
+    }
+    p{
+      color:#909090;
+      @include font-dpr(12px);
+      font-family: "宋体";
+      margin-top:rem(10px);
+    }
+  }
+}
+
+
+
+.al-doctorTitleArea{
+  padding-top:rem(40px);
+  background-color:#fff;
+  margin:rem(16px) 0;
+  >h4{
+    padding:0 rem(30px);
+    color:#333;
+    @include font-dpr(15px);
+  }
+  >p{
+    padding:0 rem(30px);
+    color:#808080;
+    @include font-dpr(13px);
+    font-family: "宋体";
+    line-height:rem(44px);
+    margin:rem(20px) 0 rem(30px);
+  }
+}
+
+
+.al-doctorTitleBox{
+  background-color:#fff;
+  margin-bottom:16px;
+  >h4{
+    color:#333;
+    @include font-dpr(15px);
+    padding-top:rem(40px);
+    text-align: center;
+    &:after{
+      content:'';
+      display: block;
+      width:rem(62px);
+      height:rem(4px);
+      background-color:#DFDFDF;
+      margin:rem(14px) auto 0;
+    }
+  }
+  >p{
+    padding:0 rem(30px);
+    color:#808080;
+    @include font-dpr(13px);
+    font-family: "宋体";
+    line-height:rem(44px);
+    margin:rem(40px) 0 rem(20px);
+  }
+}
+
+
+//医师评分
+.al-doctorScoreBox{
+  background-color:#fff;
+}
+.al-doctorInfoContent{
+  padding:rem(40px) 0 rem(30px) 0;
+  margin:0 rem(30px);
+  border-bottom:1px solid #EEE;
+  a{
+    display: inline-block;
+    width:rem(90px);
+    height:rem(90px);
+    border-radius:50%;
+    overflow: hidden;
+    margin-bottom:rem(-4px);
+    img{
+      width:100%;
+      height:100%;
+    }
+  }
+}
+
+.al-doctorInfoDetails{
+  display: inline-block;
+  margin-left:rem(18px);
+  h4{
+    font-weight: 400;
+    color:#222;
+    @include font-dpr(16px);
+    margin-bottom:rem(18px);
+  }
+  span{
+    color:#909090;
+    @include font-dpr(13px);
+    margin-right:rem(16px);
+  }
+}
+
+.al-doctorScoreStarBox{
+  display: flex;
+  display: -webkit-flex;
+  flex-flow:row wrap;
+  -webkit-flex-flow:row wrap;
+  justify-content: flex-start;
+  margin-left:rem(-40px);
+  padding-bottom:rem(40px);
+  li{
+    margin-top:rem(40px);
+    margin-left:rem(70px);
+    @include font-dpr(13px);
+    color:#555;
+    p{
+      display: inline-block;
+      margin-left:rem(10px);
+      span{
+        display: inline-block;
+        width:rem(21px);
+        height:rem(20px);
+        background:url("/images/img50/column/specialTemplate/starBlue.png") center center no-repeat;
+        background-size: 100% 100%;
+      }
+      span.starGray{
+        background:url("/images/img50/column/specialTemplate/starGray.png") center center no-repeat;
+        background-size: 100% 100%;
+      }
+      span.starHalf{
+        background:url("/images/img50/column/specialTemplate/starHalf.png") center center no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+  }
+}
+
+/*新版活动模板增加赛区入口样式*/
+
+.actTemp_division_entrance {
+  padding-bottom: rem(50px);
+  a{
+    border: 1px solid #626f8c;
+    border-radius: 9999px;
+    font-size: rem(28px);
+    color:#626f8c;
+    display: inline-block;
+    margin:0 rem(12px) rem(20px) 0;
+    height: rem(54px);
+    line-height: rem(54px);
+    padding:rem(10px) rem(22px);
+  }
+}
+.actTemp_division_entrance a.gray{
+  border: 1px solid #ccc;
+  color:#ccc;
+}

@@ -1,0 +1,929 @@
+@charset "UTF-8";
+//内容模块 组件
+//Created by qiangkailiang on 2016/07/26
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV3-variables";
+
+.al-contentItemTitle{
+    padding: 16px 24px;
+    border: 1px solid #e4e9ed;
+    background-color:#fff;
+    margin-top:20px;
+    h2 {
+        font-weight: 400;
+        font-size:18px;
+        color:#333;
+        .al-contentItemOtherMsg {
+            font-size:14px;
+            color:#a1a9ba;
+            float: right;
+            cursor: pointer;
+            &:hover{
+                color: #2899e6;
+            }
+        }
+        .al-autoUser{
+            color:#555;
+            font-size:16px;
+            &:hover{
+                color: #2899e6;
+            }
+        }
+        .al-unauthorizedBtn{    //未认证按钮
+            font-size:13px;
+            font-family: "宋体";
+            background-color:#ff9224;
+            border-radius:30px;
+            color:#fff;
+            //behavior: url("/js/third-party/pie/pie.htc");
+            padding:8px 35px;
+            cursor: pointer;
+            float:right;
+            margin-top:-5px;
+            &:hover{background-color:#ffa245;;}
+        }
+    }
+    .al-contentTipTitleLeft{
+        display: inline-block;
+    }
+    .al-contentTipTitleRight{
+        margin-left: 10px;
+        font-size: 14px;
+        color:#909090;
+    }
+}
+
+
+.al_mtb_20{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+
+.al-tableBox {
+    padding:20px 24px 0 24px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color:#fff;
+    border:1px solid #ecf0f2;
+    border-top:none;
+    border-bottom:none;
+    @include clearfix();
+    //overflow: hidden;
+    &:hover {
+        background-color:#fafbfd;
+    }
+}
+.al-tableBoxInnerWrap{
+    height: 128px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ecf0f2;
+}
+.al-contentInALine .al-resourceTypeBox{
+    padding-top:25px;
+    margin:0 24px -15px !important;
+}
+.al-resourceTypeBox{
+    margin-bottom:15px;
+    height:24px;
+   &:after{
+       content:'';
+       display: inline-block;
+       clear:both;
+   }
+    .stickIcon{
+        display: inline-block;
+        float: left;
+        margin-right: 12px;
+        margin-top: 2px;
+        background: url("//img10.allinmd.cn/v3/common/icon/stickIcon.png") no-repeat;
+        width: 53px;
+        height: 20px;
+    }
+    span{
+        float:right;
+        background:url("//img10.allinmd.cn/v3/common/icon/al-resourceTypeIcon_B.png") center center no-repeat;
+        width:76px;
+        height:24px;
+        line-height:24px;
+        text-align:center;
+        font-size:14px;
+        color:#909090;
+        >i{
+            content:'';
+            display: inline-block;
+            width:17px;
+            height:17px;
+            background:url("//img10.allinmd.cn/v3/common/icon/videoResourceIcon.png") center center no-repeat;
+            margin-right:5px;
+        }
+    }
+    .al-surgeryVideo{
+        width:106px;
+        height:24px;
+        background:url("//img10.allinmd.cn/v3/common/icon/resourceTypeImg.png") center center no-repeat;
+        >i{background:url("//img10.allinmd.cn/v3/common/icon/videoResourceIcon.png") center center no-repeat};
+    }
+    .al-libraryType{
+        i{background:url("//img10.allinmd.cn/v3/common/icon/libraryResourceIcon.png") center center no-repeat};
+    }
+    .al-topicType{
+        i{background:url("//img10.allinmd.cn/v3/common/icon/topicResourceIcon.png") center center no-repeat};
+    }
+    .al-caseType{
+        i{background:url("//img10.allinmd.cn/v3/common/icon/caseResourceIcon.png") center center no-repeat};
+    }
+    .al-videoType{
+        i{background:url("//img10.allinmd.cn/v3/common/icon/videoResourceIcon.png") center center no-repeat};
+    }
+}
+.al-contentInALine {
+    background-color: #fff;
+    border: 1px solid #ecf0f2;
+    border-top:none;
+    border-bottom:none;
+    /*overflow: hidden;*/
+    @include clearfix();
+    &:hover {
+        background-color:#fafbfd;
+    }
+    .al-contentImgBox{float:none;}
+}
+.al-contentInAlineDefault{
+    &:hover {
+        background-color:#fff;
+    }
+    .al-contentTitle{
+        color:#909090;
+        cursor: text;
+    }
+}
+.al-contentText {
+    float:left;
+    width: 438px;
+    vertical-align: top;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.al-tableBox{   //视频列表左侧文本标题限1行显示 10.25
+    .al-contentTitle{
+        max-width:438px;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+    }
+}
+.al-tableItemText{
+    display: inline-block;
+    margin-left: 10px;
+}
+.al-contentImgBox {
+    float:right;
+    width:192px;
+    height:128px;
+    position: relative;
+    vertical-align: top;
+    font-size:0;    //首页——病例—>图片间距
+    a {
+        width:192px;
+        height:128px;
+        position: relative;
+        display: block;
+    }
+    img {
+        width:192px;
+        height:128px;
+        vertical-align: top;
+    }
+}
+
+.al-contentTitle {
+    color: $mainTitleColor;
+    font-size:17px;
+    display: inline-block;
+    position: relative;
+    /*margin-top:7px;*/
+    margin-bottom: 16px;
+    /*line-height: 1.5;*/
+  line-height: 25px;
+    &:hover{
+        color: #2899e6;
+    }
+}
+
+
+.al-contentMainText {
+    color: $mainContentColor;
+    margin:0 0 16px 0;
+    font-size: 15px;
+    line-height:26px;
+    word-break: break-all;
+    height:52px;    //10.24
+    a{
+        color:inherit;
+        &:hover{
+            color: #2899e6;
+        }
+    }
+}
+
+.al-contentVideoBtn {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-left: -25px;
+    margin-top: -25px;
+    top: 50%;
+    left: 50%;
+    img{
+        width:100%;
+        height:100%;
+        vertical-align: middle;
+    }
+}
+
+.al-contentVideoTime {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 81px;
+    height: 25px;
+    font-size: 14px;
+    color: #fff;
+    font-style: normal;
+    text-align:center;
+    line-height: 25px;
+    background: url("//img10.allinmd.cn/v3/terminal/video_time.png") center center no-repeat;
+    text-indent: 10px;
+}
+
+.al-contentOtherMsg {
+    font-size: 12px;
+    position: relative;
+    color: $smallContentColor;
+    span {
+        margin-right: 30px;
+        font-family: Arial,"宋体";
+    }
+    .al-contentAuthorBox{
+        display: inline-block;
+        max-width:215px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: bottom;
+    }
+    i {
+        font-style: normal;
+    }
+    .al-unlikeBtn {
+        margin-right: 0;
+        margin-top:-2px;
+        cursor: pointer;
+    }
+}
+
+.al-contentInALine {
+    &:hover{
+        .al-contentDelete {
+            display: block;
+            margin-right:0;
+        }
+    }
+    .al-contentText {
+        //padding: 20px 24px 30px;
+        //display: block;
+        //width:696px;
+        //position: relative;
+        padding: 20px 0 30px 0;
+        box-sizing: content-box;
+        display: block;
+        margin: 0 auto;
+        width: 660px;
+        margin-left: 24px;
+        margin-right: 24px;
+        position: relative;
+        border-bottom: 1px solid #ecf0f2;
+    }
+    .al-followCancel {
+        position: absolute;
+        font-size: 15px;
+        color: #acb4c3;
+        right: 24px;
+        top: 50px;
+        display: none;
+        &:hover {
+            color: #3598db;
+        }
+    }
+    .al-contentImgBox {
+        display: block;
+        width: 660px;
+        height:255px;
+        a,
+        img {
+            width: 100%;
+            height: 100%;
+            /*&:hover{
+                -webkit-transform: scale(1.04);
+                -moz-transform: scale(1.04);
+                transform: scale(1.04);
+            }*/
+        }
+        img {
+            vertical-align: top;
+        }
+    }
+    .al-contentImgList-one{margin-top:10px;}
+    .al-contentOtherMsg {
+        margin-top: 20px;
+    }
+    .al-contentMainText{   //无视频时列表显示样式 10.25
+        height:auto;
+        max-width:660px;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin:-4px 0 18px;
+    }
+}
+
+
+.al-meetingListBox{
+    border-top:1px solid #efefef;
+}
+.al-meeting_timePlace{
+    margin-top:20px;
+    figure{
+        display:inline-block;
+        font-size:13px;
+        color:#909090;
+        margin-right:30px;
+    }
+    .al-meeting_time {
+        .al-meetingTimeIcon {
+            display: inline-block;
+            width:14px;
+            height:15px;
+            background: url("//img10.allinmd.cn/v3/common/icon/meeting_time.png") center center no-repeat;
+            margin:0 2px -2px 0;
+        }
+        .al-line{padding:0 4px;}
+    }
+    .al-meeting_place{
+        .al-meetingPlaceIcon{
+            display: inline-block;
+            width:13px;
+            height:15px;
+            background: url("//img10.allinmd.cn/v3/common/icon/meeting_place.png") center center no-repeat;
+            margin:0 2px -2px 0;
+        }
+        .roundDot{
+            padding:0 4px;
+            font-weight:500;
+        }
+    }
+}
+
+
+.al-contentNewest {
+    //behavior: url("/js/third-party/pie/pie.htc");
+    color: #9bcc4e;
+    border: 1px solid #9bcc4e;
+    border-radius: 3px;
+    position: relative;
+    padding: 0 2px;
+    margin-right:20px !important;
+}
+
+.al-contentHotest {
+    //behavior: url("/js/third-party/pie/pie.htc");
+    color: #e84953;
+    border: 1px solid #e84953;
+    border-radius: 3px;
+    position: relative;
+    padding: 0 2px;
+    margin-right:20px !important;
+}
+
+.al-contentAward {
+    //behavior: url("/js/third-party/pie/pie.htc");
+    color: #bd98f7;
+    border: 1px solid #bd98f7;
+    border-radius: 3px;
+    position: relative;
+    padding: 0 2px;
+    margin-right:20px !important;
+}
+
+.al-contentJoin {
+    //behavior: url("/js/third-party/pie/pie.htc");
+    color: #44bbed;
+    border: 1px solid #44bbed;
+    border-radius: 3px;
+    position: relative;
+    padding: 0 2px;
+    margin-right:20px !important;
+}
+
+.al-contentPdf {
+    //behavior: url("/js/third-party/pie/pie.htc");
+    color: #f34b4b;
+    border: 1px solid #f34b4b;
+    border-radius: 3px;
+    position: relative;
+    padding: 0 2px;
+    margin-right:20px !important;
+}
+
+.al-contentPPT {
+    //behavior: url("/js/third-party/pie/pie.htc");
+    color: #f34b4b;
+    border: 1px solid #f34b4b;
+    border-radius: 3px;
+    position: relative;
+    padding: 0 2px;
+    margin-right:20px !important;
+}
+.al-contentActivityTag{
+    border:1px solid #fff;
+    border-radius: 3px;
+    position: relative;
+    padding: 0 2px;
+    margin-right:10px !important;
+}
+
+//图片——视频排列方式
+.al-commentVideoPart {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.al-commentVideoItem {
+    position: relative;
+    width:327px;
+    height:218px;
+    margin-bottom: 5px;
+    img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+}
+
+.al-contentImagePart {
+    margin-top:15px;
+    display: block;
+    vertical-align: top;
+    overflow: hidden;
+    .al-contentImgBox {
+        float:left; //动态——图片展示效果 12.14
+        position: relative;
+        width: 160px;
+        height:160px;
+        display: inline-block;
+        margin-right: 5px;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.al-contentImgList {
+    @include clearfix();
+    height: auto !important;
+    .al-contentImgListItem {
+        display: inline-block !important;
+    }
+    &.al-contentImgList-two{
+        .al-contentImgListItem{
+            width:324px;
+            height:216px;
+            margin-right:5px;
+        }
+    }
+    &.al-contentImgList-three{
+        .al-contentImgListItem{
+            width:210px;
+            height:140px;
+            margin-right:5px;
+        }
+    }
+}
+
+
+.al-more i {
+    display: inline-block;
+    width: 6px;
+    height: 11px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/content_title_more.png') center center no-repeat;
+    background-size: 100% 100%;
+    margin-left:5px;
+}
+
+.al-refreshFans i {
+    display: inline-block;
+    width: 18px;
+    height: 15px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_refresh.png') center center no-repeat;
+    background-size: 100% 100%;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+
+
+.al-contentArticleTitle {
+    color:#626f8c;
+    display:inline-block;
+    word-break: break-all;
+    margin:20px 0 10px;
+    &:hover{
+        color: #2899e6;
+    }
+}
+.al-contentImgMaskBg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #0A1E2B;
+    opacity: 0.5;
+}
+.al-contentImgMask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, endColorstr=#66000000);
+    color: #fff;
+    text-align: center;
+    font-style: normal;
+    font-size: 16px;
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+    b {
+        display: inline-block;
+        width: 8px;
+        height: 14px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/right_arrow.png') center center no-repeat;
+        vertical-align: middle;
+        margin-left:5px;
+        margin-top:-1px;
+    }
+}
+
+//视频专辑
+.al-videoAlbumContent {
+    padding-top: 30px;
+    padding-left:24px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid $innerBorderColor;
+    background-color:#fff;
+    margin-top:-1px;
+    @include clearfix();
+}
+
+.al-videoAlbumItem {
+    box-sizing: border-box;
+    width: 212px;
+    float: left;
+    margin-right:12px;
+    margin-bottom: 15px;
+    a {
+        display: block;
+        width: 100%;
+        position: relative;
+        & > img {
+            vertical-align: top;
+            width: 100%;
+            height:212px;
+        }
+    }
+}
+
+.al-videoAlbumTitle {
+    margin-top: 5px;
+    font-size:15px;
+    color: #333333;
+    line-height:24px;
+    height: 48px;
+}
+
+.al-contentItemTitleIcon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/content_title.png') center center no-repeat;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.al-videoAlbumRank {
+    padding: 0 20px;
+    background-color:#fff;
+    border:1px solid $innerBorderColor;
+    margin-top:-1px;
+}
+
+.al-videoAlbumRankItem {
+    @include clearfix();
+    margin: 30px 0;
+}
+
+.al-videoAlbumRankImg {
+    float: left;
+    width: 130px;
+    height: 130px;
+    img {
+        vertical-align: top;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.al-videoAlbumRankMsg {
+    padding: 15px 0;
+    margin-left: 160px;
+    a {
+        font-size: 16px;
+        color: #333333;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    p {
+        font-size: 14px;
+        color: $smallContentColor;
+        margin-top: 26px;
+    }
+}
+
+
+
+.al-contentBlueBtn {
+    background: transparent url('//img10.allinmd.cn/v3/default/btn_blue.png') center center no-repeat;
+    background-size: 100% 100%;
+    -ms-filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='//img10.allinmd.cn/v3/default/follow_btn.png',sizingMethod='scale');
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+}
+
+
+
+.al-meetingJoin {
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/meeting_join.png') center center no-repeat;
+    background-size: 100% 100%;
+    -ms-filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='//img10.allinmd.cn/v3/common/icon/follow_btn.png',sizingMethod='scale');
+    width: 70px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+}
+
+.al-contentReaded {
+    margin-bottom: 15px;
+    i {
+        width: 31px;
+        height: 31px;
+        display: inline-block;
+        vertical-align: middle;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+    strong {
+        font-size: 16px;
+        color: #333333;
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: 400;
+    }
+    span {
+        color: $smallContentColor;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 16px;
+    }
+}
+
+
+
+//医师推荐信息
+.al-doctorRecommend {
+    @include clearfix();
+    padding:30px 24px 0;
+    box-sizing: border-box;
+    background-color:#fff;
+    border-left:1px solid #e4e9ed;
+    border-right:1px solid #e4e9ed;
+    width: 100%;
+    display: table;
+    //cursor: pointer;
+    &:hover {
+        background-color: #fafbfd;
+    }
+}
+
+.al-doctorImg {
+    display: table-cell;
+    width:54px;
+    a{
+        display:inline-block;
+        width:54px;
+        height:54px;
+        vertical-align: top;
+        border-radius:50%;
+        overflow: hidden;
+        //behavior: url("/js/third-party/pie/pie.htc");
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+            position:relative;
+        }
+    }
+}
+
+.al-doctorRecommend:last-child .al-doctorMsg {
+    border:none
+}
+
+.al-doctorMsg {
+    @include clearfix();
+    display: table-cell;
+    vertical-align: top;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #ecf0f2;
+}
+
+.al-doctorMsgContent {
+    float: left;
+    margin-left:18px;
+    & > a {
+        font-weight: 400;
+        color: #333333;
+        &:hover{color:#3598db;}
+    }
+    p {
+        margin:10px 0 13px;
+        font-size:14px;
+        color:#909090;
+        .al-doctorJob,.al-doctorHospital{
+            font-size:15px;
+            color:#666;
+            padding-right:12px;
+        }
+    }
+}
+
+//标签推荐
+.al-contentTagRecommend {
+    padding:24px 24px 9px;
+    background-color:#fff;
+    border:1px solid $innerBorderColor;
+    margin-top:-1px;
+    .al-contentTagItem {
+        //behavior: url("/js/third-party/pie/pie.htc");
+        color: #666666;
+        font-size: 15px;
+        padding: 10px 15px;
+        margin-right:10px;
+        margin-bottom:15px;
+        display: inline-block;
+        border-radius:30px;
+        position: relative;
+        border: 1px solid #e5e7ed;
+        &:hover{
+            background: rgba(224,225,231,0.2);
+    }
+    }
+}
+
+.al-commonHospital {
+    color: #73859e;
+    padding: 0 5px;
+}
+
+.al-newNumTips {
+    //behavior: url("/js/third-party/pie/pie.htc");
+    @include circle(8px,
+    #f34d4d);
+    position: absolute;
+    right: -10px;
+    top: 0;
+}
+
+
+
+
+
+.al-contentCollapse {
+    color: #626f8c;
+    margin-left:20px;
+    cursor: pointer;
+}
+
+.al-hrLine {
+    width:1px;
+    height:14px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color:#e4e9ed;
+    margin: 0 14px;
+    border: 0;
+}
+
+.al-noFollowTips {
+    height: 350px;
+    text-align: center;
+    cursor: default;
+    &:hover {
+        background-color: #fff;
+    }
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+    img {
+        width: 310px;
+        height: 248px;
+        vertical-align: middle;
+    }
+}
+
+
+.al-contentDelete {
+    float: right;
+    font-size: 14px;
+    color: #acb4c3;
+    display: none;
+    cursor: pointer;
+    &:hover{
+        color: #2899e6;
+    }
+}
+
+.al-tableBox:hover {
+    .al-contentDelete {
+        display: block;
+        margin-right:0;
+    }
+}
+
+
+.al-noFansTips {    //无数据时——提示内容容器样式
+    background-color: #fff;
+    line-height: 310px;
+    height: 310px;
+    text-align: center;
+    font-size: 17px;
+    color: $smallContentColor;
+    border:1px solid #E4E9ED;
+    margin-top:-1px;
+    box-sizing: border-box;
+    a{          //(个人主页——我的贡献——文库等无资源时)
+        color:#3598db;
+        &:hover{text-decoration: underline;}
+    }
+}
+
+
+//首页列表及发现列表 评分UI
+.al-resourceTypeBox{
+    .al-littleScoreStarBox{
+        @include clearfix();
+        display: inline-block;
+        margin-top:6px;
+        li{
+            float:left;
+            width:13px;
+            height:12px;
+            background: url("//img10.allinmd.cn/v3/terminal/star_gray.png") center center no-repeat;
+            margin-right:4px;
+            >b{
+                display: block;
+                width:100%;
+                height:100%;
+                background: url("//img10.allinmd.cn/v3/terminal/star_blue.png") center center no-repeat;
+            }
+        }
+    }
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><base href="//m.allinmd.cn/html/m/doc/2014/09/26/1411652398683.html">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>${seoTitle!''}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+    <meta name="description" content="${seoMetaDescription!''}">
+    <meta name="Keywords" content="${seoMetaKeyword!''}">
+    <link rel="stylesheet" href="//m.allinmd.cn/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
+    <link href="//m.allinmd.cn/css/common/main.css?t_=1445925569591" rel="stylesheet" type="text/css">
+
+    <script src="//m.allinmd.cn/js/lib/jquery/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+        //修改字体大小
+        function changeFontSize(size){
+            $("body").css("font-size",size);
+        }
+    </script>
+</head>
+<body class="">
+
+
+<section data-role="page" class="content-page case_content page-detail page-detail-doc">
+    <input type="hidden" value="2" id="relationType"/>
+    <input type="hidden" value="8" id="preferReviewType"/>
+    <input type="hidden" value="${doc.docId?c}" id="resourceId"/>
+    <input type="hidden" id="refId" value="${doc.docId?c}">
+    <input type="hidden" id="docName" value="${doc.docName}">
+    <input type="hidden" id="docAbstract" value="${doc.docAbstract}">
+
+    <div id="pagebody">
+        <!--  # include virtual="/ includes/header.jsp" -->
+        <input type="hidden" id="refId" value="${doc.docId?c}">
+        <input type="hidden" id="usefulType" value="2">
+
+        <div id="art_content" style="background:#fff; min-width:100%; text-align:left;
+        ">
+            <div class="main_width" style="width:100%;">
+
+                <div class="case_detail">
+                    <div class="case_detail_cont setting-font-size">
+
+                        <div class="floor03" style="padding-top:1.5em;">
+
+                            <#if cooperationInvokeElementList??>
+                                <#assign title=''>
+                                    <#assign titleenglish=''>
+                                        <#assign author=''>
+                                            <#assign pubdate=''>
+                                                <#assign summary=''>
+                                                    <#assign url=''>
+                                                        <#list cooperationInvokeElementList as home>
+
+
+                                                            <#if home.invokeElement=='title'>
+                                                                <#assign title = home.content>
+
+                                                            </#if>
+                                                            <#if home.invokeElement=='titleenglish'>
+                                                                <#assign titleenglish = home.content>
+                                                            </#if>
+                                                            <#if home.invokeElement=='author'>
+                                                                <#assign author = home.content>
+                                                            </#if>
+                                                            <#if home.invokeElement=='pubdate'>
+                                                                <#assign pubdate = home.content>
+                                                            </#if>
+                                                            <#if home.invokeElement=='summary'>
+                                                                <#assign summary = home.content>
+                                                            </#if>
+                                                            <#if home.invokeElement=='url'>
+                                                                <#assign url = home.content>
+                                                            </#if>
+
+                                                            <#if (home_index+1)%6==0>
+                                                                <div class="journal_floor01">
+                                                                    <div class="oe_title_blue">中文标题：<span>${title}</span></div>
+                                                                    <div class="oe_title_blue">原文标题：<a href="${url}" target="_blank"><span>${titleenglish}</span></a></div>
+                                                                    <div class="oe_title_blue">作者：<span>${author}</span>
+                                                                    </div>
+                                                                    <div class="oe_title_blue">发布日期：<span>${pubdate}</span>
+                                                                    </div>
+                                                                    <div class="oe_title_blue"><span>${summary}</span></div>
+                                                                    <#assign title=''>
+                                                                        <#assign titleenglish=''>
+                                                                            <#assign author=''>
+                                                                                <#assign pubdate=''>
+                                                                                    <#assign summary=''>
+                                                                                        <#assign url=''>
+
+                                                                </div>
+                                                            </#if>
+
+                                                        </#list>
+                            </#if>
+
+                            <!-- 回应E -->
+                            <!--
+                              <div class="v3-detail-box fix " id="testDisappear">
+                                  <div class="v3-dtl-title">
+                                      <div class="inner-border">
+                                          <div class="w-9375">相关文档</div>
+                                      </div>
+                                  </div>
+
+                                  <div class="v3-dtl-content w-9375 slider-ctl-box">
+                                      <div class="right"></div>
+                                      <div class="left"></div>
+                                      <div class="scroll-wrap">
+                                          <div class="scroll-box fix">
+                                              <ul class="scroll-box1">
+                                                  <#if relateDocList??>
+                                                      <#list relateDocList as list>
+                                                          <li>
+                                                              <div class="img-box"><a class="img" href="${list.docUrl}" data-ajax=false data-role=none><img
+                                                                      src="${list.docLogoUrl}" alt=""/></a>
+                                                              </div>
+                                                              <a class="text" href="${list.pageStoragePath}" data-ajax=false data-role=none>
+
+                                                                          ${list.docName!''}
+
+                                                              </a>
+                                                          </li>
+                                                      </#list>
+
+                                                  </#if>
+
+                                              </ul>
+                                              <ul class="scroll-box2"></ul>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                        -->
+
+
+                        </div>
+                        <div class="clear"></div>
+
+                    </div>
+                </div>
+
+</section>
+
+</body>
+</html>

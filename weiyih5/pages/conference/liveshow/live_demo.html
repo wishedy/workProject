@@ -1,0 +1,202 @@
+<!--2017/10/30日版本，后因为当前业务并不能达到展示互动的全部功能，暂停开发，留此备份-->
+<!DOCTYPE html>
+<html lang="en" xmlns:gs="http://www.gensee.com/ec">
+
+<head>
+    <script>
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        function getpara(symbol){
+            var url = document.URL;
+            var param = {};
+            var str, item;
+            if (url.lastIndexOf(symbol ? symbol : "?") > 0) {
+                str = url.substring(url.lastIndexOf(symbol ? symbol : "?") + 1, url.length);
+                var arr = str.split("&");
+                for (var i = 0; i < arr.length; i++) {
+                    item = arr[i].split("=");
+                    param[item[0]] = decodeURIComponent(item[1]);
+                }
+            }
+            return param;
+        }
+        if (IsPC()) {
+            var link = "";
+            var playBackId = getpara().playBackId;
+            var conId = getpara().conId;
+            var conSubId = getpara().conSubId;
+            var liveId = getpara().liveId;
+            if (playBackId != "" && playBackId != undefined) {
+                window.location.href = '//www.allinmd.cn/pages/channel/conference/multi-conference/playback.html?ownerid=' + playBackId + '&conId=' + conId + '&conSubId=' + conSubId
+            } else {
+                //请求权限
+                var authorityURL = "/mcall/conference/index/getAllSubConferenceListV2/",
+                    dataParams = {};
+                dataParams.paramJson = JSON.stringify({conId: conId});
+                var xhr = new XMLHttpRequest();
+                xhr.open("post",authorityURL,true);
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState==4&& xhr.status==200){
+                        var json = JSON.parse(xhr.responseText);
+                        if(json&&json.responseObject&&json.responseObject.responseData&&json.responseObject.responseData.data_list[0]){
+                            var data = json.responseObject.responseData.data_list[0].menu_data_list;
+                            if(data.length>1){
+                                window.location.href = '//www.allinmd.cn/pages/channel/conference/multi-conference/live.html?ownerid=' + liveId + '&conId=' + conId + '&conSubId=' + conSubId;
+                            }else{
+                                window.location.href ='//www.allinmd.cn/pages/channel/conference/only-conference/live.html?ownerid=' + liveId + '&conId=' + conId + '&conSubId=' + conSubId;
+                            }
+                        }
+                    }
+                };
+                xhr.send(dataParams);
+            }
+        }
+
+
+    </script>
+    <meta charset="UTF-8">
+    <title>在线直播,唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="keywords" content="在线直播，医学直播，手术直播，医生直播，医师直播，唯医，allinmd">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <!--<meta name="viewport" content="user-scalable=no">-->
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/live/live_demo.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/living/live_wrap.css">
+    <!--endbuild-->
+    <style>
+        .play-icon#videoStartBtn{
+            width: 200px;
+            height: 200px;
+        }
+        canvas{
+            width: 100% !important;
+            height: auto !important;
+            vertical-align: middle !important;
+            margin-top: 3px !important;
+        }
+        video{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #livePlayer {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .chat-container .allow-roll{
+            height: 755px;
+        }
+    </style>
+</head>
+<body>
+<header class="al-indexHeader">
+    <figure class="al-indexHeaderItem">
+        <a href="javascript:;" data-ajax="false">
+            <img src="//img50.allinmd.cn/pages/personal/arrow_back.png">
+        </a>
+    </figure>
+    <figure class="al-indexHeaderItem">
+        <span>会议</span>
+    </figure>
+    <figure class="al-indexHeaderItem">
+
+    </figure>
+</header>
+<div id="webPlayer" class="web">
+    <div id="topHalf">
+        <div id="video-box" class="video-container">
+            <div class="video-box">
+                <div id="livePlayer"></div>
+            </div>
+        </div>
+    </div>
+    <div id="chatQaBox" class="section-bottom">
+        <div class="tabs border-box">
+            <ul class="display-box">
+                <li id="doc-tab" class="on flex ondoc">
+                    <a>
+                        <span>课件</span>
+                    </a>
+                </li>
+                <li class="flex onchat">
+                    <a>
+                        <span>日程</span>
+                    </a>
+                </li>
+                <li class="flex onqa">
+                    <a>
+                        <span>聊天</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="liveCount"></div>
+        </div>
+        <div class="slider-container">
+            <!-- 文档 -->
+            <div class="slider-wrapper">
+                <div class="section-top slider-box">
+                    <div id="doc-box" class="document-container">
+                        <div id="drawPanel"></div>
+                    </div>
+                </div>
+                <!-- 聊天区域 -->
+                <div class="chat-container slider-box">
+                    <div class="slider-bd chat-bd allow-roll">
+                        <div class="ev-agenda"></div>
+                    </div>
+                </div>
+                <!-- 问答 -->
+                <div class="qa-container qa_list slider-box">
+                    <div class="qa_list_content slider-bd allow-roll">
+                        <ul id="chat-msg-list1" class="msg-list">
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="chatInput chatInputFixed">
+    <input type="text" class="ev-chatInput" placeholder="说点什么一起互动"/>
+    <span id="send-btn">发送</span>
+</div>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="//view.csslcloud.net/js/liveSDK.js" type="text/javascript"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<!--build:js /dest/pages/live/live_demo.js-->
+
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm.checkAddress.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/third-party/gssdk.js"></script>
+<!--<script src="/js/scene/conference/live-demo.js"></script>-->
+<script src="/js/scene/conference/live_demo.js"></script>
+<!--endbuild-->
+</body>
+</html>

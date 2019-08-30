@@ -1,0 +1,158 @@
+@charset "UTF-8";
+//发现——热门活动
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_contentModule"; //内容区域
+@import "../../components/_searchList"; //搜索列表
+.al-content {
+    margin: 0;
+}
+
+.al-applicaptionMaster {
+    margin-top: rem(17px);
+    padding: rem(40px) 0;
+    text-align: center;
+    background-color: #fff;
+    .icon-aplMaster:before {
+        margin: 0 auto;
+    }
+    & > p {
+        @include font-dpr(13px);
+        margin-top: rem(20px);
+        margin-bottom: rem(30px);
+        color: #808080;
+    }
+    & > a {
+        height: rem(55px);
+        padding: 0 rem(50px);
+        background-color: #009cec;
+        border-radius: rem(50px);
+        text-align: center;
+        line-height: rem(55px);
+        color: #fff;
+        display: inline-block;
+        @include font-dpr(13px);
+    }
+}
+
+.al-discoverSeminarInner {
+    margin: rem(30px) 0;
+    padding: 0 rem(30px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.al-discoverSeminar {
+    background-color: #fff;
+    width: 100%;
+
+    & > a{
+        display: block;
+    }
+}
+
+.al-discoverSeminarImg {
+    width: 100%;
+    //height: rem(250px);
+    position: relative;
+    box-sizing: border-box;
+    padding: rem(18px);
+    & > img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+    .al-semeinarMark {
+        position: absolute;
+        left: rem(18px);
+        top: rem(18px);
+        @include square(rem(74px));
+        & > img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+    .al-semeinarLiving {
+        position: absolute;
+        left: rem(18px);
+        top: rem(18px);
+        width: rem(120px);
+        height: rem(36px);
+        & > img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.al-discoverSeminarContent {
+    padding: 0 rem(18px);
+    & > h2 {
+        font-weight: normal;
+        @include font-dpr(16px);
+        color: #333;
+        width: 100%;
+        margin-top: rem(12px);
+        margin-bottom: rem(20px);
+        @include ellipsis(2);
+    }
+    & > span {
+        @include font-dpr(14px);
+        color: $smallTextColor;
+        border-top: 1px solid $innerBorderColor;
+        padding: rem(20px) 0;
+        display: block;
+        & > i {
+            float: right;
+        }
+    }
+}
+
+.al-discoverActivitionTime {
+    text-align: center;
+    @include font-dpr(12px);
+    color: $smallTextColor;
+    font-weight: normal;
+    margin: rem(20px) 0;
+
+}
+
+.al-semeinarInProgress {
+    width: rem(121px);
+    height: rem(36px);
+    position: absolute;
+    top: rem(18px);
+    left: rem(18px);
+}
+.al-activitionEnd .al-discoverSeminarContent>h2{
+    color: #aaa;
+}
+.al-discoverNoActivition{
+    text-align: center;
+
+    margin-top: rem(340px);
+    display: none;
+    & > img{
+        width: rem(112px);
+        height: rem(36px);
+        vertical-align: top;
+    }
+}
+
+.icon-scrollShare{
+    @extend %icon-scrollShare;
+}
+.icon-messageMore{
+    @extend %icon-messageMore;
+}
+@import "../../components/_scrollShareBtn"; //浮动分享按钮
+@import "../../components/_bottomBtns"; //底部弹层组
+@import "../../components/_bottomSharePart"; //底部分享弹层

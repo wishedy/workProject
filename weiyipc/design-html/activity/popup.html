@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="/css/v3/base.css">
+    <link rel="stylesheet" href="/css/v3/pages/discover/discover_index.css">
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css">
+    <link rel="stylesheet" href="/css/v3/pageFooter.css">
+    <link rel="stylesheet" href="/js/modules/personYouKnow/personYouKnow.css">
+    <link rel="stylesheet" href="/css/v3/pages/discover/discover_billboard.css">
+
+    <link rel="stylesheet" href="/css/v3/pages/activity_template/sign_up.css">
+    <script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--报名成功-->
+<div id="lightbox"
+     style="left: 0px; background: rgb(60, 60, 61); top: 0px; width: 100%; height: 100%; opacity: 0.75; zoom: 1; position: fixed; z-index: 8;"></div>
+<section class="al-msgDeleteModal ev-makeSurePopup" id="" style="z-index: 8">
+    <h2>提示<i class="icon-close ev-makeCancel"></i></h2>
+    <section class="signPopup">
+        <aside class="signSuccess"><i></i>报名成功</aside>
+        <aside class="signUpPtext">恭喜您已报名成功，预祝您取得好成绩！</aside>
+        <aside class="setTime">3秒后消失</aside>
+    </section>
+</section>
+<!--取消-->
+<section class="al-msgDeleteModal ev-makeSurePopup" id="" style="z-index: 8">
+    <h2>删除资料<i class="icon-close ev-makeCancel"></i></h2>
+    <section class="al-msgDeleteContent"><i class="al-iconAsk"></i>
+        <article><span>取消报名将删除所填信息，是否确认取消</span></article>
+    </section>
+    <section class="signUpPbtn">
+        <button class="al-msgDeleteConfirm ev-makeSure">去意已决</button>
+        <button class="al-msgDeleteCancel ev-makeCancel">考虑一下</button>
+    </section>
+</section>
+
+
+<!--全内容容器——mainInner-->
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-dis_header" style="margin-left: 0px;">
+        <section class="al-headerContainer">
+            <!--<ul class="al-headerTopNav">-->
+            <!--<li>-->
+            <!--<a href="javascript:void(0);">< 返回</a>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord" hasload="true">
+                浏览记录
+                <div class="al-browseRecordBox">
+                    <section class="al-contentBrowseBox al-browseRecord">
+                        <section class="ev-browseRecordBox">
+                            <section class="al-contentBrowse ev-cBrowse" data-style="longAgo"><h2>更早以前</h2>
+                                <article class="al-contentBrowseItem"><span>文库</span><a
+                                        href="https://www.allinmd.cn/html/doc/2016/12/27/1482832857972.html"
+                                        target="_blank">测试生成001</a></article>
+                            </section>
+                        </section>
+                        <h6 class="al-browseAll hide" style="display: block;">查看全部</h6></section>
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text">
+                <b></b>
+                <div class="al-searchContent" style="display: none;"></div>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar" style="width: 80px;">
+        <header class="al-mainLogo" style="box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px;">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+        <section class="al-mainSidebarList">
+            <ul>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>首页</h4>
+                            <p>HOME</p>
+                            <p></p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem active">
+                    <a href="//www.allinmd.cn/pages/discovery/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find_active.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>发现</h4>
+                            <p>DISCOVERY</p>
+                            <p></p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>发布</h4>
+                            <p>RELEASE</p>
+                            <p></p>
+                        </article>
+                    </a>
+                    <!---点击发布图标弹出框---->
+                    <div class="al-release_popBox"><a href="//www.allinmd.cn/pages/live/live_create.html"
+                                                      class="ev-liveBtn"><b
+                            class="webcastIcon"></b><span>直播</span></a><a href="javascript:;" class="ev-caseUBtn"
+                                                                          on="true"><b></b><span>病例</span></a><a
+                            href="javascript:;" class="ev-topicUBtn" on="true"><b class="topicIcon"></b><span>话题</span></a><a
+                            href="javascript:;" class="ev-docUBtn"><b class="libraryIcon"></b><span>文库</span></a><a
+                            href="javascript:;" class="ev-videoUBtn"><b class="videoIcon"></b><span>视频</span></a></div>
+                </li>
+                <li class="al-mainSidebarItem al-navMes">
+                    <a href="//www.allinmd.cn/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>消息</h4>
+                            <p>MESSAGE</p>
+                            <p></p>
+                        </article>
+                        <span class="al-navRedPoint al-navMessagePoint">1</span></a>
+                </li>
+                <li class="al-mainSidebarItem al-navIndex">
+                    <a href="//www.allinmd.cn/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                        <figcaption>我的</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>我的</h4>
+                            <p>PROFILE</p>
+                            <p></p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList">
+                <li class="al-mainSidebarItem al-siteSwitch">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_siteSwitch.png" alt="">
+                        <figcaption class="ev_siteSwitchName">骨科</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4 class="ev_siteSwitchName">骨科</h4>
+                                <p>SITE SWITCH</p>
+                            </div>
+                        </article>
+                    </a>
+                    <div class="al_siteSwitch_popBox">
+                        <div class="al_siteSwitch_orthopaedics" on="true"><i></i>骨科</div>
+                        <div class="al_siteSwitch_handSurgery" on="false"><i></i>手外科</div>
+                    </div>
+                </li>
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>小唯</h4>
+                            <p>SERVICE</p>
+                            <p></p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navPhone">
+                    <a href="//www.allinmd.cn/pages/singlePage/iphone-app-download.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>手机端</h4>
+                            <p>MOBILES</p>
+                            <p></p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <!--权威专家主体内容:begin-->
+    <section class="al_dis_mainContent" style="left: 0px;">
+        <section class="al_dis_left">
+            <section class="al_dis_banner ev_banner"><a href="0"><img
+                    src="//img99.allinmd.cn/ad/2016/10/31/1219_1477898766753.jpg" alt="首页推荐lich--物料"></a><i><img
+                    src="//img10.allinmd.cn/v3/discover/weekHot.png" alt=""></i></section>
+            <section class="al_dis_searchLists">
+                <section class="al_dis_item">
+                    <section class="al_dis_firstTag">
+                        <a href="//www.allinmd.cn/pages/discovery/discover_major.html#type=major">
+                            <i class="al_dis_icon al_icon_pref"></i>
+                            <p>按专业</p>
+                        </a>
+                    </section>
+                    <section class="al_dis_secTag">
+                        <section class="ev_major discoverTab"><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=major&amp;tagId=820">显微修复</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=major&amp;tagId=821">中西医结合</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=major&amp;tagId=184">踝关节解剖学</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=major&amp;tagId=17">颈部</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=major&amp;tagId=3">额区</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=major&amp;tagId=81">四肢</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=major&amp;tagId=743">肱骨头</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=major&amp;tagId=2750">脉管学</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=major&amp;tagId=2751">脉管学总论</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=major&amp;tagId=20002">骨的发生</a>
+                        </section>
+                        <a href="//www.allinmd.cn/pages/discovery/discover_major.html#type=major" class="al_dis_more">More</a>
+                    </section>
+                </section>
+                <section class="al_dis_item">
+                    <section class="al_dis_firstTag">
+                        <a href="//www.allinmd.cn/pages/discovery/discover_major.html#type=disease">
+                            <i class="al_dis_icon al_icon_disease"></i>
+                            <p>按疾病</p>
+                        </a>
+                    </section>
+                    <section class="al_dis_secTag">
+                        <section class="ev_disease"><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=disease&amp;tagId=5">枕区</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=disease&amp;tagId=6">颞区</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=disease&amp;tagId=43">髋臼杯位置</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=disease&amp;tagId=52">半髋关节置换</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=disease&amp;tagId=55">髋关节表面置换...</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=disease&amp;tagId=55">髋关节表面置换...</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=disease&amp;tagId=56">髋关节置换术后...</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=disease&amp;tagId=175">跖骨融合</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=disease&amp;tagId=176">跖骨截骨</a>
+                        </section>
+                        <a href="//www.allinmd.cn/pages/discovery/discover_major.html#type=disease" class="al_dis_more">More</a>
+                    </section>
+                </section>
+                <section class="al_dis_item">
+                    <section class="al_dis_firstTag">
+                        <a href="//www.allinmd.cn/pages/discovery/discover_major.html#type=operation">
+                            <i class="al_dis_icon al_icon_format"></i>
+                            <p>按术式</p>
+                        </a>
+                    </section>
+                    <section class="al_dis_secTag">
+                        <section class="ev_opes"><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=operation&amp;tagId=1125">腰椎间盘</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=operation&amp;tagId=21083">腰椎间盘突出症</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=operation&amp;tagId=8377">微创腰椎间盘切...</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=operation&amp;tagId=8378">腰椎间盘破裂后...</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=operation&amp;tagId=1330">肌学</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=operation&amp;tagId=1331">骨骼肌</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=operation&amp;tagId=1332">骨骼肌概述</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=operation&amp;tagId=179">同种异体跟腱制...</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_major.html#type=operation&amp;tagId=180">跟腱修复</a>
+                        </section>
+                        <a href="//www.allinmd.cn/pages/discovery/discover_major.html#type=operation"
+                           class="al_dis_more">More</a>
+                    </section>
+                </section>
+                <section class="al_dis_item">
+                    <section class="al_dis_firstTag">
+                        <a href="//www.allinmd.cn/pages/discovery/discover_major.html#type=resource&amp;resType=1">
+                            <i class="al_dis_icon al_icon_method"></i>
+                            <p>按类型</p>
+                        </a>
+                    </section>
+                    <section class="al_dis_secTag al_dis_secTag_single">
+                        <a href="//www.allinmd.cn/pages/discovery/discover_major.html#type=resource&amp;resType=1">视频</a>
+                        <a href="//www.allinmd.cn/pages/discovery/discover_major.html#type=resource&amp;resType=7">病例</a>
+                        <a href="//www.allinmd.cn/pages/discovery/discover_major.html#type=resource&amp;resType=2">文库</a>
+                        <a href="//www.allinmd.cn/pages/discovery/discover_major.html#type=resource&amp;resType=4">话题</a>
+                        <a href="//www.allinmd.cn/pages/discovery/discover_major.html#type=resource&amp;resType=1"
+                           class="al_dis_more">More</a>
+                    </section>
+                </section>
+                <section class="al_dis_item">
+                    <section class="al_dis_firstTag">
+                        <a href="//www.allinmd.cn/pages/discovery/discover_subject.html">
+                            <i class="al_dis_icon al_icon_subject"></i>
+                            <p>按专题</p>
+                        </a>
+                    </section>
+                    <section class="al_dis_secTag al_dis_secTag_single">
+                        <section class="ev_theme"><a
+                                href="https://www.allinmd.cn/html/theme/1492067901108/theme_index.html"
+                                class="al_dis_sub_img"><img src="[object Object]" alt=""></a><a
+                                href="https://www.allinmd.cn/html/theme/1490772003042/theme_index.html"
+                                class="al_dis_sub_img"><img
+                                src="https://img00.allinmd.cn/col/theme/1490772003042/1490772036956.jpg" alt=""></a><a
+                                href="https://www.allinmd.cn/html/theme/1490067692696/theme_index.html"
+                                class="al_dis_sub_img"><img src="[object Object]" alt=""></a></section>
+                        <a href="//www.allinmd.cn/pages/discovery/discover_subject.html" class="al_dis_more">More</a>
+                    </section>
+                </section>
+                <section class="al_dis_item" style="height:169px;overflow:hidden;">
+                    <section class="al_dis_firstTag" style="margin-top:25px;">
+                        <a href="//www.allinmd.cn/pages/discovery/discover_tag.html">
+                            <i class="al_dis_icon al_icon_tag"></i>
+                            <p>按标签</p>
+                        </a>
+                    </section>
+                    <section class="al_dis_secTag al_dis_secTag_tag">
+                        <section class="ev_props"><a
+                                href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=1232"
+                                class="al_dis_tag">髋关节</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=1240"
+                                class="al_dis_tag">膝关节</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=582"
+                                class="al_dis_tag">脊柱</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=886"
+                                class="al_dis_tag">股骨</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=642"
+                                class="al_dis_tag">腰椎</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=917"
+                                class="al_dis_tag">胫骨</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=608"
+                                class="al_dis_tag">颈椎</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=889"
+                                class="al_dis_tag">股骨颈</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=742"
+                                class="al_dis_tag">肱骨</a><a
+                                href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=1271"
+                                class="al_dis_tag">踝关节</a></section>
+                        <a href="//www.allinmd.cn/pages/discovery/discover_tag.html" class="al_dis_more">More</a>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section class="al_dis_right">
+
+
+            <!--榜单入口-->
+            <section class="al-discover_know" style="padding-bottom:10px;">
+                <p class="al_dis_professor">明星榜单<span class="al-hLine"
+                                                      style="display:inline-block;width:98px;height:1px;background:#E4E9ED;margin:5px;"></span><a
+                        href="" class="al_dis_more">More</a></p>
+                <section class="billboardStar">
+                    <section class="contribution">
+                        <header><i></i>贡献榜</header>
+                        <section class="user">
+                            <a href="javascript:;"> <img
+                                    src="https://img05.allinmd.cn/public1/M00/04/EF/wKgBL1gEQ6qAHb-FAAQxBVwJw7o40.jpeg"
+                                    alt=""><i>1</i></a>
+                            <aside>
+                                <p class="name">姓名</p>
+                                <p class="hospital">专业<span>医院</span></p>
+                                <p class="describe">贡献 <span>78</span></p>
+                            </aside>
+                        </section>
+                    </section>
+                    <section class="contribution">
+                        <header><i></i>活跃榜</header>
+                        <section class="user">
+                            <a href="javascript:;"> <img
+                                    src="https://img05.allinmd.cn/public1/M00/04/EF/wKgBL1gEQ6qAHb-FAAQxBVwJw7o40.jpeg"
+                                    alt=""><i>1</i></a>
+                            <aside>
+                                <p class="name">姓名</p>
+                                <p class="hospital">专业<span>医院</span></p>
+                                <ul class="describe">
+                                    <li>浏览 <span>1万+</span></li>
+                                    <li>分享 <span>666</span></li>
+                                    <li>评论 <span>666</span></li>
+                                </ul>
+                            </aside>
+                        </section>
+                    </section>
+                    <section class="contribution">
+                        <header><i></i>推荐榜</header>
+                        <section class="user">
+                            <a href="javascript:;"> <img
+                                    src="https://img05.allinmd.cn/public1/M00/04/EF/wKgBL1gEQ6qAHb-FAAQxBVwJw7o40.jpeg"
+                                    alt=""><i>1</i></a>
+                            <aside>
+                                <p class="name">姓名</p>
+                                <p class="hospital">专业<span>院医院医院院医院医院院医院医院</span></p>
+                                <ul class="describe">
+                                    <li>贡献 <span>1万+</span></li>
+                                    <li>粉丝 <span>666</span></li>
+                                    <li>评论 <span>666</span></li>
+                                </ul>
+                            </aside>
+                        </section>
+                    </section>
+
+                </section>
+            </section>
+
+
+            <!--榜单入口END-->
+
+
+            <section class="al-discover_know al_dis_activities">
+                <p class="al_dis_professor">热门活动<span class="al-hLine"
+                                                      style="display:inline-block;width:98px;height:1px;background:#E4E9ED;margin:5px;"></span><a
+                        href="//www.allinmd.cn/pages/discovery/discover_hotActivity.html" class="al_dis_more">More</a>
+                </p>
+                <section class="al_dis_act_wrap ev_acts"><a
+                        href="https://www.allinmd.cn/html/activity/1446705345451/activity_index.html?activityId=1446705345451"><img
+                        src="https://img04.allinmd.cn/activity/20161011/1446705345451.jpg" alt=""></a>
+                    <p>
+                        <a href="https://www.allinmd.cn/html/activity/1446705345451/activity_index.html?activityId=1446705345451">第N届活动PK第N届活动PK</a>
+                    </p></section>
+            </section>
+
+            <section class="al-discover_know al_dis_allWatch">
+                <h4>大家都在看</h4>
+                <section class="al_dis_allW_wrap ev_allSee">
+                    <section><a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=20000">骨科基础</a>
+                        <p><span class="al-orange">18</span>个相关资源</p></section>
+                    <section><a
+                            href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=21453">骨科病人常用体位</a>
+                        <p><span class="al-orange">3</span>个相关资源</p></section>
+                    <section><a
+                            href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=21454">肢体关节的功能位</a>
+                        <p><span class="al-orange">3</span>个相关资源</p></section>
+                    <section><a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=2031">幽门括约肌</a>
+                        <p><span class="al-orange">2</span>个相关资源</p></section>
+                    <section><a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tagId=21961">手外科骨折、脱位和韧带损伤的手术</a>
+                        <p><span class="al-orange">1</span>个相关资源</p></section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <!--权威专家主体内容:end-->
+    <!--公共底部 start-->
+
+    <footer class="al-mainFooter">
+        <section class="al-mainFooterInner">
+            <section class="al-mainFooterContent">
+                <section class="al-mainFooterLinks">
+                    <a href="//www.allinmd.cn/pages/help/statement.html" class="al-mainFooterLinkItem"
+                       style="padding-left: 0;">隐私声明</a>
+                    <a href="//www.allinmd.cn/pages/help/service.html" class="al-mainFooterLinkItem">服务条款</a>
+                    <a href="//www.allinmd.cn/pages/help/about_us.html" class="al-mainFooterLinkItem">关于我们</a>
+                    <a href="//www.allinmd.cn/pages/help/contact.html" class="al-mainFooterLinkItem"
+                       style="padding-right: 0;border-right: none;">联系我们</a>
+                </section>
+                <article class="al-mainFooterMsg">
+                    <figure class="al-mainFooterMsgImg">
+                        <a id="___szfw_logo___" href="https://credit.szfw.org/CX20160321018165560180.html"
+                           target="_blank">
+                            <img src="//img10.allinmd.cn/v3/common/icon/site_1.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="al-mainFooterMsgImg">
+                        <a href="http://www.anquan.org/authenticate/cert/?site=www.allinmd.cn&amp;at=business">
+                            <img src="//img10.allinmd.cn/v3/common/icon/site_2.png" alt="">
+                        </a>
+                    </figure>
+                </article>
+                <article class="al-mainFooterRecordMsg">
+                    <p><!-- 京ICP证150380号 |  -->京ICP备14007118号-2号 京公网安备11010802014986号京卫计网审[2014] 第0378号 </p>
+                    <p>Copyright2017 Allinmd.cn All Rights Reserved.版权所有北京欧应信息技术有限公司</p>
+                    <p>地址：北京市朝阳区光华路9号光华路SOHO2期D座802 &nbsp;&nbsp; 电话：010-59007121</p>
+                </article>
+            </section>
+            <figure class="al-mainFooterErWeiCode">
+                <img src="//img10.allinmd.cn/v3/common/icon/footer_erweiCode.png" alt="">
+            </figure>
+        </section>
+    </footer>
+    <div class="baidu" style="display: none">
+        <script src="//other.allinmd.cn/statistics/baidu.js"></script>
+        <script src=" http://hm.baidu.com/h.js?2a8bdc22175d5b291d02db032672746c" type="text/javascript"></script>
+        <a href="http://tongji.baidu.com/hm-web/welcome/ico?s=2a8bdc22175d5b291d02db032672746c" target="_blank"><img
+                border="0" src="http://eiv.baidu.com/hmt/icon/21.gif" width="20" height="20"></a>
+    </div>
+    <!--公共底部 End-->
+    <!--右下角按钮-->
+    <section class="al-backToTop">
+        <figure class="al-backToTopItem al-backToTopFirst ev-goTop" style="display: none;"></figure>
+        <figure class="al-backToTopItem ev-shareContainer hide">分享</figure>
+        <figure class="al-backToTopItem al-clickToShowErweiCode"><i class="icon-erweiCodeBottom"></i>
+            <section class="al-shareBox al-erweiCodeShareBox hide" style="display: none;">
+                <figure class="al-shareListItem"><img src="//img10.allinmd.cn/v3/common/icon/erweiCode_1.png" alt="">
+                </figure>
+                <figcaption>唯医骨科官方微信</figcaption>
+            </section>
+        </figure>
+    </section>
+</section>
+
+
+</body>
+
+</html>

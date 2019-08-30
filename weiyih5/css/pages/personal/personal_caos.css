@@ -1,0 +1,498 @@
+@charset "UTF-8";
+.fixedHeader {
+    position: fixed;
+    top: 0;
+    z-index: 6;
+    width: 100%;
+}
+
+.al-indexHeader {
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 0.4rem;
+    height: 1.17333rem;
+    overflow: hidden;
+}
+
+.al-indexHeader h1 {
+    font-size: 17px;
+    color: #222222;
+}
+
+[data-dpr="2"] .al-indexHeader h1 {
+    font-size: 34px;
+}
+
+[data-dpr="3"] .al-indexHeader h1 {
+    font-size: 51px;
+}
+
+.al-indexHeader a {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    color: #515c74;
+}
+
+[data-dpr="2"] .al-indexHeader a {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-indexHeader a {
+    font-size: 39px;
+}
+
+.al-indexHeader a:link {
+    color: #515c74;
+}
+
+.al-indexHeader a:visited {
+    color: #515c74;
+}
+
+.al-indexHeader a:hover {
+    color: #515c74;
+}
+
+.al-indexHeader a:active {
+    color: #515c74;
+}
+
+.al-indexHeader .al-indexHeaderItem {
+    width: 3rem;
+    height: 100%;
+    line-height: 1.17333rem;
+    white-space: nowrap;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-last-child(1) {
+    text-align: right;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-child(1) {
+    text-align: left;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-child(2) {
+    text-align: center;
+}
+
+.al-indexHeaderItem:nth-child(1) a {
+    display: block;
+    height: 100%;
+    width: 1rem;
+    margin-left: -0.25rem;
+}
+
+.al-indexHeaderItem:nth-child(1) a:before {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.al-indexHeaderItem:nth-child(1) a img {
+    width: 0.8rem;
+    height: 0.8rem;
+    vertical-align: middle;
+}
+
+.al-indexHeaderItem:nth-child(3) a {
+    color: #626f8c;
+    font-size: 14px;
+}
+
+[data-dpr="2"] .al-indexHeaderItem:nth-child(3) a {
+    font-size: 28px;
+}
+
+[data-dpr="3"] .al-indexHeaderItem:nth-child(3) a {
+    font-size: 42px;
+}
+
+/*搜索框*/
+.searchCont {
+    background: #fff;
+    padding: 0 0 0 0.4rem;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    overflow: hidden;
+}
+
+.searchCont:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.searchCont .searchInput {
+    float: left;
+    width: 7.81333rem;
+    height: 1.12rem;
+    overflow: hidden;
+    background: rgba(205, 205, 205, 0.2) url("//img50.allinmd.cn/index/searchBorder.png") no-repeat;
+    background-size: contain;
+    font-size: 0.4rem;
+    color: #a0a0a0;
+}
+
+.searchCont .searchInput i {
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url("//img50.allinmd.cn/index/search.png") no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin: 0 0.17333rem 0 0.29333rem;
+}
+
+.searchCont button {
+    float: left;
+    background: #3CAEFA;
+    border-radius: 0 6px 6px 0;
+    width: 1.4rem;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    font-size: 0.4rem;
+    color: #FFFFFF;
+}
+
+/*%al-newsNum {
+    border-radius:rem(50px);
+    background-color: #F34B4B;
+    font-style: normal;
+    position: absolute;
+    top: rem(-10px);
+    right: rem(12px);
+    display: block;
+    height: rem(32px);
+    max-width: rem(42px);
+    line-height: rem(32px);
+    @include font-dpr(10px);
+    color: #fff;
+    padding: 0 rem(10px);
+}*/
+.icon-searchCancel:before {
+    content: "";
+    width: 0.37333rem;
+    height: 0.37333rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0.04rem;
+    background: url("//img50.allinmd.cn/pages/personal/icon_searchCancel.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.icon-userNameNoInput:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-image: url("//img50.allinmd.cn/pages/personal/user_no.png");
+    background-size: 100%;
+    margin-right: 0.4rem;
+    margin-left: 0.2rem;
+}
+
+.icon-userNameHasInput:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-image: url("//img50.allinmd.cn/pages/personal/user_has.png");
+    background-size: 100%;
+    margin-right: 0.4rem;
+    margin-left: 0.2rem;
+}
+
+.icon-pwNoInput:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.37333rem;
+    height: 0.4rem;
+    background-image: url("//img50.allinmd.cn/pages/personal/pw_no.png");
+    background-size: 100%;
+    margin-right: 0.4rem;
+    margin-left: 0.2rem;
+}
+
+.icon-pwHasInput:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.37333rem;
+    height: 0.4rem;
+    background-image: url("//img50.allinmd.cn/pages/personal/pw_has.png");
+    background-size: 100%;
+    margin-right: 0.4rem;
+    margin-left: 0.2rem;
+}
+
+.icon-pwCanWatch:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.58667rem;
+    height: 0.32rem;
+    background-image: url("//img50.allinmd.cn/pages/personal/pw_can_watch.png");
+    background-size: 100%;
+}
+
+.icon-pwCanotWatch:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.58667rem;
+    height: 0.42667rem;
+    background-image: url("//img50.allinmd.cn/pages/personal/pw_canot_watch.png");
+    background-size: 100%;
+}
+
+.btn-primary {
+    width: 1.86667rem !important;
+    height: 0.74667rem;
+    text-align: center;
+    line-height: 0.74667rem;
+    border: 1px solid #2899e6;
+    border-radius: 0.66667rem;
+    color: #2899e6;
+}
+
+.btn-primary-lg {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    background-color: #2899e6;
+    border-radius: 0.05333rem;
+    color: #fff;
+    font-size: 20px;
+}
+
+[data-dpr="2"] .btn-primary-lg {
+    font-size: 40px;
+}
+
+[data-dpr="3"] .btn-primary-lg {
+    font-size: 60px;
+}
+
+.al-msgWriting {
+    opacity: .7;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-done {
+    width: 1.86667rem !important;
+    height: 0.74667rem;
+    text-align: center;
+    line-height: 0.74667rem;
+    border: 1px solid #c5c5c5;
+    border-radius: 0.66667rem;
+    color: #c5c5c5;
+}
+
+.btn-dobule {
+    padding: 0.13333rem 0.4rem;
+    border: 1px solid #626f8c;
+    border-radius: 0.66667rem;
+    color: #626f8c;
+    text-align: center;
+}
+
+.al-saveBtnBox {
+    margin-top: 0.8rem;
+    padding: 0 0.4rem;
+}
+
+.btn-deepMsg {
+    padding: 0.10667rem 0.2rem;
+    color: #fff;
+    border-radius: 0.66667rem;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-dpr="2"] .btn-deepMsg {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .btn-deepMsg {
+    font-size: 39px;
+}
+
+.al-whiteBtn {
+    padding: 0.13333rem 0.44rem;
+    border: 1px solid #fff;
+    border-radius: 0.66667rem;
+    color: #fff;
+    text-align: center;
+}
+
+.btn-switch {
+    width: 1.06667rem;
+    height: 0.58667rem;
+    background-color: #fff;
+    border: 2px solid #efefef;
+    border-radius: 66.66667rem;
+    position: absolute;
+    right: .4rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.btn-switch:before {
+    content: "";
+    width: 0.58667rem;
+    height: 0.58667rem;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: 0px 0px 0.13333rem rgba(0, 0, 0, 0.2), 0px 0px 2px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.btn-switch:after {
+    content: "打开提醒";
+    display: inline-block;
+    color: #909090;
+    font-size: 12px;
+    margin-top: 0.69333rem;
+    white-space: nowrap;
+    top: 0;
+    right: -0.2rem;
+}
+
+[data-dpr="2"] .btn-switch:after {
+    font-size: 24px;
+}
+
+[data-dpr="3"] .btn-switch:after {
+    font-size: 36px;
+}
+
+.btn-switch.on {
+    background-color: #2899e7;
+}
+
+.btn-switch.on:before {
+    content: "";
+    width: 0.50667rem;
+    height: 0.50667rem;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 0.50667rem;
+    top: 50%;
+    margin-top: -0.25333rem;
+    box-shadow: none;
+}
+
+.btn-switch.on:after {
+    content: "关闭提醒";
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.al-changeMobileBox {
+    background-color: #fff;
+    margin-top: 0.26667rem;
+    padding: 0.8rem 0.4rem;
+    padding-bottom: 0;
+    height: 100%;
+}
+
+.al-changeMobileBox .al-changeMobileContent {
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.5;
+}
+
+[data-dpr="2"] .al-changeMobileBox .al-changeMobileContent {
+    font-size: 30px;
+}
+
+[data-dpr="3"] .al-changeMobileBox .al-changeMobileContent {
+    font-size: 45px;
+}
+
+.al-changeMobileBox .al-changeMobileContent:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.al-changeMobileBox .al-changeMobileContent figure {
+    margin: 0.73333rem auto;
+    width: 5.33333rem;
+    height: 2.02667rem;
+}
+
+.al-changeMobileBox .al-changeMobileContent figure img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+
+.al-changeMobileInput {
+    margin: 0.8rem 0;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 0.4rem;
+    position: relative;
+}
+
+.al-changeMobileInput input {
+    border: none;
+    background: none;
+    outline: none;
+    font-family: "microsoft yahei";
+    font-size: 16px;
+    color: #333;
+    vertical-align: middle;
+    width: 100%;
+}
+
+[data-dpr="2"] .al-changeMobileInput input {
+    font-size: 32px;
+}
+
+[data-dpr="3"] .al-changeMobileInput input {
+    font-size: 48px;
+}
+
+.al-changeMobileInput .EV-changePwPattern {
+    float: right;
+    margin-left: 0.33333rem;
+    margin-right: 0.2rem;
+}
+
+.al-changeMobileInput .icon-searchCancel {
+    float: right;
+    margin-right: 0.2rem;
+    display: inline-block;
+}

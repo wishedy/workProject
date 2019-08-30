@@ -1,0 +1,129 @@
+@charset "UTF-8";
+//个人中心——头像上传
+//Created by qiangkailiang on 2016/07/25
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV3-variables";
+.al-personalUploadMask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    display: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, endColorstr=#66000000);
+    .al-personalUploadBox {
+        behavior: url("/js/third-party/pie/pie.htc");
+        width: 586px;
+        height: 541px;
+        background-color: #fff;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-left: -293px;
+        margin-top: -270.5px;
+        border-radius: 4px;
+
+        header {
+            font-size: 18px;
+            color: #333;
+            height: 60px;
+            line-height: 60px;
+            padding: 0 24px;
+            border-bottom: 1px solid #e4e9ed;
+        }
+    }
+}
+
+.al-personalUpload {
+    padding: 20px 24px 26px 24px;
+    @include clearfix();
+    .al-personalUploadArea {
+        float: left;
+        background-color: #e4e9ed;
+        width: 375px;
+        height: 375px;
+        padding-top: 145px;
+        text-align: center;
+        box-sizing: border-box;
+        button {
+            behavior: url("/js/third-party/pie/pie.htc");
+            width: 103px;
+            height: 30px;
+            border-radius: 50px;
+            background-color: #2899e6;
+            color: #fff;
+            font-size: 13px;
+            line-height: 30px;
+            position:relative;
+        }
+        p {
+            font-size: 14px;
+            color: $smallContentColor;
+            margin-top: 20px;
+        }
+    }
+}
+
+.al-personalUploadPreview {
+    float: left;
+    margin-left: 22px;
+    background-color: #e4e9ed;
+    width: 140px;
+    height: 375px;
+    text-align: center;
+    h3 {
+        font-size: 14px;
+        color: #777;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: normal;
+    }
+    img {
+        behavior: url("/js/third-party/pie/pie.htc");
+        border-radius: 50%;
+        vertical-align: top;
+    }
+    figcaption {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 13px;
+        color: #777;
+    }
+}
+
+.preview100 img {
+    width: 100px;
+    height: 100px;
+}
+
+.preview65 img {
+    width: 65px;
+    height: 65px;
+}
+
+.preview40 img {
+    width: 40px;
+    height: 40px;
+}
+
+.al-personalUploadBtn {
+    padding-left: 24px;
+    button {
+        behavior: url("/js/third-party/pie/pie.htc");
+        margin-right: 18px;
+        color: #aaa;
+        font-size: 15px;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+    .al-personalUploadRelease {
+        color: #fff;
+        width: 76px;
+        height: 30px;
+        background-color: #2899e6;
+    }
+}

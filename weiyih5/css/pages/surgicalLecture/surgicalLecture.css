@@ -1,0 +1,1343 @@
+@charset "UTF-8";
+.fixedHeader {
+    position: fixed;
+    top: 0;
+    z-index: 6;
+    width: 100%;
+}
+
+.al-indexHeader {
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 0.4rem;
+    height: 1.17333rem;
+    overflow: hidden;
+}
+
+.al-indexHeader h1 {
+    font-size: 17px;
+    color: #222222;
+}
+
+[data-dpr="2"] .al-indexHeader h1 {
+    font-size: 34px;
+}
+
+[data-dpr="3"] .al-indexHeader h1 {
+    font-size: 51px;
+}
+
+.al-indexHeader a {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    color: #515c74;
+}
+
+[data-dpr="2"] .al-indexHeader a {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-indexHeader a {
+    font-size: 39px;
+}
+
+.al-indexHeader a:link {
+    color: #515c74;
+}
+
+.al-indexHeader a:visited {
+    color: #515c74;
+}
+
+.al-indexHeader a:hover {
+    color: #515c74;
+}
+
+.al-indexHeader a:active {
+    color: #515c74;
+}
+
+.al-indexHeader .al-indexHeaderItem {
+    width: 3rem;
+    height: 100%;
+    line-height: 1.17333rem;
+    white-space: nowrap;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-last-child(1) {
+    text-align: right;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-child(1) {
+    text-align: left;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-child(2) {
+    text-align: center;
+}
+
+.al-indexHeaderItem:nth-child(1) a {
+    display: block;
+    height: 100%;
+    width: 1rem;
+    margin-left: -0.25rem;
+}
+
+.al-indexHeaderItem:nth-child(1) a:before {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.al-indexHeaderItem:nth-child(1) a img {
+    width: 0.8rem;
+    height: 0.8rem;
+    vertical-align: middle;
+}
+
+.al-indexHeaderItem:nth-child(3) a {
+    color: #626f8c;
+    font-size: 14px;
+}
+
+[data-dpr="2"] .al-indexHeaderItem:nth-child(3) a {
+    font-size: 28px;
+}
+
+[data-dpr="3"] .al-indexHeaderItem:nth-child(3) a {
+    font-size: 42px;
+}
+
+/*搜索框*/
+.searchCont {
+    background: #fff;
+    padding: 0 0 0 0.4rem;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    overflow: hidden;
+}
+
+.searchCont:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.searchCont .searchInput {
+    float: left;
+    width: 7.81333rem;
+    height: 1.12rem;
+    overflow: hidden;
+    background: rgba(205, 205, 205, 0.2) url("//img50.allinmd.cn/index/searchBorder.png") no-repeat;
+    background-size: contain;
+    font-size: 0.4rem;
+    color: #a0a0a0;
+}
+
+.searchCont .searchInput i {
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url("//img50.allinmd.cn/index/search.png") no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin: 0 0.17333rem 0 0.29333rem;
+}
+
+.searchCont button {
+    float: left;
+    background: #3CAEFA;
+    border-radius: 0 6px 6px 0;
+    width: 1.4rem;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    font-size: 0.4rem;
+    color: #FFFFFF;
+}
+
+html {
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+strike,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+header,
+section,
+footer {
+    font-family: PingFang SC,"微软雅黑", Arial, Tahoma, "Hiragino Sans GB W3";
+    border: 0;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+dfn {
+    font-style: italic;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: Monaco, Consolas, monospace;
+}
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+q {
+    quotes: none;
+}
+
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+nav ul,
+nav ol {
+    list-style: none;
+    list-style-image: none;
+}
+
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+form {
+    margin: 0;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+    white-space: normal;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    outline: medium;
+}
+
+button,
+input {
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button {
+    font-family: "microsoft yahei";
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+    -webkit-appearance: none;
+}
+
+textarea {
+    -webkit-appearance: none;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden] {
+    display: none;
+}
+
+mark {
+    background: #ff0;
+    color: #666666;
+}
+
+figure {
+    margin: 0;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+a,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    max-height: 100%;
+}
+
+html, body {
+    height: auto;
+    min-height: auto;
+}
+
+.al-mainInner {
+    padding-bottom: inherit;
+    height: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+* {
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+}
+
+.recommendIcon {
+    height: 0.56rem;
+    display: inline-block;
+    margin-left: 0.16rem;
+}
+
+.recommendIcon.operateIcon {
+    width: 3.2rem;
+    background: url("//img50.allinmd.cn/pages/surgicalLecture/caozuo.png") no-repeat 50% 50%;
+    background-size: 100% 100%;
+}
+
+.recommendIcon.speakIcon {
+    width: 2.56rem;
+    background: url("//img50.allinmd.cn/pages/surgicalLecture/speakIcon.png") no-repeat 50% 50%;
+    background-size: 100% 100%;
+}
+
+.al-view-content {
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    height: auto;
+    background: #fff;
+}
+
+.al-view-content .al-header-wrapper {
+    width: 100%;
+    padding-bottom: 0.4rem;
+}
+
+.al-view-content .al-header-wrapper.operate {
+    background: url("//img50.allinmd.cn/pages/surgicalLecture/greenbG.png") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.al-view-content .al-header-wrapper.course {
+    height: 5.86667rem;
+    /*min-height: rem(370px);*/
+    background: url("//img50.allinmd.cn/pages/surgicalLecture/bluBg01.png") no-repeat 50% 50%;
+    background-size: cover;
+    position: relative;
+    padding-bottom: 0;
+}
+
+.al-view-content .al-header-wrapper.course .al-indexHeader {
+    left: 0;
+    right: 0;
+}
+
+.al-view-content .al-header-wrapper.course .al-course-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5.86667rem;
+    z-index: 1;
+}
+
+.al-view-content .al-header-wrapper.course .al-course-banner img {
+    width: 100%;
+    height: 100%;
+}
+
+.al-view-content .al-header-wrapper.lecture {
+    background: url("//img50.allinmd.cn/pages/surgicalLecture/blueBg.png") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.al-view-content .al-header-wrapper .al-indexHeader {
+    background: none;
+    padding: 0 0.29333rem 0 0.37333rem;
+}
+
+.al-view-content .al-header-wrapper .al-indexHeader .al-indexHeaderItem:nth-child(3) {
+    position: relative;
+}
+
+.al-view-content .al-header-wrapper .al-indexHeader .al-indexHeaderItem:nth-child(3) a {
+    position: absolute;
+    top: 0.21333rem;
+    right: 0;
+}
+
+.al-view-content .al-header-wrapper .al-indexHeader .al-indexHeaderItem:nth-child(3) a i {
+    background: url("//img50.allinmd.cn/pages/surgicalLecture/share.png") no-repeat 50% 50%;
+    background-size: 100% 100%;
+    display: inline-block;
+    width: 0.64rem;
+    height: 0.64rem;
+}
+
+.al-view-content .al-header-wrapper .al-indexHeader .al-indexHeaderItem:nth-child(1) a img {
+    width: 0.26667rem;
+    height: 0.45333rem;
+}
+
+.al-view-content .al-header-wrapper .al-indexHeader .al-indexHeaderItem:nth-child(2) h1 {
+    font-size: 0.66667rem;
+}
+
+.al-view-content .al-header-wrapper .al-banner {
+    padding-left: 0.4rem;
+    padding-top: 0.05333rem;
+}
+
+.al-view-content .al-header-wrapper .al-banner .al-practice-name {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-family: 'microsoft yahei';
+    font-size: 0.66667rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    margin-bottom: 0.05333rem;
+    font-weight: 500;
+}
+
+.al-view-content .al-header-wrapper .al-banner .al-practice-des {
+    width: 100%;
+    min-height: 1.28rem;
+    max-height: 2.56rem;
+    height: auto;
+    font-family: 'microsoft yahei';
+    font-size: 0.37333rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 0.50667rem;
+    position: relative;
+}
+
+.al-view-content .al-header-wrapper .al-banner .al-practice-des.surgicalLecture {
+    width: 8.66667rem;
+    /*   text-overflow:ellipsis;
+          -o-text-overflow:ellipsis;
+          -webkit-text-overflow:ellipsis;
+          -moz-text-overflow:ellipsis;
+          -webkit-line-clamp:2;
+          -webkit-box-orient:vertical;
+          overflow:hidden;*/
+}
+
+.al-view-content .al-header-wrapper .al-banner .al-practice-des .icon {
+    position: absolute;
+    width: 0.37333rem;
+    height: 0.64rem;
+    top: 40%;
+    right: -0.50667rem;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    background: url("//img50.allinmd.cn/pages/surgicalLecture/icon.png") no-repeat 50% 50%;
+    background-size: contain;
+}
+
+.al-view-content .al-header-wrapper .al-banner .al-practice-info {
+    margin-top: 0.45333rem;
+    font-family: 'microsoft yahei';
+    font-size: 0.37333rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.al-view-content .al-header-wrapper .al-banner .al-practice-info.al-operate-info {
+    margin-top: 0.58667rem;
+}
+
+.al-view-content .al-header-wrapper .al-banner .al-practice-info .title {
+    display: block;
+}
+
+.al-view-content .al-header-wrapper .al-banner .al-practice-info .num {
+    font-family: 'microsoft yahei';
+    font-size: 0.58667rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.al-view-content .al-header-wrapper .al-banner .al-practice-info .num:nth-of-type(1) {
+    margin: 0 0.05333rem 0 0;
+}
+
+.al-view-content .al-header-wrapper .al-banner .al-practice-info .num:nth-of-type(2) {
+    margin: 0 0.05333rem;
+}
+
+.al-view-content .al-learn-handle, .al-view-content .al-learn-info {
+    height: 1.44rem;
+    line-height: 1.44rem;
+    width: 100%;
+    font-family: 'microsoft yahei';
+    font-size: 0.34667rem;
+    color: #666666;
+    letter-spacing: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: #F5F5F5;
+}
+
+.al-view-content .al-learn-handle .al-num, .al-view-content .al-learn-info .al-num {
+    width: 4.98667rem;
+    text-align: center;
+}
+
+.al-view-content .al-learn-handle .al-num span, .al-view-content .al-learn-info .al-num span {
+    font-family: 'microsoft yahei';
+    font-size: 0.58667rem;
+    color: #FF7E4D;
+    letter-spacing: 0;
+}
+
+.al-view-content .al-learn-handle .border, .al-view-content .al-learn-info .border {
+    width: 0.01333rem;
+    height: 0.8rem;
+    background: #D8D8D8;
+}
+
+.al-view-content .al-learn-handle .al-handle-bar, .al-view-content .al-learn-info .al-handle-bar {
+    background: #FFFFFF;
+    font-family: 'microsoft yahei';
+    font-size: 0.45333rem;
+    width: 4.98667rem;
+    text-align: center;
+    color: #FF7E4D;
+    letter-spacing: 0;
+    line-height: 1.44rem;
+}
+
+.al-view-content .al-learn-handle .al-handle-bar .stateIcon, .al-view-content .al-learn-info .al-handle-bar .stateIcon {
+    display: none;
+}
+
+.al-view-content .al-learn-handle .al-handle-bar.completed, .al-view-content .al-learn-info .al-handle-bar.completed {
+    height: 1.81333rem;
+    background: #fff;
+    font-family: 'microsoft yahei';
+    font-size: 0.45333rem;
+    color: #BBBBBB;
+    letter-spacing: 0;
+}
+
+.al-view-content .al-learn-handle .al-handle-bar.completed .stateIcon, .al-view-content .al-learn-info .al-handle-bar.completed .stateIcon {
+    display: inline-block;
+    width: 0.42667rem;
+    height: 0.42667rem;
+    background: url("//img50.allinmd.cn/pages/surgicalLecture/stateicon.png") no-repeat 50% 60%;
+    background-size: cover;
+}
+
+.al-view-content .al-learn-handle .al-handle-bar:nth-child(1), .al-view-content .al-learn-info .al-handle-bar:nth-child(1) {
+    box-shadow: 0 0.08rem 0.50667rem 0 rgba(67, 116, 220, 0.16);
+}
+
+.al-view-content .al-learn-handle .al-handle-bar:nth-child(2), .al-view-content .al-learn-info .al-handle-bar:nth-child(2) {
+    background: #FF7E4D;
+    color: #FFFFFF;
+}
+
+.al-view-content .al-footerFix {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.al-view-content .al-footer {
+    height: 1.81333rem;
+    background: #fff;
+    line-height: 1.81333rem;
+    font-family: 'microsoft yahei';
+    font-size: 0.45333rem;
+    color: #BBBBBB;
+    letter-spacing: 0;
+}
+
+.al-view-content .al-footer .stateIcon {
+    margin-left: 1.54667rem;
+    display: inline-block;
+    width: 0.42667rem;
+    height: 0.42667rem;
+    background: url("//img50.allinmd.cn/pages/surgicalLecture/stateicon.png") no-repeat 50% 60%;
+    background-size: cover;
+}
+
+.al-view-content .al-produce-banner {
+    width: 100%;
+    height: 5.86667rem;
+}
+
+.al-view-content .al-produce-banner .al-banner-img {
+    width: 100%;
+    height: 5.86667rem;
+    margin: 0 auto;
+    border-radius: 0.08rem;
+    background: #0a77e5;
+    overflow: hidden;
+}
+
+.al-view-content .al-produce-banner .al-banner-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.al-view-content .al-practice-container {
+    border-radius: 0.32rem 0.32rem 0 0;
+    /*position: absolute;
+    top:rem(380px);
+    &.al-operate-container{
+      top:rem(440px);
+    }*/
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 0 0.26667rem;
+}
+
+.al-view-content .al-practice-container:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.al-view-content .al-practice-container .title-bar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 0.53333rem;
+    font-family: 'microsoft yahei';
+    font-size: 0.50667rem;
+    height: 1.04rem;
+    line-height: 1.04rem;
+    color: #000000;
+    letter-spacing: 0;
+}
+
+.al-view-content .al-practice-container .title-bar i {
+    display: inline-block;
+    width: 0.08rem;
+    height: 0.29333rem;
+    background: #ff7e4d;
+    border-radius: 1.33333rem;
+    margin-top: -0.02667rem;
+    margin-right: 0.13333rem;
+}
+
+.al-view-content .al-practice-container .al-course-schedule {
+    width: 9.2rem;
+    min-height: 5.86667rem;
+    height: auto;
+    border-radius: 0.08rem;
+    margin: 0.26667rem auto 1.33333rem auto;
+}
+
+.al-view-content .al-practice-container .al-course-schedule .al-course-list {
+    overflow: hidden;
+}
+
+.al-view-content .al-practice-container .al-course-schedule .al-course-list .al-course-item {
+    width: 9.2rem;
+    min-height: 1.38667rem;
+    height: auto;
+    font-family: 'microsoft yahei';
+    font-size: 0.42667rem;
+    color: #555555;
+    border-radius: 0.08rem;
+    letter-spacing: 0;
+    line-height: 1.44rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    margin-bottom: 0.32rem;
+    background: #f9f9f9;
+    white-space: nowrap;
+    position: relative;
+    padding: 0.48rem 0;
+}
+
+.al-view-content .al-practice-container .al-course-schedule .al-course-list .al-course-item .icon {
+    position: absolute;
+    top: 50%;
+    right: 0.48rem;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 0.42667rem;
+    height: 0.42667rem;
+    background: url("//img50.allinmd.cn/pages/surgicalLecture/playIcon.png") no-repeat center center;
+    background-size: cover;
+}
+
+.al-view-content .al-practice-container .al-course-schedule .al-course-list .al-course-item .title {
+    display: block;
+    font-weight: 700;
+    width: 7.49333rem;
+    line-height: 0.56rem;
+    min-height: 0.56rem;
+    height: auto;
+    padding: 0 0.26667rem 0.26667rem 0.4rem;
+    color: #444;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    /*overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;*/
+}
+
+.al-view-content .al-practice-container .al-course-schedule .al-course-list .al-course-item .des {
+    font-size: 0.37333rem;
+    line-height: 0.37333rem;
+    color: #777;
+    padding: 0 0.26667rem 0 0.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 7.46667rem;
+}
+
+.al-view-content .al-practice-container .al-course-content {
+    height: auto;
+    margin-left: 0.26667rem;
+    font-size: 0.42667rem;
+    color: #555555;
+    letter-spacing: 0;
+    line-height: 0.58667rem;
+}
+
+.al-view-content .al-practice-container.produce {
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+.al-view-content .al-practice-container.produce .al-lecture-item:nth-of-type(1) {
+    padding-top: 0;
+}
+
+.al-view-content .al-practice-container.produce .al-lecture-item:nth-of-type(2) {
+    padding-top: 0;
+}
+
+.al-view-content .al-practice-container.al-course {
+    padding-bottom: 2.53333rem;
+}
+
+.al-view-content .al-practice-container .ly-tab-list, .al-view-content .al-practice-container .al-tab {
+    border-bottom: 1px solid  #E3E5E9;
+    font-size: 0.37333rem;
+    color: #777777;
+    letter-spacing: 0;
+    height: 0.93333rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 0.56rem;
+    overflow-y: hidden;
+}
+
+.al-view-content .al-practice-container .ly-tab-list .al-tab-list, .al-view-content .al-practice-container .al-tab .al-tab-list {
+    width: 100%;
+    height: 0.93333rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.al-view-content .al-practice-container .ly-tab-list .al-tab-list::-webkit-scrollbar, .al-view-content .al-practice-container .al-tab .al-tab-list::-webkit-scrollbar {
+    display: none;
+}
+
+.al-view-content .al-practice-container .ly-tab-list .ly-tab-item, .al-view-content .al-practice-container .ly-tab-list .al-tab-item, .al-view-content .al-practice-container .al-tab .ly-tab-item, .al-view-content .al-practice-container .al-tab .al-tab-item {
+    display: inline-block;
+    height: 0.50667rem;
+    line-height: 0.50667rem;
+    margin-right: 0.64rem;
+    position: relative;
+    font-size: 0.37333rem;
+    color: #777777;
+    -webkit-transition: all ease 200ms;
+    transition: all ease 200ms;
+}
+
+.al-view-content .al-practice-container .ly-tab-list .ly-tab-item i, .al-view-content .al-practice-container .ly-tab-list .al-tab-item i, .al-view-content .al-practice-container .al-tab .ly-tab-item i, .al-view-content .al-practice-container .al-tab .al-tab-item i {
+    display: none;
+}
+
+.al-view-content .al-practice-container .ly-tab-list .ly-tab-item.active, .al-view-content .al-practice-container .ly-tab-list .al-tab-item.active, .al-view-content .al-practice-container .al-tab .ly-tab-item.active, .al-view-content .al-practice-container .al-tab .al-tab-item.active {
+    font-family: 'microsoft yahei';
+    font-size: 0.50667rem;
+    color: #222222 !important;
+    letter-spacing: 0;
+    font-weight: 500;
+}
+
+.al-view-content .al-practice-container .ly-tab-list .ly-tab-item.active i, .al-view-content .al-practice-container .ly-tab-list .al-tab-item.active i, .al-view-content .al-practice-container .al-tab .ly-tab-item.active i, .al-view-content .al-practice-container .al-tab .al-tab-item.active i {
+    display: inline-block;
+    position: absolute;
+    width: 0.42667rem;
+    height: 0.08rem;
+    left: 50%;
+    margin-left: -0.21333rem;
+    top: 0.85333rem;
+    background: #6483E9;
+}
+
+.al-view-content .al-practice-container .ly-tab-list {
+    padding-top: inherit;
+    border-bottom: none;
+}
+
+.al-view-content .al-practice-container .ly-tab-active-bar {
+    height: 0.08rem !important;
+    bottom: 2px;
+    background-color: #6483E9 !important;
+}
+
+.al-view-content .al-practice-container .al-practice-list {
+    width: 100%;
+    overflow: hidden;
+}
+
+.al-view-content .al-practice-container .al-practice-list .al-practice-item {
+    width: 100%;
+    height: 1.88rem;
+    padding: 0.53333rem 0 0.53333rem 0;
+    border-bottom: 1px solid  #E3E5E9;
+}
+
+.al-view-content .al-practice-container .al-practice-list .al-practice-item:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.al-view-content .al-practice-container .al-practice-list .al-practice-item .al-practice-info {
+    float: left;
+    width: 5.76rem;
+}
+
+.al-view-content .al-practice-container .al-practice-list .al-practice-item .al-practice-info .title {
+    margin-top: -0.02667rem;
+    display: block;
+    font-weight: 600;
+    width: 5.76rem;
+    font-family: 'microsoft yahei';
+    font-size: 0.48rem;
+    color: #222222;
+    text-align: left;
+    line-height: 0.61333rem;
+    height: 1.33333rem;
+    margin-bottom: 0.02667rem;
+}
+
+.al-view-content .al-practice-container .al-practice-list .al-practice-item .al-practice-info .info {
+    font-family: 'microsoft yahei';
+    font-size: 0.34667rem;
+    color: #999999;
+    letter-spacing: 0;
+    line-height: 0.66667rem;
+}
+
+.al-view-content .al-practice-container .al-practice-list .al-practice-item .al-practice-info .info .nameList {
+    max-width: 3.62667rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    margin-right: 0.37333rem;
+}
+
+.al-view-content .al-practice-container .al-practice-list .al-practice-item .al-practice-info .info .normal {
+    margin-right: 0;
+}
+
+.al-view-content .al-practice-container .al-practice-list .al-practice-item .al-practice-info .info span {
+    margin-right: 0.4rem;
+}
+
+.al-view-content .al-practice-container .al-practice-list .al-practice-item .al-practice-info .info a {
+    display: inline-block;
+}
+
+.al-view-content .al-practice-container .al-practice-list .al-practice-item .al-practice-logo {
+    float: left;
+    width: 2.8rem;
+    height: 1.86667rem;
+    background: #ff3b30;
+    border-radius: 0.08rem;
+    margin-left: 0.64rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.al-view-content .al-practice-container .al-practice-list .al-practice-item .al-practice-logo .al-img-banner {
+    width: 100%;
+    height: 100%;
+}
+
+.al-view-content .al-practice-container .al-practice-list .al-practice-item .al-practice-logo .playIcon {
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    border-radius: 50%;
+    background: url("//img50.allinmd.cn/pages/surgicalLecture/bluePlayIcon.png") no-repeat 50% 50%;
+    background-size: cover;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+.al-view-content .al-practice-container .al-lecture-list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 9.2rem;
+    margin: 0 auto;
+}
+
+.al-view-content .al-practice-container .al-lecture-list:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item {
+    width: 4.48rem;
+    height: 6.37333rem;
+    padding-top: 0.56rem;
+    position: relative;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item:nth-child(2n-1) {
+    margin-right: 0.24rem;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item .al-lecture-logo {
+    width: 4.48rem;
+    height: 4.48rem;
+    border-radius: 0.08rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item .al-lecture-logo .des {
+    position: absolute;
+    font-family: 'microsoft yahei';
+    font-size: 0.4rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 0.56rem;
+    left: 50%;
+    width: 4rem;
+    height: 1.12rem;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    bottom: 0.24rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item .al-lecture-logo .mask {
+    position: absolute;
+    height: 2.24rem;
+    width: 100%;
+    opacity: 0.8;
+    background-image: -webkit-linear-gradient(top, transparent 7%, #000000 100%);
+    background-image: linear-gradient(-180deg, transparent 7%, #000000 100%);
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item .al-lecture-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item .al-lecture-info {
+    width: 4.4rem;
+    margin: 0 auto;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item .al-lecture-info .title {
+    margin-top: 0.34667rem;
+    width: 100%;
+    min-height: 0.45333rem;
+    max-height: 0.90667rem;
+    overflow: hidden;
+    height: auto;
+    line-height: 0.42667rem;
+    font-size: 0.42667rem;
+    text-align: left;
+    color: #101010;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item .al-lecture-info .title.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item .al-lecture-info .title .al-company {
+    font-family: 'microsoft yahei';
+    font-size: 0.37333rem;
+    color: #777;
+    font-weight: 100;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item .al-lecture-info .info {
+    height: 0.37333rem;
+    width: 100%;
+    display: block;
+    margin-top: 0.24rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item .al-lecture-info .info:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item .al-lecture-info .info .update {
+    font-family: 'microsoft yahei';
+    font-size: 0.32rem;
+    color: #999999;
+    letter-spacing: 0;
+    line-height: 0.37333rem;
+    text-align: left;
+    margin-right: 0.10667rem;
+}
+
+.al-view-content .al-practice-container .al-lecture-list .al-lecture-item .al-lecture-info .info .num {
+    font-family: 'microsoft yahei';
+    font-size: 0.37333rem;
+    color: #FF9770;
+    letter-spacing: 0;
+    line-height: 0.37333rem;
+    text-align: left;
+}
+
+.al-view-content .al-newWakeApp-container {
+    position: inherit !important;
+}
+
+.al-mainInner .al-view-content .al-indexHeader .al-indexHeaderItem:nth-child(1) a {
+    margin-left: -0.13333rem;
+}
+
+.al-mainInner .al-view-content .al-indexHeader .al-indexHeaderItem:nth-child(1) a img {
+    width: 0.64rem;
+    height: 0.64rem;
+}
+
+.al-mainInner .al-view-content .al-indexHeader .al-indexHeaderItem:nth-child(2) h1 {
+    font-size: 0.45333rem;
+}
+
+/*20181107 增加手术精讲图片的文字遮罩*/
+.bgGray {
+    width: 4.48rem;
+    height: 2.26667rem;
+    background: -webkit-linear-gradient(0, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: linear-gradient(0, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    position: absolute;
+    bottom: 0;
+}
+
+.loading-footer {
+    background: #fff !important;
+    top: -4px !important;
+}
+
+.loading-footer .footer-text {
+    height: 120%;
+    background: #fff;
+}

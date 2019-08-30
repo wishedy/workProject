@@ -1,0 +1,115 @@
+//个人主页——首页
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+//公共组件引用
+@import "../../components/_personalBasic"; //个人主页基础样式
+@import "../../components/_contentModule"; //主内容区域
+@import "../../components/_tagListModule"; //标签列表
+@import "../../components/_iconsModule";   //小图标
+@import "../../components/_commentModule";  //评论类内容
+@import "../../components/_webcast_listModule";  //直播列表
+@import "../../discussModule"; //评论样式组件
+
+//资源列表模块
+@import "../../components/classes/_classes_resourceList";
+
+.al-uploadImgSuccess {
+    width: 335px;
+    text-align: center;
+    padding-top: 45px;
+    padding-bottom: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    behavior: url("/js/third-party/pie/pie.htc");
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    margin-left: -167.5px;
+    border: 1px solid #e5e5e5;
+    margin-top: 20px;
+    &:before {
+        content: "";
+        @include triangle(15px,
+        #fff,
+        up);
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        margin-left: -7.5px;
+    }
+    h2 {
+        font-size: 16px;
+        color: #333;
+    }
+    p {
+        font-size: 16px;
+        color: #333;
+        margin-top: 20px;
+        margin-bottom: 35px;
+    }
+    .al-uploadingImgSuccessTips {
+        color: #b4b4b4;
+        font-size: 16px;
+    }
+}
+
+//未认证用户情况
+.al-contentBrowseBox{
+    .al-NoContributionUser{
+        height:196px;
+        width: 100%;
+        padding-top: 132px;
+        color: $smallContentColor;
+        font-size: 17px;
+        text-align: center;
+        background-color:#fff;
+        p{margin-bottom: 20px }
+        a{
+            color: #3598db;
+            &:hover{text-decoration: underline;}
+        }
+    }
+}
+
+
+ //我关注的——无标签资源时
+.al-noFollowTag{
+    line-height:inherit;
+    height:320px;
+    padding-top:92px;
+    p{margin-bottom:22px;}
+    a{
+        display:block;
+        margin:32px auto 0;
+        width:228px;
+        height:40px;
+        line-height:40px;
+        color:#fff;
+        background-color:#2899e6;
+        text-align:center;
+        border-radius:25px;
+        font-size:18px;
+        &:hover{
+            text-decoration: none;
+            background-color:#52a9e4;
+        }
+    }
+}
+
+
+
+@import "../../components/_shareBoxModule"; //分享按钮盒
+@import "../../components/_uploadBox"; //上传弹窗
+//变更信息提示弹框：begin
+@import "../../components/_authenticationNew"; //认证四证齐全改版样式
+.al-contentInALine{
+    overflow: hidden;
+}
+
+
+
+.al-tableBox{
+    overflow: hidden;
+}

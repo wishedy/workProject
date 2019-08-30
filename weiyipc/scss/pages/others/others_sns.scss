@@ -1,0 +1,140 @@
+@charset "UTF-8";
+//他人主页——粉丝关注
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+//公共组件引用
+@import "../../components/_personalBasic"; //个人主页基础样式
+@import "../../components/_contentModule"; //主内容区域
+@import "../../components/_buttonModule";   //按钮组件
+@import "../../components/_iconsModule";    //小图标组件
+@import "../../components/_makeSurePopup";      //仿confirm弹层
+@import "../../discussModule";//评论组件
+@import "../../components/_commentModule";  //评论类内容
+//资源列表模块
+@import "../../components/classes/_classes_resourceList";
+.al-personalHeader{
+    background:transparent url("/images/img00/v3/others/others_bg.jpg") center center no-repeat;
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/img00/v3/others/others_bg.jpg',sizingMethod='scale')";
+    background-size: 100% 100%;
+}
+.al-userFollowBtn{
+    width: 99px;
+    height: 32px;
+    
+    text-align: center;
+    margin: 17px auto;
+    & > img{
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+}
+
+.al-doctorMsgContent p i {
+    margin-left: 10px;
+}
+
+.al-doctorMsg span i{
+    width:auto;
+    min-width:14px;
+}
+
+.al-noFansTips {
+    background-color: #fff;
+    line-height: 310px;
+    height: 310px;
+    text-align: center;
+    font-size: 17px;
+    color: $smallContentColor;
+}
+
+.al-masMainR {
+    & > img {
+        margin: 24px 0 20px;
+    }
+    .al-masMainR-userName {
+        color: #333;
+        margin-bottom: 10px;
+        text-indent: 18px;
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 12px;
+            background: transparent url('/images/img10/v3/massage/mas-asiderV.png') center center no-repeat;
+            background-size: 100% 100%;
+            margin-left: 6px;
+        }
+    }
+    .al-masMainR-userTitle,
+    .al-masMainR-userUnit {
+        font-size: 13px;
+        color: #909090;
+        font-family: Arial;
+    }
+    .al-masMainR-userUnit {
+        margin: 5px 0 20px;
+    }
+}
+
+.al-followsInner {
+    @include clearfix();
+    padding-left: 24px;
+    padding-bottom: 30px;
+}
+
+.al-masMainR {
+    width: 210px;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid #e8eaee;
+    margin-top: 24px;
+    margin-right: 15px;
+    float: left;
+    box-sizing: border-box;
+    cursor: pointer;
+    & > img {
+        width: 85px;
+        height: 85px;
+        vertical-align: top;
+        border-radius: 50%
+    }
+    &:hover {
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, .1), -2px -2px 4px rgba(0, 0, 0, 0.1)
+    }
+    ul {
+        @include clearfix();
+        text-align: center;
+    }
+    li {
+        display: inline-block;
+        span {
+            font-size: 12px;
+            color: #626f8c;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        a {
+            font-size: 13px;
+            font-family: Arial;
+            margin-top: 6px;
+            display: inline-block;
+            vertical-align: top;
+            color: #626f8c;
+        }
+    }
+    .al-followBtn,
+    .al-followedBtn,
+    .al-doubleFollowBtn {
+        float: none;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .al-hrLine {
+        margin: 0 2px;
+    }
+}
+
+@import "../../components/_uploadBox"; //上传弹窗

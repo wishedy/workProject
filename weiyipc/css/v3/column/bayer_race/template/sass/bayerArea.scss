@@ -1,0 +1,203 @@
+@charset "UTF-8";
+@import "method.scss";
+
+/*全部赛区列表*/
+
+
+/*赛区详情信息*/
+
+.areaRaceTitle {
+    a {
+        font-size: rem(26px);
+        color: #7d7d7d;
+        float: right;
+        margin-right: rem(65px);
+        &:hover{
+            color:#7d7d7d;
+        }
+        &:after {
+            content: "";
+            display: inline-block;
+            width: rem(12px);
+            height: rem(22px);
+            background: transparent url('/image/column/bayer_race/moreArrowS.png') center center no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+        }
+    }
+}
+
+.areaRaceMsg {
+    padding-left: rem(30px);
+    margin-top: rem(12px);
+}
+
+.areaRaceImg {
+    position: relative;
+    width: 100%;
+    height: rem(355px);
+    img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+    .videoBtn {
+        $r: rem(82px);
+        width: rem(82px);
+        height: rem(82px);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: - $r/2;
+        margin-top: - $r/2;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+    .areaRaceImgTitle {
+        position: absolute;
+        bottom: 0;
+        font-size: rem(28px);
+        color: #fff;
+        left: 0;
+        right: 0;
+        padding: 0 rem(20px);
+        padding-bottom: rem(30px);
+        font-weight: normal;
+        background: -webkit-linear-gradient(bottom, black 0%, transparent 100%);
+        background: linear-gradient(to top, black 0%, transparent 100%);
+        .title {
+            display: inline-block;
+            width: 6rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+        }
+        .author {
+            display: inline-block;
+            vertical-align: middle;
+            float: right;
+        }
+    }
+}
+
+.areaRaceList {
+    overflow: hidden;
+    padding-bottom: rem(26px);
+    border-bottom: 1px solid $borderInnerBottom;
+    &:nth-last-child(1) {
+        border-bottom: none;
+    }
+    .hr {
+        width: 1px;
+        height: rem(88px);
+        float: left;
+        margin: 0 rem(30px);
+        margin-top: rem(26px);
+        background-color: #ececec;
+    }
+}
+
+.areaRaceListItem {
+    padding-top: rem(26px);
+    float: left;
+    width: 70%;
+    .title {
+        font-size: rem(28px);
+        color: $textColor;
+        display: inline-block;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+    }
+    .author {
+        font-size: rem(24px);
+        color: $smallTextColor;
+        padding-top: rem(15px);
+    }
+}
+
+.clickBtn {
+    float: left;
+    padding-top: rem(26px);
+    text-align: center;
+    .clickTitle {
+        font-size: rem(24px);
+        color: $smallTextColor;
+    }
+    .clickBtnIcon {
+        width: rem(26px);
+        height: rem(27px);
+        display: inline-block;
+        margin-top: rem(12px);
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+
+/*淘汰赛阶段赛区列表*/
+
+.knockoutList {
+    text-align: center;
+    margin-bottom: rem(30px);
+    li {
+        font-size: rem(30px);
+        width: rem(160px);
+        height: rem(88px);
+        display: inline-block;
+        line-height: rem(88px);
+        a{
+            color: #fff;
+            &:hover{
+                color: #fff;
+            }
+        }
+        &:nth-child(1) {
+            background: transparent url('/image/column/bayer_race/northOn.png') center center no-repeat;
+            background-size: cover;
+        }
+        &:nth-child(2) {
+            background: transparent url('/image/column/bayer_race/southOn.png') center center no-repeat;
+            background-size: cover;
+        }
+        &:nth-child(3) {
+            background: transparent url('/image/column/bayer_race/westOn.png') center center no-repeat;
+            background-size: cover;
+        }
+        &:nth-child(4){
+            background: transparent url('/image/column/bayer_race/reviveOn.png') center center no-repeat;
+            background-size:cover;
+        }
+    }
+    .no-areaListItem{
+        a{
+            color: $textColor;
+        }
+        &:nth-child(1) {
+            background: transparent url('/image/column/bayer_race/northOff.png') center center no-repeat;
+            background-size: cover;
+        }
+        &:nth-child(2) {
+            background: transparent url('/image/column/bayer_race/southOff.png') center center no-repeat;
+            background-size: cover;
+        }
+        &:nth-child(3) {
+            background: transparent url('/image/column/bayer_race/westOff.png') center center no-repeat;
+            background-size: cover;
+        }
+    }
+}
+
+
+/*页脚边距设置*/
+
+.pageFooter.bayerAreaFooter {
+    margin-top: rem(220px)
+}

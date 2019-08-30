@@ -1,0 +1,249 @@
+@charset "UTF-8";
+@import "method.scss";
+.headBanner {
+    width: 100%;
+    height: rem(500px);
+    text-shadow: none;
+    .headBannerItem {
+        height: 100%;
+    }
+    .swiper-pagination {
+        text-align: right;
+        .swiper-pagination-bullet {
+            background-color: transparent;
+            border: 2px solid #fff;
+            margin: 0 rem(3px);
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #fff;
+        }
+    }
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    left: rem(-30px);
+    bottom: rem(28px);
+}
+
+.headBannerItem {
+    position: relative;
+    width: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+    .areaRaceImgTitle {
+        position: absolute;
+        bottom: 0;
+        font-size: rem(28px);
+        color: #fff;
+        left: 0;
+        right: 0;
+        padding: 0 rem(20px);
+        padding-bottom: rem(30px);
+        font-weight: normal;
+        background: -webkit-linear-gradient(bottom, black 0%, transparent 100%);
+        background: linear-gradient(to top, black 0%, transparent 100%);
+        .title {
+            display: inline-block;
+            width: 6rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+        }
+        .author {
+            display: inline-block;
+            vertical-align: middle;
+            float: right;
+        }
+    }
+}
+
+
+/*精彩现场*/
+
+.broveShowList {
+    margin: rem(40px) 0 0 rem(30px);
+    overflow: hidden;
+    padding-bottom: rem(40px);
+    border-bottom: 1px solid #d9d9e1;
+    &:nth-last-child(1) {
+        border: none;
+    }
+}
+
+.broveShowImg {
+    width: rem(210px);
+    height: rem(139px);
+    float: left;
+    border: rem(3px) solid #d5d5d5;
+    overflow: hidden;
+    text-align: center;
+    padding: 1px;
+    position: relative;
+    img {
+        width: 100%;
+        vertical-align: middle;
+    }
+    figure.levelUpIcon {
+        width: rem(100px);
+        height: rem(66px);
+        position: absolute;
+        top: -1px;
+        left: -2px;
+        display: none;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.broveShowList.levelUp {
+    .levelUpIcon {
+        display: block;
+    }
+}
+
+.broveShowText {
+    margin-left: rem(238px);
+    margin-right: rem(30px);
+    a {
+        font-size: rem(30px);
+        line-height: rem(44px);
+        color: #66657f;
+        span {
+            font-size: rem(30px);
+            color: #66657f;
+        }
+    }
+    p {
+        margin-top: rem(20px);
+    }
+    span {
+        font-size: rem(22px);
+        color: #969696;
+    }
+    .userName {
+        margin-right: rem(30px);
+        &:before {
+            content: "";
+            width: rem(21px);
+            height: rem(20px);
+            display: inline-block;
+            background: transparent url('/image/column/bayer_race/doctor.png') center center no-repeat;
+            background-size: contain;
+            margin-right: rem(10px);
+            vertical-align: middle;
+        }
+    }
+    .watchNum:before {
+        content: "";
+        width: rem(24px);
+        height: rem(20px);
+        display: inline-block;
+        background: transparent url('/image/column/bayer_race/place.png') center center no-repeat;
+        background-size: contain;
+        margin-right: rem(10px);
+        vertical-align: middle;
+    }
+}
+
+.broveMore {
+    border-top: 1px solid $borderOuter;
+}
+
+
+/*专家寄语*/
+
+.expertMsg {
+    display: block;
+    margin: rem(34px) rem(30px);
+}
+
+.expertPhoto {
+    $r: rem(110px);
+    width: $r;
+    height: $r;
+    border-radius: 50%;
+    float: left;
+    img {
+        width: 100%;
+        vertical-align: top;
+        border-radius: 50%;
+    }
+}
+
+.expertMsgItem {
+    margin: rem(34px) 0 rem(34px) rem(140px);
+    color: $textColor;
+    h3 {
+        font-size: rem(28px);
+        margin-right: rem(20px);
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: bold;
+    }
+    .expertElseMsg {
+        display: inline-block;
+        font-size: rem(20px);
+        color: #fff;
+        background-color: #9a87c7;
+        border-radius: rem(20px);
+        padding: rem(5px) rem(10px);
+        vertical-align: middle;
+    }
+    .title {
+        margin-left: rem(10px);
+    }
+    p {
+        //display: -webkit-box;
+        //-webkit-line-clamp: 2;
+        //-webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: rem(26px);
+        color: #808080;
+        margin-top: rem(20px);
+    }
+}
+
+
+/*淘汰赛阶段赛区列表*/
+
+.halfList {
+    text-align: center;
+    margin-bottom: rem(30px);
+    overflow: hidden;
+    li {
+        font-size: rem(30px);
+        width: rem(160px);
+        height: rem(70px);
+        display: inline-block;
+        line-height: rem(70px);
+        a {
+            color: #fff;
+        }
+        &:nth-child(1) {
+            background-color: #7f5fc8;
+        }
+        &:nth-child(2) {
+            background-color: #7f5fc8;
+        }
+        &:nth-child(3) {
+            background-color: #7f5fc8;
+        }
+        &:nth-child(4) {
+            background-color: #d71181;
+        }
+    }
+    .no-areaListItem {
+        background-color: #e0e0e5 !important;
+        a {
+            color: $textColor;
+        }
+    }
+}

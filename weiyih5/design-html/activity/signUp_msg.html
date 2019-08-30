@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>报名入口</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/column/activity/activity_v2.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_searchHospital.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_addHospital.css">
+</head>
+
+<body>
+<section class="al-mainInner">
+    <!-- 头部信息 -->
+    <header class="al-indexHeader">
+        <figure class="al-indexHeaderItem">
+            <a href="javascript:void(0)">
+                <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+            </a>
+        </figure>
+        <figure class="al-indexHeaderItem">
+            <h1>海选报名</h1>
+        </figure>
+        <figure class="al-indexHeaderItem">
+            <a href="javascript:;"> 取消</a>
+        </figure>
+    </header>
+    <section class="signUpMsg">
+        <aside class="title">请准确填写以下报名信息</aside>
+        <section class="form"><span>姓名</span><input type="text" placeholder="" value="王岩"></section>
+        <section class="form"><span>职称</span><input type="text" placeholder="" value="主任医师"><i></i></section>
+        <section class="form"><span>医院</span><input type="text" placeholder="" value="解放军总医院"><i></i></section>
+        <section class="form"><span>电话</span><input type="text" placeholder="" value="18555555555"></section>
+        <section class="form"><span>邮箱</span><input type="text" placeholder="" value=""></section>
+        <section class="form"><span>临床时间</span>
+            <select>
+                <option selected>请选择</option>
+                <option value="1">2017</option>
+                <option value="2">2016</option>
+            </select>
+            <b>-至今 </b>
+        </section>
+    </section>
+    <button class="signUpEnter activation">保存</button><!--未激活去掉类名  activation-->
+
+
+</section>
+<!--医院筛选-->
+<section class="al-mainInner ev-companyInner" style="display: none">
+    <!-- 头部信息 -->
+    <header class="al-searchHead">
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem ev-backToMain">
+                <a href="javascript:;">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>我在医院</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+            </figure>
+        </header>
+        <section class="al-searchInputBar">
+            <i class="icon-searchWhite"></i>
+            <input id="seachCompany" type="text" placeholder="请输入医院名称">
+            <button class="al-searchCancel" id="cancelSearch">
+                <i class="icon-searchCancel"></i>取消
+            </button>
+        </section>
+
+    </header>
+    <section class="al-searchResult ev-sProvince">
+        <article class="al-searchTips ev-sProvince">
+            <span class="backTitle">选择单位所在省份</span>
+        </article>
+        <section class="ev-contentBox" id="sProvince"></section>
+    </section>
+    <section class="al-searchResult ev-sCity">
+        <article class="al-searchTips ev-sCity" id="cityBack" style="display: none">
+            <i class="icon-backArrow"></i><span class="backTitle"></span>
+        </article>
+        <section class="ev-contentBox" id="sCity"></section>
+    </section>
+    <section class="al-searchResult ev-sCompany">
+        <article class="al-searchTips ev-sCompany" id="companyBack" style="display: none">
+            <i class="icon-backArrow"></i><span class="backTitle"></span>
+        </article>
+        <section class="ev-contentBox" id="sCompany"></section>
+    </section>
+    <section class="al-searchFailed al-noResult">
+        <p>未找到相关结果</p>
+        <a href="javascript:void(0)" class="btn-primary ev-addCompanyBtn">添加医院</a>
+    </section>
+</section>
+
+<!--添加医院-->
+<section class="al-mainInner ev-addCompanyInner" style="display: none;">
+    <!-- 头部信息 -->
+    <header class="al-indexHeader">
+        <figure class="al-indexHeaderItem ev-backToCompany">
+            <a href="javascript:;">
+                <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+            </a>
+        </figure>
+        <figure class="al-indexHeaderItem">
+            <h1>添加医院</h1>
+        </figure>
+        <figure class="al-indexHeaderItem">
+        </figure>
+    </header>
+    <section class="al-addHospitalBox">
+        <textarea id="companyIn" cols="" rows="" placeholder="请输入您任职的医院"></textarea>
+    </section>
+    <section class="al-addHospitalSave">
+        <button class="btn-primary-lg" id="saveCompany">保存</button>
+    </section>
+
+</section>
+<!-- 分享按钮 -->
+<section class="al-scrollShareBtn">
+    <i class="icon-scrollShare"></i>分享
+</section>
+<!-- 分享弹层 -->
+<section class="al-bottomSelectorListMask al-bottomSharePart">
+    <section class="al-bottomSelectorListBox">
+        <section class="al-bottomSelectorList">
+            <figure class="al-bottomSelectorItem al-bottomShareListBox">
+                <h2>分享给好友 共同讨论</h2>
+                <ul>
+                    <li class="al-bottomShareItem">
+                        <figure class="al-bottomShareImg">
+                            <img src="/images/img50/pages/index/share_allin.png" alt="">
+                        </figure>
+                        <figcaption>站内动态</figcaption>
+                    </li>
+                    <li class="al-bottomShareItem">
+                        <figure class="al-bottomShareImg">
+                            <img src="/images/img50/pages/index/share_kongjian.png" alt="">
+                        </figure>
+                        <figcaption>QQ空间</figcaption>
+                    </li>
+                    <li class="al-bottomShareItem">
+                        <figure class="al-bottomShareImg">
+                            <img src="/images/img50/pages/index/share_weibo.png" alt="">
+                        </figure>
+                        <figcaption>微博</figcaption>
+                    </li>
+                </ul>
+            </figure>
+        </section>
+        <section class="al-bottomSelectorList mgt">
+            <figure class="al-bottomSelectorItem" id="EV-cancelShare"><a href="javascript:void(0)">取消</a></figure>
+        </section>
+    </section>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+
+        function rem(opx) {
+            var px = parseInt(opx);
+
+            return (px / 75) + 'rem';
+        }
+
+        $('.al-scrollShareBtn').on("click", function (e) {
+            if ($(".al-bottomSharePart").hasClass('on')) {
+                return;
+            }
+            $(".al-bottomSharePart").addClass('on');
+
+        });
+        $('#EV-cancelShare').on("click", function (e) {
+            $(".al-bottomSharePart").removeClass('on');
+        });
+    });
+</script>
+</body>
+
+</html>

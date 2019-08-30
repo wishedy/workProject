@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超多内推大奖</title>
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="./css/page02.css">
+</head>
+<body>
+<audio id="audio" src="./video/sou.mp3"></audio>
+<div class="warp">
+    <header></header>
+    <section class="main">
+        <h3><span>23:55</span></h3>
+        <ul class="content-list">
+            <li>
+                <p class="name">郝婧Crystal</p>
+                <p class="cont">@all 最近招聘情况怎么样，进人速度有点慢…</p>
+            </li>
+            <li>
+                <p class="name">郝婧Crystal</p>
+                <p class="cont">能不能加快速度，很多都没人干</p>
+            </li>
+            <li>
+                <p class="name">郝婧Crystal</p>
+                <p class="cont">产品经理，高级UI，品牌策划，内容运营，医学部的，java工程师……</p>
+            </li>
+            <li>
+                <p class="name">刘峥嵘</p>
+                <p class="cont">我们的第二家线下医院也要落地了，在重庆，需要骨科医生，医生经纪人等等，你们要加快速度</p>
+            </li>
+            <li>
+                <p class="name">海生</p>
+                <p class="cont">好的，我们尽快推进下</p>
+            </li>
+            <li>
+                <p class="name">付新鑫</p>
+                <p class="cont">收到，头发可能不保了...</p>
+            </li>
+            <li>
+                <p class="name">段博洋</p>
+                <p class="cont">我想静静</p>
+            </li>
+            <li>
+                <p class="name">niko</p>
+                <p class="cont">周末可能没了</p>
+            </li>
+        </ul>
+        <div class="btnGroup hidden">
+            <p>看到需求的HR小哥哥小姐姐已经傻了</p>
+            <img src="./images/button.png" alt="" id="goToBtn">
+        </div>
+    </section>
+    <footer></footer>
+</div>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<script src="js/share.js"></script>
+<script>
+    $(function(){
+        // $(".main").height(window.screen.availHeight* window.dpr - $("header").height()-$("footer").height())
+        $(".main").height($("html").height() - $("header").height()-$("footer").height())
+
+        var isWeChat = false;
+        var isAudio = false;
+        var isFisrt = false;
+        function doAnimation(index) {
+            $(".content-list li").eq(index).addClass("animation");
+            $("#audio")[0].play();
+        }
+
+        var i=0;
+        var timer;
+        function setTimeAnimation(){
+            doAnimation(i++);
+            clearInterval(timer);
+           timer =  setInterval(function(){
+                console.log(i)
+                doAnimation(i++);
+                if(i>3){
+                    setTimeout(function(){
+                        $(".main").scrollTop( $(".main").height()+100);
+                    },1000)
+                    if(i>7) {
+                        $(".btnGroup").removeClass("hidden");
+                        clearInterval(timer);
+                        // setTimeout(function(){
+                        //     $(".main").scrollTop( $(".main").height());
+                        // },1000)
+                    }
+                }
+            },1300);
+        }
+
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            $("#audio")[0].load();
+            isWeChat = true;
+            if (isWeChat && isAudio) {
+                setTimeAnimation()
+            }
+        }, false);
+
+        $("#audio")[0].addEventListener("canplaythrough", function () {
+            if (isFisrt) {
+                return;
+            }
+            isFisrt = true;
+            isAudio = true;
+            if (isWeChat && isAudio) {
+                setTimeAnimation()
+            }
+        }, false);
+
+        $("#audio")[0].addEventListener('ended', function () {
+            $("#audio")[0].load();
+        }, false);
+
+
+        $("#goToBtn").on("click touchstart",function(){
+            window.location.href='./page04.html'
+        })
+    })
+</script>
+</body>
+</html>

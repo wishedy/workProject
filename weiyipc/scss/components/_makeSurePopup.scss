@@ -1,0 +1,165 @@
+@charset "UTF-8";
+//仿confirm弹层 组件
+//Created by qiangkailiang on 2016/08/11
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV3-variables";
+//确认弹窗
+.al-msgDeleteModal {
+    behavior: url("/js/third-party/pie/pie.htc");
+    width: 450px;
+    height: 285px;
+    background-color: #fff;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    border-radius: 5px;
+    margin-left: -225px;
+    margin-top: -142.5px;
+    border: 1px solid rgba(151,151,151,0.30);
+    //box-shadow: 0 0 10px 0 rgba(215,222,229,1);
+  //删除询问图标
+    .al-iconAsk {
+      width: 44px;
+      height: 44px;
+      display: inline-block;
+      vertical-align:middle;
+      margin-right: 15px;
+      background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_ask_lg.png') center center no-repeat;
+    }
+
+    .icon-close{
+      width: 13px;
+      height: 13px;
+      display: inline-block;
+      vertical-align: middle;
+      background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_close.png') center center no-repeat;
+    }
+    h2 {
+        font-size: 15px;
+        color: #666;
+        padding: 20px;
+        font-weight: normal;
+        border-bottom: 1px solid $innerBorderColor;
+        .icon-close{
+          float: right;
+          cursor: pointer;
+        }
+    }
+    .al-msgDeleteContent {
+        font-size: 16px;
+        color: #333;
+        text-align: center;
+        margin-top: 45px;
+        & > .al-iconA{
+          display: inline-block;
+          vertical-align: top;
+        }
+        article{
+          display: inline-block;
+          text-align: left;
+          max-width: 280px;
+          vertical-align: top;
+          /*&:before{
+            content: '';
+            display: inline-block;
+            height: 44px;
+            width: 44px;
+            background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_ask_lg.png') center center no-repeat;
+          }*/
+          h3{
+            font-size: 16px;
+            color: #333;
+            line-height: 20px;
+            margin-bottom: 10px;
+          }
+          span{
+            font-size: 16px;
+            color: #333;
+            display: block;
+            height:30px;
+            line-height:30px;
+          }
+        }
+        .al-msgNoTitle{
+          vertical-align: middle;
+        }
+    }
+    .al-msgDeleteBtn {
+        text-align: center;
+        margin-top:35px;
+        button {
+            behavior: url("/js/third-party/pie/pie.htc");
+            font-size: 15px;
+            color: #fff;
+            width: 80px;
+            height: 35px;
+            line-height: 35px;
+            margin: 0 7px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .al-msgDeleteConfirm {
+            background-color: $linkContentColor;
+        }
+        .al-msgDeleteCancel {
+            background-color: #bdc3cf;
+        }
+    }
+}
+
+
+
+
+/*活动报名成功*/
+.signPopup{
+  text-align: center;
+  .signSuccess{
+    font-size: 16px;
+    color: #333;
+    line-height: 20px;
+    margin: 40px 0 20px 0;
+    i{
+      display: inline-block;
+      background: url("/images/img10/v3/avtivity/true.png") no-repeat;
+      width: 20px;
+      height:20px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+  .signUpPtext{
+    font-size: 16px;
+    color: #333;
+  }
+  .setTime{
+    font-size: 16px;
+    color: #b4b4b4;
+    margin-top: 40px;
+  }
+}
+
+.al-msgDeleteModal .al-msgDeleteContent article span{
+  line-height: 24px;
+  display: inline-block;
+}
+
+.signUpPbtn{
+  text-align: center;
+  margin-top: 50px;
+  button{
+    width: 106px;
+    height: 36px;
+    border-radius: 999999px;
+    text-align: center;
+    line-height: 36px;
+    background: #73859e;
+    font-size: 15px;
+    color: #fff;
+  }
+  .al-msgDeleteCancel{
+    background: #2899e6;
+    margin-left: 20px;
+  }
+}

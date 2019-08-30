@@ -1,0 +1,178 @@
+@charset "UTF-8";
+//个人主页直播模块
+//Created by qiangkailiang on 2016/11/09
+//公共方法模块调用
+@import "../modules/_common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.al-myLivingContent {
+    background-color: #fff;
+    padding: 0 rem(20px);
+    padding-bottom: rem(30px);
+    text-align: left;
+    box-sizing: border-box;
+    font-size: 0;
+    margin-top: rem(18px);
+    .al-myLivingContentTitle {
+        height: rem(76px);
+        line-height: rem(76px);
+        border-bottom: 1px solid $innerBorderColor;
+        h2 {
+            font-weight: normal;
+            color: #666;
+            @include font-dpr(14px);
+        }
+    }
+    .mark {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: rem(100px);
+        height: rem(80px);
+    }
+    .al-myLivingItem {
+        width: 50%;
+        display: inline-block;
+        padding: 0 rem(10px);
+        margin-top: rem(30px);
+        box-sizing: border-box;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .al-myLivingItemImg {
+        position: relative;
+        height: rem(180px);
+
+        & > img {
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+    .al-myLivingItemBaseMsg{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: rem(53px);
+        background:linear-gradient(to top, rgba(0,0,0,0.3),rgba(0,0,0,0));
+        color:#fff;
+        @include font-dpr(12px);
+        text-shadow:1px 1px rem(5px) #000;
+        span{
+            position: absolute;
+            bottom: rem(5px);
+            font-style: normal;
+            &:nth-child(1){
+                left: rem(5px);
+            }
+            &:nth-last-child(1){
+                right: rem(5px);
+            }
+        }
+    }
+    figcaption {
+        & > h2 {
+            color: #333;
+            margin: rem(20px) 0;
+            @include font-dpr(14px);
+            line-height: 1;
+            font-weight: normal;
+            @include ellipsis();
+        }
+        & > p {
+            color: $smallTextColor;
+            @include font-dpr(14px);
+            line-height: 1;
+        }
+        .time {
+            margin-right: rem(10px);
+            vertical-align: middle;
+        }
+        em {
+            font-style: normal;
+            margin-left: rem(10px);
+        }
+        .watcherNum {
+            float: right;
+            em {
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+.al-noLoginTips {
+    width: 100%;
+    height: 100%;
+    background-color: #eff4f8;
+    text-align: center;
+    padding-bottom: rem(160px);
+    figure {
+        width: rem(233px);
+        height: rem(366px);
+        margin: 0 auto;
+        padding-top: rem(360px);
+        padding-bottom: rem(60px);
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+    button {
+        @include font-dpr(15px);
+        padding: rem(10px) rem(50px);
+    }
+}
+
+.livingMark_living {
+    background: transparent url('//img50.allinmd.cn/pages/living/Live_Lab.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.livingMark_order {
+    background: transparent url('//img50.allinmd.cn/pages/living/Order_Lab.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.livingMark_end {
+    background: transparent url('//img50.allinmd.cn/pages/living/End_Lab.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+.livingNoBegin{
+    background: transparent url("//img50.allinmd.cn/pages/living/livingNoBegin.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.al-myLivingCancel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+    p {
+        display: inline-block;
+        vertical-align: middle;
+        box-shadow: 0 1px -2px #000;
+        color: #fff;
+        @include font-dpr(16px);
+    }
+}
+
+.al-myLivingItem.cancel {
+    figcaption h2 {
+        color: #aaa;
+    }
+}

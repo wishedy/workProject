@@ -1,0 +1,128 @@
+@charset "UTF-8";
+//公共页脚组件
+//Created by qiangkailiang on 2016/07/29
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+//页脚功能栏
+
+.al-footerBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 6;
+    @include flex();
+    @include justify-content(space-between);
+    @include align-items(center);
+    //background: url("//img50.allinmd.cn/v3/images/bg_toolbar.png") no-repeat;
+    background: #fff;
+    background-size: cover;
+    height: rem(98px);
+    width: 100%;
+    overflow: visible;
+    box-shadow: 0 rem(5px) rem(38px) 0 rgba(67,116,220,0.16);
+    .al-newsNum{
+        //right: rem(-30px)
+        border-radius: .66667rem;
+        background-color: #f34b4b;
+        font-style: normal;
+        position: absolute;
+        top: -.13333rem;
+        right: .16rem;
+        display: block;
+        height: .42667rem;
+        max-width: .56rem;
+        line-height: .42667rem;
+        @include font-dpr(15px);
+        color: #fff;
+        padding: 0 .13333rem;
+    }
+}
+.al-mainInner{
+    padding-bottom: 2.5rem;
+}
+.al-footerBarItem:nth-child(3) .al-footerBarItemTitle {
+  margin-top: 0;
+}
+.al-footerBarItem {
+    text-align: center;
+    display: block;
+    @include font-dpr(12px);
+    position: relative;
+    margin-top: rem(10px);
+    width: 20%;
+    &:nth-child(2){
+        div{
+            width: rem(210px);
+            height: rem(210px);
+            margin-left: rem(-39px);
+            margin-top: rem(-161.25px);
+            svg{
+                margin-top:rem(15px);
+            }
+        }
+        img{
+            width: rem(90px);
+            height: rem(50px);
+        }
+        .al-footerBarItemTitle {
+            margin-top: rem(2px);
+        }
+    }
+    .al-footerBarItemTitle {
+        margin-top: rem(8px);
+        color: #626f8c;
+    }
+
+    img {
+        vertical-align: top;
+        display: block;
+        margin: auto;
+        width: rem(44px);
+        height: rem(44px);
+    }
+}
+.al-footerBarItem.active .al-footerBarItemTitle{
+    color: #2899e6 !important;
+}
+
+.al-release {
+    position: relative;
+    margin-top: rem(60px);
+    .al-footerBarItemTitle {
+        //padding-top: rem(10px);
+    }
+    .al-releaseBtn {
+        position: absolute;
+        bottom: -70%;
+        margin-bottom: rem(50px);
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        @include circle(rem(86px), #fff);
+        text-align: center;
+        border: rem(10px) solid #fff;
+        //box-shadow:0px rem(-1px) rem(10px) rgba(0,0,0,.2);
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+            border-radius: 50%;
+        }
+    }
+}
+
+
+/*引导提示*/
+.al-footerBarItem .promptDiscover{
+    position: absolute;
+    top: rem(-170px);
+    left: rem(-140px);
+    display: inline-block;
+    img{
+        width: rem(634px);
+        height: rem(147px);
+    }
+}

@@ -1,0 +1,29 @@
+<import src="/components/upLoadPlugn$f25b8f4a" />
+<import src="/components/confirm$5251c782" />
+<import src="/components/loading$2ff823fe" />
+<import src="/components/toast$1074ede9" /><template name="upLoadImgCheck$178f290e">
+  <view class="_section data-v-23ba1414 upload-wrapper">
+    <view class="_section data-v-23ba1414 tc-upLoadFile">
+      <view class="_section data-v-23ba1414 tc-upLoadBox" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+        <view class="_figure data-v-23ba1414 tc-upLoadTitle uploadTips-box"><label class="_span data-v-23ba1414 tc-upLoadTitleName">医学影像拍摄过程</label><label class="_span data-v-23ba1414 tc-upLoadRightIcon"></label></view>
+      </view>
+      <view class="_section data-v-23ba1414 tc-upLoadBox" wx:key="index" key="{{index}}" wx:for="{{uploadList}}" wx:for-index="index" wx:for-item="item">
+        <view class="_figure data-v-23ba1414 tc-upLoadTitle"><label class="_span data-v-23ba1414 tc-upLoadTitleName">{{item.adviceName}}</label> <label class="_span data-v-23ba1414 tc-upLoadRightIcon"></label> <label class="_span data-v-23ba1414 tc-upLoadRightCover"></label> <template bindbeforeUpload="handleProxy" binduploadDone="handleProxy" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0-'+index], $root}}" is="upLoadPlugn$f25b8f4a"></template></view>
+        <view class="_ul data-v-23ba1414 tc-upLoadItemBox" hidden="{{!(imageList[item.adviceId].length>0)}}">
+          <view class="_li data-v-23ba1414 tc-upLoadItemList" wx:key="imgIndex" key="{{imgIndex}}" wx:for="{{imageList[item.adviceId]}}" wx:for-index="imgIndex" wx:for-item="img">
+            <image bindtap="handleProxy" src="{{img.blob}}" data-eventid="{{'2-'+index+'-'+imgIndex}}" data-comkey="{{$k}}" class="_img data-v-23ba1414"></image> <label class="_span data-v-23ba1414 tc-upLoadDel" bindtap="handleProxy" hidden="{{!(img.uploading==false)}}" data-eventid="{{'3-'+index+'-'+imgIndex}}" data-comkey="{{$k}}"></label>
+            <view hidden="{{!(img.uploading)}}" class="_div data-v-23ba1414"><label class="_span data-v-23ba1414 tc-upLoadCover"></label> <label class="_span data-v-23ba1414 tc-upLoading"></label> <label class="_span data-v-23ba1414 tc-upLoadAfreshText">等待上传</label></view>
+            <view class="_figure data-v-23ba1414 upload-fail" wx:if="{{img.fail}}" bindtap="handleProxy" data-eventid="{{'4-'+index+'-'+imgIndex}}" data-comkey="{{$k}}">
+              <view class="_p data-v-23ba1414">重新上传</view>
+              <view class="_div data-v-23ba1414"></view>
+            </view>
+          </view>
+          <view class="_li data-v-23ba1414 tc-upLoadAdd" hidden="{{!(imageList[item.adviceId].length>0&&imageList[item.adviceId].length<9)}}">
+            <view class="_div data-v-23ba1414 tc-upLoadAddBox"><template bindbeforeUpload="handleProxy" binduploadDone="handleProxy" data-eventid="{{'5-'+index}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1-'+index], $root}}" is="upLoadPlugn$f25b8f4a"></template></view>
+          </view>
+        </view>
+      </view>
+      <view class="_footer data-v-23ba1414 tc-upLoadSubmit"><label class="_span data-v-23ba1414 tc-submitBtn" wx:if="{{submitFlag}}" bindtap="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}">提交</label> <label class="_span data-v-23ba1414 tc-submitDisabled" wx:if="{{!submitFlag}}">提交</label></view>
+    </view> <template wx:if="{{deletePicTip}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="confirm$5251c782"></template> <template wx:if="{{loading}}" data="{{...$root[$kk+'3'], $root}}" is="loading$2ff823fe"></template> <template imgUrl wx:if="{{errorShow}}" data="{{...$root[$kk+'4'], $root}}" is="toast$1074ede9"></template>
+  </view>
+</template>

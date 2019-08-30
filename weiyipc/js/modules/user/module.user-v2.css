@@ -1,0 +1,94 @@
+/** 
+	filename:module.user-v2
+	author:Administrator
+	adddate:2015/9/8
+    新版登录 弹层
+*/
+/** 
+	filename:zIndex
+	author:Administrator
+	adddate:2015/9/7
+*/
+.m-UserPop-v2 {
+  font-family: "microsoft yahei";
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8;
+  width: 100%;
+  height: 100%;
+}
+.m-UserPop-v2 .mask {
+  background: #000;
+  width: 100%;
+  position: fixed;
+  z-index: 8;
+  opacity: 0.6;
+  height: 100%;
+  background: rgba(0,0,0,0.60);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000, endColorstr=#000000);
+  filter: alpha(opacity=60);
+}
+.m-UserPop-v2 .center-box {
+  width: 800px;
+  height: 510px;
+  left: 50%;
+  top:50%;
+  margin-left: -400px;
+  margin-top: -255px;
+  background: #f9f9f9;
+  position: absolute;
+  z-index: 10;
+  /* 关闭 */
+  /* 返回 */
+}
+.m-UserPop-v2 .center-box .top {
+  background: #9da6b0;
+  border-left: 40px solid #3d84c6;
+  height: 5px;
+  overflow: hidden;
+}
+.m-UserPop-v2 .center-box .close {
+  float: right;
+  background: url(//modules.allinmd.cn/user/images/close.png);
+  width: 15px;
+  height: 15px;
+  margin: 19px 15px 0 0;
+  cursor: pointer;
+}
+.m-UserPop-v2 .center-box .close:hover {
+  background: url(//modules.allinmd.cn/user/images/close-hover.png);
+  -webkit-animation: btnRotate 1.5s linear ;
+}
+@-webkit-keyframes btnRotate {
+    0% {
+        -webkit-transform: rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateZ(360deg);
+    }
+}
+.m-UserPop-v2 .center-box .back {
+  float: left;
+  background: url(//modules.allinmd.cn/user/images/back.png);
+  width: 22px;
+  height: 22px;
+  margin: 15px 0 0 16px;
+  display: none;
+  cursor: pointer;
+}
+.m-UserPop-v2 .center-box .back:hover {
+  background: url(//modules.allinmd.cn/user/images/back-hover.png);
+}
+.m-UserPop-v2 .center-box .content {
+  clear: both;
+  background: #f9f9f9 url(//modules.allinmd.cn/user/images/user-v2/bg.jpg) 24px top no-repeat;
+  height: 420px;
+}
+.m-UserPop-v2 .center-box .content .module-login-box {
+  position: relative;
+  float: right;
+  width: 320px;
+  height: 420px;
+  margin: -30px 45px 0 0;
+}

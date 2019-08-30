@@ -1,0 +1,26 @@
+<template name="fileMessage$316bfdc2">
+  <view class="_section data-v-0061e0dd main-message-box" bindlongpress="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+    <view class="_article data-v-0061e0dd main-message-box-item {{[  fileMessage.from === userData.account ? 'my-message' : '',  fileMessage.from === targetData.account ? 'others-message' : '']}}" data-clientid="{{fileMessage.idClient}}">
+      <view class="_figure data-v-0061e0dd main-message-img" wx:if="{{fileMessage.from===targetData.account}}">
+        <block wx:if="{{isFindDoctor}}">
+          <image src="https://m.allinmed.cn/static/image/mp/personal/profilePhoto.png" alt class="_img data-v-0061e0dd"></image>
+        </block>
+        <block wx:else>
+          <image src="https://m.allinmed.cn/static/image/mp/index/imSceneLogo.png" alt class="_img data-v-0061e0dd"></image>
+        </block>
+      </view>
+      <view class="_figcaption data-v-0061e0dd main-message-content file-message-box"><label class="_span data-v-0061e0dd delete-msg-btn" catchtap="handleProxy" wx:if="{{currentIndex===deleteMsgIndex&&showDeleteMsg&&fileMessage.from===userData.account}}" data-eventid="{{'0'}}" data-comkey="{{$k}}">撤回</label>
+        <view class="_section data-v-0061e0dd file-box">
+          <view class="_figure data-v-0061e0dd file-content" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+            <image class="_img data-v-0061e0dd file-image" src="https://m.allinmed.cn/static/image/imScene/pdf@3x.png"></image>
+            <view class="_figcaption data-v-0061e0dd file-name" wx:if="{{custom}}">{{custom.name}}</view>
+          </view>
+        </view>
+        <view class="_article data-v-0061e0dd disclaimer-content" wx:if="{{fileMessage.from===targetData.account}}"><label class="_span data-v-0061e0dd">重要提示：在线咨询不能代替面诊，医生建议仅供参考。</label></view>
+      </view>
+      <view class="_figure data-v-0061e0dd main-message-img" wx:if="{{fileMessage.from===userData.account}}">
+        <image src="{{logoUrl}}" alt class="_img data-v-0061e0dd"></image>
+      </view>
+    </view>
+  </view>
+</template>

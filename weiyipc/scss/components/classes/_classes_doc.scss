@@ -1,0 +1,144 @@
+@charset "UTF-8";
+//内容评论 组件
+//Created by qiangkailiang on 2016/08/03
+//公共方法模块调用
+@import "../../modules/_common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+.al-discover_know{
+  background-color: #fff;
+  .al_dis_professor{
+    border-bottom:1px solid #EBEBEB;
+    margin: 0;
+    padding: 20px 15px;
+  }
+  .al_dis_act_wrap{
+    a{
+      display: block;
+      color: #666;
+      &:hover{
+        color: #2899e6;
+      }
+      img{
+        width: 228px;
+        height: 110px;
+        padding:20px;
+      }
+    }
+    p{
+      font-size: 15px;
+      color: #666;
+      font-family: 'microsoft yahei';
+      padding:0 15px 15px 15px;
+    }
+
+  }
+}
+.al-resource{
+  @include clearfix();
+  .al-noImg{
+    div{
+      width:100%;
+      .al-video-title{
+        display: block;
+        width: 100%;
+      }
+      a{
+        display: block;
+        p{
+          width: 100%;
+        }
+      }
+      span{
+        display: block;
+      }
+    }
+  }
+  .al-video-recommend{
+      display: inline-block;
+      position: relative;
+      b{
+        display: inline-block;
+        background: url(/images/img10/v3/discover/billboard/billboardVideo.png) no-repeat;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -15px 0 0 -15px;
+        font-weight: 400;
+      }
+    }
+  .al-no-video{
+    div{
+      float: none;
+      width: 226px;
+      clear: both;
+      @include clearfix();
+      .al-recommend-other{
+        float: left;
+      }
+    }
+  }
+  .course-doc-info{
+    font-family: 宋体;
+    @include clearfix();
+    .userName{
+      font-size: 10px;
+      color: #909090;
+      line-height: 13px;
+      margin-right: 15px;
+      width: auto;
+      //display: inline-block;
+      float: left;
+      i{
+        display: inline-block;
+        width: 15px;
+        height: 10px;
+        background: transparent url(//img10.allinmd.cn/v3/common/icon/personal_watchNum.png) 50% no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+    }
+    .num{
+      font-size: 10px;
+      color: #909090;
+      line-height: 13px;
+      float: left;
+      width: auto;
+      i{
+        display: inline-block;
+        width: 15px;
+        height: 10px;
+        background: transparent url(//img10.allinmd.cn/v3/common/icon/comment_btn.png) 50% no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+    }
+  }
+  .al-resourceInfo{
+    display: block;
+    .al-resource-series{
+      width: 100%;
+    }
+    .al-video-recommend{
+      float: left;
+      margin-right: 13px;
+    }
+    .al-video-title{
+      display: block;
+      float: left;
+    }
+  }
+  .al-noImg{
+    display: block;
+    .al-resource-series{
+      .al-video-title{
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

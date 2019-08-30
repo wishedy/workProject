@@ -1,0 +1,577 @@
+@import "/vendor/css/main.wxss";
+
+.patientNoteCon.patientHidden {
+  height: 100%;
+  overflow: hidden;
+}
+.patientNoteCon.patient-table {
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  flex-direction: column;
+}
+.patientNoteCon ._header {
+  padding: 46rpx 30rpx 62rpx 30rpx;
+  background: linear-gradient(360deg, #00d1b5 0%, #00b9ad 100%);
+  box-shadow: 0 12rpx 22rpx 0 #d2e4e3;
+}
+.patientNoteCon ._header ._h1 {
+  font-size: 44rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: #fff;
+  line-height: 50rpx;
+  margin-bottom: 26rpx;
+}
+.patientNoteCon ._header .headerInfo {
+  font-size: 0;
+}
+.patientNoteCon ._header .headerInfo .headerNum {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 26rpx;
+}
+.patientNoteCon .noteContent {
+  background: white;
+  border-radius: 16rpx 16rpx 0 0;
+  margin-top: -16rpx;
+  padding: 0 30rpx 120rpx;
+}
+.patientNoteCon .noteContent .noteItem .itemTitle {
+  padding-top: 56rpx;
+}
+.patientNoteCon .noteContent .noteItem .itemTitle .itemMidd {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: bold;
+  color: #000;
+  line-height: 36rpx;
+}
+.patientNoteCon .noteContent .noteItem .itemTitle:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 6rpx;
+  height: 30rpx;
+  background: #07b6ac;
+  border-radius: 3rpx;
+  margin-right: 12rpx;
+}
+.patientNoteCon .noteContent .noteItem .itemTitle .doctorTip {
+  display: inline-block;
+  margin-left: 14rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #25324D;
+  line-height: 30rpx;
+  vertical-align: middle;
+}
+.patientNoteCon .noteContent .noteItem .itemDesc .itemdescCon {
+  margin-top: 2rpx;
+  margin-left: 18rpx;
+  padding: 20rpx 0 40rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333;
+  line-height: 44rpx;
+  border-bottom: 1rpx solid #E3E5E9;
+}
+.patientNoteCon .noteContent .noteItem .itemDesc.doctorList {
+  margin: 40rpx 0 0 18rpx;
+  border-bottom: 1rpx solid #E3E5E9;
+}
+.patientNoteCon .noteContent .noteItem .doctorItem {
+  margin-bottom: 48rpx;
+}
+.patientNoteCon .noteContent .noteItem .doctorItem ._img {
+  width: 100rpx;
+  height: 100rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.patientNoteCon .noteContent .noteItem .doctorItem .doctorInfo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 524rpx;
+  margin-left: 24rpx;
+}
+.patientNoteCon .noteContent .noteItem .doctorItem .doctorInfo .doctorName {
+  font-size: 38rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: bold;
+  color: #25324D;
+  line-height: 52rpx;
+}
+.patientNoteCon .noteContent .noteItem .doctorItem .doctorInfo .doctorDesc {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  color: #25324D;
+  line-height: 40rpx;
+}
+.patientNoteCon .noteContent .noteItem .contentCon {
+  margin-left: 12rpx;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentTitle {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #000;
+  line-height: 44rpx;
+  padding-bottom: 12rpx;
+  border-bottom: 1rpx solid #E3E5E9;
+  margin-top: 40rpx;
+  margin-left: 0;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentTitle ._span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 640rpx;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentTitle:before {
+  display: inline-block;
+  vertical-align: top;
+  content: '';
+  width: 26rpx;
+  height: 26rpx;
+  background: url("https://m.allinmed.cn/static/image/mp/index/1.1.5/tittle_icon.png") center center no-repeat;
+  background-size: contain;
+  margin-right: 12rpx;
+  margin-top: 10rpx;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentItem {
+  padding: 32rpx 0;
+  border-bottom: 1rpx solid #E3E5E9;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentItem:last-child {
+  border-bottom: none;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentItem.itemVideo {
+  font-size: 0;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentItem.itemVideo .videoPic {
+  position: relative;
+  width: 210rpx;
+  height: 140rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 30rpx;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentItem.itemVideo .videoPic ._img {
+  width: 100%;
+  height: 100%;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentItem.itemVideo .videoPic .iconPlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: url("https://m.allinmed.cn/static/image/mp/index/1.1.4/playButtom.png") center center no-repeat;
+  background-size: contain;
+  width: 84rpx;
+  height: 84rpx;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentItem.itemVideo .videoPic .timeContaier {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #FFF;
+  line-height: 40rpx;
+  height: 40rpx;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+  border-radius: 0 0 6rpx 6rpx;
+  width: 100%;
+  text-align: right;
+  padding-right: 10rpx;
+  box-sizing: border-box;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentItem.itemVideo .videoInfo {
+  width: 416rpx;
+  height: 140rpx;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentItem.itemVideo .videoInfo .videoTitle {
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: bold;
+  color: #333333;
+  line-height: 44rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentItem.itemVideo .videoInfo .repetition {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #999;
+  line-height: 36rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentItem.itemContentDesc .itemContainer .itemConTitle {
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: bold;
+  color: #333333;
+  line-height: 44rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentItem.itemContentDesc .itemContainer .itemConDesc {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #999;
+  line-height: 36rpx;
+}
+.patientNoteCon .noteContent .noteItem .contentCon .contentItem.itemContentDesc .itemContainer .itemConDesc .browseNum {
+  margin-right: 30rpx;
+}
+.patientNoteCon .btnFooter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 4;
+  background: white;
+  box-shadow: 0 -6rpx 22rpx 0 rgba(0, 0, 0, 0.1);
+}
+.patientNoteCon .btnFooter ._button {
+  width: 50%;
+  height: 98rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #506c85;
+  line-height: 98rpx;
+  background: #fff;
+}
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+.patientNoteCon .btnFooter ._button {
+    height: 166rpx;
+}
+}
+.patientNoteCon .btnFooter ._button ._span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 28rpx;
+}
+.patientNoteCon .btnFooter ._button .iconShare {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("https://m.allinmed.cn/static/image/mp/index/1.1.5/send.png") center center no-repeat;
+  background-size: contain;
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 14rpx;
+}
+.patientNoteCon .btnFooter ._button.shareBtn {
+  position: relative;
+}
+.patientNoteCon .btnFooter ._button.shareBtn:before {
+  position: absolute;
+  content: '';
+  width: 1rpx;
+  height: 42rpx;
+  background: #f0f0f0;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.patientNoteCon .btnFooter ._button.shareBtn .iconShare {
+  background: url("https://m.allinmed.cn/static/image/mp/index/1.1.5/share.png") center center no-repeat;
+  background-size: contain;
+  width: 32rpx;
+  height: 32rpx;
+}
+.patientNoteCon .doctorInvite {
+  position: fixed;
+  bottom: 138rpx;
+  right: 40rpx;
+  width: 192rpx;
+  height: 154rpx;
+  background: url("https://m.allinmed.cn/static/image/mp/index/1.1.5/qipao.png") center center no-repeat;
+  background-size: contain;
+}
+.patientNoteCon .doctorInvite .closeDoctor {
+  position: absolute;
+  top: -16rpx;
+  right: -16rpx;
+  width: 52rpx;
+  height: 52rpx;
+  background: url("https://m.allinmed.cn/static/image/mp/index/1.1.5/claose.png") center center no-repeat;
+  background-size: contain;
+}
+.patientNoteCon .doctorInvite .doctorName {
+  width: 176rpx;
+  font-size: 26rpx;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: white;
+  line-height: 32rpx;
+  text-shadow: 0 4rpx 8rpx rgba(0, 161, 155, 0.6);
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.patientNoteCon .doctorInvite .doctorName .doctorText {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 2rpx;
+  font-size: 29rpx;
+}
+.patientNoteCon .wx-contact-text {
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  display: inline-block;
+}
+.patientNoteCon .wx-contact-text:after {
+  border: 0;
+}
+.patientNoteCon .node-nodata {
+  background: white;
+  border-radius: 16rpx 16rpx 0 0;
+  margin-top: -16rpx;
+  height: 100%;
+  position: relative;
+}
+.patientNoteCon .node-nodata .nodata-tip {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.patientNoteCon .node-nodata .nodata-tip ._img {
+  width: 264rpx;
+  height: 224rpx;
+}
+.patientNoteCon .node-nodata .nodata-tip .tip-text {
+  margin-top: 40rpx;
+  font-size: 34rpx;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-weight: 600;
+  color: #222;
+  line-height: 36rpx;
+}
+.shareNodeCon.data-v-827505c2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.85);
+}
+.shareNodeCon .shareContent.data-v-827505c2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 624rpx;
+}
+.shareNodeCon .shareContent .closeShareCon.data-v-827505c2 {
+  position: absolute;
+  background: url("https://m.allinmed.cn/static/image/mp/index/canvasClose.png") center center no-repeat;
+  background-size: contain;
+  top: -30rpx;
+  right: -30rpx;
+  width: 60rpx;
+  height: 60rpx;
+  z-index: 2;
+}
+.shareNodeCon .shareContent .shareTitle.data-v-827505c2 {
+  background: linear-gradient(314deg, #00d1b5 0%, #00b9ad 100%);
+  border-radius: 20rpx 20rpx 0 0;
+}
+.shareNodeCon .shareContent .shareTitle ._h2.data-v-827505c2 {
+  text-align: left;
+  font-size: 38rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: bold;
+  color: white;
+  line-height: 38rpx;
+  padding: 48rpx 44rpx 42rpx;
+  position: relative;
+}
+.shareNodeCon .shareContent .shareTitle ._h2 .iconTitle.data-v-827505c2 {
+  width: 34rpx;
+  height: 36rpx;
+  background: url("https://m.allinmed.cn/static/image/mp/index/1.1.5/zhinan_icon.png") center center no-repeat;
+  background-size: contain;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10rpx;
+  position: absolute;
+  top: 54rpx;
+}
+.shareNodeCon .shareContent .shareTitle ._h2 ._span.data-v-827505c2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 494rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 44rpx;
+  margin-left: 46rpx;
+}
+.shareNodeCon .shareContent .shareContainer.data-v-827505c2 {
+  background: white;
+  padding: 0 44rpx;
+  padding-bottom: 1rpx;
+}
+.shareNodeCon .shareContent .shareContainer .contenList ._h4.data-v-827505c2 {
+  padding-top: 44rpx;
+  padding-bottom: 40rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: #333333;
+  line-height: 34rpx;
+}
+.shareNodeCon .shareContent .shareContainer .contenList .contentItem.data-v-827505c2 {
+  margin-bottom: 32rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #777777;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  line-height: 32rpx;
+}
+.shareNodeCon .shareContent .shareContainer .doctorCon ._h4.data-v-827505c2 {
+  padding-top: 14rpx;
+  padding-bottom: 40rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: #333333;
+  line-height: 34rpx;
+}
+.shareNodeCon .shareContent .shareContainer .doctorCon .doctorInfo.data-v-827505c2 {
+  width: 510rpx;
+  background: #f5faf8;
+  border-radius: 8rpx;
+  padding: 16rpx 18rpx;
+  font-size: 0;
+}
+.shareNodeCon .shareContent .shareContainer .doctorCon .doctorInfo ._img.data-v-827505c2 {
+  width: 88rpx;
+  height: 88rpx;
+  vertical-align: middle;
+  margin-right: 16rpx;
+}
+.shareNodeCon .shareContent .shareContainer .doctorCon .doctorInfo .doctorDesc.data-v-827505c2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+.shareNodeCon .shareContent .shareContainer .doctorCon .doctorInfo .doctorDesc .doctorName.data-v-827505c2 {
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #333333;
+  line-height: 32rpx;
+  margin-bottom: 14rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 405rpx;
+  overflow: hidden;
+}
+.shareNodeCon .shareContent .shareContainer .doctorCon .doctorInfo .doctorDesc .doctorCom.data-v-827505c2 {
+  width: 405rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC-Light;
+  font-weight: 300;
+  color: #888888;
+  line-height: 28rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.shareNodeCon .shareContent .shareContainer .doctorCon .doctorInfo .doctorDesc .doctorCom .doctorMedical.data-v-827505c2 {
+  margin-right: 12rpx;
+}
+.shareNodeCon .shareContent .shareFoot.data-v-827505c2 {
+  background: url("https://m.allinmed.cn/static/image/mp/index/1.1.5/Group 17 Copy.png") center center no-repeat;
+  background-size: contain;
+  width: 624rpx;
+  height: 236rpx;
+  margin-top: -1rpx;
+}
+.shareNodeCon .shareContent .shareFoot .imgContainer.data-v-827505c2 {
+  font-size: 0;
+  padding-top: 78rpx;
+}
+.shareNodeCon .shareContent .shareFoot .imgContainer ._img.data-v-827505c2 {
+  width: 136rpx;
+  height: 136rpx;
+  vertical-align: middle;
+  margin-right: 30rpx;
+  margin-left: 44rpx;
+}
+.shareNodeCon .shareContent .shareFoot .imgContainer .wxTipDesc.data-v-827505c2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 300rpx;
+  color: #818181;
+  font-size: 26rpx;
+}
+.shareNodeCon .shareContent .saveBtnCon.data-v-827505c2 {
+  text-align: center;
+  margin-top: 60rpx;
+}
+.shareNodeCon .shareContent .saveBtnCon ._button.data-v-827505c2 {
+  width: 280rpx;
+  height: 90rpx;
+  background: #fffdfa;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #07b6ac;
+  line-height: 90rpx;
+}

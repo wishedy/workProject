@@ -1,0 +1,47 @@
+<import src="/components/toast$1074ede9" />
+<import src="/components/confirm$5251c782" /><template name="triageDetail$1bee4f94">
+  <view class="_section data-v-77b2303b he-videoUpHide ev-videoImgUpHide">
+    <view class="_section data-v-77b2303b he-videoUpLoadBox">
+      <view class="_section data-v-77b2303b he-videosMain">
+        <view class="_section data-v-77b2303b al-uploadNumLimit" wx:if="{{type == 2}}"><label class="_span data-v-77b2303b">提示：最多可以上传9张图片</label></view>
+        <view class="_p data-v-77b2303b he-loadTitle {{[type == 2 ? 'upLoadPicHasTip' : '']}}">{{content}}</view>
+        <view class="_ul data-v-77b2303b he-loadFiles he-videoImageBox docInt" wx:if="{{type==2}}">
+          <view class="_li data-v-77b2303b tc-imageItemList ev-imgList success" wx:key="index" key="{{index}}" wx:if="{{imageList.length>0}}" wx:for="{{imageList}}" wx:for-index="index" wx:for-item="item">
+            <image src="{{item.blob}}" bindtap="handleProxy" alt data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" class="_img data-v-77b2303b"></image> <label class="_span data-v-77b2303b tc-upLoadDel" bindtap="handleProxy" hidden="{{!(item.finish)}}" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}"></label>
+            <view wx:if="{{item.uploading}}" class="_div data-v-77b2303b"><label class="_span data-v-77b2303b tc-upLoadCover"></label> <label class="_span data-v-77b2303b tc-upLoading"></label> <label class="_span data-v-77b2303b tc-upLoadAfreshText">等待上传</label></view>
+            <view class="_figure data-v-77b2303b upload-fail" bindtap="handleProxy" wx:if="{{item.fail}}" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}">
+              <view class="_p data-v-77b2303b">重新上传</view>
+            </view>
+          </view>
+          <view class="_li data-v-77b2303b tc-imageUpLoadAdd" hidden="{{!(imageList.length<9)}}" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">
+            <view class="_div data-v-77b2303b imageIcon"><label class="_span data-v-77b2303b tc-upLoadAddMore"></label></view>
+          </view>
+        </view>
+        <view class="_ul data-v-77b2303b he-loadFiles" hidden="{{!(type==1 && !videoObj.size)}}">
+          <view class="_li data-v-77b2303b he-videoAddFirstBtn" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">
+            <view class="_div data-v-77b2303b he-videoFirstLoadBtn"></view>
+          </view>
+        </view>
+        <view class="_ul data-v-77b2303b he-loadFiles ev-success" hidden="{{!(type==1 && videoObj.size)}}">
+          <view class="_li data-v-77b2303b he-loadVideoSuccess"><label class="_span data-v-77b2303b he-loadVideoSuccessBox"><label class="_span data-v-77b2303b he-loadSuccessTip"></label> <label class="_span data-v-77b2303b he-loadSuccessText">已上传</label></label></view>
+          <view class="_li data-v-77b2303b he-videoAddBtn he-loadSuccessTextBox">
+            <view class="_div data-v-77b2303b he-reLoadText" id="reloadBtn" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">重新上传</view>
+          </view>
+        </view>
+        <view class="_section data-v-77b2303b he-videosSubmit ev-submitUpData" hidden="{{!(type==2)}}"><button class="_button data-v-77b2303b usable downBtn" wx:if="{{imageList.length && !uploading}}" bindtap="handleProxy" style="display: inline-block;" data-eventid="{{'6'}}" data-comkey="{{$k}}">提交 </button> <button class="_button data-v-77b2303b unusable" wx:if="{{!imageList.length || uploading}}">提交</button></view>
+        <view class="_section data-v-77b2303b he-videosSubmit ev-submitUpData" hidden="{{!(type==1)}}"><button class="_button data-v-77b2303b usable downBtn" disabled="{{uploadVideo}}" style="display: inline-block;" bindtap="handleProxy" wx:if="{{videoObj.size}}" data-eventid="{{'7'}}" data-comkey="{{$k}}">提交 </button> <button class="_button data-v-77b2303b unusable" wx:if="{{!videoObj.size}}">提交</button></view>
+      </view>
+    </view>
+    <view class="_section data-v-77b2303b video-upLoad-box" wx:if="{{videoUploading}}">
+      <view class="_section data-v-77b2303b ev-videoUpLoading">
+        <view class="_div data-v-77b2303b tc-videoLoadingImg">
+          <image src="https://m.allinmed.cn/static/image/img00/patientConsult/symptom_photo_loading@2x.png" alt class="_img data-v-77b2303b"></image>
+        </view>
+        <view class="_p data-v-77b2303b tc-videoLoadingText">上传中{{upLoadPercent}}%...</view>
+      </view>
+    </view> <template wx:if="{{errorShow}}" data="{{...$root[$kk+'0'], $root}}" is="toast$1074ede9"></template>
+    <transition name="fade" class="_transition data-v-77b2303b"><template wx:if="{{imgLeaveConfirm}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'8'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="confirm$5251c782"></template></transition>
+    <transition name="fade" class="_transition data-v-77b2303b"><template wx:if="{{videoLeaveConfirm}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'9'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'3'], $root}}" is="confirm$5251c782"></template></transition>
+    <transition name="fade" class="_transition data-v-77b2303b"><template wx:if="{{reloadVideoConfirm}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'10'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'5'], $root}}" is="confirm$5251c782"></template></transition>
+  </view>
+</template>

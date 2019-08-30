@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>领取学分</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/ReceiveCredits/receiveCredits.css">
+</head>
+<body>
+    <section class="al-mainInner">
+        <section class="successContain">
+            <article class="sucTitle">
+                领取成功111
+            </article>
+            <article class="sucCardTitle">
+                <i></i>
+                <p style="display: none">您的电子学分卡</p>
+                <p>已领取的电子学分卡</p>
+            </article>
+            <article class="sucCardImg">
+                <div class="sucImg"><img class="ev-bigImg" src="http://img99.allinmd.cn/caosCredit/2018/04/09/1523244459635.jpg?1523244459748" /></div>
+                <div class="sucTxt">学分验证码将用于学分领取，长按图片可保存到手机相册</div>
+            </article>
+
+        </section>
+    </section>
+</body>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/wx/jweixin-1.0.0.js"></script>
+<script>
+    $(function(){
+      // $(".bigImg").on("click",function(event){
+      //   alert(123);
+      //   event.preventDefault();
+      //   return false;
+      // })
+        if($('.ev-bigImg').length>0){
+            $('.ev-bigImg').off('click').on('click',function (e) {
+                var url =$(this).attr("src");
+                var arr = Array();
+                var urls =$(".ev-bigImg").each(function(index){
+                    let temp = $(this).attr("src");
+                    arr.push(temp);
+                });
+                // alert(url);
+                wx.previewImage({
+                    current: url, // 当前显示图片的http链接
+                    urls: arr     // 需要预览的图片http链接列表
+                });
+                e.preventDefault();
+                return false;
+            });
+        }
+    })
+</script>
+</html>

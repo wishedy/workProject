@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/discover/discover_major.html#type=disease';
+        }
+    </script>
+    <title>按疾病筛选－疾病分类,查找便捷,唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="keywords" content="脱位，骨折，畸形，损伤，内外翻，疾病筛选，资源筛选，医学资源，唯医,allinmd，骨科常见病，骨科多发病">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/discover/discover_disease.css">
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="194">
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <section class="al-headFilterBox">
+            <header class="al-indexHeader"  data-alcode-mod='401'>
+                <figure class="al-indexHeaderItem">
+                    <a href="javascript:;" class="ev_backBtn" data-alcode='e45'>
+                        <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                    </a>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                    <h1>按疾病</h1>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                    <a href="/pages/discover/discover_tag.html">
+                        <i class="icon-search"></i>
+                    </a>
+                </figure>
+            </header>
+            <nav class="al-typeFilterNavbar" data-alcode-mod='402' data-alcode-item-selector="span">
+                <section class="al-typeFilterNavbarItem" data-role="filter">
+                    <span>筛选</span>
+                </section>
+                <section class="al-typeFilterNavbarItem" data-role="type">
+                    <span>全部类型</span>
+                </section>
+                <section class="al-typeFilterNavbarItem" data-role="sort">
+                    <span>智能排序</span>
+                </section>
+            </nav>
+            <section class="al-typeFilterMainMask" data-role="filter">
+                <section class="al-twoFloorFilter" data-alcode-mod='403'>
+                     <section id="wrapper_first" data-alcode-sm="left">
+                        <section class="al-twoFloorFirstFilter EV-firstTemplateBox" data-alcode-item-selector="article">
+                        </section>
+                    </section>
+                    <section id="wrapper_second" data-alcode-sm="right">
+                        <section class="al-twoFloorSecondFilter" data-alcode-item-selector="article">
+
+                        </section>
+                    </section>
+                    
+                </section>
+            </section>
+            <section class="al-typeFilterMainMask" data-role="type">
+                <section class="al-twoFloorFilter" data-alcode-mod='404' data-alcode-item-selector="article">
+                    <article class="al-oneFloorFilterItem EV-filterType active" data-type="0">全部</article>
+                    <article class="al-oneFloorFilterItem EV-filterType" data-type="7">病例</article>
+                    <article class="al-oneFloorFilterItem EV-filterType" data-type="1">视频</article>
+                    <article class="al-oneFloorFilterItem EV-filterType" data-type="2">文库</article>
+                    <article class="al-oneFloorFilterItem EV-filterType" data-type="4">话题</article>
+                </section>
+            </section>
+            <section class="al-typeFilterMainMask" data-role="sort">
+                <section class="al-twoFloorFilter" data-alcode-mod='405' data-alcode-item-selector="article">
+                    <article class="al-oneFloorFilterItem EV-filterScene active" data-scene="4">智能排序</article>
+                    <article class="al-oneFloorFilterItem EV-filterScene" data-scene="1">最新发布</article>
+                    <article class="al-oneFloorFilterItem EV-filterScene" data-scene="3">最多浏览</article>
+                    <article class="al-oneFloorFilterItem EV-filterScene" data-scene="2">最多评论</article>
+                </section>
+            </section>
+        </section>
+        <section class="al-content" style="margin-top:0">
+            <section class="al-discoverMask"></section>
+            <section class="EV-discoverDiseaseFilter" data-alcode-mod='407'></section>
+            <section class="ev_noContent" style="display: none;">
+                <img src="//img50.allinmd.cn/pages/discover/noActivity.png" alt="" style="position:relative;margin-top:40%;left:50%;margin-left:-56px;"/>
+            </section>
+        </section>
+    </section>
+    <!-- 分享按钮 -->
+    <section class="al-scrollShareBtn" data-alcode-mod='406'>
+        <i class="icon-scrollShare" data-alcode="e46"></i>分享
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+    <script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <!--<script src="/js/third-party/iscroll.js"></script>-->
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+    <script src="/js/scene/discover/discoverDisease.js"></script>
+
+</body>
+
+</html>

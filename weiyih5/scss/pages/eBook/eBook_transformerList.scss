@@ -1,0 +1,77 @@
+@charset "UTF-8";
+//电子书——译者
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_classSelector"; // 下拉筛选
+@import "../../components/_contentModule"; //内容结构
+//主内容——贡献
+.al-personalContributionHeader {
+    height: rem(78px);
+    width: 100%;
+    border-bottom: 1px solid $innerBorderColor;
+    padding: 0 rem(30px);
+    background-color: #fff;
+    position: relative;
+    box-sizing: border-box;
+    @include clearfix();
+    h2 {
+        font-weight: normal;
+        @include font-dpr(12px);
+        color: $smallTextColor;
+        height: 100%;
+        display: inline-block;
+        line-height: rem(78px);
+    }
+}
+.al-personalContributionSelectorItem{
+	padding: rem(30px);
+    display: none;
+}
+.al-transformerListBox{
+	margin-top: rem(18px);
+}
+.al-content{
+	margin-top: 0;
+}
+/*.al-vipUser{
+    @extend %al-vipUser;
+}*/
+
+//无内容时
+.al-eBookNoContent{
+    height:rem(900px);
+    line-height:rem(900px);
+    text-align:center;
+    background-color:#fff;
+    img{
+        width:rem(91px);
+        height:rem(30px);
+        vertical-align: middle;
+    }
+}
+
+.al-doctorRecommendImg{
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+.al-doctorRecommendMsg{
+    width: rem(430px);
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.al-fellowAuthor{
+    display: inline-block;
+    vertical-align: middle;
+    //float: none;
+}
+
+
+

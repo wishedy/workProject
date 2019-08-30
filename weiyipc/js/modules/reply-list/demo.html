@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${seoTitle!''}</title>
+
+<link href="/css/common/base.css" rel="stylesheet" type="text/css"/>
+<link href="/css/common/header.css" rel="stylesheet" type="text/css"/>
+<link href="/css/common/footer.css" rel="stylesheet" type="text/css"/>
+<link href="/css/detail/detail.css" rel="stylesheet" type="text/css" />
+<link href="module.reply-list.css" rel="stylesheet" type="text/css" />
+<link href="/js/modules/report/module.report.css" rel="stylesheet" type="text/css"/>
+<link href="/js/plugins/relation/plugin.relation.css" rel="stylesheet" type="text/css" />
+<link href="/js/plugins/add-removeable-group-pic/plugin.add-removeable-group-pic.css" rel="stylesheet" type="text/css" />
+<link href="/js/plugins/reply-remind/plugin.reply-remind.css" rel="stylesheet" type="text/css" />
+<link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+<link href="/js/plugins/relation2/review/relation2.review.css" rel="stylesheet" type="text/css">
+<link href="/js/modules/list-template/module.list-template.css" rel="stylesheet" type="text/css">
+<link href="/js/modules/background-video/module.background-video.css" rel="stylesheet" type="text/css" />
+<link href="/js/plugins/reference-resource/reference-resource.css" rel="stylesheet" type="text/css" />
+
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.cookie.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.checkAddress.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/modules/background-video/module.background-video.js"></script>
+
+<!-- 调用reply-form回复 -->
+<link href="/js/modules/reply-form/module.reply-form.css" rel="stylesheet" type="text/css"/>
+<script src="/js/modules/reply-form/module.reply-form.js"></script>
+
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/lib/jquery/jquery.form.js"></script>
+<script src="/js/plugins/relation/plugin.relation.js"></script>
+<script src="/js/plugins/add-removeable-group-pic/plugin.replaceInput/plugin.replaceInput.js"></script>
+<script src="/js/plugins/add-removeable-group-pic/plugin.add-removeable-group-pic.js"></script>
+<script src="/js/plugins/add-removeable-group-pic/plugin.readFile/plugin.readFile.js"></script>
+<script src="/js/modules/report/module.report.js"></script>
+<script src="module.reply-list.js"></script>
+
+<script src="/js/third-party/pagination/jqueryscrollpagination/js/scrollpagination.js"></script>
+
+<script src="/js/plugins/reply-remind/plugin.reply-remind.js"></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+
+<script src="/js/plugins/relation2/downstairs/relation2.downstairs.js"></script>
+<script src="/js/modules/list-template/module.list-template.js"></script>
+
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/modules/user/module.user.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<script src="//other.allinmd.cn/ckplayer6.6/ckplayer/ckplayer.js" charset="utf-8"  type="text/javascript"></script>
+
+    <script src="/js/third-party/qiniu/qiniu.js"></script>
+	<script src="/js/third-party/qiniu/ui.js"></script>
+	<script src="/js/third-party/plupload/plupload.full.min.js"></script>
+	<script src="/js/third-party/plupload/i18n/zh_CN.js"></script>
+	<script src="/js/plugins/reference-resource/reference-resource.js"></script>
+	
+</head>
+
+<script>
+	$(function() {
+		module.replyList({
+			target : ".detail_replys", //瀑布流加载位置
+			hint : ".reply-list-hint", //提示位置
+			refId : 1462326450834, //1428658119932 1429175450165 1429628829679 1446629718729
+			authId : 1408075759449, //作者ID 
+			cid : 1397640872703,//用于底部关注状态 1397640872703
+			type : ResouceType.caze,
+			callback : function() {
+				$("#replyContent").focus();
+			}
+		});
+	});
+</script>
+<body class="reltive">
+
+	<div id="topic">
+		<!-- 回复列表  -->
+		<div class="module-replyList">
+			<div class="v_all_title_v2 font_yahei">全部回应</div>
+		<!--	<div class="v_all_list">
+				<ul class="detail_replys">
+		 			<li class="children"><div class="v_all_list_l font_yahei">7天前</div>
+						<div class="v_all_list_r">
+							<div class="v_all_pointer"></div>
+							<div class="v_all_r_top">
+								<div class="v_all_user">
+									<a href="/pages/personal/home.html?cid=1422584844027"> <img
+										src="//img10.allinmd.cn/default-user/doctor01.jpg">
+									</a>
+								</div>
+								<div class="v_all_cont">
+									<div class="v_all_name font_yahei">
+										<a href="/pages/personal/home.html?cid=1422584844027">吴弥</a>
+									</div>
+									<div class="v_all_text font_yahei">样的问题。为促进骨科临床诊疗技术的标准化及规范化，使广大骨科医生更快的掌握新技术，指导骨科临床实践，中国医师协会骨科医师分会将根据国家卫计委、中国</div>
+								   
+					                  
+					                  <div class="case_img_list personal_home_img_ads p_four_img">
+					                    <div class="personal_ads"><img src="//img00.allinmd.cn/personal/ads01.png"></div>
+					                    <div class="personal_ads"><img src="//img00.allinmd.cn/personal/ads01.png"></div>
+					                    <div class="personal_ads"><img src="//img00.allinmd.cn/personal/ads01.png"></div>
+					                    <div class="personal_ads"><img src="//img00.allinmd.cn/personal/ads01.png"></div>
+					                    <div class="clear"></div>
+					                  </div>
+					                  
+					                  
+					                  
+					                  
+					                  <div class="case_img_list">
+					                    <div class="personal_ads case_more_img"><img src="//img00.allinmd.cn/personal/ads02.png">
+					                    <div class="sh_float_bg"></div>
+					                    <div class="sh_float_text font_yahei">图集共22张图片，点击查看大图</div>
+					                    </div>
+					                    <div class="clear"></div>
+					                  </div>
+					                  
+					                  
+					                  
+					                  
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="v_all_height">
+								<div class="v_all_jh">
+									<div class="widget_v2 gqc_137630">
+										<ul class="plugin-relation" data-reviewid="137630">
+											<li><div class="article_forward">
+													<span><a class="" href="javascript:;" title="转发"></a>
+													</span>(<span>2</span>)
+												</div>
+											</li>
+											<li><div class="article_reply">
+													<span><a href="javascript:;" title="回应"></a>
+													</span>(<span>0</span>)
+												</div>
+											</li>
+											<li><div class="article_collect">
+													<span><a class="" href="javascript:;" title="收藏"></a>
+													</span>(<span>1</span>)
+												</div>
+											</li>
+											<li><div class="article_praise">
+													<span><a href="javascript:;" title="赞"></a>
+													</span>(<span>0</span>)
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</li>
+				</ul>
+				<div class="clear"></div>
+			</div> -->
+			
+		<div class="v_all_list_v2 v_detail_comm">
+            <ul class="detail_replys module-templateList">
+          
+			</ul>
+		</div>
+			
+			<div class="v_all_more_text reply-list-hint">
+				<div class="ck_more_v_all font_yahei">数据加载中</div>
+			</div>
+		</div>
+		<!--  回复列表  stop -->
+	</div>
+</body>
+</html>

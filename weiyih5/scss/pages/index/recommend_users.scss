@@ -1,0 +1,39 @@
+@charset "UTF-8";
+//首页——推荐用户
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule";		//小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_contentModule";	//基础内容组件
+.al-personalContent{
+	margin-top: rem(20px);
+}
+
+.icon-newTips:after{
+	top: 0;
+	right: 0.1rem;
+}
+.listNoMore {
+  width: 100%;
+  text-align: center;
+  padding: 50px 0;
+  font-size: 0.34667rem;
+  color: #626f8c;
+}
+.al-lessFriendsTips{
+	background-color: transparent;
+	text-align: center;
+	margin: rem(50px) 0;
+	p{
+		@include font-dpr(14px);
+		color: #626f8c;
+	}
+	.btn-primary{
+		background-color: #2899e6;
+		color: #fff;
+		margin-top: rem(20px);
+	}
+}

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文库OE</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="keywords" content="医学资源分类，医学资源查找，手术视频,医学文献,病例讨论,骨科,唯医,allinmd">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/doc/doc_index.css">
+    <link rel="stylesheet" href="/css/vander/swiper.min.css">
+    <!--<link rel="stylesheet" href="/css/common/main.css">-->
+
+    <link href="/js/third-party/sweetalert-master/lib/sweet-alert.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/photoswipe/photoswipe-master/dist/default-skin/default-skin-new.css" rel="stylesheet" type="text/css"/>
+
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script src="/js/json/operator_auth.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/jweixin-1.0.0.js"></script>
+    <script src="/js/comm/shareAll.js"></script>
+    <script src="/js/comm/WeixinJSApi.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+
+    <script src="/js/comm/comm.ajax.js"></script>
+    <script src="/js/comm/comm-page-url.js"></script>
+    <script src="/js/comm/date.js"></script>
+
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/modules/dialog.js"></script>
+
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination_noconvertjson.js"></script>
+    <script src="/js/third-party/iscroll.js"></script>
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination_reverse.js"></script>
+    <script src="/js/third-party/sweetalert-master/lib/sweet-alert.min.js"></script>
+    <script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.js"></script>
+    <script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe-ui-default.js"></script>
+    <script src="/js/third-party/jquery.plugin.picshow.js"></script>
+    <script src="/js/third-party/jquery.plugin.picshow-comment.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+    <script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+
+    <script src="/js/react/JSXTransformer.js"></script>
+    <script src="/js/react/react.js"></script>
+    <script type="text/jsx" src="/js/scene/case/comment.jsx" charset="utf-8"></script>
+
+    <script src="/js/social_intercourse/relation.js"></script>
+    <script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+
+    <script src="/js/scene/doc/doc-detailV2.js"></script>
+
+
+</head>
+
+<body>
+<input type="hidden" value="2" id="relationType"/>
+<input type="hidden" value="8" id="preferReviewType"/>
+<input type="hidden" value="1475892766220" id="resourceId"/>
+<input type='hidden' id="shareImgSrc" value=""/>
+<input type='hidden' id="tplPath" value="52"/>
+
+<section class="al-mainInner">
+
+    <!--文库被删除开始-->
+    <figure class="al-terminalNone">
+        <img src="/images/img50/pages/case/deleted.png" alt="">
+        <figcaption>
+            很抱歉，该病例已被作者删除
+        </figcaption>
+    </figure>
+    <!--文库被删除结束-->
+
+    <!--文库被屏蔽开始-->
+    <figure class="al-terminalNone">
+        <img src="/images/img50/pages/case/deleted.png" alt="">
+        <figcaption>
+            很抱歉，该病例已被管理员屏蔽
+        </figcaption>
+    </figure>
+    <!--文库被屏蔽结束-->
+
+    <!--作者信息-->
+    <header class="al-terminalHeader">
+        <section>
+            <figure class="al-terminalAuthorImg">
+                <a href="javascript:void(0)">
+                    <img src="/image/allin_logo.png" alt="">
+                </a>
+            </figure>
+            <figcaption class="al-terminalAuthorMsg">
+                <h2><span class="Ev-authorName">强凯亮</span><i class="al-vipUser"></i></h2>
+
+                <p>不正常人类研究中心</p>
+                    <span class="al-terminalReleaseTime">
+                    2016.02.29
+                </span>
+            </figcaption>
+        </section>
+    </header>
+    <!--作者信息结束-->
+
+    <!--文库主体内容-->
+    <section class="al-terminalContent">
+        <header class="al-terminalContentTitle Ev-caseTitle">
+            <!--标题-->
+            <h2 class="oe_en">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima labore, quia! Voluptate, ipsum,
+                dolores. Quas ab dignissimos qui delectus quasi architecto! Alias pariatur autem dicta totam magni
+                corporis aspernatur suscipit.
+            </h2>
+            <h2 class="oe_ch">心好累，啦啦啦啦啦啦啦啦.</h2>
+            <!--标题结束-->
+            <!--中英文切换-->
+            <div class="title">
+                <div class="ch_en" oe="ch">
+                    <div class="ch_en_left"></div>
+                    <div class="ch_en_center">切换到英文版</div>
+                    <div class="ch_en_right"></div>
+                </div>
+            </div>
+            <!--中英文切换结束-->
+
+            <article class="al-terminalContentSnsMsg">
+                <span class="al-terminalBrowsedNum"><em class="Ev-browseNum"></em>浏览</span>
+                <i class="point">·</i>
+                <span class="al-terminalFollowedNum"><em class="Ev-followNum"></em>评论</span>
+            </article>
+        </header>
+        <div class="oe_content  setting-font-size">
+            <div class="floor03">
+                <div class="oe_en">
+                    <div class="oe_title">
+                        The original title：Efficacy of corticosteroids in the treatment of lateral epicondylitis
+                    </div>
+                    <div class="oe_title_blue">FullCitation</div>
+                    <div class="yw_title">
+                    </div>
+                    <div class="oe_title_blue">Publication date</div>
+                    <div class="yw_title">
+                        2013-07-01
+                    </div>
+                    <div class="oe_title_blue">Authors</div>
+                    <div class="yw_title">
+                    </div>
+                    <div class="oe_title_blue">Study Type</div>
+                    <div class="yw_title">
+                        Therapy
+                    </div>
+                    <div class="oe_title_blue">Evidence Level</div>
+                    <div class="yw_title">
+                        null
+                    </div>
+                    <div class="oe_title_blue">Synopsis</div>
+                    <div class="yw_title">
+                        8 ACE Reports (7 randomized controlled trials and 1 systematic review and meta-analysis, n=694)
+                        from the OrthoEvidence database assessing the effectiveness of corticosteroid injections in
+                        comparison to control injections (either saline or local anesthesia) for the treatment of
+                        lateral epicondylitis were included in this review. The purpose of this review was to determine
+                        the impact of corticosteroid injections on pain and physical function in comparison to these
+                        control treatments. As such, information and data on platelet-rich plasma (PRP) injection
+                        efficacy as a treatment was not included from reports. Statistical pooling of VAS pain scores
+                        and Quick DASH scores exhibited that corticosteroid injections provided significant pain relief,
+                        compared to control injections only in the short-term (6-12 weeks), while having no functional
+                        benefits over control injections at any time point within a 6 month period. Similar results were
+                        reflected in PRTEE pain and functional disability scores for the treatment of lateral
+                        epicondylitis with corticosteroid injections versus control injections.
+                    </div>
+                    <div class="zizhu_cont">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr>
+                                <td width="15%" align="center" bgcolor="#388ad7" class="bold_fff">Funding</td>
+                                <td bgcolor="#8fbfec" width="85%" class="zhizhu_right">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="15%" align="center" bgcolor="#388ad7" class="bold_fff">Sponsor</td>
+                                <td bgcolor="#8fbfec" width="85%" class="zhizhu_right">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="15%" align="center" bgcolor="#388ad7" class="bold_fff">Conflicts</td>
+                                <td bgcolor="#8fbfec" width="85%" class="zhizhu_right">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="oe_title_blue">Why was this study needed now?</div>
+                    <div class="yw_title">
+                        Lateral epicondylitis, commonly referred to as tennis elbow, is a painful elbow condition
+                        generated from work or non-work related overuse and involves the wear of the extensor tendon
+                        attached to the lateral epicondyle. Conservative treatment modalities for lateral epicondylitis
+                        range from physiotherapy to a number of injectable interventions, a common treatment being
+                        corticosteroid injections. However, conflicting evidence exists regarding the efficacy of the
+                        use of corticosteroid injections in the treatment of this disorder. Hence, this ACE review aimed
+                        to compare of corticosteroid injections against control injections (saline or local anesthesia)
+                        on pain and function in patients with lateral epicondylitis.
+                    </div>
+                    <div class="oe_title_blue">What was the principal research question?</div>
+                    <div class="yw_title">
+                        Is the use of corticosteroid injections more effective than a control treatment (either saline
+                        or local anesthesia) for the improvement of pain and functional outcomes in patients with
+                        lateral epicondylitis measured up to 12 months?
+                    </div>
+                    <div class="oe_background">
+
+                        <div class="oe_background_q">
+                            <div class="oe_q_left" style="width:30%;">DataSource</div>
+                            <div class="oe_q_right" style="width:70%;">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="oe_background_s">
+                            <div class="oe_s_left" style="width:30%;">IndexTerms</div>
+                            <div class="oe_s_right" style="width:70%;">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="oe_background_q">
+                            <div class="oe_q_left" style="width:30%;">StudySelection</div>
+                            <div class="oe_q_right" style="width:70%;">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="oe_background_s">
+                            <div class="oe_s_left" style="width:30%;">DataExtraction</div>
+                            <div class="oe_s_right" style="width:70%;">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="oe_background_q">
+                            <div class="oe_q_left" style="width:30%;">DataSynthesis</div>
+                            <div class="oe_q_right" style="width:70%;">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="oe_background_s">
+                            <div class="oe_s_left" style="width:30%;">Time</div>
+                            <div class="oe_s_right" style="width:70%;">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="oe_title_blue">What were the important findings?</div>
+                        <div class="yw_title">
+                            - 7 randomized controlled trials (n=384) and 1 systematic review and network meta-analysis
+                            (n=310) comparing the effects of corticosteroid versus a control injection (either saline or
+                            local anaesthetic) on pain in patients with lateral epicondylitis were included in this
+                            review.
+                            - VAS pain was reported in a total of 5 studies (n=298). At 2-4 weeks (5 studies, n=298),
+                            there were no significant differences in VAS pain between groups (MD = -1.61; 95% CI -3.47
+                            to 0.25), however, there was a trend favouring the corticosteroid group (p=0.09; I-squared =
+                            92%). At 6-12 weeks (3 studies, n=177), VAS pain improved significantly more in the
+                            corticosteroid group (MD = -1.50; 95% CI -2.23 to -0.77; p&lt;0.0001; I-squared = 0%),
+                            however, there was no significant difference between groups at 6 months (4 studies, n=184)
+                            (MD = 0.28; 95% CI -0.51 to 1.07; p=0.49; I-squared = 69%).
+                            - The overall treatment effect for corticosteroid injections on VAS pain was not
+                            significantly different compared to that of the control injections (MD = -0.83; 95% CI -1.73
+                            to 0.06; p=0.07; I-squared=90%). Similar results were obtained in a recent systematic review
+                            and network meta-analysis by Krogh et al. (June 2013), which included 10 trials (n=310;
+                            Range of follow-up: 24-52 weeks) and found no significant difference in the treatment
+                            effects of corticosteroid injections and placebo injections (SMD: -0.04; 95% CI: -0.45 to
+                            0.35; p=0.81). Four of the studies used in this review were also used in the meta-analysis
+                            included (Krogh et al. 2013).
+                            - DASH scores were reported in a total of 3 studies (n=196). There was no significance
+                            between groups in Quick DASH scores at 2-4 weeks (3 studies, n=196) (MD = -11.58; 95% CI
+                            -32.99 to 9.83; p=0.29; I-squared = 90%), at 2-3 months (2 studies, n=118) (MD = -2.28; 95%
+                            CI -17.95 to 13.39; p=0.78; I-squared = 56%), or at 6 months (2 studies, n=75) (MD = 4.08;
+                            95% CI -3.38 to 11.53; p=0.28; I-squared = 0%).
+                            - The pain and function subscales of the PRTEE were reported in 2 studies (n=58). Krogh et
+                            al. (March 2013) (n=40) found that there were initial significant improvements in pain and
+                            function in favour of the corticosteroid group at 1 month (Pain: p=0.011; Function:
+                            p=0.003), but this significance was lost at 3 months (Pain: p=0.229; Function: p=0.310).
+                            Wolf et al. (n=18) reported that both the corticosteroid and control groups improved
+                            significantly from baseline to 2 weeks (Pain: p=0.033) and to 6 months (Pain: p&lt;0.01;
+                            Function: p&lt;0.01). However, there were no significant differences between the two groups
+                            at 2 weeks, 2 months and 6 months (p=0.147).
+                            - 3 studies reported grip strength data (n=162). Price et al. found a significant
+                            improvement in grip strength (mmHg) at 4 weeks in favour of the corticosteroid group;
+                            however this was lost at the 8- and 24-week follow-ups. An additional 2 studies
+                            (Lindenhovius et al. and Newcomer et al.) found no significant difference in grip strength
+                            (kg) between the corticosteroid and control groups at any time point (4 weeks, 8 weeks, and
+                            6 months) (p&gt;0.05).
+                            - One study (Mardani-Kivi et al.) examined recurrence rates, defined as an increased VAS
+                            score to 50% at 12 weeks, compared with 3- or 6-week visits. They found a 34.7% recurrence
+                            rate in the corticosteroid group and a 0% recurrence rate in the control group. The
+                            relevance of this finding, however, is uncertain considering there was a lack of improvement
+                            in VAS pain scores observed in the control group at 3 and 6 weeks, indicating an inability
+                            for the condition to recur in patients.
+                        </div>
+                        <div class="oe_title_blue">What should I remember most?</div>
+                        <div class="yw_title">
+                            Treatment of lateral epicondylitis with corticosteroid injections provided an early positive
+                            effect on pain; however this trend was lost at 6 months, where no significant difference was
+                            found between corticosteroid injections and control injections. Overall though, the
+                            treatment effect for corticosteroid injections in the management of lateral epicondylitis
+                            was found to be not significantly different than that of control injections. This finding
+                            was mirrored in a recent meta-analysis (Krogh et al., 2013), which also found no significant
+                            difference in the overall treatment effects of corticosteroid and control injections. In
+                            addition, corticosteroid injections had no significant effect on function in these patients.
+                        </div>
+                        <div class="oe_title_blue">How will this affect the care of patients?</div>
+                        <div class="yw_title">
+                            The results from this review indicate that, although beneficial in the short term,
+                            corticosteroid injections may not be useful for long-term treatment of pain caused by
+                            lateral epicondylitis. Furthermore, corticosteroid injections do not seem to provide any
+                            short- or long-term benefits in function and disability. It is important to note that this
+                            review found no significant detrimental effects of corticosteroid injections, however the 1
+                            year time period may not have been long enough to detect these changes. Future studies
+                            should aim to investigate whether corticosteroid injections yield higher recurrence rates
+                            compared to control injections over a longer follow-up period. Alternative long-term
+                            treatments for lateral epicondylitis, such as physiotherapy, should be another focus of
+                            future research.
+                        </div>
+                    </div>
+
+                </div>
+                <div class="oe_ch">
+                    <div class="oe_title">
+                    </div>
+                    <div class="oe_title_blue">引用信息</div>
+                    <div class="yw_title">
+                    </div>
+                    <div class="oe_title_blue">出版日期</div>
+                    <div class="yw_title">
+                    </div>
+                    <div class="oe_title_blue">作者</div>
+                    <div class="yw_title">
+                    </div>
+                    <div class="oe_title_blue">研究类型</div>
+                    <div class="yw_title">
+                    </div>
+                    <div class="oe_title_blue">循证等级</div>
+                    <div class="yw_title">
+                    </div>
+                    <div class="oe_title_blue">摘要</div>
+                    <div class="yw_title">
+                    </div>
+                    <div class="zizhu_cont">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr>
+                                <td width="20%" align="center" bgcolor="#388ad7" class="bold_fff">资助</td>
+                                <td bgcolor="#8fbfec" width="80%" class="zhizhu_right">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%" align="center" bgcolor="#388ad7" class="bold_fff">赞助商</td>
+                                <td bgcolor="#8fbfec" width="80%" class="zhizhu_right">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%" align="center" bgcolor="#388ad7" class="bold_fff">利益冲突</td>
+                                <td bgcolor="#8fbfec" width="80%" class="zhizhu_right">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="oe_title_blue">研究目的</div>
+                    <div class="yw_title">
+                    </div>
+                    <div class="oe_title_blue">主要研究问题</div>
+                    <div class="yw_title">
+                    </div>
+                    <div class="oe_background">
+                        <div class="oe_background_q">
+                            <div class="oe_q_left" style="width:20%;">人数</div>
+                            <div class="oe_q_right" style="width:80%;">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="oe_background_s">
+                            <div class="oe_s_left" style="width:20%;">干预</div>
+                            <div class="oe_s_right" style="width:80%;">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="oe_background_q">
+                            <div class="oe_q_left" style="width:20%;">对照</div>
+                            <div class="oe_q_right" style="width:80%;">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="oe_background_s">
+                            <div class="oe_s_left" style="width:20%;">结果</div>
+                            <div class="oe_s_right" style="width:80%;">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="oe_background_q">
+                            <div class="oe_q_left" style="width:20%;">方法</div>
+                            <div class="oe_q_right" style="width:80%;">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="oe_background_s">
+                            <div class="oe_s_left" style="width:20%;">时间</div>
+                            <div class="oe_s_right" style="width:80%;">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="oe_title_blue">重要发现</div>
+                        <div class="yw_title">
+                        </div>
+                        <div class="oe_title_blue">最应该记住的</div>
+                        <div class="yw_title">
+                        </div>
+                        <div class="oe_title_blue">研究对病人的影响</div>
+                        <div class="yw_title">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--标签开始-->
+        <article class="al-terminalContextItem al-terminalContentTags">
+            <h3>标签</h3>
+            <a href="//m.allinmd.cn/pages/discover/tag_seminar.html?tId=" class="al-terminalTags">关节</a>
+            <a href="//m.allinmd.cn/pages/discover/tag_seminar.html?tId=" class="al-terminalTags">中西医结合</a>
+            <a href="//m.allinmd.cn/pages/discover/tag_seminar.html?tId=" class="al-terminalTags">小儿骨科</a>
+            <a href="//m.allinmd.cn/pages/discover/tag_seminar.html?tId=" class="al-terminalTags">人工关节翻修</a>
+            <a href="//m.allinmd.cn/pages/discover/tag_seminar.html?tId=" class="al-terminalTags">人工关节翻修</a>
+
+        </article>
+        <!--标签结束-->
+
+        <!--所属活动或者专辑-->
+        <article class="al-terminalActivition Ev-activity" style="display: none;">
+            <span>活动：</span><a class="Ev-actName" href="javascript:void(0)">《2016视频、病例pk》</a>
+        </article>
+        <!--所属活动或专题结束-->
+
+        <!--分享区-->
+        <section class="al-terminalShare">
+            <h3>分享给好友 共同讨论</h3>
+            <section class="al-terminalShareItem Ev-shareBtn" ref="trend">
+                <figure class="al-bottomShareImg">
+                    <img src="/images/img50/pages/index/share_allin.png"
+                         _mce_src="/images/img50/pages/index/share_allin.png" alt=""></figure>
+                <figcaption>站内动态</figcaption>
+            </section>
+            <section class="al-terminalShareItem Ev-shareBtn" ref="qzone">
+                <figure class="al-bottomShareImg">
+                    <img src="/images/img50/pages/index/share_kongjian.png"
+                         _mce_src="//m.allinmd.cn/images/img50/pages/index/share_kongjian.png" alt="">
+                </figure>
+                <figcaption>QQ空间</figcaption>
+            </section>
+            <section class="al-terminalShareItem Ev-shareBtn" ref="sina">
+                <figure class="al-bottomShareImg">
+                    <img src="/images/img50/pages/index/share_weibo.png" alt="">
+                </figure>
+                <figcaption>微博</figcaption>
+            </section>
+        </section>
+        <!--分享区结束-->
+
+    </section>
+    <!--文库主体内容结束-->
+
+    <!--相关推荐开始-->
+    <section class="al-terminalMainContent Ev-similarRecommend" style="display: none">
+        <h2>相关推荐</h2>
+
+    </section>
+    <!--相关推荐结束-->
+
+    <!--评论区-->
+    <section class="al-terminalMainContent al-terminalCommentContent Ev-discussArea">
+        <h2>
+            评论(<span class="Ev-navReviewNum"></span>)
+            <section class="al-terminalSortChange">
+                <button class="al-terminalSortChangeItem" sortType="3">最新</button>
+                <button class="al-terminalSortChangeItem active"  sortType="1">最旧</button>
+            </section>
+        </h2>
+        <section class="al-terminalComment">
+            <div id="EQ_newReplyList">
+
+            </div>
+            <section class="al-terminalNoComment" style="display: none;">
+                <span>暂无评论，快“加入讨论”参与进来~</span>
+            </section>
+        </section>
+    </section>
+    <!--评论区结束-->
+
+    <!--没有更多-->
+    <article class="al-terminalFinish"  style="display: none;">
+        ~<span>没有更多了</span>~
+    </article>
+    <!--没有更多结束-->
+
+
+    <!--底部悬浮按钮-->
+    <footer class="al-terminalFooter">
+        <figure class="al-terminalFooterItem">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalBack"></i>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem al-terminalJoinDiscuss Ev-discussBtn">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalJoin"><span>加入讨论</span></i>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-reviewNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalCommentNum"></i>
+                <span class="al-newsNum Ev-al-newsNum"></span>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-praiseNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminallike"></i>
+                <span class="al-newsNum Ev-al-newsNum"></span>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-collectNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalCollect"></i>
+                <span class="al-newsNum Ev-al-newsNum"></span>
+            </a>
+        </figure>
+    </footer>
+    <!--底部悬浮按钮结束-->
+</section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+@charset "UTF-8";
+//体系化课程终端页样式
+@import "../modules/common-modules";
+.al-series-belong{
+  min-height:rem(30px);
+  height:auto;
+  margin-bottom: rem(80px);
+  font-size: rem(26px);
+  line-height: rem(50px);
+  width:100%;
+  position: relative;
+  @include clearfix();
+  .al-series-title{
+    float: left;
+    color:#666;
+    height:rem(30px);
+    margin-right:rem(20px);
+    font-weight: 100;
+  }
+  .al-series-list{
+    width:rem(500px);
+    float: left;
+    min-height:rem(30px);
+    height:auto;
+    a{
+      display: block;
+      width: 100%;
+      color:#3598db;;
+      overflow: hidden; /*自动隐藏文字*/
+      text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+      white-space: nowrap;/*强制不换行*/
+    }
+  }
+  span{
+    width: 30%;
+    display:inline-block;
+  }
+  .al-belongClass{
+    width:70%;
+    float:right;
+    &:after{
+      width:0;
+      height: 0;
+      display:block;
+      clear:both;
+    }
+    a{
+      height: rem(50px);
+      width: 100%;
+      line-height: rem(50px);
+      color:#3598db;;
+      font-size:0.4rem;
+      overflow:hidden;
+      white-space: nowrap;
+      display:block;
+    }
+  }
+}

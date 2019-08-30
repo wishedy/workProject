@@ -1,0 +1,362 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+@import "../../components/_message_rightSideBar";//右侧栏组件
+@import "../../components/_makeSurePopup";
+@import "../../components/_focusOnTagsPerson"; //关注标签的人
+//A.权威专家主体内容样式：begin
+.al-discoverZJ{
+  width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  @include clearfix();
+}
+.al-doctorRecommend{
+  cursor:pointer;
+}
+.al-contentItemPop{
+  float: left;
+  width: 708px;
+  .al-contentItem{
+    height:auto;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #e4e9ed;
+    margin-top: 20px;
+  }
+      //B.头部样式：权威专家区域：begin
+  .al-contentItemTitle{
+    padding:18px 24px;
+    border-bottom: 1px solid #e4e9ed;
+    position: relative;
+    h2{
+      font-weight: 400;
+      font-size:18px;
+      color:#333;
+    }
+    .al-discoverZJ_searchBox{ //搜索
+      float:right;
+      margin-top:-5px;
+      position: relative;
+      input{
+        width:170px;
+        height:30px;
+        line-height: 30px;
+        border:1px solid #BDBDBD;
+        border-radius:15px;
+        padding-left:12px;
+        box-sizing: border-box;
+        behavior: url('/js/third-party/pie/pie.htc');
+        position: relative;
+        font-size:14px;
+        color:#aaa;
+      }
+      i{  //搜索图标
+        display:inline-block;
+        width:19px;
+        height:19px;
+        line-height: 19px;
+        background:url('//img10.allinmd.cn/v3/discover/search.png') no-repeat;
+        position:absolute;
+        top:7px;
+        right:8px;
+      }
+      .searchTipBox{
+        position:absolute;
+        width:170px;
+        top:32px;
+        background:#fff;
+        -webkit-box-shadow:  0 0 3px #c5ced6;
+        -moz-box-shadow:  0 0 3px #c5ced6;
+        box-shadow:  0 0 3px #c5ced6;
+        border-radius:4px;
+        z-index: 3;
+        overflow:hidden;
+        behavior:url('/js/third-party/pie/pie.htc');
+
+          p{
+            height: 40px;
+            line-height: 40px;
+            padding:0 12px;
+            font-size:14px;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            overflow:hidden;
+            color:#909090;
+            &:hover{
+              color:#fff;
+              background:#2899e6;
+            }
+            &.al-searchTip-hover{
+              color:#fff;
+              background:#2899e6;
+            }
+          }
+      }
+    }
+  }
+      //B.头部样式：权威专家区域：end
+
+  .al-personalFollowTag{border:none;} //发现——标签页
+}
+//A.权威专家主体内容样式：end
+
+
+//页面右侧栏：权威专家申请样式：begin
+.al-discover_sidebar{
+  float:right;
+  width:270px;
+  margin-top:20px;
+  .al-discover_applySoon{ //立即申请
+    border:1px solid #E0E8EF;
+    background-color:#fff;
+    text-align: center;
+    color:#555;
+    padding:0 20px;
+    p{
+      padding:30px 0 20px;
+    }
+    a{
+      display:block;
+      padding:7px 50px;
+      border:1px solid #DBDBDB;
+      border-radius:4px;
+      behavior: url('/js/third-party/pie/pie.htc');
+      position: relative;
+      font-size:17px;
+      margin-bottom:30px;
+      color:#2899E6;
+    }
+  }
+  .al-discover_sidebarMain{ //申请过程
+    height:460px;
+    border:1px solid #E0E8EF;
+    background-color:#fff;
+    box-sizing: border-box;
+    padding:30px 20px;
+    h4{
+      font-weight:normal;
+      color:#555555;
+      text-align:center;
+    }
+   a{   //提交、删除默认样式
+      color:#AAAAAA;
+      display:inline-block;
+      margin-right:15px ;
+    }
+    .al-applySubmit{  //提交、删除默选中样式
+      background-color:#2899E6;
+      padding:8px 20px;
+      border-radius:20px;
+      color:#fff;
+      behavior: url('/js/third-party/pie/pie.htc');
+      position: relative;
+    }
+  }
+}
+.al-discover_apply{ //申请容器
+  width:229px;
+  height:300px;
+  border:1px solid #DBDBDB;
+  box-sizing: border-box;
+  margin:20px 0 30px;
+  padding:0 10px;
+  p{
+    border-bottom:1px solid #F2F4F6;
+    padding:20px 0;
+    color:#666666;
+
+
+    input{
+      border:none;
+      float:right;
+      width:140px;
+      margin-top:-5px;
+      color:#333333;
+      font-size:16px;
+      font-family:'microsoft yahei';
+    }
+  }
+  .al-applyText{  //设置申请理由父元素的样式
+    padding-bottom:0;
+    border-bottom:none;
+  }
+}
+.textAreaWrap{
+  border:none;
+  width:200px;
+  height:137px;
+  overflow:hidden;
+  margin-top:5px;
+  padding-right:10px;
+  textarea{
+    border:none;
+    resize:none;
+    width:215px;
+    color:#333333;
+    padding-right:4px;
+    font-size:16px;
+    font-family:'microsoft yahei';
+  }
+}
+//页面右侧栏：权威专家申请样式：end
+//页面右侧栏   你可能认识的专家样式：begin
+  .al-discover_know{
+    border:1px solid #e4e9ed;
+    background-color:#fff;
+    box-sizing: border-box;
+    margin-top:20px;
+    padding-bottom: 20px;
+    h4{
+      padding:18px 20px;
+      border-bottom:1px solid #E4E9ED;
+      font-size:18px;
+      color:#333;
+      font-weight:normal;
+    }
+    .al-discover_knowZj{//可能认识专家详情
+      @include clearfix();
+    }
+  }
+//申请权威专家：登录、认证样式:begin
+.al-discover_sidebar{
+  //未登录
+  .al-discoverZj_login{
+    border:1px solid #E0E8EF;
+    background-color:#fff;
+    padding:30px;
+    text-align:center;
+    p{
+      margin-bottom:15px;
+      color:#555;
+    }
+    span{
+      display:block;
+      font-size:14px;
+      color:#909090;
+      height:22px;
+      line-height:22px;
+      i{ //未登录图标
+        display: inline-block;
+        width:16px;
+        height:16px;
+        background:url("//img10.allinmd.cn/v3/discover/noApply.png") no-repeat;
+        margin-bottom:-3px;
+        margin-right:6px;
+      }
+    }
+    .al-noApply{text-indent:18px;}
+    a{
+      display:block;
+      padding:10px 55px;
+      background-color:#FF9224;
+      margin-top:20px;
+      border-radius:30px;
+      behavior: url('/js/third-party/pie/pie.htc');
+      position: relative;
+      color:#fff;
+    }
+
+  }
+  .al-applyNow a{
+    border-radius:4px;
+    behavior: url('/js/third-party/pie/pie.htc');
+    color:#2899E6;
+    background:transparent;
+    border:1px solid #dbdbdb;
+    &:hover{
+      background: rgba(224,225,231,0.2);
+    }
+  }
+  //未认证
+  .al-discoverZj_prove{
+    a{
+      background-color:#2899E6;
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+  }
+}
+.al-discover_noMatchZjMain{
+  .dis-dis_zjMain_head{
+    text-align: right;
+    font-size:13px;
+    font-family:"宋体";
+    color:#909090;
+    padding:20px 24px;
+  }
+  .al-dis_zjMain_imgBox{
+    text-align:center;
+    padding:185px 0 190px;
+    img{
+      width:205px;
+      height:184px;
+    }
+  }
+}
+
+
+
+//权威专家列表——推荐信息展示样式
+.al-doctorMsg_ul{
+  display:block;
+  margin-top:90px;
+  list-style: none;
+  margin-left:35px;
+  li{
+    position: relative;
+  }
+  li:before{
+    content:'';
+    width:5px;
+    height:5px;
+    background:#4696d5;
+    position: absolute;
+    top: 15px;
+    left: -15px;
+  }
+  li:hover{
+    color:#2899E6;
+    a{
+      color:#3598DB;
+      text-decoration: underline;
+    }
+  }
+  a{
+    font-size:15px;
+    line-height:35px;
+    margin-left:-20px;
+    padding-left:20px;
+    //display:block;
+  }
+}
+.al-doctorMsg_template{
+  margin-top:60px;
+}
+/*受欢迎讲师*/
+.al_dis_professor {
+  margin: 30px 0 5px 20px;
+  font-size: 18px;
+  color: #333;
+  position: relative;
+  .al_dis_more {
+    position: absolute;
+    top: 3px;
+    font-size: 13px;
+    color: #9ea7bb;
+    font-family: "Helvetica Neue";
+    &:after {
+      content: "";
+      width: 6px;
+      height: 10px;
+      display: inline-block;
+      margin-left: 5px;
+      position: relative;
+      top: 2px;
+      background: url(//img10.allinmd.cn/v3/common/icon/content_title_more.png) no-repeat;
+    }
+  }
+}

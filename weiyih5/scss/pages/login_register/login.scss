@@ -1,0 +1,475 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_bottomBtns";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule";
+body,html{
+  background: #fff;
+}
+.alLoginWidth{
+  margin: 0 rem2(30px);
+}
+.alLogin{
+  background: url("//img50.allinmd.cn/new-login/alBg.png") no-repeat;
+  width: 100%;
+  height: 60%;
+  background-size: cover;
+
+  .alTry{
+    font-size: rem(28px);
+    color: #afafaf;
+    overflow: hidden;
+    padding:rem(35px) 0 rem(47px) 0;
+    a{
+      float: right;
+      display: inline-block;
+    }
+  }
+  .alLoginLogo{
+    width: rem(270px);
+    margin:0 auto rem(95px);
+    img{
+      width: 100%;
+    }
+  }
+  .loginRegistText{
+    overflow: hidden;
+    ul{
+      width: rem(515px);
+      margin: 0 auto;
+    }
+      li{
+        float: left;
+        list-style: none;
+        text-align: center;
+        font-size: rem(35px);
+        color: #6e6e6e;
+        line-height: 1rem;
+        margin: 0 rem(88px) rem2(24px);
+        &.active {
+          color: #0486df;
+          border-bottom: solid 2px #0486df;
+        }
+      }
+  }
+
+  .alLogininput{
+    height: rem(110px);
+    line-height: rem(110px);
+    font-size: rem(30px);
+    color: #333;
+    border-bottom: solid 1px #dfdfdf;
+    position: relative;
+    &.focus{
+      .password{
+        background: url('//img50.allinmd.cn/new-login/passwordIconActive.png') no-repeat;
+        display: inline-block;
+        width: rem2(23px);
+        height: rem2(25px);
+        -webkit-background-size: contain;
+        background-size: contain;
+        vertical-align: middle;
+        margin:0 rem2(20px) 0 rem2(15px);
+      }
+      .user{
+        background: url('//img50.allinmd.cn/new-login/userIconActive.png') no-repeat;
+        display: inline-block;
+        width: rem2(27px);
+        height: rem2(26px);
+        -webkit-background-size: contain;
+        background-size: contain;
+        vertical-align: middle;
+        margin:0 rem2(20px) 0 rem2(15px);
+      }
+    }
+    .user{
+      background: url('//img50.allinmd.cn/new-login/userIcon.png') no-repeat;
+      display: inline-block;
+      width: rem2(27px);
+      height: rem2(26px);
+      -webkit-background-size: contain;
+      background-size: contain;
+      vertical-align: middle;
+      margin:0 rem2(20px) 0 rem2(15px);
+    }
+    .close{
+      background: url('//img50.allinmd.cn/new-login/close.png') no-repeat;
+      display: inline-block;
+      width: rem2(29px);
+      height: rem2(29px);
+      -webkit-background-size: contain;
+      background-size: contain;
+      vertical-align: middle;
+      margin:0 rem2(20px) 0 rem2(15px);
+      position: absolute;
+      top: 50%;
+      margin-top: rem2(-15px);
+  }
+    .eye{
+      display: inline-block;
+      width: rem2(38px);
+      vertical-align: middle;
+      margin:0 rem2(20px) 0 rem2(15px);
+      position: absolute;
+      top: 50%;
+      margin-top: rem2(-10px);
+    }
+    .eyeOpen{
+      background: url('//img50.allinmd.cn/new-login/eye.png') no-repeat;
+      -webkit-background-size: contain;
+      background-size: contain;
+      height: rem2(20px);
+    }
+    .eyeClose{
+      background: url('//img50.allinmd.cn/new-login/Eye_Close.png') no-repeat;
+      -webkit-background-size: contain;
+      background-size: contain;
+      height: rem2(27px);
+      margin-top: rem2(-14px);
+    }
+
+    .password{
+      background: url('//img50.allinmd.cn/new-login/passwordIcon.png') no-repeat;
+      display: inline-block;
+      width: rem2(23px);
+      height: rem2(25px);
+      -webkit-background-size: contain;
+      background-size: contain;
+      vertical-align: middle;
+      margin:0 rem2(20px) 0 rem2(15px);
+    }
+
+    input{
+      border: none;
+      background: none;
+      height: 100%;
+      position: absolute;
+      margin-left: 0.80rem;
+      left: 0;
+      width: 70%;
+      padding-left:rem2(10px);
+    }
+    input:-webkit-autofill{
+      background:transparent;
+    }
+  }
+  .whyAlPass{
+    font-size: rem2(22px);
+    color: #aaa;
+    text-align: right;
+    margin: rem2(20px) 0 0 0;
+    a{
+      color:#0486df ;
+    }
+  }
+  .userInput{
+    .close{
+      right: 0;
+    }
+  }
+  .passwordInput{
+    .eye{
+      right: 0;
+    }
+    .close{
+      right: rem2(60px);
+    }
+  }
+  .alLoginBtn{
+    margin-top: rem2(60px);
+    width:100%;
+    height: rem2(80px);
+    text-align: center;
+    line-height: rem2(80px);
+    color: #fff;
+    background: #0486df;
+    border-radius: rem2(5px);
+    font-size: rem2(32px);
+    &.disabled{
+      color:#68b6ec;
+    }
+  }
+  .alLoginNone{
+    font-size: rem2(26px);
+    color: #0486df;
+    text-align: center;
+    margin: rem2(35px) 0 rem2(130px) 0;
+  }
+  .thirdParty{
+    position: relative;
+    height:rem2(30px) ;
+    aside{
+      border-top: solid 1px #dcdcdc;
+    }
+    span{
+      position: absolute;
+      left: 50%;
+      top: -50%;
+      display: inline-block;
+      width: rem2(296px);
+      background: #fff;
+      height:rem2(30px) ;
+      text-align: center;
+      line-height: rem2(30px);
+      color: #969696;
+      font-size: rem2(24px);
+      margin-left: rem2(-148px);
+    }
+  }
+  .caosLogin{
+    width: 100%;
+    text-align: center;
+    height: rem2(80px);
+    line-height: rem2(80px);
+    color: #828282;
+    font-size: rem2(22px);
+    border: solid 1px #dcdcdc;
+    border-radius: 5px;
+    i{
+      background: url('//img50.allinmd.cn/new-login/caosIcon.png') no-repeat;
+      display: inline-block;
+      width: rem2(47px);
+      height: rem2(39px);
+      -webkit-background-size: contain;
+      background-size: contain;
+      vertical-align: middle;
+    }
+  }
+  .createUser{
+    color: #aaa;
+    font-size: rem2(22px);
+    /*width: rem2(230px);*/
+    margin: rem2(40px) auto rem(130px);
+    text-align: center;
+    line-height:rem2(40px);
+    a{
+      color: #2899e6;
+    }
+  }
+  .topShowError{
+    width:100%;
+    height:rem2(76px);
+    line-height: rem2(70px);
+    font-size:rem2(28px);
+    background:rgb(240,70,70);
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 2;
+    color:#fff;
+    padding-left:rem2(36px);
+    //background:url();
+    i{
+      width:rem2(36px);
+      height:rem2(36px);
+      display:inline-block;
+      background:url('//img50.allinmd.cn/new-login/errorBang.png') no-repeat;
+      background-size:cover;
+      position: relative;
+      top:rem2(10px);
+      margin-right:rem2(10px);
+    }
+  }
+  .loginTip{
+    background:rgb(240,70,70);
+    color:#fff;
+    position: relative;
+    border-radius:rem2(5px);
+    padding-left:rem(28px);
+    display:none;
+  }
+  .loginTip.error{
+    display:block;
+  }
+  .loginTip:after{
+    width:0;
+    height:0;
+    content:"";
+    border-width:rem2(15px);
+    border-style:solid;
+    border-color:transparent transparent rgb(240,70,70) transparent;
+    position: absolute;
+    top:rem2(-28px);
+    left:rem2(10px);
+  }
+}
+
+
+
+
+
+/*验证码*/
+.identifyingCode{
+  .alIdentifyingText{
+    width: rem2(520px);
+    margin: rem2(40px) auto rem2(150px);
+    color: #333;
+    font-size: rem2(26px);
+    line-height: rem2(40px);
+  }
+  .reset{
+    margin: rem2(40px) auto;
+  }
+  .al-validateInput {
+    margin-top: rem(200px);
+    margin-bottom: rem(90px);
+    //padding-bottom: rem(20px);
+    position: relative;
+    overflow: hidden;
+    height: rem(60px);
+    input {
+      width: 100%;
+      height: rem(60px);
+      border: none;
+      background: none;
+      outline: none;
+      font-family: "microsoft yahei";
+      letter-spacing: 2.3rem;
+      padding-left: rem(35px);
+      box-sizing: border-box;
+      font-size: rem(32px);
+
+    }
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: rem(4px);
+      display: block;
+      background: transparent url('//img50.allinmd.cn/pages/personal/validate_bottom.png') center center no-repeat;
+      background-size: cover;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  .alsend{
+    article{
+      text-align: center;
+      font-size: rem2(26px);
+      color: #808080;
+      &.alSendNum{
+        font-size: rem2(22px);
+        margin-top:rem2(10px);
+      }
+    }
+  }
+
+  .alSended.active{
+      color: #0486df;
+  }
+  .al-indexHeader{
+    border: none;
+  }
+
+}
+.alLogininput.resetLabel{
+  span{
+    position:absolute;
+    z-index: 2;
+    left:rem2(30px);
+  }
+  input{
+    padding-left:rem2(110px);
+  }
+}
+.alLoginCaos{
+    background:#fff;
+}
+.alQuickLoginInput{
+  width: 100%;
+  height: rem(60px);
+  border: none;
+  border-bottom:1px solid #757575;
+  outline: none;
+  font-family: "microsoft yahei";
+  padding-left: rem(60px);
+  box-sizing: border-box;
+  font-size: rem(32px);
+  position: relative;
+}
+.alLoginWidth{
+  position: relative;
+}
+.icon-mobile {
+  @extend %icon-mobile;
+  position: absolute;
+  z-index: 2;
+  top:rem(10px);
+  left:rem(14px);
+}
+.icon-mobileOn{
+  @extend %icon-mobileOn;
+  position: absolute;
+  z-index: 2;
+  top:rem(10px);
+  left:rem(14px);
+}
+.alQuiclLoginText{
+  width: rem2(520px);
+  margin: rem2(40px) auto rem2(40px) rem2(40px);
+  color: #333;
+  font-size: rem2(26px);
+  line-height: rem2(40px);
+}
+.quickLoginBtn.disabled {
+  color: #68b6ec;
+}
+.quickLoginBtn {
+  margin-top: 0.9375rem;
+  width: 100%;
+  height: 1.25rem;
+  text-align: center;
+  line-height: 1.25rem;
+  color: #fff;
+  background: #0486df;
+  border-radius: 0.07813rem;
+  font-size: 0.5rem;
+}
+.mailIcon{
+  width:2rem;
+  margin:1rem auto;
+  img{
+    width: 100%;
+  }
+}
+.mailTip{
+  @include font-dpr(14px);
+  color:#808080;
+  text-align: center;
+}
+.mailEnterBtn{
+  background: #309BDF;
+  border: 1px solid #309BDF;
+  border-radius: rem(5px);
+  color: #FFFCF8;
+  font-size: rem2(32px);
+  height: rem2(80px);
+  line-height: rem2(80px);
+  width:90%;
+  margin: 1rem auto;
+  text-align: center;
+}
+.appLogin{
+  margin-top: rem2(45px);
+  li{
+    list-style: none;
+    float: left;
+    width: rem2(75px);
+    text-align: center;
+    font-size: rem2(18px);
+    color: #909090;
+    &:first-child{
+      margin-left: rem2(94px);
+    }
+    &:nth-child(2){
+      margin: 0 rem2(83px);
+    }
+    img{
+      width: 87%;
+    }
+  }
+}

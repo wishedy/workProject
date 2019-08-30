@@ -1,0 +1,45 @@
+<import src="/components/backgroundMusic$01cf6cae" />
+<import src="/components/jkParse$9e7fc512" />
+<import src="/components/backIndex$640b7ced" /><template name="journalInfo$134fe2d2">
+  <view class="_section data-v-97401d1c ji_main">
+    <view style="position: absolute;z-index: -1;opacity: 0;visibility: hidden;bottom: 0;right: 0;" wx:if="{{clipFlag}}" class="_div data-v-97401d1c"><canvas class="_canvas data-v-97401d1c getCircleImage" canvasId="getCircleImage"></canvas></view>
+    <form action bindsubmit="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_form data-v-97401d1c"><button wx:if="{{journalData.fullName}}" formType="submit" class="_button data-v-97401d1c doctorInfo content clearButtonStyle" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+        <view class="_section data-v-97401d1c clearButtonStyle">
+          <view class="_figure data-v-97401d1c logoUrl">
+            <image src="{{journalData.customerLogo?journalData.customerLogo:'https://m.allinmed.cn/static/image/img00/doctorMain/doc_logo.png'}}" class="_img data-v-97401d1c"></image>
+          </view>
+          <view class="_section data-v-97401d1c message"><label class="_span data-v-97401d1c doctorName">主刀:{{journalData.fullNameShow}}</label> <label class="_span data-v-97401d1c doctorLevel">{{journalData.medicalTitle}}</label>
+            <view class="_p data-v-97401d1c hospital">{{journalData.company}}</view>
+          </view>
+        </view>
+        <view class="_section data-v-97401d1c ji-consultDoc">咨询医生</view>
+      </button> <button wx:if="{{journalData.fullName}}" formType="submit" class="_button data-v-97401d1c doctorFixed {{[fixedShow ? 'show' : '']}}" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+        <view class="_section data-v-97401d1c doctorBox">
+          <image class="_img data-v-97401d1c doctorFixedLogo" src="{{journalData.customerLogo?journalData.customerLogo:'https://m.allinmed.cn/static/image/img00/doctorMain/doc_logo.png'}}"></image> <label class="_span data-v-97401d1c doctorFixedName">主刀：{{journalData.fullNameShow}}</label> <label class="_span data-v-97401d1c doctorFixedOther">{{journalData.medicalTitle}} {{journalData.company}}</label>
+        </view>
+      </button></form>
+    <view class="_header data-v-97401d1c ji_title">{{journalData.diaryName}}</view>
+    <view class="_section data-v-97401d1c ji_updateTime">
+      <view class="_section data-v-97401d1c ji_patientInfo">
+        <image class="_img data-v-97401d1c patientLogo" src="{{journalData.authorLogoUrl}}" alt wx:if="{{journalData.authorLogoUrl}}"></image> <label class="_span data-v-97401d1c patientName" wx:if="{{journalData.authorName}}">{{journalData.authorNameShow}}</label> <label class="_span data-v-97401d1c patientAge">{{(journalData.patientSex == 1 ? '男' : '') || (journalData.patientSex == 2 ? '女' : '')}} {{journalData.patientAgeShow}}</label>
+      </view>
+      <view class="_p data-v-97401d1c updateTime" wx:if="{{journalData.updateTime.length}}">更新于: {{journalData.updateTime}}</view>
+    </view> <template wx:if="{{journalData.audioMap && journalData.audioMap.attUrl}}" data="{{...$root[$kk+'0'], $root}}" is="backgroundMusic$01cf6cae"></template>
+    <view class="_section data-v-97401d1c ji_patientDes-box" wx:if="{{journalData.diaryContent && journalData.diaryContent.length && parseShow}}"><template className="ji_patientDes" data="{{...$root[$kk+'1'], $root}}" is="jkParse$9e7fc512"></template></view>
+    <view class="_footer data-v-97401d1c ji_bottomMsg">
+      <form action bindsubmit="handleProxy" report-submit="true" data-eventid="{{'4'}}" data-comkey="{{$k}}" class="_form data-v-97401d1c"><button class="_button data-v-97401d1c addJournal" type="submit" formType="submit" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">
+          <image class="_img data-v-97401d1c addIcon" src="https://m1.allinmed.cn/static/image/mp/index/1.6.0/write.png"></image> <label class="_span data-v-97401d1c addText">我也要写</label>
+        </button></form>
+      <view class="_div data-v-97401d1c ji_browseNum" wx:if="{{journalData.browseNum>0}}">{{journalData.browseNumShow}}浏览</view>
+    </view>
+    <view class="_section data-v-97401d1c LikeSection">
+      <view class="_section data-v-97401d1c like" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">
+        <view class="_h1 data-v-97401d1c {{[popup ? 'popup' : '']}}">{{count}}鼓励</view>
+        <image class="_img data-v-97401d1c likeIcon {{[shack ? 'shacking' : '']}}" src="https://m.allinmed.cn/static/image/mp/index/1.1.2/like.png"></image>
+        <view wx:if="{{recentLikeNum!=0&&recentLikeNum<100000}}" class="_p data-v-97401d1c">{{recentLikeNum}}</view>
+        <view wx:if="{{recentLikeNum!=0&&recentLikeNum>=100000}}" class="_p data-v-97401d1c">10万+</view>
+      </view>
+      <view class="_p data-v-97401d1c">康复不易，点赞鼓励~</view>
+    </view> <template wx:if="{{countPages.length==1}}" data="{{...$root[$kk+'2'], $root}}" is="backIndex$640b7ced"></template>
+  </view>
+</template>

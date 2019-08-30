@@ -1,0 +1,18 @@
+<template name="vasLevel$45c708ea">
+  <view class="_section data-v-7aa970f6 vas">
+    <view class="_div data-v-7aa970f6 body-view">
+      <view class="_div data-v-7aa970f6 scope">
+        <view class="_div data-v-7aa970f6">不痛</view>
+        <view class="_div data-v-7aa970f6">巨痛</view>
+      </view>
+      <view class="_div data-v-7aa970f6 level">
+        <view class="_ul data-v-7aa970f6">
+          <view wx:key="index" key="{{index}}" wx:for="{{indexList}}" wx:for-index="index" wx:for-item="item" class="_li data-v-7aa970f6 {{[index == value ? 'active' : '']}}">{{item}}</view>
+        </view>
+      </view>
+      <slider min="0" max="10" value="{{value}}" bindchange="handleProxy" bindchanging="handleProxy" color="none" block-size="90" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_slider data-v-7aa970f6" />
+      <view class="_div data-v-7aa970f6 fakeSlider {{'position_' + value}}"></view>
+      <view class="_div data-v-7aa970f6 dot {{'position_' + value}}"></view>
+    </view>
+  </view>
+</template>

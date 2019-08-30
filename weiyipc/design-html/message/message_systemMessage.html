@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>系统消息</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/css/v3/base.css" />
+    <link rel="stylesheet" href="/css/v3/pages/message/message_index.css" />
+    <link rel="stylesheet" href="/css/v3/pages/message/message_systemMessage.css" />
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css"/>
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!--删除提示弹层:begin-->
+<div class="al-deletePopBox">
+    <div class="al-systemMes_deletePrompt">
+        <header>
+            <span>删除消息</span>
+            <p class="al-deletePromptClose"></p>
+        </header>
+        <section class="al-systemMes_deleteMain">
+            <figure>
+                <i></i><span>确定要删除这1条消息吗？</span>
+            </figure>
+        </section>
+        <footer class="al-systemMes_deleteFooter">
+            <span>确定</span>
+            <span class="deleteFooter_cancel">取消</span>
+        </footer>
+    </div>
+</div>
+<!--删除提示弹层:end-->
+<!--全内容容器——mainInner-->
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <li>
+                    <a href="javascript:void(0);">关注提醒<i class="al-newNumTips"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">评论我的</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">提醒我看<i class="al-newNumTips"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">赞了我的</a>
+                </li>
+                <li class="active">
+                    <a href="javascript:void(0);">系统消息</a>
+                </li>
+            </ul>
+            <div class="al-headerSearchRecord">
+                浏览记录
+            </div>
+            <figure class="al-headerSearch">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar al-mainSidebarCollapse" onmousemove="aa();">
+        <header class="al-mainLogo">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+
+        <section class="al-mainSidebarList">
+            <ul>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn/pages/channel/index.html">
+                        <div class="al-redPointBox">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                            <i class="nav_redPoint"></i>
+                        </div>
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>首页</h4>
+                                <p>HOME</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn/pages/discovery/discover_index.html">
+                        <div class="al-redPointBox">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find.png" alt="">
+                            <i class="nav_redPoint al-discoveryPoint"></i>
+                        </div>
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>发现</h4>
+                                <p>DISCOVERY</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release active">
+                    <a href="javascript:void(0)">
+                        <div class="al-redPointBox">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                            <i class="nav_redPoint al-releasePoint"></i>
+                        </div>
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>发布</h4>
+                                <p>RELEASE</p>
+                            </div>
+                        </article>
+                    </a>
+                    <!-- 点击发布图标弹出框 -->
+                    <div class="al-release_popBox">
+                        <a href="">
+                            <b></b>
+                            <span>病例</span>
+                        </a>
+                        <a href="">
+                            <b class="topicIcon"></b>
+                            <span>话题</span>
+                        </a>
+                        <a href="">
+                            <b class="libraryIcon"></b>
+                            <span>文库</span>
+                        </a>
+                        <a href="">
+                            <b class="videoIcon"></b>
+                            <span>视频</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn/pages/message/message_main.html">
+                        <div class="al-redPointBox">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                            <span class="al-mes_redPoint al-mes_redPoint_Num2">99</span>
+                        </div>
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>消息</h4>
+                                <p>MESSAGE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn/pages/personal/personal_index.html">
+                        <div class="al-redPointBox">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                            <i class="nav_redPoint"></i>
+                        </div>
+                        <figcaption>个人</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>我的</h4>
+                                <p>PROFILE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList">
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <div class="al-redPointBox">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                            <i class="nav_redPoint al-customerPoint"></i>
+                        </div>
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>小唯</h4>
+                                <p>SERVICE</p>
+                            </div>
+                        </article>
+                    </a>
+                    <!--小唯客服弹出框：begin-->
+                    <div class="al-customerService">
+                        <figure class="al-cusServiceBox">
+                            <header>
+                                小唯客服 <b></b>
+                            </header>
+                            <section class="al-cusServiceMain">
+                                <i></i>
+                                <article class="al-service_answer">
+                                    <h5>您的问题我们已经收到</h5>
+                                    <p>我们会尽快帮您解决</p>
+                                    <span>3秒后消失</span>
+                                </article>
+                            </section>
+                        </figure>
+
+                        <figure class="al-cusServiceBox">
+                            <header>
+                                小唯客服 <b></b>
+                            </header>
+                            <section class="al-cusServiceMain">
+                                <h6>反馈内容</h6>
+                                <article class="al-feedbackContent">
+                                    <textarea name="" id="" cols="42" rows="4" placeholder="请尽可能详细的描述您遇到的问题"></textarea>
+                                    <span>500</span>
+                                    <p>提交</p>
+                                </article>
+                            </section>
+                        </figure>
+                    </div>
+                    <!--小唯客服弹出框：end-->
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="javascript:void(0)">
+                        <div class="al-redPointBox">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                            <i class="nav_redPoint al-phonePoint"></i>
+                        </div>
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>手机端</h4>
+                                <p>MOBILES</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+
+        </section>
+    </aside>
+
+    <!--个人中心——主页面区域-->
+    <section class="al-personal">
+        <!-- 评论区域 -->
+        <section class="al-personalInnerContent al-systemMessage">
+            <section class="al-contentItem">
+                <header class="al-contentItemTitle">
+                    <h2>
+                        系统消息
+                        <span>编辑</span>
+                    </h2>
+                </header>
+                <div class="al-contentComment_header">
+                    <b class="al-contentComment_round al-selectAll"></b>
+                    <span>全选</span>
+                    <p class="al-selectColor">
+                        删除
+                        <span>(4)</span>
+                    </p>
+                </div>
+                <section class="al-contentComment">
+                    <b class="al-contentComment_round al-selectAll"></b>
+                    <section class="al-contentCommentMain">
+                        <article class="al-contentCommentItem">
+                            <article class="al-contentCommentItemTitle">
+                                <i class="redPoint"></i><span>话题删除通知</span>
+                                <p class="al-contentCommentTime">刚刚</p>
+                                <figure class="al-viewDetails">查看详情 ></figure>
+                            </article>
+                        </article>
+                        <p class="al-contentCommentTextSys">您发布的话题与本资源无关，因此被系统删除，请关注最新信息，如有异议可咨询唯医小编进一演示相关的手术方法步交流。网站立足于医学教育，免费为广大骨科的</p>
+                    </section>
+                </section>
+                <section class="al-contentComment">
+                    <b class="al-contentComment_round al-selectAll"></b>
+                    <section class="al-contentCommentMain">
+                        <article class="al-contentCommentItem">
+                            <article class="al-contentCommentItemTitle">
+                                <span>其他通知</span>
+                                <p class="al-contentCommentTime">刚刚</p>
+                                <figure class="al-viewDetails">查看详情 ></figure>
+                            </article>
+                        </article>
+                        <p class="al-contentCommentTextSys">您发布的话题与本资源无关，因此被系统删除，请关注最新信息，如有异议可咨询唯医小编进一演示相关的手术方法步交流。网站立足于医学教育，免费为广大骨科的</p>
+                    </section>
+                </section>
+                <section class="al-contentComment">
+                    <b class="al-contentComment_round"></b>
+                    <section class="al-contentCommentMain">
+                        <article class="al-contentCommentItem">
+                            <article class="al-contentCommentItemTitle">
+                                <span>话题删除通知</span>
+                                <p class="al-contentCommentTime">刚刚</p>
+                            </article>
+                        </article>
+                        <p class="al-contentCommentTextSys">您发布的话题与本资源无关，因此被系统删除，请关注最新信息，如有异议可咨询唯医小编进一演示相关的手术方法步交流。网站立足于医学教育，免费为广大骨科的</p>
+                    </section>
+                </section>
+                <section class="al-contentComment">
+                    <b class="al-contentComment_round al-selectAll"></b>
+                    <section class="al-contentCommentMain">
+                        <article class="al-contentCommentItem">
+                            <article class="al-contentCommentItemTitle">
+                                <span>引用通知</span>
+                                <p class="al-contentCommentTime">刚刚</p>
+                            </article>
+                        </article>
+                        <p class="al-contentCommentTextSys">王岩引用了你的,
+                            <span>《成人脊柱退节侧变侧凸长节段成人脊柱退变》,点击查看</span>
+                        </p>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <!-- 头像及SNS信息 -->
+        <aside class="al-mesMainR">
+            <a href="javascript:void(0);">
+                <img src="//img10.allinmd.cn/v3/message/mes-asideUser.png" alt="" />
+            </a>
+            <a href="javascript:void(0);" class="al-mesMainR-userName">
+                欧阳娜娜<i></i>
+            </a>
+            <span class="al-mesMainR-userTitle">主任医师</span>
+            <p class="al-mesMainR-userUnit">北京大学第三医院大学</p>
+            <ul>
+                <li>
+                    <span>237</span>
+                    <a href="javascript:void(0);">粉丝</a>
+                </li>
+                <li class="al-mesMain-ul_Notice">
+                    <span>5678</span>
+                    <a href="javascript:void(0);">关注</a>
+                </li>
+                <li>
+                    <span>135</span>
+                    <a href="javascript:void(0);">点赞</a>
+                </li>
+            </ul>
+        </aside>
+    </section>
+    <!-- 公共页脚部分 -->
+    <footer class="al-mainFooter">
+        <section class="al-mainFooterInner">
+            <section class="al-mainFooterContent">
+                <section class="al-mainFooterLinks">
+                    <a href="javascript:void(0)" class="al-mainFooterLinkItem" style="padding-left: 0;">隐私声明</a>
+                    <a href="javascript:void(0)" class="al-mainFooterLinkItem">服务条款</a>
+                    <a href="javascript:void(0)" class="al-mainFooterLinkItem">关于我们</a>
+                    <a href="javascript:void(0)" class="al-mainFooterLinkItem" style="padding-right: 0;border-right: none;">联系我们</a>
+                </section>
+                <article class="al-mainFooterMsg">
+                    <figure class="al-mainFooterMsgImg">
+                        <img src="//img10.allinmd.cn/v3/common/icon/site_1.png" alt="">
+                    </figure>
+                    <figure class="al-mainFooterMsgImg">
+                        <img src="//img10.allinmd.cn/v3/common/icon/site_2.png" alt="">
+                    </figure>
+                </article>
+                <article class="al-mainFooterRecordMsg">
+                    <p>京ICP证150380号 | 京ICP备14007118号-2号 京公网安备11010802014986号京卫计网审[2014] 第0378号 </p>
+                    <p>Copyright©2019 Allinmd.cn All Rights Reserved.版权所有©北京欧应科技有限公司</p>
+                </article>
+            </section>
+            <figure class="al-mainFooterErWeiCode">
+                <img src="//img10.allinmd.cn/v3/common/icon/erweiCode_1.png" alt="">
+            </figure>
+        </section>
+    </footer>
+</section>
+<script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+<script>
+    $(function() {
+        //评论——图片列表排列形式
+        function contentImageLined() {
+            $(".al-contentImagePart").each(function(index, element) {
+                var ele = $(element).find(".al-contentImgBox");
+                switch (ele.length) {
+                    case 3:
+                    case 2:
+                        ele.width("160px");
+                        ele.height("160px");
+                        break;
+                    case 1:
+                        ele.width("325px");
+                        ele.height("210px");
+                        break;
+                    default:
+                        ele.width("160px");
+                        ele.height("160px");
+                        break;
+                }
+            });
+        }
+        contentImageLined();
+
+        setTimeout(function() {
+            $(".al-mainSidebar").removeClass("al-mainSidebarCollapse");
+            $(".al-mainSidebar").animate({"width": "80px"});
+        }, 3000);
+
+        $(".al-release a").click(function(){    //点击主导航栏发布图标显示弹出框
+            $(".al-release_popBox").show();
+        });
+
+
+        $('.al-deletePromptClose').click(function(){//点击关闭弹层
+            $(this).closest('.al-deletePopBox').hide();
+        });
+
+        $(".al-allinmdService a").click(function(){     //小唯客服弹出框
+            $(".al-customerService").show();
+        });
+        $(".al-customerService b").click(function(){    //小唯客服关闭弹出框
+            $(this).parents(".al-customerService").hide();
+        })
+    });
+
+
+    function aa(){
+        $(".al-mainSidebar").addClass("al-mainSidebarCollapse");
+        $(".al-mainSidebar").css("width","152px");
+    }
+
+
+
+</script>
+</body>
+
+</html>

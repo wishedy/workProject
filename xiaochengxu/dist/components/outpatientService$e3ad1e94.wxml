@@ -1,0 +1,21 @@
+<template name="outpatientService$e3ad1e94">
+  <view class="_section data-v-2796f95e service-box">
+    <view class="_article data-v-2796f95e service-box-item">
+      <view class="_figure data-v-2796f95e service-img">
+        <image src="{{targetLogo}}" alt class="_img data-v-2796f95e"></image>
+      </view>
+      <view class="_figcaption data-v-2796f95e service-content service-box">
+        <view class="_section data-v-2796f95e service-top">
+          <view class="_h3 data-v-2796f95e service-title">门诊邀约</view>
+        </view>
+        <view class="_section data-v-2796f95e service-middle">
+          <view class="_ul data-v-2796f95e doctor-info-list">
+            <view class="_li data-v-2796f95e doctor-info-top">{{targetMsg.nick}}</view>
+            <view class="_li data-v-2796f95e doctor-info-bottom" wx:if="{{targetMsg.medical}}">{{targetMsg.medical}}</view>
+          </view>
+          <view class="_section data-v-2796f95e go-invite on" data-alcode="e188" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">去预约</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

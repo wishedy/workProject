@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${conference.conName}会议首页 - 唯医,allinmd</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="Keywords" content="${conference.conName},医学会议，会议回放，会议日程，会议直播，，主讲人，会议视频，骨科视频，手术视频，手术讲解，日程回顾">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+
+    <link href="/dest/conference/meeting.css" rel="stylesheet" type="text/css" />
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+
+    <script>
+
+        /*跳WAP端*/
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        if(!IsPC()) {
+            window.location.href = '//m.allinmd.cn/pages/conference/meeting-place.html?conId=' + location.pathname.match(/\d*/g).join("").substr(0, 13) + '&conName=' + document.title.replace("会议首页 - 唯医,allinmd", "");
+        }
+    </script>
+
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="133">
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <li class="al-backBtn" data-alcode-mod='123' data-alcode-item-selector="li">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+    <div fragment="//www.allinmd.cn/html/conference/${conference.conId?c}/1/meeting_header.html"></div>
+
+
+    <div id="meeting_content">
+
+
+        <!--会议首页-->
+        <div class="m_main">
+            <div class="container_01">
+                <!--内容一 开始-->
+                <div class="sub_content01">
+
+                    <div class="sub_c1_left">
+                        <!--公共title 开始-->
+                        <div class="sub_public_title">
+                    	<span id="sub_notic_ico">
+                            <img src="//img00.allinmd.cn/conference/4/meeting_content/subject_02.jpg" />
+                        </span>
+                            <span id="sub_notic_text">新闻通告</span>
+                        </div>
+                        <!--公共title 结束-->
+                        <div class="sub_c1_lc">
+
+                            <#if cms_news_list_a?exists>
+                                <#list cms_news_list_a as news>
+                                    ${news.newsBody}
+                                </#list>
+                            </#if>
+                        </div>
+                    </div>
+                    <div class="sub_c1_right">
+                        <!--公共title 开始-->
+                        <div class="sub_public_title">
+                    	<span id="sub_notic_ico">
+                            <img src="//img00.allinmd.cn/conference/4/meeting_content/subject_03.jpg" />
+                        </span>
+                            <span id="sub_notic_text">重要日期</span>
+                        </div>
+                        <!--公共title 结束-->
+
+                        <div class="sub_c1_rightc">
+                            <div id="hr1"></div>
+                            <ul>
+                                <#if conference_event_list??>
+                                    <#list conference_event_list as list>
+
+                                        <li>
+                            	<span class="sub_c1r_sp01">
+                                	${list.conEvent}
+                                </span>
+                                <span class="sub_c1r_sp02">
+                                	<#if list.startTime?default('')!=''>${list.startTime[0..10]}</#if>
+                                	<#if list.endTime?default('')!=''>
+                                        <#if list.startTime[0..10]=list.endTime[0..10]>
+                                            <#if list.startTime[11..15]!='00:00'>
+                                                ${list.startTime[11..15]}
+                                            </#if>-<#if list.endTime[11..15]!='00:00'>
+                                            ${list.endTime[11..15]}
+                                        </#if>
+                                            <#else>
+                                                <#if list.startTime[11..15]!='00:00'>
+                                                    ${list.startTime[11..15]}
+                                                </#if>-<#if list.endTime[11..15]!='00:00'>
+                                                ${list.endTime[0..15]}<#else>
+                                                ${list.endTime[0..10]}
+                                            </#if>
+
+                                        </#if>
+                                    </#if>
+                                </span>
+                                        </li>
+
+                                    </#list>
+                                </#if>
+                            </ul>
+                            <div id="hr2"> </div>
+                        </div>
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!--内容一 结束-->
+                <!--专家介绍 开始-->
+                <#if allin_customer_list??>
+                    <div class="sub_content02">
+                        <!--公共title 开始-->
+                        <div class="sub_public_title">
+                    <span id="sub_notic_ico">
+                        <img src="//img00.allinmd.cn/conference/4/meeting_content/subject_04.jpg" />
+                    </span>
+                            <span id="sub_notic_text">专家介绍</span>
+                            <!-- <span id="sub_notice_more">
+                                 <a href="#" target="_blank">
+                                     <img src="//img00.allinmd.cn/conference/4/meeting_content/more_link.jpg" />
+                                 </a>
+                             </span>-->
+                        </div>
+                        <!--公共title 结束-->
+                        <div id="demo" style="overflow:hidden;height:180px;width:1004px; position:relative">
+                            <div id="demo_warp">
+                                <div id="demo1">
+
+
+                                    <#if allin_customer_list??>
+                                        <ul data-alcode-mod='230'>
+                                            <#list allin_customer_list as map>
+                                                <#list map?keys as itemKey>
+                                                    <#if itemKey='customer_name'>
+                                                        <#assign customer_name = map[itemKey]>
+                                                    </#if>
+                                                    <#if itemKey='summary'>
+                                                        <#assign summary = map[itemKey]>
+                                                    </#if>
+                                                    <#if itemKey='hospital_name'>
+                                                        <#assign hospital_name = map[itemKey]>
+                                                    </#if>
+                                                    <#if itemKey='customer_id'>
+                                                        <#assign customer_id = map[itemKey]?c>
+                                                    </#if>
+                                                    <#if itemKey='customer_logo_url'>
+                                                        <#assign customer_logo_url = map[itemKey]>
+                                                    </#if>
+
+                                                </#list>
+                                                <li>
+                                                    <div><a href="//www.allinmd.cn/pages/personal/others_contribution.html?cid=${customer_id?default('')}" target="_blank"><img src="${customer_logo_url?default('')}" data-original="${customer_logo_url?default('')}" style="display: inline;" width="140" height="140" /></a></div>
+                                                    <div style="text-align:center; margin-top:5px; color:#077b78;"><a href="//www.allinmd.cn/pages/personal/others_contribution.html?cid=${customer_id?default('')}" target="_blank">${customer_name?default('')}</a></div>
+                                                </li>
+
+                                            </#list>
+                                        </ul>
+                                    </#if>
+
+
+                                </div>
+                                <div id="demo2">
+                                    <ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </#if>
+                <!--专家介绍 结束-->
+
+            </div>
+
+        </div>
+
+
+        <!--footer start-->
+        <!--#include virtual="/includes/footer.jsp"-->
+        <!--footer End-->
+</section>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src="/dest/conference/meeting.js"></script>
+<script>
+    $(function(){
+        getFragments();
+        $('.sub_c1_lc').html(comm.getStrLen($('.sub_c1_lc').html(),420));
+    })
+</script>
+
+</body>
+</html>

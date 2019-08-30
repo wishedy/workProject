@@ -1,0 +1,123 @@
+@charset "UTF-8";
+//头部信息栏组件
+//Created by qiangkailiang on 2016/07/31
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.fixedHeader{
+    position: fixed;
+    top:0;
+    z-index: 6;
+    width:100%;
+}
+.al-indexHeader {
+    background-color: #fff;
+    @include flex();
+    @include justify-content(space-between);
+    @include align-items(center);
+    padding:0 rem(30px);
+    height: rem(88px);
+    //border-bottom: 1px solid $outerBorderColor;
+    overflow: hidden;
+
+
+
+    h1 {
+        @include font-dpr(17px);
+        //font-weight: 400;
+        color: #222222;
+    }
+    a {
+        display: inline-block;
+        vertical-align: middle;
+        @include font-dpr(13px);
+        @include link-colors(#515c74, #515c74, #515c74, #515c74, #515c74);
+    }
+    .al-indexHeaderItem {
+        width: 3rem;
+        height: 100%;
+        line-height: rem(88px);
+        white-space: nowrap;
+    }
+    .al-indexHeaderItem:nth-last-child(1) {
+        text-align: right;
+    }
+    .al-indexHeaderItem:nth-child(1) {
+        text-align: left;
+    }
+    .al-indexHeaderItem:nth-child(2) {
+        text-align: center;
+    }
+}
+
+.al-indexHeaderItem {
+
+    &:nth-child(1) {
+        a {
+            display: block;
+            height: 100%;
+            width: 1rem;
+                margin-left: -0.25rem;
+            &:before{
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+            img {
+                width: rem(60px);
+                height: rem(60px);
+                vertical-align: middle;
+            }
+        }
+    }
+    &:nth-child(3) {
+        a {
+            color: #626f8c;
+            @include font-dpr(14px);
+        }
+    }
+}
+
+
+
+/*搜索框*/
+.searchCont{
+    background: #fff;
+    padding: 0 0 0 rem(30px);
+    @include clearfix();
+    height: rem(84px);
+    line-height: rem(84px);
+    overflow:hidden;
+    .searchInput{
+        float: left;
+        width: rem(586px);
+        height: rem(84px);
+        overflow:hidden;
+        //opacity: 0.2;
+        background: rgba(205,205,205,0.2) url("//img50.allinmd.cn/index/searchBorder.png") no-repeat;
+        background-size: contain;
+        font-size: rem(30px);
+        //color: #777777;
+        color: #a0a0a0;
+        i{
+            display: inline-block;
+            width: rem(30px);
+            height: rem(30px);
+            background: url("//img50.allinmd.cn/index/search.png") no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+            margin: 0 rem(13px) 0 rem(22px);
+        }
+    }
+    button{
+        float: left;
+        background: #3CAEFA;
+        border-radius: 0 6px 6px 0;
+        width: rem(105px);
+        height: rem(84px);
+        line-height: rem(84px);
+        font-size: rem(30px);
+        color: #FFFFFF;
+    }
+}

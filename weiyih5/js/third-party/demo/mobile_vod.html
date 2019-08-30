@@ -1,0 +1,490 @@
+﻿<!doctype html>
+<html xmlns:gs="http://www.gensee.com/ec">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="white">
+<title>手机点播demo</title>
+<link href="css/mobile_vod.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="webPlayer" class="web">
+	<div id="topHalf">
+    	<div id="video-box" class="video-container">
+            <div class="video-box">
+            	<gs:video-vod id="videoComponent" site="product.gensee.com" ctx="training" ownerid="Bdbkos1Egf" uid="36931" uname="唯一弑神" authcode="444444" py="1" />
+            </div>
+        </div>
+    </div>
+    <div id="chatQaBox" class="section-bottom">
+    	<div class="tabs border-box">
+        	<ul class="display-box">
+            	<li id="doc-tab" class="on flex ondoc">
+                    <a>
+                        <span>文档</span>
+                    </a>
+                </li>
+                <li class="flex onchapter">
+                    <a>
+                        <span>章节</span>
+                    </a>
+                </li>
+                <li class="flex onchat">
+					<a>
+						<span>聊天</span>
+					</a>
+				</li>
+                <li class="flex onqa">
+					<a>
+						<span>问答</span>
+					</a>
+				</li>
+            </ul>
+        </div>
+        <div class="slider-container">
+        	<!-- 文档 -->
+        	<div class="section-top slider-box">
+                <div id="doc-box" class="document-container">
+                	<gs:doc id="docComponent"  ctx="training"  site="product.gensee.com" ownerid="Bdbkos1Egf" />
+                </div>
+            </div>
+            <!-- 章节 -->
+            <div class="chapter-container slider-box">
+                <div class="chapter-hd display-box">
+                    <div class="sn">序号</div>
+                    <div class="title flex">标题</div>
+                    <div class="time">时间</div>
+                </div>
+                <div class="chapter-list-container allow-roll">
+                    <ul id="chapter-box" class="chapter-list">
+                    	
+                    </ul>
+                </div>
+            </div>
+            <!-- 聊天区域 -->
+            <div class="chat-container slider-box">
+            	<div class="slider-bd chat-bd allow-roll">
+                    <ul id="chat-msg-list" class="msg-list">
+                    	
+                    </ul>
+                </div>
+            </div>
+            <!-- 问答 -->
+			<div class="qa-container qa_list slider-box">
+            	<div class="qa_list_content slider-bd allow-roll">
+                    <ul id="qa-msg-list">
+						
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="http://static.gensee.com/webcast/static/sdk/js/gssdk.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/TouchSlide.js"></script>
+<script type="text/javascript">
+	//根据组获得通讯通道
+	var channel = GS.createChannel();
+	//设置区块高度
+	var winWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+	var winHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+	var video_height = parseInt((9 * winWidth)/16);
+	$(function(){
+		//禁止touchmove
+		var selScrollable = '.allow-roll';//允许touch的样式
+		$(document).bind('touchmove',function(e){
+			e.preventDefault();
+		});
+		$('body').on('touchstart', selScrollable, function(e) {
+			if (e.currentTarget.scrollTop === 0) {
+				e.currentTarget.scrollTop = 1;
+			} else if (e.currentTarget.scrollHeight === e.currentTarget.scrollTop + e.currentTarget.offsetHeight) {
+				e.currentTarget.scrollTop -= 1;
+			}
+		});
+		$('body').on('touchmove', selScrollable, function(e) {
+			if(jQuery(this)[0].scrollHeight > jQuery(this).innerHeight()) {
+				e.stopPropagation();
+			}
+		});
+		
+		
+		$("#topHalf").height(video_height);
+		var tabsHeight=$('.tabs').height();
+		$('#doc-box,#docComponent').height(winHeight-video_height-tabsHeight);
+		$('.chat-bd,.qa_list_content').height(winHeight-video_height-tabsHeight);
+		$('.chapter-list-container').height(winHeight-video_height-tabsHeight-$('.chapter-hd').height());
+		
+		//单选多选设置答题
+		$('body').on('click','.survey_select div a',function(){
+			var that=this;
+			var is_radio=$(that).parents('.survey_select').hasClass('single');
+			if($(that).hasClass('on') && !is_radio){
+				$(that).removeClass('on');
+			}else{
+				if(is_radio){
+					$(that).parent('div').find('a').removeClass('on');
+				}
+				$(that).addClass('on');
+			}
+		});
+		
+	});
+		
+	//章节信息
+	channel.bind("onChapter", function (event) {
+		console.log(event);
+		var txt='';
+		for(var i=0;i<event.data.list.length;i++){
+			var s=Number(event.data.list[i].starttimestamp)==0?"00:00":Util.timeDuration(Number(event.data.list[i].starttimestamp)/1000);
+			txt+='<li class="display-box" data-startime="'+(Number(event.data.list[i].starttimestamp)==0?'0.01':event.data.list[i].starttimestamp)+'" data-endtime="'+event.data.list[i].stoptimestamp+'">'+
+					'<div class="sn"><em class="sn-circle">'+(parseInt(i)+1)+'</em></div>'+
+					'<div class="title flex">'+event.data.list[i].title+'</div>'+
+					'<div class="time">'+s+'</div>'+
+				'</li>';
+		}
+		$('.chapter-list').html(txt);
+	});
+	
+	//监听播放时间
+	channel.bind("onPlayheadTime", function (event) {
+		//console.log(event);
+		changeChapter(event.data.playheadTime);
+	});
+	//切换章节
+	function changeChapter(ms){
+		if(Util.isEmpty(ms))return;
+		$(".chapter-list").find("li").each(function(){
+			var endtime = $(this).attr("data-endtime");
+			$(".chapter-list").find(".current").removeClass("current");
+			if(Number(endtime) > Number(ms)){
+				$(this).addClass("current");
+				return false;
+			}
+		});
+	}
+	
+	//初始化点播，点播开始
+	channel.bind("loadStart", function (event) {
+		console.log(event);
+	});
+	//监听暂停
+	channel.bind("onPause", function (event) {
+		console.log(event);
+	});
+	//跳转结束
+	channel.bind("play", function (event) {
+		console.log(event);
+	});
+	
+	//收到问答信息
+	channel.bind("onQAList", function (event) {
+		console.log(event);
+		var txt='';
+		
+		for(var i=0; i< event.data.list.length; i++){
+			txt+='<li>'+
+					'<div class="qa_top">'+
+						'<strong>'+event.data.list[i].submitor+' 问</strong>'+
+						'<span>'+Util.formatTime(event.data.list[i].submitTime)+'</span>'+
+					'</div>'+
+					'<div class="qa_txt">'+event.data.list[i].question+'</div>'+
+				'</li>';
+			if(event.data.list[i].answer){
+				txt+='<li>'+
+					'<div class="qa_top">'+
+						'<strong>'+event.data.list[i].answerBy+' 回答 '+event.data.list[i].submitor+'</strong>'+
+						'<span>'+Util.formatTime(event.data.list[i].answerTime)+'</span>'+
+					'</div>'+
+					'<div class="qa_txt">'+event.data.list[i].answer+'</div>'+
+				'</li>';
+			}
+		}
+		$('#qa-msg-list').html(txt);
+	});
+	
+	//收到聊天
+	channel.bind("onChatHistory", function (event) {
+		console.log(event);
+		var txt='';
+		for(var i=0; i< event.data.list.length; i++){
+			txt+='<li>'+
+				'<div class="msg-info">'+
+					'<span>'+event.data.list[i].sender+'</span>'+
+					'<em>'+Util.formatTime(event.data.list[i].submitTime)+'</em>'+
+				'</div>'+
+				'<div class="msg-content" style="width:'+(winWidth-20)+'px">'+event.data.list[i].content+'</div>'+
+			'</li>';
+		}
+		$('#chat-msg-list').html(txt);
+	});
+	
+	
+	//收到调查问卷
+	var VoteSurvey = {};
+	channel.bind("onVote", function (event) {
+		console.log(event);
+		//收到问卷暂停播放
+		channel.send("pause", {
+		});
+		if($('#video-box')[0] && !$('#video-box').hasClass('videotop')){
+			$('#video-box').addClass('videotop');
+			$('.video-box').css('clear','none');
+			setTimeout(function(){$('.video-box').css('clear','both');},1000);
+		}
+		loadVote(event.data);
+	});
+	
+	//加载问卷
+	function loadVote(vs){
+		console.log(vs);
+		VoteSurvey[vs.id] = vs;
+		var txt='';
+		txt+='<div class="survey_area" id="vs_'+vs.id+'" data-id="'+vs.id+'">';
+		txt+='<div class="t">';
+			txt+='<p>'+vs.subject+'</p>';
+			if(vs.skip=="true"){//非强制显示关闭按钮
+				txt+='<a href="javascript:void(0);" class="survey_close"></a>';
+			}
+		txt+='</div>';
+		txt+='<div class="survey_body">';
+		for(var i in vs.questions){
+			var question = vs.questions[i];
+			if(question.type=="single" || question.type=="multi"){
+				txt += createVote(i, question);
+			}else if(question.type=="text"){
+				txt += createSurvey(i, question);
+			}
+		}
+		txt+='</div>';
+		txt+='<div class="survey_btn" id="vote-select-'+vs.id+'">';
+			txt+='<a href="javascript:void(0);">提交</a>';
+		txt+='</div>';
+		txt+='</div>';
+		$('body').append(txt);
+		$('#vs_'+vs.id).fadeIn();
+		$("#vs_"+ vs.id+" .survey_btn").bind("click", function(){
+			commitVoteAndSurvey(vs.id);
+		});
+	}
+	//单选多选创建
+	function createVote(idx, vote){
+		var sVoteElem = '<div class="survey_select'+(vote.type=="single"?' single':' multi')+'" id="'+vote.id+'">'+
+		'<h3>'+(Number(idx)+1)+'、'+vote.subject+'</h3><div>';
+		for(var i in vote.items){
+			var item = vote.items[i];
+			sVoteElem += '<a rel="'+(Number(i)+1)+'">'+item.option+'</a>';
+		}
+		sVoteElem +=  '</div></div>';
+		return sVoteElem;
+	}
+	//问答创建
+	function createSurvey(idx, survey){
+		var sSurveyElem = '<div class="survey_select diaocha" id="'+survey.id+'">' +
+				'<h3>'+(Number(idx)+1)+'、'+survey.subject+'</h3>'+
+				'<p><textarea></textarea></p>'+
+			'</div>';
+		return sSurveyElem;
+	}
+	//提交答案
+	function commitVoteAndSurvey(vsId){
+		var vsData = VoteSurvey[vsId];
+		if(vsData.skip=="false"){
+			if(isAllQuestionAnswered(vsData)>0){
+				alert("强制问答请选择所有问题");
+				return false;
+			}
+		}
+		//答案设置
+		$("#vs_"+vsId).find(".survey_select").each(function(){
+			
+			if($(this).hasClass("single")){
+				var answer = "";
+				if($(this).find('a.on').length>0){
+					if(answer.length==0){
+						answer = $(this).find('a.on').attr('rel');
+					}else{
+						answer += ","+ $(this).find('a.on').attr('rel');
+					}
+				}
+				setAnswer(vsId, $(this).attr("id"), answer);
+				$(this).off();
+				
+			}else if($(this).hasClass("multi")){
+				var answer = "";
+				$(this).find("a.on").each(function(){
+					if(answer.length==0){
+						answer = $(this).attr('rel');
+					}else{
+						answer += ","+ $(this).attr('rel');
+					}
+					
+				});
+				setAnswer(vsId, $(this).attr("id"), answer);
+				$(this).off();
+			}else if($(this).hasClass("diaocha")){
+				var testarea = $(this).find("textarea");
+				var answer = testarea.val();
+				setAnswer(vsId, $(this).attr("id"), answer);
+				testarea.attr("disabled", "disabled");
+			}
+			
+		});
+		
+		//提交调查问卷结果
+		console.log(VoteSurvey[vsId]);
+		channel.send("submitVote", VoteSurvey[vsId]);
+		if(vsData.skip=="false"){
+			$("#vs_"+vsId).fadeOut(
+				function(){
+					$(this).remove();
+					if($('.survey_area').length==0){
+						$('#video-box').removeClass('videotop');
+					}
+				}
+			);
+			//关闭或提交答案后需要请求播放
+			channel.send("play", {
+			});
+		}else{
+			$('#vs_'+vsId).find('.survey_close').trigger('click');
+		}
+	}
+	//判断是否全部有答案
+	function isAllQuestionAnswered(vsData){
+		var i=0;
+		var h=0;
+		$("#vs_"+vsData.id).find(".survey_select").each(function(){
+			var that=this;
+			if($(that).hasClass("single")){
+				if($(that).find("a.on").length==0){
+					jQuery(that).parent('.survey_body').animate({scrollTop:h},500);
+					i++;
+					return false;
+				}
+			}else if($(that).hasClass("multi")){
+				if($(that).find("a.on").length==0){
+					jQuery(that).parent('.survey_body').animate({scrollTop:h},500);
+					i++;
+					return false;
+				}
+			}else if($(that).hasClass("diaocha")){
+				var val = $(that).find("textarea").val();
+				if(!val||$.trim(val).length<1){
+					jQuery(that).parent('.survey_body').animate({scrollTop:h},500);
+					i++;
+					return false;
+				}
+			}
+			h+=$(that).height();
+		});
+		return i;
+	}
+	//设置答案
+	function setAnswer(vsId, itemId, value){
+		//console.log(VoteSurvey[vsId],itemId,value);
+		if(value!=='undefined' && value!=''){
+			for(var i in VoteSurvey[vsId].questions){
+				if(VoteSurvey[vsId].questions[i].id===itemId){
+					VoteSurvey[vsId].questions[i].answer = value;
+					if(VoteSurvey[vsId].questions[i].type=='single' || VoteSurvey[vsId].questions[i].type=='multi'){
+						var value_arr=value.split(',');
+						for(var j=0;j<value_arr.length;j++){
+							VoteSurvey[vsId].questions[i].items[Number(value_arr[j])-1].selected="true";
+						}
+					}
+					break;
+				}
+			}
+		}
+	}
+	
+	//SDK状态通知 
+	channel.bind("onStatus", function (event) {
+		console.log(event);
+		if(event.data.type!="2"){
+			alert("SDK状态通知 "+event.data.type+" "+event.data.explain);
+		}
+	});
+	
+	//SDK加载完毕，所有API生效
+	channel.bind("onDataReady", function (event) {
+		console.log(event);
+		
+		setTimeout(function(){sdkgo();},0);	
+	});
+	
+	function sdkgo(){
+		//触摸切换功能
+		TouchSlide({
+			slideCell: "#chatQaBox",
+			titCell: ".tabs li",
+			mainCell: ".slider-container",
+			defaultIndex: window.tabDefaultIndex,
+			startFun:function(i,c){
+				
+			},
+			endFun:function(i,c){
+				
+			}
+		});
+		
+		var testInterval;
+		
+		testInterval = setInterval(function(){
+			channel.send("playheadTime", {
+				
+			});
+		},190);
+		
+		
+		
+		//点击章节跳转播放
+		$(".chapter-list").on('click','li',function(){
+			var startime=$(this).attr('data-startime');
+			channel.send("seek", {
+				"timestamp":startime
+			});
+		});
+		
+		
+		
+		//获取问答
+		channel.send("submitQAList", {
+		});
+		
+		
+		
+		//获取聊天
+		channel.send("submitChatHistory", {
+		});
+		
+		//关闭问卷
+		$('body').on('click','.survey_close',function(){
+			
+			$(this).parent().parent().fadeOut(
+				function(){
+					$(this).remove();
+					if($('.survey_area').length==0){
+						$('#video-box').removeClass('videotop');
+					}
+				}
+			);
+			//关闭或提交答案后需要请求播放
+			channel.send("play", {
+			});
+		});
+		
+		
+	}
+	//API错误通知
+	channel.bind("onAPIError", function (event) {
+		console.log(event);
+	});
+</script>
+</body>
+</html>

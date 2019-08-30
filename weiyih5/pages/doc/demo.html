@@ -1,0 +1,390 @@
+<html lang="en" data-dpr="2" style="font-size: 64px;"><head>
+    <style class="vjs-styles-defaults">
+    .video-js {
+        width: 300px;
+        height: 150px;
+    }
+
+    .vjs-fluid {
+        padding-top: 56.25%
+    }
+</style>
+    <meta charset="UTF-8">
+    <title>文库图文</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="keywords" content="医学资源分类，医学资源查找，手术视频,医学文献,病例讨论,骨科,唯医,allinmd">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/doc/doc_index.css">
+    <link rel="stylesheet" href="/css/vander/swiper.min.css">
+
+    <link href="/js/third-party/sweetalert-master/lib/sweet-alert.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/photoswipe/photoswipe-master/dist/default-skin/default-skin-new.css" rel="stylesheet" type="text/css"/>
+
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+    <script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+    <script src="/js/json/operator_auth.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/jweixin-1.0.0.js"></script>
+    <script src="/js/comm/shareAll.js"></script>
+    <script src="/js/comm/WeixinJSApi.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/date.js"></script>
+
+    <script src="/js/comm/comm.ajax.js"></script>
+    <script src="/js/comm/comm-page-url.js"></script>
+
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/modules/dialog.js"></script>
+
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination_noconvertjson.js"></script>
+    <script src="/js/third-party/iscroll.js"></script>
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination_reverse.js"></script>
+    <script src="/js/third-party/sweetalert-master/lib/sweet-alert.min.js"></script>
+    <script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.js"></script>
+    <script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe-ui-default.js"></script>
+    <script src="/js/third-party/jquery.plugin.picshow.js"></script>
+    <script src="/js/third-party/jquery.plugin.picshow-comment.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+
+    <script src="/js/react/JSXTransformer.js"></script>
+    <script src="/js/react/react.js"></script>
+    <script type="text/jsx" src="/js/scene/case/comment.jsx" charset="utf-8"></script>
+
+    <script src="/js/social_intercourse/relation.js"></script>
+
+    <script src="/js/scene/doc/doc-detailV2.js"></script>
+</head>
+
+<body style="margin: 0px; font-size: 24px;">    <section class="al-appWakeUpFigure" style="margin-top: 1.3rem;">        <figure class="al-appWakeUpImg">            <img src="//img50.allinmd.cn/pages/index/logo.png" alt="">            <figcaption>                <h2>唯医骨科APP</h2>                <p>通过APP浏览医学资源，更省流量</p>            </figcaption>        </figure>        <button class="al-appWakeUpFigureBtn ev-openAppBtn">            打开APP        </button>    </section>
+<input type="hidden" value="2" id="relationType">
+<input type="hidden" value="8" id="preferReviewType">
+<input type="hidden" value="1489126425933" id="resourceId">
+<input type="hidden" id="refCustomerId" value="0">
+<input type="hidden" id="ebookType" value="18">
+
+
+<section class="al-mainInner">
+
+    <!--文章被删除开始-->
+    <!--文章被屏蔽开始-->
+    <!--文章被删除结束-->
+    <!--顶部悬浮-->
+    <header class="al-eBookController Ev-fixedHeader" style="display: block;">
+        <article>
+
+            <!--<a href="javascript:;" class="al-eBookAllBook icon-controllerAllBook Ev-AllBookBtn" style="display:none;"><span>全书</span></a>-->
+            <a href="javascript:;" class="al-eBookShare icon-controllerShare Ev-topShareBtn">分享<span></span></a>
+        </article>
+    </header>
+    <!--顶部悬浮结束-->
+
+    <!--书籍信息-->
+
+
+    <header class="al-terminalHeader">
+        <section>
+            <figure class="al-terminalAuthorImg">
+                <a class="al-terminalEbookImg" href="//m.allinmd.cn/pages/eBook/eBook_details.html?bId=1486633674609">
+                    <img src="https://img04.allinmd.cn/doc/2017/03/21/1486633674609_1490078419053_180_254.jpg" alt="">
+                </a>
+            </figure>
+            <figcaption class="al-terminalAuthorMsg">
+                <h2 class="Ev-authorName">
+                    <a href="//m.allinmd.cn/pages/eBook/eBook_details.html?bId=1486633674609">
+                        美国骨科医师协会骨科疾病诊疗教程
+                    </a>
+                </h2>
+                <span class="al-terminalReleaseTime">
+                    2017-03-10
+                </span>
+            </figcaption>
+        </section>
+        <!--综合评分-->
+        <ul class="al-littleScoreStarBox ev-scoreDetail"><li><b></b></li><li><b></b></li><li><b></b></li><li><b></b></li><li><b style="width: 17.1px;"></b></li></ul>
+        <!--综合评分结束-->
+    </header>
+    <!--书籍信息结束-->
+    <!--文章主体内容-->
+
+    <section class="al-terminalContent">
+
+        <!--标题，浏览，中英文切换-->
+        <header class="al-terminalContentTitle Ev-caseTitle">
+
+            <!--中文标题-->
+            <h2 class="Ev-chContent"><a href="javascript:;">肩关节体格检查</a></h2>
+            <!--中文标题结束-->
+
+
+            <article class="al-terminalContentSnsMsg">
+                <span class="al-terminalBrowsedNum"><em class="Ev-browseNum">7251</em>浏览</span>
+            </article>
+
+        </header>
+        <!--标题，浏览，中英文切换-->
+
+        <!--文章主体内容-->
+        <section class="al-terminalContentContext">
+            <article class="al-terminalContextItem">
+                <div class="d1"><p class="p1"></p><p class="p2"><span style="">翻译：吴剑宏 &nbsp;一校：蒋良福 &nbsp;副主译：崔国庆</span></p><p class="p3"><strong><span style="">视诊/触诊</span></strong></p><p class="p4"><strong><span class="s1" style="">前侧视诊</span></strong></p><p class="p3" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482377899770_480_320.mp4?1493146602" data-videoabs=" 患者站立位，观察异常的轮廓和骨性突起。肩锁关节脱位可在锁骨远端产生阶梯样畸形。肩关节前脱位会使肩峰后侧突出和三角肌前方膨隆，并且上肢会处于一个轻度外展和内旋的强迫体位。与此相反的是，肩关节后脱位会使喙突和肩峰前侧产生突出，三角肌后方膨隆，上肢处于内收和内旋的强迫体位。"><img style="min-width:4.5rem;" src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7WAUhOsAAYK8SRiVhM403_c.png"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:45</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 患者站立位，观察异常的轮廓和骨性突起。肩锁关节脱位可在锁骨远端产生阶梯样畸形。肩关节前脱位会使肩峰后侧突出和三角肌前方膨隆，并且上肢会处于一个轻度外展和内旋的强迫体位。与此相反的是，肩关节后脱位会使喙突和肩峰前侧产生突出，三角肌后方膨隆，上肢处于内收和内旋的强迫体位。</p></p><p class="p5"></p><p class="p3"></p><p class="p4"><strong><span class="s1" style="">后侧视诊</span></strong></p><p class="p3"></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482377929454_480_320.mp4?1493148503" data-videoabs=" 患者站立位，注意肩部高度和轮廓的对称性（休息时优势肩往往略低于对侧肩）。观察是否有肌肉萎缩，特别是斜方肌、三角肌和冈下肌。
+颈部到肩部后方轮廓的缩小提示斜方肌萎缩。伴随冈上肌/冈下肌萎缩时，三角肌区肩外侧轮廓会缩小，可看到突出的肩胛冈。在观察肩后部时，让患者在肩胛平面抬高双臂到水平位，并评价双侧肩胛是否有任何运动障碍（视频中未显示）。
+"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7WAcY8_AAVFsm-VssY251_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:41</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 患者站立位，注意肩部高度和轮廓的对称性（休息时优势肩往往略低于对侧肩）。观察是否有肌肉萎缩，特别是斜方肌、三角肌和冈下肌。
+                    颈部到肩部后方轮廓的缩小提示斜方肌萎缩。伴随冈上肌/冈下肌萎缩时，三角肌区肩外侧轮廓会缩小，可看到突出的肩胛冈。在观察肩后部时，让患者在肩胛平面抬高双臂到水平位，并评价双侧肩胛是否有任何运动障碍（视频中未显示）。
+                </p></p><p class="p3"></p><p class="p3"><strong><span style="">肩锁关节</span></strong></p><p class="p3"></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482377986377_480_320.mp4?1493695469" data-videoabs=" 患者站立位，观察异常的轮廓和骨性突起。肩锁关节脱位可在锁骨远端产生阶梯样畸形。肩关节前脱位会使肩峰后侧突出和三角肌前方膨隆，并且上肢会处于一个轻度外展和内旋的强迫体位。与此相反的是，肩关节后脱位会使喙突和肩峰前侧产生突出，三角肌后方膨隆，上肢处于内收和内旋的强迫体位。"><img style="min-width:4.5rem;" src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7WAQ6bqAAXzPW8qjDk531_c.png"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:25</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 患者站立位，观察异常的轮廓和骨性突起。肩锁关节脱位可在锁骨远端产生阶梯样畸形。肩关节前脱位会使肩峰后侧突出和三角肌前方膨隆，并且上肢会处于一个轻度外展和内旋的强迫体位。与此相反的是，肩关节后脱位会使喙突和肩峰前侧产生突出，三角肌后方膨隆，上肢处于内收和内旋的强迫体位。</p></p><p class="p3"></p><p class="p3"><strong><span style="">肩峰下滑囊</span></strong></p><p class="p3"></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482377464360_480_320.mp4?1482378313" data-videoabs=" 评估肩峰下滑囊，需触诊肩峰的前外侧部分，沿着三角肌下移至触到肩肱间隙为止。该区域压痛通常与肩峰下滑囊炎或肩袖撕裂（冈上肌腱）相关。"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7WAX8PoAAfRyFlHqzc791_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:25</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 评估肩峰下滑囊，需触诊肩峰的前外侧部分，沿着三角肌下移至触到肩肱间隙为止。该区域压痛通常与肩峰下滑囊炎或肩袖撕裂（冈上肌腱）相关。</p></p><p class="p3"></p><p class="p3"><strong><span style="">肱二头肌长头肌腱</span></strong></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482378039563_480_320.mp4?1493144100" data-videoabs=" 评估肱二头肌长头肌腱，需在肱骨结节间沟触诊肱骨头。肌腱炎患者会有压痛和肿胀，肩部转动时压痛部位会随着肱骨头移动。"><img src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7WAQOQ7AAdUmPfgF64479_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:23</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 评估肱二头肌长头肌腱，需在肱骨结节间沟触诊肱骨头。肌腱炎患者会有压痛和肿胀，肩部转动时压痛部位会随着肱骨头移动。</p></p><p class="p3"></p><p class="p3"></p><p class="p3"><strong><span style="">活动度检查</span></strong></p><p class="p3"></p><p class="p3"><strong><span style="">屈曲运动</span></strong></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482377499423_480_320.mp4?1482378307" data-videoabs=" 正常肩关节运动是一种联合了盂肱关节和肩胛骨/胸廓运动的复合运动。肩胛运动由来自肩锁关节和胸锁关节的运动。肩关节的活动从四个方面进行评估：屈曲，手臂在体侧的外旋，手臂外展90°后的外旋和内旋。
+评估肩关节屈曲范围，使手臂置于身侧（A）。要求患者在矢状面抬起手臂（B），以胸椎为参照测量主动和被动运动范围。正常肩关节屈曲范围为160°-170°。"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7WAIVSIAAmT22eUHWk204_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:01:00</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 正常肩关节运动是一种联合了盂肱关节和肩胛骨/胸廓运动的复合运动。肩胛运动由来自肩锁关节和胸锁关节的运动。肩关节的活动从四个方面进行评估：屈曲，手臂在体侧的外旋，手臂外展90°后的外旋和内旋。
+                    评估肩关节屈曲范围，使手臂置于身侧（A）。要求患者在矢状面抬起手臂（B），以胸椎为参照测量主动和被动运动范围。正常肩关节屈曲范围为160°-170°。</p></p><p class="p3"></p><p class="p5"></p><p class="p3"></p><p class="p3"><strong><span style="">手臂在体侧的外旋运动</span></strong></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482378065388_480_320.mp4?1493145901" data-videoabs=" 评估外旋运动，将患者的手臂放在体侧，放松地抵住胸壁，肘部屈曲90°，前臂平行于身体的矢状面（A）。通过评估上臂的最大向外旋转角度测量外旋范围（B）。"><img src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7WAIK0rABcZDP1Aw5U850_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:27</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 评估外旋运动，将患者的手臂放在体侧，放松地抵住胸壁，肘部屈曲90°，前臂平行于身体的矢状面（A）。通过评估上臂的最大向外旋转角度测量外旋范围（B）。</p></p><p class="p7"><strong><span class="s2" style="">手臂外展90°的外旋运动</span></strong></p><p class="p8"></p><p class="p3"></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482834051251_480_320.mp4?1482790938" data-videoabs=" 评估外旋范围，量角器是必要的。患者的上臂外展90°，与肩胛骨平面一致，肘部屈曲 90°，前臂与地面平行（A）。通过测量前臂在此位置与初始平行位置的夹角度数来评估外旋范围（B）。此位置上外旋的受限可见于一些未进行合适的拉伸而强调强化练习的运动员和经历过肩部重建手术的患者。"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7WAd5XRABscdsGvpsI192_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:50</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 评估外旋范围，量角器是必要的。患者的上臂外展90°，与肩胛骨平面一致，肘部屈曲 90°，前臂与地面平行（A）。通过测量前臂在此位置与初始平行位置的夹角度数来评估外旋范围（B）。此位置上外旋的受限可见于一些未进行合适的拉伸而强调强化练习的运动员和经历过肩部重建手术的患者。</p></p><p class="p3"></p><p class="p7"><strong><span style="">内旋运动</span></strong></p><p class="p8"></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482377764284_480_320.mp4?1482378315" data-videoabs=" 评价内旋运动，要求患者将手臂尽可能高地放在背后。标记下最高处大拇指对应的棘突。这个动作简单易行，但它代表了一种复合运动，它同时取决于肩部的伸展和肩胛骨的牵引及肘、腕和拇指的运动。年轻的成年人通常可以超越的肩胛骨下角（约在T7水平）。患有粘连性关节囊炎或退行性关节炎的患者其内旋运动可能会严重受限。这些患者的拇指可能只能达到骶骨，臀部，或大转子的位置。"><img src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7WABN1sAAj1uUni-_c104_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:54</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 评价内旋运动，要求患者将手臂尽可能高地放在背后。标记下最高处大拇指对应的棘突。这个动作简单易行，但它代表了一种复合运动，它同时取决于肩部的伸展和肩胛骨的牵引及肘、腕和拇指的运动。年轻的成年人通常可以超越的肩胛骨下角（约在T7水平）。患有粘连性关节囊炎或退行性关节炎的患者其内旋运动可能会严重受限。这些患者的拇指可能只能达到骶骨，臀部，或大转子的位置。</p></p><p class="p3"></p><p class="p3"><strong><span style="">肌力检查</span></strong></p><p class="p3"><strong><span style="">三角肌</span></strong></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7aABKQGAAjOXYE8bYg757_c.png" style="width:100%"></a></p><p class="p5"></p><p class="p3"></p><p class="p3"><span style="">冈上肌</span></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482377721000_480_320.mp4?1482378311" data-videoabs=" 测评冈上肌，需把患者的手臂外展90°，水平方向内收30°，肘关节伸展的状态下旋内。在患者抵抗压力的同时向下推压上臂远端。"><img src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7aAMUd5AAiBonEFCjw419_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:25</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 测评冈上肌，需把患者的手臂外展90°，水平方向内收30°，肘关节伸展的状态下旋内。在患者抵抗压力的同时向下推压上臂远端。</p></p><p class="p3"></p><p class="p3"><strong><span style="">冈下肌和小圆肌</span></strong></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482377786760_480_320.mp4?1482378317" data-videoabs=" 评估冈下肌和小圆肌的强度，将患者的手臂放在体侧旋转中立位，肘部屈曲。托起肘部，在医生给前臂远端从轻到重施加压力试图内旋时，指导患者保持在此位置，对抗医生的力量。"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7aAWrtFAAflm4qOBBA497_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:30</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 评估冈下肌和小圆肌的强度，将患者的手臂放在体侧旋转中立位，肘部屈曲。托起肘部，在医生给前臂远端从轻到重施加压力试图内旋时，指导患者保持在此位置，对抗医生的力量。</p></p><p class="p3"><strong><span style="">Hornblower试验</span></strong></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;"><img src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7aATT6mAAcOGpLuutM443_c.png" style="width:100%"></a></p><p class="p3"></p><p class="p3"></p><p class="p3"></p><p class="p3"><strong><span style="">Gerber试验</span></strong></p><p class="p3"></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482378187053_480_320.mp4?1493660066" data-videoabs=" 检查肩胛下肌损伤和可能存在的肌腱断裂时，嘱患者将手背置于后背部，手心向后，然后嘱患者将手抬离背部，此时检查者予以一定阻力，无法将手抬离背部者为阳性。"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7aALRhOAAlZddABbgI378_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:21</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 检查肩胛下肌损伤和可能存在的肌腱断裂时，嘱患者将手背置于后背部，手心向后，然后嘱患者将手抬离背部，此时检查者予以一定阻力，无法将手抬离背部者为阳性。</p></p><p class="p3"></p><p class="p3"><strong><span style="">前锯肌</span></strong></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482378215102_480_320.mp4?1493149208" data-videoabs=" 评估前锯肌的力量，需要医生用一只手压低患者手臂，另一只手触诊肩胛骨，同时要求患者对抗压力抬起手臂。前锯肌力量正常时，肩胛骨可保持在胸壁位置。前锯肌薄弱时，可见脊柱边缘突出或翼状肩。胸长神经牵拉或撕脱伤所致的前锯肌瘫痪亦可导致翼状肩胛和举过头顶的动作无力。"><img src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7aAUCmMAAknzhnhhus144_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:42</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 评估前锯肌的力量，需要医生用一只手压低患者手臂，另一只手触诊肩胛骨，同时要求患者对抗压力抬起手臂。前锯肌力量正常时，肩胛骨可保持在胸壁位置。前锯肌薄弱时，可见脊柱边缘突出或翼状肩。胸长神经牵拉或撕脱伤所致的前锯肌瘫痪亦可导致翼状肩胛和举过头顶的动作无力。</p></p><p class="p3"><strong><span style="">菱形肌</span></strong></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482378385403_480_320.mp4?1493149360" data-videoabs=" 检查菱形肌功能，要求患者双手置于髂嵴。一手推动患者的肘部使手臂向前，另一手触诊肩胛骨旁的椎体边缘。功能完整的菱形肌可维持肩胛骨紧贴胸壁。"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7aAOm5XAAhMYQmrFKQ793_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:28</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 检查菱形肌功能，要求患者双手置于髂嵴。一手推动患者的肘部使手臂向前，另一手触诊肩胛骨旁的椎体边缘。功能完整的菱形肌可维持肩胛骨紧贴胸壁。</p></p><p class="p3"></p><p class="p3"><strong><span style="">特殊检查</span></strong></p><p class="p3"><strong><span style="">Neer征</span></strong></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482378639318_480_320.mp4?1493660501" data-videoabs=" Neer征有助于评估肩峰撞击或肩袖撕裂。一手放在肩胛骨的后方保持它的解剖位置，另一只手握住患者的手腕使手臂旋内，并处于完全屈曲状态。这个动作将大结节压迫于前肩峰，对患有肩袖撕裂或肩袖肌腱炎的患者可引起不适。对于粘连性关节囊炎，肩关节前方不稳定或关节炎患者也可能造成疼痛。"><img src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7aAJvboAAro7n2QaEw898_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:47</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> Neer征有助于评估肩峰撞击或肩袖撕裂。一手放在肩胛骨的后方保持它的解剖位置，另一只手握住患者的手腕使手臂旋内，并处于完全屈曲状态。这个动作将大结节压迫于前肩峰，对患有肩袖撕裂或肩袖肌腱炎的患者可引起不适。对于粘连性关节囊炎，肩关节前方不稳定或关节炎患者也可能造成疼痛。</p></p><p class="p5"></p><p class="p3"></p><p class="p3"><strong><span style="">Hawkins征</span></strong></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482378671411_480_320.mp4?1493144035" data-videoabs=" Hawkins撞击征是加强版的Neer撞击征。前屈肩部90°，肘部屈曲90°，并将前臂放在旋转中立位。抬起肘部，肱骨旋内。出现疼痛提示肩袖撕裂或肩袖肌腱炎。"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7aAAEzdAAhKm0_yKh4379_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:34</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> Hawkins撞击征是加强版的Neer撞击征。前屈肩部90°，肘部屈曲90°，并将前臂放在旋转中立位。抬起肘部，肱骨旋内。出现疼痛提示肩袖撕裂或肩袖肌腱炎。</p></p><p class="p3"><strong><span style="">交臂或水平内收试验</span></strong></p><p class="p7"></p><p class="p3"></p><p class="p9" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482378722410_480_320.mp4?1493143951" data-videoabs=" 进行交叉内收试验，抬高肩部至90°（A），然后使手臂水平内收越过身体（B）。肩锁关节疼痛提示该处关节炎症或其他病理类型，如扭伤或分离。"><img src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7aAbZMQACbOskAk4Ek770_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:30</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 进行交叉内收试验，抬高肩部至90°（A），然后使手臂水平内收越过身体（B）。肩锁关节疼痛提示该处关节炎症或其他病理类型，如扭伤或分离。</p></p><p class="p3"></p><p class="p3"><strong><span style="">肩关节前方不稳的恐惧征</span></strong></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482378761407_480_320.mp4?1493155149" data-videoabs=" 患者取仰卧位，将手臂90°外展，肘部 90°屈曲。将外前臂轻柔地外旋至90。肩关节前方不稳定的患者可能表现为恐惧不安，有将要脱位的感觉。不伴有恐惧感的疼痛特异性相对较低。"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7eAXDbMAAkN2nTshUg116_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:31</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 患者取仰卧位，将手臂90°外展，肘部 90°屈曲。将外前臂轻柔地外旋至90。肩关节前方不稳定的患者可能表现为恐惧不安，有将要脱位的感觉。不伴有恐惧感的疼痛特异性相对较低。</p></p><p class="p3"></p><p class="p3"><strong><span style="">Sulcus征</span></strong></p><p class="p7"></p><p class="p7"></p><p class="p7"></p><p class="p9" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482378818679_480_320.mp4?1493155269" data-videoabs=" 使患者的手臂放松地置于体侧，一只手放在患者肩胛骨后方，另一只手将患者的手臂向下方牵引。对于肩关节下部松弛的患者，这个动作可引起肱骨头下方半脱位及肱骨与肩峰之间的沟增宽。沟槽阳性表现为可见的凹陷。"><img src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7eABiTNAAlCZ28P9ak916_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:36</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 使患者的手臂放松地置于体侧，一只手放在患者肩胛骨后方，另一只手将患者的手臂向下方牵引。对于肩关节下部松弛的患者，这个动作可引起肱骨头下方半脱位及肱骨与肩峰之间的沟增宽。沟槽阳性表现为可见的凹陷。</p></p><p class="p7"></p><p class="p7"><strong><span style="">肩关节后方不稳的Jerk试验</span></strong></p><p class="p7"></p><p class="p9" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482378888846_480_320.mp4?1493155372" data-videoabs=" 进行肩关节后方不稳的Jerk试验，需将患者的手臂屈曲90°并在肘部屈曲90°的同时做最大程度的内旋（A）。向肘关节施加轴向负荷以向后推动肱骨,同时使手臂在水平面上越过身体（B）。如果这个动作造成后方半脱位或脱位,肱骨头可以感觉到“撞击”或在之后手臂水平外展时回到关节。"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7eASGNRAC4drKsVSE0973_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:41</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 进行肩关节后方不稳的Jerk试验，需将患者的手臂屈曲90°并在肘部屈曲90°的同时做最大程度的内旋（A）。向肘关节施加轴向负荷以向后推动肱骨,同时使手臂在水平面上越过身体（B）。如果这个动作造成后方半脱位或脱位,肱骨头可以感觉到“撞击”或在之后手臂水平外展时回到关节。</p></p><p class="p8"></p><p class="p3"><strong><span style="">Jobe复位试验</span></strong></p><p class="p3"></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482378914249_480_320.mp4?1493155568" data-videoabs=" 使患者处于仰卧位，将肩部90°外展和90°外旋。当外旋至患者出现恐惧感时，施加一个水平向后的力到肱骨近端前方。这个直接向后的力可防止前方半脱位。如果这个动作可以缓解患者的恐惧感和症状，即试验阳性，表示盂肱关节前方不稳定。撤去向后的力会使患者再度产生恐惧感及疼痛。"><img src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7iAKmosAArMtwjxdpc289_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:47</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 使患者处于仰卧位，将肩部90°外展和90°外旋。当外旋至患者出现恐惧感时，施加一个水平向后的力到肱骨近端前方。这个直接向后的力可防止前方半脱位。如果这个动作可以缓解患者的恐惧感和症状，即试验阳性，表示盂肱关节前方不稳定。撤去向后的力会使患者再度产生恐惧感及疼痛。</p></p><p class="p3"></p><p class="p3"></p><p class="p3"></p><p class="p3"><strong><span style="">O’Brien 试验</span></strong></p><p class="p3"></p><p class="p9" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482378938097_480_320.mp4?1493156458" data-videoabs=" 患者坐位或站立，手臂屈曲90°，水平内收20°-30°。使肩关节充分内旋，前臂完全旋前位且大拇指向下（A）。在你向手臂施加向下的压力时，要求患者保持在这个准确的位置。然后保持相同的位置，但上臂旋外且前臂旋后（B）。再次对手臂施加一个向下的力，并要求患者保持这个准确的位置。在第一个动作引起疼痛，第二个动作疼痛减少或消失代表试验阳性。肩顶部的疼痛意味着肩锁关节病变，而肩内部的疼痛则代表滑膜病变。"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7iAOtn4ACKfKkYmGKE857_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:01:00</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 患者坐位或站立，手臂屈曲90°，水平内收20°-30°。使肩关节充分内旋，前臂完全旋前位且大拇指向下（A）。在你向手臂施加向下的压力时，要求患者保持在这个准确的位置。然后保持相同的位置，但上臂旋外且前臂旋后（B）。再次对手臂施加一个向下的力，并要求患者保持这个准确的位置。在第一个动作引起疼痛，第二个动作疼痛减少或消失代表试验阳性。肩顶部的疼痛意味着肩锁关节病变，而肩内部的疼痛则代表滑膜病变。</p></p><p class="p8"></p><p class="p3"></p><p class="p3"><strong><span style="">Speed试验</span></strong></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482386100010_480_320.mp4?1493155782" data-videoabs=" 用一只手稳定患者的手臂，保持肘关节的伸展与前臂旋后以抵抗肩关节的屈曲活动。如果疼痛发生在肱二头肌间沟，则为肱二头肌长头腱鞘炎。试验阳性也可能出现在SLAP（肩关节上盂唇自前向后撕裂）损伤情况下。如果抗阻力旋后出现明显无力，应怀疑肱二头肌远端严重的二度或三度拉伤。"><img src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7iAPOMaABGrp2TAW04301_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:37</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 用一只手稳定患者的手臂，保持肘关节的伸展与前臂旋后以抵抗肩关节的屈曲活动。如果疼痛发生在肱二头肌间沟，则为肱二头肌长头腱鞘炎。试验阳性也可能出现在SLAP（肩关节上盂唇自前向后撕裂）损伤情况下。如果抗阻力旋后出现明显无力，应怀疑肱二头肌远端严重的二度或三度拉伤。</p></p><p class="p3"></p><p class="p3"><strong><span style="">Jobe试验和空杯试验</span></strong></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482386160939_480_320.mp4?1493156591" data-videoabs=" 患者坐位或站立，肘关节完全伸直，肩部外展90°且水平内收30°使手臂处于肩胛平面。最大程度内旋手臂使大拇指指向地面。在患者抵抗的同时向下施加压力。疼痛和/或无力提示冈上肌无力或炎症。"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7iAMUa1ABKLAO0HS84850_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:36</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 患者坐位或站立，肘关节完全伸直，肩部外展90°且水平内收30°使手臂处于肩胛平面。最大程度内旋手臂使大拇指指向地面。在患者抵抗的同时向下施加压力。疼痛和/或无力提示冈上肌无力或炎症。</p></p><p class="p3"></p><p class="p3"></p><p class="p3"><strong><span style="">肩关节前方不稳的Andrews试验</span></strong></p><p class="p3"></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482387363093_480_320.mp4?1493156959" data-videoabs=" 患者取仰卧位，盂肱关节略超过床面边缘。在肘部握住肱骨远端，托起手臂，肩部外展90°，外旋60°到80°。肘部屈曲90°。将你另一手的拇指放在患者腋窝肱骨头的前下方，其余手指置于肱骨头后方。在保持患者肘部屈曲，肩部处于旋转中性位置的状态下，用你的一手只向肱骨施加向后的力，用另一手的手指将肱骨头向前推。用你的大拇指感受盂肱关节前移的量。在你增加盂肱关节外展幅度的同时重复测试。在患者肱骨外展时，你可能会感受到不同程度的前移和松弛。如果关节囊结构完整，你会在每个前方杠杆运动终末感受到一个稳固的终点。并比较双侧。若终点缺失，患者会感到恐惧和疼痛，过度前杠杆运动可能表明关节囊结构损伤，导致前半脱位。"><img src="https://img05.allinmd.cn/public1/M00/46/2D/oYYBAFjPf7iADAnNAArXtur5J3s606_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:01:24</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 患者取仰卧位，盂肱关节略超过床面边缘。在肘部握住肱骨远端，托起手臂，肩部外展90°，外旋60°到80°。肘部屈曲90°。将你另一手的拇指放在患者腋窝肱骨头的前下方，其余手指置于肱骨头后方。在保持患者肘部屈曲，肩部处于旋转中性位置的状态下，用你的一手只向肱骨施加向后的力，用另一手的手指将肱骨头向前推。用你的大拇指感受盂肱关节前移的量。在你增加盂肱关节外展幅度的同时重复测试。在患者肱骨外展时，你可能会感受到不同程度的前移和松弛。如果关节囊结构完整，你会在每个前方杠杆运动终末感受到一个稳固的终点。并比较双侧。若终点缺失，患者会感到恐惧和疼痛，过度前杠杆运动可能表明关节囊结构损伤，导致前半脱位。</p></p><p class="p3"></p><p class="p3"><strong><span style="">压腹试验</span></strong></p><p class="p3"></p><p class="p6" style="text-align: center;"><a href="javascript:;" class="Ev-videoImgSrc" style="position: relative; display: block;" videosrc="https://vpro.allinmd.cn/1482386392801_480_320.mp4?1493661375" data-videoabs=" 让患者的手放在腹部上，使肘关节向前，使手到肘部成一条直线。无法维持在这个位置代表试验阳性。"><img src="https://img05.allinmd.cn/public1/M00/46/47/ooYBAFjPf7iAO48nAAoYzZ8c1bg022_c.png" style="width:100%"><i class="al-terminalVideoBtn"><img src="//img50.allinmd.cn/pages/case/video.png"></i><span class="al-videoTime Ev-videoTime">00:00:25</span></a><p style="color: #666;font-size: 32px;text-align: justify;"> 让患者的手放在腹部上，使肘关节向前，使手到肘部成一条直线。无法维持在这个位置代表试验阳性。</p></p><p class="p3"></p><p class="p3"></p><p class="p3"></p><p class="p3"></p><br><p class="p10"></p></div><div class="d2"><p class="p9"></p></div>
+            </article>
+            <!--我要评分-->
+            <div class="al-myScoreBox al-iAskScore">
+                <span class="iScore">我要评分</span>
+                <ul class="al-littleScoreStarBox ev-scoring">
+                    <li class="ev-startItem"></li>
+                    <li class="ev-startItem"></li>
+                    <li class="ev-startItem"></li>
+                    <li class="ev-startItem"></li>
+                    <li class="ev-startItem"></li>
+                </ul>
+                <p class="ev-scoreDetail" style="min-height: auto;">已有<span class="scoreNum">22</span>人评分<b></b></p>
+            </div>
+            <!--我要评分结束-->
+            <!--所属系列课程-->
+            <article class="al-terminalVideoActivity Ev-article al-belong-series" style=""><!--style="display: none;"--><p>	<span>所属系列课：</span><a class="Ev-articleName" href="//m.allinmd.cn/pages/discover/series/discover_series_details.html?tId=1492501970430#code=1">《人民的名义》全集（共55集）</a></p></article>
+            <!--所属系列课程结束-->
+            <!--标签开始-->
+            <article class="al-terminalContextItem al-terminalContentTags">
+                <h3>标签</h3>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=84" class="al-terminalTags">肩部</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=85" class="al-terminalTags">腋区</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=86" class="al-terminalTags">腋窝</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=87" class="al-terminalTags">三角肌区</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=89" class="al-terminalTags">臂部</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=710" class="al-terminalTags">肩胛骨</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=711" class="al-terminalTags">肩胛下窝</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=712" class="al-terminalTags">后面</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=713" class="al-terminalTags">肩胛冈</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=714" class="al-terminalTags">冈上窝</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=715" class="al-terminalTags">冈下窝</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=716" class="al-terminalTags">肩峰</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=723" class="al-terminalTags">肩胛切迹</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=724" class="al-terminalTags">上角</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=725" class="al-terminalTags">下角</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=726" class="al-terminalTags">外侧角</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=735" class="al-terminalTags">锁骨体</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=737" class="al-terminalTags">肩峰端</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=741" class="al-terminalTags">臂</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=743" class="al-terminalTags">肱骨头</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=1164" class="al-terminalTags">肩关节</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=20114" class="al-terminalTags">盂肱关节的生物力学</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=20115" class="al-terminalTags">肩部其他结构生物力学</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=20116" class="al-terminalTags">肩关节生物力学特点</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=20139" class="al-terminalTags">四肢关节物理检查</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=20141" class="al-terminalTags">骨科相关感觉检查</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=20142" class="al-terminalTags">骨科相关运动检查</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=20143" class="al-terminalTags">骨科相关反射检查</a>
+                <a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=20144" class="al-terminalTags">骨科相关自主神经检查</a>
+
+            </article>
+            <!--标签结束-->
+
+            <!--所属书籍-->
+            <article class="al-terminalVideoActivity Ev-article" style=""><!--style="display: none;"-->
+                <p><span>所属书籍：</span><a class="Ev-articleName" href="//m.allinmd.cn/pages/eBook/eBook_details.html?bId=1486633674609">《美国骨科医师协会骨科疾病诊疗...》</a></p>
+            </article>
+            <!--所属书籍结束-->
+
+            <!--分享区-->
+            <section class="al-terminalShare">
+                <h3>分享给好友 共同讨论</h3>
+                <section class="al-terminalShareItem Ev-shareBtn" ref="trend">
+                    <figure class="al-bottomShareImg">
+                        <img src="/images/img50/pages/index/share_allin.png" _mce_src="/images/img50/pages/index/share_allin.png" alt=""></figure>
+                    <figcaption>站内动态</figcaption>
+                </section>
+                <section class="al-terminalShareItem Ev-shareBtn" ref="qzone">
+                    <figure class="al-bottomShareImg">
+                        <img src="/images/img50/pages/index/share_kongjian.png" _mce_src="//m.allinmd.cn/images/img50/pages/index/share_kongjian.png" alt="">
+                    </figure>
+                    <figcaption>QQ空间</figcaption>
+                </section>
+                <section class="al-terminalShareItem Ev-shareBtn" ref="sina">
+                    <figure class="al-bottomShareImg">
+                        <img src="/images/img50/pages/index/share_weibo.png" alt="">
+                    </figure>
+                    <figcaption>微博</figcaption>
+                </section>
+            </section>
+            <!--分享区结束-->
+
+            <!--上一篇，下一篇-->
+            <footer class="al-terminalDocPagesChange">
+                <section class="al-terminalDocPage Ev-prevArticle">
+                    <a href="https://m.allinmd.cn/html/m/doc//2017/02/17/1487297485148.html"><img src="//m.allinmd.cn/images/img50/pages/personal/arrow_back.png" alt=""><span>上一篇</span></a>
+                </section>
+                <i class="line"></i>
+                <section class="al-terminalDocPage Ev-nextArticle">
+                    <a href="https://m.allinmd.cn/html/m/doc//2017/03/10/1489127547224.html"><span>下一篇</span><img src="//m.allinmd.cn/images/img50/pages/personal/arrow_back.png" alt=""></a>
+                </section>
+            </footer>
+            <!--上一篇，下一篇结束-->
+
+        </section>
+        <!--文章主体内容结束-->
+
+    </section>
+    <!--文章主体内容结束-->
+    <!--相关产品-->
+    <figure class="al-productRecommendPart" style="display: none;">
+        <figcaption>相关产品(<span class="num"></span>)</figcaption>
+        <div class="al-productListMoveBox">
+            <ul class="al-productRecommendListBox" id="al-productRecommendListBox" style="width:3000px;position:relative;left:0;">
+            </ul>
+        </div>
+    </figure>
+    <!--相关产品结束-->
+    <!--评论区-->
+    <section class="al-terminalMainContent al-terminalCommentContent Ev-discussArea">
+        <h2 style="position: static;">
+            评论(<span class="Ev-navReviewNum">4</span>)
+            <section class="al-terminalSortChange">
+                <button class="al-terminalSortChangeItem" sorttype="3">最新</button>
+                <button class="al-terminalSortChangeItem active" sorttype="1">最旧</button>
+            </section>
+        </h2>
+        <section class="al-terminalComment">
+            <div id="EQ_newReplyList"><div data-reactid=".0"><section class="al-terminalCommentItem" data-reactid=".0.$239040"><header class="al-terminalCommentItemHeader" data-reactid=".0.$239040.0"><figure class="al-terminalCommentItemImg" data-reactid=".0.$239040.0.0"><a href="/pages/personal/others_contribution.html?cid=1474092459737" data-ajax="false" data-reactid=".0.$239040.0.0.0"><img src="https://img05.allinmd.cn/public1/M00/21/93/oYYBAFfc3yyATh19AADXL5j1ISU914_c_p_100_100.jpg" data-reactid=".0.$239040.0.0.0.0"></a></figure><figcaption class="al-terminalCommentItemHeadMsg" data-reactid=".0.$239040.0.1"><h3 data-reactid=".0.$239040.0.1.0"><a href="/pages/personal/others_contribution.html?cid=1474092459737" data-reactid=".0.$239040.0.1.0.0">李永明</a><i class="" data-reactid=".0.$239040.0.1.0.1"></i><span data-reactid=".0.$239040.0.1.0.2"></span></h3><p data-reactid=".0.$239040.0.1.1">黄山市康复医院</p><span class="al-terminalCommentTime" data-reactid=".0.$239040.0.1.2">2017-05-12</span></figcaption></header><article class="al-terminalCommentContent" data-reactid=".0.$239040.1"><span data-reactid=".0.$239040.1.0"></span><p class="content" data-reactid=".0.$239040.1.1"><span data-reactid=".0.$239040.1.1.0">好东西，肩关节镜入门必须掌握</span></p></article><span data-reactid=".0.$239040.2"></span><span data-reactid=".0.$239040.3"></span><article class="al-terminalCommentSnsMsg" data-reactid=".0.$239040.5"><a href="//m.allinmd.cn/pages/common/comment.html?resourceId=1489126425933&amp;username=李永明&amp;type=2&amp;parentId=239040" class="al-terminalCommentSnsItem ev-review" data-ajax="false" data-reactid=".0.$239040.5.0"><i class="icon-terminalComment" data-reactid=".0.$239040.5.0.0"><span data-reactid=".0.$239040.5.0.0.0">0</span></i></a><button class="al-terminalCommentSnsItem ev-praise" data-reactid=".0.$239040.5.1"><i class="icon-terminalLike" data-reactid=".0.$239040.5.1.0"><span data-reactid=".0.$239040.5.1.0.0">0</span></i></button><a class="al-terminalCommentSnsItem" href="http://m.allinmd.cn/pages/personal/details_content.html?refCustomerId=1474092459737&amp;refId=1489126425933&amp;refType=2&amp;reviewId=239040&amp;refName=肩关节体格检查&amp;refUrl=https://m.allinmd.cn/html/m/doc//2017/03/10/1489126425933.html" data-reactid=".0.$239040.5.2"><span class="more" data-reactid=".0.$239040.5.2.0">···</span></a></article></section><section class="al-terminalCommentItem" data-reactid=".0.$241041"><header class="al-terminalCommentItemHeader" data-reactid=".0.$241041.0"><figure class="al-terminalCommentItemImg" data-reactid=".0.$241041.0.0"><a href="/pages/personal/others_contribution.html?cid=1490701438241" data-ajax="false" data-reactid=".0.$241041.0.0.0"><img src="https://img05.allinmd.cn/public1/M00/46/8F/ooYBAFjaTdOAY43mAAChuNhT8Y8255_c_p_100_100.jpg" data-reactid=".0.$241041.0.0.0.0"></a></figure><figcaption class="al-terminalCommentItemHeadMsg" data-reactid=".0.$241041.0.1"><h3 data-reactid=".0.$241041.0.1.0"><a href="/pages/personal/others_contribution.html?cid=1490701438241" data-reactid=".0.$241041.0.1.0.0">折起富</a><i class="" data-reactid=".0.$241041.0.1.0.1"></i><span data-reactid=".0.$241041.0.1.0.2"></span></h3><p data-reactid=".0.$241041.0.1.1">岷县中医院</p><span class="al-terminalCommentTime" data-reactid=".0.$241041.0.1.2">2017-05-21</span></figcaption></header><article class="al-terminalCommentContent" data-reactid=".0.$241041.1"><span data-reactid=".0.$241041.1.0"></span><p class="content" data-reactid=".0.$241041.1.1"><span data-reactid=".0.$241041.1.1.0">视频怎么不能播放?</span></p></article><span data-reactid=".0.$241041.2"></span><span data-reactid=".0.$241041.3"></span><section class="al-al-terminalCommentSns" data-parentid="0" data-cid="1489126425933" data-reactid=".0.$241041.5"><a class="al-checkComment" href="http://m.allinmd.cn/pages/personal/details_discuss.html?refCustomerId=1490701438241&amp;refId=1489126425933&amp;refType=2&amp;reviewId=241041&amp;refName=肩关节体格检查&amp;refUrl=https://m.allinmd.cn/html/m/doc//2017/03/10/1489126425933.html" data-reactid=".0.$241041.5.0">查看讨论</a><article class="al-terminalCommentSnsMsg" data-reactid=".0.$241041.5.1"><a href="//m.allinmd.cn/pages/common/comment.html?resourceId=1489126425933&amp;username=折起富&amp;type=2&amp;parentId=241041" class="al-terminalCommentSnsItem ev-review" data-ajax="false" data-reactid=".0.$241041.5.1.0"><i class="icon-terminalComment" data-reactid=".0.$241041.5.1.0.0"><span data-reactid=".0.$241041.5.1.0.0.0">1</span></i></a><button class="al-terminalCommentSnsItem ev-praise" data-reactid=".0.$241041.5.1.1"><i class="icon-terminalLike" data-reactid=".0.$241041.5.1.1.0"><span data-reactid=".0.$241041.5.1.1.0.0">0</span></i></button><a class="al-terminalCommentSnsItem" href="http://m.allinmd.cn/pages/personal/details_content.html?refCustomerId=1490701438241&amp;refId=1489126425933&amp;refType=2&amp;reviewId=241041&amp;refName=肩关节体格检查&amp;refUrl=https://m.allinmd.cn/html/m/doc//2017/03/10/1489126425933.html" data-reactid=".0.$241041.5.1.2"><span class="more" data-reactid=".0.$241041.5.1.2.0">···</span></a></article></section></section><section class="al-terminalCommentItem" data-reactid=".0.$241214"><header class="al-terminalCommentItemHeader" data-reactid=".0.$241214.0"><figure class="al-terminalCommentItemImg" data-reactid=".0.$241214.0.0"><a href="/pages/personal/others_contribution.html?cid=1470281225098" data-ajax="false" data-reactid=".0.$241214.0.0.0"><img src="https://img05.allinmd.cn/public1/M00/1E/AF/oYYBAFfE4AuAP211AAEJypS0aZA721_c_p_100_100.png" data-reactid=".0.$241214.0.0.0.0"></a></figure><figcaption class="al-terminalCommentItemHeadMsg" data-reactid=".0.$241214.0.1"><h3 data-reactid=".0.$241214.0.1.0"><a href="/pages/personal/others_contribution.html?cid=1470281225098" data-reactid=".0.$241214.0.1.0.0">唯医小助手</a><i class="" data-reactid=".0.$241214.0.1.0.1"></i><span data-reactid=".0.$241214.0.1.0.2"></span></h3><p data-reactid=".0.$241214.0.1.1">唯医</p><span class="al-terminalCommentTime" data-reactid=".0.$241214.0.1.2">2017-05-23</span></figcaption></header><article class="al-terminalCommentContent" data-reactid=".0.$241214.1"><p class="quoteComment" data-reactid=".0.$241214.1.0"><span data-reactid=".0.$241214.1.0.0">折起富:</span><span data-reactid=".0.$241214.1.0.1">视频怎么不能播放?</span></p><p class="content" data-reactid=".0.$241214.1.1"><span data-reactid=".0.$241214.1.1.0">折老师，您好！工作人员测试视频播放是正常的，建议您检查下您的网络状态。如果依然无法播放的话，您可以添加小唯微信（微信号：Allinmd2014），它会协助您解决遇到的问题。感谢您对唯医的支持！</span></p></article><span data-reactid=".0.$241214.2"></span><span data-reactid=".0.$241214.3"></span><section class="al-al-terminalCommentSns" data-parentid="241041" data-cid="1489126425933" data-reactid=".0.$241214.5"><a class="al-checkComment" href="http://m.allinmd.cn/pages/personal/details_discuss.html?refCustomerId=1470281225098&amp;refId=1489126425933&amp;refType=2&amp;reviewId=241214&amp;refName=肩关节体格检查&amp;refUrl=https://m.allinmd.cn/html/m/doc//2017/03/10/1489126425933.html" data-reactid=".0.$241214.5.0">查看讨论</a><article class="al-terminalCommentSnsMsg" data-reactid=".0.$241214.5.1"><a href="//m.allinmd.cn/pages/common/comment.html?resourceId=1489126425933&amp;username=唯医小助手&amp;type=2&amp;parentId=241214" class="al-terminalCommentSnsItem ev-review" data-ajax="false" data-reactid=".0.$241214.5.1.0"><i class="icon-terminalComment" data-reactid=".0.$241214.5.1.0.0"><span data-reactid=".0.$241214.5.1.0.0.0">1</span></i></a><button class="al-terminalCommentSnsItem ev-praise" data-reactid=".0.$241214.5.1.1"><i class="icon-terminalLike" data-reactid=".0.$241214.5.1.1.0"><span data-reactid=".0.$241214.5.1.1.0.0">0</span></i></button><a class="al-terminalCommentSnsItem" href="http://m.allinmd.cn/pages/personal/details_content.html?refCustomerId=1470281225098&amp;refId=1489126425933&amp;refType=2&amp;reviewId=241214&amp;refName=肩关节体格检查&amp;refUrl=https://m.allinmd.cn/html/m/doc//2017/03/10/1489126425933.html" data-reactid=".0.$241214.5.1.2"><span class="more" data-reactid=".0.$241214.5.1.2.0">···</span></a></article></section></section><section class="al-terminalCommentItem" data-reactid=".0.$246369"><header class="al-terminalCommentItemHeader" data-reactid=".0.$246369.0"><figure class="al-terminalCommentItemImg" data-reactid=".0.$246369.0.0"><a href="/pages/personal/others_contribution.html?cid=1483052827548" data-ajax="false" data-reactid=".0.$246369.0.0.0"><img src="https://img00.allinmd.cn/default-user/doctor02.jpg" data-reactid=".0.$246369.0.0.0.0"></a></figure><figcaption class="al-terminalCommentItemHeadMsg" data-reactid=".0.$246369.0.1"><h3 data-reactid=".0.$246369.0.1.0"><a href="/pages/personal/others_contribution.html?cid=1483052827548" data-reactid=".0.$246369.0.1.0.0">张宏波</a><i class="" data-reactid=".0.$246369.0.1.0.1"></i><span data-reactid=".0.$246369.0.1.0.2"></span></h3><p data-reactid=".0.$246369.0.1.1">托县医院</p><span class="al-terminalCommentTime" data-reactid=".0.$246369.0.1.2">2017-06-11</span></figcaption></header><article class="al-terminalCommentContent" data-reactid=".0.$246369.1"><p class="quoteComment" data-reactid=".0.$246369.1.0"><span data-reactid=".0.$246369.1.0.0">唯医小助手:</span><span data-reactid=".0.$246369.1.0.1">折老师，您好！工作人员测试视频播放是正常的，建议您检查下您的网络状态。如果依然无法播放的话，您可以添加小唯微信（微信号：Allinmd2014），它会...</span></p><p class="content" data-reactid=".0.$246369.1.1"><span data-reactid=".0.$246369.1.1.0">唯医怎么没有下载文件夹。在文件管理中找不见。</span></p></article><span data-reactid=".0.$246369.2"></span><span data-reactid=".0.$246369.3"></span><article class="al-terminalCommentSnsMsg" data-reactid=".0.$246369.5"><a href="//m.allinmd.cn/pages/common/comment.html?resourceId=1489126425933&amp;username=张宏波&amp;type=2&amp;parentId=246369" class="al-terminalCommentSnsItem ev-review" data-ajax="false" data-reactid=".0.$246369.5.0"><i class="icon-terminalComment" data-reactid=".0.$246369.5.0.0"><span data-reactid=".0.$246369.5.0.0.0">0</span></i></a><button class="al-terminalCommentSnsItem ev-praise" data-reactid=".0.$246369.5.1"><i class="icon-terminalLike" data-reactid=".0.$246369.5.1.0"><span data-reactid=".0.$246369.5.1.0.0">0</span></i></button><a class="al-terminalCommentSnsItem" href="http://m.allinmd.cn/pages/personal/details_content.html?refCustomerId=1483052827548&amp;refId=1489126425933&amp;refType=2&amp;reviewId=246369&amp;refName=肩关节体格检查&amp;refUrl=https://m.allinmd.cn/html/m/doc//2017/03/10/1489126425933.html" data-reactid=".0.$246369.5.2"><span class="more" data-reactid=".0.$246369.5.2.0">···</span></a></article></section></div></div>
+            <section class="al-terminalNoComment" style="display: none;">
+                <span>暂无评论，快“加入讨论”参与进来~</span>
+            </section>
+        </section>
+    </section>
+    <!--评论区结束-->
+
+    <!--没有更多-->
+    <article class="al-terminalFinish" style="">
+        ~<span>没有更多了</span>~
+    </article>
+    <!--没有更多-->
+
+    <!--底部悬浮-->
+    <footer class="al-terminalFooter">
+        <figure class="al-terminalFooterItem Ev-backBtn">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalBack"></i>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem al-terminalJoinDiscuss Ev-discussBtn">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalJoin"><span>加入讨论</span></i>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-reviewNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalCommentNum"></i>
+                <span class="al-newsNum" style="">4</span>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-praiseNum on">
+            <a href="javascript:void(0)">
+                <i class="icon-terminallike"></i>
+                <span class="al-newsNum" style="">74</span>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-collectNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalCollect"></i>
+                <span class="al-newsNum" style="">251</span>
+            </a>
+        </figure>
+    </footer>
+    <!--底部悬浮结束-->
+
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482377625059"> 正常肩关节运动是一种联合了盂肱关节和肩胛骨/胸廓运动的复合运动。肩胛运动由来自肩锁关节和胸锁关节的运动。肩关节的活动从四个方面进行评估：屈曲，手臂在体侧的外旋，手臂外展90°后的外旋和内旋。
+        评估肩关节屈曲范围，使手臂置于身侧（A）。要求患者在矢状面抬起手臂（B），以胸椎为参照测量主动和被动运动范围。正常肩关节屈曲范围为160°-170°。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482377758462"> 测评冈上肌，需把患者的手臂外展90°，水平方向内收30°，肘关节伸展的状态下旋内。在患者抵抗压力的同时向下推压上臂远端。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482377761006"> 评估肩峰下滑囊，需触诊肩峰的前外侧部分，沿着三角肌下移至触到肩肱间隙为止。该区域压痛通常与肩峰下滑囊炎或肩袖撕裂（冈上肌腱）相关。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482377807379"> 评价内旋运动，要求患者将手臂尽可能高地放在背后。标记下最高处大拇指对应的棘突。这个动作简单易行，但它代表了一种复合运动，它同时取决于肩部的伸展和肩胛骨的牵引及肘、腕和拇指的运动。年轻的成年人通常可以超越的肩胛骨下角（约在T7水平）。患有粘连性关节囊炎或退行性关节炎的患者其内旋运动可能会严重受限。这些患者的拇指可能只能达到骶骨，臀部，或大转子的位置。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482377851069"> 评估冈下肌和小圆肌的强度，将患者的手臂放在体侧旋转中立位，肘部屈曲。托起肘部，在医生给前臂远端从轻到重施加压力试图内旋时，指导患者保持在此位置，对抗医生的力量。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482378033755"> 患者站立位，观察异常的轮廓和骨性突起。肩锁关节脱位可在锁骨远端产生阶梯样畸形。肩关节前脱位会使肩峰后侧突出和三角肌前方膨隆，并且上肢会处于一个轻度外展和内旋的强迫体位。与此相反的是，肩关节后脱位会使喙突和肩峰前侧产生突出，三角肌后方膨隆，上肢处于内收和内旋的强迫体位。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482378089760"> 患者站立位，注意肩部高度和轮廓的对称性（休息时优势肩往往略低于对侧肩）。观察是否有肌肉萎缩，特别是斜方肌、三角肌和冈下肌。
+        颈部到肩部后方轮廓的缩小提示斜方肌萎缩。伴随冈上肌/冈下肌萎缩时，三角肌区肩外侧轮廓会缩小，可看到突出的肩胛冈。在观察肩后部时，让患者在肩胛平面抬高双臂到水平位，并评价双侧肩胛是否有任何运动障碍（视频中未显示）。
+    </div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482378143847"> 评估肱二头肌长头肌腱，需在肱骨结节间沟触诊肱骨头。肌腱炎患者会有压痛和肿胀，肩部转动时压痛部位会随着肱骨头移动。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482378182123"> 评估外旋运动，将患者的手臂放在体侧，放松地抵住胸壁，肘部屈曲90°，前臂平行于身体的矢状面（A）。通过评估上臂的最大向外旋转角度测量外旋范围（B）。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482378377574"> 检查肩胛下肌损伤和可能存在的肌腱断裂时，嘱患者将手背置于后背部，手心向后，然后嘱患者将手抬离背部，此时检查者予以一定阻力，无法将手抬离背部者为阳性。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482378379597"> 患者站立位，观察异常的轮廓和骨性突起。肩锁关节脱位可在锁骨远端产生阶梯样畸形。肩关节前脱位会使肩峰后侧突出和三角肌前方膨隆，并且上肢会处于一个轻度外展和内旋的强迫体位。与此相反的是，肩关节后脱位会使喙突和肩峰前侧产生突出，三角肌后方膨隆，上肢处于内收和内旋的强迫体位。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482378629439"> 检查菱形肌功能，要求患者双手置于髂嵴。一手推动患者的肘部使手臂向前，另一手触诊肩胛骨旁的椎体边缘。功能完整的菱形肌可维持肩胛骨紧贴胸壁。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482378636193"> 评估前锯肌的力量，需要医生用一只手压低患者手臂，另一只手触诊肩胛骨，同时要求患者对抗压力抬起手臂。前锯肌力量正常时，肩胛骨可保持在胸壁位置。前锯肌薄弱时，可见脊柱边缘突出或翼状肩。胸长神经牵拉或撕脱伤所致的前锯肌瘫痪亦可导致翼状肩胛和举过头顶的动作无力。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482378815555"> Neer征有助于评估肩峰撞击或肩袖撕裂。一手放在肩胛骨的后方保持它的解剖位置，另一只手握住患者的手腕使手臂旋内，并处于完全屈曲状态。这个动作将大结节压迫于前肩峰，对患有肩袖撕裂或肩袖肌腱炎的患者可引起不适。对于粘连性关节囊炎，肩关节前方不稳定或关节炎患者也可能造成疼痛。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482378875329"> 进行交叉内收试验，抬高肩部至90°（A），然后使手臂水平内收越过身体（B）。肩锁关节疼痛提示该处关节炎症或其他病理类型，如扭伤或分离。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482378879214"> Hawkins撞击征是加强版的Neer撞击征。前屈肩部90°，肘部屈曲90°，并将前臂放在旋转中立位。抬起肘部，肱骨旋内。出现疼痛提示肩袖撕裂或肩袖肌腱炎。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482378973719"> 患者取仰卧位，将手臂90°外展，肘部 90°屈曲。将外前臂轻柔地外旋至90。肩关节前方不稳定的患者可能表现为恐惧不安，有将要脱位的感觉。不伴有恐惧感的疼痛特异性相对较低。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482386086397"> 进行肩关节后方不稳的Jerk试验，需将患者的手臂屈曲90°并在肘部屈曲90°的同时做最大程度的内旋（A）。向肘关节施加轴向负荷以向后推动肱骨,同时使手臂在水平面上越过身体（B）。如果这个动作造成后方半脱位或脱位,肱骨头可以感觉到“撞击”或在之后手臂水平外展时回到关节。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482386089804"> 使患者处于仰卧位，将肩部90°外展和90°外旋。当外旋至患者出现恐惧感时，施加一个水平向后的力到肱骨近端前方。这个直接向后的力可防止前方半脱位。如果这个动作可以缓解患者的恐惧感和症状，即试验阳性，表示盂肱关节前方不稳定。撤去向后的力会使患者再度产生恐惧感及疼痛。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482386092315"> 患者坐位或站立，手臂屈曲90°，水平内收20°-30°。使肩关节充分内旋，前臂完全旋前位且大拇指向下（A）。在你向手臂施加向下的压力时，要求患者保持在这个准确的位置。然后保持相同的位置，但上臂旋外且前臂旋后（B）。再次对手臂施加一个向下的力，并要求患者保持这个准确的位置。在第一个动作引起疼痛，第二个动作疼痛减少或消失代表试验阳性。肩顶部的疼痛意味着肩锁关节病变，而肩内部的疼痛则代表滑膜病变。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482386095566"> 使患者的手臂放松地置于体侧，一只手放在患者肩胛骨后方，另一只手将患者的手臂向下方牵引。对于肩关节下部松弛的患者，这个动作可引起肱骨头下方半脱位及肱骨与肩峰之间的沟增宽。沟槽阳性表现为可见的凹陷。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482386360383"> 用一只手稳定患者的手臂，保持肘关节的伸展与前臂旋后以抵抗肩关节的屈曲活动。如果疼痛发生在肱二头肌间沟，则为肱二头肌长头腱鞘炎。试验阳性也可能出现在SLAP（肩关节上盂唇自前向后撕裂）损伤情况下。如果抗阻力旋后出现明显无力，应怀疑肱二头肌远端严重的二度或三度拉伤。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482386362051"> 患者坐位或站立，肘关节完全伸直，肩部外展90°且水平内收30°使手臂处于肩胛平面。最大程度内旋手臂使大拇指指向地面。在患者抵抗的同时向下施加压力。疼痛和/或无力提示冈上肌无力或炎症。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482386496234"> 让患者的手放在腹部上，使肘关节向前，使手到肘部成一条直线。无法维持在这个位置代表试验阳性。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482387568806"> 患者取仰卧位，盂肱关节略超过床面边缘。在肘部握住肱骨远端，托起手臂，肩部外展90°，外旋60°到80°。肘部屈曲90°。将你另一手的拇指放在患者腋窝肱骨头的前下方，其余手指置于肱骨头后方。在保持患者肘部屈曲，肩部处于旋转中性位置的状态下，用你的一手只向肱骨施加向后的力，用另一手的手指将肱骨头向前推。用你的大拇指感受盂肱关节前移的量。在你增加盂肱关节外展幅度的同时重复测试。在患者肱骨外展时，你可能会感受到不同程度的前移和松弛。如果关节囊结构完整，你会在每个前方杠杆运动终末感受到一个稳固的终点。并比较双侧。若终点缺失，患者会感到恐惧和疼痛，过度前杠杆运动可能表明关节囊结构损伤，导致前半脱位。</div>
+    <div class="Ev-vAbsArticle" style="display:none;" data-videoid="1482834078748"> 评估外旋范围，量角器是必要的。患者的上臂外展90°，与肩胛骨平面一致，肘部屈曲 90°，前臂与地面平行（A）。通过测量前臂在此位置与初始平行位置的夹角度数来评估外旋范围（B）。此位置上外旋的受限可见于一些未进行合适的拉伸而强调强化练习的运动员和经历过肩部重建手术的患者。</div>
+
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="//paas.allinmd.cn/modules/photoswipe/photoswipe.min.js"></script>
+<script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe-ui-default.js"></script>
+<script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+<script src="/js/react/JSXTransformer.js"></script>
+<script src="/js/react/react.js"></script>
+<script src="//paas.allinmd.cn/modules/allinmdplayer/video.js"></script>
+<script src="//paas.allinmd.cn/modules/allinmdplayer/videojs.allinmd.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<script>
+    var absVideoData=[];
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482377499423_480_320.mp4?1482378307","videoId":"1482377625059","playTime":"00:01:00"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482377721000_480_320.mp4?1482378311","videoId":"1482377758462","playTime":"00:00:25"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482377464360_480_320.mp4?1482378313","videoId":"1482377761006","playTime":"00:00:25"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482377764284_480_320.mp4?1482378315","videoId":"1482377807379","playTime":"00:00:54"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482377786760_480_320.mp4?1482378317","videoId":"1482377851069","playTime":"00:00:30"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482377899770_480_320.mp4?1493146602","videoId":"1482378033755","playTime":"00:00:45"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482377929454_480_320.mp4?1493148503","videoId":"1482378089760","playTime":"00:00:41"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482378039563_480_320.mp4?1493144100","videoId":"1482378143847","playTime":"00:00:23"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482378065388_480_320.mp4?1493145901","videoId":"1482378182123","playTime":"00:00:27"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482378187053_480_320.mp4?1493660066","videoId":"1482378377574","playTime":"00:00:21"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482377986377_480_320.mp4?1493695469","videoId":"1482378379597","playTime":"00:00:25"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482378385403_480_320.mp4?1493149360","videoId":"1482378629439","playTime":"00:00:28"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482378215102_480_320.mp4?1493149208","videoId":"1482378636193","playTime":"00:00:42"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482378639318_480_320.mp4?1493660501","videoId":"1482378815555","playTime":"00:00:47"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482378722410_480_320.mp4?1493143951","videoId":"1482378875329","playTime":"00:00:30"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482378671411_480_320.mp4?1493144035","videoId":"1482378879214","playTime":"00:00:34"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482378761407_480_320.mp4?1493155149","videoId":"1482378973719","playTime":"00:00:31"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482378888846_480_320.mp4?1493155372","videoId":"1482386086397","playTime":"00:00:41"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482378914249_480_320.mp4?1493155568","videoId":"1482386089804","playTime":"00:00:47"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482378938097_480_320.mp4?1493156458","videoId":"1482386092315","playTime":"00:01:00"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482378818679_480_320.mp4?1493155269","videoId":"1482386095566","playTime":"00:00:36"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482386100010_480_320.mp4?1493155782","videoId":"1482386360383","playTime":"00:00:37"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482386160939_480_320.mp4?1493156591","videoId":"1482386362051","playTime":"00:00:36"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482386392801_480_320.mp4?1493661375","videoId":"1482386496234","playTime":"00:00:25"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482387363093_480_320.mp4?1493156959","videoId":"1482387568806","playTime":"00:01:24"});
+    absVideoData.push({"APPMp4Url":"https://vpro.allinmd.cn/1482834051251_480_320.mp4?1482790938","videoId":"1482834078748","playTime":"00:00:50"});
+</script>
+<script src="/dest/pages/detail/detail_ebook.js"></script>
+<script type="text/jsx" src="/js/scene/case/comment.jsx" charset="utf-8"></script>
+
+
+
+<section class="al-middleTipsBox"><section class="al-middleTipsModal ev-loading" style="display: none;"><figure class="al-middleTipsModalText al-loading"><img src="//img50.allinmd.cn/pages/default/loading.png" alt=""></figure></section></section><div id="chrome_websiteIP" class="chrome_websiteIP_right">182.92.25.177</div></body></html>

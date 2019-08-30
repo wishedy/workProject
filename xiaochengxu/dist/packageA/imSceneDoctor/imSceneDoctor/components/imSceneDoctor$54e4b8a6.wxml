@@ -1,0 +1,144 @@
+<import src="/components/reportDetails$30b93866" />
+<import src="/components/medicalReport$6037bd9d" />
+<import src="/components/middleTips$276c37b6" />
+<import src="/components/payFinishTips$22cb48ab" />
+<import src="/components/outpatientInvite$15d57a18" />
+<import src="/components/outpatientAppointment$07716420" />
+<import src="/components/outpatientService$e3ad1e94" />
+<import src="/components/doctorAdvice$e76b80a2" />
+<import src="/components/sendCount$286b17df" />
+<import src="/components/content$1375f61e" />
+<import src="/components/image$44075e5a" />
+<import src="/components/mulitpleImage$4c70da59" />
+<import src="/components/video$61c72bf3" />
+<import src="/components/fileMessage$740ed663" />
+<import src="/components/patientNodeMsg$7a2dde92" />
+<import src="/components/serviceComment$ad4a0dbc" />
+<import src="/components/bottomTips$1739aebb" />
+<import src="/components/loading$2ff823fe" />
+<import src="/components/toast$1074ede9" />
+<import src="/components/suggestion$6da2a432" />
+<import src="/components/backIndex$640b7ced" />
+<import src="/components/reportImageUpload$22ce0660" />
+<import src="/components/BlackList$219144df" /><template name="imSceneDoctor$54e4b8a6">
+  <view class="_section data-v-1598236b main-inner" bindtap="handleProxy" data-eventid="{{'18'}}" data-comkey="{{$k}}">
+    <block wx:if="{{caseType == '15' && lastTimeShow && receiveTreatmentStatus}}">
+      <view class="_article data-v-1598236b main-message-time meinianHeader"> 免费问诊 </view>
+    </block>
+    <block wx:else>
+      <view class="_article data-v-1598236b main-message-time" wx:if="{{totalCount===0&&lastTimeShow&&receiveTreatmentStatus}}">
+        <view class="_article data-v-1598236b">
+          <view class="_p data-v-1598236b">医生回复剩余次数</view> <label class="_span data-v-1598236b">{{lastCount}}</label>
+          <view class="_p data-v-1598236b">次</view>
+        </view>
+        <view class="_article data-v-1598236b">
+          <view class="_p data-v-1598236b">对话剩余时间</view> <label class="_span data-v-1598236b">{{lastTimeText}}</label>
+          <view class="_p data-v-1598236b"></view>
+        </view>
+      </view>
+      <view class="_article data-v-1598236b main-message-time" wx:if="{{totalCount>0&&lastTimeShow&&receiveTreatmentStatus}}">
+        <view class="_article data-v-1598236b">
+          <view class="_p data-v-1598236b">唯医骨科送您</view> <label class="_span data-v-1598236b">50</label>
+          <view class="_p data-v-1598236b">次医生回复机会</view>
+        </view>
+        <view class="_article data-v-1598236b">
+          <view class="_p data-v-1598236b">剩余次数：</view> <label class="_span data-v-1598236b">{{lastCount}}</label>
+          <view class="_p data-v-1598236b">次</view>
+        </view>
+      </view>
+    </block>
+    <view class="_article data-v-1598236b main-message-time doctor-title-message" wx:if="{{getTargetMsgFinish&&!lastTimeShow}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+      <view class="_figure data-v-1598236b doctor-title-img">
+        <image src="{{targetMsg.avatar}}" alt class="_img data-v-1598236b"></image>
+      </view>
+      <view class="_figcaption data-v-1598236b doctor-title-content">
+        <view class="_h4 data-v-1598236b name">{{targetMsg.nick}}</view> <label class="_span data-v-1598236b title" wx:if="{{targetMsg.title}}">{{doctorTitleName}}</label> <label class="_span data-v-1598236b hospital">{{targetMsg.hospital}}</label>
+        <view class="_i data-v-1598236b icon-rightArrow"></view>
+      </view>
+    </view>
+    <view class="_section data-v-1598236b main-message {{[  footerBottomFlag || bottomTipsType !== '' ? 'showBottomPd' : '',  !ios ? 'android' : '']}}" bindtap="handleProxy" bindtouchmove="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}">
+      <view class="_section data-v-1598236b main-message-wrapper" wx:key="msg.idClient" key="{{msg.idClient}}" wx:for="{{msgList}}" wx:for-index="index" wx:for-item="msg">
+        <view class="_p data-v-1598236b time-stamp" wx:if="{{timeStampShowList[index]==1}}">
+          {{msg.timeStamp}}</view> <template wx:if="{{msg.type==='custom'&&msg.content.type==='reportOrder'}}" ref="reportOrder" data="{{...$root[$kk+'2-'+index], $root}}" is="reportDetails$30b93866"></template> <template wx:if="{{msg.type==='custom' && msg.content.type==='medicalReport'}}" data="{{...$root[$kk+'3-'+index], $root}}" is="medicalReport$6037bd9d"></template> <template wx:if="{{msg.type==='custom' && msg.content.type === 'notification' && msg.content.data.actionType == 4}}" data="{{...$root[$kk+'4-'+index], $root}}" is="middleTips$276c37b6"></template>
+        <view class="_section data-v-1598236b main-message-box grey-tips" wx:if="{{msg.type === 'custom' && msg.content.type === 'deleteMsgTips'}}">
+          <view class="_figcaption data-v-1598236b first-message">
+            <view wx:if="{{msg.from===targetData.account}}" class="_p data-v-1598236b">{{targetMsg.nick+'医生'}}撤回了一条消息</view>
+            <view wx:if="{{msg.from!==targetData.account}}" class="_p data-v-1598236b">您撤回了一条消息</view>
+          </view>
+        </view>
+        <view class="_section data-v-1598236b main-message-box" wx:if="{{msg.type==='custom'&&msg.content.type === 'notification' &&msg.content.data.actionType == 3}}">
+          <view class="_article data-v-1598236b main-message-box-item others-message">
+            <view class="_figure data-v-1598236b main-message-img">
+              <image src="{{targetLogo}}" alt class="_img data-v-1598236b"></image>
+            </view>
+            <view class="_figcaption data-v-1598236b main-message-content">
+              <view class="_p data-v-1598236b">感谢您的信任！我暂时无法为您提供服务；您已支付的费用系统将自动退回，请注意查收。</view>
+            </view>
+          </view>
+        </view> <template wx:if="{{msg.type==='custom' && msg.content.type==='payFinishTips'}}" data="{{...$root[$kk+'5-'+index], $root}}" is="payFinishTips$22cb48ab"></template> <template wx:if="{{msg.type==='custom' && msg.content.type==='outpatientInvite'}}" ref="outpatientInvite" data="{{...$root[$kk+'6-'+index], $root}}" is="outpatientInvite$15d57a18"></template> <template wx:if="{{msg.type==='custom'&&msg.content.type==='outpatientOrderFromPT'}}" data="{{...$root[$kk+'7-'+index], $root}}" is="outpatientAppointment$07716420"></template> <template wx:if="{{msg.type==='custom'&&msg.content.type==='outpatientOrderFromDT'}}" data="{{...$root[$kk+'8-'+index], $root}}" is="outpatientService$e3ad1e94"></template> <template wx:if="{{msg.type==='custom'&&msg.content.type==='doctorRemind'}}" data="{{...$root[$kk+'9-'+index], $root}}" is="doctorAdvice$e76b80a2"></template> <template wx:if="{{msg.type==='custom'&&msg.content.type === 'notification' &&msg.content.data.actionType == 2}}" data="{{...$root[$kk+'10-'+index], $root}}" is="sendCount$286b17df"></template>
+        <view class="_section data-v-1598236b main-message-box grey-tips" wx:if="{{msg.type==='custom'&&msg.content.type === 'notification' &&msg.content.data.actionType == 1}}">
+          <view class="_figcaption data-v-1598236b first-message">
+            <view class="_p data-v-1598236b">您已完成支付，可与主诊医生继续沟通</view>
+          </view>
+        </view> <template wx:if="{{msg.type==='text' && msg.text}}" binddeleteMsgEvent="handleProxy" bindlongTouchEmitHandler="handleProxy" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}" data="{{...$root[$kk+'11-'+index], $root}}" is="content$1375f61e"></template> <template wx:if="{{(msg.type==='file'||msg.type==='image') && msg.file &&msg.file.ext!=='pdf'}}" ref="bigImg" binddeleteMsgEvent="handleProxy" bindlongTouchEmitHandler="handleProxy" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}" data="{{...$root[$kk+'12-'+index], $root}}" is="image$44075e5a"></template> <template wx:if="{{msg.type==='custom' && (msg.content.type === 'mulitpleImage'||msg.content.type ==='multipleImage' )}}" binddeleteMsgEvent="handleProxy" bindlongTouchEmitHandler="handleProxy" data-eventid="{{'3-'+index}}" data-comkey="{{$k}}" data="{{...$root[$kk+'13-'+index], $root}}" is="mulitpleImage$4c70da59"></template> <template wx:if="{{msg.type==='video' && msg.file}}" binddeleteMsgEvent="handleProxy" bindlongTouchEmitHandler="handleProxy" data-eventid="{{'4-'+index}}" data-comkey="{{$k}}" data="{{...$root[$kk+'14-'+index], $root}}" is="video$61c72bf3"></template> <template wx:if="{{msg.type==='file'&&msg.file&&msg.file.ext==='pdf'}}" binddeleteMsgEvent="handleProxy" bindlongTouchEmitHandler="handleProxy" data-eventid="{{'5-'+index}}" data-comkey="{{$k}}" data="{{...$root[$kk+'15-'+index], $root}}" is="fileMessage$740ed663"></template> <template wx:if="{{msg.type==='custom'&&msg.content.type==='patientNode'}}" data="{{...$root[$kk+'16-'+index], $root}}" is="patientNodeMsg$7a2dde92"></template> <template wx:if="{{msg.type==='custom'&&msg.content.type==='serviceComment'}}" data="{{...$root[$kk+'17-'+index], $root}}" is="serviceComment$ad4a0dbc"></template>
+        <view class="_section data-v-1598236b main-message-box grey-tips" wx:if="{{msg.type==='custom'&&msg.content.type === 'notification' &&msg.content.data.actionType == 6}}" ref="reportTip">
+          <view class="_figcaption data-v-1598236b first-message">
+            <view class="_p data-v-1598236b">报到成功，您可继续补充您的情况，便于医生更好了解病情</view>
+          </view>
+        </view>
+        <view class="_section data-v-1598236b main-message-box anti-spam-tips" wx:if="{{msg.type === 'custom' && msg.content.type === 'sensitiveTip'}}">
+          <view class="_figcaption data-v-1598236b anti-spam-con">
+            <view class="_p data-v-1598236b anti-spam-text">您可能发送了不良用语，请乐观积极与医生沟通以获取指导。（如系统误判，请忽略此消息）</view>
+          </view>
+        </view>
+        <view class="_section data-v-1598236b main-message-box grey-tips" wx:if="{{msg.type === 'healthCard'}}">
+          <view class="_figcaption data-v-1598236b first-message" bindtap="handleProxy" data-eventid="{{'6-'+index}}" data-comkey="{{$k}}">
+            <view class="_p data-v-1598236b getHealthCard-one">领取居民健康卡，有利于医生了解您的病情</view>
+            <view class="_p data-v-1598236b getHealthCard">立即领取 ></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{inputBoxShow || (recommendShow&&!lastTimeShow&&bottomTipsType==2)}}" class="_footer data-v-1598236b main-input-box {{[  !textareaShow && bottomTipsType !== '' ? 'main-input-box-text' : '',  !textareaShow && bottomTipsType == 3 ? 'main-input-box-end' : '']}}">
+      <view class="_section data-v-1598236b footer-box-top">
+        <transition name="fadeUp" class="_transition data-v-1598236b"><template wx:if="{{bottomTipsShow}}" data="{{...$root[$kk+'18'], $root}}" is="bottomTips$1739aebb"></template></transition>
+        <view class="_section data-v-1598236b prohibit-input" hidden="{{!((recommendShow&&!textareaShow) || !lastTimeShow&&bottomTipsType==2)}}" bindtap="handleProxy" data-eventid="{{'8'}}" data-comkey="{{$k}}">
+          <view class="_div data-v-1598236b"><label class="_span data-v-1598236b">重新推荐</label></view>
+        </view>
+        <view class="_section data-v-1598236b prohibit-input consultation-end" wx:if="{{bottomTipsShow&&bottomTipsType==3}}">
+          <view class="_div data-v-1598236b"><label class="_span data-v-1598236b end-text">咨询已结束</label></view>
+        </view>
+        <view class="_section data-v-1598236b prohibit-input" wx:if="{{!lastTimeShow&&bottomTipsType==-1}}" bindtap="handleProxy" data-eventid="{{'9'}}" data-comkey="{{$k}}">
+          <view class="_div data-v-1598236b"><label class="_span data-v-1598236b">重新支付</label></view>
+        </view>
+        <view class="_section data-v-1598236b prohibit-input" wx:if="{{!lastTimeShow&&bottomTipsType==1}}" bindtap="handleProxy" data-eventid="{{'10'}}" data-comkey="{{$k}}">
+          <view class="_div data-v-1598236b"><label class="_span data-v-1598236b">继续沟通</label></view>
+        </view>
+        <view class="_section data-v-1598236b main-input-box-plus" bindtap="handleProxy" data-eventid="{{'11'}}" data-comkey="{{$k}}">
+          <view class="_i data-v-1598236b icon-im-plus"></view>
+        </view>
+        <view class="_figure data-v-1598236b main-input-box-textarea-inner" wx:if="{{textareaShow}}">
+          <form class="_form data-v-1598236b patientForm" bindsubmit="handleProxy" report-submit="true" id="baseIm" data-eventid="{{'14'}}" data-comkey="{{$k}}">
+            <view class="_section data-v-1598236b area-content"><input class="_input data-v-1598236b main-input-box-textarea" wx:if="{{textareaShow}}" type="text" bindinput="handleProxy" maxlength="500" bindfocus="handleProxy" cursor-spacing="5" data-eventid="{{'12'}}" data-comkey="{{$k}}" />
+              <view class="_div data-v-1598236b main-input-box-textarea" wx:if="{{!textareaShow}}"></view>
+            </view> <button class="_button data-v-1598236b main-input-box-send {{[sendTextContent.length ? 'on' : '']}}" bindtap="handleProxy" type="submit" formType="submit" data-eventid="{{'13'}}" data-comkey="{{$k}}">发送 </button>
+          </form>
+        </view>
+      </view>
+      <view class="_ul data-v-1598236b footer-box-bottom" wx:if="{{footerBottomFlag}}">
+        <view class="_li data-v-1598236b bottom-item" wx:if="{{toolbarConfig.image}}" bindtap="handleProxy" data-eventid="{{'15'}}" data-comkey="{{$k}}">
+          <view class="_figure data-v-1598236b bottom-item-content">
+            <image class="_img data-v-1598236b bottom-item-image" src="https://m.allinmed.cn/static/image/imScene/picture@2x.png" width="350" height="234"></image>
+            <view class="_figcaption data-v-1598236b bottom-item-description">图片</view>
+          </view>
+        </view>
+        <view class="_li data-v-1598236b bottom-item" wx:if="{{toolbarConfig.video && !isIPad}}" ref="videoSendBox" bindtap="handleProxy" data-eventid="{{'16'}}" data-comkey="{{$k}}">
+          <view class="_figure data-v-1598236b bottom-item-content">
+            <image class="_img data-v-1598236b bottom-item-image" src="https://m.allinmed.cn/static/image/imScene/pictures@2x.png" width="350" height="234"></image>
+            <view class="_figcaption data-v-1598236b bottom-item-description">视频</view>
+          </view>
+        </view>
+      </view>
+    </view> <template wx:if="{{finish}}" data="{{...$root[$kk+'20'], $root}}" is="loading$2ff823fe"></template> <template wx:if="{{toastShow}}" data="{{...$root[$kk+'21'], $root}}" is="toast$1074ede9"></template> <template data-eventid="{{'17'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'22'], $root}}" is="suggestion$6da2a432"></template> <template wx:if="{{backIndexShow}}" data="{{...$root[$kk+'23'], $root}}" is="backIndex$640b7ced"></template> <template wx:if="{{reportImageUpload}}" data="{{...$root[$kk+'24'], $root}}" is="reportImageUpload$22ce0660"></template> <template data="{{...$root[$kk+'25'], $root}}" is="BlackList$219144df"></template>
+  </view>
+</template>

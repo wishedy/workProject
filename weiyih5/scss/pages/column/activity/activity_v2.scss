@@ -1,0 +1,825 @@
+@charset "UTF-8";
+//发现——权威专家
+//公共方法模块调用
+@import "../../../modules/common-modules";
+//公共变量引用
+@import "../../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../../components/_indexHeader";
+//首页头部信息栏
+@import "../../../components/_iconModule";
+//小图标组件
+@import "../../../components/_scrollShareBtn";
+//浮动分享按钮
+@import "../../../components/_buttonModule";
+//按钮组件
+@import "../../../components/_contentModule";
+//内容区域
+@import "../../../components/_searchList";
+//搜索列表
+@import "../../../components/_bottomBtns";
+//底部弹层组
+@import "../../../components/_bottomSharePart";
+//底部分享弹层
+@import "../../../components/_selectorBar";
+//专家列表
+@import "../../../components/_activeUserList";
+
+//选择职称
+
+.al-indexHeader {
+  border-bottom: solid 1px #d7dbde;
+}
+
+//报名入口
+.registrationEntrance {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  height: rem(89px);
+  border-top: solid 1px #d7dbde;
+  background: #fff;
+  line-height: rem(89px);
+  font-size: rem(30px);
+  color: #2899e6;
+  text-align: center;
+  width: 100%;
+  i {
+    display: inline-block;
+    background: url("/images/img50/column/activityTemplate/registrationIcon.png") no-repeat;
+    width: rem(31px);
+    height: rem(29px);
+    background-size: contain;
+    margin-right: rem(13px);
+  }
+}
+
+//报名信息填写
+.signUpMsg {
+  background: #fff;
+  margin-top: rem(16px);
+  padding: rem(40px) rem(30px) 0;
+  border-bottom: solid 1px #e4e9ed;
+  .title {
+    font-size: rem(30px);
+    color: #808080;
+    line-height: rem(30px);
+    margin-bottom: rem(14px);
+  }
+  .form {
+    padding: rem(35px) 0;
+    border-bottom: solid 1px #e4e9ed;
+    .redMark{
+      color: #ff0000;
+    }
+    //overflow: hidden;
+    &:last-child {
+      border: none;
+    }
+    span {
+      display: inline-block;
+      width: rem(155px);
+      text-align: left;
+      font-size: rem(28px);
+      color: #555;
+      vertical-align: top;
+    }
+    input {
+      border: none;
+      font-size: rem(30px);
+      color: #222;
+    }
+    i {
+      display: inline-block;
+      background: url("/images/img50/column/activityTemplate/right_arrow.png") no-repeat;
+      width: rem(15px);
+      height: rem(26px);
+      background-size: contain;
+      float: right;
+    }
+    select {
+      border: none;
+      background: 0 0;
+      padding: 0;
+      margin: 0;
+      font-size: rem(30px);
+      color: #222;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+    }
+    b, option {
+      font-size: rem(30px);
+      color: #222;
+      font-weight: normal;
+    }
+    b{
+      margin: 0 rem(15px) ;
+      &:last-child{
+        margin-left:rem(38px);
+      }
+    }
+  }
+}
+
+button.signUpEnter {
+  text-align: center;
+  height: rem(90px);
+  line-height: rem(90px);
+  background-color: #2899e6;
+  border-radius: rem(5px);
+  color: #fff;
+  font-size: rem(36px);
+  opacity: 0.4;
+  width: 92%;
+  margin: rem(61px) auto 0;
+  display: block;
+  &.activation {
+    opacity: 1;
+  }
+}
+
+/*产品类型*/
+.productType {
+  .typeList {
+    overflow: hidden;
+    margin-top: rem(60px);
+    padding-bottom: rem(30px);
+    li {
+      padding: 0 rem(52px);
+      height: rem(52px);
+      line-height: rem(52px);
+      font-size: rem(28px);
+      color: #2899e6;
+      border: solid 1px #2899e6;
+      float: left;
+      border-radius: rem(3px);
+      margin: 0 rem(34px) rem(30px) 0;
+    }
+  }
+}
+
+/*赛区*/
+.divisionFixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  background: #fff;
+  width: 100%;
+  height: 52%;
+  header {
+    padding: 0 rem(30px);
+    height: rem(82px);
+    line-height: rem(82px);
+    border-bottom: solid 1px #dfdfdf;
+    aside {
+      display: inline-block;
+    }
+    .address {
+      font-size: rem(28px);
+      color: #ccc;
+      margin-right: rem(25px);
+      &.active {
+        color: #3598db;
+        position: relative;
+        &:after {
+          content: '';
+          width: rem(38px);
+          height: rem(4px);
+          background: #3598db;
+          border-radius: rem(1px);
+          display: inline-block;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          margin-left: rem(-19px);
+        }
+      }
+      &.addressCanClick {
+        color: #333;
+      }
+    }
+    .enter {
+      float: right;
+      color: #ccc;
+      font-size: rem(28px);
+      &.enterHover {
+        color: #3598db;
+      }
+    }
+  }
+  .ev-AreaCon{
+    height: 100%;
+    overflow: auto;
+    ul li {
+      &:last-child {
+        margin-bottom: rem(150px);
+      }
+    }
+  }
+  .addressNameFirst, .addressNameSecond {
+    li {
+      font-size: rem(30px);
+      color: #333;
+      padding: rem(26px) rem(60px);
+      line-height: rem(45px);
+      border-bottom: solid 1px #eeeeee;
+      &.active {
+        background: #eff4f8;
+        border: none;
+      }
+      &.change {
+        color: #2899e6;
+      }
+    }
+  }
+}
+
+.signUpMsg .form {
+  position: relative;
+  .email_tip {
+    position: absolute;
+    left: rem(150px);
+    top: rem(75px);
+    width: rem(300px);
+    height: rem(75px);
+    display: none;
+  }
+  .phone_tip {
+    position: absolute;
+    left: rem(150px);
+    top: rem(-45px);
+    width: rem(300px);
+    height: rem(75px);
+    display: none;
+  }
+  .divisionName, .doctorInfo {
+    font-size: rem(30px);
+    color: #222;
+    display: inline-block;
+    line-height: rem(44px);
+    width: rem(500px);
+  }
+  .doctorInfo:empty::before{
+      content:attr(placeholder);
+      color: #808080;
+  }
+  .divisionName:empty::before{
+      content:attr(placeholder);
+      color: #808080;
+  }
+  i {
+    margin-top: rem(10px);
+  }
+}
+
+.signUPSuccess {
+  width: rem(400px);
+  margin: 0 auto;
+  text-align: center;
+  aside {
+    @include font-dpr(16px);
+    color: #333;
+    line-height: rem(32px);
+    &:first-child {
+      margin: rem(253px) 0 rem(40px);
+    }
+    &:last-child {
+      @include font-dpr(14px);
+      color: #555;
+      margin-top: rem(100px);
+      line-height: rem(42px);
+      a {
+        color: #2899e6;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.wordsList {
+  background: #fff;
+  .screening_btn{
+    float: right;
+    &:after{
+      content: "";
+      width: rem(30px);
+      height: rem(30px);
+      display: inline-block;
+      background: transparent url(//img50.allinmd.cn/column/activityTemplate/screeningIcon.png) center center no-repeat;
+      background-size: 100% 100%;
+      vertical-align: middle;
+      margin-left: rem(7.5px);
+      margin-right: rem(30px);
+    }
+  }
+  .title {
+    @include font-dpr(14px);
+    color: #909090;
+    height: rem(82px);
+    line-height: rem(82px);
+    border-bottom: solid 1px #e2e2e2;
+    padding-left: rem(30px);
+  }
+  ul {
+    li {
+      @include clearfix();
+      padding: rem(30px) rem(30px) rem(40px) rem(30px);
+    }
+  }
+  .appCssli:last-child {
+    margin-bottom: rem(89px);
+  }
+  .listDetail {
+    float: left;
+    width: 65%;
+    p {
+      @include font-dpr(17px);
+      line-height: rem(48px);
+      color: #222;
+      &:nth-child(2) {
+        color: #969696;
+        font-size: rem(22px);
+        line-height: rem(22px);
+        margin-top: rem(33px);
+        span:first-child i {
+          display: inline-block;
+          width: rem(29px);
+          height: rem(19px);
+          background: url(/images/img50/column/videoPK_v2/works_play.png) no-repeat;
+          background-size: contain;
+          vertical-align: middle;
+          margin-right: rem(8px);
+        }
+        span:nth-child(2) i {
+          display: inline-block;
+          width: rem(20px);
+          height: rem(18px);
+          background: url(/images/img50/column/videoPK_v2/works_pinglun.png) no-repeat;
+          background-size: contain;
+          vertical-align: middle;
+          margin-right: rem(8px);
+        }
+        span:last-child i {
+          display: inline-block;
+          width: rem(22px);
+          height: rem(22px);
+          background: url(/images/img50/column/videoPK_v2/works_zan.png) no-repeat;
+          background-size: contain;
+          vertical-align: middle;
+          margin-right: rem(8px);
+        }
+        span {
+          margin-right: rem(40px);
+        }
+      }
+
+    }
+  }
+  .listImg {
+    float: right;
+    position: relative;
+    width: 32%;
+    height: rem(140px);
+    i {
+      display: inline-block;
+      width: rem(57px);
+      height: rem(57px);
+      background: url(/images/img50/column/videoPK_v2/video_btn.png) no-repeat;
+      background-size: contain;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: rem(-28.5px) 0 0 rem(-28.5px);
+    }
+    p {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: url(/images/img50/column/videoPK_v2/works_time_opa.png) no-repeat;
+      background-size: contain;
+      width: rem(91px);
+      height: rem(30px);
+      text-align: right;
+      padding-right: rem(9px);
+      color: #fff;
+    }
+    img {
+      width: rem(210px);
+      height: rem(140px);
+    }
+  }
+}
+
+.wordsDetail {
+  @include clearfix();
+}
+
+.wordsList aside:last-child p:first-child {
+  @include font-dpr(12px);
+  color: #777;
+  line-height: rem(24px);
+  margin-top: rem(30px);
+  position: relative;
+  b {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #909090;
+    @include font-dpr(12px);
+    display: inline-block;
+    font-weight: normal;
+  }
+  .pendingAudit {
+    display: inline-block;
+    width: rem(24px);
+    height: rem(24px);
+    background: url(/images/img50/column/videoPK_v2/shenhe_tongguo.png) no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: rem(11px);
+  }
+  .audited {
+    display: inline-block;
+    width: rem(24px);
+    height: rem(24px);
+    background: url(/images/img50/column/videoPK_v2/shenhe_tongguole.png) no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: rem(11px);
+  }
+  .auditedNone {
+    display: inline-block;
+    width: rem(24px);
+    height: rem(24px);
+    background: url(/images/img50/column/videoPK_v2/shenhe_weiguo.png) no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: rem(11px);
+  }
+  span {
+    display: block;
+    margin-top: rem(18px);
+    padding-left: rem(33px);
+  }
+}
+
+.screeningList{
+  .title{
+    @include font-dpr(16px);
+  }
+}
+.totalScoreBox {
+  i {
+    @include font-dpr(22px);
+    color: #FF9224;
+  }
+  .colorDifference {
+    @include font-dpr(12px);
+  }
+}
+
+.noWorkList,.noResponse {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: rem(150px) 0;
+  figure {
+    width: rem(450px);
+    height: rem(375px);
+    display: inline-block;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.noResponse {
+  figure{
+    width: rem(234px);
+    height: rem(372px);
+  }
+}
+.noScreeningList{
+  width: rem(234px);
+  height: rem(372px);
+  margin: 0 auto;
+  padding: rem(150px);
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/*要求规范新增新闻样式*/
+.al-require_box {
+  padding: 0 rem(30px) rem(30px) rem(30px);
+  height: rem(861px);
+  overflow: hidden;
+  .al-require_title {
+    padding: rem(50px) 0;
+    text-align: center;
+    span {
+      font-size: rem(32px);
+      color: #333;
+    }
+  }
+  .al-require_cont{
+    font-size: rem(28px);
+    p {
+      color: #C80D8B;
+    }
+    .al-reFirstTitle{
+      font-weight: bold;
+      margin-bottom: rem(30px);
+    }
+    .al-reSecondTitle{
+      margin-bottom: rem(24px);
+    }
+    dl{
+      color: #555;
+      margin-bottom: rem(50px);
+      dt,dd{
+        margin-bottom: rem(20px);
+      }
+      dt{
+        color: #2733C4;
+      }
+    }
+  }
+}
+.al-require_checkMore{
+  width: 100%;
+  font-size: rem(26px);
+  color: #aaa;
+  border-top: 1px solid #E4E9ED;
+  text-align: center;
+  padding: rem(28px) 0 rem(24px) 0;
+  p{
+    display: inline-block;
+    vertical-align: middle;
+    &:after{
+      content:"";
+      width: rem(22px);
+      height: rem(12px);
+      display: inline-block;
+      vertical-align: middle;
+      background:url(//img50.allinmd.cn/column/specialTemplate/page_arrow.png) no-repeat center;
+      background-size:contain;
+      margin-left: rem(7.5px);
+    }
+  }
+  .al-cM_packUp{
+    &:after{
+      background:url(//img50.allinmd.cn/column/specialTemplate/page_pack.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+}
+
+
+
+
+
+/*活动三期*/
+.activityScreen{
+  background-color: rgba(0,0,0,0.3);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  @include clearfix();
+  .activityScreenCont{
+    width: rem(630px);
+    background: #fff;
+    float: right;
+    height: 100%;
+    overflow: auto;
+    ul{
+      padding-bottom: rem(150px);
+    }
+  }
+  .screenTitle{
+    font-size: rem(34px);
+    color: #333333;
+    padding: rem(23px) 0;
+    border-bottom: solid 1px #D7DBDE;
+    text-align: center;
+  }
+  .screenList{
+
+    li{
+      font-size: rem(30px);
+      color: #666666;
+      line-height: rem(45px);
+      padding: rem(32px) 0 rem(32px) rem(60px);
+      border-bottom: solid 1px  #E4E9ED;
+      @include clearfix();
+      span{
+        display: inline-block;
+        float: left;
+        width: 87%;
+      }
+      i{
+        display: inline-block;
+        background: url("//img50.allinmd.cn/column/activityTemplate/drop-down.png") no-repeat;
+        background-size: cover;
+        width: rem(18px);
+        height: rem(10px);
+        vertical-align: middle;
+        float: right;
+        margin-right: rem(30px);
+        margin-top: rem(20px);
+      }
+      &.activeFont{
+        color: #3598DB;
+      }
+      &.activeUp{
+        >i{
+          display: inline-block;
+          background: url("//img50.allinmd.cn/column/activityTemplate/drop-down.png") no-repeat;
+          background-size: cover;
+          width: rem(18px);
+          height: rem(10px);
+          vertical-align: middle;
+          float: right;
+          margin-right: rem(30px);
+          margin-top: rem(20px);
+          -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+      }
+      &.active{
+        color: #3598DB;
+      /*  i{
+          display: inline-block;
+          background: url("/images/img50/column/activityTemplate/pack_up.png") no-repeat;
+          background-size: cover;
+          width: rem(18px);
+          height: rem(10px);
+          vertical-align: middle;
+          float: right;
+          margin-right: rem(30px);
+          margin-top: rem(8px);
+        }*/
+      }
+    }
+  }
+  .screenList li .menuSecond{
+    padding-top: rem(40px);
+    margin-left: rem(-60px);
+    display: none;
+    clear: both;
+    div{
+      font-size: rem(32px);
+      color: #222222;
+      line-height: rem(48px);
+      padding-bottom: rem(34px);
+      @include clearfix();
+      clear: both;
+      padding-left: rem(73px);
+      i{
+        display: inline-block;
+        background: url("/images/img50/column/activityTemplate/drop-down.png") no-repeat;
+        background-size: cover;
+        width: rem(18px);
+        height: rem(10px);
+        vertical-align: middle;
+        float: right;
+        margin-right: rem(30px);
+        margin-top: rem(20px);
+      }
+      &.activeFont{
+        color: #3598DB;
+      }
+      &.activeUp{
+        >i{
+          display: inline-block;
+          background: url("//img50.allinmd.cn/column/activityTemplate/drop-down.png") no-repeat;
+          background-size: cover;
+          width: rem(18px);
+          height: rem(10px);
+          vertical-align: middle;
+          float: right;
+          margin-right: rem(30px);
+          margin-top: rem(20px);
+          -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+        span{
+          padding-bottom: rem(28px);
+        }
+        .menuThird span{
+          padding: 0;
+        }
+      }
+
+      &.active{
+        color: #3598DB;
+    /*    i{
+          display: inline-block;
+          background: url("/images/img50/column/activityTemplate/pack_up.png") no-repeat;
+          background-size: cover;
+          width: rem(18px);
+          height: rem(10px);
+          vertical-align: middle;
+          float: right;
+          margin-right: rem(30px);
+          margin-top: rem(8px);
+        }*/
+      }
+      &:last-child{
+        padding-bottom:0;
+      }
+    }
+  }
+  .menuThird{
+    display: none;
+    background: #F8F8F8;
+    border-top: 1px solid #E4E9ED;
+    border-bottom: 1px solid #E4E9ED;
+    margin-left: rem(-146px);
+    margin-top: rem(28px);
+    &:last-child{
+      border-bottom: none;
+    }
+    p{
+      padding-bottom: rem(44px);
+      padding-left: rem(110px);
+      color: #222;
+
+      @include clearfix();
+      &:first-child{
+        padding-top: rem(42px);
+      }
+      &:last-child{
+        //padding-bottom: rem(8px);
+      }
+      &.active{
+        color: #3598DB;
+      }
+    }
+    b{
+      display: inline-block;
+      background: url("/images/img50/column/activityTemplate/default.png") no-repeat;
+      background-size: cover;
+      width: rem(28px);
+      height: rem(28px);
+      vertical-align: middle;
+      font-weight: normal;
+      margin-right: rem(18px);
+      float: left;
+      margin-top: rem(8px);
+      &.onclick{
+        background: url("/images/img50/column/activityTemplate/activation.png") no-repeat;
+        background-size: cover;
+      }
+    }
+    span{
+      display: inline-block;
+      float: left;
+      width: rem(416px);
+      font-size: rem(32px);
+      line-height: rem(48px);
+    }
+  }
+  .bottomFixed{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: rem(98px);
+    width: rem(630px);
+    background: #fff;
+    line-height: rem(98px);
+    border-top: solid 1px  #D7DBDE;
+    button{
+      width: 50%;
+      text-align: center;
+      font-size: rem(32px);
+      float: left;
+      height: rem(98px);
+      color: #777777;
+      &.hover{
+        background: #3598DB;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+.praiseCont.praiseContPo{
+  position: absolute;
+  right: rem(30px);
+  bottom: rem(40px);
+  margin-top: 0;
+  .spTemp_praise{
+    margin-top: 0;
+  }
+}

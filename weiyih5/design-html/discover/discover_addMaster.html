@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>申请权威专家</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/discover/discover_appMaster.css">
+</head>
+
+<body>
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem">
+                <a href="/design-html/discover/discover_master.html">
+                    <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>申请权威专家</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)">
+                </a>
+            </figure>
+        </header>
+        <section class="al-personalContent">
+            <section class="al-tableModule">
+                <article class="al-tableModuleItem">
+                    <h3>申请人</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <input type="text" placeholder="请输入姓名">
+                    </figure>
+                </article>
+                <article class="al-tableModuleItem">
+                    <h3>联系电话</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <input type="text" placeholder="请输入电话号码">
+                    </figure>
+                </article>
+                <article class="al-tableModuleItem">
+                    <h3>申请理由</h3>
+                    <textarea name="" id="" cols="" rows="" placeholder="请描述你的优势，方便工作人员与你联系"></textarea>
+                </article>
+            </section>
+        </section>
+        <section class="al-saveBtnBox al-msgWriting">
+            <button class="btn-primary-lg">
+                发送
+            </button>
+        </section>
+        
+    </section>
+    <!-- 填写不完整提示 -->
+    <section class="al-middleTipsModal">
+        <figure class="al-middleTipsModalText">
+            <p>请填写申请人</p>
+        </figure>
+    </section>
+    <!-- 删除提示弹框 -->
+    <section class="al-confirmModalMask">
+        <section class="al-confirmModal">
+            <article class="al-confirmModalContent">
+                <article>
+                    <p>发送成功</p>
+                    <p>请静候佳音</p>
+                </article>
+            </article>
+            <footer class="al-confirmModalBtns">
+                <button class="al-confirmModalCancelBtn">继续浏览</button>
+
+            </footer>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script>
+    FastClick.attach(document.body);
+    $(function() {
+
+        $(".al-saveBtnBox").on("click", function(e) {
+            $(".al-confirmModalMask").addClass('show');
+            $(".al-confirmModalCancelBtn").on("click", function(e) {
+                $(".al-confirmModalMask").removeClass('show');
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>

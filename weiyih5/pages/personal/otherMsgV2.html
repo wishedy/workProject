@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if (IsPC()) {
+            window.location.href = '//www.allinmd.cn/pages/discover/billboard/discover_billboard_contribution.html?listType=0';
+        }
+    </script>
+    <title>更多个人信息</title>
+    <meta name="keywords" content="活跃参与者，学霸医师，医生沟通，学术专栏，唯医,allinmd">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/personal/otherMsgV2.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link href="/js/third-party/cropper/cropper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/pages/discover/discover_master.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_index.css">
+    <link rel="stylesheet" href="/css/pages/authentication/personal.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_changeImg.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_addHospital.css">
+    <!--endbuild-->
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="271">
+    <!--页面所有内容-->
+    <section class="al-mainInner ev-mainInner">
+    <!-- 头部信息 -->
+    <header class="al-indexHeader">
+        <figure class="al-indexHeaderItem">
+            <a class="ev_backBtn" href="javascript:history.back(-1);">
+                <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+            </a>
+        </figure>
+        <figure class="al-indexHeaderItem">
+            <h1 class="ev_backBtn" style="display: block">更多个人信息</h1>
+        </figure>
+        <figure class="al-indexHeaderItem ev-checkRule">
+        </figure>
+    </header>
+
+    <section class="OtherMsgCont">
+        <aside class="personalImg">
+            <span>头像</span>
+            <i></i>
+            <figure><a href="javascript:;" class="ev-logoUrl"><img></a></figure><!--<img src="https://img00.allinmd.cn/default-user/doctor01.jpg">-->
+        </aside>
+        <!--<aside class="clinicalTime">-->
+            <!--<figure><span>临床时间</span>-->
+                <!--<div class="al-tableModuleSelect">-->
+                    <!--<select class="al-dateSelector" id="noauth_clinicalYear" style="max-width:2rem;" placeholder="请选择">-->
+                    <!--</select>-->
+                    <!--<p>年</p>-->
+                    <!--<select class="al-dateSelector" id="noauth_clinicalMonth" style="max-width:2rem;" placeholder="请选择">-->
+                    <!--</select>-->
+                    <!--<p>月</p>-->
+                    <!--<b>至今</b>-->
+                <!--</div>-->
+            <!--</figure>-->
+        <!--</aside>-->
+        <article class="al-tableModuleItem birthdaySelect">
+            <h3>出生日期</h3>
+            <figure class="al-tableModuleItemInput ev-birthDay">
+                <article class="al-tableModuleSelect">
+                    <select class="al-dateSelector" id="year01">
+                    </select>
+                    <span class="birthdayLine">-</span>
+                </article>
+                <article class="al-tableModuleSelect">
+                    <select class="al-dateSelector" id="month01">
+
+                    </select>
+                    <span class="birthdayLine">-</span>
+                </article>
+                <article class="al-tableModuleSelect">
+                    <select class="al-dateSelector" id="day01">
+
+                    </select>
+                </article>
+            </figure>
+        </article>
+        <aside class="professionalSelect">
+            <figure><span>专业</span>
+                <div class="al-tableModuleInput">
+                    <!--<figure class="al-tableModuleSpecialty"></figure>-->
+                    <article class="al-radio-item al-radio-active">
+                        <span class="al-radio-icon"></span>
+                        <span class="al-radio-name">骨科</span>
+                    </article>
+                    <article class="al-radio-item">
+                        <span class="al-radio-icon"></span>
+                        <span class="al-radio-name">手外科</span>
+                    </article>
+                </div>
+            </figure>
+        </aside>
+        <aside class="specialtySelect ev_changeArea">
+            <figure><span>专科</span>
+                <div class="al-tableModuleInput">
+                    <!--<figure class="al-tableModuleSpecialty"></figure>-->
+                    <p class="al-tableInput" id="areasExpertise"><span class="placeHolder">请选择专科</span></p>
+                </div>
+            </figure>
+        </aside>
+        <aside class="clinicalTime">
+            <figure><span>临床时间</span>
+                <div class="al-tableModuleSelect" style="margin-left: 0.4rem">
+                    <select class="al-dateSelector"  id="auth_clinicalYear"  style="max-width:2rem;" placeholder="请选择">
+                    </select>
+                    <p>年</p>
+                    <select class="al-dateSelector"  id="auth_clinicalMonth" style="max-width:2rem;" placeholder="请选择">
+                    </select>
+                    <p>月</p>
+                    <b>至今</b>
+                </div>
+            </figure>
+        </aside>
+
+    </section>
+    <!--新增模块-->
+    <!--科室-->
+    <section class="al-tableModule">
+        <header class="al-personalContentTitle">
+            <h2>科室<span  class="compile-department" style="float:right">编辑</span></h2>
+        </header>
+        <article class="al-tableModuleContent" id="department">
+            <span class="al-tableModuleContentText" id="" style="color:#aaa;">请填写你所在的科室</span>
+            <b class="al-contentShow ev-ksExpansion" style="display:none;">展开<i></i></b>
+        </article>
+    </section>
+    <!--独立完成骨科病例数-->
+    <section class="al-tableModule surgeryNum">
+        <header class="al-personalContentTitle">
+            <h2>近年独立完成骨科手术病例数<span class="compile-surgeryNum" style="float:right">编辑</span></h2>
+        </header>
+        <article class="" id="surgeryNum">
+            <div class="yesterYear">
+                <p><span>2017</span><i></i></p>
+                <div>请输入手术病例数</div>
+            </div>
+            <div class="precedingYear">
+                <p><span>2016</span><i></i></p>
+                <div>请输入手术病例数</div>
+            </div>
+        </article>
+    </section>
+    <!--擅长领域-->
+    <section class="al-tableModule">
+        <header class="al-personalContentTitle">
+            <h2>擅长领域<span  class="compile-field" style="float:right">编辑</span></h2>
+        </header>
+        <article class="al-tableModuleContent" id="field">
+            <span class="al-tableModuleContentText" style="color:#aaa;">请输入你的擅长领域</span>
+            <b class="al-contentShow ev-fileExpansion" style="display:none;">展开<i></i></b>
+        </article>
+    </section>
+    <!--医师寄语-->
+    <section class="al-tableModule">
+        <header class="al-personalContentTitle">
+            <h2>医师寄语<span  class="compile-sendWord" style="float:right">编辑</span></h2>
+        </header>
+        <article class="al-tableModuleContent">
+            <span class="al-tableModuleContentText" id="sendWord">
+                <span class="al-tableModuleContentText" style="color:#aaa;">请在这里写下想对患者说的话</span>
+            <b class="al-contentShow ev-ysjyExpansion" style="display:none;">展开<i></i></b>
+            </span>
+        </article>
+    </section>
+    <!--<section class="al-tableModule">-->
+        <!--<header class="al-personalContentTitle">-->
+            <!--<h2>擅长疾病<span class="compile-sickness" style="float:right">编辑</span></h2>-->
+        <!--</header>-->
+        <!--<article class="al-tableModuleContent">-->
+            <!--<span class="al-tableModuleContentText" id="sickness" style="color:#aaa;">添加擅治疾病，为您推荐更精准资源</span>-->
+        <!--</article>-->
+    <!--</section>-->
+
+    <!--<section class="al-tableModule">-->
+        <!--<header class="al-personalContentTitle">-->
+            <!--<h2>擅长手术<span class="compile-surgery" style="float:right">编辑</span></h2>-->
+        <!--</header>-->
+        <!--<article class="al-tableModuleContent">-->
+            <!--<span class="al-tableModuleContentText" id="surgery" style="color:#aaa;">添加擅长手术，为您推荐更精准资源</span>-->
+        <!--</article>-->
+    <!--</section>-->
+        <!--个人简介-->
+    <section class="al-tableModule">
+        <header class="al-personalContentTitle">
+            <h2>个人简介<span class="compile-profile" style="float:right">编辑</span></h2>
+        </header>
+        <article class="al-tableModuleContent">
+            <!--<span class="al-tableModuleContentText" style="color:#aaa;">请输入个人简介，让大家更了解你</span>-->
+            <span class="al-tableModuleContentText ev-summary"  id="summary">
+               <span class="al-tableModuleContentText" style="color:#aaa">请简述个人情况，让大家更了解你</span>
+                <b class="al-contentShow ev-expansion" style="display:none;">展开<i></i></b>
+            </span>
+        </article>
+    </section>
+    <!--工作-->
+    <section class="al-tableModule" data-alcode-mod="541" data-alcode-item-selector="article">
+        <header class="al-personalContentTitle">
+            <h2>工作经历</h2>
+        </header>
+        <scetion class="ev-occList"></scetion>
+        <a href="/pages/personal/occupation.html" class="al-personalMsgAdd">添加工作经历</a>
+    </section>
+    <!--学历-->
+    <section class="al-tableModule" data-alcode-mod="544" data-alcode-item-selector="article">
+        <header class="al-personalContentTitle">
+            <h2>学历教育</h2>
+        </header>
+        <scetion class="ev-eduList"></scetion>
+        <a href="/pages/personal/education.html" class="al-personalMsgAdd">添加学历教育</a>
+    </section>
+    <!--培训-->
+    <section class="al-tableModule" data-alcode-mod="545" data-alcode-item-selector="article">
+        <header class="al-personalContentTitle">
+            <h2>非学历经历</h2>
+        </header>
+        <scetion class="ev-cEduList"></scetion>
+        <a href="/pages/personal/cEducation.html" class="al-personalMsgAdd">添加非学历经历</a>
+    </section>
+    <!--荣誉-->
+    <section class="al-tableModule" data-alcode-mod="546" data-alcode-item-selector="article">
+        <header class="al-personalContentTitle">
+            <h2>获得荣誉</h2>
+        </header>
+        <scetion class="ev-honorList"></scetion>
+        <a href="/pages/personal/honor.html" class="al-personalMsgAdd">添加获得荣誉</a>
+    </section>
+    <!--科研-->
+    <section class="al-tableModule" data-alcode-mod="547" data-alcode-item-selector="article">
+        <header class="al-personalContentTitle">
+            <h2>科研基金</h2>
+        </header>
+        <scetion class="ev-fundList"></scetion>
+        <a href="/pages/personal/fund.html" class="al-personalMsgAdd">添加科研基金</a>
+    </section>
+        <!--社会任职-->
+        <section class="al-tableModule" data-alcode-mod="548" data-alcode-item-selector="article">
+            <header class="al-personalContentTitle">
+                <h2>社会任职</h2>
+            </header>
+            <scetion class="ev-socialList"></scetion>
+            <a href="/pages/personal/social.html" class="al-personalMsgAdd">添加社会任职</a>
+        </section>
+    <!--学术-->
+    <section class="al-tableModule" data-alcode-mod="549" data-alcode-item-selector="article">
+        <header class="al-personalContentTitle">
+            <h2>学术专著</h2>
+        </header>
+        <section class="ev-opusList"></section>
+        <a href="/pages/personal/opus.html" class="al-personalMsgAdd">添加学术专著</a>
+    </section>
+    <!--专利-->
+    <section class="al-tableModule" data-alcode-mod="550" data-alcode-item-selector="article">
+        <header class="al-personalContentTitle">
+            <h2>发明专利</h2>
+        </header>
+        <section class="ev-patentList"></section>
+        <a href="/pages/personal/patent.html" class="al-personalMsgAdd">添加发明专利</a>
+    </section>
+        <!--地区选择-->
+    <section class="al-bottomSelectorListMask" id="backMask">
+        <section class="al-bottomSelectorListBox">
+            <section class="al-bottomSelectorList">
+                <figure class="al-bottomSelectorItem ev_hospital"><a href="javascript:void(0)" style="color:#3598db;">我在医院</a></figure>
+                <figure class="al-bottomSelectorItem ev_school"><a href="javascript:void(0)" style="color:#3598db;">我在学校</a></figure>
+            </section>
+            <section class="al-bottomSelectorList mgt">
+                <figure class="al-bottomSelectorItem cancel" id="EV-cancelSelect"><a href="javascript:void(0)">取消</a></figure>
+            </section>
+        </section>
+    </section>
+        <!--领域选择-->
+    <section class="al-bottomSelectorListMask" id="platFormSelect">
+        <section class="al-bottomSelectorListBox">
+            <section class="al-bottomSelectorList">
+                <figure class="al-bottomSelectorItem ev_bone"><a href="javascript:void(0)" style="color:#3598db;">骨科</a></figure>
+                <figure class="al-bottomSelectorItem ev_hand"><a href="javascript:void(0)" style="color:#3598db;">手外科</a></figure>
+            </section>
+            <section class="al-bottomSelectorList mgt">
+                <figure class="al-bottomSelectorItem cancel" id="ev-platformCancel"><a href="javascript:void(0)">取消</a></figure>
+            </section>
+        </section>
+    </section>
+        <!--通讯地址-->
+        <section class="al-tableModule">
+            <header class="al-personalContentTitle">
+                <h2>通讯地址<span class="compile-address" style="float:right">编辑</span></h2>
+            </header>
+            <article class="al-tableModuleContent">
+                <span class="al-tableModuleContentText" id="address" style="color:#aaa;">请输入通讯地址，用于寄送相关资料，此信息不公开</span>
+            </article>
+        </section>
+</section>
+    <!--医院筛选-->
+    <section class="al-mainInner ev-companyInner" style="display: none">
+        <!-- 头部信息 -->
+        <header class="al-searchHead">
+            <header class="al-indexHeader">
+                <figure class="al-indexHeaderItem ev-backToMain">
+                    <a href="javascript:;">
+                        <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                    </a>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                    <h1>我在医院</h1>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                </figure>
+            </header>
+            <section class="al-searchInputBar">
+                <i class="icon-searchWhite"></i>
+                <input id="seachCompany" type="text" placeholder="请输入医院名称">
+                <button class="al-searchCancel" id="cancelSearch">
+                    <i class="icon-searchCancel"></i>取消
+                </button>
+            </section>
+
+        </header>
+        <section class="al-searchResult ev-sProvince">
+            <article class="al-searchTips ev-sProvince">
+                <span class="backTitle">选择单位所在省份</span>
+            </article>
+            <section class="ev-contentBox" id="sProvince"></section>
+        </section>
+        <section class="al-searchResult ev-sCity">
+            <article class="al-searchTips ev-sCity" id="cityBack" style="display: none">
+                <i class="icon-backArrow"></i><span class="backTitle"></span>
+            </article>
+            <section class="ev-contentBox" id="sCity"></section>
+        </section>
+        <section class="al-searchResult ev-sCompany">
+            <article class="al-searchTips ev-sCompany" id="companyBack" style="display: none">
+                <i class="icon-backArrow"></i><span class="backTitle"></span>
+            </article>
+            <section class="ev-contentBox" id="sCompany"></section>
+        </section>
+        <section class="al-searchFailed al-noResult">
+            <p>未找到相关结果</p>
+            <a href="javascript:void(0)" class="btn-primary ev-addCompanyBtn">添加医院</a>
+        </section>
+    </section>
+    <!--添加医院-->
+    <section class="al-mainInner ev-addCompanyInner" style="display: none;">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem ev-backToCompany">
+                <a href="javascript:;">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>添加医院</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+            </figure>
+        </header>
+        <section class="al-addHospitalBox">
+            <textarea id="companyIn" cols="" rows="" placeholder="请输入您任职的医院"></textarea>
+        </section>
+        <section class="al-addHospitalSave">
+            <button class="btn-primary-lg" id="saveCompany">保存</button>
+        </section>
+
+    </section>
+    <!--学校选择-->
+    <section class="al-mainInner ev-schoolInner" style="display: none">
+        <!-- 头部信息 -->
+        <header class="al-searchHead">
+            <header class="al-indexHeader">
+                <figure class="al-indexHeaderItem ev-backToMain">
+                    <a href="javascript:;">
+                        <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                    </a>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                    <h1>我在学校</h1>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                </figure>
+            </header>
+            <section class="al-searchInputBar">
+                <i class="icon-searchWhite"></i>
+                <input id="seachSchool" type="text" placeholder="请输入学校名称">
+                <button class="al-searchCancel" id="cancelSearchSchool">
+                    <i class="icon-searchCancel"></i>取消
+                </button>
+            </section>
+
+        </header>
+        <section class="al-searchResult ev-schoolProvince">
+            <article class="al-searchTips ev-schoolProvince">
+                <span class="backTitle">选择学校所在省份</span>
+            </article>
+            <section class="ev-contentBox" id="schoolProvince"></section>
+        </section>
+        <section class="al-searchResult ev-schoolCity">
+            <article class="al-searchTips ev-schoolCity" id="schoolCityBack" style="display: none">
+                <i class="icon-backArrow"></i><span class="backTitle"></span>
+            </article>
+            <section class="ev-contentBox" id="schoolCity"></section>
+        </section>
+        <section class="al-searchResult ev-schoolCompany">
+            <article class="al-searchTips ev-schoolCompany" id="schoolBack" style="display: none">
+                <i class="icon-backArrow"></i><span class="backTitle"></span>
+            </article>
+            <section class="ev-contentBox" id="sSchool"></section>
+        </section>
+        <section class="al-searchFailed al-noResult">
+            <p>未找到相关结果</p>
+            <a href="javascript:void(0)" class="btn-primary ev-addSchoolBtn">添加学校</a>
+        </section>
+    </section>
+    <!--添加学校-->
+    <section class="al-mainInner ev-addSchoolInner" style="display: none;">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem ev-backToSchool">
+                <a href="javascript:;">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>添加学校</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+            </figure>
+        </header>
+        <section class="al-addSchoolBox">
+            <textarea id="schoolIn" cols="" rows="" placeholder="请输入您所在的学校"></textarea>
+        </section>
+        <section class="al-addSchoolSave">
+            <button class="btn-primary-lg" id="saveSchool">保存</button>
+        </section>
+
+    </section>
+    <!--专业领域-->
+    <!--专业选择-->
+    <section class="al-mainInner ev-areaInner" style="display: none;">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:;" class="ev-goBack">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>专业领域</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)" class="ev-areasSave">
+                    保存
+                </a>
+            </figure>
+        </header>
+        <section class="moreChose">可多选</section>
+        <section class="al-searchResult expert">
+            <section class="al-selectorBarList ev-areasCon" style="margin-top: 0!important;">
+
+            </section>
+        </section>
+    </section>
+    <!--简介-->
+    <section class="al-mainInner ev-summaryInner" style="display: none;">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem ev-backToMain">
+                <a href="javascript:;">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>个人简介</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+            </figure>
+        </header>
+        <section class="al-addHospitalBox EV-personalIntro">
+            <textarea id="summaryIn" cols="" rows="" placeholder="请简述个人情况，让大家更了解你"></textarea>
+        </section>
+        <section class="al-addHospitalSave">
+            <button class="btn-primary-lg al-msgWriting" id="saveSummary">保存</button>
+        </section>
+
+    </section>
+    <!--地址-->
+    <section class="al-mainInner ev-addressInner" style="display: none;">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem ev-backToMain">
+                <a href="javascript:;">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>通讯地址</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+            </figure>
+        </header>
+        <section class="al-addHospitalBox EV-addressIntro" style="height:5.3rem;">
+            <textarea id="addressIn" cols="" rows="" placeholder="请输入通讯地址，用于寄送相关材料，此信息不公开" max="100"></textarea>
+            <span id="Ev-settingSugNum" class="al-textareaInputNum" style="display: none;">100</span>
+        </section>
+        <section class="al-addHospitalSave">
+            <button class="btn-primary-lg al-msgWriting" id="saveAddress">保存</button>
+        </section>
+
+    </section>
+    <!--疾病筛选-->
+    <section class="al-mainInner ev-sickness" style="display: none">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader" data-alcode-mod='401'>
+            <figure class="al-indexHeaderItem">
+                <a class="ev_backBtn">
+                    <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>添加擅长疾病</h1>
+            </figure>
+            <figure class="al-indexHeaderItem ev-checkRule">
+                <i class="saveMajor save-sickness">保存</i>
+            </figure>
+        </header>
+
+        <section class="skilfulDiseases">
+            <aside class="addDiseasesTitle">已添加疾病</aside>
+            <aside class="diseasesTag">
+                <ul>
+                    <!--<li>发育不良<i></i></li>-->
+                    <!--<li>由于自我忽视引起进食不足<i></i></li>-->
+                    <!--<li>发热<i></i></li>-->
+                    <!--<li>发育不良<i></i></li>-->
+                    <!--<li>由于自我忽视引起进食不足<i></i></li>-->
+                    <!--<li>发热<i></i></li>-->
+                    <!--<li>发育不良<i></i></li>-->
+                    <!--<li>由于自我忽视引起进食不足<i></i></li>-->
+                    <!--<li>发热<i></i></li>-->
+                </ul>
+            </aside>
+            <aside class="diseasesInput">
+                <figure class="inputBorder"><i></i> <input type="text" placeholder="请输入疾病名称" ></figure>
+                <aside class="association">
+                    <ul>
+                        <!--<li>发热</li>-->
+                        <!--<li>发热发热发热</li>-->
+                        <!--<li>发热发热发热发热发热</li>-->
+                        <!--<li>发热</li>-->
+                        <!--<li>发热</li>-->
+                        <!--<li>发热发热发热</li>-->
+                        <!--<li>发热发热发热发热发热</li>-->
+                        <!--<li>发热</li>-->
+                        <!--<li>发热</li>-->
+                        <!--<li>发热发热发热</li>-->
+                        <!--<li>发热发热发热发热发热</li>-->
+                        <!--<li>发热</li>-->
+                        <!--<li>发热</li>-->
+                        <!--<li>发热发热发热</li>-->
+                        <!--<li>发热发热发热发热发热</li>-->
+                        <!--<li>发热</li>-->
+                    </ul>
+                </aside>
+            </aside>
+        </section>
+    </section>
+    <!--选择手术-->
+    <section class="al-mainInner ev-surgery" style="display: none">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader" data-alcode-mod='401'>
+            <figure class="al-indexHeaderItem">
+                <a class="ev_backBtn">
+                    <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>选择手术</h1>
+            </figure>
+            <figure class="al-indexHeaderItem ev-checkRule">
+                <i class="saveMajor save-surgery">保存</i>
+            </figure>
+        </header>
+
+        <!--<section class="majorTitle">关节</section>-->
+        <!--<ul class="majorList">-->
+            <!--<li>-->
+                <!--<div class="majorListOne"> <span>成人髋关节重建手术成人髋关节重建手术成人髋关节重建手术成人髋关节重建手术</span><i class="arrow"></i></div>-->
+                <!--<aside class="majorListTwo">-->
+                    <!--<div class="option all"><i class="checkBox"></i>全部</div>-->
+                    <!--<div class="option"><i class="checkBox"></i>髋关节融合术</div>-->
+                    <!--<div class="option"><i class="checkBox"></i>人工髋关节置换术</div>-->
+                    <!--<div class="option"><i class="checkBox"></i>髋关节融合术</div>-->
+                    <!--<div class="option"><i class="checkBox"></i>人工髋关节置换术</div>-->
+                    <!--<div class="option"><i class="checkBox"></i>髋关节融合术</div>-->
+                    <!--<div class="option"><i class="checkBox"></i>人工髋关节置换术</div>-->
+                <!--</aside>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<div class="majorListOne"> <span>成人髋关节重建手术成人髋关节重建手术成人髋关节重建手术成人髋关节重建手术</span><i class="arrow"></i></div>-->
+                <!--<aside class="majorListTwo">-->
+                    <!--<div class="option all"><i class="checkBox"></i>全部</div>-->
+                    <!--<div class="option"><i class="checkBox"></i>髋关节融合术</div>-->
+                    <!--<div class="option"><i class="checkBox"></i>人工髋关节置换术</div>-->
+                <!--</aside>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<div class="majorListOne"> <span>成人髋关节重建手术成人髋关节重建手术成人髋关节重建手术成人髋关节重建手术</span><i class="arrow"></i></div>-->
+                <!--<aside class="majorListTwo">-->
+                    <!--<div class="option all"><i class="checkBox"></i>全部</div>-->
+                    <!--<div class="option"><i class="checkBox"></i>髋关节融合术</div>-->
+                    <!--<div class="option"><i class="checkBox"></i>人工髋关节置换术</div>-->
+                <!--</aside>-->
+            <!--</li>-->
+        <!--</ul>-->
+    </section>
+    <!--擅长领域-->
+    <section class="al-mainInner ev-filed" style="display: none">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem ev-expertBack">
+                <a href="javascript:;">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>擅长领域</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+            </figure>
+        </header>
+        <section class="al-addHospitalBox EV-addressIntro" style="height:5.3rem;">
+            <textarea id="filed"  cols="" rows="" placeholder="请输入你的擅长领域" max="2000"></textarea>
+            <span id="ev-filSugNum" class="al-textareaInputNum" style="display: none;">2000</span>
+        </section>
+
+        <section class="al-tableModule">
+            <header class="al-personalContentTitle">
+                <h2>擅长疾病<span class="compile-sickness" style="float:right">编辑</span></h2>
+            </header>
+            <article class="al-tableModuleContent">
+                <span class="al-tableModuleContentText" id="sickness" style="color:#aaa;">添加擅治疾病，为您推荐更精准资源</span>
+            </article>
+        </section>
+
+        <section class="al-tableModule">
+            <header class="al-personalContentTitle">
+                <h2>擅长手术<span class="compile-surgery" style="float:right">编辑</span></h2>
+            </header>
+            <article class="al-tableModuleContent">
+                <span class="al-tableModuleContentText" id="surgery" style="color:#aaa;">添加擅长手术，为您推荐更精准资源</span>
+            </article>
+        </section>
+
+        <section class="al-addHospitalSave">
+            <button class="btn-primary-lg al-msgWriting" id="saveFiled">保存</button>
+        </section>
+    </section>
+    <!--擅长科室-->
+    <section class="al-mainInner ev-department" style="display: none">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem ev-ksBackToMain">
+                <a href="javascript:;">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>科室</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+            </figure>
+        </header>
+        <section class="al-addHospitalBox ev-department" style="height:5.3rem;">
+            <textarea id="departmentIn"  cols="" rows="" placeholder="请输入你的擅长科室" max="100"></textarea>
+            <span id="" class="al-textareaInputNum" style="display: none;">100</span>
+        </section>
+        <section class="al-addHospitalSave">
+            <button class="btn-primary-lg al-msgWriting" id="saveDepartment">保存</button>
+        </section>
+    </section>
+    <!--医师寄语-->
+    <section class="al-mainInner ev-sendWord" style="display: none">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem ev-ysjyBackToMain">
+                <a href="javascript:;">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>医师寄语</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+            </figure>
+        </header>
+        <section class="al-addHospitalBox ev-sendWord" style="height:5.3rem;">
+            <textarea id="sendWordIn"  cols="" rows="" placeholder="请在这里写下想对患者说的话" max="500"></textarea>
+            <span id="ev-docSugNum" class="al-textareaInputNum" style="display: none;">500</span>
+        </section>
+        <section class="sendWordTitle">
+            <i></i>
+            <p>寄语示例</p>
+            <span>以下寄语供你选择</span>
+        </section>
+        <section class="al-addHospitalBox sendWordTxt">
+            <ul>
+                <li><span>以诚待人，以真行医，为骨科病友服务。</span><i></i></li>
+                <li><span>真诚对待每一位来诊患者，祝你早日康复！</span><i></i></li>
+                <li><span>积极面对疾病，正确治疗与康复，我与您同行。</span><i></i></li>
+                <li><span>欢迎您来到我的网上工作站，希望通过唯医这个平台帮助更多的患者。</span><i></i></li>
+                <li><span>敬畏生命，强大自身，爱护自己，关心他人。</span><i></i></li>
+                <li><span>超凡的医术是技术，只有搭配高尚的医德，才能做一名合格的医生。用我们的责任和仁心帮助更多的病人解除痛苦。</span><i></i></li>
+            </ul>
+        </section>
+        <section class="al-addHospitalSave">
+            <button class="btn-primary-lg al-msgWriting" id="saveSendWord">保存</button>
+        </section>
+    </section>
+    <!--近年独立完成骨科手术病例数-->
+    <section class="al-mainInner ev-surgeryNum" style="display: none">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem ev-dlBackToMain">
+                <a href="javascript:;">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>近年独立完成骨科手术病例数</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+            </figure>
+        </header>
+        <article class="surgeryNumInput ev-surgeryNumInput">
+            <div class="yesterYear">
+                <p><span>2017</span><i></i></p>
+                <input type="text" placeholder="请输入手术病例数"/>
+            </div>
+            <div class="precedingYear">
+                <p><span>2016</span><i></i></p>
+                <input type="text" placeholder="请输入手术病例数"/>
+            </div>
+        </article>
+        <!--<section class="al-addHospitalBox  ev-surgeryNumInput" style="height:5.3rem;">-->
+            <!---->
+        <!--</section>-->
+        <section class="al-addHospitalSave">
+            <button class="btn-primary-lg al-msgWriting" id="saveSurgeryNum">保存</button>
+        </section>
+    </section>
+    <!-- 分享按钮 -->
+    <!--<section class="al-scrollShareBtn" data-alcode-mod='406'>-->
+        <!--<i class="icon-scrollShare" data-alcode='e46'></i>分享-->
+    <!--</section>-->
+    <!-- 头像上传 -->
+    <section class="al-middleTipsBox ev-showStatus" style="display: none">
+        <section class="al-middleTipsModal al-uploadFigureBox ">
+            <figure class="al-middleTipsModalText al-loading" style="display: none">
+                <img src="//img50.allinmd.cn/pages/default/loading.png" alt="">
+                <p>正在上传头像</p>
+            </figure>
+            <figure class="al-middleTipsModalText al-loadingFinish">
+                <img src="//img50.allinmd.cn/pages/default/loading_finish.png" alt="">
+                <p>上传成功</p>
+            </figure>
+        </section>
+    </section>
+    <!--上传头像-->
+    <section class="al-mainInner ev-uploadInner" style="display: none">
+        <!-- 头部信息 -->
+        <header class="al-personalChangeImgHeader">
+            <h2><a href="javascript:;" class="al-personalChangeImgBack ev-backMain"><img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt=""></a>个人头像</h2>
+        </header>
+        <section class="al-personalChangeImgInner">
+            <figure class="al-personalImg ev-personalImg">
+
+            </figure>
+        </section>
+        <input type="hidden" name="platformId" value="1" preval="1">
+        <figure class="al-personalChangeImgBtn">
+            <button class="ev-changeButton">更换头像
+                <input type="file" name="file" class="al-personalChangeImg" id="ev-uploadBtn">
+            </button>
+            <div class="newState ev-newState" style="display: none">
+                <!--<label class="btn" for="upload2">取消</label>-->
+                <!--<input type="file" id="upload2" style="position:absolute; clip:rect(0 0 0 0);" accept="image/png, image/jpeg, image/jpg">-->
+                <span class="ev-cancelBtn">取消</span>
+                <span class="ev-sure">确认</span>
+            </div>
+        </figure>
+    </section>
+
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+    <script src="/js/third-party/cropper/cropper.min.js"></script>
+<!--build:js /dest/pages/personal/otherMsgV2.js-->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/modules/module.medicalTitle.js"></script>
+<script src="/js/modules/module.addCompany.js"></script>
+<script src="/js/modules/module.addSchool.js"></script>
+<script src="/js/third-party/ymd.js"></script>
+<script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+<script src="/js/third-party/ajaxfileupload.js"></script>
+<script src="/js/scene/personal/customerInfoEditV2.js"></script>
+<!--endbuild-->
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="/css/v3/base.css" />
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css"/>
+    <link rel="stylesheet" href="/css/v3/pageFooter.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/authentication/authentication.css"/>
+    <script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section class="al-mainInner">
+    <!-- 页头——本页面无超链接-->
+    <header class="al-header al-dis_header">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox">
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+    <section class="authentication">
+        <header>基本信息</header>
+        <article class="authText">填写真实信息，才能享受更多的免费资源~</article>
+        <section class="authUploadimg">
+            <figure class="authUploadcont"><img src="/images/img10/authentication/photo.png"><p>上传头像</p> </figure>
+        </section>
+        <label class="authInput">
+            <span>姓名</span>
+            <input type="text" />
+        </label>
+        <label class="authInput">
+            <span>年龄</span>
+            <figure class="al-tableItemContent">
+                <article class="al-tableItemSelector">
+                    <select id="authYear" class="al-year">
+
+                        <option value="0" selected="selected">选择</option></select>
+                    <b>年</b>
+                </article>
+                <article class="al-tableItemSelector">
+                    <select id="authMonth" class="al-month">
+
+                        <option value="0" selected="selected">选择</option></select>
+                    <b>月</b>
+                </article>
+                <article class="al-tableItemSelector">
+                    <select id="authDay" class="al-day"><option value="0" selected="selected">选择</option></select>
+                    <b>日</b>
+                </article>
+            </figure>
+        </label>
+        <label class="authInput">
+            <span>临床时间</span>
+            <figure class="al-tableItemContent">
+                <article class="al-tableItemSelector">
+                    <select id="authYear" class="al-year">
+
+                        <option value="0" selected="selected">--</option></select>
+                    <b>年</b>
+                </article>
+                <article class="al-tableItemSelector">
+                    <select id="authMonth" class="al-month">
+
+                        <option value="0" selected="selected">--</option></select>
+                    <b>月</b>
+                </article>
+                <em>至今</em>
+            </figure>
+        </label>
+        <label class="authInput labelunit">
+            <span>单位</span>
+            <figure class="al-tableItemContent">
+                <article class="al-tableItemRadio ev-authsexId" sexid="1">
+                    <i class="al-tableRadioOff"></i>我在医院
+                </article>
+                <article class="al-tableItemRadio ev-authsexId" sexid="2">
+                    <i class="al-tableRadioOff al-tableRadioOn"></i>我在学校
+                </article>
+            </figure>
+        </label>
+        <label class="authInput">
+            <span>职称</span>
+            <figure class="al-tableItemContent al-clickJumpSelectBox" id="occmed_par" style="position: relative;">
+                <figure id="occmed_title" medicaltitle="4_主任医师">选择职称</figure>
+                </figure>
+            <p class="al-tableErrorTips" id="med_error"><i></i>请选择职称！</p>
+        </label>
+        <label class="authInput">
+            <span>专业</span>
+            <figure class="al-tableItemContent al-clickJumpSelectBox" style="position: relative;">
+                <figure medicaltitle="4_主任医师">选择专业</figure>
+            </figure>
+            <p class="al-tableErrorTips"><i></i>请选择专业！</p>
+        </label>
+        <aside class="authNext">
+            <span>取消</span>
+            <!--激活图标添加 active类名-->
+            <button class="">下一步</button>
+        </aside>
+    </section>
+    <!-- 公共页脚部分 -->
+    <!--#include virtual="/includes/footer.jsp"-->
+</section>
+
+</body>
+
+</html>

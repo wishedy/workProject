@@ -1,0 +1,149 @@
+/* share css*/
+.al-bottomSelectorListMask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 6;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s linear;
+  -webkit-transition: opacity 0.15s linear;
+}
+
+.al-bottomSelectorListMask.on {
+  opacity: 1;
+  visibility: visible;
+}
+.al-bottomSelectorListMask.on .al-bottomSelectorListBox {
+  opacity: 1;
+  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+}
+
+.al-bottomSelectorListBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  background-color: #EFF4F8;
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  transition: all 0.15s linear;
+  -webkit-transition: all 0.15s linear;
+}
+
+.al-bottomSelectorList {
+  background-color: #fff;
+}
+
+.al-bottomSelectorItem {
+  height: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 18px;
+  border-bottom: 1px solid #e4e9ed;
+}
+[data-dpr="2"] .al-bottomSelectorItem {
+  font-size: 36px;
+}
+[data-dpr="3"] .al-bottomSelectorItem {
+  font-size: 54px;
+}
+.al-bottomSelectorItem a {
+  color: #333;
+  display: block;
+}
+
+.al-bottomSelectorItem.active a {
+  color: #3598db;
+}
+
+.mgt {
+  margin-top: 0.2rem;
+}
+
+.al-bottomSelectorItem.al-bottomSelectorTitle a {
+  font-size: 15px;
+  color: #909090;
+}
+[data-dpr="2"] .al-bottomSelectorItem.al-bottomSelectorTitle a {
+  font-size: 30px;
+}
+[data-dpr="3"] .al-bottomSelectorItem.al-bottomSelectorTitle a {
+  font-size: 45px;
+}
+
+.EV-giveUpConfig a {
+  color: #f34b4b;
+}
+
+.al-bottomSelectorItem.al-bottomShareListBox {
+  height: auto;
+  text-align: center;
+  padding: 0.6rem 0;
+}
+.al-bottomSelectorItem.al-bottomShareListBox h2 {
+  font-size: 12px;
+  color: #aaa;
+  font-weight: normal;
+  line-height: 1;
+  margin-bottom: 0.6rem;
+  position: relative;
+}
+[data-dpr="2"] .al-bottomSelectorItem.al-bottomShareListBox h2 {
+  font-size: 24px;
+}
+[data-dpr="3"] .al-bottomSelectorItem.al-bottomShareListBox h2 {
+  font-size: 36px;
+}
+.al-bottomSelectorItem.al-bottomShareListBox h2:after, .al-bottomSelectorItem.al-bottomShareListBox h2:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.4rem;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  background-color: #dbdbdb;
+}
+.al-bottomSelectorItem.al-bottomShareListBox h2:after {
+  right: 1rem;
+}
+.al-bottomSelectorItem.al-bottomShareListBox h2:before {
+  left: 1rem;
+}
+.al-bottomSelectorItem.al-bottomShareListBox .al-bottomShareItem {
+  display: inline-block;
+  padding: 0 0.4rem;
+}
+.al-bottomSelectorItem.al-bottomShareListBox ul {
+  list-style: none;
+  line-height: 1;
+}
+.al-bottomSelectorItem.al-bottomShareListBox .al-bottomShareImg {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: transparent;
+  margin: 0 auto;
+}
+.al-bottomSelectorItem.al-bottomShareListBox .al-bottomShareImg img {
+  width: 100%;
+  vertical-align: top;
+  height: 100%;
+}
+.al-bottomSelectorItem.al-bottomShareListBox figcaption {
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 0.2rem;
+}
+[data-dpr="2"] .al-bottomSelectorItem.al-bottomShareListBox figcaption {
+  font-size: 24px;
+}
+[data-dpr="3"] .al-bottomSelectorItem.al-bottomShareListBox figcaption {
+  font-size: 36px;
+}

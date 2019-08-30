@@ -1,0 +1,21 @@
+<template name="healthCardRecognition$1957908e">
+  <view class="_section data-v-026118e9 recognition-main">
+    <view class="_section data-v-026118e9 recognition-title">领取居民健康卡，有利于医生了解您的病情</view>
+    <view class="_section data-v-026118e9 recognition-upLoad">
+      <view class="_section data-v-026118e9 recognition-cover-border" hidden="{{!(imgUrl.length==0)}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></view>
+      <view class="_section data-v-026118e9 recognition-cover-card" hidden="{{!(imgUrl.length==0)}}"></view>
+      <view class="_section data-v-026118e9 recognition-cover-btn" wx:if="{{imgUrl.length==0}}">
+        <view class="_section data-v-026118e9 recognition-coverBtn-box"><label class="_span data-v-026118e9 recognition-btn-text">点击上传</label></view>
+      </view>
+      <image hidden="{{!(imgUrl.length>0)}}" class="_img data-v-026118e9 recognition-img" src="{{imgUrl}}" alt></image>
+      <view hidden="{{!(imgUrl.length>0)}}" class="_section data-v-026118e9 recognition-reload">
+        <view class="_section data-v-026118e9 recognition-reload-box"><label class="_span data-v-026118e9 recognition-reload-cover"></label> <label class="_span data-v-026118e9 recognition-reload-icon"></label> <label class="_span data-v-026118e9 recognition-reload-text">重新上传</label></view>
+      </view>
+    </view>
+    <view class="_section data-v-026118e9 cecognition-tip"><label class="_span data-v-026118e9 recognition-tip-icon"></label>请上传本人身份证正面照片 </view>
+    <view class="_section data-v-026118e9 recognition-Btn">
+      <view class="_section data-v-026118e9 recognition-next {{[imgUrl.length > 0 ? 'actived' : '']}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">下一步</view>
+      <view class="_section data-v-026118e9 recognition-next-two" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">身份证不在身边</view>
+    </view>
+  </view>
+</template>

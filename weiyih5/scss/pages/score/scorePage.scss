@@ -1,0 +1,183 @@
+@charset "UTF-8";
+//评分页
+//公共方法模块调用
+@import "../../modules/common-modules";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_starModule"; //评分星星组件
+
+.al-scorePagePopBox{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+}
+
+.al-scorePageHead{
+  .al-indexHeaderItem:nth-child(1){
+    color:#666;
+    @include font-dpr(15px);
+    margin-top:rem(3px);
+  }
+}
+
+.al-scoreMainContentBox{
+  background-color:#fff;
+  .al-resourcesTitle{
+    font-weight:400;
+    color:#777;
+    @include font-dpr(16px);
+    padding:rem(132px) rem(130px) rem(80px);
+    word-wrap: break-word;
+   text-align: center;
+  }
+  .al-bigScoreStarBox{
+    margin-left:16%;
+  }
+  .al-scoreResultText{
+    color:#3598db;
+    @include font-dpr(14px);
+    text-align:center;
+    padding:rem(15px) 0 rem(50px);
+  }
+          //匿名评分
+  .al-anonymousScore{
+    text-align: right;
+    color:#909090;
+    @include font-dpr(13px);
+    padding-right:rem(30px);
+    i{
+      display: inline-block;
+      width:rem(28px);
+      height:rem(28px);
+      border:1px solid #B4B4B4;
+      box-sizing: border-box;
+      margin-right:rem(10px);
+      margin-bottom:rem(-4px);
+    }
+    .al-selectedBtn{
+      background-image:url("//img50.allinmd.cn/score/Choose_SelectedBtn.png");
+      border:none;
+      background-size:rem(28px) rem(28px);
+    }
+  }
+}
+
+.al-scoreContentTagList{
+  padding:0 rem(100px) 0;
+  figcaption{
+    color:#555555;
+    text-align: center;
+    padding:rem(76px) 0 rem(60px);
+    @include font-dpr(13px);
+    &:before,&:after{
+      content:'';
+      display: inline-block;
+      width:20%;
+      height:0;
+      border-top:1px solid #e4e9ed;
+      vertical-align: middle;
+      margin:0 rem(10px);
+    }
+  }
+}
+
+.al-scoreTagSelect{
+  display: flex;
+  flex-flow: row wrap;
+  li{
+    color:#909090;
+    @include font-dpr(13px);
+    border:1px solid #E0E2E8;
+    padding:rem(12px) rem(12px);
+    border-radius:rem(45px);
+    margin:0 rem(10px) rem(20px) 0;
+  }
+  .active{
+    color:#3598db;
+    border:1px solid #2899e6;
+  }
+}
+
+  //评分页底部提交按钮UI
+html{background-color: #fff;}
+      //禁止提交按钮
+.al-scorePageNoSubmitBtn{
+  background-color:rgba(40,153,230,0.7);
+  color:rgba(255,255,255,0.4);
+  margin:rem(50px) auto rem(80px);
+  width:92%;
+  text-align:center;
+  height:rem(90px);
+  line-height:rem(90px);
+  border-radius:rem(4px);
+  @include font-dpr(18px);
+  i{display:none;}
+}
+      //提交按钮
+.al-scorePageFooterSubmitBtn{
+  background-color:#2899e6;
+  color:#fff;
+  i{
+    display: inline-block;
+    width:0;
+    height:rem(36px);
+    margin-right:rem(10px);
+    margin-bottom:rem(-8px);
+  }
+}
+      //提交成功按钮
+.al-scorePageSubmitOkBtn{
+  i{
+    background-size: 100% 100%;
+    background-image:url("//img50.allinmd.cn/score/Submit_Successful.png");
+    width:rem(36px);
+  }
+}
+      //正在提交按钮
+.al-scorePageSubmitIngBtn{
+  i{
+    background-image:url("//img50.allinmd.cn/score/submItLoadingIcon.png");
+    background-size: 100% 100%;
+    animation: submitIng 2s linear 0s infinite;
+    margin-bottom:rem(-5px);
+    @keyframes submitIng {
+      0% {-webkit-transform:rotate(0deg);}
+      100% {-webkit-transform:rotate(360deg);}
+    }
+  }
+}
+
+.al-scorePageInputBox{
+  position: relative;
+  margin-top:rem(20px);
+  textarea{
+    resize: none;
+    width:rem(552px);
+    height:rem(162px);
+    border:1px solid #e4e9ed;
+    border-radius:rem(5px);
+    padding:rem(20px);
+    box-sizing: border-box;
+    color:#333;
+    @include font-dpr(14px);
+  }
+  span{
+    position: absolute;
+    bottom:rem(15px);
+    right:rem(20px);
+    @include font-dpr(12px);
+  }
+  .al-NumPrompt{color:#F04B4B;}
+}
+
+
+.al-scorePageEmptyBox{
+  margin-top:rem(20px);
+  width:rem(552px);
+  height:rem(162px);
+}

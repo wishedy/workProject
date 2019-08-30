@@ -1,0 +1,20 @@
+<import src="/components/MachineMessage$58e21f60" />
+<import src="/components/confirm$5251c782" /><template name="intelligentTriage$3ee27c32">
+  <view class="_section data-v-0b3551f7 interllingent-main">
+    <view class="_section data-v-0b3551f7 main-message-interllingent  {{[isShowPicker ? 'picker-show' : '']}}">
+      <view class="_p data-v-0b3551f7 time-stamp">{{nowDate}}</view> <template wx:key="index" bindnextQuestion="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0-'+index], $root}}" is="MachineMessage$58e21f60" wx:for="{{messageList}}" wx:for-index="index" wx:for-item="item"></template>
+    </view>
+    <view class="_section data-v-0b3551f7 picker-main" wx:if="{{isShowPicker}}">
+      <view class="_section data-v-0b3551f7 picker-view-container">
+        <view class="_h3 data-v-0b3551f7 picker-header"><label class="_span data-v-0b3551f7 picker-tittle">患病时长</label> <label class="_span data-v-0b3551f7 picker-sure-btn" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">确定</label></view>
+        <picker-view class="_picker-view data-v-0b3551f7 picker-main-container" indicator-style="height: 34px; font-size:20px;" value="{{dateObj.index}}" bindchange="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+          <picker-view-column class="_picker-view-column data-v-0b3551f7">
+            <view class="_view data-v-0b3551f7 picker-item" wx:key="index" key="{{index}}" style="line-height: 34px" wx:for="{{dateObj.array}}" wx:for-index="index" wx:for-item="item">
+              {{item.optionName}}
+            </view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </view> <template wx:if="{{showTip}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="confirm$5251c782"></template>
+  </view>
+</template>

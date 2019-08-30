@@ -1,0 +1,48 @@
+@charset "UTF-8";
+//产品列表
+//公共方法模块调用
+@import "../../modules/common-modules";
+@import "../../components/_indexHeader"; //首页头部信息栏
+
+html,body,.al-mainInner{background-color:#fff;}
+.al-indexHeader h1{
+  text-indent: 0;
+}
+.al-SplitLine{
+  background-color:#eff4f8;
+  height:rem(16px);
+}
+
+.al-productPageListBox{
+  li{
+    display: flex;
+    padding:rem(40px) rem(30px);
+    border-bottom:1px solid #e4e9ed;
+    justify-content: space-between;
+    img{
+      width:rem(116px);
+      height:rem(116px);
+      border-radius:50%;
+      overflow: hidden;
+      box-sizing: border-box;
+      border:1px solid #DFDFDF;
+    }
+    .al-productInfoIntr{
+      .al-productName{
+        display: block;
+        width: rem(545px);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color:#333;
+        @include font-dpr(17px);
+        margin-bottom:rem(20px);
+        margin-top:rem(12px);
+      }
+      .al-productCompany{
+        color:#777;
+        @include font-dpr(15px);
+      }
+    }
+  }
+}

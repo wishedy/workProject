@@ -1,0 +1,146 @@
+.al-selectorBarMask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s linear;
+    -webkit-transition: opacity 0.2s linear;
+}
+
+.al-selectorBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFF;
+    opacity: 0;
+    -ms-transform: translateY(100%);
+        transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+.ev-medBox .al-selectorBar {
+    margin-top: 10%;
+    overflow: auto;
+    height: 70%;
+    padding-bottom: 10%;
+}
+
+.al-selectorBarTitle {
+    border-bottom: 1px solid #d7dbde;
+    height: 1.17333rem;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 0.4rem;
+}
+
+.al-selectorBarTitle .al-selectorBarTitleItem {
+    font-size: 15px;
+}
+
+[data-dpr="2"] .al-selectorBarTitle .al-selectorBarTitleItem {
+    font-size: 30px;
+}
+
+[data-dpr="3"] .al-selectorBarTitle .al-selectorBarTitleItem {
+    font-size: 45px;
+}
+
+.al-selectorBarTitle .al-selectorBarTitleItem:nth-child(1) a {
+    color: #515c74;
+    text-align: left;
+}
+
+.al-selectorBarTitle .al-selectorBarTitleItem:nth-child(2) h2 {
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+    text-align: center;
+}
+
+[data-dpr="2"] .al-selectorBarTitle .al-selectorBarTitleItem:nth-child(2) h2 {
+    font-size: 32px;
+}
+
+[data-dpr="3"] .al-selectorBarTitle .al-selectorBarTitleItem:nth-child(2) h2 {
+    font-size: 48px;
+}
+
+.al-selectorBarTitle .al-selectorBarTitleItem:nth-child(3) a {
+    color: #3598db;
+    text-align: right;
+}
+
+.al-selectorBarList {
+    margin-bottom: 0.2rem;
+    padding-left: 0.4rem;
+    background-color: #fff;
+}
+
+.al-selectorBarItem {
+    border-bottom: 1px solid #e4e9ed;
+    height: 1.33333rem;
+    line-height: 1.33333rem;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.al-selectorBarItem .al-selectorBarItemName {
+    margin-left: 0.4rem;
+    color: #333;
+    font-size: 0.42667rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.al-selectorBarItem .al-selectorBarItemIcon {
+    width: 0.50667rem;
+    height: 0.50667rem;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #b4b4b4;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.al-selectorBarItem.selected .al-selectorBarItemIcon {
+    width: 0.50667rem;
+    height: 0.50667rem;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #2899e6;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent url("//img50.allinmd.cn/pages/personal/selected.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.al-selectorBarMask.on {
+    visibility: visible;
+    opacity: 1;
+}
+
+.al-selectorBarMask.on .al-selectorBar {
+    opacity: 1;
+    -ms-transform: translateY(0%);
+        transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+}

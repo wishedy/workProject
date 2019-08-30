@@ -1,0 +1,83 @@
+@charset "UTF-8";
+//个人主页——直播列表
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_personalLiving"; //直播列表
+@import "../../components/_contentModule"; //图文内容
+.icon-livingWatcherNum {
+    @extend %icon-livingWatcherNum;
+}
+
+.al-contentSeminarMark {
+    @extend %al-contentSeminarMark;
+}
+
+.al-contentPartModule {
+    padding: rem(20px) 0;
+}
+
+.al-contentWatcherPic {
+    vertical-align: middle;
+}
+
+.al-contentWatcherName {
+    vertical-align: middle;
+    @include font-dpr(15px);
+    margin-left: rem(15px);
+    .watcherNum {
+        float: right;
+        em {
+            font-style: normal;
+        }
+    }
+}
+
+.al-contentWatcher {
+    padding: rem(20px) 0;
+}
+
+.al-contentWatcherPic {
+    @include circle(rem(60px), #fff)
+}
+
+.al-livingClass {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: rem(168px);
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    color: #fff;
+    @include font-dpr(12px);
+    text-shadow: 1px 1px rem(5px) #000;
+    text-align: right;
+    padding-bottom: rem(5px);
+    padding-right: rem(5px);
+}
+
+.btn-primary {
+    @include font-dpr(12px);
+}
+.btn-done{
+    @include font-dpr(12px);
+}
+.icon-arrowRight {
+    @extend %icon-arrowRight;
+}
+
+.al-checkMore {
+    color: #909090;
+    @include font-dpr(13px);
+    text-align: center;
+    height: rem(76px);
+    line-height: rem(76px);
+    background-color: #fff;
+    border-top: 1px solid $innerBorderColor;
+    span{
+    	vertical-align: middle;
+    }
+}

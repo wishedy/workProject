@@ -1,0 +1,64 @@
+@charset "UTF-8";
+//认证失败提示组件
+//Created by qiangkailiang on 2016/07/31
+
+// 认证失败提示
+.al-authFailTitle{
+    color: #333;
+    @include font-dpr(20px);
+    text-align: center;
+    margin-top: rem(238px);
+    margin-bottom: rem(150px);
+    h2{
+        font-weight: normal;
+    }
+}
+
+.al-authFailText{
+    text-align: center;
+    color: #555555;
+    @include font-dpr(17px);
+    padding: 0 rem(75px);
+    line-height: 1.5;
+    margin-bottom: rem(100px);
+}
+
+.al-authFailBtn{
+    padding: 0 rem(30px);
+    text-align: center;
+    span{
+        color: $smallTextColor;
+        display: inline-block;
+        padding-top: rem(30px);
+        @include font-dpr(14px);
+    }
+}
+// 当点击发布——全页面添加blur模糊
+.al-mainInner.al-fullBlur {
+    filter: blur(50px);
+    -webkit-filter: blur(50px)
+}
+
+.al-authFailBox.al-fullBlurAndroid {
+    background-color: #fff;
+    opacity: 1;
+    visibility: visible;
+}
+.al-authFailBox {
+    background: #fff;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 7;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+.al-authFailBox.show {
+    opacity: 1;
+    visibility: visible;
+}

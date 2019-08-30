@@ -1,0 +1,50 @@
+@charset "UTF-8";
+//内容评论 组件
+//Created by qiangkailiang on 2016/08/03
+//公共方法模块调用
+@import "../../modules/_common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+
+
+.ydCourse{
+  border: 1px solid #e4e9ed;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-top: 20px;
+  ul{
+    margin: 24px 20px 0;
+    li{
+      margin-bottom: 24px;
+      @include clearfix();
+      figure{
+        float: left;
+        img{
+          width: 95px;
+          height: 53px;
+        }
+      }
+
+      fieldset{
+        float: right;
+        width: 121px;
+        margin-top: -5px;
+        p{
+          font-size: 13px;
+          color: #909090;
+          line-height: 14px;
+
+        }
+        .title{
+          font-size: 14px;
+          color: #555555;
+          line-height: 20px;
+          margin-bottom: 13px;
+          &:hover{
+            color: #2899e6;
+          }
+        }
+      }
+    }
+  }
+}

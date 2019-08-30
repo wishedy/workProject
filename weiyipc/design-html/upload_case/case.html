@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href='//m.allinmd.cn/pages/discover/discover_expert.html';
+        }
+    </script>
+    <title>上传病例</title>
+    <meta name="keywords" content="权威专家，医学专家，医学大佬，主任医师，权威医师，医生沟通，学术专栏，唯医,allinmd">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <!-- build:css /dest/discover/discover_expert.css -->
+    <link rel="stylesheet" href="/css/v3/base.css" />
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css" />
+    <link rel="stylesheet" href="/css/v3/pageFooter.css" />
+    <link rel="stylesheet" href="/js/modules/indexLogin/module.indexLogin.css">
+    <link rel="stylesheet" href="/js/modules/auth/module.auth.css"/>
+    <link rel="stylesheet" href="/js/modules/user/module.user.css"/>
+    <link rel="stylesheet" href="/js/modules/user/module.user-v2.css"/>
+    <link rel="stylesheet" href="/js/modules/find-password-v2/module.find-password-v2.css" />
+    <link rel="stylesheet" href="/js/modules/personYouKnow/personYouKnow.css"/>
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/publish/publish.css" rel= "stylesheet" type="text/css" />
+    <!--<link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>-->
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/css/column/videoPK_v2/apply_zhezhao.css" rel="stylesheet" type="text/css"/>-->
+    <link rel="stylesheet" href="/js/third-party/pagination/pager.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/upload_case/upload_case.css"/>
+    <!--endbuild-->
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="75">
+<!--全内容容器——mainInner-->
+<section class="al-mainInner" >
+
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar al-mainSidebarCollapse">
+        <header class="al-mainLogo">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+        <section class="al-mainSidebarList">
+            <ul data-alcode-mod='52'>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>首页</h4>
+                            <p>HOME</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem active">
+                    <a href="//www.allinmd.cn/pages/discover/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find_active.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发现</h4>
+                            <p>DISCOVERY</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发布</h4>
+                            <p>RELEASE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navMes">
+                    <a href="//www.allinmd.cn/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>消息</h4>
+                            <p>MESSAGE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navIndex">
+                    <a href="//www.allinmd.cn/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                        <figcaption>我的</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>我的</h4>
+                            <p>PROFILE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList" data-alcode-mod='72'>
+                <li class="al-mainSidebarItem al-siteSwitch">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_siteSwitch.png" alt="">
+                        <figcaption class="ev_siteSwitchName">骨科</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4 class="ev_siteSwitchName">骨科</h4>
+                                <p>SITE SWITCH</p>
+                            </div>
+                        </article>
+                    </a>
+                    <div class="al_siteSwitch_popBox">
+                        <div class="al_siteSwitch_orthopaedics"><i></i>骨科</div>
+                        <div class="al_siteSwitch_handSurgery"><i></i>手外科</div>
+                    </div>
+                </li>
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>小唯</h4>
+                            <p>SERVICE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navPhone">
+                    <a href="//www.allinmd.cn/pages/singlePage/iphone-app-download.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>手机端</h4>
+                            <p>MOBILES</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <section class="uploadCase">
+
+
+        <!--浏览器升级提醒-->
+        <section class="browserUpgrade">
+            <aside class="content">
+                <p class="close"><span></span></p>
+                <figure class="upgradeTip"><img src="//img10.allinmd.cn/v3/upload_case/unhappy.png"> </figure>
+                <p class="upgradeText">您的浏览器版本过低，将无法上传图片或视频，可下载推荐浏览器后再发布</p>
+                <ul class="upgradeCont">
+                    <li>
+                        <img src="//img10.allinmd.cn/v3/upload_case/ie.png">
+                        <p>升级至新版本 IE 浏览器</p>
+                    </li>
+                    <li>
+                        <img src="//img10.allinmd.cn/v3/upload_case/Google.png">
+                        <p>使用Google Chrome 浏览器</p>
+                    </li>
+                    <li>
+                        <img src="//img10.allinmd.cn/v3/upload_case/nopicture.png">
+                        <p>继续发布无图病例</p>
+                    </li>
+                </ul>
+            </aside>
+        </section>
+        <!--浏览器升级提醒 end-->
+
+
+        <!--弹层-->
+        <aside class="editorPupop" style="display: none;">
+            <aside class="editorPupopCont">
+                <div class="closeIcon"><i></i></div>
+                <p>确定放弃本次编辑吗？</p>
+                <div class="editorBtn">
+                    <button class="save">保存草稿并离开</button>
+                    <button class="enter">确定</button>
+                </div>
+            </aside>
+        </aside>
+        <!--弹层 END-->
+
+
+        <section class="uploadCaseError">
+            <i></i>图片上传失败，请重新上传
+        </section>
+        <!--右侧导航-->
+        <aside class="uploadNav">
+            <p>点击定位</p>
+            <ul class="uploadNavCont">
+                <li class="active">1. 基本信息</li>
+                <li>2. 病例信息</li>
+                <li>3. 影像资料</li>
+            </ul>
+        </aside>
+
+    <section class="uploadHeader">
+        <aside class="uploadCont">
+            <p class="saveDraft">保存草稿</p>
+            <p class="cancel"><i>取消</i><span>发布</span></p>
+        </aside>
+    </section>
+    <section class="essentialInformation msgMargin">
+        <aside class="title">基本信息</aside>
+        <aside class="option active">
+            <p class="titleText"><i></i>标题</p>
+            <textarea placeholder="请输入病例标题（必填）"></textarea>
+        </aside>
+        <aside class="option">
+            <p class="titleText"><i></i>病人性别</p><p><i class="male active"></i><img src="/images/img10/v3/upload_case/male.png"></p><p><i class="male"></i><img src="/images/img10/v3/upload_case/female.png"></p>
+        </aside>
+        <aside class="option">
+            <p class="titleText"><i></i>病人年龄</p>
+            <div class="years">
+                <p><input type="text">岁</p>
+                <p class="default"><input type="text">月</p>
+                <p class="default"><input type="text">天</p>
+            </div>
+        </aside>
+    </section>
+
+    <section class="essentialInformation">
+        <aside class="title"><p>病例信息</p><div>自定义病例项</div></aside>
+        <aside class="supplement">
+            <div class="supplementTitle"><p>补充资料</p><p class="dataText">收起</p></div>
+            <ul>
+                <li><i></i>既往史</li>
+                <li><i></i>个人史</li>
+                <li><i></i>家族史</li>
+                <li class="active"><i></i>辅助检查</li>
+                <li><i></i>诊断&鉴别诊断</li>
+                <li><i></i>治疗过程</li>
+                <li><i></i>手术名称</li>
+                <li><i></i>手术记录</li>
+                <li><i></i>产品信息</li>
+            </ul>
+        </aside>
+        <aside class="option">
+            <p class="titleText"><i></i>主诉</p>
+            <textarea placeholder="请输入主诉（必填）"></textarea>
+        </aside>
+        <aside class="option">
+            <p class="titleText"><i></i>现病史</p>
+            <textarea placeholder="请输入现病史（必填）"></textarea>
+        </aside>
+        <aside class="option">
+            <p class="titleText">既往史</p>
+            <textarea placeholder="请输入既往史"></textarea>
+        </aside>
+        <aside class="option">
+            <p class="titleText">个人史</p>
+            <textarea placeholder="请输入个人史"></textarea>
+        </aside>
+        <aside class="option">
+            <p class="titleText">家族史</p>
+            <textarea placeholder="请输入家族史"></textarea>
+        </aside>
+        <aside class="option">
+            <p class="titleText"><i></i>体格检查（全身查体&专科查体）</p>
+            <textarea placeholder="请输入体格检查（必填）"></textarea>
+        </aside>
+        <aside class="option">
+            <p class="titleText">辅助检查</p>
+            <textarea placeholder="请输入辅助检查结果"></textarea>
+        </aside>
+        <aside class="option">
+            <p class="titleText">诊断&鉴别诊断</p>
+            <textarea placeholder="请输入诊断&鉴别诊断"></textarea>
+        </aside>
+        <aside class="option">
+            <p class="titleText">治疗过程</p>
+            <textarea placeholder="请输入治疗过程"></textarea>
+        </aside>
+        <aside class="option">
+            <p class="titleText">手术名称</p>
+            <textarea placeholder="请输入手术名称"></textarea>
+        </aside>
+        <aside class="option">
+            <p class="titleText">手术记录</p>
+            <textarea placeholder="请输入手术记录"></textarea>
+        </aside>
+        <aside class="option">
+            <p class="titleText">产品信息</p>
+            <textarea placeholder="请输入产品品牌及型号"></textarea>
+        </aside>
+        <aside class="option">
+            <p class="titleText"><i></i>讨论</p>
+            <textarea placeholder="请输入要讨论的内容（必填）" minHeight="26" maxHeight="189"></textarea>
+            <b>247</b>
+        </aside>
+        <aside class="option">
+            <p class="titleText">提醒谁看</p>
+            <div class="atName">
+                <div class="atNameText">
+                    <span class="atPersonal">@峰会
+                        <i class="arrow"></i>
+                        <ul class="atPosition">
+                            <li><img src="https://img05.allinmd.cn/public1/M00/08/1D/wKgBMFkmRMSAKZR9AAAdVqMhLUM139_c_p_150_150.jpg"><span>王娜</span>
+                                <i>上海交通大学医学院附属国际和平妇幼保健院分院</i></li>
+                            <li><img src="https://img05.allinmd.cn/public1/M00/08/1D/wKgBMFkmRMSAKZR9AAAdVqMhLUM139_c_p_150_150.jpg"><span>王娜</span>
+                                <i>上海交通大学医学院附属国际和平妇幼保健院分院</i></li>
+                            <li><img src="https://img05.allinmd.cn/public1/M00/08/1D/wKgBMFkmRMSAKZR9AAAdVqMhLUM139_c_p_150_150.jpg"><span>王娜</span>
+                                <i>上海交通大学医学院附属国际和平妇幼保健院分院</i></li>
+                        </ul>
+                    </span>
+                </div>
+                <input type="text" placeholder="请输入要提醒的人">
+            </div>
+            <div class="aitNum">5/10</div>
+        </aside>
+    </section>
+    <section class="essentialInformation">
+        <aside class="title">影像资料</aside>
+        <aside class="uploadStandardCont">
+            <aside class="uploadStandard">
+                <div>最多上传40张图片，单张最大5M，支持.jpg和.png格式</div>
+                <div class="num">还能添加<span>40</span>张</div>
+            </aside>
+            <aside class="uploadStandard marginUpload">
+                <div>最多上传1个视频，最大80M，支持.mp4、.mov、.avi、.wmv、.flv格式</div>
+                <div class="num">还能添加<span>1</span>个</div>
+            </aside>
+        </aside>
+        <aside class="imagesUploadCont">
+            <div class="images">图集<span>治疗前</span></div>
+            <div class="imagesUpload">
+                <ul>
+                    <li class="imagesUploadBtn">
+                        <img src="https://img04.allinmd.cn/doc/2017/01/03/1483413668034_1483414477715_225_150.png">
+                        <!--关闭按钮--><figure><img src="/images/img10/v3/upload_case/close.png"> </figure>
+                        <!--透明遮罩--><div class="transparentMask">
+                        <!--上传失败--><div class="uploadFail">上传失败<br>请重新上传</div></div>
+                        <textarea placeholder="请输入图片描述"></textarea>
+                    </li>
+                    <li class="imagesUploadBtn">
+                        <img src="https://img04.allinmd.cn/doc/2017/01/03/1483413668034_1483414477715_225_150.png">
+                        <!--关闭按钮--><figure><img src="/images/img10/v3/upload_case/close.png"> </figure>
+                        <!--透明遮罩--><div class="transparentMask">
+                        <!--上传中--><div class="uploading"><i></i>40%</div>
+                    </div>
+                        <textarea placeholder="请输入图片描述"></textarea>
+                      </li>
+                    <li class="imagesUploadBtn">
+                        <img src="https://img04.allinmd.cn/doc/2017/01/03/1483413668034_1483414477715_225_150.png">
+                        <!--关闭按钮--><figure><img src="/images/img10/v3/upload_case/close.png"> </figure>
+                        <!--透明遮罩--><div class="transparentMask">
+                        <!--上传中--><div class="uploadFail">查看大图</div></div>
+                        <textarea placeholder="请输入图片描述"></textarea>
+                    </li>
+                    <li class="imagesUploadBtn">
+                        <p><i class="cameraIcon"></i><span>还能添加40张</span></p>
+                        <input type="file">
+                    </li>
+                    <li class="imagesUploadBtn">
+                        <p><i class="videoIcon"></i><span>还能添加1个</span></p>
+                        <input type="file">
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <aside class="imagesUploadCont">
+            <div class="images">图集<span>治疗中</span></div>
+            <div class="imagesUpload">
+                <ul>
+                    <li class="imagesUploadBtn">
+                        <p><i class="cameraIcon"></i><span>还能添加40张</span></p>
+                        <input type="file">
+                    </li>
+                    <li class="imagesUploadBtn">
+                        <p><i class="videoIcon"></i><span>还能添加1个</span></p>
+                        <input type="file">
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <aside class="imagesUploadCont">
+            <div class="images">图集<span>治疗后</span></div>
+            <div class="imagesUpload">
+                <ul>
+                    <li class="imagesUploadBtn">
+                        <p><i class="cameraIcon"></i><span>还能添加40张</span></p>
+                        <input type="file">
+                    </li>
+                    <li class="imagesUploadBtn">
+                        <p><i class="videoIcon"></i><span>还能添加1个</span></p>
+                        <input type="file">
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </section>
+    <section class="saveBtn">
+        <aside class="uploadCont">
+            <p class="saveDraft">保存草稿</p>
+            <p class="cancel"><i>取消</i><span>发布</span></p>
+        </aside>
+    </section>
+
+    </section>
+
+    <!--公共底部 start-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--公共底部 End-->
+</section>
+
+
+
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/comm/comm.textChange.js" ></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.ajaxExistHtml.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.autoHeight.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/user/module.user.js"></script>
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+<script src="/js/plugins/follow/plugin.follow.js"></script>
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+<script src="/js/modules/personYouKnow/module.personYouKnow.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<!--<script src="/js/scene/column/videoPK_v2/scene.column.videoPK_2.process.js"></script>-->
+<!--<script src="/js/modules/publish/module.select-type.js"></script>-->
+<script src="/js/modules/publish/module.video-upload.js" ></script>
+<script src="/js/modules/publish/module.doc-upload.js" ></script>
+<script src="/js/modules/publish/module.topic-upload.js" ></script>
+<script src="/js/modules/publish/module.case-upload.js" ></script>
+<script src="/js/modules/share/module.share.js"></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"> </script>
+<script src="/js/plugins/make-sure-popup/plugin.make-sure-popup.js"> </script>
+<script src="/js/modules/resource-list-template/module.resource-list-template.js"> </script>
+
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<script src="/js/third-party/uploadify/swfobject2.2.js" ></script>
+<script src="/js/third-party/uploadify/jquery.uploadify.js" ></script>
+<script src="/js/third-party/ajaxfileupload.js" ></script>
+<script src="/js/third-party/qiniu/qiniu.js" ></script>
+<script src="/js/third-party/qiniu/ui.js" ></script>
+<script src="/js/third-party/plupload/plupload.full.min.js" ></script>
+<script src="/js/third-party/plupload/i18n/zh_CN.js" ></script>
+<script src="/js/third-party/jquery-qrcode-master/src/jquery.qrcode.js"> </script>
+<script src="/js/third-party/jquery-qrcode-master/src/qrcode.js"> </script>
+<script src="/js/third-party/pagination/jquery.pager.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+
+<!--病例发布-->
+<!--<script src="/js/scene/singlePage/scene.singlePage.upload-case.js"></script>-->
+
+<script>
+    $(".option textarea").textareaAutoHeight({minHeight:26,maxHeight:189});
+    $(".imagesUpload textarea").textareaAutoHeight({maxHeight:54});
+</script>
+</body>
+
+</html>

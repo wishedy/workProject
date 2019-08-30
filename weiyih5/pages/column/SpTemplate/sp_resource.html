@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript">
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+    if (IsPC()) {
+        window.location.href = "//www.allinmd.cn/v2/design-html/scene/column/SpTemplate/SpTem_all.html"
+    }
+    </script>
+    <meta charset="UTF-8">
+    <title>专题页面－唯医，allinmd</title>
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="Keywords" content="病例专题，视频专题，专题页面，骨科专题，学术专题，文献专题，手术汇总，">
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <link rel="stylesheet" href="/css/column/SpTemplate/SpTemplate.css">
+    <script src="/js/flexible.js"></script>
+    <script src="/js/touch.min.js"></script>
+</head>
+
+<body>
+<input type="hidden" value="1461654118153" id="themeId"/>
+    <!--
+        banner图
+        根据需求，请动态写入banner图片的链接地址。
+        回到首页按钮在点击后跳转至首页。
+    -->
+    <header class="banner">
+        <figure class="bannerImg">
+            <img src="//img50.allinmd.cn/column/SpTemplate/banner.png" alt="banner">
+        </figure>
+       <a href="javascript:void(0)" class="backToHome" data-ajax="false">首页</a>
+    </header>
+    <!--
+        主内容
+        "main"为全部内容的容器。
+    -->
+    <section class="main">
+        <!--
+            “活动简介”标题图片
+            根据需求，请对img动态写入图片链接
+        -->
+        <header class="mainTitle">
+            <figure class="titleImg">
+                <img src alt="">
+            </figure>
+        </header>
+        <!--
+            导航栏区域
+            导航栏的每个选项均为图片，请根据需求动态传入。
+            请将常规状态的图片放置于a.normalImage标签内的img中，而选中状态的图片放置在a.activeImage的img中。
+            目前默认功能为点击锚点定位功能。如果需要修改为点击切换加载内容的功能，请将figure.navbarItem标签上的Ev-NavbarItemChange类删除。
+        -->
+        <nav class="navbar Ev-Navbar">
+            <figure class="navbarItem Ev-NavbarItem Ev-NavbarItemChange">
+                <a href="javascript:void(0)" data-ajax="false" class="normalImage">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/tab.png" alt="">
+                </a>
+                <a href="javascript:void(0)" data-ajax="false" class="activeImage">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/tabOn.png" alt="">
+                </a>
+            </figure>
+            <figure class="navbarItem Ev-NavbarItem Ev-NavbarItemChange">
+                <a href="javascript:void(0)" data-ajax="false" class="normalImage">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/tab.png" alt="">
+                </a>
+                <a href="javascript:void(0)" data-ajax="false" class="activeImage">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/tabOn.png" alt="">
+                </a>
+            </figure>
+            <figure class="navbarItem Ev-NavbarItem Ev-NavbarItemChange on">
+                <a href="javascript:void(0)" data-ajax="false" class="normalImage">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/tab.png" alt="">
+                </a>
+                <a href="javascript:void(0)" data-ajax="false" class="activeImage">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/tabOn.png" alt="">
+                </a>
+            </figure>
+            <figure class="navbarItem Ev-NavbarItem Ev-NavbarItemChange">
+                <a href="javascript:void(0)" data-ajax="false" class="normalImage">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/tab.png" alt="">
+                </a>
+                <a href="javascript:void(0)" data-ajax="false" class="activeImage">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/tabOn.png" alt="">
+                </a>
+            </figure>
+            <figure class="navbarItem Ev-NavbarItem Ev-NavbarItemChange">
+                <a href="javascript:void(0)" data-ajax="false" class="normalImage">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/tab.png" alt="">
+                </a>
+                <a href="javascript:void(0)" data-ajax="false" class="activeImage">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/tabOn.png" alt="">
+                </a>
+            </figure>
+        </nav>
+        <!--
+            专题内容模块
+            专题内容包含拉伸图片，居于上方或下方的说明文本。根据实际需求，请保留所需的innerText模块，并删除不需要使用的。
+        -->
+        <section class="mainContent Ev-MainContent">
+            <!--内容标题说明-->
+            <header class="contentTitle">
+                <figure class="tabTitleImg">
+                    <img src="//img04.allinmd.cn/theme/2016/05/09/1462778383904_1462778524536.jpg" alt="">
+                </figure>
+            </header>
+            <!--左图右文
+                 请在contentBox后添加类imageLeft
+                 居中视频按钮videoImg视情况选择是否保留
+                 右上角悬浮图标imgMark的图片动态传入-->
+            <section class="contentBox imageLeft">
+                <section class="contentImgBox">
+                    <figure class="contentImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="videoImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/video.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="imgMark">
+                        <img src="//img50.allinmd.cn/column/SpTemplate/markNew.png" alt="">
+                    </figure>
+                </section>
+                <article class="content">
+                    <a class="contentText" href="javascript:;" data-ajax="false">
+                        <p>
+                            <span class="contentType">
+                                                视频
+                                                
+                                                
+                                                
+                                                
+                                            </span>老年粗隆间骨折手术选择：老年粗隆间骨折手术选择手术
+                        </p>
+                    </a>
+                    <p class="personalMsg">
+                        <span class="user">禹宝庆</span>
+                        <span class="point">·</span>
+                        <span class="hospital">大同市第五人民医院</span>
+                    </p>
+                </article>
+            </section>
+            <!--
+                左文右图
+                请在contentBox后添加类imageRight
+            -->
+            <section class="contentBox imageRight">
+                <article class="content">
+                    <a class="contentText" href="javascript:;" data-ajax="false">
+                        <p>
+                            <span class="contentType">视频</span>老年粗隆间骨折手术选择：老年粗隆间骨折手术选择手术
+                        </p>
+                    </a>
+                    <p class="personalMsg">
+                        <span class="user">禹宝庆</span>
+                        <span class="point">·</span>
+                        <span class="hospital">大同市第五人民医院</span>
+                    </p>
+                </article>
+                <section class="contentImgBox">
+                    <figure class="contentImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="imgMark">
+                        <img src="//img50.allinmd.cn/column/SpTemplate/markNew.png" alt="">
+                    </figure>
+                </section>
+            </section>
+            <!--上图下文
+                该情况的样式结构与以上两种类型不同，请按照需求选择是否保留。若不需要使用，请将imageUp作隐藏处理。
+            -->
+            <section class="imageUp">
+                <section class="contentBox">
+                    <section class="contentImgBox">
+                        <figure class="contentImg">
+                            <a href="javascript:;" data-ajax="false">
+                                <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                            </a>
+                        </figure>
+                        <figure class="videoImg">
+                            <a href="javascript:;" data-ajax="false">
+                                <img src="//img50.allinmd.cn/column/SpTemplate/video.png" alt="">
+                            </a>
+                        </figure>
+                        <figure class="imgMark">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/markNew.png" alt="">
+                        </figure>
+                    </section>
+                    <article class="content">
+                        <p class="contentText">
+                            <span class="contentType">视频</span>老年粗隆间骨折手术选择：老年粗隆间骨折手术选择手术
+                        </p>
+                        <p class="personalMsg">
+                            <span class="user">禹宝庆</span>
+                            <span class="point">·</span>
+                            <span class="hospital">大同市第五人民医院</span>
+                        </p>
+                    </article>
+                </section>
+                <section class="contentBox">
+                    <section class="contentImgBox">
+                        <figure class="contentImg">
+                            <a href="javascript:;" data-ajax="false">
+                                <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                            </a>
+                        </figure>
+                        <figure class="imgMark">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/markNew.png" alt="">
+                        </figure>
+                    </section>
+                    <article class="content">
+                        <a class="contentText" href='javascript:;' data-ajax="false">
+                            <p>
+                                <span class="contentType">视频</span>老年粗隆间骨折手术选择：老年粗隆间骨折手术选择手术
+                            </p>
+                        </a>
+                        <p class="personalMsg">
+                            <span class="user">禹宝庆</span>
+                            <span class="point">·</span>
+                            <span class="hospital">大同市第五人民医院</span>
+                        </p>
+                    </article>
+                </section>
+            </section>
+        </section>
+        <!--
+            内容模块2
+            每个内容模块的容器均为mainContent，导航栏按钮将对应进行锚点跳转。
+        -->
+        <section class="mainContent Ev-MainContent">
+            <!--左图右文-->
+            <header class="contentTitle">
+                <figure class="tabTitleImg">
+                    <img src="//img04.allinmd.cn/theme/2016/05/09/1462778383904_1462778524536.jpg" alt="">
+                </figure>
+            </header>
+            <!--new-->
+            <section class="contentBox imageLeft">
+                <section class="contentImgBox">
+                    <figure class="contentImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="videoImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/video.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="imgMark">
+                        <img src="//img50.allinmd.cn/column/SpTemplate/markNew.png" alt="">
+                    </figure>
+                </section>
+                <article class="content">
+                    <a class="contentText" href="javascript:;" data-ajax="false">
+                        <p>
+                            <span class="contentType">视频</span>老年粗隆间骨折手术选择：老年粗隆间骨折手术选择手术
+                        </p>
+                    </a>
+                    <span class="user">禹宝庆</span>
+                    <span class="point">·</span>
+                    <span class="hospital">大同市第五人民医院</span>
+                </article>
+            </section>
+            <!--左文右图-->
+            <section class="contentBox imageRight">
+                <article class="content">
+                    <a class="contentText" href="javascript:;" data-ajax="false">
+                        <p>
+                            <span class="contentType">视频</span>老年粗隆间骨折手术选择：老年粗隆间骨折手术选择手术
+                        </p>
+                    </a>
+                    <span class="user">禹宝庆</span>
+                    <span class="point">·</span>
+                    <span class="hospital">大同市第五人民医院</span>
+                </article>
+                <section class="contentImgBox">
+                    <figure class="contentImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="imgMark">
+                        <img src="//img50.allinmd.cn/column/SpTemplate/markNew.png" alt="">
+                    </figure>
+                </section>
+            </section>
+        </section>
+                <section class="mainContent Ev-MainContent">
+            <!--左图右文-->
+            <header class="contentTitle">
+                <figure class="tabTitleImg">
+                    <img src="//img04.allinmd.cn/theme/2016/05/09/1462778383904_1462778524536.jpg" alt="">
+                </figure>
+            </header>
+            <!--new-->
+            <section class="contentBox imageLeft">
+                <section class="contentImgBox">
+                    <figure class="contentImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="videoImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/video.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="imgMark">
+                        <img src="//img50.allinmd.cn/column/SpTemplate/markNew.png" alt="">
+                    </figure>
+                </section>
+                <article class="content">
+                    <a class="contentText" href="javascript:;" data-ajax="false">
+                        <p>
+                            <span class="contentType">视频</span>老年粗隆间骨折手术选择：老年粗隆间骨折手术选择手术
+                        </p>
+                    </a>
+                    <span class="user">禹宝庆</span>
+                    <span class="point">·</span>
+                    <span class="hospital">大同市第五人民医院</span>
+                </article>
+            </section>
+            <!--左文右图-->
+            <section class="contentBox imageRight">
+                <article class="content">
+                    <a class="contentText" href="javascript:;" data-ajax="false">
+                        <p>
+                            <span class="contentType">视频</span>老年粗隆间骨折手术选择：老年粗隆间骨折手术选择手术
+                        </p>
+                    </a>
+                    <span class="user">禹宝庆</span>
+                    <span class="point">·</span>
+                    <span class="hospital">大同市第五人民医院</span>
+                </article>
+                <section class="contentImgBox">
+                    <figure class="contentImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="imgMark">
+                        <img src="//img50.allinmd.cn/column/SpTemplate/markNew.png" alt="">
+                    </figure>
+                </section>
+            </section>
+        </section>
+                <section class="mainContent Ev-MainContent">
+            <!--左图右文-->
+            <header class="contentTitle">
+                <figure class="tabTitleImg">
+                    <img src="//img04.allinmd.cn/theme/2016/05/09/1462778383904_1462778524536.jpg" alt="">
+                </figure>
+            </header>
+            <!--new-->
+            <section class="contentBox imageLeft">
+                <section class="contentImgBox">
+                    <figure class="contentImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="videoImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/video.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="imgMark">
+                        <img src="//img50.allinmd.cn/column/SpTemplate/markNew.png" alt="">
+                    </figure>
+                </section>
+                <article class="content">
+                    <a class="contentText" href="javascript:;" data-ajax="false">
+                        <p>
+                            <span class="contentType">视频</span>老年粗隆间骨折手术选择：老年粗隆间骨折手术选择手术
+                        </p>
+                    </a>
+                    <span class="user">禹宝庆</span>
+                    <span class="point">·</span>
+                    <span class="hospital">大同市第五人民医院</span>
+                </article>
+            </section>
+            <!--左文右图-->
+            <section class="contentBox imageRight">
+                <article class="content">
+                    <a class="contentText" href="javascript:;" data-ajax="false">
+                        <p>
+                            <span class="contentType">视频</span>老年粗隆间骨折手术选择：老年粗隆间骨折手术选择手术
+                        </p>
+                    </a>
+                    <span class="user">禹宝庆</span>
+                    <span class="point">·</span>
+                    <span class="hospital">大同市第五人民医院</span>
+                </article>
+                <section class="contentImgBox">
+                    <figure class="contentImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="imgMark">
+                        <img src="//img50.allinmd.cn/column/SpTemplate/markNew.png" alt="">
+                    </figure>
+                </section>
+            </section>
+        </section>
+                <section class="mainContent Ev-MainContent">
+            <!--左图右文-->
+            <header class="contentTitle">
+                <figure class="tabTitleImg">
+                    <img src="//img04.allinmd.cn/theme/2016/05/09/1462778383904_1462778524536.jpg" alt="">
+                </figure>
+            </header>
+            <!--new-->
+            <section class="contentBox imageLeft">
+                <section class="contentImgBox">
+                    <figure class="contentImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="videoImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/video.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="imgMark">
+                        <img src="//img50.allinmd.cn/column/SpTemplate/markNew.png" alt="">
+                    </figure>
+                </section>
+                <article class="content">
+                    <a class="contentText" href="javascript:;" data-ajax="false">
+                        <p>
+                            <span class="contentType">视频</span>老年粗隆间骨折手术选择：老年粗隆间骨折手术选择手术
+                        </p>
+                    </a>
+                    <span class="user">禹宝庆</span>
+                    <span class="point">·</span>
+                    <span class="hospital">大同市第五人民医院</span>
+                </article>
+            </section>
+            <!--左文右图-->
+            <section class="contentBox imageRight">
+                <article class="content">
+                    <a class="contentText" href="javascript:;" data-ajax="false">
+                        <p>
+                            <span class="contentType">视频</span>老年粗隆间骨折手术选择：老年粗隆间骨折手术选择手术
+                        </p>
+                    </a>
+                    <span class="user">禹宝庆</span>
+                    <span class="point">·</span>
+                    <span class="hospital">大同市第五人民医院</span>
+                </article>
+                <section class="contentImgBox">
+                    <figure class="contentImg">
+                        <a href="javascript:;" data-ajax="false">
+                            <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="imgMark">
+                        <img src="//img50.allinmd.cn/column/SpTemplate/markNew.png" alt="">
+                    </figure>
+                </section>
+            </section>
+        </section>
+        <!--
+            过往推荐
+            过往推荐模块中，根据图片的数量不同，在布局样式上有区别。根据pastContent容器的数量，此处通过JS动态改变样式。
+            请注意，每个pastContent中有且仅有一张图片，pastContent的总数不能少于一个/多于四个，即支持的图片数量在1-4张之间。
+        -->
+        <section class="pastContentBox Ev-PastContentBox">
+            <!--过往推荐 标题图-->
+            <figure class="advTitle">
+                <img src="//img50.allinmd.cn/column/SpTemplate/advTitle.png" alt="">
+            </figure>
+            <!--推荐内容图片 数量不能多于4个/小于1个-->
+            <article class="pastContent Ev-PastContent">
+                <figure class="pastContentImg">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                </figure>
+            </article>
+            <article class="pastContent Ev-PastContent">
+                <figure class="pastContentImg">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/figure.png" alt="">
+                </figure>
+            </article>
+            <article class="pastContent Ev-PastContent">
+                <figure class="pastContentImg">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/test.jpg" alt="">
+                </figure>
+            </article>
+            <article class="pastContent Ev-PastContent">
+                <figure class="pastContentImg">
+                    <img src="//img50.allinmd.cn/column/SpTemplate/test.jpg" alt="">
+                </figure>
+            </article>
+        </section>
+        <!--
+            页脚
+            包含回到首页按钮/APP下载按钮/回到顶部按钮
+        -->
+        <footer class="bottomBtn">
+            <ul>
+                <li>
+                    <a href="//m.allinmd.cn" data-ajax="false">首页</a>
+                </li>
+                <hr class="line">
+                <li>
+                    <a href="javascript:void(0)" data-ajax="false" class="Ev-DownloadApp">下载APP</a>
+                </li>
+                <hr class="line">
+                <li>
+                    <a href="javascript:void(0)" data-ajax="false" class="Ev-BackToTop">回到顶部</a>
+                </li>
+            </ul>
+        </footer>
+        <!--
+            悬浮按钮组
+            包含后退按钮backPast与分享按钮shareBtn
+        -->
+        <a href="javascript:void(0)" data-ajax="false" class="shareBtn Ev-ShareBtn">
+                分享
+            </a>
+        <a href="javascript:void(0)" data-ajax="false" class="backPast Ev-BackPast">
+                &nbsp
+            </a>
+    </section>
+    <!--分享页面-->
+    <div class="videoPK_share_pop Ev-ShareCasePopShow">
+        <div id="videoPK_sharebtn" class="vPK_share_cont">
+            <div class="vPK_share_list">
+                <div class="share_dao">分享到</div>
+                <a class="share_sina Ev-ShareSina" target="_blank" ref="sina">
+                    <div class="share_sina_icon"><img src="//img50.allinmd.cn/column/SpTemplate/xinlang.png" _mce_src="//img50.allinmd.cn/column/SpTemplate/xinlang.png" alt=""></div>
+                    <div class="share_sina_text">新浪微博</div>
+                </a>
+                <a class="share_qzone Ev-ShareQzone" target="_blank" ref="qzone">
+                    <div class="share_qzone_icon"><img src="//img50.allinmd.cn/column/SpTemplate/kongjian.png" _mce_src="//img50.allinmd.cn/column/SpTemplate/kongjian.png" alt=""></div>
+                    <div class="share_sina_text">QQ空间</div>
+                </a>
+            </div>
+        </div>
+        <div class="share_quxiao Ev-ShareHideBtn">取消</div>
+    </div>
+
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src='/js/comm/comm_service.js'></script>
+    <script src='/js/json/operator_auth.js'></script>
+    <script src='/js/comm/comm-page-url.js'></script>
+    <script src='/js/comm/comm-data.js'></script>
+    <script src='/js/comm/date.js'></script>
+    <script src='/js/comm/comm-customer.js'></script>
+
+    <script src='/js/lib/jquery/jquery.validate.js'></script>
+    <script src='/js/comm/common.js'></script>
+    <script src="/js/comm/jweixin-1.0.0.js" charset="utf-8"></script>
+    <script src="/js/comm/WeixinJSApi.js" charset="utf-8"></script>
+    <script src="/js/comm/log.js" charset="utf-8"></script>
+    <script src="/js/modules/dialog.js" charset="utf-8"></script>
+    <script src="/js/comm/Weixin_share.js"></script>
+    <script src="/js/social_intercourse/share.js"></script>
+    
+    <script src="/js/column/SpTemplate/SpTemplate.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<!--2017/10/30日版本，后因为当前业务并不能达到展示互动的全部功能，暂停开发，留此备份-->
+<!DOCTYPE html>
+<html lang="en" xmlns:gs="http://www.gensee.com/ec">
+
+<head>
+    <meta charset="UTF-8">
+    <title>在线直播,唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="keywords" content="在线直播，医学直播，手术直播，医生直播，医师直播，唯医，allinmd">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/conference/conference_live.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/living/live_wrap.css">
+    <!--endbuild-->
+    <style>
+        .play-icon#videoStartBtn{
+            width: 200px;
+            height: 200px;
+        }
+        canvas{
+            width: 100% !important;
+            height: auto !important;
+            vertical-align: middle !important;
+            margin-top: 3px !important;
+        }
+        video{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #livePlayer {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .chat-container .allow-roll{
+            height: 755px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<header class="al-indexHeader">
+    <figure class="al-indexHeaderItem">
+        <a href="javascript:;" data-ajax="false">
+            <img src="//img50.allinmd.cn/pages/personal/arrow_back.png">
+        </a>
+    </figure>
+    <figure class="al-indexHeaderItem">
+        <span>会议</span>
+    </figure>
+    <figure class="al-indexHeaderItem">
+
+    </figure>
+</header>
+<div id="webPlayer" class="web">
+    <div id="topHalf">
+        <div id="video-box" class="video-container video-container-ready hide">
+            <div class="al-play-back hide">
+                <div class="back-play-btn"></div>
+            </div>
+            <div class="video-box">
+
+                <!--<div id="livePlayer"></div>
+                &lt;!&ndash; 回放视频模块 &ndash;&gt;
+                <div id="playbackPlayer"></div>-->
+            </div>
+        </div>
+    </div>
+    <div id="chatQaBox" class="section-bottom">
+        <div class="playBackTitleWrap">
+            <section class="smallTitle"></section>
+        </div>
+        <!--<div class="playBackTitle hide"></div>-->
+        <div class="tabs border-box">
+            <ul class="display-box">
+                <li id="doc-tab" class="on flex ondoc" style="display: none;">
+                    <a>
+                        <span>课件</span>
+                    </a>
+                </li>
+                <li class="flex onchat agenda-remove hide">
+                    <a>
+                        <span>日程</span>
+                    </a>
+                </li>
+                <li class="flex onqa hide">
+                    <a>
+                        <span>聊天互动</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="liveCount"></div>
+        </div>
+        <div class="slider-container">
+            <!-- 文档 -->
+            <div class="slider-wrapper">
+                <div class="section-top slider-box">
+                    <div id="doc-box" class="document-container">
+                        <!--<div id="drawPanel"></div>
+                        &lt;!&ndash; 回放文档模块 &ndash;&gt;
+                        <div id="playbackPanel"></div>-->
+                    </div>
+                </div>
+                <!-- 聊天区域 -->
+                <div class="chat-container slider-box agenda-remove">
+                    <div class="slider-bd chat-bd allow-roll">
+                        <div class="ev-agenda"></div>
+                    </div>
+                    <div class="small-agenda-list hide">
+                        <ul class="list-info">
+                            <li class="list-item">03月02日</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 问答 -->
+                <div class="qa-container qa_list slider-box">
+                    <div class="qa_list_content slider-bd allow-roll chatRecordNone">
+                        <ul id="chat-msg-list1" class="msg-list">
+                            <li class="chat-nothing"></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="chatInput chatInputFixed">
+    <input type="text" class="ev-chatInput" placeholder="想说什么 ,想问什么快来加入聊天"/>
+    <span id="send-btn">发送</span>
+</div>
+<input type="hidden" value="2" id="documentDisplayMode">
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="/js/third-party/ccLive/js/dpc.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<script src="//view.csslcloud.net/js/touchSlide.js"></script>
+<script src="//view.csslcloud.net/js/main.js"></script>
+<script src="//view.csslcloud.net/js/jquery.panzoom.min.js"></script>
+<script type="text/javascript">
+
+    function GetQueryString(name)
+    {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+    }
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+    var roomId = GetQueryString('roomId');
+    var back = GetQueryString('back');
+    var liveId = GetQueryString('liveId');
+    var recordId = GetQueryString('recordId');
+    var token = GetQueryString('token');
+    var authority = GetQueryString('authority');
+    if(IsPC()){
+        if(liveId){
+            if(token&&token.length){
+                window.location.href = "//www.allinmd.cn/pages/conference/conference_live.html"+window.location.search;
+            }else{
+                window.location.href = "//www.allinmd.cn/pages/conference/conference_live.html"+window.location.search;
+            }
+
+        }else{
+            window.location.href = "//www.allinmd.cn/pages/conference/conference_live.html"+window.location.search;
+        }
+    }
+    if(parseInt(back, 10) === 1){
+        document.write(unescape("%3Cscript src='/js/third-party/livePlayBackSDK.js' type='text/javascript'%3E%3C/script%3E"));
+    }else{
+        document.write(unescape("%3Cscript src='/js/third-party/liveSDK.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+</script>
+<!--build:js /dest/pages/conference/conference_live.js-->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm.checkAddress.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/third-party/gssdk.js"></script>
+<script src="/js/scene/conference/conference_live.js"></script>
+<!--endbuild-->
+</body>
+</html>

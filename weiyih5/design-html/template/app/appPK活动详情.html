@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>app活动详情</title>
+    <link rel="stylesheet" href="//m.allinmd.cn/css/column/casePK.css">
+    <link rel="stylesheet" href="//m.allinmd.cn/css/column/videoPK.css">
+</head>
+<body>
+<div class="videoPK_h5">
+    <div class="casePK_title_Ios" id="browser_title" style="background-color:rgb(12,142,243)">
+        <div class="casePK_titleCon">
+            <div class="casePK_l"><a href="javascript:;" onclick="appjs.popToLastVC()"></a></div>
+            <div class="casePK_c">病例&视频评选活动</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <!--新版广告位-->
+    <#if adPosition_list??>
+        <#list adPosition_list as adPositionList>
+            <#if adPositionList_index==0>
+                <#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+                    <#if v_adPositionAttachmentList??>
+                        <#list v_adPositionAttachmentList as list>
+                            <div class="header_pk" style="padding-top: 2.7em;background-color:rgb(12,142,243)"><img src="//img99.allinmd.cn/${list.adAttUrl}" alt="" width="100%" class="pk_banner"> </div>
+                        </#list>
+                    </#if>
+            </#if>
+        </#list>
+    </#if>
+    <div class="casePK_nav">
+        <ul>
+            <#if (activityMenu??)&&(activityMenu?size>0)>
+                <#list activityMenu as MenuList>
+                    <#if MenuList_index  ==3>
+                        <li><a href="//m.allinmd.cn/pages/column/videoPK/casePK_works.html?activityId=1449026372937" data-ajax="false">参选作品</a></li>
+                    </#if>
+                    <li <#if MenuList_index  ==1>class="cur"</#if>><a href="${MenuList.activityMenuUrl}" data-ajax="false">${MenuList.activityMenuName}</a></li>
+                </#list>
+            </#if>
+            <li><a href="javascipt:;" data-ajax="false">我的作品</a></li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+    <!--新闻01-->
+    <#if (cms_news_list??)&&(cms_news_list?size>0)>
+        <#list cms_news_list as newsList>
+            <#if newsList_index==0>
+                ${newsList.newsBody}
+            </#if>
+        </#list>
+    </#if>
+
+    <!--第四块-->
+    <div class="content_pk act_bg_new">
+        <div class="content_main" style="width: 100%;">
+            <h2 class="main_title main_title_zj"></h2>
+            <div class="videopk_index_pingwei"> <!--评委-->
+                <ul>
+                    <script> gotoExpert()</script>
+                    <#if (activityDetial??)&&(activityDetial?size>0)>
+                        <#list activityDetial as cList>
+                            <#assign a_list = cList.recommendCustomerList>
+                                <li><a href='javascript:void(0)' onclick='appjs.gotoPKExpert($.toJSON({"id":"${cList.id?c}"}))'><div class="vdpk_index_l">${cList.columnName}</div><div class="vdpk_index_r">有${a_list?size}位专家评委</div><div class="clear"></div></a></li>
+                        </#list>
+                    </#if>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!--新闻02-->
+    <#if (cms_news_list??)&&(cms_news_list?size>0)>
+        <#list cms_news_list as newsList>
+            <#if newsList_index==1>
+                ${newsList.newsBody}
+            </#if>
+        </#list>
+    </#if>
+    <!--分享APP-->
+    <div class="videopk_index_tc" id="shareBox" style="display:block;">
+        <div class="videopk_index">
+            <a href="javascript:void(0)" class="EVshare_btn"><img width="100%" src="//m.allinmd.cn/images/img50/column/videoPK/only_share.png" /></a>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+</body>
+</html>
+<script src="//m.allinmd.cn/js/lib/jquery/jquery-2.1.0.min.js" charset="utf-8"></script>
+<script src="//m.allinmd.cn/js/lib/jquery/jquery.json-2.4.js"  charset="utf-8"></script>
+<script src="//m.allinmd.cn/js/column/videoPK/PKcomm.js"></script>
+<script src="//m.allinmd.cn/js/column/head_fix.js" charset="utf-8"></script>
+<script>
+    $(function(){
+        if(status==1){//1:结果公示中 -1:过期
+            qqTitle="《骨科示教病例及手术视频评选活动》最终获奖结果揭晓"; //qq微信title
+            qqDesc="最终结果新鲜出炉，桂冠由谁摘得？人气王花落谁家？点击揭晓，并查看全部优秀作品！"; //qq微信簡介
+            sDesc="《骨科示教病例及手术视频评选活动》最终获奖结果揭晓—最终结果新鲜出炉，桂冠由谁摘得？人气王花落谁家？点击揭晓，并查看全部优秀作品！点击链接："; //新浪簡介
+            mDesc="《骨科示教病例及手术视频评选活动》最终获奖结果揭晓—最终结果新鲜出炉，桂冠由谁摘得？人气王花落谁家？查看全部优秀作品！点击链接：";//短信
+        }else{
+            qqTitle="金鼓齐鸣！《骨科示教病例及手术视频评选活动》完整作品展示！"; //qq微信title
+            qqDesc="千帆竞发，百舸争流，所有参赛作品已就位，等你支持！"; //qq微信簡介
+            sDesc="金鼓齐鸣！《骨科示教病例及手术视频评选活动》完整作品展示！千帆竞发，百舸争流，所有参赛作品已就位，等你支持！点击链接："; //新浪簡介
+            mDesc="金鼓齐鸣！《骨科示教病例及手术视频评选活动》完整作品展示！千帆竞发，百舸争流，所有参赛作品已就位，等你支持！点击链接：";//短信
+        }
+        $(".EVshare_btn").on("click",function(){
+            appjs.share($.toJSON({"url":"http://m.allinmd.cn/html/m/activity/1449026372937/activity_details.html?activityId=1449026372937",
+                        "imgUrl":"http://m.allinmd.cn/images/img50/column/videoPK/pk_banner.jpg",
+                        "sinaContent":sDesc,
+                        "qqTitle":qqTitle,
+                        "qqContent":qqDesc,
+                        "messageContent":mDesc
+                    })
+            );
+        })
+    })
+
+</script>

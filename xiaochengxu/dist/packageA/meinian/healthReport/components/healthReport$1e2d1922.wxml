@@ -1,0 +1,38 @@
+<template name="healthReport$1e2d1922">
+  <view class="_section data-v-2a906c4a report-inner">
+    <view class="_section data-v-2a906c4a healthCooperationHeader">
+      <view class="_h1 data-v-2a906c4a logo"></view> <label class="_span data-v-2a906c4a">美年大健康体检报告</label>
+    </view>
+    <view class="_section data-v-2a906c4a healthCooperationImages" catchtap="handleProxy" wx:if="{{physicalAttList.length}}" data-eventid="{{'0'}}" data-comkey="{{$k}}"><label class="_span data-v-2a906c4a imageNumber">
+        <view class="_i data-v-2a906c4a icon"></view>
+        <view class="_i data-v-2a906c4a">影像检测图片（共{{physicalAttList.length}}张图）</view>
+      </label> <label class="_span data-v-2a906c4a check-btn">查看</label></view>
+    <view class="_section data-v-2a906c4a healthCooperationReportList" wx:if="{{reportList.length}}">
+      <view class="_article data-v-2a906c4a healthCooperationReportItem" wx:key="index" key="{{index}}" wx:for="{{reportList}}" wx:for-index="index" wx:for-item="item">
+        <view wx:key="innerKey" key="{{innerKey}}" wx:for="{{item}}" wx:for-index="innerKey" wx:for-item="innerItem" class="_section data-v-2a906c4a">
+          <view class="_h1 data-v-2a906c4a title">{{innerKey}}</view>
+          <view class="_article data-v-2a906c4a bodyParts" wx:key="innerIndex" key="{{innerIndex}}" wx:for="{{innerItem}}" wx:for-index="innerIndex" wx:for-item="innerListItem">
+            <view class="_h3 data-v-2a906c4a subTitle">
+              <view class="_i data-v-2a906c4a"></view> <label class="_span data-v-2a906c4a">{{innerListItem.inspectionItem}}</label>
+            </view>
+            <view class="_article data-v-2a906c4a reportDescribe">
+              <view class="_h3 data-v-2a906c4a describeTitle">
+                <view class="_i data-v-2a906c4a"></view> <label class="_span data-v-2a906c4a">描述</label>
+              </view>
+              <view class="_p data-v-2a906c4a describeContent">{{innerListItem.inspectionDesc}}</view>
+            </view>
+            <view class="_article data-v-2a906c4a reportDescribe">
+              <view class="_h3 data-v-2a906c4a describeTitle">
+                <view class="_i data-v-2a906c4a"></view> <label class="_span data-v-2a906c4a">检查结果</label>
+              </view>
+              <view class="_p data-v-2a906c4a describeContent">{{innerListItem.inspectionResult}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_section data-v-2a906c4a footer-btn" catchtap="handleProxy" wx:if="{{checkDoctor}}" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+      <view class="_i data-v-2a906c4a icon"></view> 免费咨询医生
+    </view>
+  </view>
+</template>

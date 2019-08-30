@@ -1,0 +1,704 @@
+@charset "UTF-8";
+//身份认证弹层
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_tableModule"; //表单
+@import "../../components/_selectorBar"; //职称选择框
+@import "../../components/_bottomBtns";
+@import "../../components/_indexHeader"; //首页头部信息栏
+html{
+  background: #fff;
+}
+.al-mainInner{
+  .al-unusualHeader{
+    height: rem3(44px);
+    img{
+      width: 100px;
+      height: 100px;
+    }
+    div{
+      width: rem3(102px);
+      display: inline-block;
+      font-size: rem3(17px);
+      color: #333333;
+      text-align: center;
+    }
+  }
+  background: #ffffff;
+  min-height: 100%;
+  .un-sameAccount{
+    .un-content{
+      font-size: rem3(19px);
+      color: #222222;
+      width: 100%;
+      text-align: center;
+      .un-topTxt{
+        padding: rem3(61px) rem3(45px) rem3(50px);
+        //width: rem3(283px);
+        text-align: center;
+        .un-phoNum{
+          color: #6483E9;
+        }
+      }
+      .un-useOld{
+        font-size: rem3(18px);
+        width: rem3(300px);
+        height: rem3(50px);
+        background:rgba(100,131,233,1);
+        border-radius: rem3(3px);
+        color: #fff;
+        vertical-align: middle;
+        text-align: center;
+        margin-bottom: rem3(25px);
+        position: relative;
+        span{
+          display: inline-block;
+          vertical-align: middle;
+        }
+        em{
+          position: absolute;
+          background: url("data:image/png;base64,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") no-repeat center center/cover;
+          width: rem(72px);
+          height: rem(36px);
+          top:rem(-6px);
+          right: rem(-6px);
+        }
+        i{
+          display: inline-block;
+          width: rem3(18px);
+          height: rem3(18px);
+          background: url("/images/img50/pages/personal/nextBtn54.png") center center no-repeat;
+          background-size: contain;
+          margin-left: rem3(4px);
+          vertical-align: middle;
+        }
+      }
+      .un-useNew{
+        font-size: rem3(18px);
+        width: rem3(300px);
+        height: rem3(50px);
+        background:rgba(255,126,77,1);
+        border-radius: rem3(3px);
+        color: #fff;
+        vertical-align: middle;
+        text-align: center;
+      }
+      .un-BotTxt{
+        font-size: rem3(15px);
+        color: #aaa;
+        position: fixed;
+        left: 0;
+        bottom: rem3(30px);
+        padding:0 rem3(15px);
+      }
+    }
+  }
+  //登录
+  .al-login{
+    &.relevance{
+      margin-top: 156px;
+    }
+    .registerBtn{
+      font-size: rem(40px);
+      color: #2899E6;
+      @include clearfix();
+      margin: rem(40px) rem(30px) rem(78px) 0;
+      span{
+        float: right;
+        display: inline-block;
+      }
+    }
+    .loginRegisterTab{
+      font-size: rem(44px);
+      color: #AAAAAA;
+
+      margin: rem3(57px) 0 rem3(35px) rem(75px);
+      p{
+        display: inline-block;
+        &:first-child{
+          margin-right: rem(72px);
+        }
+        &.active{
+          color: #222222;
+          &:after{
+            content: '';
+            display: block;
+            width: rem(98px);
+            height: rem(10px);
+            background: #2899E6;
+            border-radius: rem(100px);
+            margin: rem(18px) auto 0;
+          }
+        }
+      }
+    }
+    .un-phoNumTxt{
+      margin-left: rem3(38px);
+      margin-bottom: rem3(18px);
+      font-size: rem3(17px);
+      color: #222222;
+      .un-phoNum{
+        color: #6483E9;
+
+      }
+    }
+    .loginCont{
+      .inputBox{
+        border: 1px solid #AAAAAA;
+        border-radius: rem(10px);
+        //width: rem(600px);
+        width: 80%;
+        height: rem(106px);
+        line-height: rem(106px);
+        margin: 0 auto rem(28px);
+        span{
+          display: inline-block;
+          font-size: rem(34px);
+          color: #2899E6;
+          float: right;
+          margin-right: rem(30px);
+        }
+        .timeYZM{
+          font-size: rem(40px);
+          color: #777777;
+          display: none;
+        }
+
+        i{
+          float: right;
+          display: inline-block;
+          width: rem(40px);
+          height: rem(40px);
+          background: url("/images/img50/login/loginV2/close_sign.png") no-repeat;
+          background-size: contain;
+          margin: rem(33px) rem(30px) 0 0;
+          vertical-align: middle;
+          display: none;
+        }
+        .show_sign{
+          background: url("/images/img50/login/loginV2/show_sign.png") no-repeat;
+          background-size: contain;
+          width: rem(44px);
+          height: rem(40px);
+          margin-right: rem(20px);
+
+          &.unshow_sign{
+            background: url("/images/img50/login/loginV2/unshow_sign.png") no-repeat;
+            background-size: contain;
+          }
+        }
+        input{
+          font-size: rem3(28px);
+          color: #000000;
+          border: none;
+          padding-left: rem(30px);
+          width: 70%;
+          border-radius: rem(10px);
+          padding-top: rem(20px);
+          caret-color: #2888FF;
+          &.codeInput{
+            width: 4rem;
+          }
+        }
+      }
+      .loginBtn{
+        display: block;
+        width: rem(600px);
+        height: rem(106px);
+        line-height: rem(106px);
+        text-align: center;
+        border-radius: rem(6px);
+        //background: #2888FF;
+        margin: rem(80px) auto rem(36px);
+        font-size: rem(36px);
+        color: #FFFFFF;
+        background-color: rgba(40,136,255,0.50);
+        &.active{
+          background-color: rgba(40,136,255,1);
+        }
+      }
+      .problems{
+        font-size: rem(30px);
+        color: #909090;
+        @include clearfix();
+        margin-right: rem(75px);
+        span{
+          float: left;
+          display: inline-block;
+          margin-left: rem(75px);
+        }
+        .encounter{
+          float: right;
+          //margin-left: rem(75px);
+        }
+      }
+      .lookAround{
+        font-size: rem(30px);
+        color: #AAAAAA;
+        margin-top: rem(215px);
+        text-align: center;
+      }
+      &.phoneLoginCont{
+        .inputBox{
+          input{
+            //width: rem(300px);
+            width: 70%;
+            &.mobileInput{
+              width: 60%;
+            }
+          }
+        }
+      }
+    }
+    .codePopup{
+      display: none;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,0.75);
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+      .popBottom{
+        width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: -587px;
+        background: #ffffff;
+        text-align: center;
+        font-size: rem3(18px);
+        color: #333333;
+        vertical-align: middle;
+        div{
+          width: 100%;
+          height: rem3(55.5px);
+          line-height: rem3(55.5px);
+          &:nth-child(1){
+            border-bottom: rem3(0.5px) solid #DFDFDF;
+          }
+          &:nth-child(3){
+            height: rem3(10px);
+            background: #EFF4F8;
+            //box-shadow: 0 rem3(2px) rem3(5px) 0 rgba(0,0,0,0.20);
+          }
+        }
+      }
+    }
+  }
+  .un-findPass{
+    display: none;
+    margin-top: rem3(50px);
+    .un-phoNumTxt{
+      margin-left: rem3(38px);
+      margin-bottom: rem3(18px);
+      font-size: rem3(17px);
+      color: #222222;
+      .un-phoNum{
+        color: #2899e6;
+      }
+    }
+    .inputBox{
+      border: 1px solid #AAAAAA;
+      border-radius: rem(10px);
+      //width: rem(600px);
+      width: 80%;
+      height: rem(106px);
+      line-height: rem(106px);
+      margin: 0 auto rem(28px);
+      input{
+        font-size: rem3(28px);
+        color: #000000;
+        border: none;
+        padding-left: rem(30px);
+        width: 70%;
+        border-radius: rem(10px);
+        padding-top: rem(20px);
+        caret-color: #2888FF;
+        &.codeInput{
+          width: 4rem;
+        }
+      }
+    }
+    .loginBtn{
+      display: block;
+      width: rem(600px);
+      height: rem(106px);
+      line-height: rem(106px);
+      text-align: center;
+      border-radius: rem(6px);
+      //background: #2888FF;
+      margin: rem(80px) auto rem(36px);
+      font-size: rem(36px);
+      color: #FFFFFF;
+      background-color: rgba(40,136,255,0.50);
+      &.active{
+        background-color: rgba(40,136,255,1);
+      }
+    }
+  }
+  .un-findCode{
+    display: none;
+    text-align: center;
+    .findPass{
+      height: rem3(163px);
+      margin: 0 rem3(37px) 0;
+      position: relative;
+      overflow: hidden;
+      input{
+        font-size: rem3(38px);
+        color: #000;
+        width: 100%;
+        height: rem3(40px);
+        border: none;
+        background: none;
+        outline: none;
+        letter-spacing: rem3(62px);
+        padding-left: rem3(15px);
+        box-sizing: border-box;
+        margin: 0 0 rem3(15px);
+        caret-color: #2888FF;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      &:after{
+        content: "";
+        width: 100%;
+        height: rem3(2px);
+        display: block;
+        background: transparent url(//img50.allinmd.cn/pages/personal/validate_bottom.png) center center no-repeat;
+        background-size: cover;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    div{
+      margin-top: rem3(40px);
+      font-size: rem3(16px);
+      color: #2888FF;
+      &:nth-child(1){
+        margin-top: rem3(25px);
+      }
+    }
+    .codeTip{
+      color: #555555;
+    }
+    .codeTime{
+      display: none;
+      font-size: rem3(16px);
+      color: #555555;
+    }
+  }
+  .un-resetting{
+    display: none;
+    margin-top: rem3(50px);
+    .inputBox{
+      border: 1px solid #AAAAAA;
+      border-radius: rem(10px);
+      //width: rem(600px);
+      width: 80%;
+      height: rem(106px);
+      line-height: rem(106px);
+      margin: 0 auto rem(28px);
+      input{
+        font-size: rem3(28px);
+        color: #000000;
+        border: none;
+        padding-left: rem(30px);
+        width: 70%;
+        border-radius: rem(10px);
+        padding-top: rem(20px);
+        caret-color: #2888FF;
+        &.codeInput{
+          width: 4rem;
+        }
+      }
+    }
+    .loginBtn{
+      display: block;
+      width: rem(600px);
+      height: rem(106px);
+      line-height: rem(106px);
+      text-align: center;
+      border-radius: rem(6px);
+      //background: #2888FF;
+      margin: rem(80px) auto rem(36px);
+      font-size: rem(36px);
+      color: #FFFFFF;
+      background-color: rgba(40,136,255,0.50);
+      &.active{
+        background-color: rgba(40,136,255,1);
+      }
+    }
+  }
+  .mergeTip{
+    display: none;
+    text-align: center;
+    margin-top: rem3(30px);
+    img{
+      display: inline-block;
+      width: rem3(140px);
+      height: rem3(140px);
+    }
+    div{
+      &:nth-child(2){
+        color: #2888FF;
+        font-size: rem3(22px);
+        margin: rem3(22px) 0 rem3(20px);
+      }
+      &:nth-child(3){
+        color: #333333;
+        font-size: rem3(16px);
+        line-height: rem3(24px);
+        //width: rem3(256px);
+        margin: 0 rem3(60px);
+      }
+    }
+    button{
+      width: rem3(345px);
+      height: rem3(50px);
+      background: #2686FF;
+      box-shadow: 0 rem3(-2px) rem3(10px) 0 rgba(81,93,108,0.09);
+      border-radius: rem3(3px);
+      position: fixed;
+      left: 0;
+      bottom: rem3(30px);
+      text-align: center;
+      font-size: rem3(18px);
+      color: #ffffff;
+      margin-left: rem3(15px);
+    }
+  }
+  .topShowError{
+    width:100%;
+    height:rem2(76px);
+    line-height: rem2(70px);
+    font-size:rem2(28px);
+    background:rgb(240,70,70);
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 2;
+    color:#fff;
+    padding-left:rem2(36px);
+    //background:url();
+    i{
+      width:rem2(36px);
+      height:rem2(36px);
+      display:inline-block;
+      background:url('//img50.allinmd.cn/new-login/errorBang.png') no-repeat;
+      background-size:cover;
+      position: relative;
+      top:rem2(10px);
+      margin-right:rem2(10px);
+    }
+  }
+}
+/*帮助弹窗*/
+.al-authHelpBg{
+  .al-authHelpContent{
+    width: 92%;
+    margin: 0 auto;
+    padding:rem(70px) rem(40px);
+    text-align: left;
+    background:#fff;
+    border-radius:30px;
+    overflow: hidden;
+    box-sizing: border-box;
+    position:fixed;
+    top:50%;
+    left:4%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  h2{
+    @include font-dpr(20px);
+    color: #222;
+    margin-bottom:rem(30px);
+  }
+  .al-authHelpTime{
+    @include font-dpr(16px);
+    color: #333;
+    margin-bottom:rem(70px);
+  }
+  .al-authHelpContact{
+    color:#909090;
+    @include font-dpr(16px);
+
+    p{
+      line-height: rem(36px);
+      padding:rem(30px) 0;
+      &:first-child{
+        border-bottom:1px solid #E4E9ED;
+      }
+      &:nth-child(2){
+        padding-bottom:rem(15px);
+      }
+      &:nth-child(3){
+        padding-left:rem(130px);
+        padding-top:0;
+      }
+    }
+    span{
+      margin-left:rem(20px);
+      line-height: rem(36px);
+      display:inline-block;
+      color:#333;
+      @include font-dpr(18px);
+      width:50%;
+
+      position: relative;
+      top:rem(3px);
+    }
+    a{
+      float:right;
+      border-left:1px solid #E4E9ED;
+      padding-left:rem(15px);
+    }
+    img{
+      width: rem(104px);
+      height: rem(38px);
+      line-height: rem(36px);
+      display: inline-block;
+      position: relative;
+      top:rem(8px);
+    }
+  }
+  .al-authHelpClose{
+    width:rem(30px);
+    height: rem(30px);
+    position: absolute;
+    right:rem(30px);
+    top:rem(30px);
+    //background:url('//img50.allinmd.cn/authentication/auth/close_grey.png') no-repeat;
+    background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAV9JREFUSA29180RwiAQBWDhlDRgEXZhFxZhA7mlCIuwC7uwCBtITok8lExEdtnFIAd/wvK+wGTIYLquO0zTdGnb9tT3/WNXsbn8/TAMV2vt2QJ11nEcxxs6arnIhgELpsVMjTH3eZ4PtfCAwoDlTcww7mia5uiubbLsVLYJS0sVhP6Sby5zgRHMFWrhXNYHvBWeQ+F8wb/iEpSES3EpysJaXINmYSmuRUVwDi9BxTCF4zp2u7AjaTae5FONwFSLZ4eaEhTjVDAGrHEf4PZezUwxBs2+vv7/qZrxerZ4y+B2qy91jGJ5AVd9uFKou+Zfm1wfboxq2aWWBEtq4htgYU2gphY3QcLaIIRpxiRhTQDAdZOO/YKlA9dY/FuS8QFLBsQI9T+XtcC5QgrgrnOZHuYKuGBJH5VtqA5JqLQmZVicZUr3WwX8wBYbTizv85M9u4BbyatNCqPOzdrjsHBoewIPdmltEExNwwAAAABJRU5ErkJggg==') no-repeat;
+    background-size:cover;
+  }
+}
+.inputBox input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-size: rem(34px);
+  color: #AAAAAA;
+}
+
+.inputBox input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-size: rem(34px);
+  color: #AAAAAA;
+}
+
+.inputBox input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-size: rem(34px);
+  color: #AAAAAA;
+}
+
+.inputBox input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-size: rem(34px);
+  color: #AAAAAA;
+}
+.al-selectorBarMask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition:opacity 0.2s linear;
+  -webkit-transition:opacity 0.2s linear;
+}
+
+//重置密码弹窗
+.resetPassword{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  .resetCont{
+    padding: rem3(35px) rem3(20px) 0;
+    width: rem3(305px);
+    height: rem3(382px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: rem3(4px);
+    h2{
+      font-size: rem3(20px);
+      color: #222222;
+      margin-bottom: rem3(15px);
+    }
+    .conTxt{
+      font-size: rem3(16px);
+      color: #333333;
+      margin-bottom: rem3(28px);
+    }
+    .conTip{
+      font-size: rem3(16px);
+      color: #909090;
+      margin-bottom: rem3(10px);
+    }
+    .inputBox{
+      border: 1px solid #AAAAAA;
+      border-radius: rem(10px);
+      //width: rem(600px);
+      width: 100%;
+      height: rem(106px);
+      line-height: rem(106px);
+      margin-bottom: rem3(18px);
+      input{
+        font-size: rem3(28px);
+        color: #000000;
+        border: none;
+        padding-left: rem(30px);
+        width: 90%;
+        border-radius: rem(10px);
+        padding-top: rem(20px);
+        caret-color: #2888FF;
+        &.codeInput{
+          width: 4rem;
+        }
+      }
+    }
+    .restBtn{
+      width: rem3(192px);
+      height: rem3(45px);
+      text-align: center;
+      font-size: rem3(17px);
+      color: #ffffff;
+      border-radius: rem3(3px);
+      margin-top: rem3(12px);
+      margin-left: rem3(57px);
+      background-color: rgba(40,136,255,0.50);
+      &.active{
+        background-color: rgba(40,136,255,1);
+      }
+    }
+  }
+  .al-authHelpClose{
+    width: 0.4rem;
+    height: 0.4rem;
+    position: absolute;
+    right: 0.4rem;
+    top: 0.4rem;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAV9JREFUSA29180RwiAQBWDhlDRgEXZhFxZhA7mlCIuwC7uwCBtITok8lExEdtnFIAd/wvK+wGTIYLquO0zTdGnb9tT3/WNXsbn8/TAMV2vt2QJ11nEcxxs6arnIhgELpsVMjTH3eZ4PtfCAwoDlTcww7mia5uiubbLsVLYJS0sVhP6Sby5zgRHMFWrhXNYHvBWeQ+F8wb/iEpSES3EpysJaXINmYSmuRUVwDi9BxTCF4zp2u7AjaTae5FONwFSLZ4eaEhTjVDAGrHEf4PZezUwxBs2+vv7/qZrxerZ4y+B2qy91jGJ5AVd9uFKou+Zfm1wfboxq2aWWBEtq4htgYU2gphY3QcLaIIRpxiRhTQDAdZOO/YKlA9dY/FuS8QFLBsQI9T+XtcC5QgrgrnOZHuYKuGBJH5VtqA5JqLQmZVicZUr3WwX8wBYbTizv85M9u4BbyatNCqPOzdrjsHBoewIPdmltEExNwwAAAABJRU5ErkJggg==") no-repeat;
+    background-size: cover;
+  }
+}

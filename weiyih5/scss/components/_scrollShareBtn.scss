@@ -1,0 +1,34 @@
+@charset "UTF-8";
+//按钮组件
+//Created by qiangkailiang on 2016/08/05
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+
+.al-scrollShareBtn {
+    position: fixed;
+    right: rem(30px);
+    bottom: rem(50px);
+    width: rem(136px);
+    height: rem(70px);
+    line-height: rem(70px);
+    background-color: #2899e6;
+    @include font-dpr(13px);
+    border-radius: rem(50px);
+    color: #fff;
+    text-align: center;
+    opacity: 0.9;
+    z-index: 5;
+    box-shadow: rem(5px) rem(5px) rem(10px) rgba(0,0,0,0.2)
+}
+
+/*iphoneX 适配*/
+  @include iphoneX(){
+    .al-scrollShareBtn{
+      bottom: rem(84px);
+    }
+  }
+
+
+

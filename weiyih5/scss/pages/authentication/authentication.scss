@@ -1,0 +1,417 @@
+@charset "UTF-8";
+//身份认证弹层
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+
+
+html,body{
+  background-color:#fff;
+}
+.al-idSureHead{
+  ul{
+    padding:0 rem(30px);
+    height:rem(88px);
+    line-height:rem(88px);
+    border-bottom: 1px solid #d7dbde;
+    @include clearfix();
+  }
+  p{
+    height:rem(15px);
+    background-color:#eff4f8;
+  }
+}
+
+.al-idSureHeadItem{
+  width:33.33%;
+  height:100%;
+  float:left;
+  list-style: none;
+  &:nth-child(1){
+    text-align: left;
+    img{
+      width:rem(60px);
+      height:rem(60px);
+      vertical-align: middle;
+    }
+  }
+  &:nth-child(2){
+    text-align: center;
+    color:#333;
+    white-space:nowrap;
+    @include font-dpr(17px);
+
+  }
+  &:nth-child(3){
+    text-align: right;
+    color:#626f8c;
+    white-space:nowrap;
+    @include font-dpr(13px);
+    margin-top:rem(4px);
+  }
+}
+
+.alAuthentication{
+  .al-tableModuleSelect select{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: rem(60px);
+    border-bottom: solid #e4e9ed 1px;
+    color: #222;
+    text-align: center;
+  }
+  .al-tableModuleSelect:nth-child(1) select{
+    width: rem(100px);
+    text-align: center;
+  }
+  .alWidth{
+    width:92% ;
+    margin: 0 auto;
+  }
+  .authStep{
+    overflow: hidden;
+    margin: rem(30px) auto 0;
+    width: 100%;
+    position: relative;
+    &:before{
+      content: '';
+      background: url("/images/img50/authentication/nav_line.png") repeat-x center;
+      position: absolute;
+      left: rem(30px);
+      top: 0;
+      height: rem(36px);
+      width: 87%;
+    }
+    section{
+      width:rem(110px);
+      text-align: center;
+      font-size: rem(26px);
+      color: #B4B4B4;
+      line-height: rem(26px);
+      position: relative;
+      z-index: 5;
+      aside{
+        border-radius: 50%;
+        font-size: rem(24px);
+        text-align: center;
+        width:rem(36px);
+        height: rem(36px);
+        line-height: rem(36px);
+        background: #E4E9ED;
+        border: 4px solid #FFFFFF;
+        color: #fff;
+        display: inline-block;
+        margin-bottom: rem(10px);
+      }
+      float: left;
+      &:last-child{
+        float: right;
+      }
+      &:nth-child(2){
+        margin-left: rem(180px);
+      }
+      &.active{
+        aside {
+          background: #3598DB;
+          border: 2px solid #DEF2FF;
+          box-shadow: 0 2px 4px 0 rgba(98, 170, 219, 0.58);
+          margin-bottom: rem(15px);
+        }
+        color: #3598DB;
+      }
+      &.success{
+        aside {
+          background: #86C1E9;
+          border: 4px solid #FFFFFF;
+          margin-bottom: rem(10px);
+        }
+        color: #3598DB;
+        opacity: 0.6;
+      }
+    }
+
+  }
+  .choseDepartment{
+    font-size: rem(30px);
+    color: #808080;
+    position: relative;
+    border-bottom: solid 1px #DFDFDF;
+    height: rem(30px);
+    width: rem(580px);
+    margin: rem(244px) auto 0;
+    span{
+      position: absolute;
+      background: #fff;
+      height: rem(30px);
+      line-height: 30px;
+      left: 50%;
+      width: rem(310px);
+      margin-left: rem(-155px);
+      display: inline-block;
+      top: 50%;
+      text-align: center;
+    }
+  }
+  .authStepBtn{
+    margin-top: rem(79px);
+    text-align: center;
+
+    a{
+      width: rem(580px);
+      height: rem(100px);
+      text-align: center;
+      line-height: rem(100px);
+      font-size: rem(36px);
+      color: #FFFFFF;
+      border-radius: rem(100px);
+      display: block;
+      margin: 0 auto;
+    }
+    .firstBtn{
+      background: #4AA8E2;
+      i{
+        display: inline-block;
+        background: url("/images/img50/authentication/gk.png") no-repeat;
+        background-size: cover;
+        width: rem(42px);
+        height: rem(58px);
+        vertical-align: middle;
+        margin-right: rem(15px);
+      }
+    }
+    .secondBtn{
+      background: #A1D06E;
+      margin-top: rem(50px);
+      i{
+        display: inline-block;
+        background: url("/images/img50/authentication/sw.png") no-repeat;
+        background-size: cover;
+        width: rem(42px);
+        height: rem(58px);
+        vertical-align: middle;
+        margin-right: rem(15px);
+      }
+    }
+    .firstBtn {
+      &:active{
+        background: #4298CD;
+      }
+    }
+    .secondBtn {
+      &:active {
+        background: #8BB85A;
+      }
+    }
+
+  }
+
+  .al-tableModule{
+    margin-top: rem(64px);
+  }
+  .informationBtn{
+    width: 92%;
+    margin: 0 auto;
+    opacity: 0.6;
+    background: #2899E6;
+    border-radius: 4px;
+    height: rem(90px);
+    line-height: rem(90px);
+    margin-top: rem(60px);
+    text-align: center;
+    span{
+      opacity: 0.4;
+      font-size: rem(40px);
+      color: #FFFFFF;
+    }
+    &.active{
+      opacity: 1;
+      span{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+/*认证类型*/
+.authType{
+  margin-top: rem(110px);
+  .title{
+    font-size: rem(30px);
+    line-height: rem(30px);
+    color: #808080;
+    padding-bottom: rem(30px);
+    border-bottom: solid 1px #E4E9ED;
+    i{
+      display: inline-block;
+      width: rem(27px);
+      height: rem(15px);
+      background: url("/images/img50/authentication/arrow_up.png") no-repeat;
+      background-size: cover;
+      float: right;
+      vertical-align: middle;
+      &.down{
+        background: url("/images/img50/authentication/arrow_down.png") no-repeat;
+        background-size: cover;
+      }
+    }
+    span{
+      color: #222;
+      margin-left: rem(30px);
+    }
+  }
+  .al-selectorBarList{
+    padding: 0;
+  }
+  .al-selectorBarItem{
+    border-bottom: solid 1px #E4E9ED;
+  }
+  .al-selectorBarItem.selected {
+    .al-selectorBarItemIcon {
+      background: transparent url('/images/img50/authentication/Radio_Act.png') center center no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  .al-tableModuleItem{
+    margin: 0;
+    &:last-child{
+      border-bottom: solid 1px #E4E9ED;
+    }
+    h3{
+      font-size: rem(30px) !important;
+      color: #808080;
+    }
+  }
+
+  .typeTitle{
+    font-size: rem(30px);
+    line-height: rem(30px);
+    color: #808080;
+    margin: rem(34px) 0 0 0;
+    span{
+      font-size: rem(26px);
+      color: #AAAAAA;
+    }
+  }
+
+  .authUpload{
+    margin: rem(68px) 0 rem(60px) 0;
+    overflow: hidden;
+    fieldset{
+      width: rem(318px);
+      height: rem(212px);
+      background: url("/images/img50/authentication/border.png") no-repeat;
+      position: relative;
+      background-size: cover;
+      text-align: center;
+      float: left;
+      img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left:0;
+        top:0;
+      }
+      i{
+        background: url("/images/img50/authentication/photo.png") no-repeat;
+        background-size: cover;
+        width: rem(42px);
+        height: rem(34px);
+        //margin: rem(70px) auto rem(10px);
+        display: block;
+        position: absolute;
+        top:rem(70px);
+        left:rem(138px);
+      }
+      span{
+        font-size: rem(24px);
+        color: #3598DB;
+        position: absolute;
+        top:rem(70px);
+        margin-top:rem(50px);
+        left:0;
+        width: 100%;
+        z-index:0;
+      }
+
+
+    }
+    figure{
+      float: right;
+      height: rem(212px);
+      width: rem(319px);
+      border:1px solid #aaa;
+      box-sizing: border-box;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+}
+.moreChose{
+  font-size: rem(26px);
+  color: #909090;
+  line-height: rem(26px);
+  background-color: #eff4f8;
+  padding: rem(30px) 0 rem(20px) rem(30px);
+}
+.choseMajor{
+  .al-tableModule{
+    margin: 0;
+  }
+}
+.al-idSureContent .al-tableModuleItemInput a{
+  color:#333;
+}
+.al-tableModuleItemIcon{
+  position: relative;
+}
+.al-tableModuleItemIcon:after{
+  position: absolute;
+  background:url('//img50.allinmd.cn/user/renzheng/arrow_03.jpg') no-repeat;
+  height:rem(30px);
+  width:rem(20px);
+  right:rem(-10px);
+  content:"";
+}
+//标签选择页
+.selectTagNext{
+  color:#dbdbdb;
+  font-size:rem(30px);
+}
+.selectTagNext.active{
+  color:#3598db;
+}
+.selectTag{
+  display:table;
+  text-align: center;
+  width: 100%;
+  p{
+    color:#333;
+    font-size:rem(26px);
+    margin:rem(40px) 0;
+  }
+  span{
+    padding:rem(20px) rem(24px);
+    margin:0 rem(30px) rem(28px) 0;
+    border:1px solid #626f8c;
+    border-radius:rem(4px);
+    display:inline-block;
+    &.active{
+      background:#2899e6;
+      color:#fff;
+    }
+  }
+
+}
+.al-tableModuleItemInput>input {
+  padding-left: 1px;
+}

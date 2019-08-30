@@ -1,0 +1,58 @@
+<import src="/components/upLoadPlugn$f25b8f4a" />
+<import src="/components/LogoLoading$2b721f9a" /><template name="reportUploadImg$b58437d6">
+  <view class="_section data-v-2ae73c1a main-content">
+    <view class="_section data-v-2ae73c1a uploadBox">
+      <view class="_figure data-v-2ae73c1a uploadTitleBox">
+        <view class="_section data-v-2ae73c1a title-left">
+          {{questionList[0].name}}
+          <label class="_span data-v-2ae73c1a select-tip">(选填)</label></view>
+        <view class="_section data-v-2ae73c1a title-right" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"><label class="_span data-v-2ae73c1a tip-icon"></label> 如何拍摄 </view>
+      </view>
+      <view class="_section data-v-2ae73c1a upload-content">
+        <view class="_li data-v-2ae73c1a upLoadItem" wx:key="index" key="{{index}}" wx:for="{{imgUrl0}}" wx:for-index="index" wx:for-item="item">
+          <image class="_img data-v-2ae73c1a imgItem" src="{{item.blob}}" mode="aspectFill" bindtap="handleProxy" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}"></image> <label class="_span data-v-2ae73c1a imgItem-delBtn" wx:if="{{!item.fail}}" bindtap="handleProxy" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}"></label> <label class="_span data-v-2ae73c1a imgItem-cover" wx:if="{{item.uploading}}"><label class="_span data-v-2ae73c1a imgItem-loading"></label></label>
+          <view class="_figure data-v-2ae73c1a imgItem-fail" wx:if="{{item.fail}}" bindtap="handleProxy" data-eventid="{{'3-'+index}}" data-comkey="{{$k}}">
+            <view class="_p data-v-2ae73c1a imgItem-failText">上传失败</view>
+            <view class="_p data-v-2ae73c1a imgItem-reloadText">点击重试</view>
+          </view>
+        </view> <template bindbeforeUpload="handleProxy" binduploadDone="handleProxy" wx:if="{{showUploadImg}}" data-eventid="{{'4'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="upLoadPlugn$f25b8f4a"></template>
+      </view>
+      <view class="_section data-v-2ae73c1a upload-number" wx:if="{{ imgUrl0.length}}"> 已上传{{ imgUrl0.length}}张， <label class="_span data-v-2ae73c1a upload-viewAll" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">查看全部</label></view>
+    </view>
+    <view class="_section data-v-2ae73c1a uploadBox">
+      <view class="_figure data-v-2ae73c1a uploadTitleBox">
+        <view class="_section data-v-2ae73c1a title-left">
+          {{questionList[1].name}}
+          <label class="_span data-v-2ae73c1a select-tip">(选填)</label></view>
+      </view>
+      <view class="_section data-v-2ae73c1a upload-content">
+        <view class="_li data-v-2ae73c1a upLoadItem" wx:key="index" key="{{index}}" wx:for="{{imgUrl1}}" wx:for-index="index" wx:for-item="item">
+          <image class="_img data-v-2ae73c1a imgItem" src="{{item.blob}}" mode="aspectFill" bindtap="handleProxy" data-eventid="{{'6-'+index}}" data-comkey="{{$k}}"></image> <label class="_span data-v-2ae73c1a imgItem-delBtn" wx:if="{{!item.fail}}" bindtap="handleProxy" data-eventid="{{'7-'+index}}" data-comkey="{{$k}}"></label> <label class="_span data-v-2ae73c1a imgItem-cover" wx:if="{{item.uploading}}"><label class="_span data-v-2ae73c1a imgItem-loading"></label></label>
+          <view class="_figure data-v-2ae73c1a imgItem-fail" wx:if="{{item.fail}}" bindtap="handleProxy" data-eventid="{{'8-'+index}}" data-comkey="{{$k}}">
+            <view class="_p data-v-2ae73c1a imgItem-failText">上传失败</view>
+            <view class="_p data-v-2ae73c1a imgItem-reloadText">点击重试</view>
+          </view>
+        </view> <template bindbeforeUpload="handleProxy" binduploadDone="handleProxy" wx:if="{{showUploadImg}}" data-eventid="{{'9'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="upLoadPlugn$f25b8f4a"></template>
+      </view>
+      <view class="_section data-v-2ae73c1a upload-number" wx:if="{{ imgUrl1.length}}"> 已上传{{ imgUrl1.length}}张， <label class="_span data-v-2ae73c1a upload-viewAll" bindtap="handleProxy" data-eventid="{{'10'}}" data-comkey="{{$k}}">查看全部</label></view>
+    </view>
+    <view class="_section data-v-2ae73c1a uploadBox">
+      <view class="_figure data-v-2ae73c1a uploadTitleBox">
+        <view class="_section data-v-2ae73c1a title-left">
+          {{questionList[2].name}}
+          <label class="_span data-v-2ae73c1a select-tip">(选填)</label></view>
+      </view>
+      <view class="_section data-v-2ae73c1a upload-content">
+        <view class="_li data-v-2ae73c1a upLoadItem" wx:key="index" key="{{index}}" wx:for="{{imgUrl2}}" wx:for-index="index" wx:for-item="item">
+          <image class="_img data-v-2ae73c1a imgItem" src="{{item.blob}}" mode="aspectFill" bindtap="handleProxy" data-eventid="{{'11-'+index}}" data-comkey="{{$k}}"></image> <label class="_span data-v-2ae73c1a imgItem-delBtn" wx:if="{{!item.fail}}" bindtap="handleProxy" data-eventid="{{'12-'+index}}" data-comkey="{{$k}}"></label> <label class="_span data-v-2ae73c1a imgItem-cover" wx:if="{{item.uploading}}"><label class="_span data-v-2ae73c1a imgItem-loading"></label></label>
+          <view class="_figure data-v-2ae73c1a imgItem-fail" wx:if="{{item.fail}}" bindtap="handleProxy" data-eventid="{{'13-'+index}}" data-comkey="{{$k}}">
+            <view class="_p data-v-2ae73c1a imgItem-failText">上传失败</view>
+            <view class="_p data-v-2ae73c1a imgItem-reloadText">点击重试</view>
+          </view>
+        </view> <template bindbeforeUpload="handleProxy" binduploadDone="handleProxy" wx:if="{{showUploadImg}}" data-eventid="{{'14'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="upLoadPlugn$f25b8f4a"></template>
+      </view>
+      <view class="_section data-v-2ae73c1a upload-number" wx:if="{{ imgUrl2.length}}"> 已上传{{ imgUrl2.length}}张， <label class="_span data-v-2ae73c1a upload-viewAll" bindtap="handleProxy" data-eventid="{{'15'}}" data-comkey="{{$k}}">查看全部</label></view>
+    </view>
+    <view class="_section data-v-2ae73c1a upload-submitBtn {{[  imgUrl0.length > 0 || imgUrl1.length > 0 || imgUrl2.length > 0    ? 'actived'    : '']}}" bindtap="handleProxy" data-eventid="{{'16'}}" data-comkey="{{$k}}">提交</view> <template wx:if="{{loading}}" data="{{...$root[$kk+'3'], $root}}" is="LogoLoading$2b721f9a"></template>
+  </view>
+</template>

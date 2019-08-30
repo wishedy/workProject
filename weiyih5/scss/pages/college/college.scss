@@ -1,0 +1,1810 @@
+@charset "UTF-8";
+@import "../../base";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader";
+//首页头部信息栏
+@import "../../components/_iconModule";
+//小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+
+html, body {
+  // background: #151515 !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.al-mainInner {
+  background: #F5F6FA;
+  .college-info-webView {
+    padding: rem3(30px) rem3(15px);
+    background: #fff;
+    margin-bottom: rem3(8px);
+    .college-tab-info-md {
+      h3 {
+        font-size: rem3(20px);
+        color: #111;
+        height: rem3(28px);
+        line-height: rem3(28px);
+        position: relative;
+        left: rem3(8px);
+        margin-bottom: rem3(10px);
+        vertical-align: middle;
+      }
+      h3:before {
+        content: '';
+        display: inline-block;
+        width: rem3(4px);
+        height: rem3(16px);
+        border-radius: rem3(2px);
+        background:rgba(219,175,88,1);
+        position: relative;
+        left: rem3(-8px);
+        margin: auto 0;
+        position: relative;
+        top: rem3(1px);
+      }
+      p {
+        line-height: rem3(30px);
+        color: #333;
+        font-size: rem3(16px);
+      }
+      hr {
+        height: rem3(20px);
+        background: transparent;
+        margin: rem3(10px) 0;
+        border: none;
+      }
+    }
+    .college-tab-imgBox {
+      font-size: 0;
+      .college-tab-info-bgImg {
+        width: 100%;
+        background: #F2F2F2;
+      }
+    }
+  }
+}
+
+em {
+  font-style: normal;
+}
+
+.footer-text {
+  display: none;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+// 一级学院
+.weiyi-college {
+  section {
+    .vue-data-loading {
+      .loading-footer {
+        display: none;
+      }
+    }
+  }
+  .weiyi-college-header {
+    position: relative;
+    .header-container {
+      width: 100%;
+      color: rgba(235, 235, 235, 1);
+      font-size: rem3(18px);
+      line-height: rem3(18px);
+      text-align: left;
+      position: absolute;
+      padding: rem3(15px);
+      z-index: 2;
+      a {
+        &.about-college-left {
+          font-size: rem3(13px);
+          font-weight: 400;
+          line-height: rem3(20px);
+        }
+      }
+    }
+  }
+
+  .banner {
+    width: 100%;
+    height: rem3(270px);
+    // background: rgba(46, 105, 142, 1);
+    position: relative;
+    .swiper-wrapper {
+      height: 100%;
+    }
+    .banner-1 {
+      height: 100%;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: rem3(4px);
+      }
+    }
+  }
+  /*
+  * 来源：3.11新增部分
+  * 目的：二级学院课入口
+  * 时间：2019/8/8
+  * 作者：丁国庆
+  */
+  .secondary-college {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: rem3(-44px);
+    padding: 0 rem3(15px);
+    color: #fff;
+    z-index: 2;
+    .seCollegeUl {
+      width: 100%;
+      height: rem3(95px);
+      border-radius: rem3(8px);
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: rem3(15px) rem3(10px);
+      box-sizing: border-box;
+      li {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        flex: 1;
+        span:first-child {
+          display: inline-block;
+          width: rem3(38px);
+          height: rem3(38px);
+          margin-bottom: rem3(6px);
+          border-radius: 50%;
+          background-size: 100% !important;
+        }
+        span:nth-child(2) {
+          width: rem3(58px);
+          color: #333;
+          font-size: rem3(12px);
+          text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+      /* 
+      * 功能：这块是每个二级学院加上隔开符号，需要时请解开注释
+      * 时间：2019/8/13
+      * 作者：丁国庆
+      */
+      // li:after {
+      //   content: '';
+      //   display: inline-block;
+      //   width: rem3(1px);
+      //   height: rem3(12px);
+      //   position: absolute;
+      //   right: -1%;
+      //   top: rem3(16px);
+      //   background:rgba(235,235,235,1);
+      // }
+      // li:last-child:after{
+      //   content: '';
+      //   display: none;
+      // }
+    }
+  }
+  // 最新课程
+  .latest-member-course {
+    margin: rem3(72px) rem3(15px) 0 rem3(15px);
+    h3 {
+      margin-bottom: rem3(15px);
+      font-weight: 600;
+      color: #333;
+      font-size: rem3(18px);
+      height: rem3(25px);
+      line-height: rem3(25px);
+    }
+    .latest-member-course-ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: rem3(14px);
+      li {
+        width: 100%;
+        height: rem3(160px);
+        margin-bottom: rem3(16px);
+        background: #fff;
+        padding: rem3(15px);
+        box-shadow: 0 rem3(4px) rem3(12px) 0 rgba(0,0,0,0.08);
+        border-radius: rem3(4px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        .latest-course-img {
+          position: relative;
+          img {
+            width: rem3(102px);
+            height: rem3(134px);
+            border-radius: rem3(4px);
+            background-size: 100% !important;
+          }
+          span {
+            position: absolute;
+            right: rem3(6px);
+            top: 0;
+            display: inline-block;
+            width: rem3(22px);
+            height: rem3(13px);
+            background: url('/static/college/VIP.png') no-repeat;
+            background-size: 100%;
+            border-radius: 0 0 rem3(2px) rem3(2px);
+          }
+        }
+        .latest-course-info {
+          width: rem3(198px);
+          height: rem3(134px);
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          align-items: center;
+          .member-course-top {
+            width: 100%;
+            padding-top: rem3(10px);
+            .member-course-p1 {
+              font-weight: 500;
+              font-size: rem3(17px);
+              color: #222;
+              margin-bottom: rem3(5px);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+            }
+            .member-course-tip {
+              height: rem3(20px);
+              line-height: rem3(20px);
+              font-size: rem3(14px);
+              font-weight: 400;
+              color:rgba(119,119,119,1);
+              margin-bottom: rem3(23px);
+            }
+          }
+          .member-course-p2 {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: rem3(10px);
+            span:first-child {
+              display: inline-block;
+              font-size: rem3(13px);
+              color: #1B79DD;
+              height: rem3(18px);
+              line-height: rem3(18px);
+              font-weight: 500;
+            }
+            span:nth-child(2) {
+              display: inline-block;
+              width: rem3(56px);
+              height: rem3(16px);
+              border-radius: rem3(2px);
+              font-size: rem3(11px);
+              text-align: center;
+              color: #fff;
+              // background: #6F8ABF;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 专栏课程
+  .column-course {
+    padding: 0 rem3(15px);
+    color: #fff;
+    h3 {
+      font-size: rem3(18px);
+      margin-bottom: rem3(15px);
+      font-weight: 600;
+      color: #333;
+      height: rem3(25px);
+      line-height: rem3(25px);
+    }
+    .column-course-ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: rem3(14px);
+      li {
+        width: 100%;
+        height: rem3(270px);
+        margin-bottom: rem3(16px);
+        border-radius: rem3(4px);
+        background:rgba(255,255,255,1);
+        box-shadow: 0 rem3(4px) rem3(12px) 0 rgba(0,0,0,0.08);
+        .columnCourse-1 {
+          position: relative;
+          height: rem3(158px);
+          background-size: 100% !important;
+          border-radius: rem3(4px) rem3(4px) 0 0;
+          span {
+            position: absolute;
+            left: rem3(10px);
+            bottom: rem3(10px);
+            font-size: rem3(14px);
+          }
+        }
+        .columnCourse-2 {
+          padding: rem3(15px);
+          p:first-child {
+            color: #222;
+            font-size: rem3(17px);
+            font-weight: 500;
+            height: rem3(24px);
+            line-height: rem3(24px);
+            margin-bottom: rem3(8px);
+          }
+          p:nth-child(2) {
+            margin-bottom: rem3(20px);
+            color: #777;
+            font-size: rem3(14px);
+            font-weight: 400;
+            height: rem(20px);
+            line-height: rem(20px);
+          }
+          p:last-child {
+            position: relative;
+          }
+          span {
+            display: inline-block;
+            font-size: rem3(13px);
+            font-weight: 500;
+            color: #1B79DD;
+            height: rem3(18px);
+            line-height: rem3(18px);
+            i {
+              color: #B6B6B6;
+            }
+          }
+          span:nth-of-type(2) {
+            color: #D48F26;
+          }
+          span:last-child {
+            position: absolute;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+  // 手术实例
+  .surgical-example {
+    margin-bottom: rem3(60px);
+    color: #fff;
+    h3 {
+      font-size: rem3(18px);
+      margin-bottom: rem3(15px);
+      font-weight: 600;
+      color: #333;
+      height: rem3(25px);
+      line-height: rem3(25px);
+      padding: 0 rem3(15px);
+    }
+    .surgical-example-ul {
+      background: #fff;
+      padding: 0 rem3(15px);
+      li {
+        height: rem3(147px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: rem3(5px);
+        border-bottom: rem3(0.5px) solid rgba(227,229,233,0.5);
+        .surgical-left {
+          width: rem3(105px);
+          height: rem3(105px);
+          position: relative;
+          border-radius: rem3(3px);
+          p {
+            width: rem3(58px);
+            height: rem3(16px);
+            line-height: rem3(16px);
+            background: rgba(0,0,0,0.15);
+            border-radius: rem3(8px);
+            position: absolute;
+            right: rem3(7px);
+            bottom: rem3(7px);
+            text-align: center;
+            .surgical-example-play {
+              display: inline-block;
+              width: rem3(8px);
+              height: rem3(8px);
+              background: url('/static/college/play.png') no-repeat;
+              background-size: 100%;
+            }
+            .surgical-example-time {
+              font-size: rem3(10px);
+            }
+          }
+        }
+        .surgical-right {
+          width: 66%;
+          height: rem3(105px);
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          .surgical-title {
+            font-size: rem3(18px);
+            color: #222;
+            font-weight: 500;
+            margin-bottom: rem3(30px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+          }
+          .surgical-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span:first-child {
+              width: rem3(160px);
+              font-size: rem3(13px);
+              color: #777;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+            span:last-child {
+              color: #D48F26;
+              font-size: rem3(13px);
+              font-weight: 500;
+            }
+          }
+        }
+      }
+      li:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// 优惠券
+.coupon-card {
+  height: rem3(43px);
+  line-height: rem3(43px);
+  background: #FBF9F4;
+  padding: 0 rem3(15px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .coupon-title {
+    color: #AB6A09;
+    font-size: rem3(14px);
+    height: rem3(20px);
+    line-height: rem3(20px);
+  }
+  .coupon-receive {
+    display: inline-block;
+    width: rem3(44px);
+    height: rem3(24px);
+    font-size: rem3(14px);
+    font-weight: 700;
+    color: #624D18;
+    text-align: center;
+    line-height: rem3(24px);
+    border-radius: rem3(3px);
+    background: linear-gradient(129deg,rgba(232,194,132,1) 0%,rgba(246,213,162,1) 100%);
+    box-shadow: 0 rem3(1px) rem3(3px) 0 rgba(118,93,45,0.15);
+  }
+  .coupon-have-receive {
+    display: inline-block;
+    width: rem3(60px);
+    height: rem3(24px);
+    line-height: rem3(24px);
+    border: rem3(1px) solid rgba(219,181,119,1);
+    border-radius: rem3(2px);
+    color: #DDAF65;
+    font-size: rem3(14px);
+    font-weight: 500;
+    text-align: center;
+  }
+}
+
+// 二级学院
+.college-detail {
+  .college-detail-header {
+    height: rem3(268px);
+    background: rgb(26, 91, 151);
+    position: relative;
+    margin-bottom: -20px;
+    background-position-x: center;
+    background-position-y: rem3(-63px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    .college-detail-header-title {
+      position: absolute;
+      color: rgba(255,255,255,0.8);
+      top: rem3(100px);
+      right: rem3(12px);
+      .college-join-num {
+        display: inline-block;
+        font-size: rem3(14px);
+        height: rem3(20px);
+        line-height: rem3(20px);
+        margin-right: rem3(6px);
+        vertical-align: middle;
+      }
+      .college-join-head {
+        display: inline-block;
+        width: rem3(20px);
+        height: rem3(20px);
+        border-radius: 50%;
+        border: rem2(2px) solid #DBAF58;
+        background: #D8D8D8;
+        background-size: 100% !important;
+        vertical-align: middle;
+        position: relative;
+      }
+      .college-join-head:after {
+        content: "";
+        display: block;
+        width: rem3(15px);
+        height: rem3(15px);
+        background: url('/static/college/kingVip.png') no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: rem3(-7px);
+        right: rem3(-7px);
+      }
+    }
+  }
+  // 优惠券
+  .coupon-card {
+    position: relative;
+  }
+  // 学院Tag
+  .college-detail-infoBox {
+    // position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    .college-fixed-box {
+      width: 100%;
+      height: rem3(55px);
+      border-bottom: rem3(1px) solid #E3E5E9;
+      .college-tab, .college-tab-fixed {
+        height: rem3(55px);
+        line-height: rem3(55px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        border-radius: rem3(14px) rem3(14px) 0 0;
+        background: #fff;
+        transition: all 0.3s;
+        border-bottom: rem3(0.5px) solid #E3E5E9;
+        position: relative;
+        .tabOne {
+          color: #666;
+          font-size: rem3(17px);
+          flex: 1 1 auto;
+          text-align: center;
+        }
+        .tabActive {
+          color: #111;
+          font-weight: 700;
+          position: relative;
+        }
+        .tabActive:after {
+          content: '';
+          display: block;
+          width: rem3(16px);
+          height: rem3(3px);
+          border-radius: rem3(2px);
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: 0 auto;
+          background: #111;
+        }
+      }
+      .college-tab-fixed {
+        border-radius: 0;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        background: #fff;
+        z-index: 2;
+        transition: all 0.3s;
+      }
+    }
+    // 学院介绍
+    .college-tab-college-info {
+    }
+    // 会员课程
+    .college-tab-vip-course {
+      padding: rem3(30px) 0; 
+      background: #fff;
+      margin-bottom: rem3(8px);
+      h3 {
+        padding: 0 rem3(15px);
+        img {
+          width: rem3(24px);
+          height: rem3(24px);
+          margin-right: rem3(4px);
+          vertical-align: top;
+        }
+        span {
+          display: inline-block;
+          color: #222;
+          font-size: rem3(20px);
+          font-weight: 700;
+          height: rem3(28px);
+          line-height: rem3(28px);
+        }
+      }
+      .latest-member-course-ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: rem3(25px);
+        li {
+          width: 100%;
+          height: rem3(100px);
+          background: #fff;
+          padding: rem3(12px) rem3(15px);
+          border-radius: rem3(4px);
+          display: flex;
+          align-items: center;
+          box-sizing: border-box;
+          margin-top: rem3(25px);
+          .latest-course-img {
+            position: relative;
+            margin-right: rem3(15px);
+            img {
+              width: rem3(76px);
+              height: rem3(100px);
+              border-radius: rem3(4px);
+              background-size: 100% !important;
+            }
+            span {
+              position: absolute;
+              right: rem3(6px);
+              top: 0;
+              display: inline-block;
+              width: rem3(22px);
+              height: rem3(13px);
+              background: url('/static/college/VIP.png') no-repeat;
+              background-size: 100%;
+              border-radius: 0 0 rem3(2px) rem3(2px);
+            }
+          }
+          .latest-course-info {
+            flex: 1 1 auto;
+            height: inherit;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            .member-course-p1 {
+              font-weight: 500;
+              font-size: rem3(17px);
+              color: #222;
+              margin-bottom: rem3(5px);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+            .member-course-tip {
+              height: rem3(20px);
+              line-height: rem3(20px);
+              font-size: rem3(14px);
+              font-weight: 400;
+              color:rgba(119,119,119,1);
+              margin-bottom: rem3(23px);
+            }
+            .member-course-tag {
+              display: inline-block;
+              width: rem3(50px);
+              height: rem3(18px);
+              line-height: rem3(18px);
+              border: rem3(1px) solid rgba(27, 121, 221, 0.5);
+              font-style: normal;
+              border-radius: rem3(2px);
+              color: #1B79DD;
+              font-size: rem3(13px);
+              text-align: center;
+              margin-bottom: rem3(23px);
+            }
+            .member-course-p2 {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              position: relative;
+              top: rem3(5px);
+              span:first-child {
+                display: inline-block;
+                font-size: rem3(13px);
+                color: #777;
+                height: rem3(13px);
+                line-height: rem3(18px);
+                position: absolute;
+                left: 0;
+                top: rem3(-7px);
+              }
+              span:last-child {
+                display: inline-block;
+                width: rem3(56px);
+                height: rem3(20px);
+                line-height: rem3(20px);
+                border-radius: rem3(2px);
+                font-size: rem3(14px);
+                text-align: center;
+                color: #D48F26;
+                font-weight: 500;
+                position: absolute;
+                right: rem3(6px);
+                top: rem3(-7px);
+              }
+              button {
+                width: rem3(80px);
+                height: rem3(30px);
+                line-height: rem3(30px);
+                background:linear-gradient(128deg,rgba(255,239,202,1) 0%,rgba(236,214,150,1) 100%);
+                box-shadow:0 rem3(2px) rem3(6px) 0 rgba(131,102,46,0.14);
+                border-radius: rem3(2px);
+                color: #624D18;
+                font-size: rem3(14px);
+                font-weight: 700;
+                position: absolute;
+                right: rem3(6px);
+                top: rem3(-14px);
+              }
+            }
+          }
+        }
+      }
+      // 即将更新
+      .future-ul {
+        background: #F8F8F8;
+        border-radius: rem3(4px);
+        margin: 0 rem3(20px);
+        padding: rem3(20px) rem3(20px) rem3(5px) rem3(20px);
+        h6 {
+          font-size: rem3(16px);
+          height: rem3(22px);
+          line-height: rem3(22px);
+          font-weight: 500;
+          color: #000;
+          margin-bottom: rem3(10px);
+        }
+        .future-li {
+          height: rem3(42px);
+          line-height: rem3(42px);
+          border-bottom: rem3(0.5px) solid #EAEAEA;
+          font-size: rem3(16px);
+          color: #333;
+        }
+        .future-li:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+    // 手术案例
+    .college-tab-surgical-example {
+      // height: rem3(1000px);
+      background: #fff;
+      position: relative;
+      &::before {
+        content: '';
+        display: inline-block;
+        height: rem3(160px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: url('/static/college/example-bg.png') no-repeat;
+        background-size: 100%;
+      }
+      h3 {
+        font-size: rem3(20px);
+        height: rem3(28px);
+        line-height: rem3(28px);
+        font-weight: 700;
+        color: #624D18;
+        position: relative;
+        left: rem3(20px);
+        top: rem3(24px);
+      }
+      h6 {
+        color: #716545;
+        font-size: rem3(14px);
+        height: rem3(20px);
+        line-height: rem3(20px);
+        position: relative;
+        left: rem3(20px);
+        top: rem3(27px);
+        font-weight: normal;
+      }
+      .surgical-example-ul {
+        background: #fff;
+        padding: 0 rem3(15px);
+        margin-top: rem3(50px);
+        li {
+          position: relative;
+          height: rem3(147px);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: rem3(5px);
+          border-bottom: rem3(0.5px) solid rgba(227,229,233,0.5);
+          .surgical-left {
+            width: rem3(105px);
+            height: rem3(105px);
+            position: relative;
+            border-radius: rem3(3px);
+            p {
+              width: rem3(58px);
+              height: rem3(16px);
+              line-height: rem3(16px);
+              background: rgba(0,0,0,0.15);
+              border-radius: rem3(8px);
+              position: absolute;
+              right: rem3(7px);
+              bottom: rem3(7px);
+              text-align: center;
+              .surgical-example-play {
+                display: inline-block;
+                width: rem3(8px);
+                height: rem3(8px);
+                background: url('/static/college/play.png') no-repeat;
+                background-size: 100%;
+              }
+              .surgical-example-time {
+                color: #fff;
+                font-size: rem3(10px);
+              }
+            }
+          }
+          .surgical-right {
+            width: 66%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            .surgical-title {
+              font-size: rem3(18px);
+              color: #222;
+              font-weight: 500;
+              margin-bottom: rem3(30px);
+            }
+            .surgical-info {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              .surgical-info-1 {
+                span {
+                  font-size: rem3(13px);
+                  color: #777;
+                }
+              }
+              .surgical-info-2 {
+                span:first-child {
+                  color: #bbb;
+                  font-size: rem3(13px);
+                  text-decoration: line-through;
+                  margin-right: rem3(4px);
+                }
+                span:last-child {
+                  color: #D48F26;
+                  font-size: rem3(15px);
+                  font-weight: 500;
+                } 
+              }
+            }
+          }
+        }
+      }
+      .course-tip {
+        margin-left: rem3(20px);
+        background: #fff;
+        padding: rem3(15px) 0 rem3(23px) 0;
+        margin-bottom: rem3(60px);
+        img {
+          width: rem3(16px);
+          height: rem3(16px);
+          margin-right: rem3(2px);
+        }
+        span {
+          color: #777;
+          font-size: rem3(14px);
+          height: rem3(20px);
+          line-height: rem3(16px);
+          vertical-align: top;
+        }
+      }
+    }
+  }
+  // 加入会员按钮
+  .join-vip {
+    width: 100%;
+    height: rem3(60px);
+    line-height: rem3(60px);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 rem3(15px);
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 rem3(-2px) rem3(4px) 0 rgba(0,0,0,0.05);
+    .join-vip-left {
+      display: inline-block;
+      b {
+        color: #DD9933;
+        font-weight: 500;
+        font-size: rem3(28px);
+        // margin-right: rem3(3px);
+      }
+      span:first-of-type {
+        color: #D48F26;
+        font-size: rem3(14px);
+        margin-right: rem3(5px);
+        position: relative;
+        bottom: rem3(1px);
+      }
+      span:nth-of-type(2) {
+        display: inline-block;
+        width: rem3(60px);
+        height: rem3(18px);
+        line-height: rem3(18px);
+        font-size: rem3(11px);
+        color: #fff;
+        text-align: center;
+        position: relative;
+        bottom: rem3(5px);
+        background: linear-gradient(251deg,rgba(255,87,0,1) 0%,rgba(251,142,0,1) 100%);
+        border-radius: rem3(9px) rem3(9px) rem3(9px) 0;
+      }
+    }
+    .join-vip-right {
+      display: inline-block;
+      position: absolute;
+      right: rem3(15px);
+      top: 0;
+      button {
+        width: rem3(136px);
+        height: rem3(42px);
+        color: #624D18;
+        font-size: rem3(17px);
+        font-weight: 700;
+        background: linear-gradient(128deg,rgba(255,239,202,1) 0%,rgba(236,214,150,1) 100%);
+        box-shadow: 0 rem3(2px) rem3(6px) 0 rgba(131,102,46,0.14);
+        border-radius: rem3(4px);
+      }
+    }
+  }
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  width: rem3(4px);
+  height: rem3(4px);
+  background: url("/static/images/college/banner1-left.png") no-repeat center center;
+  background-size: cover;
+  border-radius: 0;
+  opacity:0.45;
+  border-radius: 50%;
+  transition: all 0.25s;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet-active {
+  width: rem3(13px);
+  height: rem3(4px);
+  border-radius: rem3(3px);
+  opacity: 0.8;
+  transition: all 0.25s;
+}
+
+.banner1-account {
+  position: absolute;
+  bottom: rem3(60px) !important;
+ }
+
+
+
+.college-one {
+  h3 {
+    font-size: rem3(19px);
+    font-weight: 500;
+    color: rgba(235, 235, 235, 1);
+    line-height: rem3(26px);
+    padding-top: rem3(32px);
+    padding-bottom: rem3(16px);
+
+    em {
+      display: inline-block;
+      width: rem3(20px);
+      height: rem3(20px);
+      vertical-align: middle;
+      background: url("/static/images/college/college-one.png") no-repeat center center;
+      background-size: cover;
+    }
+  }
+}
+
+.courseList {
+  display: flex;
+  display: -webkit-flex;
+  padding-bottom: rem3(22px);
+
+  .col-left {
+    width: rem3(76px); // 设定宽度
+    height: rem3(100px);
+    text-align: center;
+    line-height: rem3(100px);
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: rem3(4px);
+    }
+  }
+
+  .col-middle {
+    position: relative;
+    flex: 1;
+    -webkit-flex: 1;
+    padding-left: rem3(15px);
+    overflow: hidden;
+
+    h1 {
+      font-size: rem3(16px);
+      font-weight: 500;
+      color: rgba(235, 235, 235, 1);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &.col-middle-last {
+        color: rgba(180, 180, 180, 1);
+      }
+    }
+    & .col-middle-title{
+      position: absolute;
+      top: rem(4px);
+    }
+
+    & .course-desc{
+      position: absolute;
+      top: rem(52px);
+    }
+
+    h2 {
+      font-size: rem3(14px);
+      font-weight: 400;
+      color: rgba(180, 180, 180, 1);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &.course-price {
+        position: absolute;
+        bottom: rem(4px);
+        width: 95%;
+        font-size: rem3(12px);
+        font-weight: 500;
+        color: rgba(216, 43, 43, 1);
+        //margin-top: rem3(29px);
+        //padding-top: rem3(29px);
+
+        & .course-price-content{
+          position: absolute;
+          right: 0;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+
+        span {
+          &.course-price-title {
+            font-size: rem3(12px);
+            font-weight: 500;
+            color: rgba(216, 43, 43, 1);
+            float: left;
+          }
+
+          &.course-price-content {
+            font-size: rem3(12px);
+            font-weight: 400;
+            color: rgba(180, 180, 180, 1);
+            float: right;
+          }
+
+          &.course-price-title-last, &course-price-content-last {
+            color: rgba(180, 180, 180, 1);
+
+          }
+
+          span {
+            span {
+              &.diandian {
+                display: inline-block;
+                width: rem3(3px);
+                height: rem3(3px);
+                border-radius: 50%;
+                background-color: rgba(216, 43, 43, 1);
+                vertical-align: middle;
+                //font-size: rem3(25px);
+                //line-height: rem3(12px);
+                //height: rem3(13px);
+                //box-sizing: border-box;
+              }
+            }
+          }
+        }
+      }
+
+      &.course-price-last {
+        margin-top: rem3(54px);
+      }
+    }
+  }
+
+}
+
+//学院介绍样式
+
+@mixin line {
+  width: rem3(50px);
+  border-top: 1px solid #3f3f3f;
+}
+
+@mixin text {
+  padding: 0 rem3(28px);
+}
+
+@mixin title {
+  font-size: rem3(19px);
+  font-weight: bold;
+  color: rgba(235, 235, 235, 1);
+  line-height: rem3(24px);
+  text-align: center;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+
+    &.line {
+      @include line();
+    }
+
+    &.text {
+      @include text();
+    }
+  }
+}
+
+.about-college {
+  width: 100%;
+  min-height: 100%;
+  background: rgba(0, 0, 0, 1);
+
+  .about-row-one {
+    width: 100%;
+    height: rem3(468px);
+    background: url("/static/images/college/app-header-pic.png") no-repeat center/cover;
+    box-sizing: border-box;
+    padding: rem3(35px) rem3(18px) 0;
+
+    header {
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      .about-back {
+        float: left;
+        width: rem3(39px);
+        height: rem3(35px);
+
+        em {
+          display: inline-block;
+          width: rem3(17px);
+          height: rem3(19px);
+          background: url("/static/images/college/about-back.png") no-repeat center/cover;
+          margin: rem3(8px) rem3(11px);
+        }
+      }
+
+      .about-share {
+        float: right;
+        width: rem3(40px);
+        height: rem3(35px);
+
+        em {
+          display: inline-block;
+          width: rem3(17px);
+          height: rem3(16px);
+          background: url("/static/images/college/about-share.png") no-repeat center center;
+          background-size: cover;
+          margin: rem3(9px) rem3(11px) rem3(9px) rem3(12px);
+        }
+      }
+    }
+
+    .row-one-title {
+      .college-logo {
+        width: rem3(50px);
+        height: rem3(76px);
+        margin: 0 auto;
+        background: url('/static/images/college/logo.png') no-repeat center center;
+        background-size: cover;
+      }
+
+      //dl dt {
+      //  width: rem3(64px);
+      //  height: rem3(64px);
+      //  margin: 0 auto;
+      //  //box-sizing: border-box;
+      //  background: url('/static/images/college/logo.png') no-repeat center center;
+      //  background-size: cover;
+      //}
+
+      //dl dd {
+      //  font-size: rem3(17px);
+      //  color: #EBEBEB;
+      //  padding-top: rem3(16px);
+      //  padding-bottom: rem3(37px);
+      //  text-align: center;
+      //}
+    }
+
+    .row-one-content {
+      font-size: rem3(16px);
+      font-weight: 300;
+      color: rgba(248, 248, 248, 1);
+      line-height: rem3(32px);
+      letter-spacing: rem3(1px);
+      text-align: center;
+      margin-top: rem3(24px);
+
+    }
+  }
+
+  .row-tow-video-container {
+    padding: rem3(31px) rem3(15px) 0;
+
+    .row-two-video1 {
+      width: rem3(345px);
+      height: rem3(200px);
+      box-sizing: border-box;
+      background: #000000;
+
+      .video-js {
+        width: rem3(345px);
+        height: rem3(200px);
+        box-sizing: border-box;
+        font-size: rem3(10px);
+
+        .vjs-volume-level:before {
+          top: rem3(-3px);
+        }
+
+        .vjs-current-time-display {
+          margin-top: rem(2px);
+        }
+
+        .vjs-time-control {
+          margin-top: rem(2px);
+        }
+
+        .vjs-duration-display {
+          margin-top: rem(2px);
+        }
+
+        .vjs-time-divider {
+          position: relative;
+          top: rem(2px);
+        }
+
+        .vjs-control-bar {
+          bottom: rem(5px);
+        }
+
+        video {
+          width: rem3(345px);
+          height: rem3(200px);
+        }
+
+        .vjs-volume-bar {
+          top: rem3(13px);
+        }
+
+        .vjs-control-bar {
+          height: rem3(33px);
+          bottom: 0;
+        }
+
+        .vjs-fullscreen-control {
+          display: none;
+        }
+
+        .vjs-big-play-button {
+          width: rem3(35px);
+          height: rem3(35px);
+          margin-left: rem3(-17.5px);
+          margin-top: rem3(-17.5px);
+          background: #0AB383;
+          background: url("/static/images/college/play-big1.png") no-repeat center center;
+          background-size: cover;
+          //border: rem3(1px);
+          border-radius: 50%;
+          border: 0;
+        }
+
+        .vjs-progress-holder {
+          //display: none !important;
+        }
+
+        .vjs-poster {
+          right: rem3(-1px);
+          left: rem3(-1px);
+        }
+      }
+    }
+
+    .row-tow-video2 {
+      margin-top: rem3(20px);
+      width: 100%;
+      //height: rem3(195px);
+      overflow-y: hidden;
+      overflow-x: hidden;
+
+      & .originator-box {
+        display: inline-block;
+        width: 100%;
+
+        & em {
+          display: inline-block;
+          width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .video-container {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        overflow-y: hidden;
+        //height: rem3(200px);
+
+        ul {
+          li {
+            display: inline-block;
+            margin-right: rem3(10px);
+            font-size: 0;
+            cursor: pointer;
+            vertical-align: top;
+            //float: left;
+            //overflow-y: hidden;
+            //height: rem3(200px);
+
+            div {
+              &.video2-two-dt {
+                position: relative;
+                width: rem3(157px);
+                height: rem3(130px);
+                border-radius: rem3(3px);
+                box-sizing: border-box;
+
+                span {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  //width: rem3(157px);
+                  height: rem3(51px);
+                  background: rgba(255, 255, 255, 1);
+                  border-radius: 0 0 rem3(3px) rem3(3px);
+                  font-size: 0;
+                  z-index: 100;
+
+                  em {
+                    display: block;
+                    width: 100%;
+                    box-sizing: border-box;
+
+                    &.originator {
+                      padding: rem3(6px) rem3(10px) 0;
+                      font-size: rem3(14px);
+                      font-weight: bold;
+                      color: rgba(0, 0, 0, 1);
+                      line-height: rem3(20px);
+                    }
+
+                    &.originator-remark {
+                      padding: 0 rem3(10px) rem3(5px);
+                      font-size: rem3(14px);
+                      font-weight: 400;
+                      color: rgba(0, 0, 0, 1);
+                      line-height: rem3(20px);
+                    }
+                  }
+                }
+
+                img {
+                  max-width: 100%;
+                  max-height: 100%;
+                }
+
+                i {
+                  position: absolute;
+                  top: rem3(9px);
+                  right: rem3(12px);
+                  width: rem3(17px);
+                  height: rem3(17px);
+
+                  &.play {
+                    background: url('/static/images/college/play-small.png') center/cover;
+                  }
+
+                  &.pause {
+                    background: url('/static/images/college/replying.png') center/cover;
+                  }
+                }
+              }
+
+              &.video2-two-dd {
+                width: rem3(150px);
+                height: rem3(45px);
+                padding: 0 0 0 rem3(10px);
+                font-size: rem3(14px);
+                font-weight: 400;
+                color: rgba(255, 255, 255, 1);
+                line-height: rem3(21px);
+                margin-top: rem3(10px);
+                box-sizing: border-box;
+                //overflow: hidden;
+                //overflow-y: hidden;
+                //text-overflow: ellipsis;
+                //display: -webkit-box;
+                //-webkit-line-clamp: 2;
+                //-webkit-box-orient: vertical;
+                white-space: pre-wrap;
+                //word-break: break-word;
+
+                span {
+                  &.contentActve {
+                    color: #BCBEC2;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .row-two-vision {
+    margin-top: rem3(80px);
+
+    .version-title {
+      @include title();
+    }
+
+    .version-content {
+      font-size: rem3(16px);
+      font-weight: 400;
+      color: rgba(235, 235, 235, 1);
+      line-height: rem3(26px);
+      text-align: center;
+      margin-top: rem3(24px);
+    }
+  }
+
+  .row-two-team {
+    margin-top: rem3(80px);
+
+    .team-title {
+      @include title();
+    }
+
+    p {
+      padding-top: rem3(6px);
+      padding-bottom: rem3(36px);
+
+      &.team-remark {
+        text-align: center;
+        font-size: rem3(15px);
+        font-weight: 400;
+        color: rgba(190, 190, 190, 1);
+        line-height: rem3(21px);
+      }
+    }
+
+    ul {
+      padding: 0 rem3(15px);
+
+      li {
+        display: inline-block;
+        width: rem3(106px);
+        height: rem3(137px);
+        padding: 0 rem3(14px) rem3(30px) 0;
+
+        &:nth-child(3n+2) {
+          padding-right: rem3(13px);
+        }
+
+        &:nth-child(3n+3) {
+          padding-right: 0;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+  }
+
+  .row-two-courseList {
+    margin-top: rem3(50px);
+    padding-bottom: rem3(48px);
+
+
+    .list-container {
+      .courseList-title {
+        @include title();
+      }
+
+      ul {
+        margin-top: rem3(33px);
+        padding: 0 rem3(20px);
+
+        li {
+          &:not(:last-child) {
+            background: rgba(28, 28, 32, 1);
+            border-radius: rem3(10px);
+            position: relative;
+            width: 100%;
+            height: rem3(106px);
+            margin-bottom: rem3(15px);
+
+            i {
+              position: absolute;
+              //top: rem3(10px);
+              //left: rem3(12px);
+              //width: rem3(85px);
+              //height: rem3(85px);
+              top: rem3(8px);
+              left: rem3(15px);
+              width: rem(136px);
+              height: rem(180px);
+              text-align: center;
+
+              &.courseType1 {
+
+                img {
+                  //max-width: 100%;
+                  //max-height: 100%;
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              &.courseType2 {
+                background: url('/static/images/college/qidai.png') no-repeat center center;
+                background-size: cover;
+              }
+            }
+
+            div {
+              position: relative;
+              width: 100%;
+              height: rem3(106px);
+              padding-left: rem3(100px);
+              box-sizing: border-box;
+              display: table-cell;
+              vertical-align: middle;
+              //padding: 0 rem3(17px) 0 rem3(112px);
+
+              p {
+                width: rem3(202px);
+
+                &.about-course-title {
+                  //position: absolute;
+                  //top: rem3(28px);
+                  font-size: rem3(16px);
+                  font-weight: bold;
+                  color: rgba(235, 235, 235, 1);
+                  line-height: rem3(24px);
+                }
+
+                &.about-course-remark {
+                  //position: absolute;
+                  //top: rem3(58px);
+                  font-size: rem3(13px);
+                  font-weight: 400;
+                  color: rgba(136, 136, 136, 1);
+                  line-height: rem3(18px);
+                  padding-top: rem3(5px);
+                }
+
+                &.about-course-title-active {
+                  color: rgba(87, 87, 87, 1);
+                }
+              }
+
+
+            }
+          }
+
+          &.course-remark-last {
+            font-size: rem3(15px);
+            font-weight: 400;
+            color: rgba(235, 235, 235, 1);
+            line-height: rem3(26px);
+            text-align: center;
+            padding-top: rem3(5px);
+          }
+
+          &.course-remark-active {
+            margin-bottom: rem3(32px);
+          }
+        }
+      }
+    }
+  }
+
+  .row-two-recruitmentPlan {
+    width: 100%;
+    height: rem3(389px);
+    background: url("/static/images/college/foot-bg-big.png") no-repeat center center;
+    background-size: cover;
+    box-sizing: border-box;
+
+    .version1-title {
+      padding-top: rem3(45px);
+      @include title();
+    }
+
+    .recruitmentPlan-title {
+      width: rem3(295px);
+      height: rem3(75px);
+      margin: 0 auto;
+      padding-top: rem3(17px);
+      border-bottom: rem3(1px) solid rgba(255, 255, 255, 0.47590000000000005);
+      font-size: rem3(19px);
+      font-weight: bold;
+      color: rgba(255, 255, 255, 1);
+      line-height: rem3(75px);
+      text-align: center;
+      //box-sizing: border-box;
+    }
+
+    .recruitmentPlan-remark {
+      width: rem3(307px);
+      //height:rem3(70px);
+      font-size: rem3(15px);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      line-height: rem3(35px);
+      margin: 0 auto;
+      padding-top: rem3(40px);
+      text-align: center;
+    }
+
+    .recruitmentPlan-concat {
+      width: rem3(320px);
+      height: rem3(115px);
+      font-size: rem3(15px);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      line-height: rem3(25px);
+      margin: 0 auto;
+      text-align: center;
+      padding-top: rem3(30px);
+    }
+
+  }
+}
+
+@media screen and (device-width: 359px) {
+  //@media screen and (max-width: 359px) {
+  .about-college {
+    .row-two-team {
+
+      ul {
+        li {
+          display: inline-block;
+          width: rem3(90px);
+          height: rem3(114px);
+          //width: 50px;
+          //height: 50px;
+          padding: 0 rem3(14px) rem3(30px) 0;
+
+          &:nth-child(3n+2) {
+            padding-right: rem3(13px);
+          }
+
+          &:nth-child(3n+3) {
+            padding-right: 0;
+          }
+
+          img {
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+      }
+
+    }
+  }
+
+}
+
+//@media screen and (device-width: 360px) {
+////@media screen and (max-width: 359px) {
+//  .about-college {
+//    .row-two-team {
+//
+//      ul {
+//        li {
+//          display: inline-block;
+//          width: rem3(90px);
+//          height: rem3(114px);
+//          //width: 50px;
+//          //height: 50px;
+//          padding: 0 rem3(14px) rem3(30px) 0;
+//
+//          &:nth-child(3n+2) {
+//            padding-right: rem3(13px);
+//          }
+//
+//          &:nth-child(3n+3) {
+//            padding-right: 0;
+//          }
+//
+//          img {
+//            max-width: 100%;
+//            max-height: 100%;
+//          }
+//        }
+//      }
+//
+//    }
+//  }
+//
+//}

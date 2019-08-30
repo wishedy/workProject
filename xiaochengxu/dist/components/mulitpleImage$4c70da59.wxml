@@ -1,0 +1,24 @@
+<template name="mulitpleImage$4c70da59">
+  <view class="_section data-v-afe91b18 main-message-box" bindlongpress="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+    <view class="_article data-v-afe91b18 main-message-box-item my-message" data-clientid="{{imageMessage.idClient}}">
+      <view class="_i data-v-afe91b18 fail-button" style="display:none"></view>
+      <view class="_figcaption data-v-afe91b18 main-message-content multiple-box image-type">
+        <transition name="fade" class="_transition data-v-afe91b18"><label class="_span data-v-afe91b18 delete-msg-btn" catchtap="handleProxy" wx:if="{{currentIndex===deleteMsgIndex&&showDeleteMsg&&imageMessage.from===userData.account}}" data-eventid="{{'0'}}" data-comkey="{{$k}}">撤回</label></transition>
+        <view class="_section data-v-afe91b18 middle-tip-modal" wx:if="{{imageMessage.loading}}">
+          <view class="_figure data-v-afe91b18 middle-tip-box-text">
+            <image class="_img data-v-afe91b18 notShow" src="//m.allinmed.cn/image/img00/patientConsult/symptom_photo_loading@2x.png" alt="loading..."></image>
+          </view>
+        </view>
+        <view class="_header data-v-afe91b18 mulit-title">图片({{imageList.length}})</view>
+        <view class="_section data-v-afe91b18 mulitple-image-box" catchtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+          <view class="_figure data-v-afe91b18 mulitple-image" wx:key="index" key="{{index}}" wx:if="{{index<3}}" wx:for="{{imageList}}" wx:for-index="index" wx:for-item="item">
+            <image src="{{item}}" alt class="_img data-v-afe91b18"></image>
+          </view>
+        </view>
+      </view>
+      <view class="_figure data-v-afe91b18 main-message-img" wx:if="{{imageMessage.from===userData.account}}">
+        <image src="{{logoUrl}}" alt class="_img data-v-afe91b18"></image>
+      </view>
+    </view>
+  </view>
+</template>

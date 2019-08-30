@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/message/message_main.html#tab=review';
+        }
+    </script>
+    <title>评论我的－唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/message/message_review.css">
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="211">
+    <section class="al-mainInner Ev-mesContent">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader" data-alcode-mod='448'>
+            <figure class="al-indexHeaderItem">
+                <a href="/pages/message/message_main.html" class="ev_digHole" data-alcode='e58'>
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>评论我的</h1>
+            </figure>
+            <figure class="al-indexHeaderItem Ev-mesEditBtn">
+                <a href="javascript:;" id="EV-selectToDelete" data-flag="1" style="display: none;">
+                    编辑
+                </a>
+            </figure>
+        </header>
+        <section class="al-noContentTips Ev-mesNoList" style="display: none;">
+            <figure>
+                <img src="//img50.allinmd.cn/pages/message/remind_no_msg.png" alt="">
+            </figure>
+        </section>
+        <section class="al-msgListPart Ev-mesListEditStatus" data-alcode-mod='450' data-alcode-item-selector="section">
+
+        </section>
+        <footer class="al-msgListDeleteBtns Ev-mesBottomSelectAllBtn">
+            <button class="al-msgListDeleteSelectAll Ev-mesSelectAllBtn" data-flag="1">全选</button>
+            <button class="al-msgListDelete Ev-mesDeleteBtn">删除<span class="Ev-mesDelNum"></span></button>
+        </footer>
+        <!-- 删除提示弹框 -->
+        <section class="al-confirmModalMask Ev-mesDeletePop">
+            <section class="al-confirmModal">
+                <article class="al-confirmModalContent">
+                    <article>
+                        <p>确定删除这<span class="Ev-mesDelPopNum"></span>条信息吗？</p>
+                    </article>
+                </article>
+                <footer class="al-confirmModalBtns">
+                    <button class="al-confirmModalCancelBtn Ev-mesConfirmDel">删除</button>
+                    <button class="al-confirmModalEnsureBtn Ev-mesDelPopCancel">
+                        取消
+                    </button>
+                </footer>
+            </section>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/log.js"></script>
+
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+    <script src="/js/scene/message/messageComm.js"></script>
+    <script src="/js/scene/message/messageReview.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+@charset "UTF-8";
+//直播结束
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+html,
+body {
+    height: 100%;
+}
+
+.al-mainInner {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+
+.al-livingOverTitle {
+    margin-top: 15%;
+    text-align: center;
+    margin-bottom: rem(136px);
+    color: #555;
+    @include font-dpr(38px);
+}
+
+.al-livingOverImg {
+    text-align: center;
+    & > img {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        @include circle(rem(180px), #fff);
+    }
+    & > figcaption {
+        h2 {
+            margin: rem(30px) 0;
+            font-weight: normal;
+            color: #333;
+            @include font-dpr(18px);
+        }
+        p {
+            color: #777;
+            @include font-dpr(16px);
+            line-height: 1.5;
+            width: rem(512px);
+            margin: auto;
+        }
+    }
+}
+
+.al-livingOverMsg {
+    margin-top: rem(80px);
+    text-align: center;
+    &Item {
+        display: inline-block;
+        padding: 0 rem(80px);
+        border-right: 1px solid #e4e9ed;
+        p {
+            color: #777;
+            @include font-dpr(15px);
+            margin-bottom: rem(30px);
+            line-height: 1;
+        }
+        span {
+            color: #3598db;
+            @include font-dpr(20px);
+            line-height: 1;
+        }
+    }
+}
+
+.al-livingQuitBtn {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    padding: 0 rem(30px);
+}
+.al-landscapeHr{
+	display: none;
+}
+@media only screen and (orientation:landscape) {
+    html,
+    body {
+        background-color: #eff4f8;
+    }
+    .al-livingOverTitle {
+        position: absolute;
+        right: 7%;
+        top: 10%;
+        margin: 0;
+    }
+    .al-livingOverImg {
+        position: absolute;
+        left: 5%;
+        top: 10%;
+        & > img {
+            width: rem(150px);
+            height: rem(150px);
+        }
+        figcaption {
+            p {
+                width: rem(350px)
+            }
+            &> h2 {
+                margin: rem(15px) 0;
+            }
+        }
+    }
+    .al-livingQuitBtn {
+        position: absolute;
+        right: 0;
+        left: auto;
+        bottom: 10%;
+        width: rem(335px);
+    }
+    .al-livingOverMsg {
+        left: -4%;
+        bottom: 10%;
+        position: absolute;
+        .al-livingOverMsgItem {
+            padding: 0 rem(88px);
+            p{
+				margin-bottom: rem(20px);
+            }
+        }
+    }
+    .al-landscapeHr{
+    	display: block;
+    	width: 1px;
+    	height: rem(450px);
+    	background-color: #d7dbde;
+    	position: absolute;
+		left:50%;
+		top: 50%;
+		margin-top: rem(-225px);
+
+    }
+}
+@media only screen and (orientation:landscape) and (max-width: 1250px){
+	 .al-livingOverMsg {
+        left: -7%;
+        .al-livingOverMsgItem {
+            padding: 0 rem(80px);
+            p{
+				margin-bottom: rem(20px);
+            }
+        }
+    }
+    .al-livingOverImg{
+    	top: 3%;
+    	left: 3%;
+    }
+}

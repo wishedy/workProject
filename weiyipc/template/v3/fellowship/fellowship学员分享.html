@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>学员分享</title>
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <link rel="stylesheet" href="/dest/fellowship/fellowship_main.css">
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="171">
+<input type="hidden" id="fellowshipMainType" value=""/>
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <!--<ul class="al-headerTopNav">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>-->
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+    <input type="hidden" value="${felloshipId}" id="fellowShipHiddenId"/>
+    <div id="meeting">
+        <div class="fellowship_main">
+
+            <#if ad_data_list_fellowship??>
+                <#list ad_data_list_fellowship as list>
+                    <#if list_index==0>
+                        <div class="fs_nass_banner" style="background:url(//img99.allinmd.cn/${list.adAttUrl}) no-repeat center;height: 450px;"></div>
+                    </#if>
+                </#list>
+            </#if>
+            <div class="fs_nass_nav">
+                <div class="fs_nass_nav_main font_yahei">
+                    <ul data-alcode-mod='228'>
+                        <#if cms_mainmenu_map_list??>
+                            <#list cms_mainmenu_map_list as menulsit>
+                                <#assign menuobj = menulsit.fellowship_main_menu>
+                                    <li><a href="${menuobj.menuUrlAllin!''}">${menuobj.fellowshipMainName!''}</a>
+
+                                        <#if menuobj.fellowship_main_second_menu??>
+                                            <!--往届回顾的下拉菜单-->
+                                            <div class="fs_old_review" style="display:none;">
+                                                <ol>
+                                                    <#assign secondMenu= menuobj.fellowship_main_second_menu>
+
+                                                        <#list secondMenu as secondMenu>
+
+                                                            <li>
+                                                                <a href="${secondMenu.fellowship_main_second_menu.menuUrlAllin}" target="_self">${secondMenu.fellowship_main_second_menu.fellowshipMainName}</a>
+                                                            </li>
+
+                                                        </#list>
+
+                                                </ol>
+                                            </div>
+                                        </#if>
+
+                                    </li>
+                            </#list>
+                        </#if>
+                        <div class="clear"></div>
+
+                    </ul>
+                    <a href="javascript:;" class="fs_nassSign Ev-NowApplyBtn hide"  data-flag="1">立即报名</a>
+                </div>
+            </div>
+            <div class="fs_nass_share">
+                <div class="fs_nass_shareMain clearFloat">
+                    <p>进修体会与分享</p>
+                    <a class="Ev-FellowStuShareBtn hide" href="javascript:;" data-flag="1">发布分享</a>
+                </div>
+            </div>
+            <div class="Ev-ShareListShowOrHide hide">
+                <ul class="fs_nass_list Ev-ul-StudentShareListAppend" style="margin-bottom: 30px;" data-alcode-mod='332'>
+
+                </ul>
+                <!--底下分页-->
+                <div class="page-container newPage-container hide">
+                    <div class="pagination newPagination pager">
+
+                    </div>
+                </div>
+            </div>
+            <!--没有分享内容-->
+            <div class="fs_nass_listNone Ev-NoShareShowOrHide hide"><!--需要添加class为hide-->
+                <p class="nass_listNoneTop">快来把您的成长分享给大家！</p>
+                <p>Sharing your Fellowship experience with others！</p>
+                <div class="nass_listNoneBtn"><div class="Ev-FellowStuShareBtn hide" href="javascript:;" data-flag="1">立即分享</div></div>
+            </div>
+        </div>
+    </div>
+    <!--#include virtual="/includes/footer.jsp"-->
+</section>
+</body>
+</html>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+
+<script src="/dest/fellowship/fellowship_studentShare.js"></script>

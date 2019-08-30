@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>直播列表</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/css/v3/pages/personal/personal_index.css">
+    <!-- build-css base.css -->
+    <link rel="stylesheet" href="/css/v3/base.css">
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css" />
+    <link rel="stylesheet" href="/css/v3/pageFooter.css" />
+    <!-- endbuild -->
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!--全内容容器——mainInner-->
+<section class="al-mainInner">
+    <!-- 页头——本页面无超链接-->
+    <header class="al-header al-dis_header">
+        <section class="al-headerContainer">
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox">
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar al-mainSidebarCollapse">
+        <header class="al-mainLogo">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+        <section class="al-mainSidebarList">
+            <ul>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>首页</h4>
+                            <p>HOME</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn/pages/discovery/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发现</h4>
+                            <p>DISCOVERY</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release active">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发布</h4>
+                            <p>RELEASE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navMes">
+                    <a href="//www.allinmd.cn/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>消息</h4>
+                            <p>MESSAGE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navIndex">
+                    <a href="//www.allinmd.cn/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal_active.png" alt="">
+                        <figcaption>我的</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>我的</h4>
+                            <p>PROFILE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList">
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>小唯</h4>
+                            <p>SERVICE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navPhone">
+                    <a href="//www.allinmd.cn/pages/singlePage/iphone-app-download.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>手机端</h4>
+                            <p>MOBILES</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <!-- 用户未认证——悬浮提示 -->
+    <navbar class="al-personalUserNoQualification">
+        <article>
+            我们需要认证您的邮箱<span class="al-personalUserEmail">nyanyanyanya@nya.com</span>,点击<a href="javascript:void(0)">点击发送验证邮件</a>。如果邮箱有误，您可以在<a href="javascript:void(0)">这里</a>更改邮箱地址
+            <i class="al-close">x</i>
+        </article>
+    </navbar>
+    <!-- 主内容容器 -->
+    <section class="al-personal">
+        <!-- 上传头像 -->
+        <section class="al-personalUploadMask">
+            <section class="al-personalUploadBox">
+                <header>编辑个人头像</header>
+                <section class="al-personalUpload">
+                    <figure class="al-personalUploadArea">
+                        <button>+选择图片</button>
+                        <p>只支持JPG、PNG，大小不超过5M</p>
+                    </figure>
+                    <section class="al-personalUploadPreview">
+                        <h3>预览</h3>
+                        <figure class="preview100">
+                            <img src="//img00.allinmd.cn/v3/personal/head_icon.png" alt="">
+                            <figcaption>100<span>x</span>100</figcaption>
+                        </figure>
+                        <figure class="preview65">
+                            <img src="//img00.allinmd.cn/v3/personal/head_icon.png" alt="">
+                            <figcaption>65<span>x</span>65</figcaption>
+                        </figure>
+                        <figure class="preview40">
+                            <img src="//img00.allinmd.cn/v3/personal/head_icon.png" alt="">
+                            <figcaption>40<span>x</span>40</figcaption>
+                        </figure>
+                    </section>
+                </section>
+                <footer class="al-personalUploadBtn">
+                    <button class="al-personalUploadRelease">发布</button>
+                    <button class="al-personalUploadCancel">取消</button>
+                </footer>
+            </section>
+        </section>
+        <section class="al-personalInner">
+            <header class="al-personalHeader">
+                <section class="al-personalLogoMsg">
+                    <figure class="al-personalLogo">
+                        <img src="//img00.allinmd.cn/v3/personal/head_icon.png" alt="">
+                        <i class="al-personalLogoMask">
+                            <img src="//img10.allinmd.cn/v3/common/icon/icon_camera.png" alt="">
+                        </i>
+                        <section class="al-uploadImgSuccess">
+                            <h2><i class="al-iconSuccess"></i>更新头像成功</h2>
+                            <p>现在其他医师可以看到您的新头像了</p>
+                            <span class="al-uploadingImgSuccessTips">3秒后消失</span>
+                        </section>
+                    </figure>
+                    <p class="al-personalName"><span>张艳丽<i class="al-vipBigUser"></i></span></p>
+                    <figcaption class="al-personalJobMsg">
+                        <p>住院医师</p>
+                        <p>北京医科大学附属医院三院</p>
+                        <p id="EV-NoQualificationUser">用户尚未认证</p>
+                    </figcaption>
+                </section>
+                <section class="al-personalFollowMsg">
+                    <a href="/design-html/personal/personal_sns.html" class="al-personalFollowNum">粉丝<span>169</span><i class="al-newNumTips"></i></a>
+                    <hr>
+                    <a href="/design-html/personal/personal_sns.html" class="al-personalFollowNum">关注<span>1w+</span></a>
+                    <hr>
+                    <a href="/design-html/personal/personal_sns.html" class="al-personalFollowNum">赞<span>367</span></a>
+                </section>
+                <button class="al-personalConfig">
+                    <span><i class="al-iconConfig"></i>设置</span>
+                </button>
+            </header>
+            <nav class="al-personalNavbar">
+                <figure class="al-personalNavbarItem active">
+                    <i class="al-iconMyIndex"></i>
+                    <a href="javascript:void(0)">主页</a>
+                </figure>
+                <figure class="al-personalNavbarItem">
+                    <i class="al-iconMyContribution"></i>
+                    <a href="/design-html/personal/personal_contribution.html">贡献</a>
+                </figure>
+                <figure class="al-personalNavbarItem">
+                    <i class="al-iconMyActive"></i>
+                    <a href="/design-html/personal/personal_active.html">动态</a>
+                </figure>
+                <figure class="al-personalNavbarItem">
+                    <i class="al-iconMyMsg"></i>
+                    <a href="/design-html/personal/personal_msg.html">简介</a>
+                </figure>
+            </nav>
+            <aside class="al-personalInnerSidebar">
+                <section class="al-personalInnersidebarBox">
+                    <figure class="al-personalInnerSidebarItem" data-role="collect">
+                        <p><i class="al-iconMyCollect"></i>我收藏的<span>20</span></p>
+                    </figure>
+                    <figure class="al-personalInnerSidebarItem" data-role="follow">
+                        <p><i class="al-iconMyFollow"></i>我关注的<span>2</span></p>
+                    </figure>
+                    <figure class="al-personalInnerSidebarItem" data-role="browsed">
+                        <p><i class="al-iconMyBrowsed"></i>浏览记录<span>20</span></p>
+                    </figure>
+                    <figure class="al-personalInnerSidebarItem" data-role="comment">
+                        <p><i class="al-iconMyComment"></i>我的评论<span>8</span></p>
+                    </figure>
+                    <figure class="al-personalInnerSidebarItem" data-role="draft">
+                        <p><i class="al-iconMyDraft"></i>我的草稿<span>20</span></p>
+                    </figure>
+                    <figure class="al-personalInnerSidebarItem" data-role="draft">
+                        <p><i class="al-iconMyWebcast"></i>我的直播<span>100</span></p>
+                    </figure>
+                </section>
+            </aside>
+            <section class="al-webcast_listBox">
+                <header class="al-webcast_listTitle">
+                    <h2>我的直播</h2>
+                    <figure class="al-headerSearch">
+                        <input type="text" placeholder="搜索标题">
+                        <b></b>
+                        <div class="al-searchContent" style="display: none;"></div>
+                    </figure>
+                </header>
+                <figure class="al-videoItemBox">
+                    <figure class="al-videoItem">
+                        <div class="al-videoDemo">
+                            <b class="al-videoLivingImg"></b>
+                            <a href="">
+                                <img src="//img10.allinmd.cn/v3/webcast/videoDemoImg.jpg" alt=""/>
+                            </a>
+                        </div>
+                        <div class="al-videoLivingContent">
+                            <a href=""><h4>髋关节置换术国际研讨大会髋关节置换术国际研讨大会</h4></a>
+                            <figure class="al-livingTimeAndUser">
+                                <p class="al-livingTime">
+                                    <b></b>
+                                    <span>已进行24分钟</span>
+                                </p>
+                                <p class="al-livingUser">
+                                    <b></b>
+                                    <span>2587人预约</span>
+                                </p>
+                            </figure>
+                            <figure class="al-livingDate">
+                                <p>
+                                    开始:
+                                    <span>2016-11-11</span>
+                                </p>
+                                <p class="al-livingDate_endTime">
+                                    结束:
+                                    <span>2016-11-11</span>
+                                </p>
+                            </figure>
+                        </div>
+                        <div class="al-videoLivingBtn">
+                            <a href="">立即直播</a>
+                        </div>
+                        <div class="al-videoShare">
+                            <span>
+                                <i class="al-shareBtn"></i>
+                                分享
+                                <section class="al-shareBox hide" style="z-index: 2; display: block;">
+                                    <figure class="al-shareListItem ev-ttrend" style="margin-left:8px"><img src="//img10.allinmd.cn/v3/common/icon/share_inset.png" alt=""><figcaption>唯医朋友圈</figcaption></figure><figure class="al-shareListItem ev-tweixin" style="width:48px"><img src="//img10.allinmd.cn/v3/common/icon/share_weixin.png" alt=""><figcaption>微信</figcaption></figure><figure class="al-shareListItem ev-tsina" style="width:48px"><img src="//img10.allinmd.cn/v3/common/icon/share_weibo.png" alt=""><figcaption>微博</figcaption></figure><figure class="al-shareListItem ev-tqzone" style="margin-left:4px;margin-right:4px"><img src="//img10.allinmd.cn/v3/common/icon/share_zone.png" alt=""><figcaption>QQ空间</figcaption></figure><figure class="al-shareListItem ev-tqq" style="width:48px"><img src="//img10.allinmd.cn/v3/common/icon/share_qq.png" alt=""><figcaption>QQ</figcaption></figure><section class="al-weixinErweiCodeBox ev-erweima hide"><span>使用微信扫描二维码</span><img src="//img10.allinmd.cn/v3/friends/weixin_share.jpg" alt=""></section>
+                                </section>
+                            </span>
+                        </div>
+                        <div class="al-deleteLivingBtn">删除</div>
+                    </figure>
+                    <figure class="al-videoItem">
+                        <div class="al-videoDemo">
+                            <b class="al-videoEndImg"></b>
+                            <a href="">
+                                <img src="//img10.allinmd.cn/v3/webcast/videoDemoImg.jpg" alt=""/>
+                            </a>
+                        </div>
+                        <div class="al-videoLivingContent">
+                            <a href=""><h4>髋关节置换术国际研讨大会髋关节置换术国际研讨大会</h4></a>
+                            <figure class="al-livingTimeAndUser">
+                                <p class="al-livingTime">
+                                    <b></b>
+                                    <span>已进行24分钟</span>
+                                </p>
+                                <p class="al-livingUser">
+                                    <b></b>
+                                    <span>2587人预约</span>
+                                </p>
+                            </figure>
+                            <figure class="al-livingDate">
+                                <p>
+                                    开始:
+                                    <span>2016-11-11</span>
+                                </p>
+                                <p class="al-livingDate_endTime">
+                                    结束:
+                                    <span>2016-11-11</span>
+                                </p>
+                            </figure>
+                        </div>
+                        <div class="al-videoLivingBtn">
+                            <a href="">立即直播</a>
+                        </div>
+                        <div class="al-videoShare">
+                            <span>
+                                <i class="al-shareBtn"></i>
+                                分享
+                                <section class="al-shareBox hide" style="z-index: 2; display: block;">
+                                    <figure class="al-shareListItem ev-ttrend" style="margin-left:8px"><img src="//img10.allinmd.cn/v3/common/icon/share_inset.png" alt=""><figcaption>唯医朋友圈</figcaption></figure><figure class="al-shareListItem ev-tweixin" style="width:48px"><img src="//img10.allinmd.cn/v3/common/icon/share_weixin.png" alt=""><figcaption>微信</figcaption></figure><figure class="al-shareListItem ev-tsina" style="width:48px"><img src="//img10.allinmd.cn/v3/common/icon/share_weibo.png" alt=""><figcaption>微博</figcaption></figure><figure class="al-shareListItem ev-tqzone" style="margin-left:4px;margin-right:4px"><img src="//img10.allinmd.cn/v3/common/icon/share_zone.png" alt=""><figcaption>QQ空间</figcaption></figure><figure class="al-shareListItem ev-tqq" style="width:48px"><img src="//img10.allinmd.cn/v3/common/icon/share_qq.png" alt=""><figcaption>QQ</figcaption></figure><section class="al-weixinErweiCodeBox ev-erweima hide"><span>使用微信扫描二维码</span><img src="//img10.allinmd.cn/v3/friends/weixin_share.jpg" alt=""></section>
+                                </section>
+                            </span>
+
+                        </div>
+                        <div class="al-deleteLivingBtn">删除</div>
+                    </figure>
+                    <figure class="al-videoItem">
+                        <div class="al-videoDemo">
+                            <b class="al-videoOrderImg"></b>
+                            <a href="">
+                                <img src="//img10.allinmd.cn/v3/webcast/videoDemoImg.jpg" alt=""/>
+                            </a>
+                        </div>
+                        <div class="al-videoLivingContent">
+                            <a href=""><h4>髋关节置换术国际研讨大会</h4></a>
+                            <figure class="al-livingTimeAndUser">
+                                <p class="al-livingTime">
+                                    <b></b>
+                                    <span>已进行24分钟</span>
+                                </p>
+                                <p class="al-livingUser">
+                                    <b></b>
+                                    <span>2587人预约</span>
+                                </p>
+                            </figure>
+                            <figure class="al-livingDate">
+                                <p>
+                                    开始:
+                                    <span>2016-11-11</span>
+                                </p>
+                                <p class="al-livingDate_endTime">
+                                    结束:
+                                    <span>2016-11-11</span>
+                                </p>
+                            </figure>
+                        </div>
+                        <div class="al-videoLivingBtn">
+                            <a href="javascript:void(0);">立即直播</a>
+                            <figure class="al-livingPopBox">
+                                <div class="al-livingPopContent">
+                                    <b></b>
+                                    <p>立即进行预约的直播，已预约的观众会收到通知，是否立即直播？</p>
+                                    <span class="al-livingPop_playBtn">立即直播</span>
+                                    <span class="al-livingPop_cancelBtn">取消</span>
+                                </div>
+                            </figure>
+                        </div>
+                        <div class="al-videoShare">
+                            <span>
+                                <i class="al-shareBtn"></i>
+                                分享
+                                <section class="al-shareBox hide" style="z-index: 2; display: block;">
+                                    <figure class="al-shareListItem ev-ttrend" style="margin-left:8px"><img src="//img10.allinmd.cn/v3/common/icon/share_inset.png" alt=""><figcaption>唯医朋友圈</figcaption></figure><figure class="al-shareListItem ev-tweixin" style="width:48px"><img src="//img10.allinmd.cn/v3/common/icon/share_weixin.png" alt=""><figcaption>微信</figcaption></figure><figure class="al-shareListItem ev-tsina" style="width:48px"><img src="//img10.allinmd.cn/v3/common/icon/share_weibo.png" alt=""><figcaption>微博</figcaption></figure><figure class="al-shareListItem ev-tqzone" style="margin-left:4px;margin-right:4px"><img src="//img10.allinmd.cn/v3/common/icon/share_zone.png" alt=""><figcaption>QQ空间</figcaption></figure><figure class="al-shareListItem ev-tqq" style="width:48px"><img src="//img10.allinmd.cn/v3/common/icon/share_qq.png" alt=""><figcaption>QQ</figcaption></figure><section class="al-weixinErweiCodeBox ev-erweima hide"><span>使用微信扫描二维码</span><img src="//img10.allinmd.cn/v3/friends/weixin_share.jpg" alt=""></section>
+                                </section>
+                            </span>
+                        </div>
+                        <div class="al-deleteLivingBtn">删除</div>
+                    </figure>
+                </figure>
+            </section>
+
+
+            <!--我的预约-->
+            <section class="al-webcast_listBox al-webcast_orderBox">
+                <header class="al-webcast_listTitle">
+                    <h2>我的预约</h2>
+                    <a href="">
+                        <span class="al-moreLivingOrder">更多</span>
+                    </a>
+                </header>
+                <figure class="al-videoItemBox">
+                    <figure class="al-videoItem">
+                        <div class="al-videoDemo">
+                            <b class="al-videoLivingImg"></b>
+                            <a href="">
+                                <img src="//img10.allinmd.cn/v3/webcast/videoDemoImg.jpg" alt=""/>
+                            </a>
+                        </div>
+                        <div class="al-videoLivingContent">
+                            <a href=""><h4>髋关节置换术国际研讨大会髋关节置换术国际研讨大会</h4></a>
+                            <figure class="al-livingTimeAndUser">
+                                <p class="al-livingOrderUser">
+                                    <a href=""  class="al-orderUserHeadImg"><img src="//img10.allinmd.cn/v3/webcast/orderUser.png" alt="span"/></a>
+                                    <a href=""><span class="al-orderUserName">美女主播美女主播</span></a>
+                                </p>
+                                <p class="al-livingTime">
+                                    <b></b>
+                                    <span>已进行24分钟</span>
+                                </p>
+                                <p class="al-livingUser">
+                                    <b></b>
+                                    <span>2587人预约</span>
+                                </p>
+                            </figure>
+                            <figure class="al-livingDate">
+                                <p class="al-livingTheme al-hickeyColor al-conferenceColor al-caseColor">学术会议</p>
+                                <p>
+                                    开始:
+                                    <span>2016-11-11</span>
+                                </p>
+                                <p class="al-livingDate_endTime">
+                                    结束:
+                                    <span>2016-11-11</span>
+                                </p>
+                            </figure>
+                        </div>
+                        <div class="al-videoLivingBtn">
+                            <a href="">立即预约</a>
+                        </div>
+                        <div class="al-deleteLivingBtn">删除</div>
+                    </figure>
+                    <figure class="al-videoItem">
+                        <div class="al-videoDemo">
+                            <b class="al-videoLivingImg"></b>
+                            <a href="">
+                                <img src="//img10.allinmd.cn/v3/webcast/videoDemoImg.jpg" alt=""/>
+                            </a>
+                        </div>
+                        <div class="al-videoLivingContent">
+                            <a href=""><h4>髋关节置换术国际研讨大会髋关节置换术国际研讨大会</h4></a>
+                            <figure class="al-livingTimeAndUser">
+                                <p class="al-livingOrderUser">
+                                    <a href=""  class="al-orderUserHeadImg"><img src="//img10.allinmd.cn/v3/webcast/orderUser.png" alt="span"/></a>
+                                    <a href=""><span class="al-orderUserName">美女主播美女主播</span></a>
+                                </p>
+                                <p class="al-livingTime">
+                                    <b></b>
+                                    <span>已进行24分钟</span>
+                                </p>
+                                <p class="al-livingUser">
+                                    <b></b>
+                                    <span>2587人预约</span>
+                                </p>
+                            </figure>
+                            <figure class="al-livingDate">
+                                <p class="al-livingTheme al-hickeyColor al-conferenceColor al-caseColor">学术会议</p>
+                                <p>
+                                    开始:
+                                    <span>2016-11-11</span>
+                                </p>
+                                <p class="al-livingDate_endTime">
+                                    结束:
+                                    <span>2016-11-11</span>
+                                </p>
+                            </figure>
+                        </div>
+                        <div class="al-videoLivingBtn al-alreadyOrderBtn">
+                            <a href="">已预约</a>
+                        </div>
+                        <div class="al-deleteLivingBtn">删除</div>
+                    </figure>
+                </figure>
+            </section>
+        </section>
+    </section>
+    <section class="al-backToTop">
+        <figure class="al-backToTopItem al-backToTopFirst">
+            <i class="al-backToTopIcon"></i>
+        </figure>
+        <figure class="al-backToTopItem">
+            分享
+            <section class="al-shareBox">
+                <figure class="al-shareListItem">
+                    <img src="//img10.allinmd.cn/v3/common/icon/share_inset.png" alt="">
+                    <figcaption>站内动态</figcaption>
+                </figure>
+                <figure class="al-shareListItem">
+                    <img src="//img10.allinmd.cn/v3/common/icon/share_weixin.png" alt="">
+                    <figcaption>微信</figcaption>
+                </figure>
+                <figure class="al-shareListItem">
+                    <img src="//img10.allinmd.cn/v3/common/icon/share_weibo.png" alt="">
+                    <figcaption>微博</figcaption>
+                </figure>
+                <figure class="al-shareListItem">
+                    <img src="//img10.allinmd.cn/v3/common/icon/share_zone.png" alt="">
+                    <figcaption>QQ空间</figcaption>
+                </figure>
+                <figure class="al-shareListItem">
+                    <img src="//img10.allinmd.cn/v3/common/icon/share_qq.png" alt="">
+                    <figcaption>QQ</figcaption>
+                </figure>
+            </section>
+        </figure>
+        <figure class="al-backToTopItem al-clickToShowErweiCode">
+            <i class="icon-erweiCodeBottom"></i>
+            <section class="al-shareBox al-erweiCodeShareBox">
+                <figure class="al-shareListItem">
+                    <img src="//img10.allinmd.cn/v3/common/icon/erweiCode_1.png" alt="">
+                </figure>
+                <figcaption>唯医骨科官方微信</figcaption>
+            </section>
+        </figure>
+    </section>
+    <!-- 公共页脚 -->
+    <footer class="al-mainFooter">
+        <section class="al-mainFooterInner">
+            <section class="al-mainFooterContent">
+                <section class="al-mainFooterLinks">
+                    <a href="javascript:void(0)" class="al-mainFooterLinkItem" style="padding-left: 0;">隐私声明</a>
+                    <a href="javascript:void(0)" class="al-mainFooterLinkItem">服务条款</a>
+                    <a href="javascript:void(0)" class="al-mainFooterLinkItem">关于我们</a>
+                    <a href="javascript:void(0)" class="al-mainFooterLinkItem" style="padding-right: 0;border-right: none;">联系我们</a>
+                </section>
+                <article class="al-mainFooterMsg">
+                    <figure class="al-mainFooterMsgImg">
+                        <img src="//img10.allinmd.cn/v3/common/icon/site_1.png" alt="">
+                    </figure>
+                    <figure class="al-mainFooterMsgImg">
+                        <img src="//img10.allinmd.cn/v3/common/icon/site_2.png" alt="">
+                    </figure>
+                </article>
+                <article class="al-mainFooterRecordMsg">
+                    <p>京ICP证150380号 | 京ICP备14007118号-2号 京公网安备11010802014986号京卫计网审[2014] 第0378号 </p>
+                    <p>Copyright©2019 Allinmd.cn All Rights Reserved.版权所有©北京欧应科技有限公司</p>
+                </article>
+            </section>
+            <figure class="al-mainFooterErWeiCode">
+                <img src="//img10.allinmd.cn/v3/common/icon/erweiCode_1.png" alt="">
+            </figure>
+        </section>
+    </footer>
+</section>
+<!-- build-js base.js -->
+<script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/lib/jquery/jquery.form.js"></script>
+<script src="/js/lib/jquery/jquery.cookie.js"></script>
+<script src="/js/comm/main.js"></script>
+<!--<script src="/js/comm/comm.customer.js"></script>-->
+<!--<script src="/js/comm/comm.getUrlParams.js"></script>-->
+<!--<script src="/js/comm/comm.equipment.js"></script>-->
+<!--<script src="/js/comm/comm.func.js"></script>-->
+<!--<script src="/js/comm/comm.textChange.js"></script>-->
+<!--<script src="/js/comm/comm.lightBox.js"></script>-->
+<!--<script src="/js/comm/comm.fastError.js"></script>-->
+<!--<script src="/js/comm/comm.file.js"></script>-->
+<!--<script src="/js/comm/comm.cutArray.js"></script>-->
+<!--<script src="/js/comm/comm.ajaxExistHtml.js"></script>-->
+<!--<script src="/js/comm/comm.date.js"></script>-->
+<!--<script src="/js/comm/comm.dataAdapter.js"></script>-->
+<!--<script src="/js/comm/comm.Log.js"></script>-->
+<!--<script src="/js/comm/comm.track.js"></script>-->
+<!--<script src= "/js/comm/comm.getLogo.js" ></script>-->
+<!--<script src="/js/scene/scene.header.js"></script>-->
+<!-- endbuild -->
+<script>
+    $(function() {
+
+        //sidebar切换
+        $(".al-personalInnerSidebarItem").on("click", function(e) {
+            var tabRole = $(this).data("role");
+            $(this).addClass('active').siblings().removeClass('active');
+            $(".al-personalInnerSidebarChange").removeClass('active');
+            $('.al-personalInnerSidebarChange[data-role=' + tabRole + ']').addClass('active');
+
+        });
+        //tab切换
+        $(".al-contentTabsItem").on("click", function(e) {
+            var tabRole = $(this).data("role");
+            $(this).addClass('active').siblings().removeClass('active');
+            $(".al-contentTabPages").removeClass('active');
+            $('.al-contentTabPages[data-role=' + tabRole + ']').addClass('active');
+        });
+
+        //分享弹框
+        $(".al-videoShare").on("click",function(){
+            $(this).find(".al-shareBox").toggle();
+        });
+        //直播弹框
+        $(".al-videoLivingBtn a").on("click",function(){
+            $(this).find(".al-livingPopBox").show();
+        });
+        //关闭直播弹框
+        $(".al-livingPopContent b").on("click",function(){
+            $(this).closest(".al-livingPopBox").hide();
+        })
+    });
+</script>
+</body>
+
+</html>

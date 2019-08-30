@@ -1,0 +1,239 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";     //颜色组件
+@import "../../components/_loginModule";  //未登录组件
+@import "../../components/_message_rightSideBar";//右侧栏组件
+@import "../../components/_iconsModule";  //微型图标组件
+@import "../../components/_selectAll";  //全选组件
+@import "../../discussModule";//评论组件
+@import "../../components/_contentModule"; //主内容区域
+@import "../../components/_shareBoxModule"; //分享按钮盒
+@import "../../components/_commentModule";  //评论类内容
+.MesListAppend{
+  width: 708px;
+  height: 615px;
+  background: #ffffff;
+  margin-top: 25px;
+  .mesListhead{
+    height: 67px;
+    width: 100%;
+    border-bottom: 1px solid #ECF0F2;
+    font-size: 0;
+    h2{
+      font-size: 15px;
+      color: #222222;
+      margin: 0 12px 0 25px;
+      font-weight: normal;
+      display: inline-block;
+      line-height: 67px;
+    }
+    button{
+      display: inline-block;
+      width: 71px;
+      height: 27px  ;
+      background: #FB875A;
+      border-radius: 3px;
+      color: #ffffff;
+      font-size: 13px;
+      cursor: pointer;
+    }
+  }
+  .mesListDesc{
+    padding: 0 25px;
+    .mesListItem{
+      font-size: 0;
+      height: 95px;
+      line-height: 95px;
+      border-bottom: 1px solid #ECF0F2;
+      position: relative;
+      .itemNum{
+        position: relative;
+        display: inline-block;
+        img{
+          vertical-align: middle;
+          margin-top: -14px;
+        }
+        //只显示红点没有数字提示
+        i{
+          display: inline-block;
+          background: #F34B4B;
+          color: #ffffff;
+          position: absolute;
+          right: -1px;
+          top: 22px;
+          border-radius: 12px;
+          text-align: center;
+          width: 9px;
+          height: 9px;
+          border: 2px solid #ffffff;
+        }
+        //红点显示数字样式
+        //i{
+        //  min-width: 12px;
+        //  height: 20px;
+        //  display: inline-block;
+        //  background: #F34B4B;
+        //  color: #ffffff;
+        //  position: absolute;
+        //  right: -6px;
+        //  top: 16px;
+        //  border-radius: 20px;
+        //  font-size: 12px;
+        //  text-align: center;
+        //  line-height: 20px;
+        //  padding: 0 4px;
+        //}
+      }
+      .itemType{
+        display: inline-block;
+        font-size: 16px;
+        color: #555555;
+        margin-left: 15px;
+      }
+      .itemTime{
+        display: inline-block;
+        font-size: 14px;
+        color: #909090;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}
+.mesListPopup{
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(10, 30, 43, 0.7);
+  z-index: 5;
+  .mesListCon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 228px;
+    background: #ffffff;
+    text-align: center;
+    border-radius: 4px;
+    i{
+      width: 13px;
+      height: 13px;
+      display: inline-block;
+      background: url("/images/img10/authentication/close_grey.png") no-repeat 50% 50%;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+    }
+    h2{
+      font-size: 16px;
+      color: #333333;
+      text-align: center;
+      margin-top: 56px;
+    }
+    div{
+      font-size: 16px;
+      color: #333333;
+      text-align: center;
+      margin-top: 56px;
+      font-weight: 600;
+    }
+    article{
+      font-size: 16px;
+      color: #333333;
+      margin: 22px 0 54px;
+      text-align: center;
+    }
+    button{
+      width: 80px;
+      height: 34px;
+      background: #2899E6;
+      border-radius: 4px;
+      font-size: 15px;
+      color: #FFFFFF;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+  }
+}
+//视频下载弹层：begin
+.al-downLoad_PopBox{
+  display:none;
+  //display:flex;
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+  z-index:7;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);  /*IE8支持*/
+}
+.al-downContainer{
+  width:450px;
+  height:262px;
+  background-color:#fff;
+  border-radius:6px;
+  //behavior:url("/js/third-party/pie/pie.htc");
+  position: relative;
+  .closePopBtn{ //关闭按钮
+    float:right;
+    width:13px;
+    height:13px;
+    background:url("//img10.allinmd.cn/v3/terminal/popCloseBtn.png") center center no-repeat;
+    margin:20px;
+    cursor: pointer;
+  }
+}
+.al-downLoadContent{
+  @include clearfix();
+  padding:40px 50px 45px;
+  figcaption{
+    color:#555;
+    margin-bottom:20px;
+  }
+  .downLoadWay{
+    float:left;
+    margin-top:10px;
+    p{
+      padding:25px 0 0 25px;
+      i{
+        display:inline-block;
+        width:28px;
+        height:32px;
+        background:url("//img10.allinmd.cn/v3/terminal/AndroidIcon.png") center center no-repeat;
+        vertical-align: middle;
+        margin-right:15px;
+        margin-top:-5px;
+      }
+      .iPhoneIcon{
+        width:25px;
+        height:31px;
+        background:url("//img10.allinmd.cn/v3/terminal/iPhoneIcon.png") center center no-repeat;
+        margin-top:-10px;
+      }
+      span{font-size:20px;}
+      .AndroidText{color:#49BD38;}
+      .iPhoneText{color:#14A7F0;}
+    }
+  }
+  .downLoad_QR{ //下载二维码
+    float:right;
+    img{
+      width:140px;
+      height:140px;
+      box-shadow:8px 8px 10px rgba(83,101,119,0.2),-5px -5px 10px rgba(83,101,119,0.2);
+    }
+  }
+}
+//视频下载弹层：end

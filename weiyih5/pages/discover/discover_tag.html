@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/discover/discover_tag.html';
+        }
+    </script>
+    <title>全部标签－总有你喜欢的,唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="keywords" content="骨科标签，标签关注，全部标签，标签列表，资源筛选，医学资源，唯医,allinmd">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/discover/discover_searchTag.css">
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="198">
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-searchHead">
+            <header class="al-indexHeader" data-alcode-mod='401'>
+                <figure class="al-indexHeaderItem">
+                    <a href="javascript:;" class="ev_backBtn" data-alcode='e45'>
+                        <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                    </a>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                    <h1>全部标签</h1>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                </figure>
+            </header>
+            <section class="al-searchInputBar" data-alcode-mod='414'>
+                <i class="icon-searchWhite"></i>
+                <input type="text" placeholder="请输入标签关键词" id="EV-SearchInput">
+                <a class="al-searchCancel" data-alcode='e49'>
+                    <i class="icon-searchCancel"></i> 取消
+                </a>
+            </section>
+        </header>
+        <section class="al-searchFocusMask"></section>
+        <section class="al-noContentTips" style="display:none">
+            <figure>
+                <img src="//img50.allinmd.cn/pages/discover/search_noResult.png" alt="">
+            </figure>
+        </section>
+        <section class="al-searchContentInner ev-initList" data-alcode-mod='415'>
+        </section>
+        <section class="al-searchContentInner ev-searchList" data-alcode-mod='416'></section>
+        <aside class="al-searchTypeSelect">
+
+        </aside>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/third-party/jquery.charfirst.pinyin/jquery.charfirst.pinyin.js"></script>
+    <script src="/js/scene/discover/discoverSearchTag.js"></script>
+
+</body>
+
+</html>

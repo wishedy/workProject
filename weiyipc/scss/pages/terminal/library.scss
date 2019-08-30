@@ -1,0 +1,757 @@
+@charset "utf-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+@import "../../components/terminal_SideBar";
+//页面右侧栏组件
+@import "../../components/_iconsModule";
+//小图标
+@import "terminal_comm.scss";
+@import "../../components/_shareBoxModule";
+//分享按钮盒
+@import "../../components/_commentModule";
+//评论类内容
+@import "../../components/_contentModule";
+//主内容区域
+@import "_screenedCommonStyle";
+//屏蔽样式
+@import "../../components/_scoreModule";
+
+//评分组件
+
+//所属系列课展示，相关资源样式
+@import "../../components/classes/_classes_doc";
+
+.al-libraryInfoBox {
+  border: 1px solid rgba(199, 211, 223, 0.5);
+  box-shadow: 2px 2px 4px rgba(215, 222, 229, 0.1), -2px -2px 4px rgba(215, 222, 229, 0.1);
+  background-color: #fff;
+  margin: 20px 0;
+  padding: 40px 24px;
+  @include clearfix();
+  .authorSeries{
+    margin-bottom: 26px;
+  }
+  .al-libraryInfo_head {
+    font-size: 13px;
+    font-family: "宋体";
+    float: left;
+    margin-bottom: 15px;
+    margin-right: 18px;
+    max-width: 550px;
+    h4 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      line-height: 30px;
+      color: #000;
+      //max-width: 600px;
+    }
+    a {
+      color: #626f8c;
+      font-family: "宋体";
+      &:hover{
+        color: #2899e6;
+      }
+      &.noUserId{
+        color: #909090;
+      }
+    }
+    p {
+      display: inline-block;
+      //padding-left: 18px;
+      color: #909090;
+      font-family: "宋体";
+      span {
+        font-family: "宋体";
+      }
+    }
+  }
+  .al-browseData {
+    float: right;
+    text-align: center;
+    h4 {
+      //1260
+      font-size: 24px;
+      color: #3598DB;
+      margin-bottom: 4px;
+    }
+    span {
+      //浏览
+      font-size: 13px;
+      font-family: "宋体";
+      color: #909090;
+      //cursor: pointer;
+    }
+  }
+  .al-textDetailsBox {
+    clear: both;
+    padding-bottom: 35px;
+    p {
+      text-align: justify;
+      line-height: 30px;
+      word-break: break-all;
+      margin-bottom: 22px;
+      color: #333;
+      white-space: pre-wrap;
+      font-size: 16px;
+      img {
+        display: block;
+        max-width: 660px;
+        margin: 0 auto;
+      }
+    }
+    .al-textDetails_main {
+      img{
+        max-width: 660px;
+      }
+      h6 {
+        //1. 1 颈本体觉相关性眩晕
+        font-weight: normal;
+        color: #3598DB;
+        padding: 10px 0;
+      }
+    }
+    .errorRecovery {
+      position: relative;
+      //纠错·报错
+      font-size: 14px;
+      color: #aaa;
+      vertical-align: middle;
+      cursor: pointer;
+      text-align: right;
+      margin-top: 22px;
+      a {
+        color: #aaa;
+        &:hover{
+          color: #2899e6;
+        }
+      }
+    }
+  }
+  .al-tagBox {
+    //标签容器
+    font-size: 15px;
+    color: #808080;
+    @include clearfix();
+    figcaption {
+      color: #777;
+      margin-bottom: 3px;
+    }
+    a {
+      //标签项
+      float: left;
+      border: 1px solid #E6E8ED;
+      padding: 10px 15px;
+      margin-top: 10px;
+      margin-right: 10px;
+      border-radius: 20px;
+      behavior: url("/js/third-party/pie/pie.htc");
+      position: relative;
+      font-size: 15px;
+      color: #666;
+      height: 38px;
+      box-sizing: border-box;
+      /*20181130  终端页标签增加组织标签样式*/
+      .al-terminalOrgTag{
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        margin-right: 8px;
+        img{
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+      .al-terminalTagSpan{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      &:hover{
+        //        background: #E0E1E7;
+        background: rgba(224,225,231,0.2);
+      }
+      &.al-lable-fourWrap{
+        margin-right: 0;
+        padding: 10px;
+        i{
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          vertical-align: middle;
+          background: #626f8c;
+          margin-right: 7px;
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.al-library_shareBox {
+  margin-top: 234px;
+  &.noUserId{
+    margin-top: 113px;
+  }
+}
+
+//视频评分
+.al-videoScoreMask {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(10, 30, 43, 0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B20A1E2B, endColorstr=#B20A1E2B); /*IE8支持*/
+  //filter: blur(3px);
+  //-webkit-filter:blur(3px);
+  .al-scorePopCloseBtn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+  }
+  > h4 {
+    margin: 150px auto 40px;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    opacity: 0.7;
+  }
+  .al-bigScoreStarBox {
+    margin-left: 180px;
+    li {
+      background-image: url("//img10.allinmd.cn/v3/terminal/videoScoreStarGray.png");
+      b {
+        display: none;
+      }
+    }
+  }
+  > span {
+    float: right;
+    color: #fff;
+    margin: 45px 90px 0 0;
+    cursor: pointer;
+    opacity: 0.7;
+    b {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border: 1px solid #BBB;
+      margin: 0 6px -2px 0;
+    }
+    .active {
+      border: none;
+      width: 14px;
+      height: 14px;
+      background: url("//img10.allinmd.cn/v3/terminal/scoreSelectedIcon.png") center center no-repeat;
+    }
+  }
+}
+
+.al-eBookContentArea {
+  .al-textDetails_main {
+    p {
+      margin: 6px 0 0;
+      //text-align: center;   病例页1.22
+    }
+  }
+  .al-eBookContentHead {
+    @include clearfix();
+    height: 68px;
+    .al-libraryInfo_head {
+      margin-bottom: 0;
+    }
+  }
+  .al-textDetailsBox p {
+    white-space: normal;
+  }
+  .Ev-videoImgSrc {
+    span {
+      bottom: 0 !important;
+    }
+    color: #333;
+  }
+  .s1 {
+    font-size: 16px;
+    line-height: 30px;
+    text-align: justify;
+    color: #333;
+    display: inline-block;
+    margin: 25px 0;
+  }
+  table {
+    margin-bottom: 35px;
+    td, th {
+      border: 1px solid #ccc;
+      padding: 10px;
+      min-width: 66px;
+      img {
+        max-width: 370px !important;
+      }
+      p {
+        line-height: 24px;
+      }
+    }
+  }
+}
+/*20170228 编者译者样式*/
+.al-docParticipantsList {
+  dd, dt {
+    display: inline-block;
+    color: #909090;
+    font-size: 13px;
+  }
+  dt{
+    span{
+      color: #3598db;
+      cursor: pointer;
+    }
+  }
+  dd {
+    margin-right: 12px;
+    word-break: break-all;
+    a {
+      margin-right: 8px;
+      color: #909090;
+    }
+  }
+}
+
+//译者列表弹层：begin
+.al-translatorListPop{
+  display:none;
+  position:fixed;
+  z-index:5;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(10,30,43,0.7);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2103043,endColorstr=#B2103043);  /*IE8支持*/
+  .al-translatorListContentBox{
+    background-color:#fff;
+    width:708px;
+    height:650px;
+    border:1px solid #e4e9ed;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    figcaption{
+      i{padding-left:8px;}
+      b{
+        float: right;
+        cursor: pointer;
+        width: 13px;
+        height: 13px;
+        background: url("//img10.allinmd.cn/v3/common/icon/icon_close.png") center center no-repeat;
+        margin-top:22px;
+      }
+    }
+  }
+
+  //译者列表：暂无内容
+  .al-translatorIntrItemBox{
+    position: relative;
+    overflow: auto;
+  }
+  .al-noFansTips{
+    position:absolute;
+    margin-top:12px;
+    border:none;
+    border-top:1px solid #e4e9ed;
+    width:100%;
+  }
+}
+
+.al-translatorSelectPart{ //译者弹层：右侧下拉样式
+  padding:20px 26px 0 24px;
+  position:relative;
+  text-align: right;
+  span{
+    font-size:15px;
+    color:#626f8c;
+    cursor: pointer;
+  }
+  b{
+    display:inline-block;
+    width:10px;
+    height:6px;
+    background: transparent url("//img10.allinmd.cn/v3/discover/downArrow.png") center center no-repeat;
+    margin-bottom:2px;
+    margin-left:5px;
+    cursor: pointer;
+  }
+  .al-upArrowIcon{background: transparent url("//img10.allinmd.cn/v3/discover/topArrow.png") center center no-repeat;}
+  ul{
+    position: absolute;
+    right:0;
+    z-index:3;
+    width:100px;
+    padding:6px 0;
+    background-color:#fff;
+    border: 1px solid #E4E9ED;
+    box-shadow: 4px 4px 8px rgba(197, 206, 214, 0.5), -4px -4px 8px rgba(197, 206, 214, 0.5);
+    border-radius: 4px;
+    behavior: url("/js/third-party/pie/pie.htc");
+    margin:13px 0 0 -34px;
+    &:before{
+      content:'';
+      position:absolute;
+      top:-8px;
+      left:41px;
+      width:18px;
+      height:9px;
+      background:transparent url("//img10.allinmd.cn/v3/discover/discover_topArrow.png") center center no-repeat;
+
+    }
+    li{
+      text-align:center;
+      padding:15px 0;
+      color:#555;
+      cursor:pointer;
+      &:hover{background-color:#F6F9FB;}
+    }
+    .active{color:#3598db;}
+  }
+}
+.al-translatorIntrItemBox{
+  overflow-y: scroll;
+  height:560px;
+}
+/*.al-translatorIntrItem{   //列表项样式
+  padding:24px 24px 0 24px;
+  display: table;
+  img{
+    display: table-cell;
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    behavior: url("/js/third-party/pie/pie.htc");
+  }
+  .al-translatorInfo{
+    display: table-cell;
+    vertical-align: middle;
+    padding-top:7px;
+    width:100%;
+    .al-translatorInfoContent{
+      margin-left:18px;
+      border-bottom:1px solid #ecf0f2;
+      padding-bottom:32px;
+      >a{
+        color:#333;
+        &:hover{color:#3598db;}
+      }
+      p{
+        margin-top:12px;
+        font-size:15px;
+        color:#555;
+        .al-translatorUnit{padding-left:14px;}
+      }
+    }
+  }
+}*/
+.al-translatorIntrItem{   //列表项样式
+  padding:0 24px 0 24px;
+  //  display: table;
+  .fellowBtn{
+    //    display: table-cell;
+    display: inline-block;
+    width: 88px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    vertical-align: middle;
+    img{
+      width: 88px;
+      height: 34px;
+      border-radius: 0;
+    }
+  }
+  >a{
+    display: inline-block;
+    width:54px;
+    height:54px;
+    vertical-align: middle;
+    margin-right: 18px;
+  }
+  img{
+    //    display: table-cell;
+    display: inline-block;
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    behavior: url("/js/third-party/pie/pie.htc");
+    margin-bottom: 30px;
+    vertical-align: middle;
+  }
+  .al-translatorInfo{
+    //    display: table-cell;
+    display: inline-block;
+    vertical-align: middle;
+    border-bottom:1px solid #ecf0f2;
+    padding-top:0;
+    width:576px;
+    .al-translatorInfoContent{
+      margin-left:0;
+      border-bottom:none;
+      padding:32px 0;
+      >a{
+        color:#333;
+        &:hover{color:#3598db;}
+      }
+      p{
+        margin-top:12px;
+        font-size:15px;
+        color:#555;
+        .al-translatorUnit{padding-left:14px;}
+      }
+    }
+  }
+}
+//译者列表弹层：end
+
+/*
+
+20170728 PDF文库终端乱码反馈样式  HJ*/
+.dislikeDialog{
+  width:308px;
+  height:50px;
+  position:absolute;
+  z-index:5;
+  right:60px;
+  bottom:-64px;
+  text-align: center;
+  background:#fff;
+  border-radius:3px;
+  box-shadow:0 0 4px #ccc;
+  //behavior:url("/js/third-party/pie/pie.htc");
+
+  img{
+    width:18px;
+    height:9px;
+    display:block;
+    position:absolute;
+    top:-9px;
+    right:48px;
+  }
+  span.des{
+    width:250px;
+    height:50px;
+    line-height:50px;
+    font-size: 17px;
+    color:#808080;
+    display:inline-block;
+    text-align:center;
+    margin:0;
+    font-family: "microsoft yahei";
+  }
+  span.dislikeBtn{
+    width:52px;
+    height:30px;
+    line-height:30px;
+    margin:0;
+    display:inline-block;
+    background:#3598db;
+    font-size:15px;
+    color:#fff;
+    position:relative;
+    right:5px;
+    top:-2px;
+    cursor: pointer;
+    border-radius:20px;
+    behavior:url(/js/third-party/pie/pie.htc);
+    font-family: "微软雅黑";
+  }
+}
+.al-messyCodeFeedBack{
+  margin-right: 20px;
+}
+
+
+.al-translatorIntrItem{
+  .al-translatorUserText{
+    display: inline-block;
+    width: 480px;
+    vertical-align: middle;
+  }
+  .fellowBtn{
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+//译者列表弹层：begin
+.al-translatorListPop{
+  display:none;
+  position:fixed;
+  z-index:5;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(10,30,43,0.7);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2103043,endColorstr=#B2103043);  /*IE8支持*/
+  .al-translatorListContentBox{
+    background-color:#fff;
+    width:708px;
+    height:650px;
+    border:1px solid #e4e9ed;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    figcaption{
+      font-weight: 400;
+      padding: 0 24px;
+      height: 52px;
+      line-height: 52px;
+      border-bottom: 1px solid #e4e9ed;
+      font-size: 18px;
+      color: #333;
+      i{padding-left:8px;}
+      b{
+        float: right;
+        cursor: pointer;
+        width: 13px;
+        height: 13px;
+        background: url("//img10.allinmd.cn/v3/common/icon/icon_close.png") center center no-repeat;
+        margin-top:22px;
+      }
+    }
+  }
+
+  //译者列表：暂无内容
+  .al-translatorIntrItemBox{
+    position: relative;
+    overflow: auto;
+  }
+  .al-noFansTips{
+    position:absolute;
+    margin-top:12px;
+    border:none;
+    border-top:1px solid #e4e9ed;
+    width:100%;
+  }
+}
+
+
+
+.al-translatorSelectPart{ //译者弹层：右侧下拉样式
+  padding:20px 26px 0 24px;
+  position:relative;
+  text-align: right;
+  span{
+    font-size:15px;
+    color:#626f8c;
+    cursor: pointer;
+  }
+  b{
+    display:inline-block;
+    width:10px;
+    height:6px;
+    background: transparent url("//img10.allinmd.cn/v3/discover/downArrow.png") center center no-repeat;
+    margin-bottom:2px;
+    margin-left:5px;
+    cursor: pointer;
+  }
+  .al-upArrowIcon{background: transparent url("//img10.allinmd.cn/v3/discover/topArrow.png") center center no-repeat;}
+  ul{
+    position: absolute;
+    right:0;
+    z-index:3;
+    width:100px;
+    padding:6px 0;
+    background-color:#fff;
+    border: 1px solid #E4E9ED;
+    box-shadow: 4px 4px 8px rgba(197, 206, 214, 0.5), -4px -4px 8px rgba(197, 206, 214, 0.5);
+    border-radius: 4px;
+    behavior: url("/js/third-party/pie/pie.htc");
+    margin:13px 0 0 -34px;
+    &:before{
+      content:'';
+      position:absolute;
+      top:-8px;
+      left:41px;
+      width:18px;
+      height:9px;
+      background:transparent url("//img10.allinmd.cn/v3/discover/discover_topArrow.png") center center no-repeat;
+
+    }
+    li{
+      display: none;
+      text-align:center;
+      padding:15px 0;
+      color:#555;
+      cursor:pointer;
+      &:hover{background-color:#F6F9FB;}
+    }
+    .active{color:#3598db;}
+  }
+}
+
+.al-translatorIntrItemBox{
+  overflow-y: scroll;
+  height:560px;
+}
+
+//译者列表弹层：end
+
+//2018.6.7日
+.al-terminalDocPdfImg {
+  width: 100%;
+  min-height:370px;
+  position: relative;
+  img{
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+  }
+  .al-terminalDocPdfImgMsg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000, endColorstr=#7F000000);
+    text-align: center;
+    &:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+    figcaption {
+      vertical-align: middle;
+      display: inline-block;
+      img {
+        width:100px;
+        height:auto;
+        display: block;
+        margin: 0 auto;
+      }
+      button {
+        background-color: #2899e6;
+        color: #fff;
+        margin: 0 auto;
+        margin-top: 10px;
+        font-size: 15px;
+        padding: 5px 10px;
+        display: block;
+        text-align: center;
+        border: 1px solid #2899e6;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+//结束，无法编译。已经在css中添加
+@import "../../components/medplusDownLoad";

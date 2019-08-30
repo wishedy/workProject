@@ -1,0 +1,13 @@
+<template name="confirm$5251c782">
+  <view class="_section data-v-ae246cf2 maskers confirmBox-tips show">
+    <view class="_section data-v-ae246cf2 confirmBox-inner">
+      <view class="_article data-v-ae246cf2 confirmBox-content">
+        <view class="_article data-v-ae246cf2">
+          <view wx:if="{{confirmParams.title}}" style="font-weight:bold" class="_h2 data-v-ae246cf2">{{confirmParams.title}}</view>
+          <rich-text hidden="{{!(confirmParams.content)}}" nodes="{{confirmParams.content}}" class="_p data-v-ae246cf2 {{confirmParams.propClassName}}"></rich-text>
+        </view>
+      </view>
+      <view class="_footer data-v-ae246cf2 confirmBox-btns"><label wx:if="{{confirmParams.cancel}}" class="_span data-v-ae246cf2 confirmBox-cancelBtn" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">{{confirmParams.cancel}}</label> <label wx:if="{{confirmParams.ensure}}" class="_span data-v-ae246cf2 confirmBox-ensureBtn" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">{{confirmParams.ensure}}</label></view>
+    </view>
+  </view>
+</template>

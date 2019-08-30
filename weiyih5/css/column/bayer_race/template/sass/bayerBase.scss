@@ -1,0 +1,869 @@
+@charset "UTF-8";
+@import "method.scss";
+html,
+body {
+    font-family: 'Microsoft Yahei', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: $textColor;
+    background-color: #F6F6FA;
+}
+
+
+/*reset*/
+
+html {
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-shadow: none;
+}
+
+html * {
+    outline: 0;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0
+}
+
+input,
+select,
+textarea {
+    font-size: 100%
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset,
+img {
+    border: 0
+}
+
+abbr,
+acronym {
+    border: 0;
+    font-variant: normal
+}
+
+del {
+    text-decoration: line-through
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+    font-style: normal;
+    font-weight: 500
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+caption,
+th {
+    text-align: left
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: 500
+}
+
+q:before,
+q:after {
+    content: ''
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -.5em
+}
+
+sub {
+    bottom: -.25em
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+ins,
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.ui-page-theme-a a:hover,
+html .ui-bar-a a:hover,
+html .ui-body-a a:hover,
+html body .ui-group-theme-a a:hover {
+    color: #66657f;
+}
+
+section.main {
+    overflow: hidden;
+    //position: relative;
+}
+
+
+/*头部轮播*/
+
+.imageTitle {
+    width: 100%;
+    background-color: #058;
+    .imageSlide {
+        text-align: center;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.backToHome {
+    $r: rem(52px);
+    position: absolute;
+    width: $r;
+    height: $r;
+    top: rem(20px);
+    left: rem(20px);
+    z-index: 2;
+    img {
+        width: 100%;
+        vertical-align: top;
+    }
+}
+
+
+/*导航条
+ *项目为6项时要求滑动查看
+ *届时添加类.moreNavItem至topNavBar
+ */
+
+.topNavbar {
+    $height: rem(80px);
+    height: $height;
+    background-color: #fff;
+    text-align: center;
+    .navbarBox {
+        @include flex-h();
+        @include flex-hc();
+        @include flex-vc();
+        height: 100%;
+    }
+    .navbarText {
+        font-size: rem(30px);
+        margin: 0 rem(15px);
+        color: $textColor;
+        position: relative;
+        display: block;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+    }
+    .navbarText.on {
+        color: $linkColor;
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: rem(3px);
+            background-color: $linkColor;
+            position: absolute;
+            bottom: rem(-20px);
+            left: 0;
+        }
+    }
+}
+
+.topNavbarSix {
+    $height: rem(80px);
+    height: $height;
+    background-color: #fff;
+    text-align: center;
+    .swiper-wrapper {
+        width: auto !important;
+    }
+    .navbarText {
+        font-size: rem(30px);
+        position: relative;
+        line-height: $height;
+        color: $textColor;
+        width: auto !important;
+        margin: 0 rem(37.5px);
+    }
+    .navbarText.on {
+        color: $linkColor;
+        &:after {
+            content: "";
+            width: 100%;
+            height: rem(3px);
+            background-color: $linkColor;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+
+/*on:添加于.navbarText，当前页打开时添加*/
+
+//页脚部分
+.pageFooter {
+    text-align: center;
+    background-color: #fff;
+    height: rem(98px);
+    line-height: rem(98px);
+    margin-top: rem(120px);
+    border-top: 1px solid $borderOuter;
+    .footerItem {
+        display: inline-block;
+        a {
+            font-size: rem(24px);
+            color: $footerColor;
+        }
+    }
+    .hr {
+        width: 1px;
+        height: rem(20px);
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 rem(26px);
+        background-color: #a8a8a9;
+    }
+    .footerHome:before {
+        content: "";
+        width: rem(24px);
+        height: rem(23px);
+        display: inline-block;
+        background: transparent url('//img50.allinmd.cn/column/bayer_race/footerHome.png') center center no-repeat;
+        background-size: 100% 100%;
+        vertical-align: middle;
+        margin-right: rem(12px);
+    }
+    .footerDownload:before {
+        content: "";
+        width: rem(24px);
+        height: rem(23px);
+        display: inline-block;
+        background: transparent url('//img50.allinmd.cn/column/bayer_race/footerDL.png') center center no-repeat;
+        background-size: 100% 100%;
+        vertical-align: middle;
+        margin-right: rem(12px);
+    }
+    .footerBackToTop:before {
+        content: "";
+        width: rem(24px);
+        height: rem(23px);
+        display: inline-block;
+        background: transparent url('//img50.allinmd.cn/column/bayer_race/footerBack.png') center center no-repeat;
+        background-size: 100% 100%;
+        vertical-align: middle;
+        margin-right: rem(12px);
+    }
+}
+
+.pageFooter.takeInBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+/*悬浮按钮*/
+
+.footerBtn {
+    position: fixed;
+    bottom: 0;
+    right: rem(20px);
+    z-index: 2;
+    font-weight: normal;
+    text-shadow: none;
+    a {
+        height: rem(70px);
+        line-height: rem(70px);
+        font-size: rem(24px);
+        color: #fff;
+        padding: rem(20px);
+        box-shadow: -2px -2px 2px #EFEFEF, 5px 5px 5px #B9B9B9;
+    }
+}
+
+.upFile {
+    background-color: #DA278D;
+    margin-right: rem(30px);
+    border-radius: rem(35px);
+    &:before {
+        content: "";
+        width: rem(42px);
+        height: rem(30px);
+        display: inline-block;
+        vertical-align: middle;
+        background: transparent url('//img50.allinmd.cn/column/bayer_race/upFile.png') center center no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+.share {
+    background-color: #2398F4;
+    border-radius: rem(35px);
+    &:before {
+        content: "";
+        width: rem(36px);
+        height: rem(36px);
+        display: inline-block;
+        vertical-align: middle;
+        background: transparent url('//img50.allinmd.cn/column/bayer_race/share.png') center center no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+
+/*内容区基本共用样式*/
+
+.generalPart {
+    border-top: 1px solid $borderOuter;
+    border-bottom: 1px solid $borderOuter;
+    background-color: #fff;
+    margin-top: rem(20px);
+    font-size: rem(30px);
+    text-shadow: none;
+}
+
+.generalTitle {
+    font-size: rem(32px);
+    color: $headerColor;
+    line-height: rem(78px);
+    height: rem(78px);
+    padding-left: rem(24px);
+    border-bottom: 1px solid $borderInnerTop;
+    position: relative;
+    span {
+        color: $textColor;
+    }
+    &:before {
+        content: "";
+        width: rem(6px);
+        height: rem(32px);
+        display: block;
+        position: absolute;
+        top: 50%;
+        margin-top: rem(-16px);
+        left: 0;
+        background: transparent url('//img50.allinmd.cn/column/bayer_race/beforeTitle.png') center center no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+.generalText {
+    color: $textColor;
+}
+
+.generalMore {
+    text-align: center;
+    height: rem(88px);
+    line-height: rem(88px);
+    a {
+        font-size: rem(30px);
+        color: $textColor;
+        &:after {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: rem(10px);
+            width: rem(22px);
+            height: rem(24px);
+            background: transparent url('//img50.allinmd.cn/column/bayer_race/moreArrow.png') left top no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+
+/*复活banner*/
+
+.revive {
+    margin-top: rem(20px);
+    a {
+        width: 100%;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+
+/*复活排行榜*/
+
+.revive {
+    margin-top: rem(20px);
+    a {
+        width: 100%;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+
+/*复活排行榜*/
+
+.reviveRankItem {
+    color: #9c9c9d;
+    font-size: rem(24px);
+    .rankNum {
+        width: rem(38px);
+        height: rem(38px);
+        line-height: rem(38px);
+        text-align: center;
+        font-style: normal;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-left: rem(-51px);
+        margin-top: rem(-23px);
+        background: transparent url('//img50.allinmd.cn/column/bayer_race/norZan.png') center center no-repeat;
+        background-size: cover;
+    }
+    &:nth-last-child(1) {
+        border-bottom: none;
+    }
+}
+
+.reviveRankTop.reviveRankItem {
+    .rankNum {
+        background: transparent url('//img50.allinmd.cn/column/bayer_race/topZan.png') center center no-repeat;
+        background-size: cover;
+    }
+}
+
+.reviveRankItem {
+    display: block;
+    border-bottom: 1px solid $borderOuter;
+    margin-left: rem(70px);
+    position: relative;
+    .area {
+        display: inline-block;
+        width: 2rem;
+    }
+    h3 {
+        display: inline-block;
+        font-size: rem(30px);
+        color: #1f1f1f;
+        width: 2rem;
+    }
+    .zanNum {
+        font-size: rem(30px);
+        color: #1f1f1f;
+        text-align: center;
+        display: inline-block;
+        width: rem(80px);
+    }
+    .hr {
+        width: 1px;
+        height: rem(46px);
+        margin: rem(25px) 0;
+        margin-left: rem(120px);
+        margin-right: rem(30px);
+        background-color: #ececec;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .clickZan {
+        margin-right: rem(28px);
+    }
+}
+
+
+/*新增分享区域*/
+
+.videoPK_share_pop {
+    width: 100%;
+    height: 4.26667rem;
+    background: #efeff4;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+    box-shadow: 7px 3px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.vPK_share_cont {
+    position: absolute;
+    top: -0.46667rem;
+    width: 81.25%;
+    z-index: 12;
+    left: 0;
+    height: 2.98667rem;
+    border-bottom: 1px solid #e6e9ea;
+    background: #fff;
+    padding: 0 9.375% 0.5em 9.375%;
+}
+
+.vPK_share_list {
+    width: 70%;
+    height: 2.98667rem;
+    margin: 0 auto;
+}
+
+.clear {
+    height: 0;
+    clear: both;
+    overflow: hidden;
+}
+
+#videoPK_sharebtn a {
+    display: block;
+    width: 1.28rem;
+    height: 1.28rem;
+    margin: 0 auto;
+    float: left;
+    text-align: center;
+}
+
+.share_sina_icon {
+    width: 1.28rem;
+    height: 1.28rem;
+    margin: 0 auto;
+}
+
+.share_qzone_icon {
+    width: 1.28rem;
+    height: 1.28rem;
+    margin: 0 auto;
+}
+
+.share_sina_icon img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.share_sina_text {
+    font-size: 0.32rem;
+    color: #333;
+    margin-top: 0.13333rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.share_qq_icon img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.share_qzone_icon img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#videoPK_sharebtn .share_qq {
+    margin: 0 22%;
+}
+
+#videoPK_sharebtn .share_qzone {
+    float: right;
+}
+
+.share_dao {
+    font-size: 0.37333rem;
+    color: #333;
+    line-height: 1;
+    text-align: center;
+    margin: 0.30667rem 0 0.14667rem 0;
+}
+
+.share_quxiao {
+    background: #868c95;
+    border-radius: 3px;
+    width: 93.75%;
+    line-height: 2.53;
+    border: solid 1px #7a7f89;
+    position: absolute;
+    bottom: 0.47em;
+    left: 3.125%;
+    font-size: 0.45333rem;
+    color: #fff;
+    text-align: center;
+    text-shadow: none;
+}
+
+.ui-popup-container {
+    z-index: 1100;
+    display: inline-block;
+    position: absolute;
+    padding: 0;
+    outline: 0;
+}
+
+#popupBasic2 {
+    padding: 1em;
+    background: #333;
+    color: #eee;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.ui-popup>p,
+.ui-popup>h1,
+.ui-popup>h2,
+.ui-popup>h3,
+.ui-popup>h4,
+.ui-popup>h5,
+.ui-popup>h6 {
+    margin: .5em .4375em;
+}
+
+#popupBasic2 a {
+    color: white;
+}
+
+.ui-btn.ui-btn-b {
+    background-color: #333;
+    border-color: #1f1f1f;
+    color: #fff;
+    text-shadow: 0 1px 0 #111;
+    right: -11px;
+    position: absolute;
+    top: -11px;
+    margin: 0;
+    z-index: 1101;
+    border-radius: 1em;
+    padding: 0;
+    width: 1.75em;
+    height: 1.75em;
+    text-indent: -9999px;
+    white-space: nowrap!important;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, .3);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+.ui-loader-default {
+    display: none;
+}
+
+
+/*全部赛区列表*/
+
+.allArea .allAreaTitle {
+    border-bottom: none;
+}
+
+.areaList {
+    overflow: hidden;
+    margin-top: rem(12px);
+    margin-left: rem(30px);
+    .areaListItem.no-areaListItem {
+        $color: #c5c4d2;
+        border: 1px solid $color;
+        a {
+            color: $color;
+        }
+    }
+    .areaListItem {
+        float: left;
+        font-size: rem(30px);
+        margin-right: rem(30px);
+        margin-bottom: rem(30px);
+        box-sizing: border-box;
+        border: 1px solid $linkColor;
+        border-radius: rem(5px);
+        height: rem(60px);
+        width: rem(150px);
+        text-align: center;
+        line-height: rem(60px);
+        vertical-align: middle;
+        a {
+            color: $linkColor;
+        }
+    }
+}
+
+
+/*活动时间轴部分*/
+
+.timeLineList {
+    padding: rem(40px) rem(30px);
+    position: relative;
+    ul {
+        overflow: hidden;
+        text-align: center;
+    }
+    .line {
+        width: rem(679px);
+        height: rem(4px);
+        position: absolute;
+        margin-top: rem(-67px);
+        left: 50%;
+        margin-left: rem(-679px / 2);
+        z-index: 1;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.timeLineMain.on {
+    color: #D71181;
+}
+
+.timeLineMain {
+    display: inline-block;
+    text-align: center;
+    width: 1.7rem;
+    .timeLineTitle {
+        font-size: rem(24px);
+        h2 {
+            font-weight: 700;
+        }
+    }
+    .activeTime {
+        font-size: rem(17px);
+        white-space: nowrap;
+    }
+    .timeLinePoint {
+        $r: rem(24px);
+        width: $r;
+        height: $r;
+        display: inline-block;
+        padding: rem(20px) rem(15px);
+        position: relative;
+        background-color: #fff;
+        z-index: 2;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.headTitle {
+    background-color: #8c6fcd;
+    width: 100%;
+    height: rem(88px);
+    text-align: center;
+    line-height: rem(88px);
+    position: relative;
+    text-shadow: none;
+    h2 {
+        font-size: rem(38px);
+        color: #fff;
+    }
+    a {
+        $r: rem(50px);
+        width: $r;
+        height: $r;
+        position: absolute;
+        left: rem(20px);
+        margin-top: - $r/2;
+        top: 50%;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+
+/*微信弹层样式*/
+
+.dk-result-pointer-bg {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #2F2C2C;
+    opacity: 0.9;
+    z-index: 19;
+    /*  display: none;*/
+}
+
+.dk-result-pointer {
+    width: 100%;
+    position: fixed;
+    top: 0.8em;
+    right: 0.4em;
+    background: url("/image/share.png") no-repeat;
+    background-size: 100%;
+    /*  display: none; */
+    height: 30em;
+    z-index: 20;
+}

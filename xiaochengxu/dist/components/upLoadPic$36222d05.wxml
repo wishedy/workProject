@@ -1,0 +1,19 @@
+<import src="/components/upLoadPlugn$f25b8f4a" /><template name="upLoadPic$36222d05">
+  <view class="_section data-v-315a4f8a">
+    <view class="_section data-v-315a4f8a upLoad-main">
+      <view class="_ul data-v-315a4f8a upLoadBox">
+        <view class="_li data-v-315a4f8a upLoadItem" wx:if="{{index<9}}" wx:key="index" key="{{index}}" wx:for="{{imgUrl}}" wx:for-index="index" wx:for-item="item">
+          <image class="_img data-v-315a4f8a imgItem" src="{{item.blob}}" mode="aspectFill" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}"></image> <label class="_span data-v-315a4f8a imgItem-delBtn" wx:if="{{!item.fail}}" bindtap="handleProxy" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}"></label> <label class="_span data-v-315a4f8a imgItem-cover" wx:if="{{item.uploading}}"><label class="_span data-v-315a4f8a imgItem-loading"></label></label>
+          <view class="_figure data-v-315a4f8a imgItem-fail" wx:if="{{item.fail}}" bindtap="handleProxy" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}">
+            <view class="_p data-v-315a4f8a imgItem-failText">上传失败</view>
+            <view class="_p data-v-315a4f8a imgItem-reloadText">点击重试</view>
+          </view>
+        </view> <template bindbeforeUpload="handleProxy" binduploadDone="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="upLoadPlugn$f25b8f4a"></template>
+        <view class="_li data-v-315a4f8a upLoadDetail" hidden="{{!(!imgUrl.length>0)}}">
+          <view class="_p data-v-315a4f8a upLoadDetail-top">请上传您的病例（以及处方、检查单、X光/CT/核磁等资料）</view> <label class="_span data-v-315a4f8a upLoadDetail-bottom" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">查看拍摄示例</label>
+        </view>
+      </view>
+      <view class="_section data-v-315a4f8a upLoadViewBtn" wx:if="{{imgUrl.length>0}}"><label class="_span data-v-315a4f8a upLoadViewBtn-l">【已上传{{imgUrl.length}}张】</label><label hidden="{{!(imgUrl.length>9)}}" bindtap="handleProxy" class="_span data-v-315a4f8a upLoadViewBtn-r" data-eventid="{{'5'}}" data-comkey="{{$k}}">查看更多</label></view>
+    </view>
+  </view>
+</template>

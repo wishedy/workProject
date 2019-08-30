@@ -1,0 +1,40 @@
+@charset "UTF-8";
+//终端——评论正文
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_timeLineModule";		//评论时间轴组件
+@import "../../components/_buttonModule";		//按钮组件
+
+@import "../../components/_bottomBtns";		//底部弹层组件
+@import "../../components/_bottomSharePart";		//分享组件
+@import "../../components/_middleTipsModal"; 	//中部黑色弹框组件
+.icon-detailsDelete{
+	@extend %icon-detailsDelete;
+}
+.icon-detailsArrow{
+	@extend %icon-detailsArrow;
+}
+.icon-detailsComment{
+	@extend %icon-detailsComment;
+}
+.icon-detailsCollect{
+	@extend %icon-detailsCollect;
+}
+.icon-detailsShare{
+	@extend %icon-detailsShare;
+}
+.icon-detailsLike{
+	@extend %icon-detailsLike;
+}
+/*.al-vipUser{
+	@extend %al-vipUser;
+}*/
+.al-timelineContentTextBox .al-timelineContentAuthor .al-timelineTime{
+  position: static;
+  float: right;
+}

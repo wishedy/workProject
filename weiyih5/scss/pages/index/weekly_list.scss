@@ -1,0 +1,45 @@
+@charset "UTF-8";
+//首页——每周更新内容
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_contentModule"; //内容组件
+@import "../../components/_iconModule"; //小图标组件
+.al-indexHeader{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+}
+.listNoMore {
+  width: 100%;
+  text-align: center;
+  padding: 50px 0;
+  font-size: 0.34667rem;
+  color: #626f8c;
+}
+.al-content{
+	margin-top: 1.37rem;
+}
+.icon-contentAuthor {
+    @extend %icon-contentAuthor;
+}
+
+.icon-contentWatchedNum {
+    @extend %icon-contentWatchedNum;
+}
+.icon-scrollShare{
+	@extend %icon-scrollShare;
+}
+.al-contentAuthor{
+    max-width: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.al-contentOtherMsg span{
+	display: inline-block;vertical-align: middle;
+}

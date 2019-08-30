@@ -1,0 +1,17 @@
+<import src="/components/calendar$41872bb1" />
+<import src="/components/backIndex$640b7ced" /><template name="outpatientCalender$f3017a94">
+  <view class="_section data-v-ed18898a outpatient-order-inner">
+    <view class="_header data-v-ed18898a outpatient-order-header">
+      <view class="_h2 data-v-ed18898a">请选择门诊时间</view>
+    </view>
+    <view class="_section data-v-ed18898a outpatient-order-calendar-content">
+      <view class="_header data-v-ed18898a outpatient-order-base">
+        <view class="_figure data-v-ed18898a outpatient-order-logo">
+          <image src="{{doctorLogo}}" alt class="_img data-v-ed18898a"></image>
+        </view>
+        <view class="_p data-v-ed18898a outpatient-order-base-info"><label class="_span data-v-ed18898a name">{{doctorInfo.nick}}</label> <label class="_span data-v-ed18898a title" wx:if="{{doctorInfo.title}}">{{doctorInfo.title}}</label></view>
+      </view>
+      <view class="_section data-v-ed18898a outpatient-order-calendar"><template ref="calendarData" bindselect="handleProxy" bindselectHasCount="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="calendar$41872bb1"></template></view>
+    </view> <template wx:if="{{backIndexShow}}" data="{{...$root[$kk+'1'], $root}}" is="backIndex$640b7ced"></template>
+  </view>
+</template>

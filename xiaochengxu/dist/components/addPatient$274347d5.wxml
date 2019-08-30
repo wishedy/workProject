@@ -1,0 +1,57 @@
+<import src="/components/confirm$5251c782" />
+<import src="/components/loading$2ff823fe" />
+<import src="/components/toast$1074ede9" /><template name="addPatient$274347d5">
+  <view class="_section data-v-60ea40b0 sticky-wrapper">
+    <view class="_section data-v-60ea40b0 main-inner">
+      <view class="_header data-v-60ea40b0 find-doctor-head">
+        <view class="_p data-v-60ea40b0 find-doctor-head-tips">{{headTitle}}</view>
+      </view>
+      <view class="_section data-v-60ea40b0 add-patient-content">
+        <view class="_article data-v-60ea40b0 add-patient-content-item">
+          <view class="_aside data-v-60ea40b0">姓名</view>
+          <view class="_figure data-v-60ea40b0 add-patient-input"><input type="text" placeholder="请填写真实姓名" id="patientName" bindblur="handleProxy" bindinput="handleProxy" placeholder-style="color:#aaaaaa;" disabled="{{updateInfo}}" name="username" value="{{username}}" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_input data-v-60ea40b0" /></view>
+        </view>
+        <view class="_article data-v-60ea40b0 add-patient-content-item">
+          <view class="_aside data-v-60ea40b0">性别</view>
+          <view class="_figure data-v-60ea40b0 add-patient-input">
+            <view class="_section data-v-60ea40b0 add-patient-sex-selector  {{[sexSelect == 1 ? 'on' : '']}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+              <view class="_i data-v-60ea40b0 add-patient-selector"></view> <label class="_span data-v-60ea40b0">男</label>
+            </view>
+            <view class="_section data-v-60ea40b0 add-patient-sex-selector women {{[sexSelect == 2 ? 'on' : '']}}" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+              <view class="_i data-v-60ea40b0 add-patient-selector"></view> <label class="_span data-v-60ea40b0">女</label>
+            </view>
+          </view>
+        </view>
+        <view class="_article data-v-60ea40b0 add-patient-content-item">
+          <view class="_aside data-v-60ea40b0">出生日期</view>
+          <view class="_figure data-v-60ea40b0 add-patient-input birth-box">
+            <view class="_p data-v-60ea40b0 contentMessage {{[birthClickNum > 1 ? 'on' : '']}}">{{birthClickNum > 1 ? birthInput : '请选择'}}</view>
+            <picker class="_picker data-v-60ea40b0 time-picker" mode="date" value="{{defaultTime}}" start="1900-01-01" end="{{currTime}}" style="position: absolute;top: 0;width: 100%;height: 100%;" bindchange="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">
+              <view class="_view data-v-60ea40b0 picker" style="position: absolute;top: 0;width: 100%;height: 100%;"></view>
+            </picker>
+          </view>
+        </view>
+        <view class="_article data-v-60ea40b0 add-patient-content-item" wx:if="{{isLogin}}">
+          <view class="_aside data-v-60ea40b0">手机号码</view>
+          <view class="_figure data-v-60ea40b0 add-patient-input "><input type="number" bindblur="handleProxy" bindinput="handleProxy" placeholder="请填写手机号码" name="phone" value="{{phone}}" data-eventid="{{'4'}}" data-comkey="{{$k}}" class="_input data-v-60ea40b0" /></view>
+        </view>
+        <block wx:else>
+          <view class="_article data-v-60ea40b0 add-patient-content-item">
+            <view class="_aside data-v-60ea40b0">手机号码</view>
+            <view class="_figure data-v-60ea40b0 add-patient-input "><input type="number" bindblur="handleProxy" bindinput="handleProxy" placeholder="将用作登录账号" name="phone" value="{{phone}}" data-eventid="{{'5'}}" data-comkey="{{$k}}" class="_input data-v-60ea40b0" /></view>
+          </view>
+          <view class="_article data-v-60ea40b0 add-patient-content-item">
+            <view class="_aside data-v-60ea40b0">验证码</view>
+            <view class="_figure data-v-60ea40b0 add-patient-input code-box"><input class="_input data-v-60ea40b0 codeInput" type="number" bindblur="handleProxy" bindinput="handleProxy" placeholder="请输入" name="codeInput" value="{{codeNumber}}" data-eventid="{{'6'}}" data-comkey="{{$k}}" />
+              <view class="_i data-v-60ea40b0 icon-clear" wx:if="{{codeNumber.length}}" catchtap="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}"></view>
+            </view> <label class="_span data-v-60ea40b0 codeText" wx:if="{{codeTime<=0}}" catchtap="handleProxy" data-eventid="{{'8'}}" data-comkey="{{$k}}">{{codeText}}</label> <label class="_span data-v-60ea40b0 codeCountdown {{[codeNumber.length > 0 ? 'hasContent' : '']}}" wx:if="{{codeTime>0}}">
+              <view class="_i data-v-60ea40b0">{{codeTime}}</view>
+              <view class="_i data-v-60ea40b0">秒后重新获取</view>
+            </label>
+          </view>
+        </block>
+      </view>
+      <form class="_form data-v-60ea40b0 btn-primary go-next" bindsubmit="handleProxy" report-submit="true" data-eventid="{{'10'}}" data-comkey="{{$k}}"><button class="_button data-v-60ea40b0 btn-primary go-next" bindtap="handleProxy" formType="submit" data-eventid="{{'9'}}" data-comkey="{{$k}}">下一步</button></form>
+    </view> <template wx:if="{{levelShow}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'11'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="confirm$5251c782"></template> <template wx:if="{{loading}}" data="{{...$root[$kk+'2'], $root}}" is="loading$2ff823fe"></template> <template wx:if="{{toastShow}}" data="{{...$root[$kk+'3'], $root}}" is="toast$1074ede9"></template>
+  </view>
+</template>

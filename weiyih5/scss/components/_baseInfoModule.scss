@@ -1,0 +1,126 @@
+@charset "UTF-8";
+//个人资料详情
+//Created by qiangkailiang on 2016/07/31
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+@import "./_tableModule"; //表单组件
+.al-indexHeader h1{
+    &.myInfo{
+        font-weight: 500;
+    }
+}
+.eventInfo {
+    &.baseEvent{
+        padding-bottom: rem3(24px);
+        border-bottom: rem3(8px) solid #F1F4F9;
+        .eventTitle{
+            margin-top: rem3(16px);
+        }
+    }
+}
+.infoContanier{
+    .al-tableModule{
+        margin-top: 0;
+        border-top: rem3(8px) solid #F1F4F9;
+        padding-bottom: rem3(24px);
+        .al-tableModuleContent{
+            padding: rem(30px) 0;
+            margin: 0 rem(30px);
+            &:before{
+                background: #6483E9;
+                border-radius: rem3(3px);
+                content: '';
+                width: rem3(4px);
+                height: rem3(12px);
+                display: inline-block;
+                vertical-align: top;
+                margin-right: rem3(8px);
+                margin-top: rem3(10px);
+            }
+            .contentCon{
+                display: inline-block;
+                vertical-align: middle;
+                width: rem3(333px);
+            }
+            &:last-child{
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+            .al-timeRange{
+                &:before{
+                    display: none;
+                }
+            }
+        }
+    }
+    .inforHead{
+        font-size: rem3(18px);
+        color: #222222;
+        line-height: rem3(18px);
+        margin-bottom: rem3(5px);
+        margin-left: rem3(15px);
+        padding-top: rem3(24px);
+        font-weight: 600;
+    }
+    .tableTitle{
+        font-size: rem3(16px);
+        color: #1C1D29;
+        line-height: rem3(16px);
+        display: inline-block;
+        vertical-align: middle;
+        width: rem3(90px);
+        margin-left: rem3(15px);
+    }
+    .tabbleDesc{
+        font-size: rem3(17px);
+        color: #333333;
+        //letter-spacing: 0;
+        line-height: rem3(24px);
+        display: inline-block;
+        vertical-align: middle;
+        width: rem3(265px);
+        .clinicalYear{
+            margin-right: rem3(20px);
+        }
+    }
+    .baseModuleItem{
+        margin-top: rem3(18px);
+        .summary{
+            padding: 0 rem3(15px);
+            width: auto;
+        }
+        .moreSummary{
+            margin-top: rem3(15px);
+            &:before{
+                content: '';
+                width: rem3(19px);
+                height: rem3(19px);
+                background: url("/static/images/personal/more@2x.png") 100% 100% no-repeat;
+                background-size: contain;
+                display: block;
+                 margin: auto;
+                transition: all 0.2s linear;
+                -webkit-transition: all 0.2s linear;
+            }
+            &.upmoreSum{
+                &:before{
+                    transform: rotate(180deg);
+                    -webkit-transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+}
+.headerInfoContaner{
+    padding-top: rem3(44px);
+    .infoFixedHeader{
+        position: fixed;
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

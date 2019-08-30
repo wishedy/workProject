@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>${seoTitle!''} -医学文章-唯医,allinmd</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="${seoMetaDescription!''}">
+    <meta name="Keywords" content="医学文章${seoMetaKeyword!''},${docCustomerName},唯医,allinmd">
+    <meta name="renderer" content="webkit">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <link href="/dest/detail/detail_doc01.css" rel="stylesheet" type="text/css"/>
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/video-js.css" rel="stylesheet" type="text/css"/>
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/videojs.allinmd.css" rel="stylesheet" type="text/css"/>
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="127">
+
+<input type="hidden" id="resourceId" value="${doc.docId?c}"/>
+<input type="hidden" id="resourceType" value="2"/>
+<input type="hidden" id="refCustomerId" value="${doc.refCustomerId?c}"/>
+<input type="hidden" id="resourceTpl" value="${doc.tplPath!''}"/>
+<input type="hidden" id="resourceWapUrl" value="${doc.webStoragePath!''}"/>
+<input type='hidden' id="shareImgSrc" value="${shareImgSrc!''}"/>
+
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <!--<li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>-->
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+
+    <section class="al-pageMainBox">
+        <!--页面主体内容：begin -->
+
+        <section class="al-mainContent">
+            <#if doc??&&doc.isValid=1>
+                <div class="v_detail_main">
+                    <div class="v_detail_content">
+                        <div class="video_jj">
+                            <!--<div class="floor01_topic">
+                                <div class="left">
+        
+                                    <div class="video_jj_title font_yahei"> <span class="oe_en"> <#assign title_en = "">
+                                        <#list cooperationInvokeElementList as home>
+                                            <#if home.invokeElement=='onlineTitle'>
+                                                <#assign title_en = home.content>
+                                            </#if>
+                                        </#list>
+        
+                                        <#if title_en != "">
+                                            ${title_en!''}
+                                            <#else>
+                                                ${doc.docName!''}
+                                        </#if> </span> <span class="oe_ch"> <#assign title_zh = "">
+                                        <#list cooperationInvokeElementList_zh as home>
+                                            <#if home.invokeElement=='onlineTitle'>
+                                                <#assign title_zh = home.content>
+                                            </#if>
+                                        </#list>
+        
+                                        <#if title_zh != "">
+                                            ${title_zh!''}
+                                            <#else>
+                                                ${doc.docName!''}
+                                        </#if> </span> <#if doc??>
+                                        <#if doc.isCustomerEssential==1>
+        
+                                            <#elseif doc.isSysEssential==1>
+                                                <div class="jx_b">精华</div>
+                                        </#if>
+                                        <div class="ch_en">
+                                            <div class="ch_en_center font_song">切换到中文版</div>
+                                        </div>
+                                    </div>
+                                    </#if>
+                                </div>
+                                <div class="right">
+                                    <div class="rq_num browse-num" id="lib_rq_num"></div>
+                                    <div class="rq_text">阅读</div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>-->
+
+
+
+
+
+
+
+
+
+                            <div class="floor01_topic">
+                                <table width="" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="" valign="middle"><div class="video_jj_title font_yahei"> <span class="oe_en"> <#assign title_en = "">
+                                            <#list cooperationInvokeElementList as home>
+                                                <#if home.invokeElement=='onlineTitle'>
+                                                    <#assign title_en = home.content>
+                                                </#if>
+                                            </#list>
+
+                                            <#if title_en != "">
+                                                ${title_en!''}
+                                                <#else>
+                                                    ${doc.docName!''}
+                                            </#if> </span> <span class="oe_ch"> <#assign title_zh = "">
+                                            <#list cooperationInvokeElementList_zh as home>
+                                                <#if home.invokeElement=='onlineTitle'>
+                                                    <#assign title_zh = home.content>
+                                                </#if>
+                                            </#list>
+
+                                            <#if title_zh != "">
+                                                ${title_zh!''}
+                                                <#else>
+                                                    ${doc.docName!''}
+                                            </#if> </span> <#if doc??>
+                                            <#if doc.isCustomerEssential==1>
+
+                                                <#elseif doc.isSysEssential==1>
+                                                    <div class="jx_b">精华</div>
+                                            </#if>
+                                            <div class="ch_en">
+                                                <div class="ch_en_center font_song">切换到中文版</div>
+                                            </div>
+                                        </div>
+            </#if></td>
+            <td width="70" valign="middle">
+                <div class="right">
+                    <div class="rq_num browse-num" id="lib_rq_num"></div>
+                    <div class="rq_text">阅读</div>
+                </div></td>
+            </tr>
+            </table>
+            </div>
+
+
+
+
+
+
+
+
+            <#assign customer_page="//www.allinmd.cn/pages/personal/others_contribution.html?cid=${customer_auth.customerId?c}">
+                <#if isOrg??>
+                    <#assign customer_page="//www.allinmd.cn/pages/channel/organization-home.html?cid=${customer_auth.customerId?c}">
+                </#if>
+                <#if customer_auth.customerId?length==1>
+                    <#assign customer_page="javascript:;">
+                </#if>
+
+
+                <div class="author_detail" data-alcode-mod='176'>
+
+                    <div class="author_detail_bottom al-libraryInfo_head"><ul class="al-littleScoreStarBox"><li></li><li></li><li></li><li></li><li></li></ul><#if docCustomerName?trim != ""><span><a class="name-card" customerId="${doc.refCustomerId?c}" style="color:#0278cf; text-decoration:none; " target="_blank"  href="${customer_page}">${docCustomerName}</a>&nbsp;&nbsp;</span> </#if>发布于：${doc.publishTime?substring(0,4)}-${doc.publishTime?substring(5,7)}-${doc.publishTime?substring(8,10)}<#if doc.lastUpdateTime??> 更新于：${doc.lastUpdateTime?substring(0,10)}</#if></div>
+                </div>
+                <div class="floor03">
+                    <#assign is_prqPopulation=''>
+                        <#list cooperationInvokeElementList as home>
+                            <#if home.invokeElement=='prqPopulation'>
+                                <#assign is_prqPopulation = home.content>
+                            </#if>
+                        </#list>
+                        <div class="oe_en">
+                            <div class="oe_title"> <#list cooperationInvokeElementList as home><#if home.invokeElement=='name'>The original title：${home.content}</#if></#list><!-- <a href="" target="_blank">//www.allinmd.cn/html/index/video/video_home.html</a>--></div>
+                            <div class="oe_title_blue">FullCitation</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList as home><#if home.invokeElement=='fullCitation'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">Publication date</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList as home><#if home.invokeElement=='publishedDate'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">Authors</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList as home><#if home.invokeElement=='firstAuthor'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">Study Type</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList as home><#if home.invokeElement=='studyType'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">Evidence Level</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList as home><#if home.invokeElement=='evidenceLevel'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">Synopsis</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList as home><#if home.invokeElement=='synopsis'>${home.content}</#if></#list></div>
+                            <div class="zizhu_cont">
+                                <table width="" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="80px" align="center" bgcolor="#388ad7" class="bold_fff">Funding</td>
+                                        <td bgcolor="#8fbfec" width="" class="zhizhu_right"><#list cooperationInvokeElementList as home><#if home.invokeElement=='funding'>${home.content}</#if></#list></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80px" align="center" bgcolor="#388ad7" class="bold_fff">Sponsor</td>
+                                        <td bgcolor="#8fbfec" width="" class="zhizhu_right"><#list cooperationInvokeElementList as home><#if home.invokeElement=='sponsor'>${home.content}</#if></#list></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80px" align="center" bgcolor="#388ad7" class="bold_fff">Conflicts</td>
+                                        <td bgcolor="#8fbfec" width="" class="zhizhu_right"><#list cooperationInvokeElementList as home><#if home.invokeElement=='conflicts'>${home.content}</#if></#list></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="oe_title_blue">Why was this study needed now?</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList as home><#if home.invokeElement=='studyPurpose'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">What was the principal research question?</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList as home><#if home.invokeElement=='principleResearchQuestion'>${home.content}</#if></#list></div>
+                            <div class="oe_background">
+
+                                <#if is_prqPopulation==''>
+                                    <div class="oe_background_q">
+                                        <div class="oe_q_left" style="width:130px;">DataSource</div>
+                                        <div class="oe_q_right"><#list cooperationInvokeElementList as home><#if home.invokeElement=='prqDataSource'>${home.content}</#if></#list></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_s">
+                                        <div class="oe_s_left" style="width:130px;">IndexTerms</div>
+                                        <div class="oe_s_right"><#list cooperationInvokeElementList as home><#if home.invokeElement=='prqIndexTerms'>${home.content}</#if></#list></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_q">
+                                        <div class="oe_q_left" style="width:130px;">StudySelection</div>
+                                        <div class="oe_q_right" ><#list cooperationInvokeElementList as home><#if home.invokeElement=='prqStudySelection'>${home.content}</#if></#list></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_s">
+                                        <div class="oe_s_left" style="width:130px;">DataExtraction</div>
+                                        <div class="oe_s_right" ><#list cooperationInvokeElementList as home><#if home.invokeElement=='prqDataExtraction'>${home.content}</#if></#list></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_q">
+                                        <div class="oe_q_left" style="width:130px;">DataSynthesis</div>
+                                        <div class="oe_q_right" ><#list cooperationInvokeElementList as home><#if home.invokeElement=='prqDataSynthesis'>${home.content}</#if></#list></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <#else>
+                                        <div class="oe_background_q">
+                                            <div class="oe_q_left" style="width:130px;">Population</div>
+                                            <div class="oe_q_right"><#list cooperationInvokeElementList as home><#if home.invokeElement=='prqPopulation'>${home.content}</#if></#list></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_s">
+                                            <div class="oe_s_left" style="width:130px;">Intervention</div>
+                                            <div class="oe_s_right"><#list cooperationInvokeElementList as home><#if home.invokeElement=='prqIntervention'>${home.content}</#if></#list></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_q">
+                                            <div class="oe_q_left" style="width:130px;">Comparison</div>
+                                            <div class="oe_q_right"><#list cooperationInvokeElementList as home><#if home.invokeElement=='prqComparison'>${home.content}</#if></#list></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_s">
+                                            <div class="oe_s_left" style="width:130px;">Outcomes</div>
+                                            <div class="oe_s_right" ><#list cooperationInvokeElementList as home><#if home.invokeElement=='prqOutcomes'>${home.content}</#if></#list></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_q">
+                                            <div class="oe_q_left" style="width:130px;">Methods</div>
+                                            <div class="oe_q_right" ><#list cooperationInvokeElementList as home><#if home.invokeElement=='prqMethods'>${home.content}</#if></#list></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                </#if>
+
+                                <div class="oe_background_s">
+                                    <div class="oe_s_left" style="width:130px;">Time</div>
+                                    <div class="oe_s_right" ><#list cooperationInvokeElementList as home><#if home.invokeElement=='prqTime'>${home.content}</#if></#list></div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="oe_title_blue">What were the important findings?</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList as home><#if home.invokeElement=='importantFindings'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">What should I remember most?</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList as home><#if home.invokeElement=='rememberMost'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">How will this affect the care of patients?</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList as home><#if home.invokeElement=='affectCare'>${home.content}</#if></#list></div>
+
+
+                            <#assign link_en = "">
+                                <#assign name_en = "">
+                                    <#list cooperationInvokeElementList as home>
+                                        <#if home.invokeElement=='linkToJournal'>
+                                            <#assign link_en = home.content>
+                                        </#if>
+                                    </#list>
+
+                                    <#list cooperationInvokeElementList as home>
+                                        <#if home.invokeElement=='name'>
+                                            <#assign name_en = home.content>
+                                        </#if>
+                                    </#list>
+
+
+
+                                    <#if link_en != "" && name_en != "">
+                                        <div class="oe_title_blue">Link to the original</div>
+                                        <!-- <div class="yw_title"><a href="${link_en}" target="_blank">${name_en}</a></div> -->
+                                        <div class="yw_title"><a>${name_en}</a></div>
+                                    </#if>
+                        </div>
+                        <div class="oe_ch" style="display:none;">
+                            <div class="oe_title"> <#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='name'>原文标题：${home.content}</#if></#list> </div>
+                            <div class="oe_title_blue">引用信息</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='fullCitation'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">出版日期</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='publishedDate'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">作者</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='firstAuthor'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">研究类型</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='studyType'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">循证等级</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='evidenceLevel'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">摘要</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='synopsis'>${home.content}</#if></#list></div>
+                            <div class="zizhu_cont">
+                                <table width="" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="80px" align="center" bgcolor="#388ad7" class="bold_fff">资助</td>
+                                        <td bgcolor="#8fbfec" width="" class="zhizhu_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='funding'>${home.content}</#if></#list></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80px" align="center" bgcolor="#388ad7" class="bold_fff">赞助商</td>
+                                        <td bgcolor="#8fbfec" width="" class="zhizhu_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='sponsor'>${home.content}</#if></#list></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80px" align="center" bgcolor="#388ad7" class="bold_fff">利益冲突</td>
+                                        <td bgcolor="#8fbfec" width="" class="zhizhu_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='conflicts'>${home.content}</#if></#list></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="oe_title_blue">研究目的</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='studyPurpose'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">主要研究问题</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='principleResearchQuestion'>${home.content}</#if></#list></div>
+                            <div class="oe_background">
+                                <#if is_prqPopulation==''>
+                                    <div class="oe_background_q">
+                                        <div class="oe_q_left">人数</div>
+                                        <div class="oe_q_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='prqDataSource'>${home.content}</#if></#list></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_s">
+                                        <div class="oe_s_left">干预</div>
+                                        <div class="oe_s_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='prqIndexTerms'>${home.content}</#if></#list></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_q">
+                                        <div class="oe_q_left">对照</div>
+                                        <div class="oe_q_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='prqStudySelection'>${home.content}</#if></#list></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_s">
+                                        <div class="oe_s_left">结果</div>
+                                        <div class="oe_s_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='prqDataExtraction'>${home.content}</#if></#list></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_q">
+                                        <div class="oe_q_left">方法</div>
+                                        <div class="oe_q_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='prqDataSynthesis'>${home.content}</#if></#list></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <#else>
+                                        <div class="oe_background_q">
+                                            <div class="oe_q_left">人数</div>
+                                            <div class="oe_q_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='prqPopulation'>${home.content}</#if></#list></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_s">
+                                            <div class="oe_s_left">干预</div>
+                                            <div class="oe_s_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='prqIntervention'>${home.content}</#if></#list></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_q">
+                                            <div class="oe_q_left">对照</div>
+                                            <div class="oe_q_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='prqComparison'>${home.content}</#if></#list></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_s">
+                                            <div class="oe_s_left">结果</div>
+                                            <div class="oe_s_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='prqOutcomes'>${home.content}</#if></#list></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="oe_background_q">
+                                            <div class="oe_q_left">方法</div>
+                                            <div class="oe_q_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='prqMethods'>${home.content}</#if></#list></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                </#if>
+                                <div class="oe_background_s">
+                                    <div class="oe_s_left">时间</div>
+                                    <div class="oe_s_right"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='prqTime'>${home.content}</#if></#list></div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="oe_title_blue">重要发现</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='importantFindings'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">最应该记住的</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='rememberMost'>${home.content}</#if></#list></div>
+                            <div class="oe_title_blue">研究对病人的影响</div>
+                            <div class="yw_title"><#list cooperationInvokeElementList_zh as home><#if home.invokeElement=='affectCare'>${home.content}</#if></#list></div>
+
+                            <#assign link_zh = "">
+                                <#assign name_zh = "">
+                                    <#list cooperationInvokeElementList_zh as home>
+                                        <#if home.invokeElement=='linkToJournal'>
+                                            <#assign link_zh = home.content>
+                                        </#if>
+                                    </#list>
+
+                                    <#list cooperationInvokeElementList_zh as home>
+                                        <#if home.invokeElement=='name'>
+
+                                            <#assign name_zh = home.content>
+                                        </#if>
+                                    </#list>
+
+
+
+                                    <#if link_zh != "" && name_zh != "">
+                                        <div class="oe_title_blue">原文链接</div>
+                                        <!-- <div class="yw_title"><a href="${link_zh}" target="_blank">${name_zh}</a></div> -->
+                                        <div class="yw_title"><a>${name_zh}</a></div>
+                                    </#if> </div>
+
+                        <div class="video_tag" data-alcode-mod='175'>
+                            <#if docPropertyList?size gt 0>
+                                <div class="video_tag_title">标签</div>
+                                <div class="video_tag_main">
+                                    <ul>
+                                        <#list docPropertyList as property>
+                                            <li>
+                                                <div class="bq_left"></div>
+                                                <div class="bq_center">
+                                                    <a  href="//www.allinmd.cn/pages/discover/discover_tagSubject.html#tId=${property.propertyId?c}">${property.propertyName!''}</a>
+                                                </div>
+                                                <div class="bq_right"></div>
+                                            </li>
+                                        </#list>
+                                        <div class="clear"></div>
+                                    </ul>
+                                </div>
+                            </#if>
+                            <div class="video_tag_errRight"><span></span><a class="Ev-correction"  href="javascript:;">纠错</a>·<a class="Ev-report" href="javascript:;">举报</a></div>
+                            <div class="clear"></div>
+                            <!--评分详情-->
+                            <div class="al-myScorePart">
+                                <figure><span></span><ul class="al-littleScoreStarBox"><li class="ev-startItem"></li><li class="ev-startItem"></li><li class="ev-startItem"></li><li class="ev-startItem"></li><li class="ev-startItem"></li></ul></figure>
+                                <div class="al-scoreNumber al-scoreNumberLess">
+                                    <a href="javascript:;" class="al-moreTen ev-scoreDetail">已有<span></span>人评分</a>
+                                    <a href="javascript:;" class="al-lessTen">评分未达10人，暂无详情</a>
+                                </div>
+                            </div>
+                            <!--评分详情结束-->
+                        </div>
+                </div>
+                </div>
+                <div class="video_jj_bottom"></div>
+                <!-- 相关推荐 -->
+                <!--       <div class="recommend_bg" id="scrollRecommend">
+                            <div class="recommend_title">
+                                <div class="recommend_title_text font_yahei">相关推荐</div>
+                                <div class="recommend_title_qh">
+                                    <div class="v2_detail_pages_left_mr disable prev"></div>
+                                    <div class="v2_detail_pages_right_mr next"></div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="recommend_main">
+                                <ul class="recommend_content scroll">
+                                    <li class="recommend_cont01">
+                                        <div class="recommend_cont01_top">
+                                            <div class="recommend_img_icon"><img src="images/doc_icon.png" /></div>
+                                            <div class="recommend_top_text">
+                                                <div class="recommend_top_name font_yahei">经皮钢板固定治疗红股近端定治治疗红近...</div>
+                                                <div class="recommend_top_num font_yahei"><div class="yuedu_re">阅读：1022</div><div class="pointer_re"></div><div class="pl_re">评论：1022</div><div class="clear"></div></div>
+
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="recommend_tag">
+                                          <div class="recommend_tag_title">标签</div>
+                                          <div class="recommend_tag_main">
+                                            <ul>
+                                              <li>骨科</li>
+                                              <li>关节</li>
+                                              <div class="clear"></div>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> -->
+                <!-- 相关推荐 stop -->
+                </div>
+                </div>
+                </#if>
+                <!--文库被屏蔽：begin-->
+                <#if doc??&&doc.isValid=0>
+                    <div class="al-caseScreenedBox">
+                        <figure>
+                            <figcaption>${doc.docName!''}</figcaption>
+                            <p class="al-screenedImg">
+                                <img src="//img10.allinmd.cn/v3/terminal/librarySCreenedImg.png" alt=""/>
+                            </p>
+                        </figure>
+                    </div>
+                </#if>
+                <!--文库被屏蔽：end-->
+
+                <!--文库被删除：begin-->
+                <#if doc??&&doc.isValid=3>
+                    <div class="al-caseScreenedBox">
+                        <figure>
+                            <figcaption>${doc.docName!''}</figcaption>
+                            <p class="al-screenedImg">
+                                <img src="//img10.allinmd.cn/v3/terminal/libraryDeletedImg.png" alt=""/>
+                            </p>
+                        </figure>
+                    </div>
+                </#if>
+                <!--文库被删除:end--->
+
+                <!--评论区-->
+                <!--发表评论：begin-->
+                <div class="ev-detailReviewForm"></div>
+                <!--发表评论：end-->
+
+                <!--全部评论：begin-->
+                <div class="al-commentAll al-contentItem" id="reviewArea">
+                    <figure class="al-commentAll_head">
+                        <figcaption>全部评论</figcaption>
+                        <span class="al-oldNews ev-listSortOld">最旧</span>
+                        <span class="ev-listSortNew">最新</span>
+                    </figure>
+
+                    <section class="ev-list" data-alcode-mod='179'>
+                    </section>
+                </div>
+                <!--全部评论：end-->
+                <figure class="al-lookMore_comment ev-listMore" style="display:none;">
+                    查看更多
+                    <b></b>
+                </figure>
+                <!--评论区结束-->
+        </section>
+        <!--页面主体内容：end -->
+
+
+        <!--页面侧边栏：begin-->
+        <aside class="al-sideBarContent">
+            <figure class="al-sideBarRoll_box Ev-floatCard">
+                <!--作者关注-->
+                <div class="expertInfo" data-alcode-mod='176'>
+                    <a href="${customer_page}" target="_blank" class="expert_userImg Ev-cAuthLogo">
+                        <img src="${upload_author_logo.logoUrl!''}" alt=""/>
+                    </a>
+                    <a href="${customer_page}" target="_blank" class="expertName Ev-cAuthName">${customer_auth.lastName!''}${customer_auth.firstName!''}</a>
+                    <span class="followBtn Ev-followBtn"></span>
+                    <p>
+                        <span class="Ev-cAuthTitle">${customer_auth.medicalTitleShow!''}</span>
+                        <span class="expert_workPlace Ev-cAuthCompany"><#if isOrg??><#else><#if customer_auth.company!="">${customer_auth.company!''}<#else>${customer_auth.schoolName!''}</#if></#if></span>
+                    </p>
+                </div>
+                <!--作者关注结束-->
+                <!--加入讨论，收藏点赞-->
+                <div class="al-sideBar_commentBox">
+                    <i class="leftArrow"></i>
+                    <a href="javascipt:;" class="Ev-discussBtn">
+                        <figure class="discuss_container" >
+                            <b></b>
+                            <figcaption>加入讨论
+                                <span></span>
+                            </figcaption>
+                        </figure>
+
+                    </a>
+                    <figure class="like_container Ev-like_container">
+                        <b></b>
+                        <figcaption>
+                            收藏
+                            <span></span>
+                        </figcaption>
+                    </figure>
+                    <figure class="zan_container Ev-zan_container">
+                        <b></b>
+                        <figcaption>
+                            点赞
+                            <span></span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!--加入讨论结束-->
+            </figure>
+            <!--分享到-->
+            <div class="al-sideBar_shareBox al-library_shareBox">
+                <figure class="al-shareBox_head">
+                    <b class="line"></b>
+                    <span class="shareText">分享到</span>
+                    <b class="line"></b>
+                </figure>
+                <div class="shareBox_icon Ev-shareBox" data-alcode-mod='178' data-alcode-item-selector="figure">
+                    <figure class="shareLink_track ev-ttrend">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_inset.png" alt=""/>
+                        </a>
+                        <figcaption>唯医朋友圈</figcaption>
+                    </figure>
+                    <figure class="shareLink_wx ev-tweixin">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_weixin.png" alt=""/>
+                        </a>
+                        <figcaption>微信</figcaption>
+                    </figure>
+                    <figure class="shareLink_wb ev-tsina">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_weibo.png" alt=""/>
+                        </a>
+                        <figcaption>微博</figcaption>
+                    </figure>
+                    <figure class="shareLink_qqSpace ev-tqzone">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_zone.png" alt=""/>
+                        </a>
+                        <figcaption>QQ空间</figcaption>
+                    </figure>
+                    <figure class="shareLink_qq ev-tqq">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_qq.png" alt=""/>
+                        </a>
+                        <figcaption>QQ</figcaption>
+                    </figure>
+                    <section class="al-weixinErweiCodeBox al-weixinFixStyle ev-erweima hide" style="background-image:none;">
+                        <span>使用微信扫描二维码</span>
+                        <img src="//img10.allinmd.cn/v3/friends/weixin_share.jpg" alt="">
+                    </section>
+                </div>
+            </div>
+            <!--分享到结束-->
+
+            <!--参加活动-->
+            <div class="al-joinActivity hide" data-alcode-mod="324">
+                <h6></h6>
+                <a class="Ev-actUrl" href="javascript:;" >
+                    <img src="" alt=""/>
+                </a>
+
+                <span class="Ev-actName"></span>
+            </div>
+            <!--参加活动结束-->
+
+            <!--相关资源-->
+            <div class="al-resource Ev-recommendVideoList hide" data-alcode-mod='242'>
+                <h6>相关资源</h6>
+
+            </div>
+            <!--相关资源结束-->
+            <!--产品推荐-->
+            <div class="al-productRecommendBox">
+                <h6>
+                    相关产品(<span class="num"></span>)
+                    <span class="more">More</span>
+                </h6>
+                <ul class="al-productRecommendList" data-alcode-mod='248'>
+                </ul>
+            </div>
+            <!--产品推荐：end-->
+        </aside>
+        <!--页面侧边栏：end-->
+    </section>
+
+    <!--尾部-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--尾部 stop-->
+</section>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src='/js/lib/jquery/jquery.form.js'></script>
+<!--为保证IE8下正常使用，需要引入-->
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/ie8/videojs-ie8.min.js"></script>
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/video.js"></script>
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/videojs.allinmd.js"></script>
+<script src="/dest/detail/detail_comm.js"></script>
+</body>
+</html>

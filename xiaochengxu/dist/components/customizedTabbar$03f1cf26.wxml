@@ -1,0 +1,18 @@
+<template name="customizedTabbar$03f1cf26">
+  <view class="_section data-v-a186e7f0 tabbar-box"><button class="_button data-v-a186e7f0 tabbar-list" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+      <view class="_dl data-v-a186e7f0 tabbar-item {{[selected == 1 ? 'selected' : '']}}">
+        <view class="_dt data-v-a186e7f0 tabbar-icon home"></view>
+        <view class="_dd data-v-a186e7f0 tabbar-des1">首页</view>
+      </view>
+    </button> <button class="_button data-v-a186e7f0 tabbar-list" open-type="getUserInfo" bindgetuserinfo="handleProxy" wx:if="{{checkedPhone}}" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+      <view class="_dl data-v-a186e7f0 tabbar-item {{[selected == 2 ? 'selected' : '']}}">
+        <view class="_dt data-v-a186e7f0 tabbar-icon my"></view>
+        <view class="_dd data-v-a186e7f0 tabbar-des1">我的 </view>
+      </view>
+    </button> <button class="_button data-v-a186e7f0 tabbar-list" open-type="getPhoneNumber" bindgetphonenumber="handleProxy" wx:if="{{!checkedPhone}}" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+      <view class="_dl data-v-a186e7f0 tabbar-item {{[selected == 2 ? 'selected' : '']}}">
+        <view class="_dt data-v-a186e7f0 tabbar-icon my"></view>
+        <view class="_dd data-v-a186e7f0 tabbar-des1">我的 </view>
+      </view>
+    </button></view>
+</template>

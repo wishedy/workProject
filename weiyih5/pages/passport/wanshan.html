@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <link href="/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.css" rel="stylesheet">
+    <!--build:css /dest/pages/passport/wanshan.css-->
+    <link rel="stylesheet"  href="/css/common/base.css">
+    <link rel="stylesheet"  href="/css/common/main.css">
+    <!--endbuild-->
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.js"></script>
+    <!--build:js /dest/pages/passport/wanshan.js-->
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/jweixin-1.0.0.js"></script>
+    <script src="/js/comm/WeixinJSApi.js"></script>
+    <script src="/js/comm/Weixin_share.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/passport/wanshan.js"></script>
+    <!--endbuild-->
+    <title>绑定唯医帐号</title>
+    <script>
+	$(function(){
+		$(".l_logo").css("margin","" + $(window).height()*0.07 +"px auto "+  $(window).height()*0.07 + "px");
+		//$("body").css("min-height",$(window).height());
+		})
+	</script>
+</head>
+<body>
+
+<script>
+    registPageInit();
+</script>
+    <section id="loginPage" data-role="page" class="login content-page bg-white">
+        <div class="login_width">
+            <div class="v3-login-return">  返回</div>
+
+            <div class="clear"></div>
+            <div class="para">您已使用<span id="account"></span>注册过唯医 <br/>请输入当时设置的密码</div>
+
+
+            <div class="errorInfo"></div>
+            <form id="loginForm">
+
+                <div class="v3-input_parent">
+                    <div class="v3-input-wrap fix">
+                        <div class="left-img pwd"></div>
+                        <input type="password" name="passwd" placeholder="你在唯医的登录密码" data-role="none" />
+                    </div>
+                    <div class="l_warning"></div>
+                </div>
+
+                <!--  <input type="submit" value="登录" />-->
+                <div class="v3-blue-btn mt-1em" id="loginBtn">登录</div>
+                <div class="v3-links"><a href="javascript:void(0)" onclick="window.location.href='/mcall/customer/reset/password/send_email_input/?resetSite=2'">忘记密码?</a></div>
+            </form>
+        </div>
+
+    </section>
+    <!--#include file="footer.jsp"-->
+</body>
+</html>

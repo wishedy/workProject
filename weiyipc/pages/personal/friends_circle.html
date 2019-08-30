@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href='//m.allinmd.cn/dist/personal/friends_circle.html';
+        }
+    </script>
+    <title>唯医朋友圈－医学好友动态随时查看,唯医,allinmd</title>
+    <meta name="keywords" content="朋友圈，医师动态，医学好友，站内动态，分享，医学资源，医师互动，唯医，allinmd">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="唯医朋友圈－医学好友动态随时查看,唯医,allinmd">
+    <meta name="keywords" content="朋友圈，医师动态，医学好友，站内动态，分享，医学资源，医师互动，唯医，allinmd">
+    <meta name="renderer" content="webkit">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <!--build:css /dest/personal/friends_circle.css -->
+    <link rel="stylesheet" href="/css/v3/base.css" />
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css" />
+    <link rel="stylesheet" href="/css/v3/pageFooter.css" />
+    <link rel="stylesheet" href="/css/v3/pages/friends/friends_circle.css" />
+    <link rel="stylesheet" href="/css/v3/pages/personal/personal_active.css">
+    <link rel="stylesheet" href="/css/v3/pages/others/others_index.css">
+
+    <link href="/js/third-party/pagination/pager.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/auth/module.auth.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/publish/publish.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/view-big-img/module.view-big-img.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/weixin/module.weixin.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/personYouKnow/personYouKnow.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/add-removeable-group-picV3/plugin.add-removeable-group-pic.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/view-big-img/module.view-big-img.css" rel="stylesheet" type="text/css" />
+    <!--<link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>-->
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/css/column/videoPK_v2/apply_zhezhao.css" rel="stylesheet" type="text/css"/>-->
+    <!--endbuild-->
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+
+<body data-alcode="73">
+    <!--全内容容器——mainInner-->
+    <section class="al-mainInner">
+        <!-- 页头——本页面无超链接-->
+        <header class="al-header al-dis_header">
+            <section class="al-headerContainer">
+                <ul class="al-headerTopNav" data-alcode-mod='123' data-alcode-item-selector="li">
+                    <li class="al-backBtn">
+                        <a href="javascript:void(0);">返回</a>
+                    </li>
+                </ul>
+                <!--浏览记录：begin-->
+                <div class="al-headerSearchRecord">
+                    浏览记录
+                    <div class="al-browseRecordBox"  data-alcode-mod='61'>
+
+                    </div>
+                </div>
+                <!--浏览记录：end-->
+                <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                    <input type="text" />
+                    <b></b>
+                </figure>
+            </section>
+        </header>
+        <!-- 主侧边栏——Logo于此放置 -->
+        <!--#include virtual="/includes/header.jsp"-->
+
+        <!--朋友圈——主页面区域-->
+        <section class="al-mainIndex">
+            <!-- 评论区域 -->
+            <section class="al-indexInner">
+                <section class="al-indexMainContent">
+                    <section class="al-contentItem ev-nullData" style="display:none;">
+                        <header class="al-contentItemTitle al_f_circle">
+                            <h2>朋友圈</h2>
+                        </header>
+                        <section class="al-contentComment al-noFollowTips">
+                            <img src="//img10.allinmd.cn/v3/friends/no_follow_tips.png" alt="">
+                        </section>
+                    </section>
+                    <section class="al-contentItem" data-alcode-mod='120'>
+                        <header class="al-contentItemTitle al_f_circle ev-title">
+                            <h2>朋友圈</h2>
+                        </header>
+                         <section class="ev-list al-NoContributionUser">
+	                        <article>
+	                        		数据加载中...
+	                        </article>
+                        </section>
+            		</section>
+            		  <!-- pager分页 -->
+		             <section class="pagination">
+		                 <figure class="pager"></figure>
+		             </section>
+		             <!-- pager end-->
+            		
+            <!-- <section class="al-findMoreFriends">
+                <a href="javascript:void(0)">查看更多<i class="al-downArrow"></i></a>
+            </section> -->
+        </section>
+        <!-- 头像及SNS信息 -->
+        <aside class="al-indexSidebar">
+            <section class="al-discoverDoctor" data-alcode-mod='121'>
+                <h2><i class="al-bulbsIcon"></i>发现更多优秀医师</h2>
+                <a href="/pages/personal/friends_recommend.html">查看推荐医师</a>
+            </section>
+            <section class="al-discover_know" data-alcode-mod='122'>
+                <h4>你可能认识的专家</h4>
+                <section class="ev-discoverDoctor">
+                
+                </section>
+            </section>
+        </aside>
+    </section>
+    <!-- 评论——上传错误提示 -->
+    <section class="al-commentVideoUploadError">
+        <article class="al-commentVideoUploadErrorInner">
+            <i class="al-commentVideoUploadErrorIcon"></i>
+            <span>视频过大，请联系<a href="javascript:void(0)">小唯客服</a>寻求帮助</span>
+            <button class="al-commentVideoUploadErrorClose">X</button>
+        </article>
+    </section>
+
+    <!--公共底部 start-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--公共底部 End-->
+    </section>
+</section>
+    <script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+    <script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+    <script src='/js/lib/jquery/jquery.form.js'></script>
+    <script src='/js/lib/jquery/jquery.cookie.js'></script>
+    <script type="text/javascript" src="//paas.allinmd.cn/compose/ap_pcs/seed.js"></script>
+    <!--build:js /dest/personal/friends_circle.js -->
+    <script src="/js/lib/jquery/jquery-1.8.2.alpha.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/comm.ajax.js"></script>
+	<script src="/js/comm/comm.customer.js"></script>
+	<script src="/js/comm/comm.func.js"></script>
+	<script src="/js/comm/comm.file.js"></script>
+	<script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/comm.cutArray.js"></script>
+	<script src="/js/comm/comm.lightBox.js"></script>
+    <script src="/js/comm/comm.Log.js" ></script>
+    <script src="/js/comm/comm.textChange.js" ></script>
+    <script src="/js/comm/comm.ajaxExistHtml.js"></script>
+    <script src="/js/scene/scene.header.js"></script>
+
+    <script src="/js/modules/share/module.share.js"></script>
+    <!--<script src="/js/modules/auth/module.auth.js"></script>-->
+    <script src="/js/modules/user/module.user.js"></script>
+    <script src="/js/plugins/scroll-box/plugin.scroll-box.js"></script>
+    <script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+    <script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+    <!--<script src="/js/scene/column/videoPK_v2/scene.column.videoPK_2.process.js"></script>-->
+    <!--<script src="/js/modules/publish/module.select-type.js"></script>-->
+    <script src="/js/modules/publish/module.video-upload.js"></script>
+    <script src="/js/modules/publish/module.doc-upload.js"></script>
+    <!--<script src="/js/modules/publish/module.topic-upload.js"></script>-->
+    <!--<script src="/js/modules/publish/module.case-upload.js"></script>-->
+    <script src="/js/modules/list-template/module.list-template.js"></script>
+    <script src="/js/modules/validate-email/module.validate-email.js"></script>
+    <script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js" ></script>
+    <script src="/js/modules/weixin/module.welcome.js"></script>
+    <script src="/js/modules/weixin/module.welcome.auth.js"></script>
+    <script src="/js/modules/weixin/module.weixin.js"></script>
+    <script src="/js/modules/weixin/module.weixin.auth.js"></script>
+    <script src="/js/plugins/view-dialog/plugin.view-dialog.js"></script>
+    <script src="/js/plugins/expand-shrink/plugin.expand-shrink.js"></script>
+    <script src="/js/modules/list2-template/module.list2-template.js"></script>
+    <script src="/js/modules/resource-list-template/module.resource-list-template.js"></script>
+    <script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+    <script src="/js/plugins/add-removeable-group-picV3/plugin.replaceInput/plugin.replaceInput.js"></script>
+    <script src="/js/plugins/add-removeable-group-picV3/plugin.readFile/plugin.readFile.js"></script>
+    <script src="/js/plugins/add-removeable-group-picV3/plugin.add-removeable-group-pic.js"></script>
+    <script src="/js/modules/view-big-img/module.view-big-img.js"></script>
+    <script src="/js/modules/personYouKnow/module.personYouKnow.js"></script>
+    <script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+    <script src="/js/modules/background-video/module.background-video.js"></script>
+    <script src="/js/modules/review-box/module.review-box.js"></script>
+    <script src="/js/modules/review-page/module.review-page.js"></script>
+    <script src="/js/plugins/reference-resourceV3/reference-resource.js"></script>
+    <script src="/js/plugins/follow/plugin.follow.js"></script>
+
+    <script src="/js/third-party/pagination/jquery.pager.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script><script src='/js/third-party/md5.js'></script>
+    <script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+    <script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+    <!--<script src="/js/third-party/uploadify/swfobject2.2.js"></script>-->
+    <!--<script src="/js/third-party/uploadify/jquery.uploadify.js"></script>-->
+    <script src="/js/third-party/ajaxfileupload.js"></script>
+    <script src="/js/third-party/qiniu/qiniu.js"></script>
+    <script src="/js/third-party/qiniu/ui.js"></script>
+    <script src="/js/third-party/plupload/plupload.full.min.js"></script>
+    <script src="/js/third-party/plupload/i18n/zh_CN.js"></script>
+    <script src="/js/third-party/jquery-qrcode-master/src/jquery.qrcode.js"> </script>
+    <script src="/js/third-party/jquery-qrcode-master/src/qrcode.js"> </script>
+    <script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script><script src='/js/third-party/md5.js'></script>
+    <script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+
+    <script src="/js/scene/personal/scene.personal.trendsV3.js"></script>
+    <script src="/js/scene/personal/scene.personal.firendCircle.js"></script>
+    <!--endbuild-->
+
+
+</body>
+
+</html>

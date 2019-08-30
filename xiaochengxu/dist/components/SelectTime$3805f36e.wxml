@@ -1,0 +1,12 @@
+<template name="SelectTime$3805f36e">
+  <view class="_section data-v-1878f2e4 question-time">
+    <view class="_article data-v-1878f2e4 question-title">
+      {{timeObj.title}}
+    </view>
+    <picker mode="date" value="{{timeObj.timeDate}}" start="1900-01-01" end="{{endDate}}" bindchange="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_picker data-v-1878f2e4">
+      <view class="_p data-v-1878f2e4 picker-date"><label class="_span data-v-1878f2e4 picker-text {{[!timeObj.timeDate ? 'no-text' : '']}}">{{timeObj.timeDate?timeObj.timeDate:'请选择'}}</label>
+        <view class="_i data-v-1878f2e4 picker-icon"></view>
+      </view>
+    </picker>
+  </view>
+</template>

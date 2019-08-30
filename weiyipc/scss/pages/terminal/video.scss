@@ -1,0 +1,323 @@
+@charset "utf-8";
+//公共方法模块调用
+@import "library";
+//资源列表模块
+@import "../../pages/classes/classes";
+@import "../../components/_videoAnchor";
+//领取优惠券
+@import "../../components/terminalalCoupon";
+//视频
+.al-library_video{
+  clear:both;
+  height:442px;
+  padding:0;
+  margin:0 0 25px -24px;
+  width: 708px;
+  position: relative;
+  z-index: 3;
+  background-color: #000;
+  video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+.al-videoPage_text{
+  line-height:26px;
+  margin-bottom:25px;
+  color:#333333;
+  word-break:break-all;
+  span{
+    cursor: pointer;
+  }
+}
+//付费课视频终端相关样式
+.al-charge-video{
+  width: 708px;
+  height: 442px;
+  .al-charge-warn{
+    height:28px;
+    margin: 0 auto;
+    padding-top: 174px;
+    margin-bottom: 24px;
+    .icon{
+      float: left;
+      width: 24px;
+      height: 24px;
+      background: url("/images/img00/detail/chargeVideoWarn.png") no-repeat center center;
+      background-size: cover;
+      margin-right: 10px;
+      margin-left: 227px;
+      margin-top: 2px;
+    }
+    .des{
+      float: left;
+      height:28px;
+      font-size:20px;
+      font-family:PingFangSC-Regular;
+      font-weight:400;
+      color:rgba(255,255,255,1);
+      line-height:28px;
+    }
+    &.hideIcon{
+      .icon{
+        display: none;
+      }
+      .des{
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+  .al-buyCourse-btn{
+    margin: 0 auto;
+    font-size:17px;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    line-height: 42px;
+    text-align: center;
+    cursor: pointer;
+    width: 220px;
+    height: 42px;
+    background: rgba(40,153,230,1);
+    border-radius: 21px;
+    &.vip-btn{
+      margin-bottom: 18px;
+      width:220px;
+      height:42px;
+      background:linear-gradient(136deg,rgba(242,226,187,1) 0%,rgba(234,199,127,1) 100%);
+      border-radius:21px;
+      color:rgba(117,83,16,1);
+    }
+  }
+}
+
+//系列内容:begin
+.al-advContent{
+  background-color:#fff;
+  border:1px solid #E5EBF2;
+  margin:20px 0;
+  position:relative;
+  figcaption{ //系列内容
+    border-bottom: 1px solid #E4E9ED;
+    padding: 0 25px;
+    line-height: 53px;
+    font-size: 18px;
+  }
+  i{  //前进按钮
+    position:absolute;
+    width:20px;
+    height:48px;
+    background:url("//img10.allinmd.cn/v3/terminal/forwardBtn.png") center center no-repeat;
+    cursor: pointer;
+    top:125px;
+  }
+  .ev-right-move{
+    right: 0;
+    background:url("//img10.allinmd.cn/v3/terminal/backBtn.png") center center no-repeat;
+  }
+  .backBtn{  //后退按钮
+    right:0;
+    background:url("//img10.allinmd.cn/v3/terminal/backBtn.png") center center no-repeat;
+  }
+}
+.al-advContent_videoBox{
+  margin:30px 25px;
+  overflow:hidden;
+  position: relative;
+  height: 188px;
+  .videoBox{
+    position: absolute;
+    @include clearfix();
+  }
+  .al-AllVideoBtn{  //全部按钮
+    position:absolute;
+    //right:0;
+    width:80px;
+    text-align: center;
+    height:128px;
+    line-height:128px;
+    background-color:#EFF4F8;
+    color:#626f8c;
+    font-size:15px;
+    z-index:2;
+    &:after{
+      content:'';
+      display: inline-block;
+      width: 7px;
+      height: 12px;
+      background:url("//img10.allinmd.cn/v3/terminal/Arrow_all.png") center center no-repeat;
+      margin-left: 5px;
+    }
+  }
+  .al-video_container{
+    position:relative;
+    float:left;
+    margin-right:10px;
+    .padRight3{
+        span{
+          right:3px;
+          top:100px;
+        }
+    }
+    img{
+      width:192px;
+      height:128px;
+      box-sizing:border-box;
+    }
+    .videoPlayBtn{  //视频播放按钮
+      position:absolute;
+      top:22%;
+      left:36%;
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      //behavior:url("/js/third-party/pie/pie.htc");
+      background:url("//img10.allinmd.cn/v3/common/icon/video_btn.png") center center no-repeat;
+      cursor: pointer;
+    }
+    .payType{
+      position: absolute;
+      top:6px;
+      right: 6px;
+      width:32px;
+      height:17px;
+      font-size:11px;
+      color: #fff;
+      font-family:PingFangSC-Medium;
+      font-weight:500;
+      line-height: 17px;
+      background: #d82b2b;
+      text-align: center;
+      border-radius: 1px;
+    }
+    span{
+      position:absolute;
+      right:0;
+      top:103px;
+      text-align:center;
+      color:#fff;
+      width:81px;
+      height:25px;
+      line-height:25px;
+      font-size:14px;
+      background:url("//img10.allinmd.cn/v3/terminal/video_time.png") center center no-repeat;
+    }
+    p{
+      width:192px;
+      height:50px;
+      margin-top:10px;
+      line-height:24px;
+      font-size:15px;
+      color:#818181;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      cursor: pointer;
+
+    }
+  }
+  .al-videoHighLight{
+    .videoImg{
+      border: 3px solid #2899e6;
+    }
+    .videoText p{
+      color: #2899e6;
+    }
+  }
+}
+//系列内容:end
+
+
+
+//视频下载弹层：begin
+.al-downLoad_PopBox{
+  display:none;
+  //display:flex;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:7;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);  /*IE8支持*/
+}
+.al-downContainer{
+  width:450px;
+  height:262px;
+  background-color:#fff;
+  border-radius:6px;
+  //behavior:url("/js/third-party/pie/pie.htc");
+  position: relative;
+  .closePopBtn{ //关闭按钮
+    float:right;
+    width:13px;
+    height:13px;
+    background:url("//img10.allinmd.cn/v3/terminal/popCloseBtn.png") center center no-repeat;
+    margin:20px;
+    cursor: pointer;
+  }
+}
+.al-downLoadContent{
+  @include clearfix();
+  padding:40px 50px 45px;
+  figcaption{
+    color:#555;
+    margin-bottom:20px;
+  }
+  .downLoadWay{
+    float:left;
+    margin-top:10px;
+    p{
+      padding:25px 0 0 25px;
+        i{
+        display:inline-block;
+        width:28px;
+        height:32px;
+        background:url("//img10.allinmd.cn/v3/terminal/AndroidIcon.png") center center no-repeat;
+        vertical-align: middle;
+        margin-right:15px;
+        margin-top:-5px;
+      }
+      .iPhoneIcon{
+        width:25px;
+        height:31px;
+        background:url("//img10.allinmd.cn/v3/terminal/iPhoneIcon.png") center center no-repeat;
+        margin-top:-10px;
+      }
+      span{font-size:20px;}
+      .AndroidText{color:#49BD38;}
+      .iPhoneText{color:#14A7F0;}
+    }
+  }
+  .downLoad_QR{ //下载二维码
+    float:right;
+    img{
+      width:140px;
+      height:140px;
+      box-shadow:8px 8px 10px rgba(83,101,119,0.2),-5px -5px 10px rgba(83,101,119,0.2);
+    }
+  }
+}
+//视频下载弹层：end
+
+/*20170223视频简介撰写者*/
+.al-videoAbsEditor{
+  float: left;
+  font-size: 15px;
+  span{
+    color: rgba(144,144,144,1);
+    a{
+      color: rgba(98,111,140,1);
+    }
+  }
+}
+.al-advContent-title{
+  cursor: pointer;
+}
+@import "../../components/medplusDownLoad";

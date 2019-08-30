@@ -1,0 +1,557 @@
+@charset "UTF-8";
+.fixedHeader {
+    position: fixed;
+    top: 0;
+    z-index: 6;
+    width: 100%;
+}
+
+.al-indexHeader {
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 0.4rem;
+    height: 1.17333rem;
+    overflow: hidden;
+}
+
+.al-indexHeader h1 {
+    font-size: 17px;
+    color: #222222;
+}
+
+[data-dpr="2"] .al-indexHeader h1 {
+    font-size: 34px;
+}
+
+[data-dpr="3"] .al-indexHeader h1 {
+    font-size: 51px;
+}
+
+.al-indexHeader a {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    color: #515c74;
+}
+
+[data-dpr="2"] .al-indexHeader a {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-indexHeader a {
+    font-size: 39px;
+}
+
+.al-indexHeader a:link {
+    color: #515c74;
+}
+
+.al-indexHeader a:visited {
+    color: #515c74;
+}
+
+.al-indexHeader a:hover {
+    color: #515c74;
+}
+
+.al-indexHeader a:active {
+    color: #515c74;
+}
+
+.al-indexHeader .al-indexHeaderItem {
+    width: 3rem;
+    height: 100%;
+    line-height: 1.17333rem;
+    white-space: nowrap;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-last-child(1) {
+    text-align: right;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-child(1) {
+    text-align: left;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-child(2) {
+    text-align: center;
+}
+
+.al-indexHeaderItem:nth-child(1) a {
+    display: block;
+    height: 100%;
+    width: 1rem;
+    margin-left: -0.25rem;
+}
+
+.al-indexHeaderItem:nth-child(1) a:before {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.al-indexHeaderItem:nth-child(1) a img {
+    width: 0.8rem;
+    height: 0.8rem;
+    vertical-align: middle;
+}
+
+.al-indexHeaderItem:nth-child(3) a {
+    color: #626f8c;
+    font-size: 14px;
+}
+
+[data-dpr="2"] .al-indexHeaderItem:nth-child(3) a {
+    font-size: 28px;
+}
+
+[data-dpr="3"] .al-indexHeaderItem:nth-child(3) a {
+    font-size: 42px;
+}
+
+/*搜索框*/
+.searchCont {
+    background: #fff;
+    padding: 0 0 0 0.4rem;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    overflow: hidden;
+}
+
+.searchCont:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.searchCont .searchInput {
+    float: left;
+    width: 7.81333rem;
+    height: 1.12rem;
+    overflow: hidden;
+    background: rgba(205, 205, 205, 0.2) url("//img50.allinmd.cn/index/searchBorder.png") no-repeat;
+    background-size: contain;
+    font-size: 0.4rem;
+    color: #a0a0a0;
+}
+
+.searchCont .searchInput i {
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url("//img50.allinmd.cn/index/search.png") no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin: 0 0.17333rem 0 0.29333rem;
+}
+
+.searchCont button {
+    float: left;
+    background: #3CAEFA;
+    border-radius: 0 6px 6px 0;
+    width: 1.4rem;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    font-size: 0.4rem;
+    color: #FFFFFF;
+}
+
+.al-searchHead {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.al-searchResult {
+    margin-bottom: 0.26667rem;
+    background-color: #fff;
+}
+
+.al-searchResultTitle {
+    font-size: 13px;
+    color: #909090;
+    padding: 0.13333rem 0.4rem;
+    border-bottom: 1px solid #e4e9ed;
+}
+
+[data-dpr="2"] .al-searchResultTitle {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-searchResultTitle {
+    font-size: 39px;
+}
+
+.al-searchResultItem em {
+    font-style: normal;
+    color: #3598db;
+}
+
+.al-searchInputBar {
+    background-color: #EFF4F8;
+    padding: 0.26667rem 0 0.26667rem 0.4rem;
+    box-sizing: border-box;
+    position: relative;
+    text-align: left;
+    width: 115%;
+}
+
+.al-searchInputBar input {
+    -webkit-appearance: none;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    padding: 0;
+    padding-left: 1.46667rem;
+    box-shadow: none;
+    border: 1px solid #e4e9ed;
+    background: #fff;
+    box-sizing: border-box;
+    width: 7.81333rem;
+    font-size: 0.4rem;
+    color: #222;
+    font-family: "microsoft yahei";
+    border-radius: 0.05333rem 0 0 0.05333rem;
+    overflow: visible;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    background: rgba(205, 205, 205, 0.2) url("//img50.allinmd.cn/index/searchBorder.png") no-repeat;
+    background-size: cover;
+}
+
+.al-searchInputBar input:focus {
+    line-height: 0.4rem;
+}
+
+.al-searchInputBar input.focus {
+    width: 75%;
+    outline: none;
+}
+
+.al-searchInputBar #seachCompany, .al-searchInputBar #seachSchool {
+    width: 83%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    padding: 0.2rem 0 0.2rem 0.98667rem;
+    background: #FFFFFF;
+    border: 1px solid #E4E9ED;
+    border-radius: 8px;
+}
+
+.al-searchInputBar #seachCompany.focus, .al-searchInputBar #seachSchool.focus {
+    width: 75%;
+}
+
+.al-searchInputBar .al-searchCancel.show {
+    display: inline-block;
+    font-size: 0.4rem;
+    color: #3598DB;
+    vertical-align: baseline;
+}
+
+.al-searchInputBar input::-webkit-input-placeholder {
+    font-size: 14px;
+    color: #909090;
+    vertical-align: -0.04rem;
+    display: inline-block;
+    font-family: "microsoft yahei";
+}
+
+[data-dpr="2"] .al-searchInputBar input::-webkit-input-placeholder {
+    font-size: 28px;
+}
+
+[data-dpr="3"] .al-searchInputBar input::-webkit-input-placeholder {
+    font-size: 42px;
+}
+
+.al-searchInputBar .icon-searchWhite {
+    position: absolute;
+    left: 0.6rem;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+.al-searchInputBar .al-searchCancel {
+    font-size: 15px;
+    vertical-align: middle;
+    display: none;
+    padding: 0;
+}
+
+[data-dpr="2"] .al-searchInputBar .al-searchCancel {
+    font-size: 30px;
+}
+
+[data-dpr="3"] .al-searchInputBar .al-searchCancel {
+    font-size: 45px;
+}
+
+.al-searchInputBar .al-searchCancel .icon-searchCancel {
+    position: absolute;
+    left: 69%;
+    display: none;
+}
+
+.al-searchInputBar .al-searchCancel .icon-searchCancel:before {
+    vertical-align: baseline;
+}
+
+.al-searchTips {
+    border-bottom: 1px solid #d7dbde;
+    text-align: left;
+    font-size: 13px;
+    color: #909090;
+    padding-left: 0.4rem;
+    height: 0.66667rem;
+    line-height: 0.66667rem;
+    background-color: #fff;
+}
+
+[data-dpr="2"] .al-searchTips {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-searchTips {
+    font-size: 39px;
+}
+
+.al-searchResultItem {
+    margin-left: 0.4rem;
+    padding-right: 0.4rem;
+    border-bottom: 1px solid #e4e9ed;
+    background-color: #fff;
+    font-size: 0.42667rem;
+    color: #333;
+    height: 1.33333rem;
+    line-height: 1.33333rem;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.al-searchResultItem .icon-selected {
+    float: right;
+    display: none;
+    margin-right: 0.4rem;
+}
+
+.al-searchResultItem.selected .icon-selected {
+    display: block;
+}
+
+.al-searchFailed {
+    margin-top: 0.93333rem;
+    text-align: center;
+    font-size: 14px;
+    color: #5f6f8f;
+}
+
+[data-dpr="2"] .al-searchFailed {
+    font-size: 28px;
+}
+
+[data-dpr="3"] .al-searchFailed {
+    font-size: 42px;
+}
+
+.al-searchFailed a {
+    display: inline-block;
+    margin-top: 0.26667rem;
+    padding: 0.13333rem 0.6rem;
+}
+
+.al-noResult {
+    margin: 2.66667rem 0;
+}
+
+.al-searchFocusMask {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+.al-searchFocusMaskShow {
+    opacity: 1;
+    visibility: visible;
+}
+
+.al-searchHeadShow {
+    margin-top: -1.2rem;
+}
+
+.al-searchHead {
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+.al-selectorBarMask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s linear;
+    -webkit-transition: opacity 0.2s linear;
+}
+
+.al-selectorBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFF;
+    opacity: 0;
+    -ms-transform: translateY(100%);
+        transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+.ev-medBox .al-selectorBar {
+    margin-top: 10%;
+    overflow: auto;
+    height: 70%;
+    padding-bottom: 10%;
+}
+
+.al-selectorBarTitle {
+    border-bottom: 1px solid #d7dbde;
+    height: 1.17333rem;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 0.4rem;
+}
+
+.al-selectorBarTitle .al-selectorBarTitleItem {
+    font-size: 15px;
+}
+
+[data-dpr="2"] .al-selectorBarTitle .al-selectorBarTitleItem {
+    font-size: 30px;
+}
+
+[data-dpr="3"] .al-selectorBarTitle .al-selectorBarTitleItem {
+    font-size: 45px;
+}
+
+.al-selectorBarTitle .al-selectorBarTitleItem:nth-child(1) a {
+    color: #515c74;
+    text-align: left;
+}
+
+.al-selectorBarTitle .al-selectorBarTitleItem:nth-child(2) h2 {
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+    text-align: center;
+}
+
+[data-dpr="2"] .al-selectorBarTitle .al-selectorBarTitleItem:nth-child(2) h2 {
+    font-size: 32px;
+}
+
+[data-dpr="3"] .al-selectorBarTitle .al-selectorBarTitleItem:nth-child(2) h2 {
+    font-size: 48px;
+}
+
+.al-selectorBarTitle .al-selectorBarTitleItem:nth-child(3) a {
+    color: #3598db;
+    text-align: right;
+}
+
+.al-selectorBarList {
+    margin-bottom: 0.2rem;
+    padding-left: 0.4rem;
+    background-color: #fff;
+}
+
+.al-selectorBarItem {
+    border-bottom: 1px solid #e4e9ed;
+    height: 1.33333rem;
+    line-height: 1.33333rem;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.al-selectorBarItem .al-selectorBarItemName {
+    margin-left: 0.4rem;
+    color: #333;
+    font-size: 0.42667rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.al-selectorBarItem .al-selectorBarItemIcon {
+    width: 0.50667rem;
+    height: 0.50667rem;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #b4b4b4;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.al-selectorBarItem.selected .al-selectorBarItemIcon {
+    width: 0.50667rem;
+    height: 0.50667rem;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #2899e6;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent url("//img50.allinmd.cn/pages/personal/selected.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.al-selectorBarMask.on {
+    visibility: visible;
+    opacity: 1;
+}
+
+.al-selectorBarMask.on .al-selectorBar {
+    opacity: 1;
+    -ms-transform: translateY(0%);
+        transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+}

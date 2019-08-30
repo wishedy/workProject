@@ -1,0 +1,665 @@
+@charset "UTF-8";
+//个人主页
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_contentModule"; //内容组件
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_commentModule"; //我的动态组件
+@import "../../components/_bottomBtns";
+@import "../../components/_bottomSharePart"; //分享组件
+.al-mainInner {
+    transition: blur 0.2s linear;
+    -webkit-transition: blur 0.2s linear;
+    overflow-x: visible;
+    height: auto;
+}
+
+
+
+//个人主页 头部信息
+.al-personalHead {
+    width: 100%;
+    height: rem(332px);
+    background: transparent url('//img50.allinmd.cn/pages/personal/background.jpg') center center no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    position: relative;
+    .al-personalConfig {
+        font-size: rem(26px);
+        position: absolute;
+        top: rem(30px);
+        left: rem(30px);
+        display: inline-block;
+        vertical-align: middle;
+        color: #fff;
+    }
+    .al-personalGoQualification {
+        background-color: rgba(255, 255, 255, 0.2);
+        position: absolute;
+        right: rem(30px);
+        @include font-dpr(13px);
+        display: none;
+    }
+    .al-personalGoLogin {
+        background-color: rgba(255, 255, 255, 0.2);
+        position: absolute;
+        top: rem(190px);
+        left: 50%;
+        margin-left: rem(-110px);
+        display: none;
+        @include font-dpr(15px);
+        white-space: nowrap;
+    }
+}
+
+.al-personalShare {
+    position: absolute;
+    top: rem(30px);
+    right: rem(30px);
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    font-size: rem(26px);
+}
+
+.al-personalBasicMsg {
+    position: absolute;
+    left: rem(24px);
+    right: 0;
+    top: rem(152px);
+    .al-personalImg {
+        @include circle(rem(122px),
+        transparent);
+        border: rem(6px) solid rgba(255, 255, 255, 0.2);
+        float: left;
+        a {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            vertical-align: top;
+        }
+    }
+    .al-personalBasicMsgContent {
+        margin-left: rem(174px);
+        margin-top: rem(14px);
+        h2 {
+            font-size: rem(36px);
+            font-weight: normal;
+            position: relative;
+        }
+        ul {
+            list-style: none;
+            margin-top: 0;
+            height: rem(90px)
+        }
+        .al-personalSnsNum {
+            font-size: rem(30px);
+            margin-top: rem(13px);
+            display: inline-block;
+//            padding: 0 rem(30px);
+//            border-right: 1px solid #fff;
+            position: relative;
+            &:after{
+                content: '';
+                display: inline-block;
+                width: 1px;
+                height: rem(26px);
+                background: #fff;
+                vertical-align: baseline;
+                margin: 0 rem(28px);
+            }
+            &:last-child{
+                &:after{
+                    background: none;
+                }
+            }
+            .icon-newTips:after{
+                /*top: rem(-4.7px);
+                right: rem(12px);*/
+            }
+            a {
+                color: #fff;
+            }
+            &:nth-child(1) {
+                padding-left: 0
+            }
+            &:nth-last-child(1) {
+                border: none;
+            }
+            span {
+                padding-left: rem(12px)
+            }
+        }
+        .al-newTips {
+            right: rem(20px);
+            top: 0;
+            @include circle(rem(14px),red);
+        }
+    }
+}
+
+.al-personalScrollHead {
+    background-color: #fff;
+    height: rem(88px);
+    line-height: rem(88px);
+    @include font-dpr(17px);
+    font-weight: normal;
+    color: #333333;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    display: none;
+    h2 {
+        font-weight: normal;
+    }
+    .al-personalShare {
+        color: #515c74;
+        position: absolute;
+        top: 0;
+        right: rem(30px);
+        float: right;
+        &:before {
+            content: "";
+            display: inline-block;
+            width: rem(30px);
+            height: rem(30px);
+            background: url('//img50.allinmd.cn/pages/personal/share_hide.png') center center no-repeat;
+            background-size: cover;
+            vertical-align: middle;
+            margin-right: rem(10px);
+        }
+    }
+}
+
+//导航栏
+.al-personalNavbar {
+    width: 100%;
+    @include flex();
+    @include justify-content(center);
+    @include align-items(center);
+    background-color: #fff;
+    padding-top: rem(30px);
+    border-bottom: 1px solid #e4e9ed;
+    z-index: 3;
+    .al-personNavbarItem {
+        color: #777777;
+        margin: 0 rem(45px);
+        text-align: center;
+        padding: 0 rem(15px);
+        padding-bottom: rem(12px);
+        border-box: border-box;
+        display: inline-block;
+        img {
+            width: rem(42px);
+            height: rem(36px);
+            vertical-align: top;
+        }
+        .showOff {
+            display: inline-block;
+        }
+        .showOn {
+            display: none;
+        }
+        figcaption {
+            margin-top: rem(7px);
+            font-size: rem(28px);
+        }
+    }
+    .al-personNavbarItem.active {
+        color: #3598bd;
+        border-bottom: rem(4px) solid #3598db;
+        .showOn {
+            display: inline-block;
+        }
+        .showOff {
+            display: none;
+        }
+    }
+}
+
+//封面收起时——动态类
+.al-personalHeadFixed {
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    display: block;
+}
+
+.al-personalNavbarFixed {
+    position: fixed;
+    top: rem(88px);
+    img {
+        display: none;
+    }
+}
+
+//主内容——首页
+.al-personalContent {
+    margin-top: rem(20px);
+}
+
+.al-personalBrowsedPart {
+    background-color: #fff;
+    margin-top: rem(16px);
+    padding-left: rem(90px);
+}
+.al-personalBrowsedItem {
+    padding: rem(40px) rem(30px) rem(40px) 0;
+    border-bottom: 1px solid $innerBorderColor;
+    @include font-dpr(15px);
+    &:nth-last-child(1){
+        border-bottom: none;
+    }
+    a {
+        color: #333333;
+        position: relative;
+        display: block;
+        &:after {
+            content: "";
+            width: rem(28px);
+            height: rem(14px);
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: rem(-7px);
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAPCAMAAADNjy/UAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA2UExURUxpcbe3t7e3t7i4uP///7i4uLi4uLi4uLe3t9XV1bi4uLe3t7e3t7y8vLm5ubq6uri4uLe3t4lCWEwAAAARdFJOUwD5Tq8CobFe/QZW4CAXUBr3HPGeLgAAAE9JREFUGNN1yVsSwBAQBMAJCXli73/ZKCllMenfBp4VTATua2Nnkse5CzmziAU8uTzuALs687UZT09//egbp9089dh8F+iUEz7lfiaf1fMCGnED5O9wdaoAAAAASUVORK5CYII=') center center no-repeat;
+            transform: rotate(-90deg);
+            background-size: cover;
+        }
+    }
+    .al-newsNum {
+        text-align: center;
+        float: right;
+        position: static;
+        margin-right: rem(30px);
+        margin-top: rem(3px);
+        border-radius:rem(50px);
+        background-color: #F34B4B;
+        font-style: normal;
+        top: rem(-10px);
+        right: rem(12px);
+        display: block;
+        height: rem(32px);
+        max-width: rem(42px);
+        line-height: rem(32px);
+        @include font-dpr(10px);
+        color: #fff;
+        padding: 0 rem(10px);
+    }
+}
+.ev-followTag{
+    @include font-dpr(15px)
+}
+//未登录
+.al-personalNoLogin {
+    a {
+        color: $smallTextColor !important;
+    }
+}
+
+//主内容——贡献
+.al-personalContributionHeader {
+    height: rem(78px);
+    width: 100%;
+    border-bottom: 1px solid $innerBorderColor;
+    padding: 0 rem(50px);
+    background-color: #fff;
+    position: relative;
+    box-sizing: border-box;
+    @include clearfix();
+    h2 {
+        font-weight: normal;
+        @include font-dpr(12px);
+        color: $smallTextColor;
+        height: 100%;
+        display: inline-block;
+        line-height: rem(78px);
+    }
+}
+
+@import "../../components/_classSelector"; //分类筛选框
+/*.al-personalContributionOver {
+    text-align: center;
+    padding-top: rem(50px);
+    padding-bottom: rem(70px);
+    @include font-dpr(15px);
+    color: #626f8c;
+    span {
+        margin: 0 rem(12px);
+    }
+}*/
+
+.al-personalContributionNone {
+    padding: rem(184px) 0;
+    text-align: center;
+    //display: none;
+    img {
+        display: block;
+        width: rem(463px);
+        height: rem(313px);
+        margin: 0 auto;
+    }
+    button {
+        width: rem(220px);
+        height: rem(60px);
+        @include font-dpr(15px);
+        color: #2899e6;
+        border: 1px solid #2899e6;
+        border-radius: rem(50px);
+        margin-top: rem(60px);
+    }
+}
+
+//主内容——动态
+.al-personalActiveNone {
+    padding: rem(160px) 0;
+    text-align: center;
+        background-color: #eff4f8;
+    img {
+        width: rem(361px);
+        height: rem(350px);
+    }
+}
+
+.al-personalIntro {
+    background-color: #eff4f8;
+}
+
+//主内容——简历
+.al-personalIntroMsgRatio {
+    padding: rem(40px) rem(30px);
+    padding-top: rem(100px);
+    background-color: #fff;
+    margin-top: rem(20px);
+    text-align: center;
+    overflow: hidden;
+    figcaption {
+        @include font-dpr(13px);
+        color: $smallTextColor;
+        text-align: center;
+        margin-top: rem(30px);
+    }
+    .btn-primary {
+        margin-top: rem(30px);
+        display: inline-block;
+    }
+}
+
+.al-personalIntroMsgLine {
+    height: rem(10px);
+    background-color: #f4f4f4;
+    width: 100%;
+    border-radius: rem(50px);
+    position: relative;
+    .al-personalIntroLineMask {
+        background-color: #2899e6;
+        display: inline-block;
+        height: 100%;
+        border-radius: rem(50px);
+        position: absolute;
+        font-style: normal;
+        top: 0;
+        left: 0;
+        .al-personalIntroRatioNum {
+            position: absolute;
+            top: rem(-78px);
+            right: rem(-30px);
+            color: #fff;
+            font-size: rem(24px);
+            @include circle(rem(58px),
+            #ff9224);
+            line-height: rem(58px);
+            text-align: center;
+            display: block;
+            max-height: inherit;
+            &:after {
+                content: "";
+                @include triangle(rem(30px),
+                #ff9224,
+                down);
+                position: absolute;
+                bottom: rem(-24px);
+                left: 50%;
+                margin-left: rem(-15px);
+            }
+        }
+        &:after {
+            content: "";
+            @include circle(rem(20px),
+            #2899e6);
+            display: inline-block;
+            position: absolute;
+            right: rem(-10px);
+            top: 50%;
+            margin-top: rem(-10px);
+        }
+    }
+}
+
+.al-personalContentTitle {
+    height: rem(78px);
+    line-height: rem(78px);
+    h2 {
+        font-weight: normal;
+//        @include font-dpr(14px);
+        font-size: rem(30px);
+        color: #666666;
+        padding-left: rem(28px);
+        border-bottom: 1px solid $innerBorderColor;
+    }
+}
+
+.al-personalIntroConfig {
+    margin-top: rem(70px);
+    text-align: center;
+    padding-bottom: rem(90px);
+    a {
+        width: rem(200px);
+        height: rem(55px);
+        line-height: rem(55px);
+        @include font-dpr(13px);
+        border: 1px solid #2899e6;
+        color: #2899e6;
+        border-radius: rem(50px);
+        text-align: center;
+        display: inline-block;
+    }
+}
+.al-uploadFigureBox{
+    width: rem(258px);
+    height: rem(258px);
+}
+.al-middleTipsModal {
+    &:before{
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+    .al-middleTipsModalText{
+        
+        vertical-align: middle;
+    }
+    p {
+        line-height: 3;
+    }
+
+}
+
+.al-noLoginTips {
+    width: 100%;
+    height: 100%;
+    background-color: #eff4f8;
+    figure {
+        width: rem(215px);
+        height: rem(313px);
+        margin: 0 auto;
+        padding: rem(190px) 0;
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.al-comment {
+    margin-top: rem(20px);
+}
+
+.icon-config {
+    @extend %icon-config;
+}
+
+.icon-shareWhite {
+    @extend %icon-shareWhite;
+}
+
+.icon-shareDeepBlue {
+    @extend %icon-shareDeepBlue;
+}
+
+.icon-collect {
+    @extend %icon-collect;
+}
+
+.icon-follow {
+    @extend %icon-follow;
+}
+
+.icon-history {
+    @extend %icon-history;
+}
+
+.icon-comment {
+    @extend %icon-comment;
+}
+
+.icon-draft {
+    @extend %icon-draft;
+}
+
+.icon-contentAuthor {
+    @extend %icon-contentAuthor;
+}
+
+.icon-commentNum {
+    @extend %icon-commentNum;
+}
+
+.icon-likeNum {
+    @extend %icon-likeNum;
+}
+
+.icon-contentWatchedNum {
+    @extend %icon-contentWatchedNum;
+    margin-right: rem(40px);
+}
+
+.icon-commentLikeNum {
+    @extend %icon-commentLikeNum;
+}
+
+.icon-tagComment {
+    @extend %icon-tagComment;
+    margin-right: rem(40px);
+}
+
+.icon-pencilBlue {
+    @extend %icon-pencilBlue;
+}
+
+.icon-newTips {
+    @extend %icon-newTips;
+
+}
+
+.al-newsNum {
+    @extend %al-newsNum;
+}
+.al-footerBar .al-newsNum{
+    @include font-dpr(15px);
+}
+
+.al-contentNewest {
+    @extend %al-contentNewest;
+}
+
+.al-contentHotest {
+    @extend %al-contentHotest;
+}
+
+.al-contentAward {
+    @extend %al-contentAward;
+}
+
+.al-contentJoin {
+    @extend %al-contentJoin;
+}
+
+.al-contentPdf {
+    @extend %al-contentPdf;
+}
+
+/*.al-vipUser {
+    @extend %al-vipUser;
+}*/
+
+.icon-commentLikeNum {
+    @extend %icon-commentLikeNum;
+}
+
+.al-contentShow {
+    //@extend %al-contentShow;
+    font-weight: normal;
+    @include font-dpr(12px);
+    color: #626f8c;
+    vertical-align: middle;
+    @extend %al-contentShow;
+
+}
+.al-tableModuleContent .al-tableModuleContentText .al-contentShow.pickUp{
+    bottom:-0.5rem;
+    i{
+        background: url('//img50.allinmd.cn/pages/personal/small_up.png') center center no-repeat;
+    }
+}
+.icon-discoverEntryHot{
+    @extend %icon-discoverEntryHot;
+    display: none;
+}
+.icon-myLiving{
+    @extend %icon-myLiving;
+}
+.icon-myOrder{
+    @extend %icon-myOrder;
+}
+.icon-livingRemind{
+    @extend %icon-livingRemind;
+}
+@import '../../components/_releaseModule'; //发布内容
+@import "../../components/_tableModule.scss"; //表单组件
+@import "../../components/_animationModule"; //动画组件
+@import "../../components/_footerBar"; //页脚功能栏
+
+
+
+.al-vipUserV1 span, .al-vipUserV2 span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.al-vipUserV1:after, .al-vipUserV2:after{
+    vertical-align: middle;
+    margin-left: 0.2rem;
+}

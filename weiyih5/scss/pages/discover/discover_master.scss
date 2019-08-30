@@ -1,0 +1,344 @@
+@charset "UTF-8";
+//发现——权威专家
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_contentModule"; //内容区域
+//@import "../../components/_searchList"; //搜索列表
+.al-content {
+    margin-top: 0;
+}
+.clearFix{
+    clear:both;
+    display:block;
+    width:0;
+    height: 0;
+}
+.al-discoverRecommendNum {
+    & > p {
+        display: inline-block;
+        @include font-dpr(13px);
+        border-right: 1px solid $outerBorderColor;
+        color: #666;
+        padding: 0 rem(16px);
+        &:nth-child(1) {
+            padding-left: 0;
+        }
+        &:nth-last-child(1) {
+            border-right: none;
+        }
+        span {
+            padding: 0 rem(8px);
+        }
+    }
+}
+
+.al-doctorRecommendItem {
+    position: relative;
+    &:nth-last-child(1) {
+        border-bottom: none;
+    }
+}
+
+.al-doctorRecommendItem:after {
+    content: "";
+    width: rem(14px);
+    height: rem(28px);
+    position: absolute;
+    top: 50%;
+    right: rem(30px);
+    margin-top: rem(-14px);
+    display: block;
+    background: url('//img50.allinmd.cn/pages/personal/arrow_right.png') center center no-repeat;
+    background-size: cover;
+}
+
+.al-applicaptionMaster {
+    margin-top: rem(17px);
+    padding: rem(40px) 0;
+    text-align: center;
+    background-color: #fff;
+    .icon-aplMaster:before {
+        margin: 0 auto;
+    }
+    & > p {
+        @include font-dpr(13px);
+        margin-top: rem(20px);
+        margin-bottom: rem(30px);
+        color: #808080;
+    }
+    & > a {
+        height: rem(55px);
+        padding: 0 rem(50px);
+        background-color: #009cec;
+        border-radius: rem(50px);
+        text-align: center;
+        line-height: rem(55px);
+        color: #fff;
+        display: inline-block;
+        @include font-dpr(13px);
+    }
+}
+
+.al-noContentTips {
+
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    text-align: center;
+    padding: rem(380px) 0;
+    figure {
+        width: rem(466px);
+        height: rem(365px);
+        display: inline-block;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.al-doctorRecommendItem {
+    display:table;
+    width: 100%;
+    padding: rem(40px) 0;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-bottom: 1px solid $innerBorderColor;
+    &:last-child{
+        border:none;
+    }
+}
+
+#EV-searchResultContent {
+    padding-left: 0.4rem;
+    background: #fff;
+}
+
+.EV-searchResultBox {
+    display: none;
+    padding-left: 0;
+    background: transparent
+}
+
+.al-mainInner {
+    transition: margin-top 0.2s linear;
+    -webkit-transition: margin-top 0.2s linear;
+}
+
+.al-doctorRecommendHospital {
+    width: 4rem;
+}
+
+.icon-scrollShare {
+    @extend %icon-scrollShare;
+}
+
+.icon-searchWhite {
+    @extend %icon-searchWhite;
+}
+
+.icon-searchCancel {
+    @extend %icon-searchCancel;
+}
+
+.icon-aplMaster {
+    @extend %icon-aplMaster;
+}
+/*.al-vipUser{
+    @extend %al-vipUser;
+}*/
+button{
+    outline: none;
+}
+@import "../../components/_scrollShareBtn"; //浮动分享按钮
+@import "../../components/_bottomBtns"; //底部弹层组
+@import "../../components/_bottomSharePart"; //底部分享弹层
+
+.al-searchHead {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.al-searchResult {
+    margin-bottom: rem(20px);
+    background-color: #fff;
+}
+
+.al-searchResultTitle {
+    @include font-dpr(13px);
+    color: $smallTextColor;
+    padding: rem(10px) rem(30px);
+    border-bottom: 1px solid $innerBorderColor;
+}
+
+.al-searchResultItem em {
+    font-style: normal;
+    color: #3598db;
+}
+
+.al-searchInputBar {
+    background-color: #EFF4F8;
+    padding: rem(20px);
+    box-sizing: border-box;
+    position: relative;
+    text-align: left;
+    width: 115%;
+    input {
+        -webkit-appearance: none;
+        height: rem(80px);
+        line-height: rem(70px);
+        padding: 0;
+        padding-left: rem(110px);
+        box-shadow: none;
+        border: 1px solid $innerBorderColor;
+        background: #fff;
+        border-radius: rem(5px);
+        box-sizing:border-box;
+        width: 87%;
+        box-sizing: border-box;
+        @include font-dpr(14px);
+        color: #222;
+        font-family: "microsoft yahei";
+        border-radius: rem(4px);
+        vertical-align: middle;
+        overflow: visible;
+        transition: all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+        &:focus{
+            line-height: rem(30px);
+        }
+    }
+    input.focus {
+        width: 75%;
+        outline: none;
+    }
+    .al-searchCancel.show {
+        display: inline-block;
+        color: #3598db !important;
+    }
+    input::-webkit-input-placeholder {
+        @include font-dpr(14px);
+        color: $smallTextColor;
+        vertical-align: rem(-3px);
+        display: inline-block;
+        font-family: "microsoft yahei";
+
+    }
+    .icon-searchWhite {
+        position: absolute;
+        left: rem(45px);
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+    }
+    .al-searchCancel {
+        @include font-dpr(15px);
+        color: #3598db !important;
+        margin-left: rem(25px);
+        vertical-align: middle;
+        display: none;
+        padding: 0;
+        .icon-searchCancel {
+            position: absolute;
+            left: 69%;
+            display: none;
+            &:before {
+                vertical-align: baseline;
+            }
+        }
+    }
+}
+
+.al-searchTips {
+    border-bottom: 1px solid $outerBorderColor;
+    text-align: left;
+    @include font-dpr(13px);
+    color: $smallTextColor;
+    padding-left: rem(30px);
+    height: rem(50px);
+    line-height: rem(50px);
+    background-color: #fff;
+    .icon-backArrow:before {
+        transform: scale(0.7);
+        -webkit-transform: scale(0.7);
+    }
+}
+
+.al-searchResultItem {
+    margin-left: rem(30px);
+    padding-right: rem(30px);
+    border-bottom: 1px solid $innerBorderColor;
+    background-color: #fff;
+    @include font-dpr(15px);
+    color: #333;
+    height: rem(100px);
+    line-height: rem(100px);
+    display: block;
+    @include ellipsis();
+    .icon-selected {
+        float: right;
+        display: none;
+        margin-right: rem(30px);
+    }
+}
+
+.al-searchResultItem.selected {
+    .icon-selected {
+        display: block;
+    }
+}
+
+.al-searchFailed {
+    margin-top: rem(70px);
+    text-align: center;
+    @include font-dpr(14px);
+    color: #5f6f8f;
+    a {
+        display: inline-block;
+        margin-top: rem(20px);
+        padding: rem(10px) rem(45px)
+    }
+}
+
+.al-noResult {
+    margin: rem(200px) 0;
+}
+
+.al-searchFocusMask {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+.al-searchFocusMaskShow {
+    opacity: 1;
+    visibility: visible;
+}
+
+.al-searchHeadShow {
+    margin-top: rem(-97.5px)
+}
+
+// 获取焦点——头部隐藏
+.al-searchHead {
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}

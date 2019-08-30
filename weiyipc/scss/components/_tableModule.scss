@@ -1,0 +1,848 @@
+@charset "UTF-8";
+//表单模块 组件
+//Created by qiangkailiang on 2016/08/01
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV3-variables";
+.al-tableModule {
+    background-color: #fff;
+    border:1px solid #e4e9ed;
+    border-top:none;
+}
+
+
+.workCard{padding-top:30px !important;}  //证件信息 工作证栏Top值
+
+.al-tableItem {
+    padding-top:20px;
+    position: relative;
+    font-size: 0;
+            /*提示信息：begin*/
+    .al-promptContentPop{
+        &:before{
+            content: "";
+            height: 0;
+            width: 0;
+            border:8px solid transparent;
+            border-bottom:8px solid #fff;
+            position: absolute;
+            left:35px;
+            top: -15px;
+        }
+        position:absolute;
+        top:55px;
+        left:140px;
+        background-color:#fff;
+        z-index:3;
+        padding:44px 50px 30px;
+        text-align: center;
+        line-height:normal;
+        cursor: auto;
+        border:1px solid #e4e9ed;
+        box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.14), -3px -2px 8px rgba(0, 0, 0, 0.14);
+        border-radius:4px;
+        behavior: url("/js/third-party/pie/pie.htc");
+        font-size: 16px;
+        div{ color:#333;}
+        .al-promptHead{
+            font-weight: bold;
+            margin-bottom:20px;
+            margin-left:-20px;
+            b{
+                display:inline-block;
+                width:20px;
+                height:20px;
+                background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_success.png') center center no-repeat;
+                vertical-align: text-top;
+                margin-right:8px;
+            }
+        }
+        span{
+            display:block;
+            margin-top:26px;
+            color:#b4b4b4;
+        }
+    }
+            /*提示信息：end*/
+    p {
+        width: 70px;
+        font-size: 16px;
+        text-align: right;
+        color: $mainContentColor;
+        display: inline-block;
+        white-space: nowrap;
+        vertical-align:top;
+    }
+    @at-root {
+        .al-tableItemContent {
+            display: inline-block;
+            margin-left: 40px;
+            color: $mainTitleColor;
+            position: relative;
+            font-size:17px;
+            max-width:500px;
+            b {
+                display: block;
+                font-weight: normal;
+                color: #333;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .al-tablePersonalMsg {
+        font-size: 16px;
+        padding:16px 24px 22px;
+        color: #555;
+        line-height:32px;
+        display: block;
+        margin-top:-20px;
+        word-break:break-word;
+        .al-contentCollapse {
+            margin-left: 20px;
+        }
+    }
+}
+
+.al-tableItemTagsList {
+    display: inline-block;
+    margin-left: 40px;
+    font-size: 0;
+    width: 520px;
+    .al-tableItemTagItem {
+        display: inline-block;
+        margin-right: 12px;
+        padding: 0 15px;
+        height:36px;
+        line-height:36px;
+        margin-bottom:5px;
+        color: #808080;
+        font-size: 15px;
+        border: 1px solid #e6e8ed;
+        border-radius: 30px;
+        behavior: url("/js/third-party/pie/pie.htc");
+        position: relative;
+    }
+}
+
+.al-personalMsgConfig {
+    float: right;
+    font-size: 14px;
+    color: #38a1f0;
+    cursor: pointer;
+    margin-top:5px;
+}
+
+.al-addTableMsg {
+    text-align: center;
+    width: 100%;
+    font-size: 17px;
+    color: #3598db;
+    background-color:#fff;
+    border-left:1px solid #e4e9ed;
+    border-right:1px solid #e4e9ef;
+    box-sizing: border-box;
+    p {
+        margin: 0 24px;
+        cursor: pointer;
+        border-bottom: 1px solid #ecf0f2;
+        line-height:75px;
+
+    }
+    i {
+        margin-right: 6px;
+        background: url("/images/img10/v3/common/icon/Add.png") no-repeat;
+        display: inline-block;
+        vertical-align: middle;
+        margin-top:-3px;
+      width: 14px;
+      height: 14px;
+    }
+}
+
+.al-tablePadding {
+    padding:0 24px 24px;
+    .al-tableItem{padding-top:40px;}
+}
+
+.al-tableWriteComplate {
+    padding: 24px;
+    cursor: pointer;
+    position: relative;
+    &:hover {
+        background-color: #fafbfd;
+        .al-tableWriteComplateConfig {
+            display: block;
+        }
+    }
+    .al-tableIconJob {
+        width: 27px;
+        height: 24px;
+        display: inline-block;
+        vertical-align:top;
+        margin-top:14px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/table_icon_job.png') center center no-repeat;
+    }
+    .al-tableIconMsg {
+        width: 31px;
+        height: 24px;
+        display: inline-block;
+        vertical-align:top;
+        margin-top:13px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/table_icon_edu.png') center center no-repeat;
+    }
+    .al-tableIconConEdu {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        vertical-align:top;
+        margin-top:14px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/table_icon_conEdu.png') center center no-repeat;
+    }
+    .al-tableIconAward {
+        width: 28px;
+        height: 27px;
+        display: inline-block;
+        vertical-align:top;
+        margin-top:14px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/table_icon_award.png') center center no-repeat;
+    }
+    .al-tableIconFoud {
+        width: 26px;
+        height: 26px;
+        display: inline-block;
+        vertical-align:top;
+        margin-top:13px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/table_icon_foud.png') center center no-repeat;
+    }
+    .al-tableIconSociety {
+        width: 26px;
+        height: 26px;
+        display: inline-block;
+        vertical-align:top;
+        margin-top:12px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/table_icon_society.png') center center no-repeat;
+    }
+    .al-tableIconMonographs {
+        width: 23px;
+        height: 27px;
+        display: inline-block;
+        vertical-align:top;
+        margin-top:14px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/table_icon_monographs.png') center center no-repeat;
+    }
+    .al-tableIconPatent {
+        width: 22px;
+        height: 35px;
+        display: inline-block;
+        vertical-align:top;
+        margin-top:10px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/table_icon_patent.png') center center no-repeat;
+    }
+    .al-tableWriteContent {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 15px;
+        max-width:618px;
+        h2 {
+            font-weight: normal;
+            font-size: 17px;
+            color: #333;
+            line-height:26px;
+            word-break: break-all;
+            margin-bottom:5px;
+        }
+        span {
+            font-size: 15px;
+            color: #777;
+            vertical-align: middle;
+            display: inline-block;
+            line-height:22px;
+            word-break: break-all;
+        }
+        .al-infor{padding-top:10px;}
+        .al-timeRange:before {
+            content: "";
+            @include square(4px);
+            display: inline-block;
+            vertical-align: middle;
+            background-color: $linkContentColor;
+            margin-right: 6px;
+            margin-left: 20px;
+        }
+    }
+}
+
+.al-personalQualificationBtn {
+    margin-top: 20px;
+    background-color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    height: 137px;
+    width: 100%;
+    box-sizing: border-box;
+    display: none;
+    p {
+        margin-bottom: 20px;
+    }
+    button {
+        background-color: #ff9224;
+        color: #fff;
+        font-size: 16px;
+        width: 180px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50px;
+        cursor: pointer;
+        &:hover {
+            background-color: #ffa245;
+        }
+        &:active {
+            background-color: #ee8822;
+        }
+    }
+}
+
+//二次认证弹层：begin
+/*
+    .al-two_authenticate{
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:5;
+        width:100%;
+        height:100%;
+        //background-color: rgba(0, 0, 0, 0.5);
+        .al_twoSureBox{
+            width:500px;
+            height:258px;
+            box-sizing: border-box;
+            background-color:#fff;
+            border:1px solid #e4e9ed;
+            border-radius: 4px;
+            margin:315px auto 0;
+            padding:0 21px 30px;
+            text-align: center;
+            .al-popCloseBtn{
+                float:right;
+                cursor: pointer;
+                width: 13px;
+                height: 13px;
+                background: transparent url("//img10.allinmd.cn/v3/common/icon/icon_close.png") center center no-repeat;
+                margin-top:17px;
+            }
+            figcaption{
+                margin-top:58px;
+                color:#333;
+                font-weight: bold;
+            }
+            >p{
+                color:#333;
+                padding-left:40px;
+                text-align:left;
+                line-height:26px;
+                margin-top:16px;
+            }
+            footer{
+                margin-top:50px;
+                cursor: pointer;
+                font-size:15px;
+                span{
+                    display: inline-block;
+                    width:80px;
+                    height:34px;
+                    line-height:34px;
+                    color:#fff;
+                    background-color:#2899E6;
+                    border-radius: 4px;
+                }
+                .al-againSure{
+                    display: inline-block;
+                    margin-left:15px;
+                    color:#bdc3cf;
+                }
+            }
+        }
+    }
+    */
+//二次认证弹层：end
+
+.al-noQualificationStatueTips {
+    padding-top: 126px;
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    height: 350px;
+    border:1px solid #E4E9ED;
+    p {
+        color: #555;
+        font-size: 17px;
+        margin-bottom: 20px;
+    }
+    .al-auth-ing{
+        width: 100px;
+        height: 160px;
+        margin: -45px auto;
+        //border:1px solid #333;
+        background: url("/images/img10/authentication/authing.png") no-repeat center;
+        background-size: contain;
+    }
+    button {
+        background-color: #ff9224;
+        color: #fff;
+        font-size: 16px;
+        width: 180px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50px;
+        cursor: pointer;
+        &:hover {
+            background-color: #ffa245;
+        }
+        &:active {
+            background-color: #ee8822;
+        }
+    }
+}
+
+.al-tableModule{
+    .al-detailedTableItem{
+        border-left:none!important;
+        border-right:none!important;
+    }
+}
+.al-credentialsUploadBox{
+    .al-tableDetailedBtn{background-color:#f3f6f9;}
+}
+.al-detailedTableItem {
+    padding:5px 24px 0;         //设置页
+    margin:0 -24px 0 -24px;          //设置页
+    border-top:1px solid #ecf0f2;   //设置页
+    border-bottom: 1px solid #ecf0f2;
+    span {
+        margin-left: 40px;
+    }
+    p {
+        width: 76px;
+        text-align: right;
+        height: 34px;
+        line-height: 34px;
+        white-space: nowrap;
+        font-size: 16px;
+        color: $mainContentColor;
+        display: inline-block;
+    }
+    input {
+        width: 230px;
+        height: 34px;
+        line-height: 34px;
+        font-family: "microsoft yahei";
+        font-size: 15px;
+        padding-left: 10px;
+        border-radius: 3px;
+        behavior: url("/js/third-party/pie/pie.htc");
+        position:relative;
+        border: 1px solid #dbdbdb;
+    }
+    .al-tableErrorTips {
+        font-size: 13px;
+        font-family: "宋体";
+        color: #f34b4b;
+        margin-left: 10px;
+        display: none;
+        width: auto !important;
+        i {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            float: none;
+            vertical-align: middle;
+            margin-right: 4px;
+            background: transparent url('//img10.allinmd.cn/v3/common/icon/error_tips.png') center center no-repeat;
+        }
+    }
+}
+
+.al-detailedTableItem .error {
+    input {
+        border: solid 1px #f34b4b;
+        box-shadow: 0 0 3px #f34b4b;
+    }
+    .al-tableErrorTips {
+        display: inline-block;
+    }
+    span {
+        margin-left: 40px;
+    }
+}
+
+.al-erweiBind {
+    display: block;
+}
+
+.al-erweiBindBox {
+    position: absolute;
+    background-color: #fff;
+    width: 176px;
+    height: 203px;
+    text-align: center;
+    color: $smallContentColor;
+    font-size: 13px;
+    box-shadow: 8px 8px 20px #c5ced6, -2px -2px 20px #c5ced6;
+    z-index: 1;
+    left: 109px;
+    top: 57px;
+    &:before {
+        content: "";
+        @include triangle(16px,
+        #fff,
+        up);
+        position: absolute;
+        top: -16px;
+        left: 44px;
+    }
+    figcaption {
+        margin-bottom: 20px;
+        text-align: center;
+        display: inline;
+    }
+    img {
+        @include square(120px);
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.al-sendValidateCodeBtn {
+    behavior: url("/js/third-party/pie/pie.htc");
+    position: relative;
+    width: 120px;
+    height: 35px;
+    line-height:35px;
+    color: #333;
+    font-size: 14px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    margin-left: 10px;
+    @include linear-gradient(to top,
+    #f2f2f2,
+    #ffffff);
+    -pie-background: linear-gradient(to bottom, #f2f2f2, #ffffff);
+    cursor: pointer;
+}
+
+.al-sendValidateSended {
+    color: $smallContentColor;
+}
+
+.al-personalAdviceSubmit {
+    border-radius: 50px;
+    behavior: url("/js/third-party/pie/pie.htc");
+    position:relative;  //IE
+    width: 75px;
+    height: 30px;
+    line-height:30px;
+    background-color:#2899e6;
+    margin-top:20px;
+    margin-right:6px;
+    color: #fff;
+    cursor: pointer;
+    &:hover{
+        background-color: #52a9e4;
+    }
+}
+
+.al-personalAdviceCancel {
+    color: #aaa;
+    cursor: pointer;
+}
+
+//单选框
+.al-tableItemRadio {
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    margin-right: 18px;
+    i {
+        width:16px;
+        height:16px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    .al-tableRadioOff {
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_selectOff.png') center center no-repeat;
+    }
+    .al-tableRadioOn {
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_selectOn.png') center center no-repeat;
+    }
+}
+
+.al-tableItemSelector {
+    behavior: url("/js/third-party/pie/pie.htc");
+    height: 26px;
+    border-radius: 5px;
+    border: 1px solid #dbdbdb;
+    @include linear-gradient(to top,
+    #f2f2f2,
+    #ffffff);
+    display: inline-block;
+    position: relative;
+    -pie-background: linear-gradient(to bottom, #f2f2f2, #ffffff);
+    select.al-year {
+        //$w: 94px;
+        //width: $w;
+        min-width: 94px;
+        padding: 0 25px;
+    }
+    select::-ms-expand { display: none; }
+    select {
+        height: 26px;
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance:none;
+        appearance:none;
+        background: none;
+        cursor: pointer;
+    }
+    select.al-month,
+    select.al-day {
+        $w: 84px;
+        width: $w;
+        padding-left: 20px;
+    }
+    b {
+        font-size: 15px !important;
+        position: absolute;
+        right: 15px;
+        bottom: -14px;
+        cursor: pointer;
+    }
+}
+
+.al-tableTagConfigItem {
+    behavior: url("/js/third-party/pie/pie.htc");
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+    margin-top: 3px;
+    margin-bottom:2px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 12px;
+    font-family: "宋体";
+    display: inline-block;
+    cursor: pointer;
+    margin-right:5px;
+    i {
+        font-style: normal;
+        margin-left: 10px;
+    }
+}
+
+//选中输入标签按钮
+.al-clickJumpSelectBox {
+    width: 230px;
+    min-height: 34px;
+    height: auto;
+    font-family: "microsoft yahei";
+    font-size: 15px;
+    padding-left: 10px;
+    border-radius: 3px;
+    border: 1px solid #dbdbdb;
+    figure{
+        line-height: 26px;
+        margin-top: 4px;
+    }
+}
+
+//标签选择弹框
+.al-tagSelectorBox {
+    behavior: url("/js/third-party/pie/pie.htc");
+    width: 450px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 8px 8px 20px #c5ced6, -2px -2px 20px #c5ced6;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 40px;
+    .al-tagSelectorBoxTitle {
+        font-size: 18px;
+        color: #333;
+        padding:18px 24px;
+        border-bottom: 1px solid $innerBorderColor;
+        .al-tagSelectorBoxCloseBtn {
+            float: right;
+            background: url("/js/modules/user/images/close.png") no-repeat;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+          &:hover{
+            -webkit-animation: btnRotate 1.5s linear ;
+            background: url(/js/modules/user/images/close-hover.png);
+          }
+          @-webkit-keyframes btnRotate {
+            0% {
+              -webkit-transform: rotateZ(0deg);
+            }
+            100% {
+              -webkit-transform: rotateZ(360deg);
+            }
+        }
+
+
+      }
+    }
+    .al-tagSelectorItem {
+        padding: 20px 25px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid $innerBorderColor;
+        button {
+            padding: 6px 12px;
+            border: 1px solid #dbdbdb;
+            border-radius: 50px;
+            background-color: #fff;
+            color: $smallContentColor;
+            font-size: 15px;
+            cursor: pointer;
+            margin-right: 12px;
+            margin-bottom: 12px;
+            &:hover {
+                background-color: #f9f6fb;
+            }
+        }
+        button.active {
+            color: #fff;
+            background-color: $linkContentColor;
+        }
+    }
+
+    .al-tagSelectorBoxFootBtn {
+        padding: 20px 18px;
+    }
+    .al-personalAdviceSubmit {
+        margin-top: 0;
+    }
+}
+
+.al-tagSelectorList {
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        @include square(4px);
+        background-color: $linkContentColor;
+        margin-right: 7px;
+    }
+    span {
+        margin-left: 0;
+        margin-right: 10px;
+        margin-bottom:6px;
+        font-size: 15px;
+        display: inline-block;
+        cursor: pointer;
+        color: #333;
+        padding: 5px 7px;
+        &:hover {
+            background-color: #f6f9fb;
+        }
+    }
+    span.active{
+        font-size: 15px;
+        color: #3598db;
+    }
+}
+
+.al-tableTextarea {
+    width:638px;
+    height:114px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    behavior: url("/js/third-party/pie/pie.htc");
+    position: relative;
+    resize: none;
+    padding:10px;
+    font-size:16px;
+    color:#555;
+    margin:30px  24px 0;
+}
+
+.al-tableTextareaShort {
+    width:515px;
+    height:74px;
+    margin-top:0;
+    vertical-align: top;
+}
+
+.al-personal{
+    input:focus {
+        border: 1px solid #3598db !important;
+        box-shadow: 1px 1px 3px rgba(53, 152, 219, 0.8), -1px -1px 3px rgba(53, 152, 219, 0.8);
+    }
+}
+
+.al-tableItemConnectText {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: normal;
+    color: $smallContentColor;
+    font-size: 16px;
+    font-style: normal;
+}
+
+.al-tableItemCheckbox {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: normal;
+    color: #333;
+    font-size: 16px;
+    font-style: normal;
+    margin-left: 10px;
+    i {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.al-tableItemCheckboxOff i {
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_checkbox_off.png') center center no-repeat;
+}
+
+.al-tableItemCheckboxOn i {
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_checkbox_on.png') center center no-repeat;
+}
+
+.al-tableWriteComplateConfig {
+    position: absolute;
+    right: 32px;
+    bottom: 37px;
+    display: none;
+    a {
+        display: inline-block;
+        font-size: 14px;
+        color:#A3A7AA;
+    }
+    .al-tableWriteComplateConfigBtn {
+        font-size: 14px;
+        color: #3598db;
+        padding-right:25px;
+    }
+}
+
+// 11.14    已认证用户只可以修改年龄、日期
+.al_tableAuth{
+    .al-alreadyAuth_userName,.al-alreadyAuth_title,.al-alreadyAuth_unit{
+        height:34px;
+        line-height:34px;
+    }
+}
+
+

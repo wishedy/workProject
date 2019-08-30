@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="Keywords" content="病例专题，视频专题，活动详情，骨科专题，学术专题，文献专题，手术汇总，">
+    <meta charset="UTF-8">
+    <title>活动详情专题页－唯医，allinmd</title>
+    <link rel="stylesheet" href="/css/column/videoPK.css">
+    <script type="text/javascript">
+
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/html/activity/1449026372937/activity_details.html';
+        }
+    </script>
+    <!--   <script type="text/javascript" src="/js/comm/domain_new2.js"></script>-->
+
+    <meta name="data-alcode" content="a2">
+</head>
+<body data-alcode="269">
+<div class="videoPK_h5">
+    <div class="casePK_title_Ios" id="browser_title" style="background-color:rgb(12,142,243)">
+        <div class="casePK_titleCon" data-alcode-mod='531'>
+            <div class="casePK_l"><a href="//m.allinmd.cn" data-ajax="false" style="background-image:url(/images/img50/column/videoPK/home_pk.png)"></a></div>
+            <div class="casePK_c">病例&视频评选活动</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--新版广告位-->
+    <#if adPosition_list??>
+        <#list adPosition_list as adPositionList>
+            <#if adPositionList_index==0>
+                <#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+                    <#if v_adPositionAttachmentList??>
+                        <#list v_adPositionAttachmentList as list>
+                            <div class="header_pk" style="padding-top: 2.7em;background-color:rgb(12,142,243)"><img src="//img99.allinmd.cn/${list.adAttUrl}"  alt="" width="100%" class="pk_banner"></div>
+                        </#list>
+                    </#if>
+            </#if>
+        </#list>
+    </#if>
+    <div class="casePK_nav">
+        <ul data-alcode-mod='507'>
+            <#if (activityMenu??)&&(activityMenu?size>0)>
+                <#list activityMenu as MenuList>
+                    <#if MenuList_index  ==3>
+                        <li><a href="//m.allinmd.cn/pages/column/videoPK/m/works.html?activityId=1449026372937" data-ajax="false">参选作品</a></li>
+                    </#if>
+                    <li <#if MenuList_index  ==1>class="cur"</#if>><a href="${MenuList.activityMenuUrl}" data-ajax="false">${MenuList.activityMenuName}</a></li>
+                </#list>
+            </#if>
+            <li><a href="javascipt:;" data-ajax="false">我的作品</a></li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+    <!--新闻01-->
+    <#if (cms_news_list??)&&(cms_news_list?size>0)>
+        <#list cms_news_list as newsList>
+            <#if newsList_index==0>
+                ${newsList.newsBody}
+            </#if>
+        </#list>
+    </#if>
+
+    <!--第四块:推荐专家-->
+
+    <div class="act_con" style="padding-bottom: 0;">
+        <div class="content_pk act_bg_new">
+            <div class="content_main" style="width:100%;padding-bottom: 4em;" data-alcode-mod='533'>
+                <h2 class="main_title main_title_zj"></h2>
+                <div class="expert_nav">
+                    <#if (columnList??)&&(columnList?size>0)>
+                        <#list columnList as cList>
+                            <#if cList_index  ==0>
+                                <li><div class="new">${cList.columnName}</div></li>
+                                <#else>
+                                    <li><div> ${cList.columnName}</div></li>
+                            </#if>
+                        </#list>
+                    </#if>
+                </div>
+                <!--推荐会员start-->
+                <#if activityDetial??>
+                    <#list activityDetial as recommList>
+                        <#assign v_id = recommList.id>
+                            <#assign a_list = recommList.recommendCustomerList>
+                                <#if recommList_index == 0>
+                                    <div class="expert_list_cont">
+                                        <#else>
+                                            <div class="expert_list_cont" style="display:none;">
+                                </#if>
+                                <p class="have">有 ${a_list?size}位专家评委</p>
+                                <ul class="zj_list">
+                                    <!--推荐会员数据-->
+                                    <#list a_list as c_List>
+                                        <!--多6判断-->
+                                        <#if c_List_index <= 6>
+
+                                        <#if c_List_index % 2 ==0>
+                                            <li>
+                                                <h3><a href="//m.allinmd.cn/allin/personal/app/#/index?cid=${c_List.refId?c}" >${c_List.refName}</a></h3>
+                                                <div>${c_List.remark}</div><div>${c_List.recommendUrl}</div>
+                                            </li>
+                                            <#else>
+                                                <li class="new">
+                                                    <h3><a href="//m.allinmd.cn/allin/personal/app/#/index?cid=${c_List.refId?c}" >${c_List.refName}</a></h3>
+                                                    <div>${c_List.remark}</div><div>${c_List.recommendUrl}</div>
+                                                </li>
+
+                                        </#if>
+
+                                        <#else>
+                                            <#if c_List_index % 2 ==0>
+                                                <li style="display: none;">
+                                                    <h3><a href="//m.allinmd.cn/allin/personal/app/#/index?cid=${c_List.refId?c}" >${c_List.refName}</a></h3>
+                                                    <div>${c_List.remark}</div><div>${c_List.recommendUrl}</div>
+                                                </li>
+                                                <#else>
+                                                    <li class="new" style="display: none;">
+                                                        <h3><a href="//m.allinmd.cn/allin/personal/app/#/index?cid=${c_List.refId?c}" >${c_List.refName}</a></h3>
+                                                        <div>${c_List.remark}</div><div>${c_List.recommendUrl}</div>
+                                                    </li>
+
+                                            </#if>
+
+                                            <#if !c_List_has_next>
+                                </ul>
+                                <div class="expert_list_m">
+                                    <a href="javascript:void(0)" class="more" style="font-size:0.8125em;">查看更多</a>
+                                </div>
+            </div>
+            </#if>
+            </#if>
+            </#list>
+
+            </#list>
+            </#if>
+
+            <!--推荐会员end-->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--新闻02-->
+<#if (cms_news_list??)&&(cms_news_list?size>0)>
+    <#list cms_news_list as newsList>
+        <#if newsList_index==1>
+            ${newsList.newsBody}
+        </#if>
+    </#list>
+</#if>
+
+<!-- share Button END -->
+<div class="share_popup"><a href="#" id="share"><img src="/images/img50/column/videoPK/share.png" alt=""></a></div>
+<a href="#" class="fhdb"><img src="/images/img50/column/videoPK/retrun.png" alt="" width="100%"></a>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/comm/jweixin-1.0.0.js"></script>
+<script src="/js/comm/WeixinJSApi.js"></script>
+<script src="/js/column/videoPK/m/PKcomm.js"></script>
+<script src="/js/column/eventdetails_fn_share.js" type="text/javascript" charset="utf-8"></script>
+
+</div>
+</body>
+</html>

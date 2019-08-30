@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="骨科书籍，骨科电子书，在线阅读，电子书阅读，唯医allinmd"/>
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <!--build:css /dest/eBook/eBook_pdf.css-->
+    <link rel="stylesheet" href="/css/v3/base.css">
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/auth/module.auth.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/float-relation/module.float-relation.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" />
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+    <!--endbuild-->
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body data-alcode="380">
+    <section style="height:100%">
+        <iframe id="pdf" src="" width="100%" height="100%" frameborder="0"></iframe>
+    </section>
+</body>
+</html>
+
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<!--build:js /dest/eBook/eBook_pdf.js-->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<!--<script src="/js/comm/comm.track.js"></script>-->
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<!--<script src="/js/scene/scene.header.js"></script>-->
+<script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<!--<script src="/js/modules/auth/module.auth.js"></script>-->
+<script src="/js/modules/user/module.user.js"></script>
+<script src="/js/modules/background-video/module.background-video.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+<!--endbuild-->
+
+<script>
+    $(function(){
+        var t = comm.getpara().title;
+        document.title = t + "- 电子书阅读,唯医,allinmd";
+        var onLoginClose;
+        onLoginClose = function () {
+            if (window.history.length > 1) {
+                history.back();
+            } else {
+                window.location.href = "/";
+            }
+        };
+        user.login({
+            callback: function () {
+                var link = '';
+                if(comm.browser.isIe8()||comm.browser.isIe9()){
+                    link = comm.getpara().link;
+                }else{
+                    link = window.atob(comm.getpara().link);
+                }
+
+                if(location.protocol.lastIndexOf("https")>-1){
+                    link = link.replace("http","https");
+                }
+                var attUrl = '//d.allinmd.cn/docplugins/web/viewer.html?file='+link+'';
+                $("#pdf").attr('src',attUrl);
+            },
+            scene: privilegeSceneConst.eSceneTypeDocDetail,
+            onClose: onLoginClose,
+            onAuthCancel: "back"      // 当点暂不认证时的处理、回退到来源页
+        });
+    });
+</script>
+
+

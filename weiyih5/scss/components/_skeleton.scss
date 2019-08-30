@@ -1,0 +1,195 @@
+@charset "UTF-8";
+@import "../../scss/modules/common-modules";
+@import "../variables/_allinmdV2-variables";
+.al-skeleton-container{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right: 0;
+  background: #fff;
+  z-index: 1000;
+  overflow: hidden;
+  .al-skeleton-banner{
+    margin: rem(16px) auto;
+    width: 94vw;
+    height: rem(290px);
+    background: #F6F6F6;
+    border-radius: rem(6px);
+  }
+  .al-skeletonTab-list{
+    width: 94vw;
+    margin: 0 auto;
+    height: rem(220px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .al-skeletonTab-item{
+      width: rem(136px);
+      height: rem(158px);
+      background: #F6F6F6;
+      border-radius: rem(6px);
+    }
+  }
+  .al-skeletonContent{
+    width: 94vw;
+    min-height: 274px;
+    height: auto;
+    margin: 0 auto;
+    .al-skeletonContent-section{
+        width: 100%;
+        height: rem(274px);
+        margin: 0 auto;
+      &.noImage{
+        height: rem(220px);
+      }
+        .al-skeletonContent-title{
+          margin-bottom: rem(20px);
+          width: 100%;
+          height: rem(33px);
+          .icon{
+            float: left;
+            height: rem(33px);
+            width: rem(86px);
+            border-radius: rem(6px);
+            background: #F6F6F6;
+          }
+          .title{
+            height: rem(33px);
+            float: right;
+            width: rem(110px);
+            border-radius: rem(6px);
+            background: #F6F6F6;
+          }
+        }
+      .al-skeletonContent-center{
+        width: 100%;
+        height: rem(140px);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .des{
+          width: rem(480px);
+          height: rem(140px);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          &.word{
+            width: 100%;
+            .content-name{
+              width: 100%;
+            }
+          }
+          .content-word{
+            height: rem(32px);
+            width: 80%;
+            border-radius: rem(6px);
+            background: #F6F6F6;
+          }
+          .content-name{
+            height: rem(45px);
+            width: rem(300px);
+            border-radius: rem(6px);
+            background: #F6F6F6;
+            &.content-name-right{
+              width: 100%;
+            }
+          }
+          .author-info{
+            width: 100%;
+            height: rem(32px);
+            .author{
+              width: rem(160px);
+              height: rem(32px);
+              float: left;
+              .author-name{
+                width: rem(100px);
+                border-radius: rem(6px);
+                background: #F6F6F6;
+                height: rem(32px);
+                float: left;
+              }
+            }
+
+          }
+          .reviewNum{
+            margin-left: rem(10px);
+          }
+        }
+        .al-skeletonContent-contentImgBox{
+          width: rem(210px);
+          height: rem(140px);
+          border-radius: rem(6px);
+          background: #F6F6F6;
+        }
+      }
+    }
+  }
+}
+/*20190129 Change by HJ
+增加活动专题特有灰度骨架屏样式
+*/
+.p_parent{
+  min-height:10rem;
+  background-color: #ffffff;
+  padding:0.4rem 0.4rem 0.6rem;
+}
+.p_BgColor{
+  background-color:#f6f6f6;
+  border-radius:0.1rem;
+  height: 0.5rem;
+  margin-top: 0.3rem;
+
+}
+.p_width70{
+  width: 70%;
+  height: 0.3rem;
+}
+.p_width32{
+  width: 32%;
+  height: 1.86667rem;
+  margin-top: 0.5rem;
+  vertical-align: top;
+}
+.p_width32R{
+  margin-left: 0.5rem;
+}
+.p_width50{
+  width: 61%;
+  height: 0.5rem;
+  margin-left: 0.5rem;
+  vertical-align: top;
+  margin-top: 0.6rem;
+}
+.p_width50L{
+  margin-left: 0;
+}
+.p_inline{
+  display: inline-block;
+  font-size: 0;
+}
+.p_position{
+  position: relative;
+  font-size: 0;
+}
+.p_absolute{
+  position: absolute;
+  height: 0.3rem;
+  top: 1.8rem;
+  left: 32%;
+  margin-top: 0;
+  width: 40%;
+}
+.p_absolute2{
+  position: absolute;
+  height: 0.3rem;
+  top: 1.8rem;
+  margin-top: 0;
+  width: 40%;
+  left: 0;
+  margin-left: 0;
+}

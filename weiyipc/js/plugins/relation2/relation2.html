@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>列表社交</title>
+<link rel="stylesheet" type="text/css" href="/css/common/base.css" />
+<link href="plugin.relation2.css" rel="stylesheet" type="text/css" />
+<script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="plugin.relation2.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/js/plugins/relation2/review/relation2.review.css" />
+    <link rel="stylesheet" type="text/css" href="/css/detail/detail.css" />
+    <link rel="stylesheet" type="text/css" href="/js/plugins/reply-remind/plugin.reply-remind.css" />
+    <link rel="stylesheet" type="text/css" href="/js/plugins/add-removeable-group-pic/plugin.add-removeable-group-pic.css" />
+	<link href="/js/plugins/face-list/plugin.face-list.css" rel="stylesheet" type="text/css" />
+	<link href="/js/module/list-template/module.list-template.css" rel="stylesheet" type="text/css"/>
+	<link href="/js/plugins/relation2/upstairs/relation2.upstairs.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="/js/plugins/top-tip/plugin.top-tip.css"/>
+	<link rel="stylesheet" type="text/css" href="/js/plugins/popup-review/plugin.popup-review.css"/>
+	
+    <script src="/js/lib/jquery/jquery.json-2.4.js" type="text/javascript"></script>
+    <script src="/js/lib/jquery/jquery-form.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm.lightBox.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/comm.fastError.js"></script>
+    <script src="/js/comm/comm.dataAdapter.js"></script>
+    <script src="/js/plugins/popup-review/plugin.popup-review.js"></script>
+    <script src="/js/plugins/reply-remind/plugin.reply-remind.js" type="text/javascript"></script>
+    <script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+    
+	<script src="/js/plugins/add-removeable-group-pic/plugin.replaceInput/plugin.replaceInput.js" ></script>
+	<script src="/js/plugins/add-removeable-group-pic/plugin.add-removeable-group-pic.js" ></script>
+	<script src="/js/plugins/add-removeable-group-pic/plugin.readFile/plugin.readFile.js" ></script>
+	<script src="/js/plugins/relation2/review/relation2.review.js" ></script>
+	<script src="/js/plugins/face-list/plugin.face-list.js"></script>
+	<script src="/js/scene/personal/scene.personal.js"></script>
+	<script src="/js/module/list-template/module.list-template.js"></script>
+	<script src="/js/plugins/relation2/downstairs/relation2.downstairs.js"></script>
+	<script src="/js/plugins/relation2/upstairs/relation2.upstairs.js"></script>
+<script>
+/* $(function(){
+	//利用scene.personal.js
+	var params = {};
+	params.paramJson = $.toJSON({pageIndex:1,pageSize:10,attUseFlag:2,dataFlag:2})
+
+	var obj = {
+		listSeletorEl : $(".module-templateList"),
+		ajaxUrl : PC_CALL+"customer/trends/json_list/",
+		ajaxParams : params, 
+		executeCase : "caze"
+	};
+	
+	scene.personalNavExecuteList(obj);
+});
+ */
+$(function(){
+	var params = {};
+	params.paramJson = $.toJSON({pageIndex:1,pageSize:10,attUseFlag:2,dataFlag:2})
+		$.ajax({
+			url : PC_CALL+"customer/trends/json_list/",
+			type : "POST",
+			data : params,
+			success : function(data){
+				if(data.responseObject.responseStatus)
+					test(data.responseObject.responseData.data_list);
+			},
+			error : function(){
+				$(".module-templateList").html("加载数据失败！");
+			}
+		})
+		
+		var test = function(data){
+			var html = "";
+			$.each(data,function(i,kv){
+				var el = comm.dataAdapter.trends(kv);
+				html = module.listTemplate({tempName : "personal>list"})({
+					vip : false,
+					name : el.nickname,
+					time : el.time,
+					title : el.title,
+					content : el.content,
+					logoUrl : el.logoUrl===""?"//img10.allinmd.cn/default-user/user_img65.png":el.logoUrl, 
+					allinAuth :  false //这期不做
+				});
+				 
+				var createElement = $(html);
+				createElement.find(".call-relation2").relation2({
+					selector:".inside-selector",
+					showReplyList : "on",
+					//基础数据
+					callSource : "caze",
+					reprintNum : el.reprintNum,
+					reviewNum : el.reviewNum,
+					collectionNum : el.collectionNum,
+					praiseNum : el.praiseNum,
+					reviewId : el.reviewId, //回复的主键id 76 119047
+					refCid : el.refCustomerId, //资源人id1397640872703
+					refType : el.refType, //资源类型2
+					refId : el.refId,//资源id1398583718434
+					userLogoUrl : el.logoUrl===""?"//img10.allinmd.cn/default-user/mr_img.png":el.logoUrl,
+					nickname : el.nickname//"可可西里" //对方的称呼
+				});
+				
+				//处理由XXX转发
+				if(el.otherId==2){
+					createElement.prepend("<div class=\"zf_top font_yahei\">由 "+el.otherName+" 转发</div>");
+				}
+				
+				//处理时间Icon 及标题  无图标及默认标题
+				var timeClass = "p_l_t_r_none";
+				var title = "<a href=\""+el.refUrl+"\">"+el.title+"</a>";
+				switch(el.refType){
+					case 1 : timeClass = "p_l_t_r_video"; break; //视频
+					case 2 : timeClass = "p_l_t_r_doc"; break;  //文库
+					case 4 : timeClass = "p_l_t_r_topic"; break; //话题
+					case 7 : timeClass = "p_l_t_r_case"; break; //病例
+					case 8 : //评论
+					title = "<a href=\""+el.refUrl+"\"><span class=\"list_title_zt\">回应了</span><span class=\"list_title_name\">《"+el.title+"》</span></a>";
+					break;
+				}
+				createElement.find(".evIconTime").addClass(timeClass);
+				createElement.find(".evTitle").html(title);
+				
+				//图片处理
+				var picLen = el.imgArr.length;//图片长度 防止里面有空图，加入下方代码重新计算长度
+					if(picLen>0){
+						var x=picLen; 
+						for(var i=0;i<picLen;i++){
+							if(el.imgArr[i]===""){x--;}
+						}
+						picLen = x; 
+					}
+				var picHtml = ""; //图片组装
+				var isOne = false; //一张时特殊处理不作任何修饰
+				var isFour = false; //是否四张时，四张时与其它张数时显示有所不同
+				var isMore = false; //是否超过九张 超过九张只显示一张出现图集
+
+				//图片分类
+				if(picLen===0){
+					picHtml = "";
+				}else if(picLen===1){
+					isOne = true; picHtml = picTemplate(el.imgArr[0]);
+				}else if(picLen===4){
+					isFour = true; 
+					for(var i=0;i<picLen;i++){ picHtml += picTemplate(el.imgArr[i]);};
+				}else if(picLen===2 || picLen===3 || (picLen>4 && picLen<10)){
+					for(var i=0;i<picLen;i++){ picHtml += picTemplate(el.imgArr[i]);}
+				}else{
+					isMore = true;
+					picHtml = picTemplate(el.imgArr[0]);
+				}
+							
+				function picTemplate(picHref){
+					if(picHref	!==	"")
+						return "<div class=\"personal_ads\"><img src=\""+picHref+"\"></div>";
+					return "";	
+				}
+				
+				//组装后的图片
+				createElement.find(".evPic").prepend(picHtml);	
+				
+				//区别对待
+				if(isOne) createElement.find(".evPic").removeClass("p_normal_img");
+				if(isFour) createElement.find(".evPic").addClass("p_four_img");
+				if(isMore){
+					var moreHtml = "<div class=\"sh_float_bg\"></div>"+ 
+					"<div class=\"sh_float_text font_yahei\">图集共"+picLen+"张图片，点击查看大图</div>";
+					createElement.find(".evPic>div:first").addClass("case_more_img");
+					createElement.find(".evPic>div:first").append(moreHtml);
+				}
+				
+				//如视频时添加视频播放按钮
+			   	if(el.refType===1 && createElement.find(".evPic>div:first>img").attr("src").length>0){
+			   		var videoBtnHtml = "<div class=\"video_ads_b\"><img src=\"//img00.allinmd.cn/personal/video_b.png\"></div>";			
+					createElement.find(".evPic>div:first").append(videoBtnHtml);
+				}
+							
+				//输出
+			    $(".module-templateList").append(createElement);
+				
+			});
+			
+
+		}
+
+	});
+</script>
+
+</head>
+
+<body>
+	<div>
+            <div class="p_c_title font_yahei">全部动态</div>
+            <ul class="p_content_list module-templateList">
+            	
+           
+           </ul>
+      </div>
+</body>
+</html>
+
+ 

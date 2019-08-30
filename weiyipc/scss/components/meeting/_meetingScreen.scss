@@ -1,0 +1,202 @@
+@charset "UTF-8";
+//按钮组件
+//Created by qiangkailiang on 2016/08/04
+//公共方法模块调用
+@import "../../modules/_common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+
+
+.screenCondition{
+  @include clearfix();
+  padding: 15px 0 0 0;
+  &:after{
+    content: '';
+    width: 892px;
+    height: 1px;
+    display: inline-block;
+    background: #ECF0F2;
+    margin-left: 108px;
+    //float: right;
+    //margin-top: 23px;
+  }
+  //border-bottom: solid 1px #ECF0F2;
+  div{
+    float: left;
+    //margin: 15px 0;
+  }
+  .text{
+    font-size: 13px;
+    color: #AAAAAA;
+    line-height: 30px;
+    padding-left: 24px;
+    margin-right: 20px;
+
+  }
+  .major{
+    background: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    border-radius: 2px;
+    /*width: 78px;*/
+    height: 30px;
+    line-height: 30px;
+    /*text-align: center;*/
+    font-size: 15px;
+    color: #333333;
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding:0 12px;
+    &.active{
+      background-image: linear-gradient(-180deg, #FFFFFF 0%, #F2F2F2 100%);
+      border: 1px solid #E6E8ED;
+      border-radius: 2px;
+    }
+    &:after{
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 6px;
+      background: url("/images/img10/common/icon/png/meeting_arrowdown.png") no-repeat;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+  }
+  .onlyLive{
+    float: right;
+    margin-right: 24px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #808080;
+    i{
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: url("/images/img10/common/icon/png/icon_select.png") no-repeat;
+      vertical-align: middle;
+      margin-right: 10px;
+      margin-top: -3px;
+      &.active{
+        background: url("/images/img10/common/icon/png/icon_selected.png") no-repeat;
+      }
+    }
+  }
+  .date{
+    background: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    border-radius: 2px;
+    width: 78px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: #333333;
+    //margin-left: 30px;
+    cursor: pointer;
+    &.active{
+      background-image: linear-gradient(-180deg, #FFFFFF 0%, #F2F2F2 100%);
+      border: 1px solid #E6E8ED;
+      border-radius: 2px;
+    }
+    &:after{
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 6px;
+      background: url("/images/img10/common/icon/png/meeting_arrowdown.png") no-repeat;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+  }
+}
+
+.major{
+  position: relative;
+  ul{
+    position: absolute;
+    top: 31px;
+    left: 0;
+    background: #FFFFFF;
+    box-shadow: 0 8px 20px 0 rgba(197,206,214,0.80);
+    border-radius: 2px;
+    width: 78px;
+    padding: 4px 0 24px 0;
+    text-align: center;
+    li{
+      padding-top: 20px;
+      font-size: 15px;
+      color: #333333;
+      line-height: 15px;
+      &.active{
+        color: #3598DB;
+        text-align: left;
+        margin-left: 8px;
+        &:before{
+          content: '';
+          display: inline-block;
+          width: 8px;
+          height: 6px;
+          background: url("/images/img10/common/icon/png/icon_selected1.png") no-repeat;
+          vertical-align: middle;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+
+.date{
+  position: relative;
+  .dateBor{
+    position: absolute;
+    left: 0;
+    top: 31px;
+    width: 318px;
+    /*height: 262px;*/
+    background: #FFFFFF;
+    box-shadow: 0 8px 20px 0 rgba(197,206,214,0.80);
+    border-radius: 2px;
+    z-index: 3;
+    .titleTab{
+      height: 34px;
+      line-height: 34px;
+      font-size: 14px;
+      color: #808080;
+      @include clearfix();
+      padding-left: 24px;
+      border-bottom: solid 1px #ECF0F2;
+      width: 294px;
+      p{
+        float: left;
+        margin-right: 63px;
+      }
+    }
+  }
+}
+
+
+.major{
+  margin-right: 30px;
+}
+
+//针对手外专业
+.major .handSurgery{
+  width: auto;
+  word-break: keep-all;
+  text-align: left;
+  padding: 4px 12px 24px;
+}
+.major .handSurgery li{
+  &.handSurgeryli{
+    padding-left: 17px;
+  }
+  &.active{
+    margin-left: 0;
+    position: relative;
+    &:before{
+      position: absolute;
+      left: 0;
+      top: 24px;
+    }
+  }
+}
+//end

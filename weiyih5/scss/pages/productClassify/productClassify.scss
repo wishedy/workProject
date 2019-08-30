@@ -1,0 +1,94 @@
+@charset "UTF-8";
+//发现——按专业筛选
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_contentModule"; //内容组件
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_scrollShareBtn"; //浮动分享按钮
+@import "../../components/_bottomBtns"; //底部弹层组
+@import "../../components/_bottomSharePart"; //底部分享弹层
+@import "../../components/_twoFloorsFilter"; //二级筛选列表
+.al-actTag{
+  margin-right: rem(7.5px);
+}
+.icon-contentAuthor {
+  @extend %icon-contentAuthor;
+  max-width: 2rem;
+  @include ellipsis();
+  margin-right: rem(15px);
+}
+
+.icon-contentWatchedNum {
+  @extend %icon-contentWatchedNum;
+  margin-right: rem(15px);
+}
+.icon-scrollShare{
+  @extend %icon-scrollShare;
+}.icon-tagComment {
+   @extend %icon-tagComment;
+ }
+ .produtListCont{
+   padding: 0 rem3(21px) 0 rem3(15px);
+   background-color: #ffffff;
+ }
+.al-mainInner{
+  padding-bottom: 0;
+}
+.al-twoFloorFirstFilter .al-twoFloorFirstFilterItem{
+  width: 90%;
+  background-color: #ffffff;
+  border: none;
+  color: #333;
+}
+.al-twoFloorFirstFilter{
+  width: 100%;
+  background-color: #ffffff;
+  border: none;
+  .al-twoFloorFirstFilterItem.selected {
+    color: #6483E9;
+    border-right: rem3(1px) solid #fff;
+    & > span {
+      color: #6483E9;
+      padding-bottom: rem3(14px);
+      border-bottom: rem3(1px) solid rgba(100,131,233,1);
+    }
+  }
+}
+.al-typeFilterNavbarItem{
+  border: none;
+  &.active > span{
+    color: #6483E9;
+    &:after{
+      border-top: 0.1rem solid #6483E9;
+    }
+  }
+}
+
+.al-twoFloorSecondFilter {
+  background-color: rgba(248,248,248,1);
+  padding: 0 rem3(9px) 0 rem3(36px);
+  .al-twoFloorSecondFilterItem{
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow-x: hidden;
+    padding:0;
+    height: rem3(50px);
+    line-height: rem3(50px);
+    &.active {
+      span{
+        color: #6483E9;
+        padding-bottom: rem3(14px);
+        border-bottom: rem3(1px) solid rgba(100,131,233,1);
+      }
+    }
+  }
+}
+.al-oneFloorFilterItem.active{
+  color: #6483E9;
+}

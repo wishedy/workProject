@@ -1,0 +1,230 @@
+@charset "UTF-8";
+//表单组件
+//Created by qiangkailiang on 2016/07/31
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.al-tableModule {
+    margin-top: rem(20px);
+    background-color: #fff;
+    border-bottom: 1px solid $innerBorderColor;
+    position: relative;
+}
+
+.editIcon{
+    position: absolute;
+    right: 0;
+    top: rem(20px);
+    z-index: 2;
+    width: rem(80px);
+    height: rem(80px);
+    text-align: center;
+    i{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        display: inline-block;
+        width: rem(28px);
+        height: rem(28px);
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAApNJREFUSA21lk1oE0EUgOftRmMThQiiHsSzreDBKuJJ2yBFEBX04k3T1opgTdooqJdcrEibRBFRohUEpRC8CSKKjYIevVjBkxc9VjC2TZtsduf5ZunEuMkm+5MOLDPzZt779r15b2eBdbANXb+zDUvGczJ5ABg+27G591Iq1afXI6B+4mcsYLykz5KNnpodYC92RnrP1EOV2qKPwYXkg601GMAcKMpRBlBkyE7/KH6eSaUKAWneN1DAtGqpQAZ7CDIXULF/Ojv2msZHmkF9hbQZLJdO/pLexBKZfQzxLT0Rthpez8B2sGZQCudDT0ArLNy1Lnrv1ui8hFj74bH0McPAlwBs0fUZuoVdvHJ/u2GwSfMlED658lDAqvryLCLuJsWvodD6/laeCVhZK1NC4S7a/0UNsKhjD73AKtUy1eU/mEgoRx66hZlfnGWjQJHolp7J7G0L7CRMnGNLYKdhLYFrAbMFrhWsKTAez0YWGf/oNPVbJYgAWFtDWSwxHvcCEx9uUWcyG60gOa9dG1KACJxqh9IJ1BXgDS8k99Xdf90CJm6JdjCh22BQ3RC+K2pH1BBSLQnDEiL7OljtSnIC+w84GJ86OZTInMvdHvkjQmMH9QMTQLMOY1enN0GlOI8Mg+TzjSfZ5MT58akths7eUXD3AMA3CKl9AS2I1svWqWcyOmZIFW1hwIQJKWc3B+Ppa8KQ1VO/MGHeBCIzjouJbHR+E82gtO76zKRN2av5fF79/nPhEQm6pHC1j+49OKA9zibf7D98agZ1fYUO4EMguHEkNzn627LX8RSGE5lDBufv7TToD+ws/RQ9tVt3K1c45yfslIBBhbKqaLfuRQ6xy+klKvSwF2W3OuTAKwUQNbeKfvb/BZdR7PZPuac8AAAAAElFTkSuQmCC") no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+    }
+}
+
+.al-tableModuleItem {
+    margin: 0 rem(28px);
+    border-bottom: 1px solid $innerBorderColor;
+    padding: rem(30px) 0;
+    position: relative;
+    box-sizing: border-box;
+    &:nth-last-child(1){
+        border-bottom: none;
+    }
+    h3 {
+//        @include font-dpr(15px);
+        font-size: rem(30px);
+        color: #555555;
+        font-weight: normal;
+        display: inline-block;
+        &.al-smallCertType{
+            padding: rem(22px) 0;
+         }
+        &.al-toggleStar{
+            padding: rem(37px) 0;
+        }
+    }
+    span {
+        @include font-dpr(13px);
+        color: #aaaaaa;
+        display: inline-block;
+    }
+    p {
+        @include font-dpr(13px);
+        color: #aaaaaa;
+    }
+    textarea {
+        border: none;
+        background: none;
+        overflow-y: visible;
+        font-family: "microsoft yahei";
+        resize: none;
+        box-sizing: border-box;
+        width: 100%;
+        color: #333;
+        @include font-dpr(16px);
+        line-height: rem(52px);
+    }
+}
+
+.al-tableModuleItemInput {
+    @include font-dpr(15px);
+    color: #aaaaaa;
+    position: absolute;
+    left: rem(156px);
+    display: inline-block;
+    a {
+        color: #aaaaaa;
+    }
+    & > input {
+        border: none;
+        background: none;
+        font-family: "Microsoft Yahei";
+        padding: 0;
+        margin: 0;
+    }
+    .al-selectComplete {
+        @include font-dpr(15px);
+        color: #333;
+    }
+}
+.al-tableModuleContent {
+    padding: rem(30px);
+    border-bottom: 1px solid $innerBorderColor;
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    p {
+        line-height: 1.75;
+//        @include font-dpr(15px);
+        font-size: rem(34px);
+        color: #222222;
+        width: 70%;
+    }
+    .al-tableModuleContentText {
+//        @include font-dpr(15px);
+        color: #222222;
+        font-size: rem(34px);
+        line-height: 1.75;
+        /*margin-bottom: rem(52px);*/
+        display: block;
+        position: relative;
+        word-break:break-all;
+        .al-contentShow {
+            //position: absolute;
+            //right: 0;
+            //bottom: 0;
+            //margin-bottom: 0;
+            float: right;
+        }
+    }
+    //后期更改时层级少写了一层
+    .al-contentShow {
+        //position: absolute;
+        //right: 0;
+        //bottom: 0;
+        //margin-right: rem(30px);
+        //margin-bottom: rem(40px);
+        float: right;
+        &.pickUp{
+            margin-bottom: 0;
+        }
+    }
+    .al-pushInContentNum {
+        position: absolute;
+        @include font-dpr(12px);
+        right: rem(30px);
+        bottom: rem(30px);
+        color: #cccccc;
+        font-style: normal;
+    }
+    .al-timeRange {
+        color: #777777;
+//        @include font-dpr(13px);
+        font-size: rem(30px);
+        vertical-align: middle;
+        display: inline-block;
+        margin: rem(15px) 0;
+        &:before {
+            content: "";
+            @include square(rem(8px));
+            background-color: #2899e6;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: rem(12px);
+        }
+    }
+    .al-basicMsgTag {
+        margin-top: rem(20px);
+        button {
+            padding: rem(15px) rem(20px);
+            border: 1px solid #e0e2e8;
+            color: #777777;
+            @include font-dpr(13px);
+            margin-right: rem(20px);
+        }
+    }
+}
+
+//添加工作经历
+.al-personalMsgAdd {
+//    @include font-dpr(14px);
+    font-size: rem(32px);
+    color: #3598db;
+    text-align: center;
+    display: block;
+    height: rem(88px);
+    line-height: rem(88px);
+    &:before {
+        content: "+";
+        color: #3598db;
+        margin-right: rem(5px);
+        @include font-dpr(20px);
+        display: inline-block;
+        vertical-align: initial;
+    }
+}
+
+//信息修改图标——定位
+.al-tableModuleContentConfigBtn {
+    position: absolute;
+    right: rem(30px);
+    top: rem(30px);
+}
+
+//select样式重置
+.al-tableModuleSelect {
+    @include font-dpr(13px);
+    color: #aaa;
+    display: inline-block;
+    margin-right: rem(30px);
+    select {
+        border: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+        @include font-dpr(15px);
+        color: #aaa;
+        font-family: "microsoft yahei";
+    }
+    .al-dateSelector{
+        border-bottom: 1px solid #aaa;
+        padding-bottom: rem(10px);
+    }
+}
+
+.authStepTwo .al-tableModuleItem{
+    padding: 0;
+}

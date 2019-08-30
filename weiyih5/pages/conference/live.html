@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <title>天坛医院-直播页面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <!--   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1">-->
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <link rel="stylesheet" href="/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.css">
+
+    <link href="/css/common/main.css" type="text/css" rel="stylesheet"/>
+    <link href="/css/scene/live_list.css" type="text/css" rel="stylesheet"/>
+    <script src="/js/comm/domain.js"></script>
+
+    <script>
+        domain.get(
+                '/js/comm/Weixin_share.js',
+                '/js/social_intercourse/share.js'
+        );
+    </script>
+
+    <script>
+        $(function () {
+
+            //获取conSubId、uid、title
+            var conSubId = comm.getpara() === false ? 0 : comm.getpara().conSubId;
+            var title = comm.getpara().title;
+            $("title").text(title + "-直播页面");
+
+            var href= "";
+            if(user.needConferenceAuthHandler()) {
+                var uid = localStorage.userId;
+                if (conSubId !== undefined && $.isNumeric(conSubId)) {
+                    href = "http://stryker.ecache.cn/?conSubId=" + conSubId + "&uid=" + uid;
+                    $("iframe").attr("src", href);
+                } else {
+                    alert("暂无直播！");
+                    window.location.href = "/";
+                    return false;
+                }
+            }
+
+//            $("#liveWrap").attr("height", $(window).height()-$(".case_header").height());
+
+        });
+
+        function initShareWeixin(title){
+            var weiXinTitle="";
+            var weiXinDesc="";
+            WeixinJSApi.title=function(){
+                return title;
+            };
+            WeixinJSApi.init();
+        }
+
+
+    </script>
+</head>
+<body>
+<section data-role="page" class="content-page live_content">
+    <iframe src="" id="liveWrap" frameborder="0" width="100%" height="800"></iframe>
+</section>
+</body>
+</html>

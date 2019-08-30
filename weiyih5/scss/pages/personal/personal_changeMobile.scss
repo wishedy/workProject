@@ -1,0 +1,90 @@
+@charset "UTF-8";
+//个人主页——绑定手机
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_recordListModule"; //记录列表组件
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.al-changeMobileBox {
+    background-color: #fff;
+    margin-top: rem(20px);
+    padding: rem(60px) rem(30px);
+    padding-bottom: 0;
+    height: 100%;
+    .al-changeMobileContent {
+        @include font-dpr(15px);
+        color: #808080;
+        line-height: 1.5;
+    }
+}
+
+.al-changeMobileInput {
+    margin: rem(60px) 0;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: rem(30px);
+    position: relative;
+    .icon-mobile {
+        position: absolute;
+        left: rem(15px);
+        margin-top: rem(5px);
+    }
+    .icon-searchCancel {
+        position: absolute;
+        right: 0;
+        display: none;
+    }
+    input {
+        border: none;
+        background: none;
+        outline: none;
+        padding-left: rem(60px);
+        font-family: "microsoft yahei";
+        @include font-dpr(16px);
+        color: #333;
+        &:focus ~ {
+            .icon-mobile:before {
+                content: "";
+                display: inline-block;
+                width: rem(17px);
+                height: rem(30px);
+                background: url('//img50.allinmd.cn/pages/personal/icon_mobileOn.png') center center no-repeat;
+                background-size: cover;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+.btn-primary-lg{
+	opacity: 1;
+}
+.al-msgWriting{
+	opacity: 0.5
+}
+
+.al-living{
+    .al-changeMobileInput{
+        margin-bottom: 0;
+    }
+}
+.al-livingTips{
+    color: #aaa;
+    margin-top: rem(30px);
+    margin-bottom: rem(60px);
+    @include font-dpr(13px);
+    a{
+        color: #3598db;
+    }
+}
+.icon-mobile {
+    @extend %icon-mobile;
+}

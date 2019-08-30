@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>基本信息</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/idSurePage.css"/>
+    <link rel="stylesheet" href="/css/pages/authentication/authentication.css"/>
+
+    <link rel="stylesheet" href="/css/pages/personal/personal_msgConfig.css">
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/jweixin-1.0.0.js"></script>
+    <script src="/js/comm/WeixinJSApi.js"></script>
+    <script src="/js/comm/Weixin_share.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/passport/regist/chooseDepartment.js"></script>
+</head>
+<body>
+    <figure class="al-idSureContent">
+        <header class="al-idSureHead">
+            <ul>
+                <li class="al-idSureHeadItem">
+                    <a href="javascript:window.history.back();"><img src="//m.allinmd.cn/images/img50/pages/personal/arrow_back.png" alt=""></a>
+                </li>
+                <li class="al-idSureHeadItem">身份认证</li>
+                <li class="al-idSureHeadItem ev-skipAuth">暂不认证</li>
+            </ul>
+            <p></p>
+        </header>
+
+        <section class="alAuthentication">
+            <section class="alWidth">
+                <section class="authStep">
+                    <section class="success"><aside>1</aside><article>选择科室</article><i></i></section>
+                    <section class="active"><aside>2</aside><article>基本信息</article> </section>
+                    <section><aside>3</aside> <article>认证信息</article> <i></i></section>
+                </section>
+
+            </section>
+            <section class="al-tableModule ev-noAuth" style="">
+                <form action="">
+                    <article class="al-tableModuleItem">
+                        <h3>姓名</h3>
+                        <figure class="al-tableModuleItemInput" style="width:70%;">
+                            <input id="fullName" type="text" placeholder="请输入姓名" style="width:100%;" fullname="">
+                        </figure>
+                    </article>
+                    <article class="al-tableModuleItem">
+                        <h3>出生年月</h3>
+                        <figure class="al-tableModuleItemInput ev-birthDay">
+                            <article class="al-tableModuleSelect">
+                                <select class="al-dateSelector" id="year01"><option>1989</option>
+                                </select>
+                                <span>年</span>
+                            </article>
+                            <article class="al-tableModuleSelect">
+                                <select class="al-dateSelector" id="month01"> <option>11</option>
+
+                                </select>
+                                <span>月</span>
+                            </article>
+                            <article class="al-tableModuleSelect">
+                                <select class="al-dateSelector" id="day01"><option>23</option>
+
+                                </select>
+                                <span>日</span>
+                            </article>
+                        </figure>
+                    </article>
+                    <article class="al-tableModuleItem">
+                        <h3>临床时间</h3>
+                        <figure class="al-tableModuleItemInput" style="width:70%;">
+                            <article class="al-tableModuleSelect">
+                                <select class="al-dateSelector" id="year01">
+                                </select>
+                                <span>年</span>
+                            </article>
+                            <article class="al-tableModuleSelect">
+                                <select class="al-dateSelector" id="month01">
+
+                                </select>
+                                <span>月</span>
+                            </article>
+                            <article class="al-tableModuleSelect">
+                                <select class="al-dateSelector" id="day01">
+
+                                </select>
+                                <span>日</span>
+                            </article>
+                            <span>— 至今</span>
+                        </figure>
+                    </article>
+                    <article class="al-tableModuleItem">
+                        <h3>单位</h3>
+                        <figure class="al-tableModuleItemInput" style="width:70%;">
+                            <input id="fullName" type="text">
+                        </figure>
+                    </article>
+
+                    <article class="al-tableModuleItem">
+                        <h3>职称</h3>
+                        <figure class="al-tableModuleItemInput">
+                            <a href="javascript:void(0)" class="al-selectTitle al-searchResult" id="medicalTitle">请选择职称</a>
+                        </figure>
+                    </article>
+                    <article class="al-tableModuleItem">
+                        <h3>专业</h3>
+                        <figure class="al-tableModuleItemInput">
+                            <a href="javascript:void(0)" class="al-selectTitle al-searchResult" id="areaExpertise">请选择专业领域</a>
+                        </figure>
+                    </article>
+                </form>
+            </section>
+
+            <section class="informationBtn active"><span>下一步</span></section>
+        </section>
+    </figure>
+</body>
+<script>
+    $(function(){
+        $('.authStepBtn a').on('click',function(){
+            $(this).addClass('active');
+        })
+    })
+</script>
+</html>

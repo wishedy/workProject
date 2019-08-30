@@ -1,0 +1,588 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+@mixin animate-fadeInUpSmall($speed, $delay:null, $timeFunc:null, $fill:null, $count:null) {
+    @include animate(fadeInUpSmall, $speed, $delay, $timeFunc, $fill, $count);
+    @at-root {
+        @-webkit-keyframes fadeInUpSmall {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, 50%, 0);
+                transform: translate3d(0, 50%, 0)
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none
+            }
+        }
+        @keyframes fadeInUpSmall {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, 50%, 0);
+                transform: translate3d(0, 50%, 0)
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none
+            }
+        }
+    }
+}
+
+.al-spreadBack {
+    color: #626f8c;
+    line-height: 70px;
+    vertical-align: middle;
+}
+
+.al-mainInner {
+    padding-bottom: 0;
+}
+
+.icon-spreadBack {
+    display: inline-block;
+    vertical-align: middle;
+    width: 8px;
+    height: 14px;
+    background: transparent url('//img10.allinmd.cn/v3/single/back.png') center center no-repeat;
+}
+
+.al-spreadContent {
+    background-color: #fff;
+}
+
+// 内容
+.al-spreadContentInner {
+    width: 100%;
+    height: 740px;
+    position: relative;
+    // 内容 第一屏
+    .al-spreadContentItem {
+        width: 1000px;
+        height: 740px;
+        position: relative;
+        margin: 0 auto;
+    }
+}
+
+.al-spreadItem1 {
+    background: transparent url('//img10.allinmd.cn/v3/single/bg_item1.png') center center no-repeat;
+    z-index: 3;
+    .al-spreadContentIphone {
+        width: 728px;
+        height: 874px;
+        position: absolute;
+        right: 0;
+        bottom: -200px;
+        z-index: 1;
+        opacity: 0;
+        & > img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+    .al-spreadTitle {
+        color: #fff;
+        position: absolute;
+        left: -7px;
+        top: 215px;
+        h1 {
+            font-size: 92px;
+            margin-bottom: 40px;
+            letter-spacing: 7px;
+            cursor: default;
+            opacity: 0;
+            span {
+                font-size: 96px;
+                padding-left: 20px;
+            }
+        }
+        .al-spreadTitleContent {
+            height: 86px;
+            opacity: 0;
+            p {
+                font-size: 38px;
+                color: #fff;
+                @include opacity(0.7);
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .al-spreadGetLinks {
+        background: transparent url('//img10.allinmd.cn/v3/single/getLinks_bg.png') center center no-repeat;
+        width: 100%;
+        height: 170px;
+        bottom: 0px;
+        position: absolute;
+        z-index: 2;
+        opacity: 0;
+        .al-spreadGetLinksInner {
+            width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .al-spreadGetLinksErWeiCode {
+            width: 341px;
+            height: 76px;
+            padding-top: 15px;
+            span {
+                font-size: 20px;
+                color: #fff;
+                position: absolute;
+                left: 9.8%;
+                @include opacity(.8);
+            }
+        }
+    }
+}
+
+.al-spreadItem1.animateOn {
+    .al-spreadContentIphone {
+        @include animate-fadeInUpSmall(2s,
+        0s,
+        ease-in-out,
+        forwards);
+    }
+    .al-spreadTitle {
+        h1 {
+            @include animate-fadeInUp(1s,
+            0s,
+            ease-in-out,
+            forwards)
+        }
+        .al-spreadTitleContent {
+            @include animate-fadeInUp(1s,
+            0.3s,
+            ease-in-out,
+            forwards);
+        }
+    }
+    .al-spreadGetLinks {
+        @include animate-bounceIn(1s,
+        1.2s,
+        ease-in-out,
+        forwards);
+    }
+}
+
+.al-spreadGetLinksInput {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    input {
+        padding: 15px;
+        width: 310px;
+        border-radius: 50px;
+        border: none;
+        font-size: 18px;
+        behavior: url("/js/third-party/pie/pie.htc");
+    }
+    input.error {
+        border: 1px solid #f34d4d;
+    }
+    input::-ms-input-placeholder {
+        color: #9eafc2;
+    }
+    input::-webkit-input-placeholder {
+        color: #9eafc2;
+    }
+    .al-spreadErrorTips {
+        font-size: 13px;
+        color: #fff;
+        position: absolute;
+        top: -20px;
+        margin-left: 20px;
+    }
+}
+
+.icon-spreadErrorTips {
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    background: transparent url('//img10.allinmd.cn/v3/single/error.png') center center no-repeat;
+}
+
+.al-spreadGetLinksBtn {
+    width: 150px;
+    height: 50px;
+    background-color: #ffcd00;
+    color: #af6e28;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    margin-left: 30px;
+    cursor: pointer;
+    behavior: url("/js/third-party/pie/pie.htc");
+    &:hover {
+        background-color: #ecbe00;
+    }
+}
+
+// 第二屏
+.al-spreadItem2 {
+    background: transparent url('//img10.allinmd.cn/v3/single/bg_item2.png') center center no-repeat;
+    z-index: 3;
+    margin-top: -70px;
+    height: 800px;
+    background-size: 100% 100%;
+    filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='//img10.allinmd.cn/v3/single/bg_item2.png',sizingMethod='scale')";
+    .al-spreadContentItem {
+        height: 800px;
+    }
+    .al-spreadItemImg {
+        position: absolute;
+        width: 860px;
+        height: 507px;
+        left: 50%;
+        margin-left: -430px;
+        bottom: 20px;
+        opacity: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+    .al-spreadTitle {
+        width: 532px;
+        height: 137px;
+        position: absolute;
+        margin-left: -266px;
+        top: 160px;
+        left: 50%;
+        opacity: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+        .title {
+            margin-bottom: 35px;
+            white-space: nowrap;
+            cursor: default;
+            h1 {
+                font-size: 50px;
+                color: #0581d8;
+                display: inline;
+            }
+            span {
+                font-size: 38px;
+                color: #299ff2;
+                padding-left: 25px;
+            }
+        }
+        .content {
+            text-align: center;
+            cursor: default;
+            p {
+                font-size: 24px;
+                color: #a9a9a9;
+                margin-bottom: 7px;
+            }
+        }
+    }
+}
+
+.al-spreadItem2.animateOn {
+    .al-spreadTitle {
+        @include animate-zoomInDown(1s,
+        0s,
+        ease-in-out,
+        forwards);
+        opacity: 1;
+    }
+    .al-spreadItemImg {
+        @include animate-flipInX(1s,
+        0s,
+        ease-in-out,
+        forwards);
+        opacity: 1;
+    }
+}
+
+// 第三屏
+.al-spreadItem3 {
+    background: transparent url('//img10.allinmd.cn/v3/single/bg_item3.png') center center no-repeat;
+    background-size: 100% 100%;
+    z-index: 3;
+    height: 734px;
+    .al-spreadContentItem {
+        height: 734px;
+    }
+    .al-spreadItemImg {
+        position: absolute;
+        width: 761px;
+        height: 577px;
+        left: -70px;
+        top: 130px;
+        opacity: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+    .al-spreadTitle {
+        width: 383px;
+        height: 185px;
+        position: absolute;
+        right: -40px;
+        top: 130px;
+        opacity: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+        .title {
+            margin-bottom: 30px;
+            cursor: default;
+            h1 {
+                font-size: 50px;
+                color: #0581d8;
+                margin-bottom: 9px;
+            }
+            h3 {
+                font-size: 38px;
+                color: #299ff2;
+                font-weight: 500;
+            }
+        }
+        .content {
+            font-size: 24px;
+            color: #a9a9a9;
+            white-space: nowrap;
+            cursor: default;
+            p {
+                margin-bottom: 7px;
+            }
+        }
+    }
+}
+
+.al-spreadItem3.animateOn {
+    .al-spreadTitle {
+        @include animate-rotateInDownRight(1s,
+        0s,
+        ease-in-out,
+        forwards);
+    }
+    .al-spreadItemImg {
+        @include animate-rotateInUpLeft(1s,
+        0s,
+        ease-in-out,
+        forwards);
+    }
+}
+
+// 第四屏
+.al-spreadItem4 {
+    background-color: #fff;
+    z-index: 3;
+    .al-spreadItemImg {
+        position: absolute;
+        width: 504px;
+        height: 673px;
+        right: 0;
+        top: 60px;
+        opacity: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+    .al-spreadTitle {
+        width: 432px;
+        height: 184px;
+        position: absolute;
+        left: 0;
+        top: 280px;
+        opacity: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+        .title {
+            margin-bottom: 30px;
+            cursor: default;
+            h1 {
+                font-size: 50px;
+                color: #0581d8;
+                margin-bottom: 9px;
+            }
+            h3 {
+                font-size: 38px;
+                color: #299ff2;
+                font-weight: 500;
+            }
+        }
+        .content {
+            font-size: 24px;
+            color: #a9a9a9;
+            white-space: nowrap;
+            cursor: default;
+            p {
+                margin-bottom: 7px;
+            }
+        }
+    }
+}
+
+.al-spreadItem4.animateOn {
+    .al-spreadTitle {
+        @include animate-fadeInLeft(1s,
+        0s,
+        ease-in-out,
+        forwards);
+    }
+    .al-spreadItemImg {
+        @include animate-fadeInRight(1s,
+        0s,
+        ease-in-out,
+        forwards);
+    }
+}
+
+// 第五屏
+.al-spreadItem5 {
+    background: transparent url('//img10.allinmd.cn/v3/single/bg_item5.png') center center no-repeat;
+    background-size: 100% 100%;
+    z-index: 3;
+    height: 540px;
+    .al-spreadContentItem {
+        height: 540px;
+    }
+    .al-spreadFooter {
+        position: absolute;
+        width: 357px;
+        height: 95px;
+        left: 50%;
+        margin-left: -178.5px;
+        top: 60px;
+        opacity: 0;
+        .title {
+            position: absolute;
+            text-align: center;
+            top: 10px;
+            font-size: 38px;
+            color: #fff;
+            cursor: default;
+            span {
+                margin: 0 10px;
+            }
+        }
+        .title2 {
+            position: absolute;
+            top: 90px;
+            text-align: center;
+            font-size: 21px;
+            color: #fff;
+            cursor: default;
+            @include opacity(.8);
+        }
+    }
+    .al-spreadGetLinksInput {
+        left: 27%;
+        right: 27%;
+        top: 40%;
+        input {
+            float: left;
+            width: 255px;
+            opacity: 0;
+        }
+        .al-spreadGetLinksBtn {
+            float: right;
+            margin-left: 0;
+            opacity: 0;
+        }
+    }
+    .al-spreadFooterErweiCode {
+        width: 140px;
+        height: 140px;
+        position: absolute;
+        bottom: 107px;
+        left: 50%;
+        margin-left: -70px;
+        opacity: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+    .al-spreadFooterText {
+        width: 277px;
+        height: 55px;
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        margin-left: -138.5px;
+        opacity: 0;
+    }
+    .al-spreadFooterBox {
+        width: 674px;
+        height: 249px;
+        position: absolute;
+        left: 50%;
+        top: 22%;
+        margin-left: -337px;
+        opacity: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.al-spreadItem5.animateOn {
+    .al-spreadFooter {
+        @include animate-bounceInDown(1s,
+        0s,
+        ease-out,
+        forwards);
+        opacity: 1;
+    }
+    .al-spreadGetLinksInput {
+        input {
+            @include animate-fadeInLeftBig(1s,
+            0.5s,
+            ease-in-out,
+            forwards);
+        }
+        .al-spreadGetLinksBtn {
+            @include animate-fadeInRightBig(1s,
+            0.5s,
+            ease-in-out,
+            forwards);
+        }
+    }
+    .al-spreadFooterErweiCode {
+        @include animate-bounceIn(1s,
+        1s,
+        ease-in-out,
+        forwards);
+    }
+    .al-spreadFooterText {
+        @include animate-bounceIn(1s,
+        1s,
+        ease-in-out,
+        forwards);
+    }
+    .al-spreadFooterBox {
+        @include animate-fadeIn(1s,
+        0.5s,
+        ease-in-out,
+        forwards);
+    }
+}

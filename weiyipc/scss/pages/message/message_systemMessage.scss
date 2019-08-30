@@ -1,0 +1,48 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+@import "../../components/_selectAll";  //全选组件
+@import "../../components/_deletePop";//删除提示弹层
+
+.al-deletePopBox{ //弹层
+  display:block;
+}
+
+.al-systemMessage{
+  .al-contentCommentMain{
+    .al-contentCommentItemTitle{
+      span{     //话题删除通知
+        font-size:16px;
+        color:#333;
+        padding-left:0;
+      }
+      .al-viewDetails{  //查看详情
+        color:#626F8C;
+        font-size:16px;
+        margin-top:9px;
+        line-height: 28px;
+      }
+    }
+  }
+}
+
+//小圆圈
+
+.al-contentComment_round{ // 未选
+  float:left;
+  width:16px;
+  height:16px;
+  border:1px solid #b4b4b4;
+  border-radius: 50%;
+  behavior: url("/js/third-party/pie/pie.htc");
+  //display:none;
+}
+.al-contentComment{
+  .al-selectAll{  // 已选
+    background: transparent url("//img10.allinmd.cn/v3/message/delete_redBtn.png") center center no-repeat;
+    border: none;
+  }
+}
+

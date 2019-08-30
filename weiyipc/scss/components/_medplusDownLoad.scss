@@ -1,0 +1,93 @@
+//视频下载弹层：begin
+.al-downLoad_PopBox{
+  display:none;
+  //display:flex;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:7;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);  /*IE8支持*/
+}
+.al-downContainer{
+  width:450px;
+  height:262px;
+  background-color:#fff;
+  border-radius:6px;
+  top:50%;
+  left:50%;
+  margin-left: -225px;
+  margin-top:-131px;
+  //behavior:url("/js/third-party/pie/pie.htc");
+  position: relative;
+  .closePopBtn{ //关闭按钮
+    float:right;
+    width:13px;
+    height:13px;
+    background:url("//img10.allinmd.cn/v3/terminal/popCloseBtn.png") center center no-repeat;
+    margin:20px;
+    cursor: pointer;
+  }
+}
+.al-downLoadContent{
+  @include clearfix();
+  padding:40px 50px 45px;
+  figcaption{
+    color:#555;
+    margin-bottom:20px;
+  }
+  .downLoadWay{
+    float:left;
+    margin-top:10px;
+    p{
+      padding:25px 0 0 25px;
+      i{
+        display:inline-block;
+        width:28px;
+        height:32px;
+        background:url("//img10.allinmd.cn/v3/terminal/AndroidIcon.png") center center no-repeat;
+        vertical-align: middle;
+        margin-right:15px;
+        margin-top:-5px;
+      }
+      .iPhoneIcon{
+        width:25px;
+        height:31px;
+        background:url("//img10.allinmd.cn/v3/terminal/iPhoneIcon.png") center center no-repeat;
+        margin-top:-10px;
+      }
+      span{font-size:20px;}
+      .AndroidText{color:#49BD38;}
+      .iPhoneText{color:#14A7F0;}
+    }
+  }
+  .downLoad_QR{ //下载二维码
+    float:right;
+    img{
+      width:140px;
+      height:140px;
+      box-shadow:8px 8px 10px rgba(83,101,119,0.2),-5px -5px 10px rgba(83,101,119,0.2);
+    }
+  }
+}
+//视频下载弹层：end
+/*--start视频终端点击产品引导下载app弹框start--*/
+.al-downContainer{
+  .al-downLoadContent{
+    figcaption{
+      text-align: center;
+    }
+    .allinmd-QR-code{
+      margin: 0 auto;
+      float: inherit;
+      img{
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+/*--end视频终端点击产品引导下载app弹框end--*/

@@ -1,0 +1,26 @@
+<template name="bottomBar$104c7cfa">
+  <view class="_footer data-v-45d54ad6 bottom-bar" wx:if="{{!showShareBox}}">
+    <view class="_section data-v-45d54ad6 bottom-bar-item" wx:if="{{mobileOnOff}}">
+      <form action bindsubmit="handleProxy" report-submit="true" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_form data-v-45d54ad6"><button class="_button data-v-45d54ad6 bottom-bar-item-content" type="submit" formType="submit" open-type="getUserInfo" bindgetuserinfo="handleProxy" wx:if="{{!authStatus}}" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+          <view class="_i data-v-45d54ad6 icon-comment"></view> <label class="_span data-v-45d54ad6 text">评论</label> <label class="_span data-v-45d54ad6 num" wx:if="{{commentNum.all>0}}">{{formatCommentNum}}</label>
+        </button></form>
+      <view class="_section data-v-45d54ad6 bottom-bar-item-content" bindtap="handleProxy" wx:if="{{authStatus}}" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+        <view class="_i data-v-45d54ad6 icon-comment"></view> <label class="_span data-v-45d54ad6 text">评论</label> <label class="_span data-v-45d54ad6 num" wx:if="{{commentNum.all>0}}">{{formatCommentNum}}</label>
+      </view>
+    </view>
+    <view class="_section data-v-45d54ad6 bottom-bar-item" wx:if="{{!mobileOnOff}}">
+      <form action bindsubmit="handleProxy" report-submit="true" data-eventid="{{'4'}}" data-comkey="{{$k}}" class="_form data-v-45d54ad6"><button class="_button data-v-45d54ad6 bottom-bar-item-content" type="submit" formType="submit" open-type="getUserInfo" bindgetuserinfo="handleProxy" wx:if="{{!authStatus}}" data-eventid="{{'3'}}" data-comkey="{{$k}}">
+          <view class="_i data-v-45d54ad6 icon-comment"></view> <label class="_span data-v-45d54ad6 text">评论</label> <label class="_span data-v-45d54ad6 num" wx:if="{{commentNum.all>0}}">{{formatCommentNum}}</label>
+        </button></form> <button class="_button data-v-45d54ad6 bottom-bar-item-content" open-type="getPhoneNumber" bindgetphonenumber="handleProxy" wx:if="{{authStatus}}" data-eventid="{{'5'}}" data-comkey="{{$k}}">
+        <view class="_i data-v-45d54ad6 icon-comment"></view> <label class="_span data-v-45d54ad6 text">评论</label> <label class="_span data-v-45d54ad6 num" wx:if="{{commentNum.all>0}}">{{formatCommentNum}}</label>
+      </button>
+    </view> <label class="_span data-v-45d54ad6 line"></label>
+    <view class="_section data-v-45d54ad6 bottom-bar-item">
+      <form action bindsubmit="handleProxy" report-submit="true" data-eventid="{{'7'}}" data-comkey="{{$k}}" class="_form data-v-45d54ad6"><button class="_button data-v-45d54ad6 bottom-bar-item-content" type="submit" formType="submit" bindtap="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}">
+          <view class="_i data-v-45d54ad6 icon-share">
+            <image src="https://m.allinmed.cn/static/image/mp/index/1.1.2/wechat_01.png" alt class="_img data-v-45d54ad6"></image>
+          </view> <label class="_span data-v-45d54ad6 text">分享给好友</label>
+        </button></form>
+    </view>
+  </view>
+</template>

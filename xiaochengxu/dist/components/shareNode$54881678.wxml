@@ -1,0 +1,38 @@
+<import src="/components/canvasCreator2$370038e7" />
+<import src="/components/ensure$5e95f728" /><template name="shareNode$54881678">
+  <view class="_section data-v-827505c2 shareNodeCon" wx:if="{{isshow}}"><template ref="canvas" wx:if="{{isshow}}" bindsuccess="handleProxy" bindfail="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="canvasCreator2$370038e7"></template>
+    <view class="_section data-v-827505c2 shareContent">
+      <view class="_i data-v-827505c2 closeShareCon" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}"></view>
+      <view class="_article data-v-827505c2 shareTitle">
+        <view class="_h2 data-v-827505c2">
+          <view class="_i data-v-827505c2 iconTitle"></view><label class="_span data-v-827505c2">{{shareMap.manualName}}</label>
+        </view>
+      </view>
+      <view class="_article data-v-827505c2 shareContainer">
+        <view class="_div data-v-827505c2 contenList">
+          <view class="_h4 data-v-827505c2">{{shareMap.manualNum>0?(shareMap.manualNum+'个内容'):''}}</view>
+          <view class="_p data-v-827505c2 contentItem">{{shareMap.manualNum>=1?('- '+shareMap.educationNameList[0].educationName):''}}</view>
+          <view class="_p data-v-827505c2 contentItem">{{shareMap.manualNum>=2?('- '+shareMap.educationNameList[1].educationName):''}}</view>
+          <view class="_p data-v-827505c2 contentItem" wx:if="{{shareMap.manualNum>2}}">…</view>
+        </view>
+        <view class="_div data-v-827505c2 doctorCon" wx:if="{{shareMap.customerName}}">
+          <view class="_h4 data-v-827505c2">来自</view>
+          <view class="_figure data-v-827505c2 doctorInfo">
+            <image src="{{shareMap.logoUrl}}" class="_img data-v-827505c2"></image>
+            <view class="_div data-v-827505c2 doctorDesc">
+              <view class="_p data-v-827505c2 doctorName">{{shareMap.customerName}}</view>
+              <view class="_p data-v-827505c2 doctorCom"><label class="_span data-v-827505c2 doctorMedical">{{shareMap.medicalTitle}}</label><label class="_span data-v-827505c2">{{shareMap.company}}</label></view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-827505c2 shareFoot">
+        <view class="_div data-v-827505c2 imgContainer">
+          <image src="{{shareMap.ticketUrl}}" class="_img data-v-827505c2"></image>
+          <view class="_p data-v-827505c2 wxTipDesc">微信中识别小程序码<view class="_br data-v-827505c2"></view>免费查看所有内容</view>
+        </view>
+      </view>
+      <view class="_div data-v-827505c2 saveBtnCon"><button bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_button data-v-827505c2">保存到手机</button></view>
+    </view> <template wx:if="{{ensureShow}}" bindensureClickEvent="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="ensure$5e95f728"></template>
+  </view>
+</template>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <link rel="stylesheet" href="css.css"/>
+    <link rel="stylesheet" href="swiper.css"/>
+    <meta name="data-alcode" content="a2">
+</head>
+<body data-alcode="350">
+<div class="loadingMask" style="display: flex; justify-content: center;">
+    <svg id="loading" class="center" width="300" height="300" style="width: 300px; height: 300px; margin: 0 auto;">
+
+    </svg>
+</div>
+<div class="wrap data-cube2" id="wrap" style="display: none">
+    <div class="item item-1" id="item-index">
+        <div class="con indexCon">
+            <div class="logo fix "></div>
+            <div class="clear"></div>
+            <div class="index-title fix">
+                <div class="index-ufo">
+                </div>
+            </div>
+            <div class="login_btns">
+                <div class="btn caos">
+                    CAOS会员登录
+                </div>
+                <div class="btn allin">
+                   唯医会员登录
+                </div>
+                <div class="text">
+                    <a href="" id="viewOther">查看<span></span>的账单</a>
+                </div>
+            </div>
+            <div class="next-page">
+                <div></div>
+            </div>
+            <div class="loginMask" style="display: none">
+                <div class="loginTextBox">
+                    登录后才能查看哦。
+                </div>
+            </div>
+        </div>
+        <div class="mountain"></div>
+        <svg class="sceneSvg">
+        </svg>
+    </div>
+
+    <div class="item item-2" id="item-dearTeacher">
+        <div class="con dearTeacher">
+            <div class="logo"></div>
+            <div class="clear"></div>
+            <div class="teacher-ufo">
+            </div>
+
+            <ul class="dear-text">
+                <li>亲爱的<span id="teacherName"></span>老师：</li>
+                <li class="orange" id="registTime">2016年12月28日</li>
+                <li>唯医终于等到您</li>
+                <li>感谢您<span class="orange" id="registDays">N个</span>日夜的陪伴</li>
+                <li class="orange">2016</li>
+                <li>在陪您走过的那些日子</li>
+                <li>我想说出您与唯医的故事...</li>
+            </ul>
+
+            <div class="next-page">
+                <div></div>
+            </div>
+
+        </div>
+        <div class="mountain"></div>
+        <svg class="sceneSvg">
+        </svg>
+    </div>
+
+    <div class="item item-3" id="item-lastYear">
+        <div class="con">
+            <div class="logo"></div>
+
+            <div class="next-page">
+                <div></div>
+            </div>
+            <div class="dashed-lines">
+            </div>
+            <div class="lastYear"></div>
+            <div class="lastyearTable">
+                <ul>
+                    <li>总共学习了 <span id="browseNum" class="b"></span><span class="s">个资源</span></li>
+                    <li>总学习时长 <span id="browseTime" class="b"></span><span class="s">分钟</span></li>
+                    <li>个人发布了 <span id="resourceNum" class="b"></span><span class="s">个资源</span></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="mountain"></div>
+        <svg class="sceneSvg">
+
+        </svg>
+    </div>
+
+    <div class="item item-4" id="item-noRecord">
+        <div class="con noRecord">
+            <div class="logo"></div>
+            <div class="next-page">
+                <div></div>
+            </div>
+            <div class="lastYear"></div>
+            <div class="dashed-lines">
+            </div>
+            <div class="no-record-text">
+                <ul>
+                    <li>
+                        很遗憾，2016年
+                    </li>
+                    <li>
+                        您没有在唯医留下印记
+                    </li>
+                    <li>
+                        2017年扬帆起航
+                    </li>
+                    <li>
+                        学习就在您身边！
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mountain"></div>
+        <svg class="sceneSvg">
+
+        </svg>
+    </div>
+
+    <div class="item item-5" id="item-pieChart">
+        <div class="con pieChart">
+            <div class="logo"></div>
+            <div class="next-page">
+                <div></div>
+            </div>
+            <div class="clear"></div>
+            <div class="piChart-title">
+
+            </div>
+            <div class="time-text">
+                唯医2.0精准个性化推荐、最全亚专业分类，<br/>看您想看的资源。
+            </div>
+            <div class="pie-ufo">
+            </div>
+            <div class="svg-wrap">
+                <svg class="pieSvg" id="pieSvg">
+
+                </svg>
+            </div>
+
+        </div>
+        <div class="mountain"></div>
+        <div class="lastYear">
+
+        </div>
+
+        <svg class="sceneSvg">
+
+        </svg>
+    </div>
+
+    <div class="item item-6" id="item-youLearn">
+        <div class="con">
+            <div class="logo fix"></div>
+            <div class="next-page">
+                <div></div>
+            </div>
+            <div class="clear"></div>
+            <div class="learn-ufo">
+            </div>
+            <div class="youLearn-title">
+
+            </div>
+            <div class="learnList" id="learnList"></div>
+        </div>
+
+        <div class="mountain"></div>
+        <svg class="sceneSvg">
+
+        </svg>
+    </div>
+
+    <div class="item item-7" id="item-yourRelation">
+        <div class="con relation">
+            <div class="logo"></div>
+            <div class="next-page">
+                <div></div>
+            </div>
+            <div class="clear"></div>
+            <div class="relation-bg"></div>
+            <div class="year-2014">2014</div>
+            <div class="year-2015">2015</div>
+            <div class="title">
+                2016，你们一起走过
+            </div>
+            <div class="title-2">
+                来往
+            </div>
+            <div class="title-3">和您有过学术交流：<span>1</span>人</div>
+            <div class="customerSocial">
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+        <div class="mountain"></div>
+
+        <svg class="sceneSvg">
+
+        </svg>
+    </div>
+
+    <div class="item item-8" id="item-yourRelation-no">
+        <div class="con relation">
+            <div class="logo"></div>
+            <div class="next-page">
+                <div></div>
+            </div>
+            <div class="clear"></div>
+            <div class="relation-bg"></div>
+            <div class="year-2014">2015</div>
+            <div class="year-2015">2016</div>
+            <div class="title">
+                2017，建立您的学术圈
+            </div>
+            <div class="title-no-2">
+                来往
+            </div>
+            <div class="title-no-3">
+                <span>
+                    为人低调，或许您只是有些腼腆
+                </span>
+                这些学术大咖都在这里，快来看看吧
+            </div>
+            <div class="customerSocial">
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+        <div class="mountain"></div>
+        <svg class="sceneSvg">
+
+        </svg>
+    </div>
+    <div class="item item-9" id="item-yourCard">
+        <div class="con yourCard">
+            <div class="logo"></div>
+            <div class="clear"></div>
+            <div class="card-title">
+                <div class="card-ufo">
+                </div>
+                <div class="thumb-box">
+                    <div class="thumb">
+                        <img src="" alt="" id="logoUrl"/>
+                        <div class="crown"></div>
+                    </div>
+                </div>
+                <div class="name-box">
+                    <div class="name" id="teacherName2"></div>
+                    <div class="company" id="company"></div>
+                </div>
+                <div class="clear"></div>
+
+                <div class="title_bg" id="doctorTitle"></div>
+                <div class="win">
+                    击败了
+                    <span id="worthPercent"></span>
+                    的用户
+                </div>
+            </div>
+            <div class="planet-bg">
+                <div class="tagBall" id="tagBall"></div>
+            </div>
+
+            <footer>
+                <div class="erweima">
+                    <div id="Qrcode"></div>
+                </div>
+                <p>
+                    您的学术名片已经生成 <br/>
+                    “<span>截图</span>发到朋友圈哦”
+                </p>
+
+                <div class="weixiaobao">
+                    <img src="images/weixiaobao/lol.png" alt=""/>
+                </div>
+            </footer>
+        </div>
+        <div class="mountain"></div>
+        <svg class="sceneSvg">
+
+        </svg>
+    </div>
+    <div class="item item-9" id="item-share">
+        <div class="con share">
+            <div class="logo"></div>
+            <div class="clear"></div>
+
+            <div class="shareMask">
+                <div class="share-ufo"></div>
+                <div class="text_box">
+                    <div class="line_1">
+                        您的骨医账单已经生成：
+                    </div>
+                    <p>
+                        快把您的学习成就 <br/>分享到朋友圈吧！
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="mountain"></div>
+        <svg class="sceneSvg">
+
+        </svg>
+    </div>
+    <div class="item item-9" id="item-downloadApp">
+        <div class="con downloadApp">
+            <div class="logo"></div>
+            <div class="clear"></div>
+            <div class="slogan"></div>
+            <div class="erweima-big">
+                <img src="images/app-download.png" alt=""/>
+            </div>
+            <div class="down-text">
+                <h2>下载唯医骨科APP<br/>开启学术之旅</h2>
+
+                <p>
+                    10万+的骨科资源都在这里
+                </p>
+            </div>
+        </div>
+        <div class="mountain"></div>
+        <svg class="sceneSvg">
+
+        </svg>
+    </div>
+</div>
+
+
+<svg style="width:0;height:0" style="display: none" id="grad">
+    <defs>
+        <linearGradient id="gradient1">
+            <stop offset="0%" style="stop-color: #0AB383;stop-opacity: 0.8"></stop>
+            <stop offset="30%" style="stop-color: #106774;stop-opacity: 0.6"></stop>
+            <stop offset="100%" style="stop-color: #151A55;stop-opacity: 0.2"></stop>
+        </linearGradient>
+        <linearGradient id="downGradient" xlink:href="#gradient1"
+                        x1="0%" y1="0%" x2="0%" y2="100%"
+                />
+
+        <linearGradient id="pie1">
+            <stop offset="0%" style="stop-color: #0A6569;stop-opacity: 1"></stop>
+            <stop offset="100%" style="stop-color: #101759;stop-opacity: 0.4"></stop>
+        </linearGradient>
+        <linearGradient id="pie1Gradient" xlink:href="#pie1"
+                        x1="0%" y1="0%" x2="0%" y2="100%"
+                />
+
+        <linearGradient id="pie1Brighter">
+            <stop offset="0%" style="stop-color: #08D68A;stop-opacity: 1"></stop>
+            <stop offset="100%" style="stop-color: #116173;stop-opacity: 1"></stop>
+        </linearGradient>
+        <linearGradient id="pie1BrighterGradient" xlink:href="#pie1Brighter"
+                        x1="0%" y1="0%" x2="0%" y2="100%"
+                />
+
+        <linearGradient id="pie2">
+        <stop offset="0%" style="stop-color: #163778;stop-opacity: 1"></stop>
+        <stop offset="100%" style="stop-color: #10165A;stop-opacity: 0.4"></stop>
+    </linearGradient>
+        <linearGradient id="pie2Gradient" xlink:href="#pie2"
+                        x1="0%" y1="0%" x2="0%" y2="100%"
+                />
+
+        <linearGradient id="pie2Brighter">
+            <stop offset="0%" style="stop-color: #2997C7;stop-opacity: 1"></stop>
+            <stop offset="100%" style="stop-color: #1D426F;stop-opacity: 1"></stop>
+        </linearGradient>
+        <linearGradient id="pie2BrighterGradient" xlink:href="#pie2Brighter"
+                        x1="0%" y1="0%" x2="0%" y2="100%"
+                />
+
+        <filter id="greenFilter" x="0" y="0" width="100%" height="100%">
+            <feOffset result="offOut" in="SourceAlpha" dx="5" dy="5" />
+            <feColorMatrix result="matrixOut" in="offOut" type="matrix"
+                           values="0.2 0 0 0 0         0.4 0 0 0 0     0 0 0 0.6 0       0 0 0 0.5 0" />
+            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+        </filter>
+
+        <filter id="blueFilter" x="0" y="0" width="100%" height="100%">
+            <feOffset result="offOut" in="SourceAlpha" dx="-5" dy="-5" />
+            <feColorMatrix result="matrixOut" in="offOut" type="matrix"
+                           values="0 0 0 0.3 0    0 0 0 0 0     0 0 0 0.5 0      0 0 0 1 0" />
+            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+        </filter>
+    </defs>
+</svg>
+</body>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/lib/jquery/jquery.cookie.js"></script>
+<script src="/js/lib/d3/d3.v4.min.js"></script>
+<script src="js/loading.js"></script>
+
+
+<script src="/js/third-party/iSwiper/iSlider.js"></script>
+
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+
+<script src="/js/column/data_magic/flexible.js"></script>
+<script src="/js/comm/jweixin-1.0.0.js"></script>
+<script src="/js/comm/WeixinJSApi.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="js/jquery.qrcode.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>
+<script src="/js/comm/log.js"></script>
+</html>

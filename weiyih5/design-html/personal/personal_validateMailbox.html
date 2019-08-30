@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>修改邮箱</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_validateMobile.css">
+</head>
+
+<body>
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem">
+                <a href="/design-html/personal/personal_index.html">
+                    <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>修改邮箱</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)">
+                </a>
+            </figure>
+        </header>
+        <section class="al-changeMobileBox">
+            <article class="al-changeMobileContent">
+                验证码已发送，请输入收到的验证码
+            </article>
+            <figure class="al-validateInput">
+                <input type="text">
+            </figure>
+            <article class="al-changeMobileContent sended">
+                已发送<span>58s</span>后重新发送
+            </article>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script>
+    FastClick.attach(document.body);
+    $(function() {
+        $(".al-validateInput input").on("keyup", function(e) {
+            if ($(this).val().length===6) {
+                $(".al-validateInput input").blur();
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

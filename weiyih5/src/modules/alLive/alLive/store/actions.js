@@ -1,0 +1,57 @@
+const actions = {
+    methodFun:({commit, state}, str)=>{
+        commit("methodFun",str);
+    },
+    changeLandscape:({commit,state},onOff)=>{
+        commit("changeLandscape",onOff);
+    },
+    setWindowSize:({commit,state},option)=>{
+        commit("setWindowSize",option);
+    },
+    changeTabIndex:({commit,state},index)=>{
+        commit("changeTabIndex",index);
+    },
+    saveAgendaList:({commit,state},list)=>{
+        commit("saveAgendaList",list);
+    },
+    saveLiveNum:({commit,state},num)=>{
+        commit('saveLiveNum',num);
+    },
+    saveLiveType:({commit,state},type)=>{
+        commit('saveLiveType',type);
+    },
+    saveDocumentType:({commit,state},type)=>{
+        commit('saveDocumentType',type);
+    },
+    saveAgendaStatus:({commit,state},type)=>{
+        commit('saveAgendaStatus',type);
+    },
+    loadEnd:({commit,state})=>{
+        commit('loadEnd');
+    },
+    changeChatMsg:({commit,state},msg)=>{
+        commit('changeChatMsg',msg);
+    },
+    saveMessageItem:({commit,state},item)=>{
+        commit('saveMessageItem',item);
+    },
+    saveConferenceId:({commit,state},config)=>{
+        commit('saveConferenceId',config);
+    },
+    saveAuthority:({commit,state},authority)=>{
+        commit('saveAuthority',authority);
+    },
+    saveConSubInfo:({commit,state},config)=>{
+        commit('saveConSubInfo',config);
+    },
+    saveQueryJson:({commit,state},config)=>{
+        commit('saveQueryJson',config);
+    },
+    changeLiveStatus:({commit,state},type)=>{
+        commit('changeLiveStatus',type);
+    },
+    sureNothing:({commit,state})=>{
+        commit('sureNothing');
+    }
+};
+export default actions;

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var comm = {};
+        /**
+         *
+         * @returns {{}}
+         */
+        comm.getpara = function ()//获取参数的函数
+        {
+            var url=document.URL;
+            var param={};
+            var str,item;
+            if(url.lastIndexOf("?")>0)
+            {
+                str=url.substring(url.lastIndexOf("?")+1,url.length);
+                var arr=str.split("&");
+                for(var i=0;i<arr.length;i++)
+                {
+                    item =  arr[i].split("=");
+                    param[item[0]] = decodeURI(item[1]);
+                }
+            }
+            return param;
+        };
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0">
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+
+<h1>
+<a href="http://m.allinmd.cn/html/pages/case/case_list.html">asdfasdfasdf</a></h1>
+<script>
+    var url;
+    debugger;
+    if (typeof comm.getpara().url == "undefined") {
+        url = "http://www.allinmd.cn"
+    } else {
+        url = comm.getpara().url;
+    }
+    window.location.href = decodeURIComponent(url);
+</script>
+</body>
+</html>

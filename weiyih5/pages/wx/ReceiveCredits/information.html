@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学分领取</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/ReceiveCredits/receiveCredits.css">
+</head>
+<body data-alcode="228">
+    <section class="al-mainInner">
+        <section class="infoContain ev-infoContain">
+            <article class="infoTitle">填写信息领取学分验证码</article>
+            <article>
+                <div class="inputBox">
+                    <input type="tel" maxlength="11" class="ev-phoneNum" placeholder="请输入报名时的手机号" />
+                </div>
+                <div class="inputBox codeInput">
+                    <input type="tel" placeholder="请输入验证码" class="ev-codeCheck"/>
+                    <span class="ev-sendCode" unCli="0">获取验证码</span>
+                    <span style="display: none" class="ev-countDown"><i>60</i>s后重试</span>
+                </div>
+                <div class="receiveBtn">
+                    <button class="ev-receiveBtn">立即领取</button>
+                </div>
+                <div class="reminder">
+                    <p>温馨提示：</p>
+                    <p class="reminderCon">每个帐号仅可领取一次,请勿代领
+                        学分验证码领取将于<span class="ev-reminderTime"></span>截止
+                    </p>
+                </div>
+            </article>
+            <article class="infoFooter">
+                <article class="infoFooterCon">
+                    <p>如有疑问，小唯随时为您解答</p>
+                    <p>
+                        微信号：allinmd2014
+                    </p>
+                    <p>
+                        电<i></i>话：<a data-href="tel:010-59007122" data-type="1">010-59007122</a>
+                    </p>
+                </article>
+            </article>
+        </section>
+        <!--失败-->
+        <section class="failedContain ev-failedContain" style="display: none;">
+            <article class="faileTitle">
+                <p>未查询到匹配结果</p>
+                <p>请确认填写信息的正确性</p>
+            </article>
+            <article class="infoFooter checkFaile">
+                <article class="infoFooterCon">
+                    <p>如有疑问，小唯随时为您解答</p>
+                    <p>
+                        微信号：allinmd2014
+                    </p>
+                    <p>
+                        电<i></i>话：<a data-href="tel:010-59007122" data-type="3">010-59007122</a>
+                    </p>
+                </article>
+            </article>
+            <div class="receiveBtn refill">
+                <button class="ev-refill">重新填写</button>
+            </div>
+        </section>
+        <!--成功-->
+        <section class="successContain ev-successContain" style="display: none;">
+            <article class="sucTitle">
+                领取成功
+            </article>
+            <article class="sucCardTitle">
+                <i></i>
+                <p style="display: none" class="ev-sucCard">您的学分验证码</p>
+                <p class="ev-sucAlCard">已领取的学分验证码</p>
+            </article>
+            <article class="sucCardImg ev-sucCardImg">
+                <div class="sucImg"><img class="ev-bigImg" src="" /></div>
+                <div class="sucTxt">学分验证码将用于学分领取，长按图片可保存到手机相册</div>
+            </article>
+            <article class="infoFooter">
+                <article class="infoFooterCon">
+                    <p>如有疑问，小唯随时为您解答</p>
+                    <p>
+                        微信号：allinmd2014
+                    </p>
+                    <p>
+                        电<i></i>话：<a data-href="tel:010-59007122" data-type="2">010-59007122</a>
+                    </p>
+                </article>
+            </article>
+        </section>
+    </section>
+</body>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+
+<script src="/js/third-party/md5.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/wx/jweixin-1.0.0.js"></script>
+<script src="/js/wx/ReceiveCredits/ReceiveCredits.js"></script>
+</html>

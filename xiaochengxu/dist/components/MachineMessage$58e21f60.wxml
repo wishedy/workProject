@@ -1,0 +1,68 @@
+<import src="/components/PatientMessage$31d7143c" />
+<import src="/components/vasLevel$45c708ea" /><template name="MachineMessage$58e21f60">
+  <view class="_section data-v-878d3fb6">
+    <view class="_section data-v-878d3fb6 machine-message">
+      <view class="_article data-v-878d3fb6 main-message-box-item">
+        <transition name="fade" class="_transition data-v-878d3fb6">
+          <view class="_figure data-v-878d3fb6 main-message-img" wx:if="{{questionItem.questionDesc||questionItem.loading}}">
+            <image src="https://m.allinmed.cn/static/image/mp/index/imSceneLogo.png" alt class="_img data-v-878d3fb6 message-logo"></image>
+            <view class="_p data-v-878d3fb6 message-content" wx:if="{{!questionItem.loading}}">{{questionItem.questionDesc}}<label class="_span data-v-878d3fb6 text-tip" wx:if="{{questionItem.questionType===2}}">（可多选）</label></view>
+            <view class="_p data-v-878d3fb6 message-content message-loading" wx:if="{{questionItem.loading}}"><label class="_span data-v-878d3fb6 loading-text"></label> <label class="_span data-v-878d3fb6 loading-text"></label> <label class="_span data-v-878d3fb6 loading-text"></label></view>
+          </view>
+        </transition>
+        <transition name="fade" class="_transition data-v-878d3fb6">
+          <view class="_figure data-v-878d3fb6 select-container" wx:if="{{questionItem.questionType&&questionItem.questionType!== 4&&questionItem.questionType!== 6&&!(questionItem.imgList&&questionItem.imgList.length)&&!questionItem.answer}}">
+            <view class="_p data-v-878d3fb6 select-title">您可以点击标签快速回答：</view>
+            <view class="_ul data-v-878d3fb6 select-list">
+              <view class="_li data-v-878d3fb6 select-list-item {{[  item.isActive ? 'active' : '',  questionItem.questionType === 5 ? 'item-block' : '']}}" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" wx:for="{{questionItem.optionList}}" wx:for-index="index" wx:for-item="item">
+                {{item.optionDesc}}
+                <view wx:if="{{item.isActive&&(questionItem.questionType===2||questionItem.questionType===5)}}" class="_i data-v-878d3fb6 icon-select"></view>
+              </view>
+            </view>
+            <form bindsubmit="handleProxy" report-submit="true" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_form data-v-878d3fb6"><button type="submit" formType="submit" class="_button data-v-878d3fb6 select-btn {{[currentSelect.length > 0 ? 'active' : '']}}" wx:if="{{questionItem.questionType===2||questionItem.questionType===5}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">选好了 </button></form>
+          </view>
+        </transition>
+        <transition name="fade" class="_transition data-v-878d3fb6">
+          <view class="_figure data-v-878d3fb6 input-container" wx:if="{{questionItem.questionType===4&&!questionItem.answer}}"><input type="text" class="_input data-v-878d3fb6 send-input {{[inputMarBot ? 'inputMarBot' : '']}}" auto-focus="true" value="{{questionItem.questionValue}}" bindinput="handleProxy" maxlength="300" bindfocus="handleProxy" bindblur="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" />
+            <form bindsubmit="handleProxy" report-submit="true" data-eventid="{{'5'}}" data-comkey="{{$k}}" class="_form data-v-878d3fb6"><button class="_button data-v-878d3fb6 send-btn {{[  questionItem.questionValue.length ? 'active' : '',  inputMarBot ? 'inputMarBot' : '']}}" bindtap="handleProxy" type="submit" formType="submit" data-eventid="{{'4'}}" data-comkey="{{$k}}">发送 </button></form>
+          </view>
+        </transition>
+        <transition name="fade" class="_transition data-v-878d3fb6">
+          <view class="_figure data-v-878d3fb6 img-container" wx:if="{{questionItem.imgList&&questionItem.imgList.length&&!questionItem.answer}}">
+            <view class="_ul data-v-878d3fb6 img-list">
+              <view class="_li data-v-878d3fb6 img-list-item" wx:key="index" key="{{index}}" wx:if="{{index<11||(questionItem.imgList.length===36&&index<=11)}}" wx:for="{{questionItem.imgList}}" wx:for-index="index" wx:for-item="item">
+                <image src="{{item.path}}" alt bindtap="handleProxy" data-eventid="{{'6-'+index}}" data-comkey="{{$k}}" class="_img data-v-878d3fb6"></image> <label class="_span data-v-878d3fb6 imgItem-cover" wx:if="{{(!item.upload)&&(!item.attId)}}"><label class="_span data-v-878d3fb6 imgItem-loading"></label></label>
+                <view class="_i data-v-878d3fb6 close-icon" catchtap="handleProxy" data-eventid="{{'7-'+index}}" data-comkey="{{$k}}"></view>
+                <view class="_figure data-v-878d3fb6 imgItem-fail" wx:if="{{item.fail}}" catchtap="handleProxy" data-eventid="{{'8-'+index}}" data-comkey="{{$k}}">
+                  <view class="_p data-v-878d3fb6 imgItem-failText">上传失败</view>
+                  <view class="_p data-v-878d3fb6 imgItem-reloadText">点击重试</view>
+                </view>
+              </view>
+              <view class="_li data-v-878d3fb6 img-list-item wxChoseFileBtn" bindtap="handleProxy" wx:if="{{questionItem.imgList.length<36}}" data-eventid="{{'9'}}" data-comkey="{{$k}}">
+                <image src="https://m1.allinmed.cn/static/image/mp/index/1.6.0/upload-img.png" class="_img data-v-878d3fb6"></image>
+                <view class="_p data-v-878d3fb6 chose-text">上传照片</view>
+              </view>
+            </view>
+            <view class="_p data-v-878d3fb6 tip-text"><label class="_span data-v-878d3fb6 img-num">已上传{{questionItem.imgList.length}}张{{questionItem.imgList.length>11 ? '，':''}}</label> <label class="_span data-v-878d3fb6 more-text" wx:if="{{questionItem.imgList.length>11}}" bindtap="handleProxy" data-eventid="{{'10'}}" data-comkey="{{$k}}">查看全部</label></view>
+            <form bindsubmit="handleProxy" report-submit="true" data-eventid="{{'12'}}" data-comkey="{{$k}}" class="_form data-v-878d3fb6"><button class="_button data-v-878d3fb6 img-submit" bindtap="handleProxy" type="submit" formType="submit" data-eventid="{{'11'}}" data-comkey="{{$k}}">确认上传 </button></form>
+          </view>
+        </transition>
+      </view>
+    </view>
+    <transition name="fade" class="_transition data-v-878d3fb6"><template wx:if="{{questionItem.answer&&questionItem.answer !=='其他'}}" data="{{...$root[$kk+'4'], $root}}" is="PatientMessage$31d7143c"></template></transition>
+    <transition name="fade" class="_transition data-v-878d3fb6">
+      <view class="_section data-v-878d3fb6 pain-level-wrapper" catchtap="handleProxy" wx:if="{{vasShow}}" data-eventid="{{'18'}}" data-comkey="{{$k}}">
+        <view class="_section data-v-878d3fb6 pain-level-box" catchtap="handleProxy" data-eventid="{{'17'}}" data-comkey="{{$k}}">
+          <view class="_h3 data-v-878d3fb6">
+            <view class="_i data-v-878d3fb6 icon-closePainLevel" catchtap="handleProxy" data-eventid="{{'13'}}" data-comkey="{{$k}}"></view>
+          </view>
+          <view class="_p data-v-878d3fb6 pain-level-content"><label class="_span data-v-878d3fb6 pain-value-name">
+              <view class="_i data-v-878d3fb6">疼痛程度:</view>
+              <view class="_i data-v-878d3fb6 name-text">{{painValue}}</view>
+            </label> <label class="_span data-v-878d3fb6 pain-value-desc"> {{vasList[painValue]&&vasList[painValue].optionDesc}}</label></view> <template bindgetSliderEvent="handleProxy" data-eventid="{{'14'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'6'], $root}}" is="vasLevel$45c708ea"></template>
+          <form bindsubmit="handleProxy" report-submit="true" data-eventid="{{'16'}}" data-comkey="{{$k}}" class="_form data-v-878d3fb6"><button class="_button data-v-878d3fb6 pain-level-ensure" type="submit" formType="submit" bindtap="handleProxy" data-eventid="{{'15'}}" data-comkey="{{$k}}">确定 </button></form>
+        </view>
+      </view>
+    </transition>
+  </view>
+</template>

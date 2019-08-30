@@ -1,0 +1,305 @@
+@charset "UTF-8";
+//直播
+//Created by zhangxiangfeng on 2016/11/08
+//公共方法模块调用
+@import "../../modules/common-modules";
+
+//直播主界面左侧边栏:begin
+.al-livingLeftSideBar{
+  width:152px;
+  height:100%;
+  background-color:#303845;
+  position:fixed;
+  top:0;
+  left:0;
+}
+.al-videoLeftNav{
+  li{
+    padding:28px 32px 28px 29px;
+    cursor: pointer;
+    article{
+      display: inline-block;
+      margin-left:6px;
+      vertical-align: text-bottom;
+      span{
+        color:#fefefe;
+        font-size:14px;
+      }
+      p{
+        color:#eeeeee;
+        font-size:10px;
+        font-family:Arial;
+        margin-top:7px;
+      }
+    }
+  }
+  .al-filpScreenBox{
+    border-top:1px solid #272E39;
+    border-bottom:1px solid #272E39;
+    box-shadow:-1px 1px 1px #394250,-1px -1px 1px #394250;
+  }
+}
+//直播主界面左侧边栏:end
+
+
+
+
+
+
+
+//直播主界面右侧边栏:begin
+.al-livingRightSideBar{
+  position: fixed;
+  top:20px;
+  right:20px;
+  width:360px;
+  height:844px;
+}
+  .al-offsideImgBox{
+    position:relative;
+    height:204px;
+    border:1px solid #00f;
+    .al-imgBox_leftBtn{
+      position:absolute;
+      z-index:4;
+      top:50%;
+      margin-top:-23.5px;
+      left:0;
+      width:20px;
+      height:47px;
+      background: transparent url("//img10.allinmd.cn/v3/webcast/imgBox_leftBtn.png") center center no-repeat;
+    }
+    .al-imgBox_rightBtn{
+      position:absolute;
+      z-index:4;
+      top:50%;
+      right:0;
+      width:20px;
+      height:47px;
+      margin-top:-23.5px;
+      background: transparent url("//img10.allinmd.cn/v3/webcast/imgBox_rightBtn.png") center center no-repeat;
+    }
+    .al-imgBox_imgCount{
+      position: absolute;
+      right:0;
+      bottom:0;
+      width:50px;
+      height:42px;
+      border:1px solid #f00;
+    }
+  }
+
+  .al-userListAndDisArea{
+    margin-top:20px;
+    @include clearfix();
+    border:1px solid #e4e9ed;
+    box-sizing: border-box;
+    header{
+      border-bottom:1px solid #e4e9ed;
+      height:51px;
+      line-height:51px;
+    }
+  }
+
+  //互动区
+  .al-discussArea{
+    float:left;
+    width:178px;
+    text-align:center;
+    span{
+      cursor: pointer;
+      font-size:18px;
+      color:#333;
+    }
+    .textColor{color:#3598db;}
+  }
+
+  //参与列表
+  .al-userListArea{
+    float:left;
+    width:180px;
+    text-align:center;
+    &:before{
+      float:left;
+      content:"";
+      display: inline-block;
+      width:0;
+      height:24px;
+      border-left:1px solid #e4e9ed;
+      margin-top:15px;
+    }
+    span{
+      cursor: pointer;
+      font-size:18px;
+      color:#333;
+      padding-left:8px;
+      i{
+      }
+    }
+    .textColor{color:#3598db;}
+  }
+//直播主界面右侧边栏:end
+
+
+
+
+
+
+
+//视频底部样式：begin
+.al-videoMainBox{
+  margin:20px 400px 0 172px;
+}
+.al-videoFooter{
+  position:relative;
+  height:85px;
+  background-color:#fff;
+  border:1px solid rgba(199,211,223,0.35);
+  box-sizing: border-box;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66C7D3DF,endColorstr=#66C7D3DF);
+  padding:0 20px;
+  margin-top:-2px;  //视频与底部元素footer两者的间距
+  margin-bottom:555px;
+  //观看人数
+  .al-watchUser{
+    position:absolute;
+    top:36px;
+    left:20px;
+    i{
+      display: inline-block;
+      width:17px;
+      height: 14px;
+      background: transparent url("//img10.allinmd.cn/v3/webcast/livingUser.png") center center no-repeat;
+      margin-right:6px;
+      margin-bottom:-2px;
+    }
+    span{
+      color:#909090;
+      font-size:15px;
+      font-family: Arial;
+    }
+  }
+}
+
+  //中间直播按钮及视频设置按钮
+.al-livingSetAndEnd{
+  margin:22.5px 290px 22.5px 100px;
+  text-align: center;
+  color:#777;
+  .al-livingEndBtn{
+    display: inline-block;
+    width:180px;
+    text-align:center;
+    height:40px;
+    line-height:40px;
+    border:1px solid #2899e7;
+    box-sizing: border-box;
+    border-radius:50px;
+    behavior:url('/js/third-party/pie/pie.htc');
+    color:#3598db;
+    cursor: pointer;
+    margin:0 28px;
+  }
+  p{
+    display: inline-block;
+    cursor: pointer;
+    .al-setUpIcon{
+      display: inline-block;
+      vertical-align: middle;
+      width: 21px;
+      height:21px;
+      background:url("//img10.allinmd.cn/v3/webcast/setUpIcon.png") center center no-repeat;
+      margin-right:10px;
+    }
+  }
+}
+
+  //视频分享
+.al-videoShareBox{
+  position:absolute;
+  top:30px;
+  right:20px;
+  span{
+    color:#AAAAAA;
+    font-size:13px;
+    font-family:"宋体";
+  }
+  article{
+    display: inline-block;
+    width:40px;
+    text-align:center;
+    vertical-align: middle;
+    margin-top:-3px;
+    cursor: pointer;
+  }
+  .al-weChatContainer{  //扫描二维码
+    position:relative;
+    .al-popQRCode{
+      display: none;
+      position:absolute;
+      z-index: 5;
+      width:222px;
+      height:248px;
+      background: transparent url("//img10.allinmd.cn/v3/webcast/WeChatBoxIcon.png") center center no-repeat;
+      top:-246px;
+      left:-44px;
+      cursor: auto;
+      h4{
+        font-size:14px;
+        color:#909090;
+        font-weight:normal;
+        padding-top:40px;
+        padding-bottom:12px;
+      }
+    }
+  }
+  .al-videoShareLink{ //分享视频链接
+    position:relative;
+    .al-PopLink{
+      display: none;
+      position:absolute;
+      z-index:5;
+      top:-100px;
+      left:-455px;
+      width:512px;
+      height:99px;
+      background: transparent url("//img10.allinmd.cn/v3/webcast/videoShareLinkBox.png") center center no-repeat;
+      cursor: auto;
+      p{
+        display: inline-block;
+        color:#808080;
+        font-size:15px;
+        text-align: left;
+        line-height:99px;
+        margin-left:20px;
+        width:330px;
+        max-width:330px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      span{
+        float:right;
+        width:108px;
+        height:30px;
+        margin:34px 28px 0 0;
+        line-height:30px;
+        color:#fff;
+        font-size:15px;
+        background-color:#2899e6;
+        border-radius:50px;
+        behavior:url('/js/third-party/pie/pie.htc');
+        cursor: pointer;
+      }
+    }
+  }
+}
+//视频底部样式：end
+
+
+
+.videoIndexArea{
+  height:759px;
+  background-color:#e4e9ed;
+  width:100%;
+}

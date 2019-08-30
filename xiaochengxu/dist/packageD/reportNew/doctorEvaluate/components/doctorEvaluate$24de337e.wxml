@@ -1,0 +1,24 @@
+<import src="/components/LogoLoading$2b721f9a" />
+<import src="/components/BlackList$219144df" /><template name="doctorEvaluate$24de337e">
+  <view class="_div data-v-d1ec0cc8 main">
+    <view class="_div data-v-d1ec0cc8 head">
+      <view class="_div data-v-d1ec0cc8 annoy" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+        <image src="{{annoySrc}}" alt class="_img data-v-d1ec0cc8"></image>匿名
+      </view>
+      <view class="_div data-v-d1ec0cc8 comment-head {{[serviceRed ? 'service-red' : '']}}"> 请对{{doctorName}}医生进行评价 </view>
+    </view>
+    <view class="_div data-v-d1ec0cc8 tip">点击星星评分</view>
+    <view class="_section data-v-d1ec0cc8 stars-con">
+      <view class="_section data-v-d1ec0cc8 patient-comment-stars">
+        <view class="_figure data-v-d1ec0cc8 patient-comment-stars-item {{[  item.selected ? 'active' : '',  index == 0 ? 'first' : '',  index == 4 ? 'last' : '']}}" bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}" wx:for="{{triageStars}}" wx:for-index="index" wx:for-item="item"></view>
+      </view>
+      <view class="_div data-v-d1ec0cc8 star-title">{{triageStarsIndex>=0?'“' + triageStars[triageStarsIndex].title + '”':""}}</view>
+    </view>
+    <view class="_section data-v-d1ec0cc8 patient-comment-tag-list" wx:if="{{isSelectedStar}}">
+      <form bindsubmit="handleProxy" report-submit="true" data-eventid="{{'3'}}" data-comkey="{{$k}}" class="_form data-v-d1ec0cc8"><button class="_button data-v-d1ec0cc8 patient-comment-tag-item {{[item.selected ? 'active' : '']}}" wx:key="index" key="{{index}}" formType="submit" bindtap="handleProxy" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}" wx:for="{{currentTagList}}" wx:for-index="index" wx:for-item="item">
+          {{item.tagName}}
+        </button></form>
+    </view>
+    <view wx:if="{{isSelectedStar}}" class="_section data-v-d1ec0cc8 {{[true ? 'comment-text' : '', isFocus ? 'focus' : '']}}"><textarea class="_textarea data-v-d1ec0cc8 service-text" name bindfocus="handleProxy" bindinput="handleProxy" value="{{commentText}}" maxlength="-1" cursor-spacing="20" placeholder="{{commentTextPlaceholder}}" placeholder-style="{{requireClass}}" data-eventid="{{'4'}}" data-comkey="{{$k}}" /> <view class="_div data-v-d1ec0cc8 count-num">{{commentTextCount}}</view></view> <view class="_section data-v-d1ec0cc8 line"></view> <view class="_section data-v-d1ec0cc8 service-star"><view class="_div data-v-d1ec0cc8 comment-head {{[shareRed ? 'share-red' : '']}}">
+      您愿意将{{doctorName}}医生推荐给病友吗？
+    </view> <view class="_div data-v-d1ec0cc8 tip">点击星星评分</view></view> <view class="_section data-v-d1ec0cc8 stars-con"><view class="_section data-v-d1ec0cc8 patient-comment-stars"><view class="_figure data-v-d1ec0cc8 patient-comment-stars-item {{[  item.selected ? 'active' : '',  index == 0 ? 'first' : '',  index == 4 ? 'last' : '']}}" bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'5-'+index}}" data-comkey="{{$k}}" wx:for="{{serviceStars}}" wx:for-index="index" wx:for-item="item"></view></view> <view class="_div data-v-d1ec0cc8 star-title">{{serviceStarsIndex>=0?'“' + serviceStars[serviceStarsIndex].title + '”':""}}</view></view> <view class="_section data-v-d1ec0cc8 next-box"><form action bindsubmit="handleProxy" report-submit="true" data-eventid="{{'7'}}" data-comkey="{{$k}}" class="_form data-v-d1ec0cc8"><button bindtap="handleProxy" class="_button data-v-d1ec0cc8 next-btn {{[isValid ? 'active' : '']}}" formType="submit" data-eventid="{{'6'}}" data-comkey="{{$k}}">提交</button></form></view> <template wx:if="{{loading}}" data="{{...$root[$kk+'0'], $root}}" is="LogoLoading$2b721f9a"></template> <template data="{{...$root[$kk+'1'], $root}}" is="BlackList$219144df"></template></view></template>

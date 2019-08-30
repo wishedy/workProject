@@ -1,0 +1,58 @@
+@charset "UTF-8";
+//个人主页——邮箱验证成功
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_iconModule"; //小图标组件
+
+
+.icon-validateSuccess{
+	@extend %icon-validateSuccess;
+}
+html,body{
+	height: 100%;
+	text-align: center;
+}
+.al-mainInner{
+	background-color: #fff;
+	&:before{
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+
+	}
+}
+.al-contentBox{
+	display: inline-block;
+	vertical-align: middle;
+	width: 9rem;
+}
+.icon-validateSuccess{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: rem(25px);
+}
+.al-validateContent{
+	display: inline-block;
+
+	vertical-align: middle;;text-align: left;
+	h2{
+		color: #333;
+		@include font-dpr(19px);
+		font-weight: normal;
+		margin-bottom: rem(15px);
+	}
+	p{
+		@include font-dpr(13px);
+		color: #333;
+	}
+}
+.al-validateResult{
+	@include clearfix();
+	text-align: center;
+		margin-bottom: rem(100px);
+}

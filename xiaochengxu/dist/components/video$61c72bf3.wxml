@@ -1,0 +1,31 @@
+<template name="video$61c72bf3">
+  <view class="_section data-v-30bd0f0e main-message-box" bindlongpress="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">
+    <view class="_section data-v-30bd0f0e video-player" wx:if="{{showBigVideo}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}"><video src="{{videoMessage.file.url}}" id="videoPlayer" catchtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_video data-v-30bd0f0e"></video></view>
+    <view class="_article data-v-30bd0f0e main-message-box-item {{[  videoMessage.from === userData.account ? 'my-message' : '',  videoMessage.from === targetData.account ? 'others-message' : '']}}" data-clientid="{{videoMessage.idClient}}">
+      <view class="_figure data-v-30bd0f0e main-message-img" wx:if="{{videoMessage.from===targetData.account}}" catchtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+        <image src="{{targetLogo}}" alt class="_img data-v-30bd0f0e"></image>
+      </view>
+      <view class="_i data-v-30bd0f0e fail-button" style="display:none"></view>
+      <view class="_figcaption data-v-30bd0f0e main-message-content video-message-box {{[videoMessage.from === userData.account ? 'my-video' : '']}}"><label class="_span data-v-30bd0f0e delete-msg-btn" catchtap="handleProxy" wx:if="{{currentIndex===deleteMsgIndex&&showDeleteMsg&&videoMessage.from===userData.account}}" data-eventid="{{'3'}}" data-comkey="{{$k}}">撤回</label>
+        <view class="_section data-v-30bd0f0e middle-tip-box" wx:if="{{progress&&progress.uploading}}">
+          <view class="_figure data-v-30bd0f0e middle-tip-box-text">
+            <image class="_img data-v-30bd0f0e notShow" src="https://m.allinmed.cn/image/img00/patientConsult/symptom_photo_loading@2x.png" alt="loading..."></image>
+            <view class="_figcaption data-v-30bd0f0e progress">
+              <view class="_p data-v-30bd0f0e">{{progress.progress}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="_header data-v-30bd0f0e mulit-title" wx:if="{{videoMessage.from===targetData.account}}">视频</view>
+        <view class="_section data-v-30bd0f0e mulitple-image-box">
+          <view class="_figure data-v-30bd0f0e mulitple-image">
+            <image class="_img data-v-30bd0f0e im-image" bindtap="handleProxy" src="https://m.allinmed.cn/static/image/imScene/video_play@76.png" alt style="border-radius: 21px" data-eventid="{{'4'}}" data-comkey="{{$k}}"></image>
+          </view>
+        </view>
+        <view class="_article data-v-30bd0f0e disclaimer-content" wx:if="{{videoMessage.from===targetData.account}}"><label class="_span data-v-30bd0f0e">重要提示：在线咨询不能代替面诊，医生建议仅供参考。</label></view>
+      </view>
+      <view class="_figure data-v-30bd0f0e main-message-img" wx:if="{{videoMessage.from===userData.account}}">
+        <image src="{{logoUrl}}" alt class="_img data-v-30bd0f0e"></image>
+      </view>
+    </view>
+  </view>
+</template>

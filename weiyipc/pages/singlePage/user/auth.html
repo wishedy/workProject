@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>认证</title>
+    <script type="text/javascript">
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    if (!IsPC()) {
+        window.location.href = '//m.allinmd.cn/pages/passport/auth/auth.html';
+    }
+    </script>
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <!--build:css /dest/singlePage/user/userAuth.css -->
+    <link rel="stylesheet" href="/css/v3/base.css"/>
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css"/>
+    <link rel="stylesheet" href="/css/v3/pageFooter.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/authentication/exception.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/authentication/authentication.css"/>
+
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/publish/publish.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/weixin/module.weixin.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>-->
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/css/column/videoPK_v2/apply_zhezhao.css" rel="stylesheet" type="text/css"/>-->
+    <!--endbuild-->
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section class="al-mainInner">
+    <!-- 页头——本页面无超链接-->
+    <header class="al-header al-dis_header">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox">
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text"/>
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+    <!--认证前的角色选择弹层-->
+    <section class="authentication authenticationRoleSelect" id="roleSelectStep">
+
+        <header>选择身份</header>
+        <section class="roleSelect">
+            <ul>
+                <li id="roleDoctor">
+                    <div class="roleIcon"><img src="/images/img10/authentication/certificate/role_select_doctor.png"/></div>
+                    <div class="roleName"><span class="cnName">我是医生</span><span class="enName">DOCTOR</span></div>
+                </li>
+                <li id="roleNurse">
+                    <div class="roleIcon"><img src="/images/img10/authentication/certificate/role_select_nurse.png"/></div>
+                    <div class="roleName"><span class="cnName">我是护士</span><span class="enName">NURSE</span></div>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <!--认证时的基本信息弹层-->
+    <section class="authentication authenticationFirst" id="firstStep">
+        <section class="authError ev-firstError" style="display: none"><i>!</i><span class="ev-errorText"></span>
+        </section>
+        <section class="authHelp">
+            <div class="helpText helpTextFirst">
+                <p class="ev-help">帮助</p>
+            </div>
+            <!--普通医生的帮助提示-->
+            <div class="helpInfo hide ev-helpInfo" id="doctorFirstStepHelpInfo">
+                <p class="arrow"></p>
+                <h4 class="headTitle">帮助</h4>
+                <h4 class="seconTile">认证权益</h4>
+                <p class="helpDesc">根据您提交认证资料的完整度，分为两个等级：</p>
+                <div class="titleYello titleFirst">
+                    <i></i>
+                    <h3>执业医师</h3>
+                </div>
+                <h4 class="seconTile al-indent">资质</h4>
+                <p class="helpDesc al-indent"><i></i><span>上传4项资质证明：执业证、资格证、职称证、身份证</span></p>
+                <h4 class="seconTile al-indent">权益</h4>
+                <p class="helpDesc al-indent"><i></i><span>线上接诊，引流精准患者，提高诊疗效率</span></p>
+                <p class="helpDesc al-indent"><i></i><span>患者线下诊疗，线上咨询，随时解决问题</span></p>
+                <p class="helpDesc al-indent"><i></i><span>病历轻松管理，患教内容分发便捷</span></p>
+                <p class="helpDesc al-indent"><i></i><span>突出诊疗专长，打造个人专栏品牌</span></p>
+                <div class="titleYello">
+                    <i></i>
+                    <h3>认证医师</h3>
+                </div>
+                <h4 class="seconTile al-indent">资质</h4>
+                <p class="helpDesc al-indent"><i></i><span>上传至少1项资质证明：执业证、资格证、职称证、工作证</span></p>
+                <h4 class="seconTile al-indent">权益</h4>
+                <p class="helpDesc al-indent"><i></i><span>海量原创骨科教育资源免费浏览</span></p>
+                <p class="helpDesc al-indent"><i></i><span>高清视频，权威课件，专业病例免费下载</span></p>
+                <p class="helpDesc al-indent"><i></i><span>足不出户免费参加每场骨科线上会议</span></p>
+                <p class="helpDesc al-indent"><i></i><span>团队协作管理病历</span></p>
+                <p class="helpDesc al-indent"><i></i><span>13万+骨科医生社区交流分享</span></p>
+                <h4 class="seconTile helpPerson">客服</h4>
+                <p class="helpDate helpDesc">服务时间：工作日9:00-18:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p class="helpPhone helpDesc">客服电话：010-59007006</p>
+                <p class="helpPhone helpDesc">客服微信：weiyizs123</p>
+            </div>
+            <!--护士帮助提示-->
+            <div class="helpInfo hide ev-helpInfo" id="nurseFirstStepHelpInfo">
+                <p class="arrow"></p>
+                <h4 class="headTitle">帮助</h4>
+                <h4 class="seconTile al-indent">权益</h4>
+                <p class="helpDesc al-indent"><i></i><span>打破身份界限的次元壁，与全国骨科医生在线交流</span></p>
+                <p class="helpDesc al-indent"><i></i><span>找到志同道合的伙伴，在社区里分享经验、收获知识</span></p>
+                <p class="helpDesc al-indent"><i></i><span>海量原创骨科教育素材免费浏览</span></p>
+                <p class="helpDesc al-indent"><i></i><span>高清视频、权威文献、专业病例免费下载</span></p>
+                <h4 class="seconTile al-indent">要求</h4>
+                <p class="helpDesc al-indent"><i></i><span>专业技术资格证书、护士执业证书、工作牌任意上传一项</span></p>
+                <p class="helpDesc al-indent"><i></i><span>上传证件个人信息页，保持证件照片清晰，边角齐全</span></p>
+                <h4 class="seconTile al-indent">客服</h4>
+                <p class="helpDesc al-indent">服务时间：工作日9:00-18:00</p>
+                <p class="helpDesc al-indent">客服电话：010-59007006</p>
+                <p class="helpDesc al-indent">客服微信：weiyizs123</p>
+            </div>
+        </section>
+        <header>基本信息</header>
+        <section class="authInput">
+            <span class="auth_title">姓名</span>
+            <input type="text" id="fullName" placeholder="请输入真实姓名"/>
+            <p class="al-tableErrorTips" id="name_error"><i>!</i>请输入姓名！</p>
+        </section>
+        <section class="authInput sectionunit">
+            <span class="auth_title authSex">性别</span>
+            <figure class="al-tableItemContent">
+                <article class="al-tableItemRadio ev-onUnit ev-sex radioSex" unittype="1">
+                    <i class="al-tableRadioOff"></i>男
+                </article>
+                <article class="al-tableItemRadio ev-onUnit right_none ev-sex radioSex" unittype="2">
+                    <i class="al-tableRadioOff"></i>女
+                </article>
+            </figure>
+        </section>
+        <section class="authInput">
+            <span class="auth_title">职称</span>
+            <figure class="al-tableItemContent al-clickJumpSelectBox" id="ev-medicalPar" style="position: relative;">
+                <figure id="ev-medTitle" class="al-selectDefault selectInput"><input type="text" placeholder="请选择"
+                                                                                     readonly class="selectText"/>
+                </figure>
+                <ul class="medicalConer ev-medicalConer" style="display: none">
+
+                </ul>
+            </figure>
+            <p class="al-tableErrorTips" id="med_error"><i>!</i>请选择职称！</p>
+        </section>
+        <section class="authInput sectionunit ev-companyCon">
+            <span class="auth_title">单位名称</span>
+            <figure class="al-tableItemContent ev-inUnit"><input type="text" name="company" id="company"
+                                                                 placeholder="请输入单位名称"/></figure>
+            <p class="al-tableErrorTips" id="onUnit_error" style="top:-10px"><i>!</i>请选择单位！</p>
+        </section>
+        <section class="authInput sectionunit ev-shoolCon" style="display: none">
+            <span class="auth_title">学校名称</span>
+            <figure class="al-tableItemContent ev-inUnit"><input type="text" name="schoolName" id="schoolName"
+                                                                 placeholder="请输入学校名称"/></figure>
+            <p class="al-tableErrorTips" id="company_error" style="top:-10px"><i>!</i>请选择学校！</p>
+        </section>
+        <aside class="authNext">
+            <!--<span class="ev-authCancel" style="display: none">取消变更</span>-->
+            <!--激活图标添加 active类名-->
+            <button class="next" id="ev-next">下一步</button>
+        </aside>
+    </section>
+    <!--认证时的上传证件弹层-->
+    <section class="authentication_next authentication" id="secondStep">
+        <section class="authError ev-firstError secAuthError" style="display: none"><i>!</i><span
+                class="ev-errorText"></span></section>
+        <section class="authHelp">
+            <div class="helpText">
+                <p class="ev-help">帮助</p>
+            </div>
+            <!--认证时医生帮助提示-->
+            <div class="helpInfo hide ev-helpInfo secondHelp" id="doctorSecondStepHelpInfo">
+                <p class="arrow"></p>
+                <h4 class="headTitle">帮助</h4>
+                <h4 class="seconTile">认证权益</h4>
+                <p class="helpDesc">根据您提交认证资料的完整度，分为两个等级：</p>
+                <div class="titleYello titleFirst">
+                    <i></i>
+                    <h3>执业医师</h3>
+                </div>
+                <h4 class="seconTile al-indent">资质</h4>
+                <p class="helpDesc al-indent"><i></i><span>上传4项资质证明：执业证、资格证、职称证、身份证</span></p>
+                <h4 class="seconTile al-indent">权益</h4>
+                <p class="helpDesc al-indent"><i></i><span>线上接诊，引流精准患者，提高诊疗效率</span></p>
+                <p class="helpDesc al-indent"><i></i><span>患者线下诊疗，线上咨询，随时解决问题</span></p>
+                <p class="helpDesc al-indent"><i></i><span>病历轻松管理，患教内容分发便捷</span></p>
+                <p class="helpDesc al-indent"><i></i><span>突出诊疗专长，打造个人专栏品牌</span></p>
+                <div class="titleYello">
+                    <i></i>
+                    <h3>认证医师</h3>
+                </div>
+                <h4 class="seconTile al-indent">资质</h4>
+                <p class="helpDesc al-indent"><i></i><span>上传至少1项资质证明：执业证、资格证、职称证、工作证</span></p>
+                <h4 class="seconTile al-indent">权益</h4>
+                <p class="helpDesc al-indent"><i></i><span>海量原创骨科教育资源免费浏览</span></p>
+                <p class="helpDesc al-indent"><i></i><span>高清视频，权威课件，专业病例免费下载</span></p>
+                <p class="helpDesc al-indent"><i></i><span>足不出户免费参加每场骨科线上会议</span></p>
+                <p class="helpDesc al-indent"><i></i><span>团队协作管理病历</span></p>
+                <p class="helpDesc al-indent"><i></i><span>13万+骨科医生社区交流分享</span></p>
+                <h4 class="seconTile helpPerson">客服</h4>
+                <p class="helpDate helpDesc">服务时间：工作日9:00-18:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p class="helpPhone helpDesc">客服电话：010-59007006</p>
+                <p class="helpPhone helpDesc">客服微信：weiyizs123</p>
+            </div>
+            <!--认证时护士帮助提示-->
+            <div class="helpInfo hide ev-helpInfo" id="nurseSecondStepHelpInfo">
+                <p class="arrow"></p>
+                <h4 class="headTitle">帮助</h4>
+                <h4 class="seconTile al-indent">权益</h4>
+                <p class="helpDesc al-indent"><i></i><span>打破身份界限的次元壁，与全国骨科医生在线交流</span></p>
+                <p class="helpDesc al-indent"><i></i><span>找到志同道合的伙伴，在社区里分享经验、收获知识</span></p>
+                <p class="helpDesc al-indent"><i></i><span>海量原创骨科教育素材免费浏览</span></p>
+                <p class="helpDesc al-indent"><i></i><span>高清视频、权威文献、专业病例免费下载</span></p>
+                <h4 class="seconTile al-indent">要求</h4>
+                <p class="helpDesc al-indent"><i></i><span>专业技术资格证书、护士执业证书、工作牌任意上传一项</span></p>
+                <p class="helpDesc al-indent"><i></i><span>上传证件个人信息页，保持证件照片清晰，边角齐全</span></p>
+                <h4 class="seconTile al-indent">客服</h4>
+                <p class="helpDesc al-indent">服务时间：工作日9:00-18:00</p>
+                <p class="helpDesc al-indent">客服电话：010-59007006</p>
+                <p class="helpDesc al-indent">客服微信：weiyizs123</p>
+            </div>
+        </section>
+        <section class="seStepTitle ev-seStepTitle">
+            <h3>上传证件</h3>
+            <p>(证件信息仅用于认证，不对外展示；请上传高清照片，保持边角齐全字迹清晰)</p>
+        </section>
+        <section class="secondError hide ev-secondError"><i></i><span></span></section>
+        <section class="ev-container">
+
+        </section>
+        <section class="clearFloat">
+            <aside class="authNext">
+                <span class="ev-authCancel">上一步</span>
+                <!--激活图标添加 active类名-->
+                <button class="" id="ev-thirdNext" on="">提交</button>
+            </aside>
+        </section>
+    </section>
+
+    <section class="exception ev_exception" style="display: none">
+        <section class="ev_exceptionMain">
+            <section class="exception_title">
+                <p>“<span class="ev_expUserName"></span>”已经完成认证</p>
+                <p>原帐号为<span class="ev_expRegistName"></span>，是否使用原帐号登录？</p>
+            </section>
+            <section class="exception_btn">
+                <button class="exception_auth ev_expAuthContinue">继续认证</button>
+                <button class="exception_login ev_expLogin">使用该账号登录<i>推荐</i></button>
+            </section>
+            <section class="exception_desc">
+                原帐号登录成功后，将自动向唯医发送合并申请，后续唯医客服会与您进行电话联系， 确认合并相关内容
+            </section>
+        </section>
+        <section class="ev_exceptionPhone" style="display:none">
+            <aside class="exception_tab ev_expTab">
+                <p class="exception_active">手机验证登录</p>
+                <p>账号密码登录</p>
+            </aside>
+            <section class="ev_expTabCon">
+                <section class="exception_text">
+                    请输入<span class="ev_expRegistName"></span>完整帐号
+                </section>
+                <section class="exception_loginContent">
+                    <section class="exception_inputBox">
+                        <input placeholder="请输入手机号" class="ev_expPhone">
+                        <section class="error_tip ev_loginPhoneError"><i></i><span></span></section>
+                    </section>
+                    <section class="exception_inputLittleBox">
+                        <section class="exception_childInput">
+                            <input placeholder="请输入验证码" class="ev_expCode" type="tel">
+                            <button class="ev_expGetCode">获取验证码</button>
+                        </section>
+                        <section class="error_tip ev_loginCodeError"><i></i><span></span></section>
+                    </section>
+                    <p class="ev-findCode">收不到验证码？</p>
+                    <button class="login_btn ev_expLoginBtn">立即进入</button>
+                </section>
+            </section>
+            <section class="ev_expTabCon" style="display: none">
+                <section class="exception_text">
+                    请输入<span class="ev_expRegistName"></span>完整帐号
+                </section>
+                <section class="exception_loginContent">
+                    <section class="exception_inputBox">
+                        <input placeholder="请输入" class="ev_expAccount">
+                        <section class="error_tip ev_accountError"><i></i><span></span></section>
+                    </section>
+                    <section class="exception_inputBox exception_marginB">
+                        <input placeholder="请输入登录密码" class="ev_expPwd" type="password">
+                        <section class="error_tip ev_pwdError"><i></i><span></span></section>
+                    </section>
+                    <p class="ev_findPwdBtn">忘记密码？</p>
+                    <p class="exception_left ev_getService">找回账号</p>
+                    <button class="login_btn ev_expAccountLogin">立即进入</button>
+                </section>
+            </section>
+        </section>
+    </section>
+
+    <section class="exception_grade ev_expNoCode" style="display: none">
+        <!--收不到验证码-->
+        <section class="exception_content exception_noCode ev_expNoCode">
+            <section class="grade_close"></section>
+            <h1 class="grade_title">收不到验证码</h1>
+            <button class="grade_codeBut ev_getVoiceCode">获取语音验证码</button>
+            <button class="grade_findBut ev_getService">忘记帐号，我要找回</button>
+        </section>
+    </section>
+    <!--语音验证-->
+    <section class="exception_grade ev_expVoice" style="display: none">
+        <section class="exception_content exception_voice">
+            <section class="grade_close"></section>
+            <h1 class="grade_title">语音验证</h1>
+            <p class="grade_tip">您将会接听到含有语音验证码的电话</p>
+            <button class="active ev_sendVoiceCode">发送验证</button>
+        </section>
+    </section>
+    <!--语音验证输入验证码-->
+    <section class="exception_grade ev_expVoiceInput" style="display: none">
+        <section class="exception_content exception_voiceInput">
+            <section class="grade_close"></section>
+            <h1 class="grade_title">语音验证</h1>
+            <section class="grade_input">
+                <input placeholder="请输入验证码" class="ev_expVoiceCode">
+                <section class="error_tip ev_voiceError"><i></i><span></span></section>
+            </section>
+            <button class="active ev_voiceCodeSure">确认</button>
+        </section>
+    </section>
+    <!--忘记帐号，我要找回-->
+    <section class="exception_grade ev_expService" style="display: none">
+        <section class="exception_content exception_service">
+            <section class="grade_close"></section>
+            <h1 class="grade_title">服务时间</h1>
+            <p class="grade_tip">周一至周五（9：00-18：00）节假日除外</p>
+            <p class="grade_text">客服电话：010-59007006</p>
+            <p class="grade_text">客服微信：weiyizs123</p>
+        </section>
+    </section>
+    <!--找回密码弹层-->
+    <section class="exception_grade exp_relative ev_expFindPwd" style="display: none">
+        <section class="exception_content exception_findPwd">
+            <section class="grade_close"></section>
+            <h1 class="grade_title">找回密码</h1>
+            <p class="grade_tip">请输入<span class="ev_expRegistName"></span>完整帐号</p>
+            <section class="grade_input">
+                <input placeholder="请输入" class="ev_findAccountPwd">
+                <section class="error_tip ev_findPwdError"><i></i><span></span></section>
+            </section>
+            <button class="ev_sendCode">发送验证码</button>
+        </section>
+    </section>
+    <!--修改密码弹层-->
+    <section class="exception_grade ev_expUpdatePwd" style="display: none">
+        <section class="exception_content exception_findPwd exception_updatePwd">
+            <section class="grade_close"></section>
+            <h1 class="grade_title">重置密码</h1>
+            <p class="grade_tip ev_expUpdateTip"></p>
+            <section class="grade_input">
+                <input class="ev_expUpdatePwdAccount" disabled>
+            </section>
+            <section class="grade_input">
+                <input placeholder="请输入6位以上新密码" class="ev_expNewPwd" type="password">
+                <section class="error_tip ev_newPwdError"><i></i><span></span></section>
+            </section>
+            <section class="grade_input">
+                <input placeholder="请再次输入新密码" class="ev_expRepPwd" type="password">
+                <section class="error_tip ev_RepPwdError"><i></i><span></span></section>
+            </section>
+            <section class="grade_inputLittleBox">
+                <section class="grade_childInput">
+                    <input placeholder="验证码" class="ev_expUpdateCode" type="tel">
+                    <button class="ev_expGetUpdateCode">获取验证码</button>
+                </section>
+                <section class="error_tip ev_expUpdateCodeError"><i></i><span></span></section>
+            </section>
+            <button class="active ev_expUpdate">确定重置</button>
+        </section>
+    </section>
+
+    <!-- 公共页脚部分 -->
+    <!--#include virtual="/includes/footer.jsp"-->
+</section>
+
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src="//paas.allinmd.cn/modules/uploadCompressedImg/uploadCompressedImg.js"></script>
+<!--build:js /dest/singlePage/user/userAuth.js -->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.ajaxExistHtml.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<script src="/js/plugins/make-sure-popup/plugin.make-sure-popup.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+<script src="/js/modules/user/module.user.js"></script>
+<!--<script src="/js/scene/column/videoPK_v2/scene.column.videoPK_2.process.js"></script>-->
+<!--<script src="/js/modules/publish/module.select-type.js"></script>-->
+<script src="/js/modules/publish/module.video-upload.js"></script>
+<script src="/js/modules/publish/module.doc-upload.js"></script>
+<!--<script src="/js/modules/publish/module.topic-upload.js" ></script>-->
+<!--<script src="/js/modules/publish/module.case-upload.js" ></script>-->
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/validate-email/module.validate-email.js"></script>
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/weixin/module.welcome.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+<!--<script src="/js/plugins/medicalTitle/plugin.medicalTitleV3.js"></script>-->
+<!--<script src="/js/plugins/areaExpertise-select/plugin.areaExpertiseSelect.js"></script>-->
+
+
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.new.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src='/js/third-party/md5.js'></script>
+<!--<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>-->
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/uploadify/swfobject2.2.js"></script>
+<script src="/js/third-party/uploadify/jquery.uploadify.js"></script>
+<script src="/js/third-party/ajaxfileupload.js"></script>
+<script src="/js/third-party/qiniu/qiniu.js"></script>
+<script src="/js/third-party/qiniu/ui.js"></script>
+<script src="/js/third-party/plupload/plupload.full.min.js"></script>
+<script src="/js/third-party/plupload/i18n/zh_CN.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="/js/scene/singlePage/user/exception.js"></script>
+<script src="/js/scene/singlePage/user/auth.js"></script>
+<!-- endbuild -->
+</body>
+
+</html>

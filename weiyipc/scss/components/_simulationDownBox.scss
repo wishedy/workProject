@@ -1,0 +1,310 @@
+﻿@charset "UTF-8";
+
+//模拟下拉框
+
+
+.yearMouthDay{
+  display: inline-block;
+  div{
+    background: #FFFFFF;
+    border: 1px solid #DFDFDF;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-size: 16px;
+    color: #AAAAAA;
+    display: inline-block;
+    height: 46px;
+    line-height: 46px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 4px;
+    span{
+      width: auto;
+      margin: 0 ;
+      color: #aaa ;
+      &.reset{
+        color: #333333;
+      }
+    }
+    i{
+      display: inline-block;
+      width: 8px;
+      height: 6px;
+      background: url("/design-html/assembly/form/images/icon_solidarrow_down_blue.png") no-repeat;
+      vertical-align: middle;
+      margin: 0 0 0 8px;
+    }
+    &.reset{
+      color: #333333;
+    }
+    &.active{
+      background: #FFFFFF;
+      border: 1px solid #4382F1;
+      box-shadow: 0 0 4px 0 rgba(67,130,241,0.47);
+      border-radius: 4px;
+      span{
+        color: #4382F1;
+      }
+      i{
+        background: url("/design-html/assembly/form/images/icon_solidarrow_down_small_blue.png") no-repeat;
+      }
+    }
+  }
+}
+
+/*模拟下拉选项*/
+.selectDropDown{
+  background: #FFFFFF;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+  border-radius: 2px;
+  position: absolute;
+  top: 52px;
+  left: 0;
+  z-index: 6;
+  padding: 9px 0;
+  max-height: 270px;
+  overflow: auto;
+  &::-webkit-scrollbar{width:2px;}
+  &::-webkit-scrollbar-track{background-color:#fff;}
+  &::-webkit-scrollbar-thumb{background-color:#DFDFDF;}
+  &::-webkit-scrollbar-thumb:hover {background-color:#DFDFDF}
+  &::-webkit-scrollbar-thumb:active {background-color:#fff}
+  width: 100%;
+  display: none;
+  li{
+    font-size: 16px;
+    color: #333333;
+    padding: 0 20px 0 6px;
+    height: 40px;
+    //margin: 0 13px;
+    margin: 0 10px;
+    line-height: 40px;
+    position: relative;
+
+    &:hover{
+      background: rgba(67,130,241,0.1);
+      border-radius: 2px;
+    }
+  }
+}
+
+
+/*多字数的下拉框模拟*/
+.moreTextColumn{
+  div{
+    width: 176px;
+    i{
+      float: right;
+      margin-top: 21px;
+    }
+    .titleColumnText{
+      position: absolute;
+      left: 194px;
+      top: 0;
+      background: #FFFFFF;
+      box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10);
+      border-radius: 2px;
+      line-height: 22px;
+      padding: 8px 16px;
+      width: 280px;
+      font-size: 14px;
+      color: #333333;
+      z-index: 4;
+      display: none;
+    }
+  }
+  li{
+    max-width: 200px;
+    overflow:hidden; //超出的文本隐藏
+    text-overflow:ellipsis; //溢出用省略号显示
+    white-space:nowrap; //溢出不换行
+  }
+}
+
+.caseColumnR{
+  position: relative;
+  .errorText{
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    z-index: 1;
+    font-size: 13px;
+    color: #F34B4B;
+    display: none;
+    i{
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background: url("/design-html/assembly/form/images/icon_warning_small_red.png") no-repeat;
+      vertical-align: middle;
+      margin: 0 8px 0 0;
+    }
+  }
+}
+
+.caseColumnR{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  .limitNum{
+    position: absolute;
+    right: 16px;
+    bottom: 19px;
+    font-size: 12px;
+    color: #AAAAAA;
+  }
+}
+
+
+
+//单选题
+
+.radiosColumn{
+  display: inline-block;
+  p{
+    display: inline-block;
+    font-size: 16px;
+    color: #777777;
+    margin-right: 30px;
+    cursor: pointer;
+    i{
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: url("/design-html/assembly/form/images/btn_Radio_buttons_unselected.png") no-repeat;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    &:hover{
+      color: #4382F1;
+      i{
+        background: url("/design-html/assembly/form/images/icon_Radio_buttons_hover.png") no-repeat;
+      }
+    }
+    &.active{
+      color: #333333;
+      i{
+        background: url("/design-html/assembly/form/images/btn_Radio_buttons_selected.png") no-repeat;
+      }
+    }
+  }
+}
+
+
+/*多选*/
+.multitermList{
+  display: inline-block;
+
+  .multitermListLi{
+    &.none{
+      display: none;
+    }
+    font-size: 16px;
+    color: #777777;
+    line-height: 26px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    &:hover{
+      color: #4382F1;
+      i{
+        background: url("/design-html/assembly/form/images/btn_checkbox_hover.png") no-repeat;
+      }
+    }
+    &.active{
+      color: #333333;
+      i{
+        background: url("/design-html/assembly/form/images/btn_checkbox_selected.png") no-repeat;
+      }
+    }
+    i{
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: url("/design-html/assembly/form/images/btn_checkbox_unselected.png") no-repeat;
+      vertical-align: top;
+      margin: 6px 10px 0 0;
+    }
+    b{
+      font-weight: normal;
+      display: inline-block;
+      width: 618px;
+    }
+  }
+  .multitermListMore{
+    font-size: 16px;
+    color: #626F8C;
+    cursor: pointer;
+    &.packUp{
+      i{
+        transform: rotate(180deg);
+      }
+    }
+    i{
+      display: inline-block;
+      width: 10px;
+      height: 6px;
+      background: url("/design-html/assembly/form/images/icon_arrow_down_darkblue.png") no-repeat;
+      vertical-align: middle;
+      margin: 0 0 0 8px;
+    }
+  }
+}
+
+
+.formBorder{
+  textarea {
+    width: 628px;
+    height: 24px;
+    line-height: 26px;
+    background: #FFFFFF;
+    border: 1px solid #DFDFDF;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333333;
+    resize: none;
+    padding: 11px 0 11px 16px;
+    overflow: hidden;
+  }
+  .formColumnTitle {
+    font-size: 16px;
+    color: #333333;
+    display: inline-block;
+    width: 96px;
+    text-align: right;
+    margin-right: 30px;
+    vertical-align: middle;
+    line-height: 24px;
+    &.multitermTitle {
+      vertical-align: top;
+    }
+  }
+&.error{
+  margin-bottom: 57px;
+  .caseColumnR{
+    position: relative;
+  }
+  input{
+    background: #FFFFFF;
+    border: 1px solid #F34B4B;
+    box-shadow: 0 0 4px 0 rgba(243, 75, 75, 0.59);
+    border-radius: 4px;
+  }
+  span{
+    color: #F34B4B;
+  }
+  .yearMouthDay div{
+    background: #FFFFFF;
+    border: 1px solid #F34B4B;
+    box-shadow: 0 0 4px 0 rgba(243,75,75,0.59);
+    border-radius: 4px;
+    i{
+      display: inline-block;
+      width: 8px;
+      height: 6px;
+      background: url("/design-html/assembly/form/images/icon_solidarrow_down_red.png") no-repeat;
+      vertical-align: middle;
+      margin: 0 0 0 8px;
+    }
+  }
+}
+}

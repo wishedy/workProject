@@ -1,0 +1,191 @@
+@charset "UTF-8";
+//终端——文库首页
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+.al-mainInner {
+    overflow-x: visible;
+}
+
+@import "../../components/_terminalDoc";
+@import "../../components/_terminalContent";
+@import "../../components/_terminalFooter";
+@import "../../components/_bottomBtns";
+@import "../../components/_docDetailsModule";
+@import "../../components/_cancelModal";
+@import "../../components/_belongSerise";
+.icon-terminalComment {
+    @extend %icon-terminalComment;
+}
+
+.icon-terminalLike {
+    @extend %icon-terminalLike;
+}
+.icon-terminalLiked {
+    @extend %icon-terminalLiked;
+}
+
+.icon-terminalBack {
+    @extend %icon-terminalBack;
+}
+
+.icon-terminalJoin {
+    @extend %icon-terminalJoin;
+}
+
+.icon-terminalCommentNum {
+    @extend %icon-terminalCommentNum;
+}
+
+.icon-terminallike {
+    @extend %icon-terminallike;
+}
+
+.icon-terminalCollect {
+    @extend %icon-terminalCollect;
+}
+
+.icon-simCase {
+    @extend %icon-simCase;
+}
+
+.icon-fixedTopShare {
+    @extend %icon-fixedTopShare;
+}
+
+.icon-terminalConfig {
+    @extend %icon-terminalConfig;
+}
+
+/*
+.al-vipUser {
+    @extend %al-vipUser;
+}
+*/
+
+.icon-terminalFollowed {
+    @extend %icon-terminalFollowed;
+}
+
+.al-terminalHeader > section {
+    border-bottom: 0;
+}
+
+.al-terminalDocPdfImg {
+    width: 100%;
+    position: relative;
+    & > img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+    & > .al-terminalDocPdfImgMsg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        figcaption {
+            vertical-align: middle;
+            display: inline-block;
+            & > img {
+                width: rem(132px);
+                height: rem(87px);
+                display: block;
+                margin: 0 auto;
+            }
+            & > button {
+                background-color: #2899e6;
+                color: #fff;
+                margin: 0 auto;
+                margin-top: rem(30px);
+                @include font-dpr(15px);
+                padding: rem(15px) rem(40px);
+                display: block;
+            }
+        }
+    }
+}
+
+//文库资源评分UI
+.al-terminalContentTitle{
+    .al-littleScoreStarBox{
+        border-top:1px solid #e4e9ed;
+        padding:rem(30px) 0 rem(25px);
+        li{margin-right:rem(6px);}
+    }
+}
+.al-terminalHeader .al-littleScoreStarBox{padding-bottom:0;}
+/*20170728PDF资源乱码反馈样式 HJ*/
+.al-messyCodeFeedBack{
+    float: right;
+    font-size: rem(26px);
+    color: #626f8c;
+    margin: rem(30px) 0 rem(40px) 0;
+}
+
+.al-cancelModalItem i{
+    right: rem(50px);
+}
+.al-terminalHeader .al-littleScoreStarBox{
+    padding-bottom:0;
+}
+.al-belong-series{
+    font-size: rem(30px);
+}
+
+
+.al-terminalContentTitle{
+    @include clearfix();
+}
+.al-terminalContentSnsMsg{
+    float: left;
+}
+.authorSeries{
+    @include clearfix();
+    margin-top: 0.4rem;
+    p{
+        float: right;
+        font-size: rem(26px);
+        color: #909090;
+        span{
+            color: #626F8C;
+        }
+        i{
+            display: inline-block;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAWCAYAAAD0OH0aAAAAAXNSR0IArs4c6QAAAU5JREFUOBGNkkt2gjAUhpMw7z6Ec4CpwiaoU3UVhfa0thOpVXEVdlz30PZAxzLBffQ5aeK90VCsvDKBE77v/28AzRsGoWF1u1mavJIWixFB3rkg4fnQH7fgibZN47hjuj+EiKluOb/Q9FInavgQJYC/hWiWpIASJP9Jdo9nm/KmXFCSYbtfgkNThXQkSGkTJ0oyLEdA8zPuq3Ui4IMMpI7pfAp4Ef+lUgGlbZrkkm728IyyqVJQkm65H9ikpFoBpSyN33LJdinDzaYF34ciQ4XgjQ3ewL+AvyCC6Lv143JS29AfBX4Or5YT2VI1DsKc84VMPsDIlo4Ef24Acy8opbcwRlgMlYcpbhzg+R6OjuCTBm8QXMLMc0bJGJLvi0HqPm/Yw3yG8FMFnDf0R/4VzDyjjN5A8lSllV0pwpyLBwmvoloYAxgkn1HKrtctYBR2wFTA4tUPx1IAAAAASUVORK5CYII=) no-repeat;
+            background-size: cover;
+            width: rem(12px);
+            height: rem(22px);
+            vertical-align: middle;
+            margin-left: rem(20px);
+        }
+    }
+}
+
+/*文库点击进入阅读按钮样式暂时调整20171123 HJ*/
+.al-terminalContent {
+  .al-terminalDocPdfImg {
+    &>.al-terminalDocPdfImgMsg{
+      &>figcaption{
+        .Ev-moreReadImg{
+          height: rem(68px)!important;
+          width: rem(240px)!important;
+          padding: 0!important;
+        }
+      }
+    }
+  }
+}

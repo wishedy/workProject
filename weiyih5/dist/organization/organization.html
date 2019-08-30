@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang=en><head><script type=text/javascript>function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            function getpara(symbol){
+                var url=document.URL;
+                var param={};
+                var str,item;
+                if(url.lastIndexOf(symbol?symbol:"?")>0)
+                {
+                    str=url.substring(url.lastIndexOf(symbol?symbol:"?")+1,url.length);
+                    var arr=str.split("&");
+                    for(var i=0;i<arr.length;i++)
+                    {
+                        item =  arr[i].split("=");
+                        param[item[0]] = decodeURI(item[1]);
+                    }
+                }
+                return param;
+            };
+            window.location.href='//www.allinmd.cn/pages/channel/organization-home.html?cid='+getpara().orgId;
+        }</script><meta charset=UTF-8><meta http-equiv=Content-Type content="text/html; charset=utf-8"><meta name=description content=由唯医（allinmd.cn）提供的国内外医学学术组织专栏，汇集最新、最热的医学学术研究、教学视频、医学论文、医学会议，病例讨论等内容。><meta name=Keywords content=NASS，ASIA，OE，Elsevier，临床指南，医学会议，手术视频，医学教学视频，医学科研视频，唯医，allinmd><title>唯医组织频道—医学学术组织专栏，allinmd</title><meta name=Keywords content=""><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-touch-fullscreen content=yes><meta content="telephone=no,email=no" name=format-detection><script src=//m.allinmd.cn/js/third-party/flexible.js></script><link rel=dns-prefetch href=//m.allinmd.cn><meta name=data-alcode content=a2><link href=/dist/static/css/organization/organization.1a24f5cbb0f11b740ff5.css rel=stylesheet></head><body><div id=app></div><script src=//m.allinmd.cn/js/lib/jquery/jquery-2.1.0.min.js></script><script src=//m.allinmd.cn/js/lib/jquery/jquery.json-2.4.js></script><script src=//m.allinmd.cn/js/third-party/fastclick.js></script><script src=//paas.allinmd.cn/modules/sps/sps.js></script><script type=text/javascript src=/dist/static/js/organization/organization.504a86ea8577205c42af.js></script></body></html>

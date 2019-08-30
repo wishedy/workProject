@@ -1,0 +1,8 @@
+<import src="/components/ReportProgress$92a6003e" />
+<import src="/components/LogoLoading$2b721f9a" /><template name="hospitalTwoB$050c6479">
+  <view class="_section data-v-70d89294 reportMain"><template wx:if="{{isProgress}}" data="{{...$root[$kk+'0'], $root}}" is="ReportProgress$92a6003e"></template>
+    <view class="_section data-v-70d89294 question-textarea">
+      <view class="_article data-v-70d89294 question-title"><label class="_span data-v-70d89294">{{textAreaTitle}}</label>
+        <view wx:if="{{titleTip}}" class="_p data-v-70d89294 question-desc">{{titleTip}}</view>
+      </view>
+      <view class="_figure data-v-70d89294 textarea-con"><textarea value="{{textDesc}}" bindinput="handleProxy" placeholder="请输入" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_textarea data-v-70d89294" /> <label class="_span data-v-70d89294 textarea-num {{[textareaLen < 20 ? 'active' : '']}}">{{textareaLen}}</label></view></view> <form action bindsubmit="handleProxy" report-submit="true" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_form data-v-70d89294"><button class="_button data-v-70d89294 question-next {{[textDesc ? 'active' : '']}}" type="submit" formType="submit" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">下一步</button></form> <template wx:if="{{isLoading}}" data="{{...$root[$kk+'1'], $root}}" is="LogoLoading$2b721f9a"></template></view></template>

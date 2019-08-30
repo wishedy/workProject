@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>“Xa例之声”总决赛</title>
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="Keywords" content="病例专题，视频专题，专题页面，骨科专题，学术专题，文献专题，手术汇总，">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <script type="text/javascript" src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/column/bayer_race/template/swiper.min.css">
+    <link rel="stylesheet" href="/css/column/bayer_race/template/bayerBase.css">
+    <link rel="stylesheet" href="/css/column/bayer_race/template/bayerFinal.css">
+
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/column/bayer/sound2.html';
+        }
+    </script>
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="257">
+<!--主页面结构-->
+<section class="main">
+    <!--顶部banner-->
+    <header class="imageTitle" data-alcode-mod='516'>
+        <section class="imageBox">
+            <figure class="imageSlide">
+                <img src="/images/img50/column/bayer_race/title.png" alt="">
+            </figure>
+        </section>
+        <div class="backToHome">
+            <a href="//m.allinmd.cn" data-ajax="false">
+                <img src="/images/img50/column/bayer_race/home.png" alt="回到首页" data-alcode='e86'>
+            </a>
+        </div>
+    </header>
+    <!--可滑动导航条
+        总决赛阶段启用。-->
+    <nav class="topNavbarSix swiper-container" data-alcode-mod='514'>
+        <section class="navbarBox swiper-wrapper">
+            <!-- h5菜单 -->
+            <#if (activityMenu??)&&(activityMenu?size>0)>
+                <#list activityMenu as MenuList>
+                    <#if MenuList.activityMenuName?index_of("复活赛")==-1>
+                        <a <#if MenuList_index ==5>class="navbarText on swiper-slide"<#else>class="navbarText swiper-slide"</#if> href="${MenuList.activityMenuUrl}" data-ajax="false">
+                        <p>${MenuList.activityMenuName}</p>
+                        </a>
+                    </#if>
+                </#list>
+            </#if>
+            <a class="navbarText swiper-slide" href="/pages/column/bayer_race/bayer_case4.html" data-ajax="false">
+                <p>海选优秀病例</p>
+            </a>
+        </section>
+    </nav>
+    <!--导航栏已结束-->
+    <!-- 新闻01 -->
+    <#if (cms_news_list??)&&(cms_news_list?size>0)>
+        <#list cms_news_list as newsList>
+            <#if newsList_index==0>
+                ${newsList.newsBody}
+            </#if>
+        </#list>
+    </#if>
+    <!--精彩瞬间轮播总决赛结束后启用。-->
+    <#if adPosition_list??>
+        <#list adPosition_list as adPositionList>
+            <#if adPositionList_index==0>
+                <section class="highLights swiper-container swiper-container-highLights" style="height:7.04rem">
+                    <section class="swiper-wrapper">
+                        <!--新版广告位01-->
+
+
+                        <#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+                            <#if v_adPositionAttachmentList??>
+                                <#list v_adPositionAttachmentList as list>
+                                    <figure class="highLightsItem swiper-slide">
+                                        <img src="//img99.allinmd.cn/${list.adAttUrl}" alt="">
+                                        <article class="highLightsImgTitle">
+                                            <span class="title"><#if list.adAttName?length gt 15 > ${list.adAttName?substring(0,15)}…<#else>${list.adAttName}</#if></span>
+                                        </article>
+                                    </figure>
+                                </#list>
+                            </#if>
+
+
+                    </section>
+                    <section class="swiper-pagination"></section>
+                </section>
+            </#if>
+        </#list>
+    </#if>
+    <!--精彩瞬间结束-->
+    <!--页脚按钮组-->
+    <footer class="pageFooter" data-alcode-mod='515' data-alcode-item-selector="a">
+        <article class="footerItem">
+            <a href="//m.allinmd.cn" class="footerHome" data-ajax="false">
+                唯医首页
+            </a>
+        </article>
+        <i class="hr">&nbsp;</i>
+        <article class="footerItem ">
+            <a href="javascript:;" class="footerDownload Ev-footerAppDownload" data-ajax="false">
+                下载APP
+            </a>
+        </article>
+        <i class="hr">&nbsp;</i>
+        <article class="footerItem">
+            <a href="javascript:;" class="footerBackToTop">
+                返回顶部
+            </a>
+        </article>
+    </footer>
+    <div class="videoPK_share_pop Ev-BayerShareCasePopShow">
+        <div id="videoPK_sharebtn" class="vPK_share_cont">
+            <div class="vPK_share_list" data-alcode-mod='406' data-alcode-item-selector="a">
+                <div class="share_dao">分享到</div>
+                <a class="share_sina Ev-BayerShareSina" ref="sina" target="_blank">
+                    <div class="share_sina_icon"><img src="/images/img50/column/bayer_race/xinlang.png" _mce_src="/images/img50/column/bayer_race/xinlang.png" alt=""></div>
+                    <div class="share_sina_text">新浪微博</div>
+                </a>
+                <a class="share_qzone Ev-BayerShareQzone" ref="qzone" target="_blank">
+                    <div class="share_qzone_icon"><img src="/images/img50/column/bayer_race/kongjian.png" _mce_src="/images/img50/column/bayer_race/kongjian.png" alt=""></div>
+                    <div class="share_sina_text">QQ空间</div>
+                </a>
+            </div>
+        </div>
+        <div class="share_quxiao Ev-BayerShareHideBtn">取消</div>
+    </div>
+    <footer class="footerBtn">
+
+        <a class="upFile Ev-BayerUpCaseBtn" style="display: none">
+            上传参赛病例
+        </a>
+
+        <a class="share Ev-BayerShareCaseBtn">
+            分享
+        </a>
+    </footer>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/comm/jweixin-1.0.0.js"></script>
+<script src="/js/comm/shareAll.js"></script>
+<script type="text/javascript" src="/js/social_intercourse/share.js"></script>
+<script type="text/javascript" src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="/js/column/bayer/bayerComm.js"></script>
+<script type="text/javascript" src="/js/column/bayer/bayerFinal.js"></script>
+</body>
+
+</html>
+          

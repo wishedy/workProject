@@ -1,0 +1,603 @@
+@charset "UTF-8";
+@import "../../base";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+////样式模块调用
+//@import "../../components/_indexHeader";
+////首页头部信息栏
+//@import "../../components/_iconModule";
+////小图标组件
+//@import "../../components/_buttonModule"; //按钮组件
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+}
+html,body{
+  width: 100%;
+}
+//各状态下的容器
+.container-cheer{
+  position: relative;
+  top:0;
+  bottom:0;
+  width: 100%;
+  height: rem(4380px);
+  background: url("/static/images/caoscheer/bg_entrance.png") center no-repeat;
+  background-size: 100%;
+  overflow-x: hidden;
+  & .container-rank{
+    position: absolute;
+    bottom: rem(1474px);
+  }
+  & .container-rule{
+    position: absolute;
+    bottom: rem(116px);
+  }
+}
+.container-share{
+  position: relative;
+  width: 100%;
+  top:0;
+  bottom:0;
+  height: rem(5242px);
+  background: url("/static/images/caoscheer/bg_share.png") center no-repeat;
+  background-size: 100%;
+  overflow-x: hidden;
+  & .inviter-name{
+    position: absolute;
+    left: rem(154px);
+    top: rem(858px);
+    width:rem(80px);
+    height:rem(80px);
+    background:#fff;
+    border:rem(8px) solid #132675;
+    font-size: rem(36px);
+    border-radius: 50%;
+    font-weight: 500;
+    color: #F4F6FF;
+    text-align: center;
+    line-height: rem(90px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .inner-inviter-name{
+      width:rem(70px);
+      height:rem(70px);
+      background:#3D50B6;
+      border:rem(4px) solid #fff;
+      border-radius: 50%;
+      font-size:rem(26px);
+      font-family:PingFangSC-Medium;
+      font-weight:500;
+      color:rgba(255,255,255,1);
+      line-height:rem(70px);
+    }
+  }
+  & .hospital-name{
+    position: absolute;
+    left: rem(44px);
+    top: rem(1028px);
+    width: rem(662px);
+    height: rem(90px);
+    font-size: rem(36px);
+    font-weight: 500;
+    color: #F4F6FF;
+    text-align: center;
+    line-height: rem(90px);
+  }
+  &.inviter-name{
+    position: absolute;
+    left: rem(44px);
+    top: rem(1028px);
+    width: rem(662px);
+    height: rem(90px);
+    font-size: rem(36px);
+    font-weight: 500;
+    color: #F4F6FF;
+    text-align: center;
+    line-height: rem(90px);
+  }
+
+  & .container-hospital{
+    position: absolute;
+    top: rem(1068px);
+  }
+  & .container-rank{
+    position: absolute;
+    bottom: rem(1495px);
+    & .rank-list{
+      padding: rem(74px) 0 0 rem(68px);
+    }
+  }
+  & .container-rule{
+    position: absolute;
+    bottom: rem(136px);
+  }
+  & .btn{
+    bottom: rem(2716px);
+  }
+}
+.container-invite{
+  position: relative;
+  width: 100%;
+  top:0;
+  bottom:0;
+  height: rem(5604px);
+  background: url("/static/images/caoscheer/bg_invite.png") no-repeat center;
+  background-size: 100%;
+  overflow-x: hidden;
+  & .hospital-name{
+    position: absolute;
+    left: rem(44px);
+    top: rem(1028px);
+    width: rem(662px);
+    height: rem(90px);
+    font-size: rem(36px);
+    font-weight: 500;
+    color: #F4F6FF;
+    text-align: center;
+    line-height: rem(90px);
+  }
+  & .inviter-name{
+    position: absolute;
+    left: rem(154px);
+    top: rem(858px);
+    width:rem(80px);
+    height:rem(80px);
+    background:#fff;
+    border:rem(8px) solid #132675;
+    font-size: rem(36px);
+    border-radius: 50%;
+    font-weight: 500;
+    color: #F4F6FF;
+    text-align: center;
+    line-height: rem(90px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .inner-inviter-name{
+      width:rem(70px);
+      height:rem(70px);
+      background:#3D50B6;
+      border:rem(4px) solid #fff;
+      border-radius: 50%;
+      font-size:rem(26px);
+      font-family:PingFangSC-Medium;
+      font-weight:500;
+      color:rgba(255,255,255,1);
+      line-height:rem(70px);
+    }
+  }
+  & .container-hospital2{
+    position: absolute;
+    top: rem(1068px);
+  }
+  & .container-rank{
+    position: absolute;
+    bottom: rem(1490px);
+    & .rank-list{
+      padding: rem(72px) 0 0 rem(68px);
+    }
+  }
+  & .container-rule{
+    position: absolute;
+    bottom: rem(130px);
+  }
+  & .btn{
+    bottom: rem(3412px);
+    background: url('/static/images/caoscheer/btn2.png') no-repeat center;
+    background-size: 100%;
+    &.btn-no-assistanceState{
+      background: url('/static/images/caoscheer/btn1.png') no-repeat center;
+      background-size: 100%;
+    }
+  }
+}
+
+//组件容器样式
+.container-rank{
+  left: rem(24px);
+  width: rem(700px);
+  height: rem(810px);
+  border-radius: rem(16px);
+
+  & .rank-list{
+    width: 100%;
+    height: 100%;
+    padding: rem(68px) 0 0 rem(68px);
+    & li{
+      position: relative;
+      height: rem(144px);
+      padding-left: rem(115px);
+      margin-bottom: rem(22px);
+      & .rank-title{
+        position: absolute;
+        top: rem(30px);
+        width: 70%;
+        height: rem(70px);
+        font-size: rem(36px);
+        font-weight: bolder;
+        color: #E7E5FF;
+        overflow:hidden;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+      }
+      & .join-info{
+        position: absolute;
+        bottom: rem(24px);
+        font-size: rem(28px);
+        color: #F9F9FF;
+        font-weight: 500;
+      }
+      & .update-rank{
+        position: absolute;
+        bottom: rem(52px);
+        font-size: rem(28px);
+        color: #F9F9FF;
+        font-weight: 500;
+      }
+    }
+  }
+
+}
+.container-rule{
+  left: rem(24px);
+  width: rem(646px);
+  height: rem(972px);
+  border-radius: rem(16px);
+  color: #E7E5FF;
+  padding: rem(60px) rem(28px) 0 rem(28px);
+  & .rule-title{
+    margin: 0 0 rem(22px) 0;
+    font-size: rem(34px);
+    font-weight: bold;
+  }
+  & .rule-item{
+    font-size: rem(30px);
+    line-height: rem(52px);
+    & .dotted{
+      display: inline-block;
+      width: rem(8px);
+      height: rem(8px);
+      border-radius: 50%;
+      margin: 0 rem(10px) rem(8px) 0;
+      background: #fff;
+    }
+  }
+  & .rule-item-last{
+     margin-bottom: rem(36px);
+  }
+}
+.container-hospital{
+  left: rem(44px);
+  width: rem(604px);
+  height: rem(584px);
+  border-radius: rem(16px);
+  padding: 0 rem(24px);
+
+  & .join-res{
+    position: absolute;
+    left: 0;
+    top: rem(86px);
+    width: 100%;
+    font-size: rem(28px);
+    font-weight: 500;
+    color: #090C3B;
+    text-align: center;
+  }
+
+  & .join-info{
+    position: absolute;
+    left: 0;
+    top: rem(168px);
+    width: 96%;
+    padding-left: rem(24px);
+    font-size: rem(26px);
+    font-weight: 500;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    & .doctor-info{
+      position: relative;
+      width: rem(80px);
+      height: rem(80px);
+      text-align: center;
+      line-height: rem(80px);
+      border-radius: 50%;
+      margin-right: rem(28px);
+
+      & .headphoto{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: rem(65px);
+        height: rem(65px);
+        border-radius: 50%;
+      }
+    }
+  }
+
+  & .divide-line{
+    position: absolute;
+    left: 0;
+    top: rem(276px);
+    width: 100%;
+    text-align: center;
+    color: #2032AD;
+    font-size: rem(38px);
+    font-weight: bold;
+    & .line{
+      display: inline-block;
+      width: rem(140px);
+      height: rem(2px);
+      margin-bottom: rem(12px);
+      background: rgba(61,80,182,1);
+    }
+    & .txt{
+      margin: 0 rem(48px);
+    }
+  }
+
+  & .tip-box{
+    position: absolute;
+    left: 0;
+    top: rem(394px);
+    width: 100%;
+    color: #090C3B;
+    font-size: rem(30px);
+    font-weight: 500;
+    & .tip{
+      position: absolute;
+      left: rem(88px);
+    }
+
+    & .counts{
+      position: absolute;
+      right: rem(14px);
+    }
+  }
+
+  & .progress{
+    position: absolute;
+    top: rem(470px);
+    left: rem(28px);
+    width: 0;
+    height: rem(26px);
+    background: rgba(57,51,179,1);
+    border-radius: rem(20px);
+  }
+}
+.container-hospital2{
+  left: rem(44px);
+  width: rem(604px);
+  height: rem(962px);
+  border-radius: rem(16px);
+  padding: 0 rem(24px);
+
+  & .join-res{
+    position: absolute;
+    left: 0;
+    top: rem(86px);
+    width: 100%;
+    font-size: rem(28px);
+    font-weight: 500;
+    color: #090C3B;
+    text-align: center;
+  }
+
+  & .join-info{
+    position: absolute;
+    left: 0;
+    top: rem(168px);
+    width: 96%;
+    padding-left: rem(24px);
+    font-size: rem(26px);
+    font-weight: 500;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    & .doctor-info{
+      position: relative;
+      width: rem(80px);
+      height: rem(80px);
+      text-align: center;
+      line-height: rem(80px);
+      border-radius: 50%;
+      margin-right: rem(17px);
+      & .headphoto{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: rem(65px);
+        height: rem(65px);
+        border-radius: 50%;
+      }
+    }
+  }
+
+  & .divide-line{
+    position: absolute;
+    left: 0;
+    top: rem(276px);
+    width: 100%;
+    text-align: center;
+    color: #2032AD;
+    font-size: rem(38px);
+    font-weight: bold;
+    & .line{
+      display: inline-block;
+      width: rem(140px);
+      height: rem(2px);
+      margin-bottom: rem(12px);
+      background: rgba(61,80,182,1);
+    }
+    & .txt{
+      margin: 0 rem(48px);
+    }
+  }
+
+  & .tip-box{
+    position: absolute;
+    left: 0;
+    top: rem(394px);
+    width: 100%;
+    color: #090C3B;
+    font-size: rem(30px);
+    font-weight: 500;
+    & .tip{
+      position: absolute;
+      left: rem(88px);
+    }
+
+    & .counts{
+      position: absolute;
+      right: rem(14px);
+    }
+  }
+
+  & .progress{
+    position: absolute;
+    top: rem(470px);
+    left: rem(28px);
+    width: 0;
+    height: rem(26px);
+    background: rgba(57,51,179,1);
+    border-radius: rem(20px);
+  }
+
+  & .unapproved{
+    position: absolute;
+    left: rem(32px);
+    top: rem(634px);
+    width: rem(530px);
+    height: rem(236px);
+    border-radius: rem(12px);
+    display: flex;
+    justify-content: center;
+    padding-left: rem(60px);
+    & .unapproved-item{
+      position: relative;
+      width: rem(140px);
+      height: 100%;
+      margin-right: rem(34px);
+      & .customer-name{
+        position: absolute;
+        left: 0;
+        top: rem(32px);
+        width: rem(120px);
+        height: rem(120px);
+        text-align: center;
+        font-size: rem(30px);
+        font-weight: 500;
+        background: url('/static/images/caoscheer/bg_unapproved.png') no-repeat center;
+        background-size: 100%;
+        color: #fff;
+        & .u-customerName{
+          position: absolute;
+          width: 75%;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+          font-style: normal;
+        }
+      }
+
+      & .medical-title{
+        position: absolute;
+        left: rem(-10px);
+        bottom: rem(30px);
+        width: rem(140px);
+        font-size: rem(28px);
+        font-weight: 500;
+        color: #090C3B;
+        text-align: center;
+      }
+    }
+  }
+}
+.container-tips{
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 80%;
+  height: rem(75px);
+  line-height: rem(75px);
+  text-align: center;
+  font-weight: 500;
+  font-size: rem(36px);
+  color: #fff;
+  border-radius: rem(10px);
+  background: rgba(0,0,0,0.6);
+}
+.btn{
+  position: absolute;
+  left: 50%;
+  bottom: rem(2698px);
+  width: rem(522px);
+  height: rem(118px);
+  transform: translate(-50%);
+  background: url('/static/images/caoscheer/btn1.png') no-repeat center;
+  background-size: 100%;
+  cursor: pointer;
+  -webkit-animation-name: breath;
+  -webkit-animation-duration: 1.2s; // 1.1
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.highlight{
+  background: url('/static/images/caoscheer/highlight.png') no-repeat;
+  background-size: contain;
+}
+.doctor{
+  background: url('/static/images/caoscheer/bg_doctor.png') no-repeat center;
+  background-size: 100%;
+}
+.nurse{
+  background: url('/static/images/caoscheer/bg_nurse.png') no-repeat center;
+  background-size: 100%;
+}
+.more{
+  background: url('/static/images/caoscheer/more.png') no-repeat center;
+  background-size: 100%;
+}
+.new{
+  position: absolute;
+  left: rem(36px);
+  top: rem(-16px);
+  width: rem(68px);
+  height: rem(30px);
+}
+
+//90%
+//@keyframes breath {
+//  from { width: 6.264rem; }
+//  50%  { width: 6.96rem; }
+//  to   { width: 6.264rem; }
+//}
+//
+//@-webkit-keyframes breath {
+//  from { width: 6.264rem; }
+//  50%  { width: 6.96rem; }
+//  to   { width: 6.264rem; }
+//}
+
+@keyframes breath {
+  from { width: 6.264rem; height: 1.415997rem}
+  50%  { width: 6.96rem; height: 1.57333rem}
+  to   { width: 6.264rem; height: 1.415997rem}
+}
+
+@-webkit-keyframes breath {
+  from { width: 6.264rem; height: 1.415997rem}
+  50%  { width: 6.96rem; height: 1.57333rem}
+  to   { width: 6.264rem; height: 1.415997rem}
+}

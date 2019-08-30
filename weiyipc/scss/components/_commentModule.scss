@@ -1,0 +1,729 @@
+@charset "UTF-8";
+//内容评论 组件
+//Created by qiangkailiang on 2016/08/03
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV3-variables";
+
+
+.reviewBoxForm{
+    margin-left: -25px;
+    margin-right: -25px;
+}
+
+
+.al-commentBox {
+    background-color: #f3f6f9;
+    padding: 15px 25px 22px 75px;
+    border-left:1px solid #e4e9ed;
+    border-right:1px solid #e4e9ed;
+    .al-userCommentImg{
+        position:absolute;
+        left:-55px;
+        top:7px;
+        z-index: 2;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        behavior: url("/js/third-party/pie/pie.htc");
+        img{
+            width:100%;
+            height:100%;
+            vertical-align: middle;
+        }
+    }
+    .al-commentTextAreaBox {
+        behavior: url("/js/third-party/pie/pie.htc");
+        width: 100%;
+        border-radius: 4px;
+        border:1px solid #e4e9ed;
+        .al-commentTextarea {
+            behavior: url("/js/third-party/pie/pie.htc");
+            position:relative;
+            padding: 15px;
+            width: 100%;
+            height: 90px;
+            resize: none;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: none;
+            vertical-align: top;
+            color: #555;
+            font-size: 15px;
+        }
+    }
+    .al-commentTextAreaBox.focus {
+        border: 1px solid #3598db;
+        box-shadow: 1px 1px 1px #3598db, -1px -1px 1px #3598db;
+    }
+    .al-commentUploadImgList {
+        border-top:1px solid #ecf0f2;
+        //padding: 15px;    10.9
+        background-color: #fff;
+        max-height: 54px;
+        @include clearfix();
+        overflow: hidden;
+    }
+    .al-commentUploadImgItem {
+        float: left;
+        @include square(54px);
+        position: relative;
+        & > img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+    .al-contentVideoBtn {
+        @include square(22px);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -11px;
+        margin-top: -11px;
+        & > img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+    .al-commentImgDelete {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_commentDelImg.png') center center no-repeat;
+    }
+    .al-commentQuoteContent {
+        padding: 15px;
+        font-size: 14px;
+        color: #555;
+        background-color: #fff;
+        border-top: 1px solid #ecf0f2;
+        position: relative;
+        @include clearfix();
+        a {
+            font-size: 15px;
+            color: #626f8c;
+            line-height: 1.5;
+        }
+        // i {
+        //     width: 20px;
+        //     height: 15px;
+        //     float: right;
+        //     background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_comment_quote_delete.png') center center no-repeat;
+        // }
+    }
+}
+
+.Ev-resourceName > span {
+    margin-left: 15px;
+    font-size:15px;
+    color:#626f8c;
+}
+
+
+
+
+// 输入区域
+.tx_title,
+.tx_text,
+.al-resourceTitle,
+.Ev-resourceInput,
+.remind_input,
+.remind_name {
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+}
+
+//提醒谁看
+.remind_text{
+    .remind_name{
+        max-width:445px;
+        vertical-align:text-top;
+        margin-left:10px;
+        margin-top:-2px;
+        > span {
+            margin-left: 5px;
+            font-size: 15px;
+            color: #3598db;
+            line-height:24px;
+        }
+    }
+    .tx_num{
+        position:absolute;
+        top:20px;
+        right:15px;
+    }
+}
+
+
+
+.Ev-resourceInput,
+.remind_input{
+    margin-left: 10px;
+    color:#333;
+}
+
+//上传 各状态
+.al-commentUploadingStatus {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000, endColorstr=#7F000000);
+    .al-commentUploading {
+        text-align: center;
+        padding-top: 10px;
+        display: block;
+        & > img {
+            width: 18px;
+            height: 18px;
+            display: block;
+            margin: 0 auto;
+        }
+        figcaption {
+            font-size: 14px;
+            color: #fff;
+            margin-top: 5px;
+        }
+    }
+    .al-commentUploadFailTips {
+        font-size: 12px;
+        color: #fff;
+        text-align: center;
+        padding-top: 12px;
+        line-height: 1.3;
+        display: none;
+    }
+}
+
+.al-commentImgUploadFail {
+    .al-commentUploadFailTips {
+        display: block;
+    }
+    .al-commentUploading {
+        display: none;
+    }
+}
+
+//功能按钮
+.al-commentBtnBox {
+    margin-top: 25px;
+    color: #b4b4b4;
+    font-size: 12px;
+    @include clearfix();
+    ul {float: left;}
+    .al-commentBtnItem {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        margin-right: 20px;
+        vertical-align: top;    //点击评论——上传图片按钮：对齐样式     9/26
+        input[type="file"] {
+            @include opacity(0);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+
+.al-commentPush {
+    float: right;
+    margin-top:-6px;
+    .al-commentCommit {
+        behavior: url("/js/third-party/pie/pie.htc");
+        position:relative;
+        width: 75px;
+        height: 30px;
+        font-size:14px;
+        text-align: center;
+        line-height:30px;
+        color: #fff;
+        background-color: $linkContentColor;
+        border-radius: 50px;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+    .al-commentCancel {
+        color: #aaa;
+        font-size: 14px;
+        vertical-align: middle;
+        margin-right:15px;
+        cursor: pointer;
+        margin-left:10px;
+        margin-top:5px;
+    }
+}
+
+//上传错误提示
+.al-commentVideoUploadError {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+    text-align: center;
+    z-index: 6;
+    display: none;
+    .al-commentVideoUploadErrorInner {
+        behavior: url("/js/third-party/pie/pie.htc");
+        width: 370px;
+        height: 100px;
+        background-color: #fff;
+        font-size: 14px;
+        color: #333;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -50px;
+        margin-left: -185px;
+        padding-top: 15px;
+        border: 1px solid #dbdbdb;
+        border-radius: 4px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, .16);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#19000000,endColorstr=#19000000);
+        span {
+            display: block;
+            margin-top: 20px;
+            a {
+                font-size: 14px;
+                color: $linkContentColor;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .al-commentVideoUploadErrorIcon {
+        display: block;
+        width: 31px;
+        height: 31px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/upload_error.png') center center no-repeat;
+        margin: 0 auto;
+    }
+    .al-commentVideoUploadErrorClose {
+        font-size: 14px;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #acb4c3;
+    }
+}
+
+//引用弹框
+.al-commentQuoteSearch {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 50px;
+    z-index: 6;
+    max-height: 400px;
+    overflow: auto;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #e1e3e4;
+}
+
+.al-commentQuoteSearchInner {
+    width: 100%;
+    background-color: #fff;
+    z-index: 6;
+    .al-commentQuoteSearchTitle {
+        font-size: 18px;
+        color: #777;
+        padding: 20px 24px;
+        @include clearfix();
+        font-weight: normal;
+        .al-commentQuoteSearchClose {
+            font-size: 14px;
+            cursor: pointer;
+            float: right;
+            color: #acb4c3;
+            font-style: normal;
+        }
+    }
+    .al-commentQuoteSearchInput {
+        background-color: #eef3f8;
+        padding: 13px 24px;
+        input {
+            behavior: url("/js/third-party/pie/pie.htc");
+            width: 648px;
+            position: relative;
+            border: 1px solid #e5e5e5;
+            border-radius: 50px;
+            height: 32px;
+            padding: 0 14px;
+            box-sizing: border-box;
+            font-family: "microsoft yahei";
+            &:focus {
+                width: 609px;
+                & + .al-commentQuoteSearchCancel {
+                    display: inline-block;
+                }
+            }
+        }
+        //Gecko内核 placeholder无法居中
+        input::-ms-input-placeholder {
+            text-align: center;
+        }
+        input::-webkit-input-placeholder {
+            text-align: center;
+        }
+        .al-commentQuoteSearchCancel {
+            cursor: pointer;
+            font-size: 15px;
+            color: #3598db;
+            display: none;
+            position: relative;
+            margin-left: 15px;
+        }
+        .al-commentQuoteSearchIcon {
+            width: 16px;
+            height: 16px;
+            background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_comment_search.png') center center no-repeat;
+            position: absolute;
+            margin-left: -50px;
+        }
+    }
+    .al-commentQuoteContentTitle {
+        font-size: 15px;
+        color: #555;
+        margin: 30px 0;
+        padding: 0 24px;
+    }
+}
+
+.al-commentQuoteSearchItem {
+    margin: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $innerBorderColor;
+    cursor: default;
+    @include clearfix();
+    .al-commentQuoteSearchClass {
+        behavior: url("/js/third-party/pie/pie.htc");
+        border: 1px solid #626f8c;
+        border-radius: 2px;
+        position: relative;
+        font-size: 14px;
+        color: #626f8c;
+        padding: 2px 3px;
+        float: left;
+    }
+    .al-commentQuoteSearchContent {
+        margin-left: 55px;
+        width: 90%;
+        h2 {
+            font-size: 15px;
+            color: #555;
+            font-weight: normal;
+            span {
+                float: right;
+                display: none;
+            }
+            b {
+                width: 8px;
+                height: 6px;
+                background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_right.png') center center no-repeat;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 8px;
+            }
+        }
+        p {
+            margin-top: 14px;
+            font-size: 13px;
+            color: $smallContentColor;
+        }
+    }
+    .al-commentQuoteSearchContentReaded {
+        .al-commentQuoteSearchContentReadedTips {
+            display: block;
+        }
+    }
+}
+
+//at列表
+.al-commentAtList {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, .14), -3px -2px 8px rgba(0, 0, 0, .14);
+    width:455px;
+    border-radius: 4px;
+    height: 193px;
+    left: 60px;
+    top: 0;
+    margin-top: 48px;
+    overflow-x: hidden;
+    z-index: 5;
+    &:before {
+        content: "";
+        display: block;
+        @include triangle(15px,
+        #fff,
+        up);
+        position: absolute;
+        top: -14px;
+        left: 54px;
+    }
+    .al-commetAtNoUser {
+        font-size: 14px;
+        color: $smallContentColor;
+        text-align: center;
+        height: 43px;
+        line-height: 43px;
+    }
+    .al-commentAtUserItem {
+        margin: 20px 0;
+        padding: 0 18px;
+        background-color: #fff;
+        @include clearfix();
+    }
+    .al-commentAtUserItemPic {
+        @include circle(24px);
+        overflow: hidden;
+        float: left;
+
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+    .al-commentAtUserMsg {
+        float: left;
+        margin-left: 14px;
+        h2 {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 15px;
+            color: #333;
+            font-weight: normal;
+            max-width:120px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        span {
+            font-size: 14px;
+            color: $smallContentColor;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+            max-width:230px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+//查看评论模态框
+.al-commentDetailsBox {
+    width: 708px;
+    background-color: #eef3f8;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+    .al-commentDetailsTitle {
+        height: 52px;
+        padding: 0 24px;
+        width: 100%;
+        color: #333;
+        font-size: 18px;
+        background-color: #fff;
+        box-sizing: border-box;
+        border-bottom: 1px solid #e4e9ed;
+        line-height: 52px;
+    }
+    .al-commentDetailsClose {
+        float: right;
+        cursor: pointer;
+        width:13px;
+        height:13px;
+        background:transparent url('//img10.allinmd.cn/v3/common/icon/icon_close.png') center center no-repeat;
+        margin-top:19px;
+    }
+    .al-shareBox{       //对划线匡：分享——>弹出框位置
+        //margin-left:-200px;
+    }
+}
+
+.al-commentDetailsItem {
+    background-color: #fff;
+    position: relative;
+    border-bottom: 1px solid #e4e9ed;
+}
+/*20181109 终端页查看讨论分享按钮拿掉*/
+.al-commentDetailsBox{
+    .al-commentDetails .al-contentCommentOtherMsg span{
+        &.ev-share{
+            margin-left: 20px;
+            i.al-shareBtn{
+                display: none;
+            }
+            b{
+                font-size: 0;
+            }
+        }
+    }
+
+}
+.al-commentDetails {
+    padding: 30px 24px 10px;
+    background-color: #fff;
+    @include clearfix();
+    .al-commentDetailsImg {
+        width: 40px;
+        height: 40px;
+        float: left;
+        position: relative;
+        & > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        img {
+            behavior: url("/js/third-party/pie/pie.htc");
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+            border-radius: 50%;
+        }
+    }
+    .al-commentDetailsText {
+        margin-left: 55px;
+        h2 {
+            font-size: 15px;
+            font-weight: normal;
+            color: #555;
+        }
+        .al-commentDetailsTime {
+            float: right;
+            font-size: 13px;
+            font-family:"宋体";
+            color: #aaa;
+        }
+        .al-commentDetailsJobMsg {
+            font-size: 13px;
+            font-family:"宋体";
+            color: $smallContentColor;
+            margin-top: 8px;
+            span{padding-right:10px;}
+        }
+        .al-commentReplyText {
+            color: #333;
+            font-size: 16px;
+            div{
+                color:#aaa;
+                margin:16px 0;
+                line-height:26px;
+                span{
+                    color:#555;
+                    word-break: break-all;
+                }
+            }
+        }
+        //引用病例样式
+        .al-linkCase{
+            margin-top:20px;
+            line-height:26px;
+            font-weight:normal;
+            a{
+                color:#626F8C;
+                word-break: break-all;
+            }
+        }
+    }
+    //查看评论
+    .al-contentCommentOtherMsg {
+        text-align: right;
+        color:#909090;
+        padding:15px 0 20px;
+        i{
+            margin-top: 0;
+        }
+        .al-commentDeleteBtn {  //评论——鼠标悬浮状态：删除 位置
+            float: left;
+            font-style: normal;
+            font-size: 14px;
+            color:#acb4c3;
+            display: block;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .al-coomentWatchBtn {
+            font-size:14px;
+            color: #ff9224;
+            float: left;
+        }
+        span {
+            display: inline-block;
+            margin-left: 30px;
+            font-size:13px;
+            cursor: pointer;
+            font-family:Arial, "宋体";
+            color:#626f8c;
+            &:hover{color:#2899e6;}
+        }
+        span span{
+            margin-left: 0;
+            span{
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.al-commentDownDetailsItem {
+    margin-top: 18px;
+    position: relative;
+    &:before {
+        content: "";
+        @include triangle(15px,
+        #fff,
+        up);
+        display: inline-block;
+        position: absolute;
+        top: -14px;
+        left: 35px;
+    }
+}
+
+.al-commentTimeLine {
+    width: 3px;
+    background-color: #e0ecf4;
+    position: absolute;
+    left: 43px;
+    margin-top:75px;
+    height: 148px;
+    z-index: 0;
+}
+
+
+.al-overflow{
+  max-height: 600px;
+  overflow: auto;
+}
+
+
+b{
+    font-weight: normal;
+}

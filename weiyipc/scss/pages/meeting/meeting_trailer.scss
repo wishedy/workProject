@@ -1,0 +1,183 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+//公共组件引用
+@import "../../components/_iconsModule"; //小图标
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_message_rightSideBar";
+@import "../../components/_shareBoxModule";
+@import "../../components/meeting/_meetingList"; //会议列表
+@import "../../components/meeting/_meetingScreen"; //会议列表
+
+.meetingTrailer{
+  width:1000px;
+  margin:0 auto;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(215,222,229,0.50), 0 0 2px 0 #C7D3DF;
+  .title{
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(215,222,229,0.50), 0 0 2px 0 #C7D3DF;
+    height: 52px;
+    line-height: 52px;
+    font-size: 18px;
+    color: #333333;
+    padding-left: 24px;
+    margin-top: 20px;
+  }
+  .screenTab{
+    /*border-bottom: solid 1px #ECF0F2;*/
+  }
+}
+
+
+/*会议状态  */
+.screenCondition .meetingState ul{
+  width: 108px;
+  li.active{
+    margin-left: 17px;
+  }
+}
+
+.major ul{
+  display: none;
+}
+
+.screenCondition:after{
+  content: '';
+  width: 954px;
+  height: 1px;
+  display: inline-block;
+  background: #ECF0F2;
+  margin: 0 24px 0;
+}
+
+.screenCondition .major{
+  margin-bottom: 0  ;
+}
+.meetingTrailerList{
+
+}
+.meetingListCont{
+  aside{
+    @include clearfix();
+  }
+  li{
+    padding-top: 24px;
+    .attention{
+      cursor: pointer;
+    }
+    article{
+      margin-top: 20px;
+    }
+  }
+  li {
+    .listNameCont{
+      width: 760px;
+      display: inline-block;
+    }
+    a {
+
+      line-height: 22px;
+      margin-bottom: 0;
+      span {
+        vertical-align: top;
+        margin: 2px 10px 0 0;
+
+      }
+    }
+  }
+  i{
+    font-size: 14px;
+    color: #AAAAAA;
+    //vertical-align: text-top;
+    margin: 8px 20px 0 0;
+    float: right;
+  }
+  b{
+    display: inline-block;
+    font-weight: normal;
+    width: 88px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    //opacity: 0.5;
+    border: 1px solid #2899E6;
+    border-radius: 100px;
+    font-size: 13px;
+    color: #2899E6;
+    float: right;
+    position: relative;
+    .fellowTip{
+      position: absolute;
+      top: 28px;
+      right: -8px;
+      width: 292px;
+      line-height: 85px;
+      height: 78px;
+      background: url("//img10.allinmd.cn/v3/meeting/base_toast.png") no-repeat;
+      font-size: 16px;
+      color: #333333;
+    }
+    &:before{
+      content: '';
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      background: url("//img10.allinmd.cn/common/icon/png/icon_follow_small.png") no-repeat;
+      //vertical-align: middle;
+      margin-right: 5px;
+    }
+    &.fellowed{
+      color: #C5C5C5;
+      border: 1px solid rgba(189,189,189,0.50);
+      &:before{
+        width: 12px;
+        height: 8px;
+        background: url("//img10.allinmd.cn/common/icon/png/icon_followed_middle.png") no-repeat;
+      }
+    }
+    &.likeViewNum{
+      font-size: 14px;
+      color: #AAAAAA;
+      border: none;
+      &:before{
+        background: none;
+      }
+    }
+    &.likeView{
+      color: #333333;
+      border: 1px solid rgba(98,111,140,0.50);
+      cursor: pointer;
+      &:before{
+        width: 13px;
+        height: 9px;
+        background: url("//img10.allinmd.cn/common/icon/png/icon_see.png") no-repeat;
+      }
+    }
+  }
+}
+.meetingDescribe{
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #808080;
+
+  span{
+    font-size: 16px;
+    color: #626F8C;
+    margin-left: 5px;
+    cursor: pointer;
+    &.expandShrink-hideWord{
+      color: #808080;
+      margin-left: 0;
+    }
+  }
+  .hide{
+    display: none;
+  }
+  .show{
+    display: block;
+  }
+}

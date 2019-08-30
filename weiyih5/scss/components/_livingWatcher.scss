@@ -1,0 +1,282 @@
+@charset "UTF-8";
+//评论/回复模块
+//Created by qiangkailiang on 2016/07/31
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.al-livingVideoBox {
+    width: 100%;
+    height: rem(422px);
+    position:fixed;
+    top:0;
+    left:0;
+    & > img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+}
+
+.al-livingWatcherMsg {
+    background-color: #fff;
+    position: fixed;
+    //top:rem(422px);
+    bottom:0;
+    left:0;
+    width:100%;
+    & > section {
+       position:relative;
+    }
+}
+
+.al-livingChatBox{
+    overflow:auto;
+}
+.al-livingContentWrapper{
+    box-sizing:border-box;
+    position: relative;
+    background-color: #f8f8f8;
+    //padding-bottom:rem(88px);
+}
+
+.al-livingWatcherChangeBar {
+    background-color: #fff;
+    text-align: center;
+    height: rem(90px);
+    line-height: rem(90px);
+    border-bottom: 1px solid #dfdfdf;
+    box-sizing: border-box;
+    a{
+        display: inline-block;
+        width:33.333%;
+        float:left;
+        box-sizing: border-box;
+        @include font-dpr(16px);
+    }
+    a.active{
+        color: #3598db;
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: rem(4px);
+            background-color: #3598db;
+            display: block;
+        }
+    }
+    &:after{
+        display:block;
+        content:'';
+        width:0;
+        height: 0;
+        clear:both;
+    }
+}
+.onlineCountBg{
+    width:rem(50px);
+    display:inline-block;
+    margin-right:rem(10px);
+}
+.shareBg{
+    width:rem(30px);
+    display:inline-block;
+    margin-right:rem(10px);
+
+}
+.shareIcon{
+    background: #3598db;
+    color:#fff;
+}
+.al-livingWatcherContent {
+    background-color: #f8f8f8;
+    padding: rem(30px);
+    box-sizing: border-box;
+    position: absolute;
+    width:100%;
+    height:100%;
+    &Item {
+        margin: rem(30px) 0;
+        line-height: 1.5;
+        .al-livingUser {
+            color: #3598db;
+            @include font-dpr(15px);
+            vertical-align: middle;
+        }
+        .al-livingComment {
+            color: #555;
+            @include font-dpr(15px);
+            vertical-align: middle;
+            margin-left: rem(5px);
+        }
+
+    }
+    .gag {
+        @include font-dpr(15px);
+        font-style: normal;
+        vertical-align: middle;
+        color: #F04B4B;
+        input{
+            color: #F04B4B;
+        }
+    }
+    .welcomeUser {
+        color: #FF9224;
+        @include font-dpr(15px);
+    }
+}
+
+.al-livingPersonalMsg {
+    position: relative;
+    .al-livingPersonalImg {
+        @include circle(rem(80px), transparent);
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: rem(20px);
+        & > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            & > img {
+                width: 100%;
+                height: 100%;
+                vertical-align: top;
+                border-radius: 50%;
+            }
+        }
+    }
+    & > figcaption {
+        display: inline-block;
+        vertical-align: middle;
+        h3 {
+            color: #222;
+            @include font-dpr(16px);
+            font-weight: normal;
+            margin-bottom: rem(5px);
+            span {
+                vertical-align: middle;
+            }
+        }
+        p {
+            color: #909090;
+            @include font-dpr(13px);
+            .hospital {
+                margin-left: rem(15px);
+            }
+        }
+        .btn-switch {
+            top: 25%;
+            right: 0;
+            transform: normal;
+        }
+    }
+}
+
+.al-livingBaseMsg {
+    margin-top: rem(40px);
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: rem(40px);
+    & > h3 {
+        color: #222;
+        @include font-dpr(13px);
+        margin-bottom: rem(15px);
+    }
+    & > p {
+        @include font-dpr(13px);
+        .type {
+            color: #3598db;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .point {
+            @include circle(rem(4px), #909090);
+            margin: 0 rem(14px);
+            vertical-align: middle;
+            display: inline-block;
+        }
+        .hot {
+            color: #909090;
+            display: inline-block;
+            vertical-align: middle;
+            i {
+                font-style: normal;
+                margin-left: rem(3px);
+            }
+        }
+    }
+}
+
+.al-livingNoticeContent {
+    margin-top: rem(40px);
+    .al-livingNoticeTips {
+        color: #777;
+        @include font-dpr(14px);
+        margin-bottom: rem(40px);
+        span {
+            vertical-align: middle;
+        }
+    }
+    .al-livingNoticeText {
+        color: #333;
+        @include font-dpr(15px);
+    }
+}
+
+.al-commentInputBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #dfdfdf;
+    padding: rem(12px) rem(20px);
+    background-color: #f8f8f8;
+    height: rem(88px);
+    box-sizing: border-box;
+    .al-livingInput {
+        width: 96%;
+        height: rem(64px);
+        background-color: #fff;
+        border: 1px solid #e4e9ed;
+        color: #333;
+        @include font-dpr(14px);
+        padding-left: rem(20px);
+        box-sizing: border-box;
+        line-height: 1;
+    }
+    .al-livingInput::-webkit-input-placeholder {
+        color: #aaa;
+        font-family: "microsoft yahei";
+    }
+    .al-livingInput::-moz-placeholder {
+        color: #aaa;
+        font-family: "microsoft yahei";
+    }
+}
+
+.al-commentInputBar.gag {
+    .al-livingInput::-webkit-input-placeholder {
+        color: #f34b4b;
+        font-family: "microsoft yahei";
+    }
+    .al-livingInput::-moz-placeholder {
+        color: #f34b4b;
+        font-family: "microsoft yahei";
+    }
+}
+
+.al-livingNewComment{
+	color: #2899e6;
+	background-color: #c5e4f9;
+	@include font-dpr(12px);
+	display: inline-block;
+	padding: rem(15px) rem(25px);
+	border-radius: rem(5000px);
+	position: absolute;
+	right: rem(10px);
+	bottom: rem(98px);
+	border-bottom-right-radius: 0;
+}

@@ -1,0 +1,10 @@
+<template name="ensure$5e95f728">
+  <view class="_section data-v-6983a472 su_maskers">
+    <view class="_section data-v-6983a472 su_confirmBox-inner">
+      <view class="_article data-v-6983a472 su_confirmBox-content">
+        <view hidden="{{!(ensureParams.content)}}" class="_p data-v-6983a472">{{ensureParams.content}}</view>
+      </view>
+      <view class="_footer data-v-6983a472 su_confirmBox-btns"><button wx:if="{{ensureParams.type!=='openSetting'}}" class="_button data-v-6983a472 su_confirmBox-ensureBtn" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">{{ensureParams.ensure}}</button> <button wx:if="{{ensureParams.type==='openSetting'}}" class="_button data-v-6983a472 su_confirmBox-ensureBtn" open-type="openSetting" bindopensetting="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">{{ensureParams.ensure}}</button></view>
+    </view>
+  </view>
+</template>

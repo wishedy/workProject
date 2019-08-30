@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Xa例之声 | 闻十二城喧嚣，览最强病例演讲！</title>
+    <meta name="description" content="#厚积理应薄发，实力就该发声#投上您的宝贵一票，将喜欢的选手送至总决赛擂台吧！"/>
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="Keywords" content="病例专题，视频专题，专题页面，骨科专题，学术专题，文献专题，手术汇总，">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <script type="text/javascript" src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/column/bayer_race/template/swiper.min.css">
+    <link rel="stylesheet" href="/css/column/bayer_race/template/bayerBase.css">
+    <link rel="stylesheet" href="/css/column/bayer_race/template/bayerIndex.css">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if (IsPC()) {
+            window.location.href = '//www.allinmd.cn/html/activity/1460028659268/activity_index.html';
+        }
+    </script>
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="263">
+<!--主页面结构-->
+<section class="main">
+    <!--顶部banner-->
+    <header class="imageTitle" data-alcode-mod='516'>
+        <section class="imageBox">
+            <figure class="imageSlide">
+                <img src="/images/img50/column/bayer_race/title.png" alt="">
+            </figure>
+        </section>
+        <div class="backToHome" data-alcode='e86'>
+            <a href="//m.allinmd.cn" data-ajax="false">
+                <img src="/images/img50/column/bayer_race/home.png" alt="回到首页">
+            </a>
+        </div>
+    </header>
+    <!--导航栏开始
+    tab总数为6项时，可拖动查看。
+    至6项——即总决赛阶段时，请使用nav.topNavbarSix，并将topNavbar隐藏处理-->
+    <nav class="swiper-container topNavbarSix" data-alcode-mod='514'>
+        <section class="navbarBox swiper-wrapper">
+            <!-- h5菜单 -->
+            <#if (activityMenu??)&&(activityMenu?size>0)>
+                <#list activityMenu as MenuList>
+                    <#if MenuList.activityMenuName?index_of("复活赛")==-1>
+                        <a <#if MenuList_index ==0>class="navbarText on  swiper-slide"<#else>class="navbarText  swiper-slide"</#if> href="${MenuList.activityMenuUrl}" data-ajax="false">
+                        <p>${MenuList.activityMenuName}</p>
+                        </a>
+                    </#if>
+                </#list>
+            </#if>
+            <a class="navbarText  swiper-slide" href="/pages/column/bayer_race/bayer_case3.html" data-ajax="false">
+                <p>海选优秀病例</p>
+            </a>
+        </section>
+    </nav>
+
+    <!--导航栏已结束-->
+    <!-- 新闻01 -->
+
+    <#if (cms_news_list??)&&(cms_news_list?size>0)>
+        <#list cms_news_list as newsList>
+            <#if newsList_index==0>
+                ${newsList.newsBody}
+            </#if>
+        </#list>
+    </#if>
+
+    <!--复活排行榜
+    仅半决赛启用，请在调取时按照顺序将各项内容放置于对应的标签中。-->
+    <!--
+  <section class="reviveRank generalPart">
+      <article class="reviveTitle generalTitle">
+          <h2>复活排行榜</h2>
+      </article>
+      <ul class="Ev-ul-BayerAppendReviveList">
+         
+  
+      </ul>
+  </section>
+  -->
+
+    <!--复活排行榜结束-->
+
+    <!--精彩现场
+    在区域赛、半决赛阶段，请将broveShowList的内容进行填充。每个broveShowList为一组内容。
+    在总决赛阶段，请在broveShow元素的class中添加内容:finalPart。随后broveShowList与按钮broveMore将全部隐藏。总决赛精彩瞬间：broveShowFinal与按钮finalMore显示。-->
+    <!--
+            <section class="broveShow generalPart">
+                <header class="broveShowTitle generalTitle">
+                    <h2><span>精彩现场 · </span>半决赛</h2>
+                </header>-->
+    <!--区域赛/半决赛精彩瞬间-->
+    <!-- H5首页视频推荐 -->
+    <!--
+    <#if (recommendVideo_list??)&&(recommendVideo_list?size>0)>
+        <#list recommendVideo_list as recommendVideoList>
+            <section class="broveShowList Ev-broveShowList Ev-BayerIndexWonderfulSceneListClick">
+                <figure class="broveShowImg">
+                    <img src="${recommendVideoList.videoLogoUrl}" alt="">
+                    <small class="broveShowTime">60:</small>
+                </figure>
+                <article class="broveShowText">
+                    <a href="${recommendVideoList.webStoragePath}" data-ajax="false"><#if recommendVideoList.videoName?length gt 26>${recommendVideoList.videoName?substring(0,26)}…<#else>${recommendVideoList.videoName}</#if></a>
+                        <p>
+                            <span class="userName">${recommendVideoList.videoAuthor}</span>
+                            <span class="watchNum">${recommendVideoList.videoForArea}</span>
+                        </p>
+                </article>
+            </section>
+        </#list>
+    </#if> 
+    -->
+    <!--总决赛精彩瞬间-->
+    <section class="broveShowFinal">
+        <figure class="finalImg">
+            <img src="/images/img50/column/bayer_race/areaRace2.png" alt="">
+            <figure class="videoBtn">
+                <img src="/images/img50/column/bayer_race/videoBtn.png" alt="">
+            </figure>
+        </figure>
+        <article class="finalShowText">
+            <p>
+                随着骨科疾病分级诊疗制度的逐步推进以及治疗水平的提高，骨科医生尤其是青年医生在临床工作中面临的问题以及挑战日益加大，对于规范化诊疗技术的学习需求日益迫切骨科医生，对于规范化诊疗技术的学习需求日益迫切。
+            </p>
+        </article>
+    </section>
+    <!--
+                <footer class="generalMore broveMore">
+                    <a href="//m.allinmd.cn/html/m/activity/1460028659268/activity_semifinals.html" data-ajax="false">查看全部赛区</a>
+                </footer>
+    
+                <footer class="generalMore finalMore">
+                    <a href="javascript:void(0)" data-ajax="false">
+                    了解详情
+                </a>
+                </footer>
+     -->
+</section>
+<!--精彩现场结束-->
+<!--优秀病例展示开始
+全部阶段均使用。-->
+<section class="showCase generalPart">
+    <header class="showTitle generalTitle">
+        <h2>海选优秀病例</h2>
+    </header>
+    <article class="caseListBox">
+        <ol class="caseList" data-alcode-mod='526'>
+            <!-- H5优秀病例 -->
+            <#if (case_list??)&&(case_list?size>0)>
+                <#list case_list as caseList>
+                    <#assign v_caseInfo = caseList.caseInfo>
+                        <#assign v_customerAuth = caseList.customerAuth>
+                            <li class="caseText Ev-CaseText Ev-li-BayerIndexCaseListClick">
+                                <a href="${v_caseInfo.webStoragePath}" data-ajax="false" title="病例名称"><#if v_caseInfo.caseName?length gt 20>${v_caseInfo.caseName?substring(0,20)}…<#else>${v_caseInfo.caseName}</#if></a>
+                                <p>
+                                    <span class="doctor">${v_customerAuth.lastName}${v_customerAuth.firstName}</span>
+                                    <span class="hospital">${v_customerAuth.company}</span>
+                                </p>
+                            </li>
+                </#list>
+            </#if>
+        </ol>
+    </article>
+    <footer class="generalMore caseMore">
+        <a href="/pages/column/bayer_race/bayer_case3.html" data-ajax="false">更多</a>
+    </footer>
+</section>
+<!--优秀病例展示结束-->
+<!--页脚按钮组-->
+<footer class="pageFooter" data-alcode-mod='515'>
+    <article class="footerItem">
+        <a href="//m.allinmd.cn" class="footerHome" data-ajax="false">
+            唯医首页
+        </a>
+    </article>
+    <i class="hr">&nbsp;</i>
+    <article class="footerItem ">
+        <a href="javascript:;" class="footerDownload Ev-footerAppDownload" data-ajax="false">
+            下载APP
+        </a>
+    </article>
+    <i class="hr">&nbsp;</i>
+    <article class="footerItem">
+        <a href="javascript:;" class="footerBackToTop">
+            返回顶部
+        </a>
+    </article>
+</footer>
+<div class="videoPK_share_pop Ev-BayerShareCasePopShow" style="display: none;">
+    <div id="videoPK_sharebtn" class="vPK_share_cont">
+        <div class="vPK_share_list">
+            <div class="share_dao">分享到</div>
+            <a class="share_sina Ev-BayerShareSina" ref="sina" target="_blank">
+                <div class="share_sina_icon"><img src="/images/img50/column/bayer_race/xinlang.png" _mce_src="/images/img50/column/bayer_race/xinlang.png" alt=""></div>
+                <div class="share_sina_text">新浪微博</div>
+            </a>
+            <a class="share_qzone Ev-BayerShareQzone" ref="qzone" target="_blank">
+                <div class="share_qzone_icon"><img src="/images/img50/column/bayer_race/kongjian.png" _mce_src="/images/img50/column/bayer_race/kongjian.png" alt=""></div>
+                <div class="share_sina_text">QQ空间</div>
+            </a>
+        </div>
+    </div>
+    <div class="share_quxiao Ev-BayerShareHideBtn">取消</div>
+</div>
+<!--页脚按钮组结束-->
+<!--悬浮按钮
+从区域赛开始，上传按钮不再使用。已隐藏。
+-->
+<footer class="footerBtn">
+    <a class="upFile Ev-BayerUpCaseBtn" style="display: none;">
+        上传参赛病例
+    </a>
+    <a class="share Ev-BayerShareCaseBtn">
+        分享
+    </a>
+</footer>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/comm/jweixin-1.0.0.js"></script>
+<script src="/js/comm/shareAll.js"></script>
+<script type="text/javascript" src="/js/social_intercourse/share.js"></script>
+<script type="text/javascript" src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="/js/column/bayer/bayerComm.js"></script>
+<script type="text/javascript" src="/js/column/bayer/bayerIndex.js"></script>
+
+</body>
+
+</html>

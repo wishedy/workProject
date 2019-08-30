@@ -1,0 +1,62 @@
+@charset "UTF-8";
+//直播结束
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_twoFloorsFilter"; //首页头部信息栏
+@import "../../components/_bottomBtns"; //首页头部信息栏
+@import "../../components/_bottomSharePart"; //分享
+@import "../../components/meeting/_meetingList"; //会议列表
+
+.al-indexHeader{
+  border-bottom: none;
+}
+.meetingFellow{
+  .titleTab{
+    background: #fff;
+    border-bottom: 1px solid #d7dbde;
+    ul{
+      @include clearfix();
+    }
+    li{
+      float: left;
+      font-size: rem(32px);
+      color: #777777;
+      list-style: none;
+      text-align: center;
+      position: relative;
+      padding-bottom: rem(32px);
+      width: 50%;
+/*      &:first-child{
+        margin-left: rem(157px);
+      }
+      &:nth-child(2){
+        margin-left: rem(150px);
+      }*/
+      &.widthAdapt{
+        width: 100%;
+      }
+      &.active{
+        color: #2899e6;
+        &:after{
+          content: "";
+          display: block;
+          position: absolute;
+          height: rem(4px);
+          width: rem(30px);
+          background-color: #2899e6;
+          bottom: rem(10px);
+          left: 50%;
+          margin-left: rem(-15px);
+          border-radius: 0.06667rem;
+        }
+      }
+    }
+  }
+
+}

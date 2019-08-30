@@ -1,0 +1,13 @@
+<template name="recommend$2b484dce">
+  <view class="_section data-v-0fdda92e recommend-container" wx:if="{{reLists.length>0}}">
+    <view class="_header data-v-0fdda92e recommend-title">
+      <view class="_h2 data-v-0fdda92e">相关推荐</view>
+    </view>
+    <view class="_ul data-v-0fdda92e recommend-list">
+      <view class="_li data-v-0fdda92e recommend-item" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" wx:for="{{reLists}}" wx:for-index="index" wx:for-item="item">
+        <view class="_i data-v-0fdda92e icon-recommend"></view>
+        <view class="_p data-v-0fdda92e">{{item.diaryName}}</view>
+      </view>
+    </view>
+  </view>
+</template>

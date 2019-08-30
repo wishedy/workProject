@@ -1,0 +1,158 @@
+@charset "utf-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+@import "../../components/_personalBasic"; //个人主页基础样式
+@import "../discover/discover_major";
+
+.al-chapterListMain{
+  .al-chapterTitle{
+    margin:20px 0;
+    background-color:#fff;
+    border:1px solid #e4e9ed;
+    height:80px;
+    line-height:80px;
+    padding:0 24px;
+    i,span{
+      font-size:24px;
+      color:#000;
+    }
+    i{padding-right:8px;}
+    b{
+      float:right;
+      font-size:18px;
+      color:#909090;
+      font-weight:400;
+    }
+  }
+}
+
+.al-eBookListPartBox{
+  background-color:#fff;
+  border-left:1px solid #e4e9ed;
+  border-right:1px solid #e4e9ed;
+  @include clearfix();
+  .al-eBookSelectChoice{
+    text-align:right;
+    font-size:15px;
+    color:#626f8c;
+    padding:30px 24px 10px;
+    position:relative;
+    span{cursor: pointer;}
+    b.topArrow {background: transparent url("//img10.allinmd.cn/v3/discover/topArrow.png") center center no-repeat;}
+    b {
+      display: inline-block;
+      width: 10px;
+      height: 6px;
+      background: transparent url("//img10.allinmd.cn/v3/discover/downArrow.png") center center no-repeat;
+      margin-bottom: 2px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  }
+  .al-OrderSelectItem{
+    position:absolute;
+    z-index:3;
+    right:10px;
+    top:58px;
+    width:102px;
+    /*height:157px;*/
+    border:1px solid #e4e9ed;
+    box-shadow: 4px 4px 8px rgba(197, 206, 214, 0.5), -4px -4px 8px rgba(197, 206, 214, 0.5);
+    border-radius: 4px;
+    //behavior:url("/js/third-party/pie/pie.htc");
+    background-color:#fff;
+    padding-top:10px;
+    &:before{
+      content:'';
+      position: absolute;
+      width: 18px;
+      height: 9px;
+      left:50px;
+      top:-14px;
+      background: transparent url("//img10.allinmd.cn/v3/discover/discover_topArrow.png") center center no-repeat;
+      z-index: 4;
+      margin: 5px 0 0 -8px;
+    }
+    li{
+      cursor: pointer;
+      color:#555;
+      height:50px;
+      line-height:50px;
+      text-align: center;
+      &:hover{background-color: #F6F9FB;}
+    }
+    .active{color:#3598db;}
+  }
+    //视频选项
+  .al-eBook_videoSelectItem{
+
+    .al-OrderSelectItem{
+      right:5px;
+      /*height:279px;*/
+      li{
+        height:45px;
+        line-height:45px;
+      }
+    }
+  }
+
+  //暂无内容
+  .al-noFansTips{
+    border:none;
+    border-top:1px solid #e4e9ed;
+
+  }
+}
+
+
+.al-disMajorMainBox_body{   //中英图标
+  .al-cAeIcon{
+    display: inline-block;
+    width:36px;
+    height:18px;
+    background:transparent url("//img10.allinmd.cn/v3/terminal/cAeIcon.png") center center no-repeat;
+    margin-bottom:-3px;
+  }
+}
+
+.al-littleScoreStarBox{
+  @include clearfix();
+  display: inline-block;
+  margin-top:6px;
+  li{
+    float:left;
+    width:13px;
+    height:12px;
+    background: url("//img10.allinmd.cn/v3/terminal/star_gray.png") center center no-repeat;
+    margin-right:4px;
+    >b{
+      display: block;
+      width:100%;
+      height:100%;
+      background: url("//img10.allinmd.cn/v3/terminal/star_blue.png") center center no-repeat;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.al-eBookSideBar{
+  .al-wholeBookRed{margin-top:20px;}
+}
+@import "../../components/medplusDownLoad";

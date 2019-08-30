@@ -1,0 +1,949 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script src="/js/lib/jquery/jquery-1.8.0.min.js"></script>
+<script src="http://ncall.allinmd.cn/javascripts/RequestUtils.js"></script>
+<script>
+    function multiArrayRequestOneResponse() {
+        var req = new RU();
+        var requests = [
+            {
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET"
+            },
+            {
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5}
+            }
+        ];
+        req.postRequest(requests).then(function (data) {
+            console.log("----response-----");
+            console.log(data);
+        })
+    }
+
+
+    function multiObjectRequestOneResponse() {
+        var req = new RU();
+        var requests = {
+            mapList: {
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET"
+            },
+            searchHot: {
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5}
+            }
+        };
+        req.postRequest(requests).then(function (data) {
+            console.log("----response-----");
+            console.log(data);
+        })
+    }
+
+    function bigPipeResponse() {
+        var req = new RU();
+        var start = new Date().valueOf();
+        console.log("=======bigPipe " + start);
+        var requests = {
+            mapList:{
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET",
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            searchHot:{
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            schedule:{
+                url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                type:"post",
+                param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            mapList1:{
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET",
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            searchHot1:{
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            schedule1:{
+                url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                type:"post",
+                param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            mapList2:{
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET",
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            searchHot2:{
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            schedule2:{
+                url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                type:"post",
+                param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            mapList3:{
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET",
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            searchHot3:{
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            schedule3:{
+                url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                type:"post",
+                param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            mapList4:{
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET",
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            searchHot4:{
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            schedule4:{
+                url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                type:"post",
+                param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            mapList5:{
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET",
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            searchHot5:{
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            schedule5:{
+                url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                type:"post",
+                param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            mapList6:{
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET",
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            searchHot6:{
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            schedule6:{
+                url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                type:"post",
+                param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            mapList7:{
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET",
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            searchHot7:{
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            schedule7:{
+                url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                type:"post",
+                param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            mapList8:{
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET",
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            searchHot8:{
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            schedule8:{
+                url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                type:"post",
+                param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            mapList9:{
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET",
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            searchHot9:{
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            schedule9:{
+                url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                type:"post",
+                param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            mapList10:{
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET",
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            searchHot10:{
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            schedule10:{
+                url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                type:"post",
+                param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            mapList11:{
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET",
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            searchHot11:{
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            schedule12:{
+                url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                type:"post",
+                param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                success:function(data){
+                    console.log(data.key)
+                    var end = new Date().valueOf();
+                    console.log(end);
+                    console.log("耗时:" + (end-start) + "ms");
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            }
+
+        };
+        req.bigPipeRequest(requests)
+    }
+
+    function normalResponse(start){
+
+
+
+        console.log("=======Normal " + start);
+        $.ajax({
+            url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+            type: "GET",
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        })
+
+        $.ajax({
+            url: "http://www.allinmd.cn/call/search/searchHot/",
+            type: "GET",
+            param: {a: 5},
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        });
+
+        $.ajax({
+                    url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                    type:"post",
+                    param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                    success:function(data){
+                        var end = new Date().valueOf();
+                        console.log(end);
+                        console.log("耗时:" + (end-start) + "ms");
+                        console.log(data);
+                    },
+                    fail:function(){
+                        console.log("err");
+                    }
+                });
+
+
+        $.ajax({
+            url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+            type: "GET",
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        })
+
+        $.ajax({
+            url: "http://www.allinmd.cn/call/search/searchHot/",
+            type: "GET",
+            param: {a: 5},
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        });
+
+        $.ajax({
+            url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+            type:"post",
+            param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        });
+        $.ajax({
+            url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+            type: "GET",
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        })
+
+        $.ajax({
+            url: "http://www.allinmd.cn/call/search/searchHot/",
+            type: "GET",
+            param: {a: 5},
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        });
+
+        $.ajax({
+            url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+            type:"post",
+            param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        });
+        $.ajax({
+            url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+            type: "GET",
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        })
+
+        $.ajax({
+            url: "http://www.allinmd.cn/call/search/searchHot/",
+            type: "GET",
+            param: {a: 5},
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        });
+
+        $.ajax({
+            url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+            type:"post",
+            param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        });
+        $.ajax({
+            url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+            type: "GET",
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        })
+
+        $.ajax({
+            url: "http://www.allinmd.cn/call/search/searchHot/",
+            type: "GET",
+            param: {a: 5},
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        });
+
+        $.ajax({
+            url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+            type:"post",
+            param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+            success:function(data){
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        });
+        $.ajax({
+            url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+            type: "GET",
+            success:function(data){
+
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        })
+
+        $.ajax({
+            url: "http://www.allinmd.cn/call/search/searchHot/",
+            type: "GET",
+            param: {a: 5},
+            success:function(data){
+
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        });
+
+        $.ajax({
+            url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+            type:"post",
+            param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+            success:function(data){
+
+                var end = new Date().valueOf();
+                console.log(end);
+                console.log("耗时:" + (end-start) + "ms");
+                console.log(data);
+            },
+            fail:function(){
+                console.log("err");
+            }
+        });
+    }
+
+
+    function normal(){
+        var start = new Date().valueOf();
+        normalResponse(start);
+        normalResponse(start);
+    }
+</script>
+<h1>
+    合并请求演示
+</h1>
+<button onclick="normal()">优化前普通方式请求测试</button>
+
+
+
+
+<br>
+<button onclick="multiArrayRequestOneResponse()">数组形式-同步多请求返回响应包</button>
+<br/>
+<button onclick="multiObjectRequestOneResponse()">对象形式-同步返回多请求响应包</button>
+<br/>
+<button onclick="bigPipeResponse()">jsonp方式异步返回数据包</button>
+<br/>
+<a href="/ncall/bigpipetest/" target="_blank">在新页面中查看bigpipe</a>
+<br/>
+
+
+<h3>响应的两种方案</h3>
+<ul>
+    <li>1.同步响应</li>
+    <li>2.异步响应</li>
+</ul>
+
+---- bigPipe
+<h3>
+    </h3>
+<ul>
+    <li>一、 页面使用bigPipe</li>
+    <li>二、 ajax使用bigPipe</li>
+</ul>
+
+
+jsonp 请求方式
+
+<pre>
+     var req = new RU();
+
+
+        var requests = {
+            mapList:{
+                url: "http://www.allinmd.cn/call/conference/index/getMapListV4/",
+                type: "GET",
+                success:function(data){
+                    console.log(data.key)
+                    console.log(new Date().valueOf())
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            searchHot:{
+                url: "http://www.allinmd.cn/call/search/searchHot/",
+                type: "GET",
+                param: {a: 5},
+                success:function(data){
+                    console.log(data.key)
+                    console.log(new Date().valueOf())
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            },
+            schedule:{
+                url:"http://www.allinmd.cn/call/navigation/scheduling/json_list/",
+                type:"post",
+                param:{paramJson:JSON.stringify({"navigationType":2,"visitSiteId":1,"customerId":"","sessionCustomerId":""})},
+                success:function(data){
+                    console.log(data.key)
+                    console.log(new Date().valueOf())
+                    console.log(data);
+                },
+                fail:function(){
+                    console.log("err");
+                }
+            }
+        };
+        req.bigPipeRequest(requests)
+</pre>
+
+<h3>多个请求合并 应 业务不相关联, 互相独立</h3>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+@charset "UTF-8";
+@import "../../components/_makeSurePopup";
+
+
+//搜索头部样式
+.al-contentItemTitle{
+  padding:18px 24px;
+  border-bottom: 1px solid #e4e9ed;
+  position: relative;
+  h2{
+    font-weight: 400;
+    font-size:18px;
+    color:#333;
+  }
+  .al-discoverZJ_searchBox{ //搜索
+    float:right;
+    margin-top:-5px;
+    position: relative;
+    input{
+      width:170px;
+      height:30px;
+      line-height: 30px;
+      border:1px solid #BDBDBD;
+      border-radius:15px;
+      padding-left:12px;
+      box-sizing: border-box;
+      behavior: url('/js/third-party/pie/pie.htc');
+      position: relative;
+      font-size:14px;
+      color:#aaa;
+    }
+    i{  //搜索图标
+      display:inline-block;
+      width:19px;
+      height:19px;
+      line-height: 19px;
+      background:url('//img10.allinmd.cn/v3/discover/search.png') no-repeat;
+      position:absolute;
+      top:7px;
+      right:8px;
+    }
+    .searchTipBox{
+      position:absolute;
+      width:170px;
+      top:32px;
+      background:#fff;
+      -webkit-box-shadow:  0 0 3px #c5ced6;
+      -moz-box-shadow:  0 0 3px #c5ced6;
+      box-shadow:  0 0 3px #c5ced6;
+      border-radius:4px;
+      z-index: 3;
+      overflow:hidden;
+      behavior:url('/js/third-party/pie/pie.htc');
+
+      p{
+        height: 40px;
+        line-height: 40px;
+        padding:0 12px;
+        font-size:14px;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        overflow:hidden;
+        color:#909090;
+        &:hover{
+          color:#fff;
+          background:#2899e6;
+        }
+        &.al-searchTip-hover{
+          color:#fff;
+          background:#2899e6;
+        }
+      }
+    }
+  }
+}
+//专题页主体内容：begin
+.al-personal {
+  width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.al-personalInnerContent {
+  float: left;
+  width: 708px;
+}
+.al-discover_subjectMain{
+
+  float:left;
+  width:710px;
+  margin-top:20px;
+
+  /*header{
+    height:51px;
+    line-height:51px;
+    font-size:18px;
+    padding:0 25px;
+    border-bottom:1px solid #e4e9ed;
+    background:#fff;
+  }*/
+  .al-discover_subjectMainInner{
+    border:1px solid #e4e9ed;
+    background-color: #fff;
+    margin-bottom:20px;
+  }
+}
+.al-discover_subMainContent{
+  padding:25px 25px 0;
+  border-bottom:1px solid #ECF0F2;
+  &:hover{
+    background-color:#F6F9FB;
+  }
+  figure{
+    position:relative;
+    i{  //图片左上角icon
+      position:absolute;
+    }
+    img{
+      width:660px;
+      //height:255px;
+
+    }
+    .al-discover_SMC_LiveIcon{
+      width:78px;
+      height:29px;
+      background:url("//img10.allinmd.cn/v3/discover/videoLive.png") no-repeat;
+    }
+    .al-discover_SMC_NewIcon{
+      width:58px;
+      height:59px;
+      background:url("//img10.allinmd.cn/v3/discover/New.png") no-repeat;
+    }
+    .al-discover_SMC_HotIcon{
+      width:58px;
+      height:59px;
+      background:url("//img10.allinmd.cn/v3/discover/Hot.png") no-repeat;
+    }
+  }
+  p{  //图片下的文字样式
+    padding:24px 0;
+    font-size:17px;
+    color:#222222;
+    a:hover{
+      color: #2899e6;
+    }
+  }
+  .al-discover_SMC_text{  //当两行文字时
+    line-height:28px;
+    text-align:justify;
+  }
+  span{ //3个更新
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:180px;
+    height:26px;
+    background:url("//img10.allinmd.cn/v3/discover/newChange.png") no-repeat;
+    padding-left:20px;
+    line-height:26px;
+    font-size:15px;
+  }
+}
+//专题页主体内容：end
+
+
+
+//专题页侧边栏：begin
+.al-discover_subjectSideBar{
+  float:right;
+  margin-top:20px;
+  background-color:#fff;
+  border:1px solid #e4e9ed;
+  width:268px;
+  padding:30px 0;
+  text-align:center;
+  p{
+    color:#555555;
+    line-height:26px;
+  }
+  a{
+    display:inline-block;
+    background-color:#2899E6;
+    padding:12px 40px;
+    border-radius:30px;
+    color:#fff;
+    margin-top:12px;
+    behavior: url('/js/third-party/pie/pie.htc');
+    position: relative;
+    &.ev_submit:hover{background-color:#52A9E4;}
+  }
+}
+.al-dis_subSideBar {
+  figure{   //专题页右侧输入框 9/14 14:00
+    text-align:center;
+    position:relative;
+    border:1px solid #dbdbdb;
+    margin:20px;
+    height:198px;
+    width:226px;
+    overflow: hidden;
+    //padding-left:15px;
+    //padding-right:5px;
+    textarea{
+      resize:none;
+      //border:1px solid #dbdbdb;
+      //margin-top:20px;
+      font-size:16px;
+     // padding:15px 15px 15px 0;
+      padding:12px 0 0 5px;
+      width:200px;
+      height:168px;
+      border:none;
+      background:#fff;
+    }
+    span{
+      position:absolute;
+      bottom:10px;
+      right:15px;
+      color:#aaa;
+    }
+  }
+  a{
+    padding:7px 22px;
+    float:left;
+    margin-left:22px;
+    margin-top:10px;
+  }
+  .al-sub_aTag{ //取消按钮
+    background:none;
+    color:#AAAAAA;
+    font-size:15px;
+    margin-left:0;
+  }
+}
+//专题页侧边栏：end
+
+
+//专题筛选
+.subjectTab{
+  @include clearfix();
+  border-bottom: solid 1px #e4e9ed;
+  ul{
+    float: left;
+    @include clearfix();
+    padding: 22px 0 22px 16px;
+
+    li{
+      cursor: pointer;
+      font-size: 16px;
+      color: #909090;
+      border-right: solid 1px #dfdfdf;
+      float: left;
+      padding: 0 14px;
+      &.active{
+        color: #3598db;
+      }
+      &:hover{
+        color: #2899e6;
+      }
+      &:last-child{
+        border: none;
+      }
+    }
+  }
+
+  article{
+    float: right;
+    font-size: 13px;
+    line-height: 60px;
+    color: #909090;
+    margin-right: 25px;
+  }
+  &.subjectTabNewCss{
+    border-bottom: none;
+    position: relative;
+    ul{
+      float: none;
+      width: 596px;
+      padding: 0;
+      margin-top: 23px;
+      margin-left: 18px;
+      li{
+        padding: 0 12px;
+        margin-bottom: 18px;
+      }
+    }
+    .showMore{
+      cursor: pointer;
+      display: inline-block;
+      font-size: 16px;
+      color: #909090;
+      position: absolute;
+      right: 25px;
+      top: 0;
+      &:after{
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 13px;
+        height: 13px;
+        background-color: #555555;
+        background: url("//img10.allinmd.cn/v3/discover/subject_down.png") no-repeat;
+        background-size:contain;
+        margin-left: 4px;
+      }
+      &.closeMore{
+        &:after{
+          background: url("//img10.allinmd.cn/v3/discover/subject_up.png") no-repeat;
+        }
+      }
+    }
+    .subjectNum{
+      line-height: normal;
+      float: none;
+      margin-top: 10px;
+      p{
+        background:rgba(246,248,249,1);
+        border-radius:3px;
+        padding: 7px 13px;
+        margin-left: 25px;
+        display: inline-block;
+      }
+    }
+  }
+}
+.subjectNone{
+  background: url("//img10.allinmd.cn/v3/discover/none.png") no-repeat center;
+  height: 227px;
+  text-align: center;
+  padding: 100px;
+  display: none;
+}

@@ -1,0 +1,71 @@
+@charset "UTF-8";
+//个人主页——编辑信息
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_tableModule"; //表单
+@import "../../components/_bottomBtns";
+//样式模块调用
+.al-mainInner {
+    background-color: #EFF4F8;
+}
+
+
+.al-personalContentTitle {
+    height: rem(78px);
+    line-height: rem(78px);
+    h2 {
+        font-weight: normal;
+        //        @include font-dpr(14px);
+        font-size: rem(30px);
+        color: #666666;
+        padding-left: rem(28px);
+        border-bottom: 1px solid $innerBorderColor;
+    }
+}
+
+.al-qualificationSubmit {
+    .btn-primary {
+        background-color: #2899e6;
+        color: #fff !important;
+        display: inline;
+    }
+    color: #3598db;
+    @include font-dpr(14px);
+    float: right;
+    right: rem(30px)
+}
+
+.al-qualificationSubmitNone {
+    .btn-primary {
+        background-color: #f4f4f4;
+        padding: rem(10px) rem(30px);
+        border: 1px solid #f4f4f4;
+        border-radius: rem(50px);
+        color: #909090 !important;
+        text-align: center;
+    }
+}
+.al-tableModuleContentText{
+    margin-bottom: 0 !important;
+}
+.al-textareaInputNum{
+    @include font-dpr(14px);
+    position:absolute;
+    right:rem(30px);
+    bottom:rem(5px);
+    color:#b4b4b4;
+}
+.al-addHospitalBox{
+    height: 5.3rem;
+    position: relative;
+}
+
+
+
+@import "../../components/_selectorBar"; //职称选择框
+@import "../../components/_animationModule"; //动画关键帧

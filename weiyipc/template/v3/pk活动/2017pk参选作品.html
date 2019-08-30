@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href='//m.allinmd.cn/html/m/activity/1472433075713/personal_works.html?activityId=1472433075713';
+        }
+
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>参选作品专题页 - 唯医,allinmd</title>
+    <meta name="Keywords" content="病例专题，视频专题，个人中心-参选作品，骨科专题，学术专题，文献专题，手术汇总，">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="/dest/column/videoPK_V2/personal_works.css" type="text/css"/>
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="115">
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav" data-alcode-mod='123' data-alcode-item-selector="li">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+    <input type="hidden" id="activityId">
+    <div id="code_2D"><img src="//img00.allinmd.cn/column/videoPK_v2/2D_code_2q.png" alt=""></div>
+    <!--新版广告位-->
+    <#if adPosition_list??>
+        <#list adPosition_list as adPositionList>
+            <#if adPositionList_index==0>
+                <#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+                    <#if v_adPositionAttachmentList??>
+                        <#list v_adPositionAttachmentList as list>
+
+                            <div id="banner" style="background: url(//img99.allinmd.cn/${list.adAttUrl}) no-repeat center;">
+                                <div class="share_box">
+                                    <div class="share" id="hr_share" data-alcode-mod='199' data-alcode-item-selector="a">
+                                        <span>分享至：</span>
+                                        <a href="javascript:;" target="_blank" class="share_ico_tsina"><img src="//img00.allinmd.cn/column/videoPK_v2/sina.png" alt=""></a>
+                                        <a href="javascript:;" target="_blank" class="share_ico_tqq"><img src="//img00.allinmd.cn/column/videoPK_v2/qq.png" alt=""></a>
+                                        <a href="javascript:;" target="_blank" class="share_ico_qzone"><img src="//img00.allinmd.cn/column/videoPK_v2/qqkongjian.png" alt=""></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </#list>
+                    </#if>
+            </#if>
+        </#list>
+    </#if>
+    <section class="naverBox">
+        <div id="naver">
+            <ul class="naver_lists" data-alcode-mod='200'>
+                <#if (activityMenu??)&&(activityMenu?size>0)>
+                    <#list activityMenu as MenuList>
+                        <#if MenuList_index  ==3>
+                            <li class="nav_homgpage"><a href="${MenuList.activityMenuUrl}?activityId=${MenuList.activityId?c}">${MenuList.activityMenuName}</a></li>
+                            <#else>
+                                <li><a <#if MenuList_index  == activityMenu?size-1>class="wait_review_work"</#if> href="${MenuList.activityMenuUrl}?activityId=${MenuList.activityId?c}">${MenuList.activityMenuName}</a></li>
+                        </#if>
+                    </#list>
+                </#if>
+                <li class="nav_apply" id="nav_apply">
+                    <a href="javascript:;"></a>
+                    <div></div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class="works_run_content">
+        <a href="https://www.allinmd.cn/html/activity/1472433075713/personal_works.html?activityId=1472433075713" class="backBtn">退出搜索</a>
+        <div class="works_run_cont_center">
+            <div class="works_lists_nav">
+                <ul data-alcode-mod='204' data-alcode-item-selector="li"></ul>
+            </div>
+            <div class="works_lists">
+                <div class="searchBox">
+                    <ul class="sort_search clear">
+                        <li class="search_on">最新发布</li>
+                        <li>最多点赞</li>
+                        <li>最多浏览</li>
+                        <li class="search">
+                            <input type="text" class="searchName" placeholder="搜索作者姓名">
+                            <dl class="searchSelect"></dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="works_lists_piece_box">
+                </div>
+                <div class="page-container">
+                    <div class="pagination pager" data-alcode-mod='129' data-alcode-item-selector="li">
+                        <div class="pager"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#include virtual="/includes/footer.jsp"-->
+</section>
+
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src="/dest/column/videoPK_V2/personal_works.js"></script>
+
+<script>
+    module.videoPKShare({
+        title: '《第二届骨科规范化手术视频征集评选》获奖名单已公布！巅峰之战圆满落幕，最终由谁问鼎？',
+        sina: '《第二届骨科规范化手术视频征集评选》获奖名单已公布！巅峰之战圆满落幕，最终由谁问鼎？ ',
+        qqFriend: '巅峰之战圆满落幕，最终由谁问鼎？ ',
+        qqFriendTitle: '第二届骨科规范化手术视频征集评选-获奖名单已公布！',
+        qqZone: "巅峰之战即将打响，百家争鸣谁主沉浮？总决赛邀您观战！",
+        qqZoneTitle: '巅峰之战圆满落幕，最终由谁问鼎？ ',
+        pic: 'https://img00.allinmd.cn/column/videoPK_v2/share_2q.jpg'
+    });
+</script>
+</body>
+</html>                                    

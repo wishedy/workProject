@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>报名入口</title>
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            var sharePos = location.search;
+            window.location.href="//www.allinmd.cn/html/activity/"+comm.getpara().actId+"/activity_index.html";
+        }
+    </script>
+    <script src="/js/third-party/flexible.js"></script>
+    <!-- build:css /dest/pages/column/activityTemplate/activity_signUP.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/column/activity/activity_v2.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_searchHospital.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_addHospital.css">
+    <!-- endbuild -->
+</head>
+
+<body>
+<section class="al-mainInner ev-mainInner">
+
+</section>
+<!--医院筛选开始-->
+<section class="al-mainInner ev-companyInner" style="display: none">
+    <header class="al-searchHead">
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem ev-backToMain">
+                <a href="javascript:;">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>我在医院</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+            </figure>
+        </header>
+        <section class="al-searchInputBar">
+            <i class="icon-searchWhite"></i>
+            <input id="seachCompany" type="text" placeholder="请输入医院名称">
+            <button class="al-searchCancel" id="cancelSearch">
+                <i class="icon-searchCancel"></i>取消
+            </button>
+        </section>
+
+    </header>
+    <section class="al-searchResult ev-sProvince">
+        <article class="al-searchTips ev-sProvince">
+            <span class="backTitle">选择单位所在省份</span>
+        </article>
+        <section class="ev-contentBox" id="sProvince"></section>
+    </section>
+    <section class="al-searchResult ev-sCity">
+        <article class="al-searchTips ev-sCity" id="cityBack" style="display: none">
+            <i class="icon-backArrow"></i><span class="backTitle"></span>
+        </article>
+        <section class="ev-contentBox" id="sCity"></section>
+    </section>
+    <section class="al-searchResult ev-sCompany">
+        <article class="al-searchTips ev-sCompany" id="companyBack" style="display: none">
+            <i class="icon-backArrow"></i><span class="backTitle"></span>
+        </article>
+        <section class="ev-contentBox" id="sCompany"></section>
+    </section>
+    <section class="al-searchFailed al-noResult">
+        <p>未找到相关结果</p>
+        <a href="javascript:void(0)" class="btn-primary ev-addCompanyBtn">添加医院</a>
+    </section>
+</section>
+<!--医院筛选结束-->
+
+<!--添加医院开始-->
+<section class="al-mainInner ev-addCompanyInner" style="display: none;">
+    <header class="al-indexHeader">
+        <figure class="al-indexHeaderItem ev-backToCompany">
+            <a href="javascript:;">
+                <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+            </a>
+        </figure>
+        <figure class="al-indexHeaderItem">
+            <h1>添加医院</h1>
+        </figure>
+        <figure class="al-indexHeaderItem">
+        </figure>
+    </header>
+    <section class="al-addHospitalBox">
+        <textarea id="companyIn" cols="" rows="" placeholder="请输入您任职的医院"></textarea>
+    </section>
+    <section class="al-addHospitalSave">
+        <button class="btn-primary-lg" id="saveCompany">保存</button>
+    </section>
+
+</section>
+<!--添加医院结束-->
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<!--build:js /dest/pages/column/activityTemplate/activity_signUP.js-->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/modules/module.medicalTitle.js"></script>
+<script src="/js/modules/module.addCompany.js"></script>
+<script src="/js/third-party/ymd.js"></script>
+<script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+
+<script src="/js/column/activityTemplate/column.activitySignUp.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

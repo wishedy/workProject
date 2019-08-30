@@ -1,0 +1,600 @@
+@import "/vendor/css/main.wxss";
+
+.healthMain {
+  background: #F2F4F7;
+  height: 100%;
+  overflow: hidden;
+}
+.healthMain .headContent {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+.healthMain .headContent.fixed {
+  box-shadow: 0 8rpx 16rpx 0 rgba(0, 0, 0, 0.08);
+}
+.healthMain .headContent .illnessClassify {
+  margin-bottom: 30rpx;
+}
+.healthMain .headContent .illnessClassify:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.healthMain .headContent .illnessClassify .classifyLists {
+  width: 560rpx;
+  float: left;
+}
+.healthMain .headContent .illnessClassify .classifyLists:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.healthMain .headContent .illnessClassify .classifyLists ._li {
+  float: left;
+  margin-left: 60rpx;
+  font-size: 32rpx;
+  color: #666666;
+}
+.healthMain .headContent .illnessClassify .classifyLists ._li:first-child {
+  margin-left: 10rpx;
+}
+.healthMain .headContent .illnessClassify .classifyLists ._li.on {
+  color: #29A3A3;
+  font-weight: bold;
+}
+.healthMain .headContent .illnessClassify .classifyLists ._li.on:after {
+  display: block;
+  content: "";
+  height: 6rpx;
+  width: 44rpx;
+  margin: 4rpx auto 0;
+  background: #09B7AC;
+  border-radius: 8rpx;
+}
+.healthMain .headContent .illnessClassify .allClassify {
+  float: right;
+  font-size: 32rpx;
+  color: #666666;
+}
+.healthMain .headContent .illnessClassify .allClassify.on {
+  color: #09B7AC;
+  font-weight: bold;
+}
+.healthMain .headContent .illnessClassify .allClassify.on:after {
+  display: block;
+  content: "";
+  height: 6rpx;
+  width: 44rpx;
+  margin: 4rpx auto 0;
+  background: #09B7AC;
+  border-radius: 8rpx;
+}
+.healthMain .headContent .searchBox {
+  width: 100%;
+  height: 72rpx;
+  line-height: 72rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+  background: #F6F6F6;
+  border-radius: 100rpx;
+  font-size: 30rpx;
+  color: #7A8585;
+  opacity: 0.6;
+  text-align: center;
+}
+.healthMain .headContent .searchBox:before {
+  width: 35rpx;
+  height: 40rpx;
+  display: inline-block;
+  content: "";
+  margin-right: 5rpx;
+  background: url("https://m.allinmed.cn/static/image/img00/healthKnowledge/search.png") no-repeat;
+  background-size: 100% 100%;
+  vertical-align: sub;
+}
+.healthMain .headContent .healthBanner {
+  height: 240rpx;
+  margin-bottom: 52rpx;
+  box-shadow: 0 8rpx 30rpx 0 #CBD2E1;
+  opacity: 1;
+  overflow: hidden;
+  transition: all 0.2s linear;
+}
+.healthMain .headContent .healthBanner.hide {
+  height: 0;
+  margin-bottom: 0;
+}
+.healthMain .headContent .healthBanner swiper {
+  height: 240rpx !important;
+}
+.healthMain .headContent .healthBanner .banner-slider > ._a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.healthMain .headContent .healthBanner .banner-slider > ._a > ._img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  content: normal !important;
+}
+.healthMain .headContent .fourTypes {
+  font-size: 30rpx;
+  color: #666666;
+}
+.healthMain .headContent .fourTypes:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.healthMain .headContent .fourTypes ._li {
+  float: left;
+  margin-right: 70rpx;
+}
+.healthMain .headContent .fourTypes ._li.on {
+  color: #000;
+}
+.healthMain .headContent .fourTypes ._li.on ._i {
+  display: inline-block;
+  vertical-align: middle;
+}
+.healthMain .headContent .fourTypes .icon-all {
+  display: none;
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: bottom;
+  background: url("https://m.allinmed.cn/static/image/img00/healthKnowledge/label_all.png") no-repeat;
+  background-size: contain;
+  margin-right: 8rpx;
+}
+.healthMain .headContent .fourTypes .icon-look {
+  display: none;
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: bottom;
+  background: url("https://m.allinmed.cn/static/image/img00/healthKnowledge/label_video.png") no-repeat;
+  background-size: contain;
+  margin-right: 8rpx;
+}
+.healthMain .headContent .fourTypes .icon-hear {
+  display: none;
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: bottom;
+  background: url("https://m.allinmed.cn/static/image/img00/healthKnowledge/label_vioce.png") no-repeat;
+  background-size: contain;
+  margin-right: 8rpx;
+}
+.healthMain .headContent .fourTypes .icon-read {
+  display: none;
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: bottom;
+  background: url("https://m.allinmed.cn/static/image/img00/healthKnowledge/label_article.png") no-repeat;
+  background-size: contain;
+  margin-right: 8rpx;
+}
+.healthMain .mainContent {
+  background: #ffffff;
+  box-sizing: border-box;
+}
+.healthMain .noMore {
+  color: #666;
+  font-size: 28rpx;
+  text-align: center;
+  padding: 30rpx 0;
+  background: #F2F4F7;
+}
+.fadeDown-enter-active,
+.fadeDown-leave-active {
+  transition: all ease-in-out 0.5s;
+}
+.fadeDown-enter,
+.fadeDown-leave-to {
+  opacity: 0;
+  transform: translateY(-50%);
+}
+.articleItem {
+  padding: 30rpx 36rpx;
+  border-bottom: 12rpx solid #F2F4F7;
+}
+.articleItem:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.articleItem:last-child {
+  border-bottom: 0;
+}
+.articleItem ._article {
+  margin-right: 240rpx;
+}
+.articleItem ._article.noShowImg {
+  margin-right: 0;
+}
+.articleItem ._article .articalIcon {
+  display: inline-block;
+  float: left;
+  margin-top: 2rpx;
+  width: 36rpx;
+  height: 34rpx;
+  background: url("https://m.allinmed.cn/static/image/mp/index/1.1.2/article_profile.png") no-repeat center;
+  background-size: 100% 100%;
+}
+.articleItem ._article .articleTitle {
+  line-height: 42rpx;
+  font-size: 30rpx;
+  color: #333333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.articleItem ._article .articleTitle.isArtical {
+  padding-left: 12rpx;
+}
+.articleItem ._article .audioBox {
+  width: 100%;
+  height: 100rpx;
+  white-space: nowrap;
+  line-height: 100rpx;
+  margin-top: 20rpx;
+  background: #F2F4F7;
+  border-radius: 4rpx;
+}
+.articleItem ._article .audioBox .audioPlayIcon {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-left: 40rpx;
+}
+.articleItem ._article .audioBox .audioPlayWire {
+  display: inline-block;
+  width: 420rpx;
+  height: 4rpx;
+  background: #DADDE4;
+  vertical-align: middle;
+  margin: 0 35rpx;
+}
+.articleItem ._article .audioBox .audioPlayTime {
+  display: inline-block;
+  font-size: 30rpx;
+  color: #29A3A3;
+  vertical-align: middle;
+}
+.articleItem ._article .articleIntro {
+  font-size: 26rpx;
+  color: #888888;
+  margin-top: 12rpx;
+}
+.articleItem ._article .articleIntro:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.articleItem ._article .articleIntro .typeAndSource {
+  float: left;
+}
+.articleItem ._article .articleIntro .typeAndSource .articleType {
+  margin-right: 20rpx;
+}
+.articleItem ._article .articleIntro .societyIllness {
+  float: right;
+  font-size: 24rpx;
+  color: #778291;
+  background: #ECF4F3;
+  border-radius: 4rpx;
+  padding: 10rpx 14rpx;
+  margin-top: -9rpx;
+}
+.articleItem .articleItemLeft {
+  float: right;
+  width: 210rpx;
+  height: 140rpx;
+  border-radius: 4rpx;
+  position: relative;
+}
+.articleItem .articleItemLeft .showImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: normal !important;
+}
+.articleItem .articleItemLeft .videoPlay {
+  display: block;
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.articleItem .articleItemLeft .videoTimes {
+  display: block;
+  font-size: 20rpx;
+  color: #FFFFFF;
+  position: absolute;
+  right: 8rpx;
+  bottom: 8rpx;
+}
+.articleItem .recommendDoctor {
+  margin-right: -30rpx;
+}
+.articleItem .recommendDoctor .doctorBorder {
+  width: 690rpx;
+  height: 1rpx;
+  background: #eeeeee;
+}
+.articleItem .recommendDoctor ._h3 {
+  padding-top: 30rpx;
+  font-size: 30rpx;
+  color: #222222;
+}
+.articleItem .recommendDoctor ._h3:before {
+  display: inline-block;
+  content: "";
+  width: 30rpx;
+  height: 30rpx;
+  background: url("https://m.allinmed.cn/static/image/img00/healthKnowledge/label_recommend.png") no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+  margin-right: 8rpx;
+  margin-top: -4rpx;
+}
+.articleItem .recommendDoctor .doctorInfo {
+  width: 264rpx;
+  height: 326rpx;
+  background: #FFFFFF;
+  border-radius: 8rpx;
+}
+.articleItem .recommendDoctor .doctorInfo ._figcaption {
+  margin: 0 auto;
+  padding-top: 40rpx;
+  width: 112rpx;
+  height: 112rpx;
+}
+.articleItem .recommendDoctor .doctorInfo ._figcaption ._img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.articleItem .recommendDoctor .doctorInfo .doctorName {
+  display: block;
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #000000;
+  margin-top: 16rpx;
+  text-align: center;
+}
+.articleItem .recommendDoctor .doctorInfo .doctorTitle {
+  opacity: 0.45;
+  display: block;
+  font-size: 24rpx;
+  color: #25324D;
+  margin-top: 12rpx;
+  text-align: center;
+}
+.articleItem .recommendDoctor .doctorInfo .doctorAddress {
+  display: block;
+  margin-top: 24rpx;
+  font-size: 26rpx;
+  color: #25324D;
+  opacity: 0.7;
+  text-align: center;
+}
+.articleItem .recommendDoctor .swiper-container {
+  margin-left: -10rpx;
+}
+.articleItem .recommendDoctor .swiper-wrapper {
+  margin: 30rpx 0 20rpx 0;
+}
+.articleItem .recommendDoctor .swiper-slide {
+  width: 264rpx;
+  margin: 0 12rpx;
+  box-shadow: 0 6rpx 20rpx 0 rgba(200, 206, 217, 0.45);
+  border-radius: 8rpx;
+}
+.healthSearchBox {
+  width: 100%;
+  min-height: 100%;
+  background: #F2F4F7;
+}
+.healthSearchBox.bgf {
+  background: #fff;
+}
+.healthSearchBox .healthSearchFilter .healthFilterType {
+  padding-top: 40rpx;
+  background: #fff;
+}
+.healthSearchBox .healthSearchFilter .healthFilterType:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.healthSearchBox .healthSearchFilter .healthFilterType .healthFilterItem {
+  float: left;
+  font-size: 30rpx;
+  color: #696969;
+  margin: 0 60rpx;
+}
+.healthSearchBox .healthSearchFilter .healthFilterType .healthFilterItem.on {
+  font-weight: bold;
+  color: #29A3A3;
+}
+.healthSearchBox .healthSearchFilter .healthFilterType .healthFilterItem.on:after {
+  display: block;
+  content: "";
+  width: 30rpx;
+  height: 4rpx;
+  background: #2EA9FE;
+  margin: 14rpx auto 12rpx;
+}
+.healthSearchBox .healthSearchFilter .healthSearchResult {
+  margin-top: 14rpx;
+  padding: 0 30rpx;
+  background: #fff;
+}
+.healthSearchBox .healthSearchFilter .healthSearchResult .healthSearchNoResult {
+  width: 100%;
+  height: 536rpx;
+  line-height: 536rpx;
+  text-align: center;
+  background: #fff;
+}
+.healthSearchBox .healthSearchFilter .healthSearchResult .healthSearchNoResult ._span {
+  font-size: 28rpx;
+  color: #25384D;
+  opacity: 0.4;
+}
+.healthSearchBox .healthSearchFilter .healthSearchResult .healthSearchNoResult:before {
+  display: inline-block;
+  content: "";
+  width: 80rpx;
+  height: 66rpx;
+  margin-right: 28rpx;
+  background: url("https://m.allinmed.cn/static/image/img00/DrList/status_results.png") no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
+.healthSearchBox .searchRecommendMoudle {
+  background: #fff;
+  margin-top: 12rpx;
+  padding: 40rpx 30rpx 0;
+  box-sizing: border-box;
+}
+.healthSearchBox .searchRecommendMoudle ._h2 {
+  padding-bottom: 20rpx;
+  font-size: 34rpx;
+  color: #333333;
+}
+.healthSearchBox .noMore {
+  color: #666;
+  font-size: 28rpx;
+  text-align: center;
+  padding: 10rpx 0;
+}
+.sd_searchHeaderBox.data-v-335e427e {
+  padding: 30rpx 30rpx 0;
+  background: #fff;
+}
+.sd_searchHeaderBox.data-v-335e427e:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.sd_searchHeaderBox .sd_searchBack.data-v-335e427e {
+  float: left;
+  width: 50rpx;
+  height: 70rpx;
+  background: url("https://m.allinmed.cn/static/image/img00/DrList/arrow.png") no-repeat left center;
+  background-size: 25rpx 40rpx;
+}
+.sd_searchHeaderBox .sd_searchGroup.data-v-335e427e {
+  float: left;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  background: rgba(65, 96, 129, 0.07) url("https://m.allinmed.cn/static/image/search.png") no-repeat 20rpx center;
+  background-size: 35rpx 35rpx;
+}
+.sd_searchHeaderBox .sd_searchGroup.data-v-335e427e:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.sd_searchHeaderBox .sd_searchGroup .sd_searchInput.data-v-335e427e {
+  float: left;
+  width: 448rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  color: #333333;
+  padding-left: 60rpx;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  border-radius: 10rpx 0 0 10rpx;
+}
+.sd_searchHeaderBox .sd_searchGroup .sd_searchInput.data-v-335e427e::-webkit-input-placeholder {
+  color: #2B3752;
+  opacity: 0.3;
+}
+.sd_searchHeaderBox .sd_searchGroup .sd_searchInput.data-v-335e427e::-moz-placeholder {
+  color: #2B3752;
+  opacity: 0.3;
+}
+.sd_searchHeaderBox .sd_searchGroup .sd_searchInput.data-v-335e427e:-moz-placeholder {
+  color: #2B3752;
+  opacity: 0.3;
+}
+.sd_searchHeaderBox .sd_searchGroup .sd_searchInput.data-v-335e427e:-ms-input-placeholder {
+  color: #2B3752;
+  opacity: 0.3;
+}
+.sd_searchHeaderBox .sd_searchGroup .sd_searchClear.data-v-335e427e {
+  float: left;
+  width: 90rpx;
+  height: 70rpx;
+  background-size: 30rpx 30rpx;
+}
+.sd_searchHeaderBox .sd_searchGroup .sd_searchClear .sd_delete_icon.data-v-335e427e {
+  width: 42rpx;
+  height: 42rpx;
+  margin-left: 26rpx;
+  margin-top: 16rpx;
+}
+.sd_searchHeaderBox .sd_searchGroup .sd_searchBtn.data-v-335e427e {
+  float: left;
+  width: 100rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  color: #fff;
+  border-radius: 0 10rpx 10rpx 0;
+  background: #2EA9FE;
+  text-align: center;
+}
+.sd_searchHistory.data-v-53a058c3 {
+  padding: 68rpx 30rpx 0;
+  background: #fff;
+}
+.sd_searchHistory ._figcaption.data-v-53a058c3 {
+  font-size: 34rpx;
+  color: #444444;
+  font-weight: bold;
+}
+.sd_searchHistory .sd_searchHistoryList.data-v-53a058c3 {
+  margin-top: 24rpx;
+}
+.sd_searchHistory .sd_searchHistoryList .sd_searchHistoryItem.data-v-53a058c3 {
+  max-width: 654rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  margin-top: 10rpx;
+  color: #5A5A5A;
+  font-size: 28rpx;
+  background: #F2F4F7;
+  padding: 11rpx 14rpx 11rpx 14rpx;
+  margin-right: 12rpx;
+  border-radius: 4rpx;
+}
+.sd_deleteBtnIcon.data-v-53a058c3 {
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 6rpx;
+  background: url("https://m.allinmed.cn/static/image/img00/DrList/specialty_delete.png") no-repeat;
+  background-size: 100% 100%;
+}

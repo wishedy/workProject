@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            var url=document.URL;
+            var str=url.substring(url.lastIndexOf("?"),url.length);
+            window.location.href='//m.allinmd.cn/dist/personal/others_index.html'+str+'#/baseInfo';
+        }
+    </script>
+    <title>简介－个人资料,全面展现,唯医,allinmd</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="［xxx］的学术专栏－唯医,allinmd">
+    <meta name="keywords" content="［xxx］，学术专栏，医学专栏，医师主页，医生专栏，医生交流，关注医师，唯医,allinmd">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <!--build:css /dest/personal/others_baseInfo.css -->
+    <link rel="stylesheet" href="/css/v3/base.css">
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css" />
+    <link rel="stylesheet" href="/css/v3/pageFooter.css" />
+    <link rel="stylesheet" href="/css/v3/pages/others/others_msg.css">
+
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/auth/module.auth.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/publish/publish.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/weixin/module.weixin.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>-->
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/css/column/videoPK_v2/apply_zhezhao.css" rel="stylesheet" type="text/css"/>-->
+    <!-- endbuild -->
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+
+<body data-alcode="180">
+    <!--全内容容器——mainInner-->
+    <section class="al-mainInner">
+        <!-- 页头——本页面无超链接-->
+        <header class="al-header al-dis_header">
+            <section class="al-headerContainer">
+                <!--浏览记录：begin-->
+                <div class="al-headerSearchRecord">
+                    浏览记录
+                    <div class="al-browseRecordBox" data-alcode-mod='61'>
+
+                    </div>
+                </div>
+                <!--浏览记录：end-->
+                <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                    <input type="text" />
+                    <b></b>
+                </figure>
+            </section>
+        </header>
+        <!-- 主侧边栏——Logo于此放置 -->
+        <!--#include virtual="/includes/header.jsp"-->
+
+
+        <!-- 主内容容器 -->
+        <section class="al-personal">
+            <section class="al-personalInner">
+                <header class="al-personalHeader" data-alcode-mod='81'>
+                    <section class="al-personalLogoMsg">
+                        <figure class="al-personalLogo ev-logoUrl">
+
+                        </figure>
+                        <p class="al-personalName"><span class="ev-name"></span></p>
+                        <figcaption class="al-personalJobMsg ev-companyMedicalTitle">
+
+                        </figcaption>
+                        <section class="al-userFollowBtn ev-followStatus">
+
+                        </section>
+                    </section>
+                    <section class="al-personalFollowMsg" data-alcode-mod='190' data-alcode-item-selector="a">
+                        <a href="javascript:;" class="al-personalFollowNum" data-role="fans">粉丝<span class="ev-fansNum"></span></a>
+                        <hr>
+                        <a href="javascript:;" class="al-personalFollowNum" data-role="follow">关注<span class="ev-followNum"></span></a>
+                        <hr>
+                        <a href="javascript:;" class="al-personalFollowNum" data-role="collect">收藏<span class="ev-collectionNum"></span></a>
+                    </section>
+                    <button class="al-personalConfig" id="ev-praise">
+                        <span><i class="al-iconOthersLike"></i><span class="ev-othersUpNum"></span></span>
+                    </button>
+                </header>
+                <nav class="al-personalNavbar" data-alcode-mod='191' data-alcode-item-selector="a">
+                    <figure class="al-personalNavbarItem">
+                        <i class="al-iconMyIndex"></i>
+                        <a href="javascript:;" class="ev-index">Ta的动态</a>
+                    </figure>
+                    <figure class="al-personalNavbarItem">
+                        <i class="al-iconMyContribution"></i>
+                        <a href="javascript:;" class="ev-contribution">Ta的贡献</a>
+                    </figure>
+                    <figure class="al-personalNavbarItem active">
+                        <i class="al-iconMyMsg"></i>
+                        <a href="javascript:void(0)">Ta的简介</a>
+                    </figure>
+                </nav>
+                <aside class="al-personalInnerSidebar">
+                    <section class="al-personalInnersidebarBox">
+                        <figure class="al-personalInnerSidebarItem active">
+                            <p>Ta的简介</p>
+                        </figure>
+                    </section>
+                </aside>
+                <section class="al-personalInnerContent">
+                    <section class="al-personalInnerSidebarChange active">
+                        <section class="al-contentItem al-personalHasQualification">
+                            <header class="al-contentItemTitle">
+                                <h2>基本信息</h2>
+                            </header>
+                            <section class="al-tableModule al-tablePadding">
+                                <section class="al-tableItem">
+                                    <p>姓名</p>
+                                    <figure class="al-tableItemContent ev-trueName"></figure>
+                                </section>
+                                <section class="al-tableItem">
+                                    <p>性别</p>
+                                    <figure class="al-tableItemContent ev-sex"></figure>
+                                </section>
+                                <section class="al-tableItem">
+                                    <p>出生年月</p>
+                                    <figure class="al-tableItemContent ev-birth"></figure>
+                                </section>
+                                <section class="al-tableItem">
+                                    <p>医院</p>
+                                    <figure class="al-tableItemContent ev-company"></figure>
+                                </section>
+                                <section class="al-tableItem">
+                                    <p>职称</p>
+                                    <figure class="al-tableItemContent ev-medical"></figure>
+                                </section>
+                                <!--<section class="al-tableItem">
+                                    <p>科室</p>
+                                    <figure class="al-tableItemContent ev-department"></figure>
+                                </section>-->
+                                <!--<section class="al-tableItem">
+                                    <p>临床时间</p>
+                                    <figure class="al-tableItemContent ev-clinicalYear"></figure>
+                                </section>-->
+                                <section class="al-tableItem">
+                                    <p>专科</p>
+                                    <section class="al-tableItemTagsList ev-areas">
+
+                                    </section>
+                                </section>
+                                <!--<section class="al-tableItem">
+                                    <p>注册日期</p>
+                                    <figure class="al-tableItemContent ev-registTime"></figure>
+                                </section>-->
+                            </section>
+                        </section>
+                        <section class="al-contentItem">
+                            <header class="al-contentItemTitle">
+                                <h2>个人简介</h2>
+                            </header>
+                            <section class="al-tableModule">
+                                <section class="al-tableItem">
+                                    <span class="al-tablePersonalMsg" id="summary_count"></span>
+                                </section>
+                            </section>
+                        </section>
+                        <section class="al-contentItem hide" id="occ_oth">
+                            <header class="al-contentItemTitle">
+                                <h2>工作经历</h2>
+                            </header>
+                            <section class="al-tableModule" id="occ_list">
+
+                            </section>
+                        </section>
+                        <section class="al-contentItem hide" id="edu_oth">
+                            <header class="al-contentItemTitle">
+                                <h2>教育背景</h2>
+                            </header>
+                            <section class="al-tableModule" id="edu_list">
+
+                            </section>
+                        </section>
+                        <section class="al-contentItem hide" id="cEdu_oth">
+                            <header class="al-contentItemTitle">
+                                <h2>继续教育</h2>
+                            </header>
+                            <section class="al-tableModule" id="cEdu_list">
+
+                            </section>
+                        </section>
+                        <section class="al-contentItem hide" id="honor_oth">
+                            <header class="al-contentItemTitle">
+                                <h2>获得荣誉</h2>
+                            </header>
+                            <section class="al-tableModule" id="honor_list">
+
+                            </section>
+                        </section>
+                        <section class="al-contentItem hide" id="fund_oth">
+                            <header class="al-contentItemTitle">
+                                <h2>科研基金</h2>
+                            </header>
+                            <section class="al-tableModule" id="fund_list">
+
+                            </section>
+                        </section>
+                        <section class="al-contentItem hide" id="social_oth">
+                            <header class="al-contentItemTitle">
+                                <h2>社会任职</h2>
+                            </header>
+                            <section class="al-tableModule" id="social_list">
+
+                            </section>
+                        </section>
+                        <section class="al-contentItem hide" id="opus_oth">
+                            <header class="al-contentItemTitle">
+                                <h2>学术专著</h2>
+                            </header>
+                            <section class="al-tableModule" id="opus_list">
+
+                            </section>
+                        </section>
+                        <section class="al-contentItem hide" id="patent_oth">
+                            <header class="al-contentItemTitle">
+                                <h2>发明专利</h2>
+                            </header>
+
+                            <section class="al-tableModule" id="patent_list">
+
+                            </section>
+                        </section>
+                    </section>
+                  
+                </section>
+            </section>
+        </section>
+        <!--公共底部 start-->
+        <!--#include virtual="/includes/footer.jsp"-->
+        <!--公共底部 End-->
+    </section>
+    <script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+    <script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+    <script src='/js/lib/jquery/jquery.form.js'></script>
+    <script src='/js/lib/jquery/jquery.cookie.js'></script>
+
+    <!--build:js /dest/personal/others_baseInfo.js -->
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/comm.customer.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm.textChange.js"></script>
+    <script src="/js/comm/comm.lightBox.js"></script>
+    <script src="/js/comm/comm.file.js"></script>
+    <script src="/js/comm/comm.cutArray.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/comm.ajaxExistHtml.js"></script>
+    <script src="/js/comm/comm.Log.js"></script> 
+    <!--<script src="/js/comm/comm.track.js"></script>-->
+
+    <script src="/js/modules/share/module.share.js"></script>
+    <!--<script src="/js/modules/auth/module.auth.js"></script>-->
+    <script src="/js/modules/user/module.user.js"></script>
+    <script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+    <script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+    <!--<script src="/js/scene/column/videoPK_v2/scene.column.videoPK_2.process.js"></script>-->
+    <!--<script src="/js/modules/publish/module.select-type.js"></script>-->
+    <script src="/js/modules/publish/module.video-upload.js"></script>
+    <script src="/js/modules/publish/module.doc-upload.js"></script>
+    <!--<script src="/js/modules/publish/module.topic-upload.js"></script>-->
+    <!--<script src="/js/modules/publish/module.case-upload.js"></script>-->
+    <script src="/js/modules/validate-email/module.validate-email.js"></script>
+    <script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js" ></script>
+    <script src="/js/modules/weixin/module.welcome.js"></script>
+    <script src="/js/modules/weixin/module.welcome.auth.js"></script>
+    <script src="/js/modules/weixin/module.weixin.js"></script>
+    <script src="/js/modules/weixin/module.weixin.auth.js"></script>
+    <script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+    <script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+    <script src="/js/plugins/follow/plugin.follow.js"></script>
+    <script src="/js/plugins/expand-shrink/plugin.expand-shrink.js"></script>
+    <script src="/js/plugins/make-sure-popup/plugin.make-sure-popup.js"></script>
+    <script src="/js/scene/scene.header.js"></script>
+
+    <script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script><script src='/js/third-party/md5.js'></script>
+    <script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+    <script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+    <!--<script src="/js/third-party/uploadify/swfobject2.2.js"></script>-->
+    <!--<script src="/js/third-party/uploadify/jquery.uploadify.js"></script>-->
+    <script src="/js/third-party/ajaxfileupload.js"></script>
+    <script src="/js/third-party/qiniu/qiniu.js"></script>
+    <script src="/js/third-party/qiniu/ui.js"></script>
+    <script src="/js/third-party/plupload/plupload.full.min.js"></script>
+    <script src="/js/third-party/plupload/i18n/zh_CN.js"></script>
+    <script src="/js/third-party/jquery-qrcode-master/src/jquery.qrcode.js"> </script>
+    <script src="/js/third-party/jquery-qrcode-master/src/qrcode.js"> </script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+
+    <script src="/js/scene/personal/scene.personal.otherBaseInfo.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

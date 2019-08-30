@@ -1,0 +1,50 @@
+<import src="/components/loading$2ff823fe" />
+<import src="/components/ensure$5e95f728" />
+<import src="/components/customizedTabbar$03f1cf26" />
+<import src="/components/authorization$8245c8b6" /><template name="myConsult$d0bdcc8a">
+  <view class="_section data-v-b9768fd4 orderList"><template wx:if="{{finish}}" data="{{...$root[$kk+'0'], $root}}" is="loading$2ff823fe"></template>
+    <view wx:if="{{!authorizationFlag}}" style="height:100%;" class="_section data-v-b9768fd4">
+      <view wx:if="{{historyLists.length == 0 && noFriend}}" class="_div data-v-b9768fd4">
+        <view class="_section data-v-b9768fd4 noFriendText">
+          <view class="_p data-v-b9768fd4">您还没有任何记录</view>
+        </view>
+        <view class="_section data-v-b9768fd4 noFriendHref">
+          <view bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_div data-v-b9768fd4">
+            <view class="_i data-v-b9768fd4 icon"></view>快速问诊
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-b9768fd4 orderHistoryBox" wx:else>
+        <view class="_section data-v-b9768fd4 orderHistoryItem" wx:key="index" key="{{index}}" bindtap="handleProxy" wx:if="{{item.patientId}}" data-eventid="{{'3-'+index}}" data-comkey="{{$k}}" wx:for="{{historyLists}}" wx:for-index="index" wx:for-item="item">
+          <view class="_article data-v-b9768fd4 orderHisItemTop">
+            <view class="_figure data-v-b9768fd4 doctorInfo left">
+              <view class="_figcaption data-v-b9768fd4 docLogo left">
+                <image src="{{item.logoImg}}" class="_img data-v-b9768fd4"></image>
+              </view>
+              <view class="_section data-v-b9768fd4 docType right">
+                <view class="_p data-v-b9768fd4 docName"><label class="_span data-v-b9768fd4">{{item.showName}}</label><label class="_span data-v-b9768fd4 medicalTitleRight">{{item.medicalTitle}}</label></view>
+                <view class="_p data-v-b9768fd4 inquiryType {{[!item.medicalTitle ? 'mTop' : '']}}">{{item.consultationType == 1?item.company:"唯医骨科"}}</view>
+              </view>
+            </view>
+            <view class="_div data-v-b9768fd4 doctorState right"><label class="_span data-v-b9768fd4 inquiryTimeShow">{{item.showTime}}</label> <label class="_span data-v-b9768fd4 inquiryStateShow {{item.fontGray}}">{{item.statusName}}</label></view>
+          </view>
+          <view class="_div data-v-b9768fd4 orderHistoryItemCenter">
+            <view class="_p data-v-b9768fd4">
+              <view class="_i data-v-b9768fd4">就诊人</view><label class="_span data-v-b9768fd4">{{item.patientNameShow}}</label>
+            </view>
+            <view wx:if="{{item.caseType != 14}}" class="_p data-v-b9768fd4">
+              <view class="_i data-v-b9768fd4">病   情</view><label class="_span data-v-b9768fd4 patientComplaint">{{item.mainContent.caseMain}}</label>
+            </view>
+          </view>
+          <view class="_div data-v-b9768fd4 orderHistoryItemBottom" wx:if="{{(item.consultationType==0&&(item.consultationState==0 || item.consultationState == 9)&&item.state==3) || (item.consultationType==0&&item.isRecommend==1)}}"><label class="_span data-v-b9768fd4 hrefBtn" wx:if="{{item.consultationState==9&&item.state==3}}" catchtap="handleProxy" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}">补全检查资料</label> <label class="_span data-v-b9768fd4 hrefBtn" wx:if="{{item.isRecommend==1}}">查看推荐专家</label></view>
+          <view class="_div data-v-b9768fd4 orderHistoryItemBottom" wx:if="{{item.isEvaluateFlag==1}}"><label class="_span data-v-b9768fd4 hrefBtn" catchtap="handleProxy" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}">去评价</label></view>
+        </view>
+        <view class="_p data-v-b9768fd4 noMore" wx:if="{{noMoreShow}}">没有更多了</view>
+      </view>
+    </view>
+    <view class="_section data-v-b9768fd4 authorization" wx:if="{{authorizationFlag}}">
+      <image src="https://m.allinmed.cn/static/image/mp/report/authorization.png" class="_img data-v-b9768fd4"></image>
+      <view class="_div data-v-b9768fd4 text">获取信息失败，请先授权</view> <button bindgetuserinfo="handleProxy" open-type="getUserInfo" data-eventid="{{'4'}}" data-comkey="{{$k}}" class="_button data-v-b9768fd4">去授权</button>
+    </view> <template wx:if="{{ensureShow}}" bindensureClickEvent="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="ensure$5e95f728"></template> <template bindFromChild="handleProxy" bindgoToMessage="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="customizedTabbar$03f1cf26"></template> <template data="{{...$root[$kk+'3'], $root}}" is="authorization$8245c8b6"></template>
+  </view>
+</template>

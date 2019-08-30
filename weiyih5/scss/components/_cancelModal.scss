@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+//弹层——询问是否取消关注/不感兴趣
+//Created by qiangkailiang on 2016/07/31
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.al-cancelModal{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 9;
+	opacity: 0;
+
+	visibility: hidden;
+	transition:all 0.3s linear;
+	-webkit-transition:all 0.3s linear;
+}
+.al-cancelModalItem{
+	height: rem(104px);
+	background-color: #fff;
+	border-radius: rem(5px);
+	text-align: center;
+	line-height: rem(104px);
+	position: fixed;
+	@include font-dpr(16px);
+	//width: 96%;
+  	right:rem(21px);
+  padding: 0 rem(40px);
+	top: 50%;
+  	i{
+	  width: 0;
+	  height: 0;
+	  display: block;
+	  position: absolute;
+	  border-width: 10px;
+	  border-color: transparent transparent #fff transparent;
+	  border-style: solid;
+	  top:-20px;
+	  //right: rem(85px);
+	}
+	span{
+		color: #000;
+		//margin-left:rem(-30px);
+	}
+	a{
+		margin-left: rem(40px);
+		background-color: #2899e6;
+		color: #fff;
+	}
+  .btn-primary{
+	width: rem(126px);
+	height: rem(56px);
+	line-height: rem(56px);
+	text-align: center;
+	padding: 0;
+	font-size: rem(28px);
+	color: #fff;
+	display: inline-block;
+  }
+}
+
+.al-cancelModal.show{
+	opacity: 1;
+	visibility: visible;
+}
+
+
+

@@ -1,0 +1,35 @@
+<import src="/components/toast$1074ede9" />
+<import src="/components/LogoLoading$2b721f9a" />
+<import src="/components/ensure$5e95f728" />
+<import src="/components/BlackList$219144df" />
+<import src="/components/authorization$8245c8b6" /><template name="doctorOutPatient$48313302">
+  <view class="_div data-v-0b690f1a doctorHomeMain {{[dataFinish && doctorLevel != 8 ? 'doctorNoV2' : '']}}">
+    <view class="_section data-v-0b690f1a doctorV2Level" wx:if="{{dataFinish && doctorLevel != 8}}">
+      <view class="_div data-v-0b690f1a doctorV2BgImg">
+        <image src="https://m.allinmed.cn/static/image/mp/index/lost_erweima.png" alt class="_img data-v-0b690f1a"></image>
+      </view>
+      <view class="_h4 data-v-0b690f1a">二维码已失效</view>
+      <view class="_article data-v-0b690f1a">请联系{{doctorNameAll}}医生获取最新二维码</view> <label class="_span data-v-0b690f1a goHomeBtn" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">返回首页</label>
+    </view>
+    <view class="_section data-v-0b690f1a doctorHomeTop {{[isFullScreen ? 'fullScreen' : '']}}" wx:if="{{dataFinish && doctorLevel == 8}}">
+      <view class="_section data-v-0b690f1a doctorInfo">
+        <view class="_div data-v-0b690f1a doctorLogo">
+          <image class="_img data-v-0b690f1a doctorLogoImg" src="{{doctorLogo}}" alt></image>
+          <view class="_div data-v-0b690f1a doctorLogoBottom"></view>
+        </view>
+        <view class="_section data-v-0b690f1a doctorBaseInfo">
+          <view class="_h2 data-v-0b690f1a docName">{{doctorName}}医生网上诊所</view>
+          <view class="_p data-v-0b690f1a docOtherInfo"><label class="_span data-v-0b690f1a">{{medicalTitle}}</label> <label class="_span data-v-0b690f1a">{{company}}</label></view>
+          <view class="_p data-v-0b690f1a docTips"><label class="_span data-v-0b690f1a docTipsText">擅治疾病</label></view>
+          <view class="_p data-v-0b690f1a docStrongInfo">{{expertiseFiled}}</view>
+          <view class="_div data-v-0b690f1a reportBtn">
+            <form action bindsubmit="handleProxy" report-submit="true" data-eventid="{{'3'}}" data-comkey="{{$k}}" class="_form data-v-0b690f1a"><button class="_button data-v-0b690f1a reportBtnAuthorize" type="submit" formType="submit" bindtap="handleProxy" open-type="getUserInfo" bindgetuserinfo="handleProxy" wx:if="{{mobileOnOff}}" data-eventid="{{'1'}}" data-comkey="{{$k}}"> 点击进入 </button> <button class="_button data-v-0b690f1a reportBtnAuthorize" type="submit" formType="submit" bindtap="handleProxy" open-type="getPhoneNumber" bindgetphonenumber="handleProxy" wx:if="{{!mobileOnOff}}" data-eventid="{{'2'}}" data-comkey="{{$k}}"> 点击进入 </button></form>
+          </view>
+        </view>
+        <image src="https://m.allinmed.cn/static/image/mp/index/1.2.0/hua1.png" alt class="_img data-v-0b690f1a flowerOne"></image>
+        <image src="https://m.allinmed.cn/static/image/mp/index/1.2.0/hua2.png" alt class="_img data-v-0b690f1a flowerTwo"></image>
+        <image src="https://m.allinmed.cn/static/image/mp/index/1.2.0/hua_b.png" alt class="_img data-v-0b690f1a flowerThree"></image>
+      </view>
+    </view> <template wx:if="{{toastShow}}" data="{{...$root[$kk+'0'], $root}}" is="toast$1074ede9"></template> <template wx:if="{{loadingFlag}}" data="{{...$root[$kk+'1'], $root}}" is="LogoLoading$2b721f9a"></template> <template wx:if="{{ensureShow}}" bindensureClickEvent="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="ensure$5e95f728"></template> <template bindshielded="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'3'], $root}}" is="BlackList$219144df"></template> <template data="{{...$root[$kk+'4'], $root}}" is="authorization$8245c8b6"></template>
+  </view>
+</template>

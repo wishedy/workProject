@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript">
+
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            var ind = window.location.href.indexOf('?');
+            window.location.href='//www.allinmd.cn/pages/search/search.html'+window.location.href.substring(ind);
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>搜索</title>
+    <meta name="Keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/search/search_index.css">
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="215">
+<section class="al-scrollShareBtn" style="display:none" data-alcode-mod='406'>
+    <i class="icon-scrollShare" data-alcode="e46"></i>分享
+</section>
+<section class="al-mainInner">
+    <section class="al-searchInputBar" data-alcode-mod='454'>
+        <!--<i class="icon-searchWhite"></i>-->
+
+        <form action="javascript:;">
+            <span class="platformSelect">骨科</span>
+            <input type="search" placeholder="请输入关键词" max="35">
+            <section class="al-personalContributionSelector ev_switchPlatform">
+                <ul>
+                    <li class="al-personalContributionSelectorItem activeP" data-platformId="1">骨科</li>
+                    <li class="al-personalContributionSelectorItem" data-platformId="2">手外科</li>
+                </ul>
+            </section>
+        </form>
+        <i class="icon-searchCancel"></i>
+        <button class="al-searchCancel" data-alcode='e75'>
+            取消
+        </button>
+    </section>
+    <!--联想词列表-->
+    <section class="al-searchResult ev-lenovo" style="margin-top:0.3rem;display:none" data-alcode-mod='457'>
+
+    </section>
+    <section class="ev-mainInner">
+        <!-- 主导航栏 -->
+        <nav class="al-sortItems" style="display: none;">
+            <ul data-alcode-mod='459' data-alcode-item-selector="li">
+                <li class="sortActive" searchSort="1">相关性</li>
+                <span>|</span>
+                <li searchSort="2">最新</li>
+                <span>|</span>
+                <li searchSort="3">最热</li>
+            </ul>
+        </nav>
+        <nav class="al-indexNavbar" style="display: none;">
+            <ul data-alcode-mod='460' data-alcode-item-selector="li">
+                <li class="al-indexNavbarItem" data-role="all">
+                    <a href="javascript:void(0)">
+                        <span>全部</span>
+                    </a>
+                </li>
+                <li class="al-indexNavbarItem" data-role="case">
+                    <a href="javascript:void(0)">
+                        <span>病例</span>
+                    </a>
+                </li>
+                <li class="al-indexNavbarItem" data-role="video">
+                    <a href="javascript:void(0)">
+                        <span>视频</span>
+                    </a>
+                </li>
+                <li class="al-indexNavbarItem" data-role="meeting">
+                    <a href="javascript:void(0)">
+                        <span>会议</span>
+                    </a>
+                </li>
+                <li class="al-indexNavbarItem" data-role="doctor">
+                    <a href="javascript:void(0)">
+                        <span>医师</span>
+                    </a>
+                </li>
+                <li class="al-indexNavbarItem" data-role="doc">
+                    <a href="javascript:void(0)">
+                        <span>文库</span>
+                    </a>
+                </li>
+                <li class="al-indexNavbarItem" data-role="topic">
+                    <a href="javascript:void(0)">
+                        <span>话题</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="al-searchResultContent active ev-main" data-role="main">
+            <section class="al-searchInner">
+                <section class="al-searchItem">
+                    <h2 class="al-searchTitle"><i class="icon-hotSearch"></i>热门搜索</h2>
+                    <article class="al-hotSearchContent" data-alcode-mod='455'>
+
+                    </article>
+                </section>
+                <section class="al-searchItem" style="display: none">
+                    <h2 class="al-searchTitle"><i class="icon-historySearch"></i>历史搜索</h2>
+                    <article class="al-historySearchContent"  data-alcode-mod='456'>
+
+                    </article>
+                </section>
+            </section>
+
+        </section>
+
+        <section class="al-searchResultContent ev-wrap" data-role="all">
+
+            <section class="al-content al-doctorRecommend ev_docBox" style="display: none">
+
+            </section>
+            <section class="al-content ev_box" data-alcode-mod='461'>
+
+            </section>
+        </section>
+        <section class="al-noContentTips" style="display: none;" data-alcode-mod="554"><figure><img src="//img50.allinmd.cn/pages/search/no_result.png" alt=""></figure><a href="/pages/personal/feedBack.html?from=search" class="al-searchErrorReport">我要吐槽</a></section>
+        <section class="al-searchItem ev_recommendForYou" style="display: none;">
+            <h2 class="al-searchTitle"><i class="icon-searchRecommend"></i>为你推荐</h2>
+            <!--<section class="al-content al-doctorRecommend" style="display: none">-->
+            <!--</section>-->
+            <section class="al-content noContentRecommend" data-alcode-mod='462'>
+
+            </section>
+        </section>
+    </section>
+</section>
+
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/modules/module.list-template.js"></script>
+<script src="/js/plugins/plugin.follow.js"></script>
+<script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+<script src="/js/scene/search/search3.js"></script>
+
+</body>
+
+</html>

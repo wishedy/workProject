@@ -1,0 +1,392 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_bottomBtns";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule";
+@import "../../components/_selectorBar"; //职称选择框
+
+
+body,html{
+  background: #fff;
+}
+.al-mainInner{
+  background: #fff;
+}
+.al-login{
+  &.relevance{
+    margin-top: 156px;
+  }
+  .registerBtn{
+    font-size: rem(40px);
+    color: #2899E6;
+    @include clearfix();
+    margin: rem(40px) rem(30px) rem(78px) 0;
+    span{
+      float: right;
+      display: inline-block;
+    }
+  }
+  .loginRegisterTab{
+    font-size: rem(44px);
+    color: #AAAAAA;
+    margin: 0 0 rem(80px) rem(75px);
+    p{
+      display: inline-block;
+      &:first-child{
+        margin-right: rem(72px);
+      }
+      &.active{
+        color: #222222;
+        &:after{
+          content: '';
+          display: block;
+          width: rem(98px);
+          height: rem(10px);
+          background: #2899E6;
+          border-radius: rem(100px);
+          margin: rem(18px) auto 0;
+        }
+      }
+    }
+  }
+  .loginCont{
+    .inputBox{
+      border: 1px solid #AAAAAA;
+      border-radius: rem(10px);
+      //width: rem(600px);
+      width: 80%;
+      height: rem(106px);
+      line-height: rem(106px);
+      margin: 0 auto rem(30px);
+      span{
+        display: inline-block;
+        font-size: rem(34px);
+        color: #2899E6;
+        float: right;
+        margin-right: rem(30px);
+      }
+      .timeYZM{
+        font-size: rem(40px);
+        color: #777777;
+        display: none;
+      }
+
+      i{
+        float: right;
+        display: inline-block;
+        width: rem(40px);
+        height: rem(40px);
+        background: url("/images/img50/login/loginV2/close_sign.png") no-repeat;
+        background-size: contain;
+        margin: rem(33px) rem(30px) 0 0;
+        vertical-align: middle;
+        display: none;
+      }
+      .show_sign{
+        background: url("/images/img50/login/loginV2/show_sign.png") no-repeat;
+        background-size: contain;
+        width: rem(44px);
+        height: rem(40px);
+        margin-right: rem(20px);
+
+        &.unshow_sign{
+          background: url("/images/img50/login/loginV2/unshow_sign.png") no-repeat;
+          background-size: contain;
+        }
+      }
+      input{
+        font-size: rem(56px);
+        color: #000000;
+        border: none;
+        padding-left: rem(30px);
+        width: 70%;
+        line-height: rem(56px);
+        border-radius: rem(10px);
+        padding-top: rem(20px);
+
+        &.codeInput{
+          width: 4rem;
+        }
+      }
+    }
+    .loginBtn{
+      display: block;
+      width: rem(600px);
+      height: rem(106px);
+      line-height: rem(106px);
+      text-align: center;
+      border-radius: rem(10px);
+      background: #2899E6;
+      margin: rem(80px) auto rem(36px);
+      font-size: rem(36px);
+      color: #FFFFFF;
+    }
+    .problems{
+      font-size: rem(30px);
+      color: #909090;
+      @include clearfix();
+      margin-right: rem(75px);
+      span{
+        float: left;
+        display: inline-block;
+        margin-left: rem(75px);
+      }
+      .encounter{
+        float: right;
+        //margin-left: rem(75px);
+      }
+    }
+    .lookAround{
+      font-size: rem(30px);
+      color: #AAAAAA;
+      margin-top: rem(215px);
+      text-align: center;
+    }
+    &.phoneLoginCont{
+      .inputBox{
+        input{
+          //width: rem(300px);
+          width: 70%;
+          &.mobileInput{
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
+}
+.registerCont{
+  .agree{
+    position: fixed;
+    font-size: rem(24px);
+    color: #AAAAAA;
+    bottom: rem(40px);
+    width: 100%;
+    //left: 50%;
+    //transform: translate(-50%,0);
+    //width: rem(470px);
+    div{
+      text-align: center;
+    }
+    p{
+      display: inline-block;
+    }
+    span{
+      font-size: rem(24px);
+      color: #909090;
+      margin: 0 rem(5px);
+    }
+    a{
+      text-decoration: underline;
+    }
+  }
+}
+
+
+
+.inputBox input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-size: rem(34px);
+  color: #AAAAAA;
+}
+
+.inputBox input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-size: rem(34px);
+  color: #AAAAAA;
+}
+
+.inputBox input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-size: rem(34px);
+  color: #AAAAAA;
+}
+
+.inputBox input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-size: rem(34px);
+  color: #AAAAAA;
+}
+
+.al-indexHeader h1{
+  color: #333;
+  font-size: rem(34px);
+  font-weight: normal;
+}
+.registerCont{
+  margin-top: rem(150px);
+}
+
+
+
+
+/*登录弹层*/
+.loginPopup{
+  background: rgba(10,30,43,0.8);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  .loginPopupCont{
+    width: rem(540px);
+    background: #FFFFFF;
+    border-radius: rem(10px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: rem(10px) 0 0 0;
+    .title{
+      font-size: rem(40px);
+      color: #000000;
+      padding: rem(47px) 0;
+      border-bottom: solid 1px #DFDFDF;
+      font-weight: bold;
+      i{
+        display: inline-block;
+        width: rem(46px);
+        height: rem(46px);
+        background: url("/images/img50/login/loginV2/warning_sign.png") no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: rem(20px);
+      }
+      span{
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+    p{
+      font-size: rem(36px);
+      color: #333333;
+      padding: rem(31px) 0;
+      border-bottom: solid 1px #DFDFDF;
+      &:last-child{
+        border: none;
+      }
+    }
+    .registerBtn{
+      color: #2899E6;
+      font-weight: bold;
+    }
+  }
+}
+
+
+
+
+
+
+.topShowError{
+  width:100%;
+  height:rem2(76px);
+  line-height: rem2(70px);
+  font-size:rem2(28px);
+  background:rgb(240,70,70);
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 2;
+  color:#fff;
+  padding-left:rem2(36px);
+  //background:url();
+  i{
+    width:rem2(36px);
+    height:rem2(36px);
+    display:inline-block;
+    background:url('//img50.allinmd.cn/new-login/errorBang.png') no-repeat;
+    background-size:cover;
+    position: relative;
+    top:rem2(10px);
+    margin-right:rem2(10px);
+  }
+}
+
+
+/*帮助弹窗*/
+.al-authHelpBg{
+  .al-authHelpContent{
+    width: 92%;
+    margin: 0 auto;
+    padding:rem(70px) rem(40px);
+    text-align: left;
+    background:#fff;
+    border-radius:30px;
+    overflow: hidden;
+    box-sizing: border-box;
+    position:fixed;
+    top:50%;
+    left:4%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+  }
+  h2{
+    @include font-dpr(20px);
+    color: #222;
+    margin-bottom:rem(30px);
+  }
+  .al-authHelpTime{
+    @include font-dpr(16px);
+    color: #333;
+    margin-bottom:rem(70px);
+  }
+  .al-authHelpContact{
+    color:#909090;
+    @include font-dpr(16px);
+
+    p{
+      line-height: rem(36px);
+      padding:rem(30px) 0;
+      &:first-child{
+        border-bottom:1px solid #E4E9ED;
+      }
+      &:nth-child(2){
+        padding-bottom:rem(15px);
+      }
+      &:nth-child(3){
+        padding-left:rem(130px);
+        padding-top:0;
+      }
+    }
+    span{
+      margin-left:rem(20px);
+      line-height: rem(36px);
+      display:inline-block;
+      color:#333;
+      @include font-dpr(18px);
+      width:50%;
+
+      position: relative;
+      top:rem(3px);
+    }
+    a{
+      float:right;
+      border-left:1px solid #E4E9ED;
+      padding-left:rem(15px);
+    }
+    img{
+      width: rem(104px);
+      height: rem(38px);
+      line-height: rem(36px);
+      display: inline-block;
+      position: relative;
+      top:rem(8px);
+    }
+  }
+  .al-authHelpClose{
+    width:rem(30px);
+    height: rem(30px);
+    position: absolute;
+    right:rem(30px);
+    top:rem(30px);
+    //background:url('//img50.allinmd.cn/authentication/auth/close_grey.png') no-repeat;
+    background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAV9JREFUSA29180RwiAQBWDhlDRgEXZhFxZhA7mlCIuwC7uwCBtITok8lExEdtnFIAd/wvK+wGTIYLquO0zTdGnb9tT3/WNXsbn8/TAMV2vt2QJ11nEcxxs6arnIhgELpsVMjTH3eZ4PtfCAwoDlTcww7mia5uiubbLsVLYJS0sVhP6Sby5zgRHMFWrhXNYHvBWeQ+F8wb/iEpSES3EpysJaXINmYSmuRUVwDi9BxTCF4zp2u7AjaTae5FONwFSLZ4eaEhTjVDAGrHEf4PZezUwxBs2+vv7/qZrxerZ4y+B2qy91jGJ5AVd9uFKou+Zfm1wfboxq2aWWBEtq4htgYU2gphY3QcLaIIRpxiRhTQDAdZOO/YKlA9dY/FuS8QFLBsQI9T+XtcC5QgrgrnOZHuYKuGBJH5VtqA5JqLQmZVicZUr3WwX8wBYbTizv85M9u4BbyatNCqPOzdrjsHBoewIPdmltEExNwwAAAABJRU5ErkJggg==') no-repeat;
+    background-size:cover;
+  }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>译者</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/eBook/eBook_transformerList.css">
+</head>
+
+<body>
+    <section class="al-mainInner">
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem ev-backToMain">
+                <a href="javascript:;">
+                    <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>译者</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+            </figure>
+        </header>
+        <section class="al-transformerListBox">
+            <header class="al-personalContributionHeader ev-subNav">
+                <h2 class="al-personalContributionTitle">
+                    <span class="labelsType">全部</span>贡献<span class="contributionNum">2</span>
+                </h2>
+                <section class="al-personalContributionSelector al-personalSelectorOn">
+                    <h2>全部</h2>
+                    <ul>
+                        <li class="al-personalContributionSelectorItem active">全部</li>
+                        <li class="al-personalContributionSelectorItem">主译</li>
+                        <li class="al-personalContributionSelectorItem">副主译</li>
+                        <li class="al-personalContributionSelectorItem">参与人员</li>
+                    </ul>
+                </section>
+            </header>
+            <section class="al-content al-doctorRecommend">
+                <section class="al-doctorRecommendItem">
+                    <figure class="al-doctorRecommendImg">
+                        <figure class="al-doctorRecommendImg">
+                            <a href="//m.allinmd.cn/pages/personal/others_contribution.html?cid=1475115946701"><img src="https://img00.allinmd.cn/default-user/doctor03.jpg" alt=""></a>
+                        </figure>
+                    </figure>
+                    <article class="al-doctorRecommendMsg"><a class="al-doctorRecommendName" href="//m.allinmd.cn/pages/personal/others_contribution.html?cid=1475115946701">呀呀<i class="al-vipUser"></i></a><span class="al-doctorRecommendJob">副主任医师</span><span class="al-doctorRecommendHospital">中日友好医院</span>
+                        
+                    </article>
+                </section>
+                <section class="al-doctorRecommendItem">
+                    <figure class="al-doctorRecommendImg">
+                        <figure class="al-doctorRecommendImg">
+                            <a href="//m.allinmd.cn/pages/personal/others_contribution.html?cid=1475115946701"><img src="https://img00.allinmd.cn/default-user/doctor03.jpg" alt=""></a>
+                        </figure>
+                    </figure>
+                    <article class="al-doctorRecommendMsg"><a class="al-doctorRecommendName" href="//m.allinmd.cn/pages/personal/others_contribution.html?cid=1475115946701">呀呀<i class="al-vipUser"></i></a><span class="al-doctorRecommendJob">副主任医师</span><span class="al-doctorRecommendHospital">中日友好医院</span>
+                        
+                    </article>
+                </section>
+                <section class="al-doctorRecommendItem">
+                    <figure class="al-doctorRecommendImg">
+                        <figure class="al-doctorRecommendImg">
+                            <a href="//m.allinmd.cn/pages/personal/others_contribution.html?cid=1475115946701"><img src="https://img00.allinmd.cn/default-user/doctor03.jpg" alt=""></a>
+                        </figure>
+                    </figure>
+                    <article class="al-doctorRecommendMsg"><a class="al-doctorRecommendName" href="//m.allinmd.cn/pages/personal/others_contribution.html?cid=1475115946701">呀呀<i class="al-vipUser"></i></a><span class="al-doctorRecommendJob">副主任医师</span><span class="al-doctorRecommendHospital">中日友好医院</span>
+                        
+                    </article>
+                </section>
+            </section>
+            <div class="al-eBookNoContent">
+                <img src="/images/img50/pages/eBook/eBookNoContentImg.png" alt=""/>
+            </div>
+        </section>
+        <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+         <script src="/js/third-party/fastclick.js"></script>
+        <script>
+        FastClick.attach(document.body);
+        $(".al-eBookContentWrapper").attr("data-active-role", $(".al-eBookContentChangeItem.active").attr("data-role"));
+        $(".al-eBookContentWrapper").height($(".al-eBookItemContent[data-role='" + $(".al-eBookContentChangeItem.active").attr('data-role') + "']").height());
+        $(".al-eBookContentChangeItem").on("click", function() {
+            var role = $(this).attr("data-role");
+            $(this).addClass('active').siblings().removeClass('active');
+            $(".al-eBookContentWrapper").attr("data-active-role", role);
+            $(".al-eBookContentWrapper").height($(".al-eBookItemContent[data-role='" + role + "']").height());
+        });
+        $(".al-personalContributionSelector h2").on("click", function() {
+            if ($(".al-personalContributionSelector").hasClass('al-personalSelectorOn')) {
+                $(".al-personalContributionSelector").removeClass('al-personalSelectorOn');
+            } else {
+                $(".al-personalContributionSelector").addClass('al-personalSelectorOn');
+            }
+
+        });
+        $(".al-personalContributionSelectorItem").on("click", function() {
+            $(this).addClass('active').siblings().removeClass('active');
+            $(".al-personalContributionSelector").removeClass('al-personalSelectorOn');
+            $(".al-personalContributionSelector h2").text($(this).text());
+        });
+        </script>
+</body>
+
+</html>

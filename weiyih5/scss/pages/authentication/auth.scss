@@ -1,0 +1,1416 @@
+@charset "UTF-8";
+//身份认证弹层
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_tableModule";
+//表单
+@import "../../components/_selectorBar";
+//职称选择框
+@import "../../components/_bottomBtns";
+@import "../../components/_indexHeader"; //首页头部信息栏
+
+html, body {
+  background-color: #fff;
+}
+
+.al-idSureContent {
+  color: #a9a9a9;
+  &.ev-mainInner {
+    padding-bottom: 0;
+  }
+}
+
+.al-idSureContent .al-tableModule {
+  margin-top: 0;
+}
+
+.al-idSureHead {
+  height: rem3(44px);
+  ul {
+    padding: 0 rem3(15px);
+    height: rem3(44px);
+    line-height: rem3(44px);
+    border-bottom: none;
+    @include clearfix();
+  }
+  background: #fff;
+  .al-idSureHeadItem:nth-child(3) {
+    margin-top: 0;
+  }
+  .al-idSureHeadItem:nth-child(3) .al-authInfoSave {
+    font-size: rem3(14px);
+    vertical-align: middle;
+    padding: rem3(5px) rem3(17px);
+    background: rgba(225, 225, 225, 1);
+    border-radius: rem3(3px);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    &.active {
+      background: rgba(100, 131, 233, 1);
+    }
+  }
+  aside {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    ul {
+      padding: 0 rem3(15px);
+      height: rem3(44px);
+      line-height: rem3(44px);
+      border-bottom: none;
+      @include clearfix();
+    }
+    background: #fff;
+    .al-idSureHeadItem:nth-child(3) {
+      margin-top: 0;
+    }
+    .al-idSureHeadItem:nth-child(3) .al-authInfoSave {
+      font-size: rem3(14px);
+      vertical-align: middle;
+      padding: rem3(5px) rem3(17px);
+      background: rgba(225, 225, 225, 1);
+      border-radius: rem3(3px);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      &.active {
+        background: rgba(100, 131, 233, 1);
+      }
+    }
+  }
+
+}
+
+.al-tableModuleItem {
+  h3.al-toggleStar {
+    &.al-smallCertType {
+      color: #666;
+    }
+    &.newAddTips {
+      width: 100%;
+      position: relative;
+      padding-bottom: rem(22px);
+    }
+  }
+  .grayInfo {
+    font-size: rem(30px);
+    color: #aaa;
+    letter-spacing: 0;
+    line-height: rem(30px);
+    margin-bottom: rem(38px);
+  }
+}
+
+.al-idSureContent {
+  padding-bottom: rem(90px);
+  position: relative;
+}
+
+/*认证说明*/
+p.authReason {
+  @include font-dpr(14px);
+  line-height: rem(30px);
+  padding: rem(30px) 4% rem(16px);
+  text-align: left;
+  color: #808080;
+  background-color: #eff4f8;
+  box-sizing: border-box;
+  .icon-star {
+    display: inline-block;
+    width: rem(20px);
+    height: rem(20px);
+    line-height: rem(30px);
+  }
+  &.smallFont {
+    padding-top: 0;
+    line-height: rem(34px);
+    @include font-dpr(13px);
+    img {
+      display: inline-block;
+      width: rem(20px);
+      height: rem(20px);
+      line-height: rem(30px);
+
+    }
+  }
+  &.authRight {
+    @include font-dpr(14px);
+    color: #626F8C;
+    .icon-question {
+      width: rem(28px);
+      height: rem(28px);
+      display: inline-block;
+      background-size: rem(28px) rem(28px);
+      margin-left: rem(10px);
+      line-height: rem(30px);
+      background-position: center center;
+      position: relative;
+      top: rem(4px);
+    }
+  }
+  &.color777 {
+    color: #777;
+    &:before {
+      content: "";
+      display: inline-block;
+      width: rem(10px);
+      height: rem(10px);
+      background-color: #777;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: rem(10px);
+    }
+    span {
+      display: inline-block;
+      vertical-align: top;
+      max-width: rem(662px);
+    }
+  }
+  &.color90 {
+    color: #909090;
+    margin-left: rem(20px);
+  }
+  &.newAddTips {
+    padding-top: 0;
+  }
+  .icon-question {
+    width: rem(28px);
+    height: rem(28px);
+    display: inline-block;
+    background: url(//img50.allinmd.cn/authentication/auth/question_mark.png) no-repeat;
+    background-size: rem(26px) rem(26px);
+    margin-left: rem(10px);
+  }
+}
+
+/*认证错误提示 201850904认证上传证件页面顶部提示**/
+.al-authTipTop {
+  position: relative;
+  padding: rem3(20px) rem3(15px) rem3(17px);
+  background-color: #fff;
+  margin-bottom: rem3(8px);
+  .al-tipsBox {
+    font-size: 0;
+    h2 {
+      position: relative;
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: rem3(22px);
+        color: #333333;
+        margin-bottom: rem3(10px);
+      }
+      i {
+        display: inline-block;
+        vertical-align: middle;
+        width: rem3(20px);
+        height: rem3(20px);
+        background: url("//img50.allinmd.cn/user/renzheng/help_login.png") no-repeat;
+        background-size: contain;
+        position: absolute;
+        right: 0;
+        top: rem3(5px);
+      }
+    }
+    p {
+      font-size: rem3(14px);
+      color: #888888;
+      line-height: rem3(16px);
+    }
+  }
+
+}
+
+.ev_authStep {
+  position: relative;
+}
+
+.al-errMesBox {
+  .authErrorMessage {
+    &.hide {
+      display: none;
+    }
+    position: absolute;
+    background: rgba(255, 246, 242, 1);
+    padding: rem3(14px) rem3(15px);
+    box-sizing: border-box;
+    //z-index: 2;
+    width: 100%;
+    font-weight: 400;
+    color: rgba(240, 108, 60, 1);
+    top: 0;
+    font-size: rem3(15px);
+    line-height: rem3(20px);
+  }
+}
+
+.al-idSureHeadItem {
+  width: 33.33%;
+  height: 100%;
+  float: left;
+  list-style: none;
+  &:nth-child(1) {
+    text-align: left;
+    color: #909090;
+    font-size: rem3(15px);
+    span.ev_skipAuth {
+      display: none;
+    }
+    img {
+      width: rem3(9px);
+      height: rem3(16px);
+      vertical-align: top;
+      padding-right: rem3(20px);
+      margin-top: rem3(14px);
+    }
+  }
+  &:nth-child(2) {
+    text-align: center;
+    font-weight: 400;
+    color: rgba(34, 34, 34, 1);
+    white-space: nowrap;
+    font-size: rem3(17px);
+  }
+  &:nth-child(3) {
+    text-align: right;
+    white-space: nowrap;
+    .sureBtn {
+      font-size: rem3(14px);
+      vertical-align: middle;
+      padding: rem3(4px) rem3(17px);
+      background: rgba(225, 225, 225, 1);
+      border-radius: rem3(3px);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      &.active {
+        background: rgba(100, 131, 233, 1);
+      }
+    }
+  }
+}
+
+.al-radioInput {
+  font-style: normal;
+  font-size: rem3(17px);
+  margin-right: rem3(30px);
+  display: inline-block;
+  color: #909090;
+  padding-left: rem3(10px);
+  vertical-align: middle;
+  &:before {
+    display: inline-block;
+    content: "";
+    width: rem3(24px);
+    height: rem3(24px);
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: rem3(10px);
+  }
+  &.selected {
+    &:before {
+      display: inline-block;
+      content: "";
+      color: #606060;
+      border: 1px solid #6483e9;
+      width: rem3(24px);
+      height: rem3(24px);
+      background: url("//img50.allinmd.cn/pages/personal/onlySelect_icon.png") no-repeat;
+      background-size: cover;
+      vertical-align: middle;
+      margin-right: rem3(10px);
+    }
+  }
+}
+
+.al-tableModuleItemInput {
+  @include font-dpr(17px);
+}
+
+.al-tableModuleSelect select {
+  @include font-dpr(17px);
+  &:first-child {
+    //min-width: rem(120px);
+  }
+  &:nth-child(2) {
+    //min-width: rem(80px);
+  }
+
+}
+
+.al-tableModuleSelect .al-dateSelector {
+  padding: 0 rem(5px);
+}
+
+.al-tableModuleSelect {
+
+  p {
+    display: inline-block
+  }
+}
+
+/*帮助弹窗*/
+.al-authHelpBg {
+  .al-authHelpContent {
+    width: 92%;
+    margin: 0 auto;
+    padding: rem(70px) rem(40px);
+    text-align: left;
+    background: #fff;
+    border-radius: 30px;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: fixed;
+    top: 50%;
+    left: 4%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+  }
+  h2 {
+    @include font-dpr(20px);
+    color: #222;
+    margin-bottom: rem(30px);
+  }
+  .al-authHelpTime {
+    @include font-dpr(16px);
+    color: #333;
+    margin-bottom: rem(70px);
+  }
+  .al-authHelpContact {
+    color: #909090;
+    @include font-dpr(16px);
+
+    p {
+      line-height: rem(36px);
+      padding: rem(30px) 0;
+      &:first-child {
+        border-bottom: 1px solid #E4E9ED;
+      }
+      &:nth-child(2) {
+        padding-bottom: rem(15px);
+      }
+      &:nth-child(3) {
+        padding-left: rem(130px);
+        padding-top: 0;
+      }
+    }
+    span {
+      margin-left: rem(20px);
+      line-height: rem(36px);
+      display: inline-block;
+      color: #333;
+      @include font-dpr(18px);
+      width: 50%;
+
+      position: relative;
+      top: rem(3px);
+    }
+    a {
+      float: right;
+      border-left: 1px solid #E4E9ED;
+      padding-left: rem(15px);
+    }
+    img {
+      width: rem(104px);
+      height: rem(38px);
+      line-height: rem(36px);
+      display: inline-block;
+      position: relative;
+      top: rem(8px);
+    }
+  }
+  .al-authHelpClose {
+    width: rem(30px);
+    height: rem(30px);
+    position: absolute;
+    right: rem(30px);
+    top: rem(30px);
+    //background:url('//img50.allinmd.cn/authentication/auth/close_grey.png') no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAV9JREFUSA29180RwiAQBWDhlDRgEXZhFxZhA7mlCIuwC7uwCBtITok8lExEdtnFIAd/wvK+wGTIYLquO0zTdGnb9tT3/WNXsbn8/TAMV2vt2QJ11nEcxxs6arnIhgELpsVMjTH3eZ4PtfCAwoDlTcww7mia5uiubbLsVLYJS0sVhP6Sby5zgRHMFWrhXNYHvBWeQ+F8wb/iEpSES3EpysJaXINmYSmuRUVwDi9BxTCF4zp2u7AjaTae5FONwFSLZ4eaEhTjVDAGrHEf4PZezUwxBs2+vv7/qZrxerZ4y+B2qy91jGJ5AVd9uFKou+Zfm1wfboxq2aWWBEtq4htgYU2gphY3QcLaIIRpxiRhTQDAdZOO/YKlA9dY/FuS8QFLBsQI9T+XtcC5QgrgrnOZHuYKuGBJH5VtqA5JqLQmZVicZUr3WwX8wBYbTizv85M9u4BbyatNCqPOzdrjsHBoewIPdmltEExNwwAAAABJRU5ErkJggg==') no-repeat;
+    background-size: cover;
+  }
+}
+
+/*下拉部分*/
+.al-certificateToggleArea.slideDownState {
+  .al-certificateItems {
+    display: block;
+  }
+  .al-certCode {
+    display: block;
+  }
+}
+
+/*报错颜色*/
+.al-certificateToggleArea.colorRed {
+  .al-toggleStar {
+    color: #F34B4B;
+    input {
+      color: #F34B4B;
+    }
+  }
+  .al-certCode {
+    span, input {
+      color: #F34B4B;
+    }
+  }
+}
+
+.al-tableModuleItem.colorRed {
+  h3, input, select, a {
+    color: #F34B4B;
+  }
+  .selected {
+    color: #F34B4B;
+  }
+}
+
+.al-idSureContent .colorRed .al-tableModuleItemInput a {
+  color: #F34B4B;
+}
+
+//证件号码
+.al-certCode {
+  display: none;
+  font-size: rem3(17px);
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    color: #333;
+    margin: 0 rem3(15px);
+  }
+  .al-certInputBox {
+    display: inline-block;
+    vertical-align: middle;
+    width: rem3(262px);
+    height: rem3(49px);
+    box-sizing: border-box;
+    border: 1px solid #CCCCCC;
+    border-radius: rem3(4px);
+    .authInfoP {
+      display: none;
+      line-height: rem3(49px);
+      padding-left: rem3(20px);
+    }
+    input {
+      color: #222;
+      height: 100%;
+      width: rem3(230px);
+      padding: 0 rem3(15px);
+      display: inline-block;
+      border: none;
+      background: transparent;
+    }
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+      color: #aaa;
+    }
+    input:-moz-placeholder, textarea:-moz-placeholder {
+      color: #aaa;
+    }
+    input::-moz-placeholder, textarea::-moz-placeholder {
+      color: #aaa;
+    }
+    input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+      color: #aaa;
+    }
+    &.authInfo {
+      line-height: rem3(49px);
+      padding: 0 rem3(15px);
+      color: #222;
+      background-color: #f5f5f5;
+      border: none;
+      .authInfoP {
+        display: block;
+      }
+      input {
+        display: none;
+      }
+    }
+  }
+
+}
+
+/*20180905认证上传证件照片样式修改*/
+.al-certificateItems {
+  display: none;
+  .hide {
+    display: none;
+  }
+  width: 100%;
+  padding: rem3(14px) rem3(15px) rem3(32px) rem3(15px);
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-size: 0;
+  p.al-certNameText {
+    font-size: rem3(17px);
+    color: #333333;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: rem3(15px);
+  }
+  .al-certItemBox {
+    display: inline-block;
+    width: rem3(262px);
+  }
+  .al-certItem {
+    margin-bottom: rem3(20px);
+    font-size: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .al-upImgBox {
+      display: inline-block;
+      font-size: 0;
+      width: rem3(121px);
+      vertical-align: top;
+      text-align: center;
+      &:first-child {
+        margin-right: rem3(20px);
+      }
+      & > section {
+        display: inline-block;
+        width: rem3(121px);
+        height: rem3(85px);
+        overflow: hidden;
+        position: relative;
+        border-radius: rem3(4px);
+
+        /*20190325 新增上传图片格式变化*/
+        .al-certUpText{
+          font-size:rem3(12px);
+          font-weight:400;
+          color:rgba(51,51,51,1);
+          position: absolute;
+          top: rem3(50px);
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        & > img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .al-certTip {
+      font-size: rem3(11px);
+      margin-top: rem3(5px);
+      font-weight:400;
+      color:rgba(51,51,51,1);
+      text-align: center;
+      display: inline-block;
+    }
+  }
+  //删除上传图片
+  .al-certClose {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 rem(6px) 0 rem(6px);
+    width: rem(48px);
+    height: rem(46px);
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAO5JREFUOBG11UsOgyAQBmDotmeo697Hk3gS956s+56hazo/BYM6L0skGW1g5usEJYaU0kAxUdxD54BRrOFG1kjxpOjCS2NTsUbAC8Wb4kHxF96gMGAtkS6BWZhjjB+sWUOqzTCKpQQN1mpW+CyuobA2sBe3UBa2cA8qwhKOeRp4perTFx/yYStyabkw3WHFRJGkwkjY4ZjCeyp2igQMHJBLhtrxrlt0itG3FQw6/9yOh8eh9Yhra+WP8+2wFZ5CT84G9hTUrqzcFbYSK9jetZoMawktxP2WaqO0wCHSHGvQZP2cuE6UE3/hyF7yMf0Cwk3p4FgzTK0AAAAASUVORK5CYII=") no-repeat;
+    background-color: #000;
+    background-size: rem(22px) rem(22px);
+    background-position: rem(13px) rem(12px);
+    &.hide {
+      display: none;
+    }
+  }
+  .al-certLoadingTip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 30, 43, .7);
+    color: #fff;
+    top: 0;
+    left: 0;
+
+    img {
+      width: rem(30px);
+      height: rem(30px);
+      display: block;
+      margin: 0 auto;
+      margin-top: rem(69px);
+    }
+  }
+  .al-certErrorTip {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background: rgba(10, 30, 43, 0.7);
+    @include font-dpr(12px);
+    p {
+      width: 100%;
+      height: rem(56px);
+      margin-top: rem(56px);
+    }
+  }
+  //上传图片input
+  .attFile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    opacity: 0;
+  }
+  .uploadInput {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: rem(46px);
+    img {
+      display: inline-block;
+      width: rem(49px);
+      height: rem(40px);
+      margin-bottom: rem(13px);
+    }
+    span {
+      @include font-dpr(12px);
+      color: #909090;
+    }
+  }
+}
+
+.al-identityCertPlaceHolder {
+  height: rem(20px);
+  width: 100%;
+  background: #f4f4f4;
+}
+
+//20180703  医师执业证增加 提示文字
+.al-certAuthTips {
+  margin: rem(12px) 0 rem(40px);
+  &:before {
+    content: '';
+    display: inline-block;
+    width: rem(30px);
+    height: rem(30px);
+    background: url("//img50.allinmd.cn/user/renzheng/al-certAuthInfo.png") no-repeat;
+    background-size: 100%;
+    margin-right: rem(8px);
+    vertical-align: middle;
+  }
+  span {
+    width: rem(620px);
+    font-size: rem(30px);
+    color: #F34B4B;
+    letter-spacing: 0;
+    line-height: rem(30px);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0;
+  }
+}
+
+/*认证资料无slide效果*/
+.no-slideEffect {
+  .al-certificateToggleArea {
+    .al-tableModuleItem {
+      position: relative;
+    }
+  }
+  .al-toggleStar {
+    width: 100%;
+    //position: relative;
+    input {
+      border: none;
+      max-width: 55%;
+      float: right;
+      text-align: right;
+      margin-right: 1%;
+    }
+    &:after {
+      display: none;
+    }
+  }
+  .al-certCode {
+
+  }
+  .al-certCode.threeWords {
+    //&:before{
+    //    left:rem(55px);
+    //}
+  }
+}
+
+/*服务时间弹层*/
+.serviceTime {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 6;
+  background: rgba(10, 30, 43, 0.7);
+  .serviceTimeCont {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: rem3(320px);
+    background: #FFFFFF;
+    border-radius: rem3(4px);
+    max-height: rem3(470px);
+    .close {
+      @include clearfix();
+      position: absolute;
+      top: rem3(15px);
+      right: rem3(15px);
+      width: rem3(15px);
+      height: rem3(15px);
+      display: block;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAV9JREFUSA29180RwiAQBWDhlDRgEXZhFxZhA7mlCIuwC7uwCBtITok8lExEdtnFIAd/wvK+wGTIYLquO0zTdGnb9tT3/WNXsbn8/TAMV2vt2QJ11nEcxxs6arnIhgELpsVMjTH3eZ4PtfCAwoDlTcww7mia5uiubbLsVLYJS0sVhP6Sby5zgRHMFWrhXNYHvBWeQ+F8wb/iEpSES3EpysJaXINmYSmuRUVwDi9BxTCF4zp2u7AjaTae5FONwFSLZ4eaEhTjVDAGrHEf4PZezUwxBs2+vv7/qZrxerZ4y+B2qy91jGJ5AVd9uFKou+Zfm1wfboxq2aWWBEtq4htgYU2gphY3QcLaIIRpxiRhTQDAdZOO/YKlA9dY/FuS8QFLBsQI9T+XtcC5QgrgrnOZHuYKuGBJH5VtqA5JqLQmZVicZUr3WwX8wBYbTizv85M9u4BbyatNCqPOzdrjsHBoewIPdmltEExNwwAAAABJRU5ErkJggg==') no-repeat;
+      background-size: contain;
+    }
+    .al-serText {
+      max-height: rem3(436px);
+      overflow: auto;
+      width: rem3(275px);
+      margin: rem3(34px) rem3(22.5px) 0;
+      .authGrade {
+        font-size: rem3(15px);
+        color: #666666;
+      }
+      .authGrade_two {
+        font-size: rem3(16px);
+        color: #555;
+        margin-bottom: rem3(8px);
+        &:last-child {
+          margin-bottom: rem3(34px);
+        }
+      }
+      .physicianVip {
+        margin-top: rem3(24px);
+        font-size: 0;
+        .titleVip1 {
+          font-size: rem3(17px);
+          color: #FFA800;
+          line-height: rem3(17px);
+          i {
+            display: inline-block;
+            width: rem3(20px);
+            height: rem3(17px);
+            background: url("//img50.allinmd.cn/user/renzheng/v1_icon.png") no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+            margin-right: rem(3px);
+          }
+          span {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+        .titleVip2 {
+          font-size: rem3(17px);
+          color: #FFA800;
+          line-height: rem3(17px);
+          i {
+            display: inline-block;
+            width: rem3(20px);
+            height: rem3(17px);
+            background: url("//img50.allinmd.cn/user/renzheng/v2_icon.png") no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+            margin-right: rem3(3px);
+          }
+          span {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+        .physicianText {
+          font-size: rem3(16px);
+          color: #555555;
+          line-height: rem3(22px);
+          margin-bottom: rem3(4px);
+          &:last-child {
+            margin-bottom: 0;
+          }
+          span {
+            display: inline-block;
+            width: rem3(258px);
+          }
+          &:before {
+            content: '';
+            display: inline-block;
+            width: rem3(4px);
+            height: rem3(4px);
+            background-color: #909090;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: rem3(7px);
+            float: left;
+            margin-top: rem3(9px);
+          }
+
+        }
+      }
+
+      .title {
+        font-size: rem3(19px);
+        color: #222222;
+        font-weight: bold;
+        text-align: center;
+      }
+      .title_one, .title_two {
+        font-size: rem3(16px);
+        color: #222222;
+        margin: rem3(12px) 0 rem3(7px);
+        font-weight: bold;
+      }
+      .title_two {
+        margin-top: rem3(30px);
+      }
+      .timeText {
+        font-size: rem(32px);
+        color: #333333;
+        margin: rem(30px) 0 rem(100px);
+      }
+      .CustomerPhone {
+        font-size: rem(36px);
+        color: #333333;
+        line-height: rem(38px);
+        @include clearfix();
+        padding-bottom: rem(30px);
+        border-bottom: 1px solid #E4E9ED;
+        &.serviceTimePadding {
+          padding-bottom: 0;
+        }
+        span {
+          font-size: rem(32px);
+          color: #909090;
+          margin-right: rem(20px);
+        }
+        .text {
+          float: left;
+          width: rem(476px);
+          border-right: solid 1px #D7DBDE;
+        }
+        .call {
+          float: left;
+          font-size: rem(28px);
+          color: #626F8C;
+          &:before {
+            content: '';
+            display: inline-block;
+            width: rem(38px);
+            height: rem(38px);
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAAXNSR0IArs4c6QAABiVJREFUWAm1WGtsVEUUnjN76Zb3y6DGFAQN2Ag/rCGkkEB4RBpEQcD6QBPttgVisLvbRSD648YYEmSX2xKksLQlEGoCMRoQERsoDwkatT7QRGJAYxufEUuFQB+7d/xm21ku29lHy3L/zMx3nnPmzJmZSyxLn8cb2smYyBeCnyPOzrlHuk/uMF+5NlD1NFDBRDk4dlYIMUvhROwqY7TfRVQTtvzfKzzTNmuOlVQE/4DRe3SGidFJNsh4tS5Y8YOOrsNcOnAg2KMziy4SiVYhCMEi6aBT90SyRVnBzIVDpxctP9d86kh3OhtZi5jT0OpAzbjuyHWPYKycCXG/kwaDl1wGWxwOBS448cT+HXFMGTFNwVvbrRfhXBD5d5fCYbSNMWNpXbX3jMIS21sc8/m2Dr5q21ttomdJsAsuTuUDSdxEIx7f1jFwbgucK1E0LHcnEX+htsr3nsKcbdwx09yT23Ll8odMsAVxBqIrBuPzw1W+r+PYbXQ83mApxGuEYEZMDbEuTnxBreX/NFFtzDHTPJjT2tZ6SDBRlMiA8WWD87npIufxhcKIyhRGDMvD99ZZ/osaXQzRK2LCPgjnhks6tso/OcRn1Fi+n538XA7g1LtJnJLksRFhHy/1WvlykPQTYiqMzRY2e0PY4idPReij8srgQ4n8cPgYMddSbN2IpMnc6xL24bXbtrmdvFyGF04td4J9+oKNE8w+gdk+2IfWC6BMOGgCKSoWRaLsu1Jv6PVEGeRVkyC+VuFw7uHrlyLr1Vi2HApfdgLJ+hC+F0twRG4QHQ/ntJxxBifoZhkQLMcW4i04t1+mi1Ou3vLvxDLWKwwT37jGZ01SY46iOE0N0rVYqintJBbp+GQC11uBTfXVlfkuzpcheVoVH5xbiXTZo8bxlmidzLHecS6WNKRoyDHq10GLct6phJO1uy3/B4Z72DRshOOKB0v7fKkvuEGNZYt8+xdNfAkx8SXl67Y9IGlYSoFil9mH2X1x34iCY5lwhzevajfyhyO6dFbxC5vMMn9oshrLFpHeA729O1hQtLt7tcQ5ZpXhwUoXaIjrSdOcG9tNUjjdF161qtvINVZiWa9IXkTNbdsi6JSDU/J03enASmRNRY7xow5Q243NyJ0zv3aT9y8tQwowvLmihQsWi4Jkw2Zb7EzyGMaYzL+OHroY09LeNpvTYI6loagEdZ+8V7k5m1f/9trfdfRMsNrqygPQ820Pr6BOYb/klJO5hiPqlMK4zebw3igcVmBiixvCLYUvkZ7pGHripQFrOrePXOzE6EFRBefEKj+52Dt9GBWAWtRpy/p0e5+LeBM0/Im0aERin0nUxjk7jVz8DTn/MSbRFD/ES7yhZiRAQaKAHMvjA5W6EEXxKx39TmCxiMUUE21MZgD1xSAhGgKBfUOT8WQbjzuGaDTKMCczgHo3uS3y9wHTPNlzZUnGmCU87pjUh91XqmqOTj8i93hLW3NYR8s2hhPm5vflZ43/FRQW/YpcW3ET7dN7pKBwofubzxtP9KFkEYgnv1Mn7lIN8mxzYpp+qGjW+PXFxcXaGuip3D5BRDuCKA0TUKPq6qord2l0JIW0jpWv3zUy2nHtPJwbn1RSEog1GS72DF486oYQYy+pqJpCLHoa8ncreZSDLbVW4DU1TtfekmOKWR7AqDtPyaqvMG0r2LxohJrLKqumK3rsuKHoCadTkmbbbB1K0puKL12rjZgSKvNZC2zbPgojgxSmazEBG+Hbh4dFgy2itdgkE3R8MQyXSXlvS0rvJaR0TPKUeoPPoRLvhzFtdNMZ0NE55wFcd+KXQh1PWsekEB4iyxCJBnRzdUoGgnFyPZ3sTSn1ZRQFKHifmLEwVY3rr3OYaMrlzMgxaVQ+5znjMxHi8/11Qs9Po/R4D5qxY5Idkfsxb/TYGahL21MpzYSGG8buVHwZ5ZhOQc+LWlTLM1RHT4XhTD6UN6pgRaprer8i5jQmX9Su/GFTcTf3YXYZP2iQp5/kjcorTuWUtDPgiDmdXLNhx+iujhvyf9ganLOTnDRnX95eRhAttSz/DSeu62fFMaW493/YYyjzT2DOhYLYRDw/hsDILxjvRaRCplncpfhTtf8Dq3gw+Dr1CGoAAAAASUVORK5CYII=') no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+            margin: 0 rem(9px) 0 rem(30px);
+          }
+        }
+        .copy {
+          float: left;
+          font-size: rem(28px);
+          color: #626F8C;
+          &:before {
+            content: '';
+            display: inline-block;
+            width: rem(38px);
+            height: rem(38px);
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAmtJREFUWAntV81OFEEQrpqZxexykYs3eQBuPoIa9oCJGo2eCSjCCXYBrwyJ8cSKnhAke1cOhERCSAyPwQvoRRMTPSzyM9tF1Q6Q2fnrmdmdTSTbSSfT9ft19VRXNU4vrN06c47WgaBMQCVIPZAiVRCOEegAS9bk5tu5n5FyHobBYDaI6LGAQQQFIA7STI+1tk9iLFQkggfUaNbbWDELiyMz6vKN17dv3lm17btOjHxilm1/Gfjx5/uiInrDm72XVNG4PKbhoe6BEee2/fzUMGkdAU8QcT8pIJiYXSGZiRVyFjRytp/avBWl4WZfY435o0SYIfuiLAfpCOBwHu2aJryKBORmHzxy1fM9UbZucnI9cRzE0CPja0DyvhzcS84UpHIooOVlaN0hObsPmudfIxRQULJ3lD4gXayvf4RMNMe4OF9cF7p4+PkUnvZ+saRr6RY+va/sDQ9VvybV8ctd/yPz7zjtuh8hXcQii6tOUbJJfuAwOdtGboW5/PjGxGztIQDt+Mhty8xHppC75ZjRKtBSpD0TjZgHwYWtqwiJIo9YJ17/pNQed5peEn8j1T/MtzY5OVeTKKUeBve8R6L1sro6Xqm8K8r3yMhWINxC1w9+aXQ4uMmHVgOulKr/Jfot9g4PnyWOVIf+A+rWQKE0feY0BMB9foF8Dkj0mGB9XJn5xT6f9thvpLurnzpSIiXjRbU2RorTiZopNV3xrgNSTdoFyAZGIGW+hzJtP4FSH5AuSP9HhJaW+B2J+E+3m67zERqhEZKaxi/Fb113qDHIdWc/FJDo3SgUpxjYzmWt09jqjM2R4cK8XbAGZ84ByoTPLDYig/oAAAAASUVORK5CYII=") no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+            margin: 0 rem(9px) 0 rem(30px);
+          }
+        }
+      }
+      .addWechat {
+        font-size: rem(28px);
+        color: #909090;
+        margin-left: rem(129px);
+      }
+    }
+
+  }
+  &.ev-nurseHelp{
+    .serviceTimeCont {
+      .al-serText {
+        .physicianVip {
+          margin-top: rem3(10px);
+        }
+      }
+    }
+
+  }
+}
+
+.alAuthentication {
+  .informationBtn {
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0.6;
+    background: #2899E6;
+    border-radius: 4px;
+    height: rem(90px);
+    line-height: rem(90px);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    span {
+      opacity: 0.4;
+      font-size: rem(40px);
+      color: #FFFFFF;
+    }
+    &.active {
+      opacity: 1;
+      span {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.uploadStar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: rem(100px);
+  line-height: rem(100px);
+  background: #0A1E2B;
+  i {
+    display: inline-block;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAO5JREFUOBG11UsOgyAQBmDotmeo697Hk3gS956s+56hazo/BYM6L0skGW1g5usEJYaU0kAxUdxD54BRrOFG1kjxpOjCS2NTsUbAC8Wb4kHxF96gMGAtkS6BWZhjjB+sWUOqzTCKpQQN1mpW+CyuobA2sBe3UBa2cA8qwhKOeRp4perTFx/yYStyabkw3WHFRJGkwkjY4ZjCeyp2igQMHJBLhtrxrlt0itG3FQw6/9yOh8eh9Yhra+WP8+2wFZ5CT84G9hTUrqzcFbYSK9jetZoMawktxP2WaqO0wCHSHGvQZP2cuE6UE3/hyF7yMf0Cwk3p4FgzTK0AAAAASUVORK5CYII=") no-repeat;
+    //background:url('//img50.allinmd.cn/authentication/auth/close_white.png') no-repeat;
+    width: rem(22px);
+    height: rem(22px);
+    background-size: rem(22px);
+    background-position: bottom;
+    margin: 0 rem(23px);
+    padding: rem(5px);
+  }
+  b {
+    display: inline-block;
+    width: 1px;
+    height: rem(21px);
+    //opacity: 0.3;
+    background: #D8D8D8;
+  }
+  span {
+    @include font-dpr(15px);
+    color: #FFFFFF;
+    margin-left: rem(15px);
+  }
+  a {
+    float: right;
+    background: #FFA800;
+    border-radius: 100px;
+    width: rem(130px);
+    height: rem(48px);
+    line-height: rem(48px);
+    text-align: center;
+    font-size: rem(28px);
+    color: #FFFFFF;
+    margin: rem(26px) rem(30px) 0 0;
+  }
+}
+
+.moreChose {
+  font-size: rem(26px);
+  color: #909090;
+  line-height: rem(26px);
+  background-color: #eff4f8;
+  padding: rem(30px) 0 rem(20px) rem(30px);
+}
+
+.al-idSureContent .al-tableModuleItemInput a {
+  color: #333;
+}
+
+/*职称和单位选框*/
+.al-tableModuleItemIcon {
+  position: relative;
+  .al-tableInput {
+    line-height: rem3(49px);
+  }
+}
+
+.al-tableModuleItemIcon:after {
+  position: absolute;
+  background: url('//img50.allinmd.cn/user/renzheng/arrow_01.png') no-repeat;
+  background-size: contain;
+  height: rem3(13px);
+  width: rem3(8px);
+  right: rem3(15px);
+  top: rem3(17px);
+  content: "";
+}
+
+.al-confirmModal .al-confirmModalContent p {
+  font-size: rem(26px);
+  color: #909090;
+  .giveUp {
+    font-size: rem(34px);
+    color: #333333;
+    font-weight: bold;
+    margin-bottom: rem(10px);
+    display: inline-block;
+  }
+}
+
+/*20180904 新增认证表单样式修改*/
+.al-tableModule {
+  border: none;
+}
+
+.al-tableModuleItem {
+  padding: 0;
+  border: none;
+  font-size: 0;
+  &:first-child {
+    margin-top: rem3(21px);
+  }
+  &:last-child {
+    margin-top: rem3(22px);
+  }
+  h3 {
+    display: inline-block;
+    font-size: rem3(17px);
+    color: #333333;
+    vertical-align: middle;
+  }
+  .al-tableInput, .al-tableSex {
+    box-sizing: border-box;
+    display: inline-block;
+    width: rem3(281px);
+    margin-left: rem3(30px);
+    vertical-align: middle;
+  }
+  /*input输入框*/
+  .al-tableInput {
+    height: rem3(49px);
+    border: 1px solid #CCCCCC;
+    border-radius: rem3(4px);
+    input {
+      padding: 0 rem3(15px);
+      border: none;
+      width: rem3(249px);
+      height: 100%;
+      font-size: rem3(17px);
+      color: #222222;
+    }
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+      color: #aaa;
+    }
+    input:-moz-placeholder, textarea:-moz-placeholder {
+      color: #aaa;
+    }
+    input::-moz-placeholder, textarea::-moz-placeholder {
+      color: #aaa;
+    }
+    input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+      color: #aaa;
+    }
+    a {
+      margin-left: rem3(15px);
+      font-size: rem3(17px);
+      color: #222222;
+      &.placeHolderColor {
+        color: #aaa;
+      }
+    }
+  }
+}
+
+.al-tableModuleItem:nth-child(2) {
+  margin-top: rem3(25px);
+  margin-bottom: rem3(25px);
+}
+
+/*帮助按钮*/
+.al-helpIconBox {
+  margin-top: rem3(28px);
+  font-size: 0;
+  .al-helpIcon {
+    float: right;
+    font-size: rem3(15px);
+    color: #777777;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem3(15px);
+    &:before {
+      content: "";
+      display: inline-block;
+      width: rem3(15px);
+      height: rem3(15px);
+      vertical-align: middle;
+      background: url("//img50.allinmd.cn/user/renzheng/help_login.png") no-repeat;
+      background-size: contain;
+      margin-right: rem3(3px);
+      margin-top: rem3(-2px);
+    }
+  }
+}
+
+/*上传图片的背景颜色*/
+.authStepTwo {
+  background-color: #eff4f8;
+}
+
+/*上传证件的title名字样式*/
+.al-certificateToggleArea {
+  .al-cerTitleText {
+    &:first-child {
+      margin-top: 0;
+    }
+    position: relative;
+    padding-left: 0;
+    margin-left: 0;
+    height: rem3(68px);
+    h3.al-toggleStar {
+      margin-top: rem3(14px);
+      padding: 0 rem3(16px) 0 rem3(15px);
+      color: #fff;
+      font-size: rem3(17px);
+      background: rgba(100, 131, 233, 1);
+      border-radius: 0 rem3(3px) rem3(3px) 0;
+      /*  width: rem3(132px);
+        height: rem3(30px);*/
+      line-height: rem3(30px);
+      &:after {
+        content: "";
+        display: inline-block;
+        background: url("//img50.allinmd.cn/user/renzheng/arrow_down_01.png") no-repeat;
+        background-size: contain;
+        width: rem3(18px);
+        height: rem3(10px);
+        position: absolute;
+        right: 0;
+        top: rem3(22px);
+      }
+      &.auth_Info {
+        display: inline-block;
+        width: auto;
+        &:after {
+          content: "";
+          display: none;
+        }
+      }
+    }
+    /*20180906 完成编辑提示标志*/
+    p.al-readyTips {
+      width: rem3(74px);
+      height: rem3(54px);
+      background: url("//img50.allinmd.cn/user/renzheng/ready_icon.png") no-repeat;
+      background-size: contain;
+      position: absolute;
+      bottom: 0;
+      left: rem3(169px);
+    }
+    /*20180906 未通过编辑提示标志*/
+    p.al-notPassTips {
+      width: rem3(67px);
+      height: rem3(24px);
+      line-height: rem3(24px);
+      text-align: center;
+      font-size: rem3(14px);
+      color: #fff;
+      background-color: #FF5828;
+      border-radius: rem3(3px);
+      position: absolute;
+      top: rem3(18px);
+      right: rem3(33px);
+    }
+  }
+  &.slideDownState { /*展开样式*/
+    .al-cerTitleText {
+      h3.al-toggleStar:after {
+        content: "";
+        display: inline-block;
+        background: url("//img50.allinmd.cn/user/renzheng/arrow_down_01.png") no-repeat;
+        transform: rotate(-180deg);
+        background-size: contain;
+        width: rem3(18px);
+        height: rem3(10px);
+        position: absolute;
+        right: 0;
+        top: rem3(22px);
+      }
+      h3.auth_Info {
+        &:after {
+          content: "";
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.al-cerPlaceholder {
+  width: 100%;
+  height: rem3(8px);
+  background-color: #eff4f8;
+}
+
+/*20180911弹层样式重写*/
+.authPopup_change {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 7;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  .authPopupCont_change {
+    width: rem3(345px);
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    background: #fff;
+    text-align: center;
+  }
+  figure {
+    font-size: rem3(15px);
+    color: #777;
+    position: absolute;
+    top: rem3(15px);
+    right: 0;
+  }
+  .exhibitionImg_change {
+    &.authTip {
+      img {
+        width: rem(313px);
+        height: rem(313px);
+      }
+    }
+    &.submit {
+      margin-top: rem3(48px);
+      img {
+        width: rem3(140px);
+        height: rem3(140px);
+      }
+    }
+    &.submitFail {
+      margin-top: rem3(48px);
+      img {
+        width: rem3(131px);
+        height: rem3(162px);
+      }
+    }
+
+  }
+  /*提交失败弹层按钮*/
+  .hollowBtn {
+    font-size: rem3(15px);
+    color: #333;
+    margin-top: rem3(15px);
+  }
+  .titleText_change {
+    font-size: rem3(22px);
+    color: #2888FF;
+    line-height: rem3(22px);
+    margin-top: rem3(13px);
+  }
+  .detailText_change {
+    width: rem3(186px);
+    text-align: center;
+    font-size: rem3(16px);
+    color: #333;
+    line-height: rem3(24px);
+    margin-top: rem3(20px);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    &.color333 {
+      color: #333;
+      font-size: rem(38px);
+      margin: rem(40px) 0 0 0;
+    }
+    &.color777 {
+      color: #777;
+    }
+  }
+}
+
+/*20190314认证流程选择用户身份样式增加*/
+.al-authStepZero {
+  width: 100%;
+  padding-top: rem3(40px);
+  margin: 0 auto;
+  .al-doctorBox, .al-nurseIcon {
+    margin: rem3(32px);
+    width: rem3(315px);
+    height: rem3(108px);
+    background: rgba(242, 242, 242, 0.98);
+    border-radius: rem3(12px);
+    position: relative;
+    &:active {
+      background-color: #e3e7f9;
+    }
+    &.hoverClass {
+      background-color: #e3e7f9;
+    }
+    img {
+      position: absolute;
+      bottom: 0;
+    }
+    .medicalTitleText {
+      position: absolute;
+      top: 52%;
+      transform: translateY(-50%);
+      left: rem3(144px);
+      .chinese {
+        font-size: rem3(24px);
+        line-height: rem3(24px);
+        font-weight: 400;
+        color: rgba(0, 0, 0, 1);
+        margin-bottom: rem3(6px);
+      }
+      .english {
+        font-size: rem3(17px);
+        line-height: rem3(16px);
+        color: rgba(100, 131, 233, 1);
+      }
+    }
+  }
+  .al-doctorBox {
+    img {
+      width: rem3(87px);
+      height: rem3(91px);
+      left: rem3(28px);
+    }
+  }
+  .al-nurseIcon {
+    img {
+      width: rem3(94px);
+      height: rem3(90px);
+      left: rem3(34px);
+    }
+  }
+}
+
+.bottomBgImg {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: rem3(375px);
+  height: rem3(112px);
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,280 @@
+@charset "UTF-8";
+//产品列表
+//公共方法模块调用
+@import "../../modules/common-modules";
+@import "../../components/_indexHeader"; //首页头部信息栏
+
+html,body{
+  height: 100%;
+}
+i{
+  font-style: normal;
+}
+.al-mainInner{
+  background: url("/pages/wx/ReceiveCredits/image/creditBG.png") no-repeat;
+  background-size:cover;
+  padding:0;
+}
+//没有开启
+.unOpenContain{
+  text-align: center;
+  margin-top: rem(332px);
+  .unOpenTitle{
+    font-size: rem(56px);
+    color: #FFFFFF;
+  }
+  .unOpentext{
+    opacity: 0.9;
+    font-size: rem(42px);
+    color: #FFFFFF;
+    margin-top: rem(100px);
+    line-height: rem(74px);
+    display: none;
+    i{
+      display: block;
+    }
+    span{
+      display: block;
+    }
+  }
+}
+//信息填写
+//.infoContain{
+  //margin-top: rem(105px);
+  .infoTitle{
+    margin-top: rem(105px);
+    text-align: center;
+    font-size: rem(44px);
+    color: #FFFFFF;
+  }
+  .inputBox{
+    border: 2px solid #ffffff;
+    border-radius: rem(10px);
+    width: 80%;
+    height: rem(106px);
+    line-height: rem(106px);
+    margin: 0 auto rem(30px);
+    font-size: rem(34px);
+    color: #ffffff;
+    margin-top: rem(108px);
+
+    &.codeInput{
+      margin-top: rem(0px);
+      input{
+        width: 50%;
+      }
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: #ffffff;
+      opacity:1;
+      font-size: rem(34px);
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: #ffffff;
+      opacity:1;
+      font-size: rem(34px);
+    }
+    input:-ms-input-placeholder{
+      color: #ffffff;
+      opacity:1;
+      font-size: rem(34px);
+    }
+    input::-webkit-input-placeholder{
+      color: #ffffff;
+      opacity:1;
+      font-size: rem(34px);
+    }
+    input{
+      border: none;
+      width: 70%;
+      margin-left: rem(30px);
+      color: #ffffff;
+      text-align: left;
+      background-color: transparent;
+      font-size: rem(56px);
+      margin-top: rem(22px);
+    }
+    span{
+      float: right;
+      margin-right: rem(30px);
+    }
+  }
+  .receiveBtn{
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80%;
+    height: rem(106px);
+    line-height: rem(106px);
+    margin: 0 auto;
+    margin-top: rem(80px);
+
+    button{
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-size: rem(36px);
+      color: #2899E6;
+    }
+    p{
+      opacity: 0.8;
+      font-size: rem(30px);
+      color: #ffffff;
+      line-height: rem(45px);
+      margin-top: rem(40px);
+      i{
+        width: rem(150px);
+        display: inline-block;
+      }
+    }
+  }
+  .reminder{
+    width: 80%;
+    height: rem(106px);
+    line-height: rem(50px);
+    margin: 0 auto;
+    margin-top: rem(30px);
+    font-size: rem(30px);
+    color: #FFEBC2;
+    opacity: 0.9;
+    p{
+      width: 26%;
+      display: inline-block;
+      line-height: rem(45px);
+      vertical-align: top;
+      &.reminderCon{
+        width: 72%;
+      }
+    }
+  }
+  .infoFooter{
+    text-align: center;
+    /*position: fixed;
+    bottom: rem(49px);*/
+    margin-top: rem(112.5px);
+    width: 100%;
+    .infoFooterCon{
+      width: 56%;
+      text-align: left;
+      display: inline-block;
+      p{
+        font-size: rem(30px);
+        color: #FFFFFF;
+        line-height: rem(44px);
+        margin-bottom: rem(18px);
+        span{
+          width: rem(82px);
+          height: rem(44px);
+          font-size: rem(28px);
+          color: #2899E6;
+          line-height: rem(44px);
+          background: #ffffff;
+          display: inline-block;
+          border-radius: rem(4px);
+          margin-left: rem(23px);
+        }
+        i{
+          width: rem(30px);
+          display: inline-block;
+        }
+      }
+    }
+    a{
+      color: #FFB47A;
+    }
+  }
+//}
+//领取失败
+.failedContain{
+  width: 100%;
+  text-align: center;
+  margin-top: rem(152px);
+  .faileTitle{
+    font-size: rem(44px);
+    color: #FFFFFF;
+    line-height: rem(66px);
+    //width: rem(484px);
+    //text-align: center;
+    display: inline-block;
+  }
+  .checkFaile{
+    position: static;
+    margin-top: rem(130px);
+  }
+  .refill{
+    margin-top: rem(127px);
+  }
+}
+//学分领取成功
+.successContain{
+  width: 100%;
+  text-align: center;
+  .sucTitle{
+    margin: rem(105px) auto rem(98px);
+    font-size: rem(44px);
+    color: #FFFFFF;
+    line-height: rem(44px);
+  }
+  .sucCardTitle{
+    text-align: left;
+    margin-left: rem(75px);
+    i{
+      display: inline-block;
+      background: #ffffff;
+      width: rem(18px);
+      height: rem(18px);
+      border-radius: rem(18px);
+      margin-right: rem(20px);
+    }
+    p{
+      display: inline-block;
+      font-size: rem(36px);
+      color: #FFFFFF;
+      line-height: rem(30px);
+    }
+  }
+  .sucCardImg{
+    width: rem(600px);
+    height: rem(423px);
+    margin: 0 auto;
+    background: #D9E5E9;
+    margin-top: rem(50px);
+    border-radius: rem(20px);
+    position: relative;
+
+    img{
+      width: rem(600px);
+      height: rem(290px);
+      border-top-left-radius:rem(20px);
+      border-top-right-radius:rem(20px);
+    }
+    .sucTxt{
+      width: rem(532px);
+      height: rem(92px);
+      font-size: rem(28px);
+      color: #555555;
+      letter-spacing: 0;
+      line-height: rem(46px);
+      text-align: left;
+      position: absolute;
+      bottom: 0;
+      background: #ffffff;
+      padding: rem(20px) rem(34px);
+      border-bottom-left-radius:rem(20px);
+      border-bottom-right-radius:rem(20px);
+    }
+  }
+}
+//已经结束
+.isOverContain{
+  width: 100%;
+  text-align: center;
+  .oveTitle{
+    margin: rem(105px) auto rem(98px);
+    font-size: rem(44px);
+    color: #FFFFFF;
+    line-height: rem(44px);
+  }
+  .oveFooter{
+    position: static;
+  }
+}

@@ -1,0 +1,57 @@
+<import src="/components/previewSuggestionAuto$77075fd2" /><template name="medicalReport$3ae8893c">
+  <view class="_div data-v-23f21197 medical-report-main">
+    <view class="_section data-v-23f21197 main-message-box">
+      <view class="_article data-v-23f21197 medical-report-box" data-clientid bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+        <view class="_header data-v-23f21197 medical-report-title">咨询单</view>
+        <view class="_section data-v-23f21197 medical-report-content">
+          <view class="_p data-v-23f21197 patient-info"><label class="_span data-v-23f21197">就诊人：</label> <label class="_span data-v-23f21197 patient-name">{{formatName}} </label> <label class="_span data-v-23f21197 patient-age">{{patientInfo.sexName}} {{patientInfo.age}}岁</label></view>
+          <view class="_p data-v-23f21197 case-describe"><label class="_span data-v-23f21197">病   情：</label><label class="_span data-v-23f21197 case-describe-main">{{mainCase}}</label></view>
+        </view>
+        <view class="_footer data-v-23f21197 medical-report-footer">查看已提交信息</view>
+      </view>
+    </view>
+    <view class="_section data-v-23f21197 main-message-box">
+      <view class="_article data-v-23f21197 main-message-box-item others-message">
+        <view class="_figure data-v-23f21197 main-message-img">
+          <block wx:if="{{isFindDoctor}}">
+            <image src="https://m.allinmed.cn/static/image/mp/personal/profilePhoto.png" alt class="_img data-v-23f21197"></image>
+          </block>
+          <block wx:else>
+            <image src="https://m.allinmed.cn/static/image/mp/index/imSceneLogo.png" alt class="_img data-v-23f21197"></image>
+          </block>
+        </view>
+        <view class="_figcaption data-v-23f21197 medical-report-tips">
+          <block wx:if="{{!isFindDoctor}}">
+            <view wx:if="{{timeCompare}}" class="_p data-v-23f21197">好的，已为您推荐匹配医生，请点击下方卡片与医生沟通～</view>
+            <block wx:if="{{!timeCompare}}">
+              <view wx:if="{{timeSlot}}" class="_p data-v-23f21197">您好！分诊医生正在详细阅读您提交的资料，将尽快给您答复，并根据情况为您推荐对症专家。</view>
+              <view wx:elif="{{!timeSlot}}" class="_p data-v-23f21197">您好！分诊服务时间为09：00-18：00，如有问题请留言，分诊医生上班后会为您答复。</view>
+            </block>
+          </block>
+          <view wx:else class="_p data-v-23f21197">好的，稍等一下，我们正在帮您联系骨科专家，因为专家比较忙，可能需要等2个小时左右，我们会及时通过微信和短信通知您，请您留意一下。</view>
+          <view class="_section data-v-23f21197 tips-content"> 重要提示：在线咨询不能代替面诊，医生建议仅供参考。 </view>
+        </view>
+      </view>
+    </view> <template wx:if="{{!isFindDoctor && timeCompare}}" binddoctorList="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'4'], $root}}" is="previewSuggestionAuto$77075fd2"></template>
+    <view class="_p data-v-23f21197 suggestion-autoTip" wx:if="{{triageType===0}}" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">都不是我想要的，我要找私人骨科医生</view>
+    <view class="_section data-v-23f21197 main-message-box" wx:if="{{triageType!==0 && !isFindDoctor && timeCompare}}">
+      <view class="_article data-v-23f21197 main-message-box-item others-message">
+        <view class="_figure data-v-23f21197 main-message-img">
+          <block wx:if="{{isFindDoctor}}">
+            <image src="https://m.allinmed.cn/static/image/mp/personal/profilePhoto.png" alt class="_img data-v-23f21197"></image>
+          </block>
+          <block wx:else>
+            <image src="https://m.allinmed.cn/static/image/mp/index/imSceneLogo.png" alt class="_img data-v-23f21197"></image>
+          </block>
+        </view>
+        <view class="_figcaption data-v-23f21197 medical-report-tips">
+          <block wx:if="{{!isFindDoctor}}">
+            <view wx:if="{{timeSlot}}" class="_p data-v-23f21197">您好！分诊医生正在详细阅读您提交的资料，将尽快给您答复，并根据情况为您推荐对症专家。</view>
+            <view wx:elif="{{!timeSlot}}" class="_p data-v-23f21197">您好！分诊服务时间为09：00-18：00，如有问题请留言，分诊医生上班后会为您答复。</view>
+          </block>
+          <view class="_section data-v-23f21197 tips-content"> 重要提示：在线咨询不能代替面诊，医生建议仅供参考。 </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

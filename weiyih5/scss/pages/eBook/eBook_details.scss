@@ -1,0 +1,406 @@
+@charset "UTF-8";
+//电子书——书籍详情
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_contentModule"; //内容
+@import "../../components/_classSelector"; // 下拉筛选
+@import "../../components/_terminalContent"; // 终端评论
+@import "../../components/_terminalDoc";  //终端正文
+@import "../../components/_slideTabs";  //滑动式tab切换
+@import "../../components/_bottomBtns";
+@import "../../components/_bottomSharePart"; //底部分享弹层
+@import "../../components/_scrollShareBtn";
+//主内容——贡献
+.al-personalContributionHeader {
+    height: rem(78px);
+    width: 100%;
+    border-bottom: 1px solid $innerBorderColor;
+    padding: 0 rem(30px);
+    background-color: #fff;
+    position: relative;
+    box-sizing: border-box;
+    @include clearfix();
+    h2 {
+        font-weight: normal;
+        @include font-dpr(12px);
+        color: $smallTextColor;
+        height: 100%;
+        display: inline-block;
+        line-height: rem(78px);
+    }
+}
+.slide-content {
+    float: left;
+    //background-color: #eff4f8;
+}
+.al-eBookBaseMessage {
+    padding: rem(40px) rem(30px);
+    border-bottom: 1px solid #e4e9ed;
+    background-color: #fff;
+    position: relative;
+}
+
+.al-eBookImg {
+    width: rem(199px);
+    height: rem(280px);
+    position: relative;
+    margin-right: rem(40px);
+    display: inline-block;
+    vertical-align: middle;
+    & > img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+        border-radius: rem(6px);
+        box-shadow: 0 rem(4px) rem(17px) 0 rgba(75,75,75,0.55);
+    }
+    .al-doubleLanguage {
+        width: rem(78px);
+        height: rem(78px);
+        position: absolute;
+        left: 0;
+        top: 0;
+        & > w {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.al-eBookBaseMessageContent {
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(430px);
+    & > article {
+        h3 {
+            font-weight: normal;
+            font-size: rem(40px);
+            color: #333333;
+            line-height:rem(60px);
+            margin-bottom: rem(20px);
+            min-height:rem(75px);
+            max-width:rem(440px);
+        }
+        p {
+            color: #909090;
+            margin-bottom: rem(16px);
+            //@include font-dpr(13px);
+            font-size: rem(30px);
+            line-height: 1;
+            display: inline-block;
+           span:nth-child(1){
+                display: inline-block;
+                margin-bottom:rem(-2px);
+                max-width:rem(300px);
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            span {
+                margin-left: rem(10px);
+                i {
+                    color: #3598db;
+                    font-style: normal;
+                    padding: 0 rem(10px)
+                }
+            }
+        }
+    }
+}
+
+.al-readBtnBox {
+    margin-top:rem(28px);
+    & > .al-readBtn {
+        padding: rem(7px) rem(50px);
+        border: 1px solid #2899e6;
+        color: #2899e6;
+        @include font-dpr(15px);
+        border-radius: rem(100px);
+        span {
+            vertical-align: middle;
+        }
+    }
+}
+
+.al-eBookIntroduce {
+    margin-top: rem(40px);
+    color: #808080;
+    @include font-dpr(15px);
+    line-height: 1.5;
+}
+
+.al-eBookContentChange {
+    margin-top: rem(16px);
+    background-color: #fff;
+    height: rem(88px);
+    line-height: rem(88px);
+    text-align: center;
+    border-bottom: 2px solid $innerBorderColor;
+    &Item {
+        padding: 0 rem(20px);
+        color: #777;
+        display: inline-block;
+        @include font-dpr(16px);
+        position: relative;
+        margin: 0 rem(40px);
+        span {
+            margin-left: rem(10px);
+        }
+    }
+    &Item.active {
+        color: #3598db;
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: rem(4px);
+            background-color: #3598db;
+        }
+    }
+}
+
+
+
+
+.icon-eBookRead {
+    @extend %icon-eBookRead;
+}
+
+.al-contentShow{
+    position: absolute;
+    right: rem(30px);
+    bottom: rem(30px);
+    @extend %al-contentShow;
+}
+.contentFull{
+    .al-contentShow:after{
+        transform:rotate(180deg);
+        -webkit-transform:rotate(180deg);
+    }
+}
+.icon-eBookType {
+    color: #8a8ee7;
+    border: 1px solid #8a8ee7;
+    padding: .04rem;
+    margin-right: .26667rem;
+    border-radius: .02667rem;
+    padding: 0 .10667rem;
+    vertical-align: middle;
+}
+
+.al-personalContributionSelectorItem {
+    padding: rem(30px)
+}
+
+.al-eBookCatalogItem {
+    padding: rem(34px) rem(30px);
+    background-color: #fff;
+    border-bottom: 1px solid $innerBorderColor;
+    & i {
+        font-style: normal;
+        color: #909090;
+        @include font-dpr(15px);
+        margin-right: rem(15px);
+        vertical-align: middle;
+    }
+    & span {
+        color: #333;
+        @include font-dpr(15px);
+        vertical-align: middle;
+    }
+}
+
+.al-eBookNoContent {
+    text-align: center;
+    padding-top: .66667rem;
+    padding-bottom: .93333rem;
+    @include font-dpr(15px);
+    color: #626f8c;
+    background-color: #eff4f8;
+}
+
+.icon-commentNum {
+    @extend %icon-commentNum;
+}
+
+.icon-likeNum {
+    @extend %icon-likeNum;
+}
+
+.icon-contentWatchedNum {
+    @extend %icon-contentWatchedNum;
+    margin-right: rem(40px);
+}
+
+.icon-commentLikeNum {
+    @extend %icon-commentLikeNum;
+}
+
+.icon-tagComment {
+    @extend %icon-tagComment;
+    margin-right: rem(40px);
+}
+
+.icon-arrowRight {
+    float: right;
+    span {
+        vertical-align: -0.03rem;
+    }
+}
+
+.icon-arrowRight:after {
+    content: "";
+    display: inline-block;
+    width: rem(26px);
+    height: rem(14px);
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAPCAMAAADNjy/UAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA2UExURUxpcbe3t7e3t7i4uP///7i4uLi4uLi4uLe3t9XV1bi4uLe3t7e3t7y8vLm5ubq6uri4uLe3t4lCWEwAAAARdFJOUwD5Tq8CobFe/QZW4CAXUBr3HPGeLgAAAE9JREFUGNN1yVsSwBAQBMAJCXli73/ZKCllMenfBp4VTATua2Nnkse5CzmziAU8uTzuALs687UZT09//egbp9089dh8F+iUEz7lfiaf1fMCGnED5O9wdaoAAAAASUVORK5CYII=') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-left: rem(16px);
+    transform: rotate(-90deg);
+}
+/*.al-vipUser{
+    @extend %al-vipUser;
+}*/
+.icon-terminalComment{
+    @extend %icon-terminalComment;
+}
+.icon-terminalLike{
+    @extend %icon-terminalLike;
+}
+.icon-scrollShare{
+    @extend %icon-scrollShare;
+}
+
+
+//点评电子书：
+.al-commentEbookPart{
+    display: none;
+    position:fixed;
+    z-index:3;
+    left:0;
+    bottom:0;
+    height:rem(64px);
+    padding:rem(12px) rem(20px);
+    background-color:rgba(233,233,233,1);
+    >p{
+        height:100%;
+        border:1px solid #f0f0f0;
+        padding-left:rem(20px);
+        width:rem(690px);
+        line-height:rem(64px);
+        @include font-dpr(14px);
+        color:#aaa;
+        background-color:#fff;
+    }
+}
+
+
+//书籍详情页屏蔽社交UI
+.al-ebookMainPart{
+    .al-terminalCommentSnsMsg{display: none;}
+}
+
+.al-eBookBaseMessageContent > article p.transformerNum{
+    font-size: rem(30px);
+    color: #626F8C;
+    float: right;
+    &:after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 0.28rem;
+        height: 0.16rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAMAAACOlf6TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAbUExURW15kmNwjWNvjExpcWNvjGh0l2JvjWNwjWJvjPl7nuUAAAAIdFJOUxXU0wDMFsPLgMs18AAAAERJREFUCNdNzksSACAIAlAK+9z/xNEUpQsH3wbRB5imRUfMmgxlDmh9Q9UBJpMUAb8d2WS7QtBmOcQmsxCv3GLSi+G4AMS/AgoSQF7wAAAAAElFTkSuQmCC) no-repeat;
+        background-size: 100%;
+        margin-left: 0.13333rem;
+        transform: rotate(-90deg);
+    }
+}
+.commentCollageNav{
+    font-size: 0;
+    height: rem(110px);
+    line-height: rem(110px);
+    background: #F4F4F4;
+    box-shadow: 0 -1px 0 0 #DFDFDF;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    p{
+        text-align: center;
+        display: inline-block;
+        width: 49%;
+        font-size: rem(24px);
+        color: #666666;
+        vertical-align: middle;
+        i{
+            display: block;
+        }
+        span{
+            display: block;
+            line-height: rem(24px);
+            margin-top: rem(10px);
+        }
+        &:first-child{
+            border-right: solid 1px #D7DBDE;
+            i{
+                width: rem(40px);
+                height: rem(40px);
+                background: url("/images/img50/v3/icon/toolbar_comment.png") no-repeat;
+                background-size: contain;
+                margin: 0 auto;
+            }
+        }
+        &:last-child{
+            i{
+                width: rem(40px);
+                height: rem(40px);
+                background: url("/images/img50/v3/icon/toolbar_like.png") no-repeat;
+                background-size: contain;
+                margin: 0 auto;
+            }
+            &.active{
+                color:#aaaaaa;
+                i{
+                     background: url("/images/img50/v3/icon/toolbar_liked.png") no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+}
+.BookComment{
+    display: inline-block;
+    width: 38%;
+    vertical-align: middle;
+}
+.BookFree{
+    display: inline-block;
+    width: 61%;
+    background: #2899E6;
+    font-size: rem(36px);
+    color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ebookShare{
+    background: url("/images/img50/detail/share.png") no-repeat;
+    width: rem(140px);
+    height: rem(54px);
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+}

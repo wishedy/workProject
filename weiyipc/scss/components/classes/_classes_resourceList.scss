@@ -1,0 +1,97 @@
+@charset "UTF-8";
+//内容评论 组件
+//Created by qiangkailiang on 2016/08/03
+//公共方法模块调用
+@import "../../modules/_common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+
+
+
+.classesListUl{
+  overflow: hidden;
+  margin-left: 3px;
+  padding-bottom: 30px;
+  background-color:#fff ;
+  li{
+    width: 206px;
+    float: left;
+    margin:30px 0 0  21px;
+    img{
+      width: 206px;
+      height: 114px;
+    }
+    .title{
+      font-size: 16px;
+      color: #333333;
+      line-height: 16px;
+      margin-top: 14px;
+      overflow : hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      height: 16px;
+      display: none;
+      &:hover{
+        color: #2899e6;
+      }
+    }
+    .classNum{
+      font-size: 13px;
+      color: #909090;
+      line-height: 13px;
+      margin-top: 8px;
+      i{
+        display: inline-block;
+        background: url("/images/img10/v3/classes/read.png") no-repeat;
+        width: 18px;
+        height: 12px;
+        vertical-align: bottom;
+        margin-right: 6px;
+      }
+      span{
+        margin-left: 14px;
+      }
+      .collection{
+        font-size: 13px;
+        color: #C5C5C5;
+        float: right;
+        i{
+          display: inline-block;
+          background: url("/images/img10/v3/classes/collect_pressed.png") no-repeat;
+          width: 14px;
+          height: 12px;
+          vertical-align: bottom;
+          margin-right: 6px;
+        }
+      }
+    }
+    
+    .function{
+      overflow: hidden;
+      margin-top: 15px;
+      display: none;
+      span{
+        font-size: 14px;
+        color: #FF9224;
+      }
+      .timeLimit{
+        display: none;
+      }
+      /*.collection{
+        font-size: 13px;
+        color: #C5C5C5;
+        float: right;
+        i{
+          display: inline-block;
+          background: url("/images/img10/v3/classes/collect_pressed.png") no-repeat;
+          width: 14px;
+          height: 12px;
+          vertical-align: bottom;
+          margin-right: 6px;
+        }
+      }*/
+    }
+  }
+}

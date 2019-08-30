@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>文库</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <!--<link href="/css/common/base.css" rel="stylesheet" type="text/css"/>-->
+    <link href="/css/detail/detail.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/css/v3/base.css">
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css"/>
+    <link rel="stylesheet" href="/css/v3/pageFooter.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/terminal/library.css"/>
+    <link rel="stylesheet" href="/css/v3/discussModule.css" type="text/css"/>
+
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/auth/module.auth.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/publish/publish.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/modules/reply-form/module.reply-form.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/modules/reply-list/module.reply-list.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/modules/float-relation/module.float-relation.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/modules/report/module.report.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/modules/view-big-img/module.view-big-img.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" />
+    <link href="/js/modules/name-card/module.name-card.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/weixin/module.weixin.css" rel="stylesheet" type="text/css"/>
+
+    <link href="/js/plugins/reply-remind/plugin.reply-remind.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/reference-resource/reference-resource.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/relation/plugin.relation.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/add-removeable-group-pic/plugin.add-removeable-group-pic.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+    <link href="/js/plugins/reference-resourceV3/reference-resource.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/plugins/reply-remindV3/plugin.reply-remind.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/plugins/add-removeable-group-picV3/plugin.add-removeable-group-pic.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/plugins/relation2/plugin.relation2.css" rel= "stylesheet" type="text/css" />
+
+    <link href="/js/third-party/pagination/pager.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css" />
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css" />
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+
+    <script src="/js/third-party/detailLoadBeforeHandle/detailLoadBeforeHandle.js"></script>
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+
+    <script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/lib/jquery/jquery.cookie.js"></script>
+    <script src="/js/lib/jquery/jquery-1.8.2.alpha.js"></script>
+    <script src="/js/lib/jquery/jquery.form.js"></script>
+
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/comm.customer.js"></script>
+    <script src="/js/comm/comm.getUrlParams.js"></script>
+    <script src="/js/comm/comm.equipment.js"></script>
+    <script src="/js/comm/comm.autoHeight.js"></script>
+    <script src="/js/comm/comm.checkAddress.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm.Log.js"></script> 
+    <script src="/js/comm/comm.track.js"></script>
+    <script src="/js/comm/comm.lightBox.js"></script>
+    <script src="/js/comm/comm.file.js"></script>
+    <script src="/js/comm/comm.getLogo.js"></script>
+    <script src="/js/comm/comm.scrollFloating.js"></script>
+    <script src="/js/comm/comm.cutArray.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/comm.ajaxExistHtml.js"></script>
+    <script src="/js/comm/comm.textChange.js"></script>
+
+    <script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+    <script src="/js/plugins/follow/plugin.follow.js"></script>
+    <script src="/js/plugins/relation2/plugin.relation2.js"></script>
+    <script src="/js/plugins/add-removeable-group-picV3/plugin.replaceInput/plugin.replaceInput.js"></script>
+    <script src="/js/plugins/add-removeable-group-picV3/plugin.add-removeable-group-pic.js"></script>
+    <script src="/js/plugins/add-removeable-group-picV3/plugin.readFile/plugin.readFile.js"></script>
+    <script src="/js/plugins/reference-resourceV3/reference-resource.js"></script>
+    <script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+    <script src="/js/plugins/scroll-box/plugin.scroll-box.js"></script>
+    <script src="/js/plugins/expand-shrink/plugin.expand-shrink.js"></script>
+    <script src="/js/plugins/view-dialog/plugin.view-dialog.js"></script>
+
+    <script src="/js/modules/share/module.share.js"></script>
+    <script src="/js/modules/publish/module.video-upload.js" ></script>
+    <script src="/js/modules/publish/module.doc-upload.js" ></script>
+    <script src="/js/modules/publish/module.topic-upload.js" ></script>
+    <script src="/js/modules/publish/module.case-upload.js" ></script>
+    <script src="/js/modules/report/module.report.js" ></script>
+    <script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+    <script src="/js/modules/auth/module.auth.js"></script>
+    <script src="/js/modules/view-big-img/module.view-big-img.js"></script>
+    <script src="/js/modules/user/module.user.js"></script>
+    <script src="/js/modules/background-video/module.background-video.js"></script>
+    <script src="/js/modules/list2-template/module.list2-template.js"></script>
+    <script src="/js/modules/review-box/module.review-box.js"></script>
+    <script src="/js/modules/review-page/module.review-page.js"></script>
+    <script src="/js/modules/resource-list-template/module.resource-list-template.js"></script>
+    <script src="/js/modules/reply-list/module.reply-list.js"></script>
+    <script src="/js/modules/reply-form/module.reply-form.js"></script>
+    <script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+    <script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+    <script src="/js/modules/index-list/module.index-list.js"></script>
+    <script src="/js/modules/dislikeAction/dislikeAction.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+
+    <script src="/js/third-party/jquery-qrcode-master/src/jquery.qrcode.js"></script>
+    <script src="/js/third-party/jquery-qrcode-master/src/qrcode.js"></script>
+    <script src="/js/third-party/uploadify/swfobject2.2.js" ></script>
+    <script src="/js/third-party/uploadify/jquery.uploadify.js" ></script>
+    <script src="/js/third-party/ajaxfileupload.js" ></script>
+    <script src="/js/third-party/qiniu/qiniu.js" ></script>
+    <script src="/js/third-party/qiniu/ui.js" ></script>
+    <script src="/js/third-party/plupload/plupload.full.min.js" ></script>
+    <script src="/js/third-party/plupload/i18n/zh_CN.js" ></script>
+    <script src="/js/third-party/pagination/jqueryscrollpagination/js/scrollpagination.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+    <script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+    <script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+    <script src="/js/third-party/pagination/jquery.pager.js"></script>
+
+    <script src="/js/scene/scene.header.js"></script>
+
+    <script src="/js/scene/detail/scene.detail.commV3.js"></script>
+    <script src="/js/scene/detail/scene.detail.template.js"></script>
+</head>
+<body>
+
+<input type="hidden" id="resourceId" value="1397626088378"/>
+<input type="hidden" id="resourceType" value="2"/>
+<input type="hidden" id="resourceTpl" value="52"/>
+<input type="hidden" id="resourceWapUrl" value="/html/m/doc/2014/04/18/1397626088378.html"/>
+<input type='hidden' id="shareImgSrc" value="https://img04.allinmd.cn/doc/2014/04/26/1397626088378_1398495157745_225_150.jpg"/>
+
+
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox">
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar al-mainSidebarCollapse">
+        <header class="al-mainLogo">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+
+        <section class="al-mainSidebarList">
+            <ul>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn/pages/channel/index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>首页</h4>
+                                <p>HOME</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn/pages/discover/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>发现</h4>
+                                <p>DISCOVERY</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>发布</h4>
+                                <p>RELEASE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navMes">
+                    <a href="//www.allinmd.cn/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>消息</h4>
+                                <p>MESSAGE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navIndex">
+                    <a href="//www.allinmd.cn/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                        <figcaption>个人</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>我的</h4>
+                                <p>PROFILE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList">
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>小唯</h4>
+                                <p>SERVICE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navPhone">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>手机端</h4>
+                                <p>MOBILES</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+
+        </section>
+    </aside>
+
+    <section class="al-pageMainBox">
+        <!--页面主体内容：begin -->
+        <section class="al-mainContent">
+
+            <div class="v_detail_main">
+                <div class="v_detail_content">
+                    <div class="video_jj">
+                        <!--<div class="floor01_topic">
+                            <div class="left">
+
+                                <div class="video_jj_title font_yahei"> <span class="oe_en">
+
+                                        Minimally invasive discectomy efficacious but inherits a higher risk for recurrence
+     </span> <span class="oe_ch">
+
+                                        微创椎间盘切除术有效但是复发风险更高
+     </span>
+                                    <div class="ch_en">
+                                        <div class="ch_en_center font_song">切换到中文版</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="rq_num browse-num" id="lib_rq_num"></div>
+                                <div class="rq_text">阅读</div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>-->
+
+
+
+
+
+
+
+
+
+                        <div class="floor01_topic">
+                            <table width="" border="0" cellspacing="0" cellpadding="0">
+                                <tbody><tr>
+                                    <td width="" valign="middle"><div class="video_jj_title font_yahei"> <span class="oe_en">
+
+                                        Minimally invasive discectomy efficacious but inherits a higher risk for recurrence
+ </span> <span class="oe_ch">
+
+                                        微创椎间盘切除术有效但是复发风险更高
+ </span>
+                                        <div class="ch_en">
+                                            <div class="ch_en_center font_song">切换到中文版</div>
+                                        </div>
+                                    </div>
+                                    </td>
+                                    <td width="70" valign="middle">
+                                        <div class="right">
+                                            <div class="rq_num browse-num" id="lib_rq_num"></div>
+                                            <div class="rq_text">浏览</div>
+                                        </div></td>
+                                </tr>
+                                </tbody></table>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="author_detail">
+
+                            <div class="author_detail_bottom"><span><a class="name-card" customerid="1409016273841" style="color:#0278cf; text-decoration:none; " target="_blank" href="//www.allinmd.cn/call/customer/home/input/?customerId=1409016273841">OrthoEvidence</a>&nbsp;&nbsp;</span> 发布于：2014-06-01 更新于：2014-09-25</div>
+                        </div>
+                        <div class="floor03">
+                            <div class="oe_en">
+                                <div class="oe_title"> The original title：The safety and efficacy of minimally invasive discectomy: a meta-analysis of prospective randomised controlled trials<!-- <a href="" target="_blank">//www.allinmd.cn/html/index/video/video_home.html</a>--></div>
+                                <div class="oe_title_blue">FullCitation</div>
+                                <div class="yw_title">Int Orthop. 2014 Jun;38(6):1225-34. doi: 10.1007/s00264-014-2331-0. Epub 2014 Apr 11.</div>
+                                <div class="oe_title_blue">Publication date</div>
+                                <div class="yw_title">2014-06-01</div>
+                                <div class="oe_title_blue">Authors</div>
+                                <div class="yw_title">Chang X, Chen B, Li HY, Han XB, Zhou Y, Li CQ.</div>
+                                <div class="oe_title_blue">Study Type</div>
+                                <div class="yw_title">Meta-analysis/Systematic Review</div>
+                                <div class="oe_title_blue">Evidence Level</div>
+                                <div class="yw_title">null</div>
+                                <div class="oe_title_blue">Synopsis</div>
+                                <div class="yw_title">16 RCTs were included (MID: 1085 patients, SD: 1054 patients) in this meta-analysis comparing minimally invasive discectomy (MID) to standard discectomy (SD) in the management of lumbar disc herniation, with respect to risk of recurrence, safety, and efficacy. Pooled results indicated comparable complication totals and postoperative leg pain scores. MID was favoured in outcomes of Incision size, blood loss, and hospital stay, but was associated with a higher risk for disc herniation recurrence and longer surgical times, when compared to SD.</div>
+                                <div class="zizhu_cont">
+                                    <table width="" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody><tr>
+                                            <td width="80px" align="center" bgcolor="#388ad7" class="bold_fff">Funding</td>
+                                            <td bgcolor="#8fbfec" width="" class="zhizhu_right">Not Reported</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="80px" align="center" bgcolor="#388ad7" class="bold_fff">Sponsor</td>
+                                            <td bgcolor="#8fbfec" width="" class="zhizhu_right"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="80px" align="center" bgcolor="#388ad7" class="bold_fff">Conflicts</td>
+                                            <td bgcolor="#8fbfec" width="" class="zhizhu_right">None disclosed</td>
+                                        </tr>
+                                        </tbody></table>
+                                </div>
+                                <div class="oe_title_blue">Why was this study needed now?</div>
+                                <div class="yw_title">Low back pain is a well-documented symptom of lumbar disc herniation and affects a significant proportion of the general population. A majority of cases are resolved with conservative treatments but for those with recalcitrant symptoms, discectomy is recommended as an efficacious intervention. Open discectomy is the conventional procedure, although there has been a rise in the application of minimal invasive techniques to reduce trauma. This trend, however, is not supported by recent evidence. Additional, there are a limited number of randomized controlled trials comparing these techniques, emphasizing a need for this meta-analysis/systematic review.</div>
+                                <div class="oe_title_blue">What was the principal research question?</div>
+                                <div class="yw_title">How does minimally invasive discectomy (MID) compare to standard discectomy (SD), in regards to risk of recurrence, safety, and efficacy?</div>
+                                <div class="oe_background">
+
+                                    <div class="oe_background_q">
+                                        <div class="oe_q_left" style="width:130px;">DataSource</div>
+                                        <div class="oe_q_right">An electronic search was performed up to Feburary 2014 in PubMed, EMBASE, Web of Science, Cochrane Library and the Chinese Biological Medicine Database. A manual search was performed in Spine, European Spine Journal, Chinese Journal of Spine, and meeting abstracts. Conference papers were also searched.</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_s">
+                                        <div class="oe_s_left" style="width:130px;">IndexTerms</div>
+                                        <div class="oe_s_right">Index terms were not provided in publication.</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_q">
+                                        <div class="oe_q_left" style="width:130px;">StudySelection</div>
+                                        <div class="oe_q_right">RCTs comparing MID and SD for management of LDH in patients &gt;18 years with no previous spinal surgery, diagnosed with single segmental intervertebral disc herniation, and failing conservative treatment for 6 weeks.
+                                            16 RCTs were included (MID: 1085, SD: 1054) for analysis.</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_s">
+                                        <div class="oe_s_left" style="width:130px;">DataExtraction</div>
+                                        <div class="oe_s_right">Data extracted by two authors included: patient age, size of incision, surgical time, blood loss, visual analogue scale (VAS) score after the surgery, hospital stay, disc herniation recurrence, X-ray exposure and surgical costs.</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_q">
+                                        <div class="oe_q_left" style="width:130px;">DataSynthesis</div>
+                                        <div class="oe_q_right">Two independent authors assessed quality of studies in accordance with Cochrane Collaboration guidelines. Continuous outcomes were analyzed by mean difference (MD) and associated 95% confidence interval. Dichotomous outcomes were evaluated with relative risk (RR) and associated 95% CI. Heterogeneity was assessed with the chi-squared test and I-squared statistic. A random-effects model was used when data was heterogeneous; otherwise, a fixed-effects model was utilized. RevMan 5.2.0 was used to analyze data and Stata 12.0 was used to assess publication bias. </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div class="oe_background_s">
+                                        <div class="oe_s_left" style="width:130px;">Time</div>
+                                        <div class="oe_s_right"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                                <div class="oe_title_blue">What were the important findings?</div>
+                                <div class="yw_title">-Postoperative VAS leg pain scores were pooled from 9 studies. Pooled results demonstrated no significant differences between MID vs. SD (WMD: -0.02, [95% CI −0.05 to 0.01; p=0.23; I^2=0%).
+                                    -Total complications were comparable between MID and SD when results from 7 studies were pooled (RR: 0.95 [95% CI 0.69 to 1.30]; p=0.74; I^2=49%).
+                                    -Disc herniation recurrence rate was significantly higher with MID when results were pooled from 7 studies (RR: 1.95 [95% CI 1.19-3.19; p=0.008; I^2=0%).
+                                    -Size of incision was reported in 4 studies. Pooled results indicated a significantly shorter incision length for MID over SD, although with significant heterogeneity (SMD: -19.1 [95% CI -3.33 to -0.50]; p=0.008; I^2=95%).
+                                    -Surgical time was pooled from 9 studies. Results indicated a significantly longer duration for MID over SD, although with moderate heterogeneity (MD: 9.61 [95% CI 7.63 to 11.60]; p&lt;0.00001; I^2=71%).
+                                    -Blood loss was measured in 6 studies. Pooled results indicated a significant difference, favouring MID over SD, with moderate heterogeneity (WMD: −12.42 [95% CI −15.38 to −9.46; p&lt;0.00001; I^2=70%).
+                                    -Hospital stay was reported 8 studies. Pooling of data demonstrated a significantly longer length of stay in the SD  group, although there was significant heterogeneity (SMD: 0.17 days [95% CI -0.29 to -0.06; p=0.002; I^2=99%).
+                                    -X-ray exposure and surgical costs were infrequently reported (2 studies each).
+                                    -Begg's and Egger's tests (publication bias) for postoperative VAS leg pain and rate of disc herniation recurrence demonstrated no statistically significant biases.</div>
+                                <div class="oe_title_blue">What should I remember most?</div>
+                                <div class="yw_title">Pooled postoperative leg pain (visual analogue scale [VAS]) scores and total number of complications were comparable between minimally invasive discectomy (MID) and standard discectomy (SD). Incision size (significant heterogeneity), blood loss, and hospital stay (significant heterogeneity) favoured MID over SD whereas rate of disc herniation recurrence and surgical time favoured SD over MID when respective results were pooled. Reporting of X-ray exposure and surgical costs were infrequent within studies and could not be appropriately analyzed. </div>
+                                <div class="oe_title_blue">How will this affect the care of patients?</div>
+                                <div class="yw_title">The results indicated that minimally invasive discectomy and standard discectomy were equally safe and efficacious in the management of postoperative leg pain experienced by patients with lumbar disc herniation. However, the higher risk of disc herniation recurrence with the minimally invasive technique remains troubling and requires research into preventative measures. Additional large, high-quality studies are needed for further comparison between these techniques.</div>
+
+
+
+
+
+
+                                <div class="oe_title_blue">Link to the original</div>
+                                <!-- <div class="yw_title"><a href="http://link.springer.com/article/10.1007%2Fs00264-014-2331-0" target="_blank">The safety and efficacy of minimally invasive discectomy: a meta-analysis of prospective randomised controlled trials</a></div> -->
+                                <div class="yw_title"><a>The safety and efficacy of minimally invasive discectomy: a meta-analysis of prospective randomised controlled trials</a></div>
+                            </div>
+                            <div class="oe_ch" style="display:none;">
+                                <div class="oe_title"> 原文标题：微创椎间盘切除术的安全性和有效性：一项前瞻性随机对照试验的荟萃分析 </div>
+                                <div class="oe_title_blue">引用信息</div>
+                                <div class="yw_title">《国际骨科学杂志》 2014年6月；38(6):1225-34. doi: 10.1007/s00264-014-2331-0. 2014年4月11日在线发表</div>
+                                <div class="oe_title_blue">出版日期</div>
+                                <div class="yw_title">2014-06-01</div>
+                                <div class="oe_title_blue">作者</div>
+                                <div class="yw_title">Chang X, Chen B, Li HY, Han XB, Zhou Y, Li CQ.</div>
+                                <div class="oe_title_blue">研究类型</div>
+                                <div class="yw_title">荟萃分析/系统综述</div>
+                                <div class="oe_title_blue">循证等级</div>
+                                <div class="yw_title">"null"</div>
+                                <div class="oe_title_blue">摘要</div>
+                                <div class="yw_title">这项荟萃分析包含了16项随机对照试验（MID：1085名患者；SD:1054名患者），比较了微创椎间盘切除术（MID）和标准椎间盘切除术（SD）管理椎间盘突出症在复发率风险、安全性和功效性方面的差异。汇总结果显示，两者的并发症总数和术后腿疼评分结果相似。MID在切口大小、失血量和住院时间方面结果更好，但是较SD相比，其椎间盘突出复发的风险更高，手术时间更长。</div>
+                                <div class="zizhu_cont">
+                                    <table width="930" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody><tr>
+                                            <td width="80px" align="center" bgcolor="#388ad7" class="bold_fff">资助</td>
+                                            <td bgcolor="#8fbfec" width="810px" class="zhizhu_right">未报告</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="80px" align="center" bgcolor="#388ad7" class="bold_fff">赞助商</td>
+                                            <td bgcolor="#8fbfec" width="810px" class="zhizhu_right"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="80px" align="center" bgcolor="#388ad7" class="bold_fff">利益冲突</td>
+                                            <td bgcolor="#8fbfec" width="810px" class="zhizhu_right">无公开的利益冲突</td>
+                                        </tr>
+                                        </tbody></table>
+                                </div>
+                                <div class="oe_title_blue">研究目的</div>
+                                <div class="yw_title">下背痛是腰椎间盘突出的主要症状，影响大部分人群。多数病例采用保守治疗方式，但是，对于顽固症状，建议采取椎间盘切除术。尽管开放椎间盘切除术是一种保守手术，人们逐渐倾向于应用微创技术来减轻创伤。然而，这一趋势不受到最新证据的支持。此外，只有少数随机对照试验比较了这两种技术，因此有必要进行这项荟萃分析/系统综述。</div>
+                                <div class="oe_title_blue">主要研究问题</div>
+                                <div class="yw_title">微创椎间盘切除术（MID）与标准椎间盘切除术(SD)比较，在复发风险、安全性和有效性方面的表现如何？</div>
+                                <div class="oe_background">
+                                    <div class="oe_background_q">
+                                        <div class="oe_q_left">人数</div>
+                                        <div class="oe_q_right">搜索以下电子数据（截止2014年2月），包括PubMed、 EMBASE、Web of Science, Cochrane 图书馆和中国生物医学数据库。人工检索《Spine》、《欧洲脊柱杂志》、《中国脊柱杂志》和会议摘要。同时还检索了会议文献。</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_s">
+                                        <div class="oe_s_left">干预</div>
+                                        <div class="oe_s_right">未提供索引词</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_q">
+                                        <div class="oe_q_left">对照</div>
+                                        <div class="oe_q_right">随机对照试验比较了MID和SD管理18岁以上腰椎间盘突出症且没有脊柱手术史的患者，这些患者患有部分椎间盘突出症，且经保守治疗6周无效。16项随机对照试验(MID：1085，SD：1054) 进行了分析。</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_s">
+                                        <div class="oe_s_left">结果</div>
+                                        <div class="oe_s_right">两名作者提取的数据包括：患者年龄、切口大小、手术时间、失血量、术后视觉模拟评分、住院时间、椎间盘复发、X线暴露时间和手术成本。</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_q">
+                                        <div class="oe_q_left">方法</div>
+                                        <div class="oe_q_right">两名作者根据Cochrane协作网指南，独立评估了研究质量。用平均差（MD和95%置信区间（CI）分析了连续数据。用相对风险（RR）和95%置信区间评价了二元结果。用卡方检验和I2评估异质性。异质性显著时，使用随机效应模型；相反，使用固定效应模型。使用RevMan版本5.2.0和Stata 12.0评估发表偏倚。</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="oe_background_s">
+                                        <div class="oe_s_left">时间</div>
+                                        <div class="oe_s_right"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                                <div class="oe_title_blue">重要发现</div>
+                                <div class="yw_title">9项研究汇总了术后腿疼VAS评分。汇总结果证实，MID和SD没有显著差异（WMD: -0.02, [95% CI −0.05 - 0.01; p=0.23; I^2=0%）。
+                                    7项研究结果（RR: 0.95 [95% CI 0.69 -1.30]; p=0.74; I^2=49%）显示MID和SD的并发症总数量相似。
+                                    7项研究结果（RR: 1.95 [95% CI 1.19-3.19; p=0.008; I^2=0%）显示MID的椎间盘突出复发率显著更高。
+                                    4项研究报告了切口大小。汇总结果显示MID的切口显著更短，具有显著异质性（SMD: -19.1 [95% CI -3.33 - -0.50]; p=0.008; I^2=95%）。
+                                    9项研究报告了手术时间。结果显示MID的手术时间显著更长，异质性适中（MD: 9.61 [95% CI 7.63 to 11.60]; p&lt;0.00001; I^2=71%）。
+                                    6项研究测量了失血量。结果显示MID的结果优于SD，异质性适中（WMD: −12.42 [95% CI −15.38 to −9.46; p&lt;0.00001; I^2=70%）。
+                                    8项研究报告了住院时间。汇总数据显示SD的住院时间显著更长，异质性显著（SMD: 0.17天 [95% CI -0.29 - -0.06; p=0.002; I^2=99%）。
+                                    各有2项研究报告了X线暴露时间和手术成本。Begg法和Egger法（发表偏倚）的术后VAS腿疼评分和椎间盘突出复发率证实无统计学意义偏差。
+                                </div>
+                                <div class="oe_title_blue">最应该记住的</div>
+                                <div class="yw_title">微创椎间盘切除术（MID）和标准椎间盘切除术(SD)的术后腿疼（视觉模拟评分）和并发症总数量相似。汇总相关结果显示，切口大小（重要异质性）、失血量和住院时间（重要异质性）更有利于MID，而不是SD，然而椎间盘突出复发率和手术时间结果有利于SD。X线暴露时间和手术成本在研究中不常见，因此不能做出适当分析。</div>
+                                <div class="oe_title_blue">研究对病人的影响</div>
+                                <div class="yw_title">结果显示微创椎间盘切除术和标准椎间盘切除术在管理腰椎间盘突出患者术后腿疼方面同样安全有效。但是，微创技术的椎间盘突出复发的高风险需要仍然令人不安，需要研究预防措施。尚需开展更大样本量、高质量的研究，以比较这两种技术。</div>
+
+
+
+
+
+
+                                <div class="oe_title_blue">原文链接</div>
+                                <!-- <div class="yw_title"><a href="http://link.springer.com/article/10.1007%2Fs00264-014-2331-0" target="_blank">微创椎间盘切除术的安全性和有效性：一项前瞻性随机对照试验的荟萃分析</a></div> -->
+                                <div class="yw_title"><a>微创椎间盘切除术的安全性和有效性：一项前瞻性随机对照试验的荟萃分析</a></div>
+                            </div>
+
+                            <div class="video_tag">
+                                <div class="video_tag_errRight"><span></span><a class="Ev-correction" href="javascript:;">纠错</a>·<a class="Ev-report" href="javascript:;">举报</a></div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_jj_bottom"></div>
+                    <!-- 相关推荐 -->
+                    <!--       <div class="recommend_bg" id="scrollRecommend">
+                                <div class="recommend_title">
+                                    <div class="recommend_title_text font_yahei">相关推荐</div>
+                                    <div class="recommend_title_qh">
+                                        <div class="v2_detail_pages_left_mr disable prev"></div>
+                                        <div class="v2_detail_pages_right_mr next"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="recommend_main">
+                                    <ul class="recommend_content scroll">
+                                        <li class="recommend_cont01">
+                                            <div class="recommend_cont01_top">
+                                                <div class="recommend_img_icon"><img src="images/doc_icon.png" /></div>
+                                                <div class="recommend_top_text">
+                                                    <div class="recommend_top_name font_yahei">经皮钢板固定治疗红股近端定治治疗红近...</div>
+                                                    <div class="recommend_top_num font_yahei"><div class="yuedu_re">阅读：1022</div><div class="pointer_re"></div><div class="pl_re">评论：1022</div><div class="clear"></div></div>
+
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="recommend_tag">
+                                              <div class="recommend_tag_title">标签</div>
+                                              <div class="recommend_tag_main">
+                                                <ul>
+                                                  <li>骨科</li>
+                                                  <li>关节</li>
+                                                  <div class="clear"></div>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                    <!-- 相关推荐 stop -->
+                </div>
+            </div>
+
+            <!--文库被屏蔽：begin-->
+            <div class="al-caseScreenedBox">
+                <figure>
+                    <figcaption>脊柱骨折合并脊髓损伤，取出内固定后为何疼痛固定后为</figcaption>
+                    <p class="al-screenedImg">
+                        <img src="//img10.allinmd.cn/v3/terminal/libraryScreenedImg.png" alt=""/>
+                    </p>
+                </figure>
+            </div>
+            <!--文库被屏蔽：end-->
+
+            <!--文库被删除：begin-->
+            <div class="al-caseScreenedBox">
+                <figure>
+                    <figcaption>脊柱骨折合并脊髓损伤，取出内固定后为何疼痛</figcaption>
+                    <p class="al-screenedImg">
+                        <img src="//img10.allinmd.cn/v3/terminal/libraryDeletedImg.png" alt=""/>
+                    </p>
+                </figure>
+            </div>
+            <!--文库被删除:end--->
+
+            <!--评论区-->
+            <!--发表评论：begin-->
+            <div class="ev-detailReviewForm"></div>
+            <!--发表评论：end-->
+
+            <!--全部评论：begin-->
+            <div class="al-commentAll al-contentItem" id="reviewArea">
+                <figure class="al-commentAll_head">
+                    <figcaption>全部评论</figcaption>
+                    <span class="al-oldNews ev-listSortOld">最旧</span>
+                    <span class="ev-listSortNew">最新</span>
+                </figure>
+
+                <section class="ev-list">
+                </section>
+            </div>
+            <!--全部评论：end-->
+            <figure class="al-lookMore_comment ev-listMore" style="display:none;">
+                查看更多
+                <b></b>
+            </figure>
+            <!--评论区结束-->
+        </section>
+        <!--页面主体内容：end -->
+
+
+        <!--页面侧边栏：begin-->
+        <aside class="al-sideBarContent">
+            <figure class="al-sideBarRoll_box Ev-floatCard">
+            <!--作者关注-->
+            <div class="expertInfo">
+                <a href="//www.allinmd.cn/pages/personal/others_index.html?cid=" class="expert_userImg Ev-cAuthLogo">
+                    <img src="关注的头像图片" alt=""/>
+                </a>
+                <a href="//www.allinmd.cn/pages/personal/others_index.html?cid=" class="expertName Ev-cAuthName">作者名</a>
+                <span class="followBtn"></span>
+                <p>
+                    <span class="Ev-cAuthTitle">作者职称</span>
+                    <span class="expert_workPlace Ev-cAuthCompany">作者单位</span>
+                </p>
+            </div>
+            <!--作者关注结束-->
+            <!--加入讨论，收藏点赞-->
+            <div class="al-sideBar_commentBox">
+                <i class="leftArrow"></i>
+                <a href="javascript:;" class="Ev-discussBtn">
+                    <figure class="discuss_container" >
+                        <b></b>
+                        <figcaption>加入讨论
+                            <span></span>
+                        </figcaption>
+                    </figure>
+                </a>
+                <figure class="like_container Ev-like_container">
+                    <b></b>
+                    <figcaption>
+                        收藏
+                        <span></span>
+                    </figcaption>
+                </figure>
+                <figure class="zan_container Ev-zan_container">
+                    <b></b>
+                    <figcaption>
+                        点赞
+                        <span></span>
+                    </figcaption>
+                </figure>
+            </div>
+            <!--加入讨论结束-->
+            </figure>
+            <!--分享到-->
+            <div class="al-sideBar_shareBox al-library_shareBox">
+                <figure class="al-shareBox_head">
+                    <b class="line"></b>
+                    <span class="shareText">分享到</span>
+                    <b class="line"></b>
+                </figure>
+                <div class="shareBox_icon Ev-shareBox">
+                    <figure class="shareLink_track ev-ttrend">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_inset.png" alt=""/>
+                        </a>
+                        <figcaption>唯医朋友圈</figcaption>
+                    </figure>
+                    <figure class="shareLink_wx ev-tweixin">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_weixin.png" alt=""/>
+                        </a>
+                        <figcaption>微信</figcaption>
+                    </figure>
+                    <figure class="shareLink_wb ev-tsina">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_weibo.png" alt=""/>
+                        </a>
+                        <figcaption>微博</figcaption>
+                    </figure>
+                    <figure class="shareLink_qqSpace ev-tqzone">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_zone.png" alt=""/>
+                        </a>
+                        <figcaption>QQ空间</figcaption>
+                    </figure>
+                    <figure class="shareLink_qq ev-tqq">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_qq.png" alt=""/>
+                        </a>
+                        <figcaption>QQ</figcaption>
+                    </figure>
+                    <section class="al-weixinErweiCodeBox al-weixinFixStyle ev-erweima hide" style="background-image:none;">
+                        <span>使用微信扫描二维码</span>
+                        <img src="//img10.allinmd.cn/v3/friends/weixin_share.jpg" alt="">
+                    </section>
+                </div>
+            </div>
+            <!--分享到结束-->
+
+            <!--参加活动-->
+            <div class="al-joinActivity hide">
+                <h6></h6>
+                <a class="Ev-actUrl" href="javascript:;" target="_blank">
+                    <img src="" alt=""/>
+                </a>
+
+                <span class="Ev-actName"></span>
+            </div>
+            <!--参加活动结束-->
+
+            <!--相关资源-->
+            <div class="al-resource Ev-recommendVideoList hide">
+                <h6>相关资源</h6>
+
+            </div>
+            <!--相关资源结束-->
+
+        </aside>
+        <!--页面侧边栏：end-->
+    </section>
+
+    <!--公共底部 start-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--公共底部 End-->
+</section>
+
+
+</body>
+</html>

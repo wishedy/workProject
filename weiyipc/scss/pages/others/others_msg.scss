@@ -1,0 +1,173 @@
+@charset "UTF-8";
+//他人主页——信息
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+//公共组件引用
+@import "../../components/_personalBasic"; //个人主页基础样式
+@import "../../components/_contentModule"; //主内容区域
+@import "../../components/_uploadBox"; //上传弹窗
+@import "../../components/_iconsModule"; //小图标
+@import "../../components/_makeSurePopup";      //仿confirm弹层
+.al-personalHeader {
+    background: transparent url("/images/img00/v3/others/others_bg.jpg") center center no-repeat;
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/img00/v3/others/others_bg.jpg',sizingMethod='scale')";
+    background-size: 100% 100%;
+}
+
+.al-userFollowBtn {
+    width: 99px;
+    height: 32px;
+    text-align: center;
+    margin: 17px auto;
+    & > img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+}
+
+.al-tableDetailedBtn {
+    margin-top: -20px;
+    padding-bottom: 15px;
+}
+
+.al-detailedTableItem {
+    padding-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
+.al-detailedBtnIntro {
+    padding: 30px 25px;
+    padding-top: 0;
+}
+
+.al-personalHasQualification {
+    .al-personalHasQualificationTips {
+        display: block;
+    }
+    .al-personalMsgConfig {
+        display: none;
+    }
+    .al-tableItem {
+        color: $smallContentColor;
+    }
+}
+
+.al-personalHasQualificationTips {
+    font-size: 13px;
+    color: $smallContentColor;
+    float: right;
+    display: none;
+    a {
+        color: #3598db;
+    }
+}
+
+.al-personalInnerSidebarChange[data-role="qualification"] {
+    p {
+        padding-left: 15px;
+    }
+    .al-tableItem .al-tableItemContent {
+        vertical-align: top;
+        a {
+            color: #3598DB;
+            font-size: 17px;
+        }
+    }
+}
+
+.al-credentialsUploadBox {
+    margin-top: 20px;
+    height: 265px;
+    background-color: #f3f6f9;
+    padding-top: 30px !important;
+    cursor: pointer;
+    p {
+        padding-left: 0 !important;
+        display: inline-block;
+    }
+    input {
+        margin-left: 40px;
+    }
+    article {
+        margin-bottom: 30px;
+    }
+    .al-credentIalsImgBox {
+        text-align: center;
+        width: 120px;
+        height: 80px;
+        display: inline-block;
+        margin-left: 40px;
+        background-color: #fff;
+        position: relative;
+    }
+    .al-tableDetailedBtn {
+        margin-bottom: -10px;
+    }
+    .al-credentIalsUpload {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+}
+
+.al-credentIalsUploadingStatusBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding-top: 20px;
+    span {
+        margin-left: 0 !important;
+        display: block;
+        font-size: 13px;
+        color: #fff;
+        margin-top: 5px;
+    }
+    a {
+        margin-left: 0 !important;
+        display: block;
+        font-size: 13px;
+        color: #fff;
+        line-height: 1.5;
+        display: none;
+    }
+}
+
+.al-credentIalsUploadingFail {
+    img,
+    span {
+        display: none;
+    }
+    a {
+        display: block;
+    }
+}
+
+.al-credentIalsUploadingTipsBox {
+    display: none;
+    img {
+        width: 23px;
+        height: 22px;
+        display: block;
+    }
+    figcaption {
+        font-size: 13px;
+        color: $linkContentColor;
+        margin-top: 15px;
+    }
+    .al-credentIalsUploadImg {
+        width: 28px;
+        height: 21px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+}
+
+@import "../../components/_tableModule"; //表单模块

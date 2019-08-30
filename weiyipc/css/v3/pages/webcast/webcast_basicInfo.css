@@ -1,0 +1,543 @@
+@charset "UTF-8";
+.al-webcastBox {
+    width: 710px;
+    margin: 0 auto;
+}
+
+.al-webcastBox select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+.al-webcast_setTitle {
+    padding: 16px 24px;
+    border: 1px solid #e4e9ed;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.al-webcast_setTitle h2 {
+    font-weight: 400;
+    font-size: 18px;
+    color: #333;
+}
+
+.al-basicInfoBox {
+    background-color: #fff;
+    border: 1px solid #e4e9ed;
+    border-top: none;
+    padding: 6px  24px 40px;
+}
+
+.al-contentSet {
+    padding-top: 24px;
+}
+
+.al-contentSet > p {
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    color: #666666;
+}
+
+.al-contentSet > p:before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: transparent url("//img10.allinmd.cn/v3/webcast/starIcon.png") center center no-repeat;
+    margin-right: 6px;
+    margin-bottom: 3px;
+}
+
+.al-contentSet .al_noTips:before {
+    background-image: none;
+}
+
+.al-contentSet .al-setRightInfo {
+    position: relative;
+    display: inline-block;
+    margin-left: 38px;
+}
+
+.al-contentSet .al-setRightInfo > input {
+    width: 395px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 16px;
+    color: #333;
+    padding-left: 12px;
+    border: 1px solid #DBDBDB;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.al-contentSet .al-setRightInfo > input:focus {
+    border: 1px solid #3598db !important;
+    -webkit-box-shadow: 1px 1px 3px rgba(53, 152, 219, 0.8), -1px -1px 3px rgba(53, 152, 219, 0.8);
+            box-shadow: 1px 1px 3px rgba(53, 152, 219, 0.8), -1px -1px 3px rgba(53, 152, 219, 0.8);
+}
+
+.al-contentSet .al-setRightInfo .al-promptText {
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.al-contentSet .al-setRightInfo textarea {
+    width: 373px;
+    height: 54px;
+    resize: none;
+    vertical-align: text-top;
+    margin-right: 10px;
+    border: 1px solid #DBDBDB;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.al-contentSet .al-setRightInfo textarea:focus {
+    border: 1px solid #3598db !important;
+    -webkit-box-shadow: 1px 1px 3px rgba(53, 152, 219, 0.8), -1px -1px 3px rgba(53, 152, 219, 0.8);
+            box-shadow: 1px 1px 3px rgba(53, 152, 219, 0.8), -1px -1px 3px rgba(53, 152, 219, 0.8);
+}
+
+.al-contentSet .error .al-promptText {
+    display: none;
+}
+
+.al-kindChoice {
+    font-size: 16px;
+    color: #333;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #DBDBDB;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 4px;
+    padding: 0 30px 0 20px;
+    text-align: center;
+}
+
+.al-webcastTime .al-webcastDateInfo, .al-webcastTime .al-webcastTimeInfo {
+    display: inline-block;
+    padding: 0 40px 0 15px;
+    margin-right: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.al-uploadCover {
+    width: 142px;
+    height: 80px;
+    vertical-align: text-top;
+}
+
+.al-uploadCover:hover {
+    cursor: pointer;
+}
+
+.al-agreeWy {
+    margin-top: 30px;
+    cursor: context-menu;
+}
+
+.al-agreeWy b {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-bottom: -2px;
+    background: transparent url("//img10.allinmd.cn/v3/common/icon/icon_checkbox_off.png") center center no-repeat;
+}
+
+.al-agreeWy b.active {
+    background: transparent url("//img10.allinmd.cn/v3/common/icon/icon_checkbox_on.png") center center no-repeat;
+}
+
+.al-agreeWy p {
+    color: #aaa;
+    display: inline-block;
+}
+
+.al-contentSet .al-buttonBox {
+    margin-top: 30px;
+}
+
+.al-contentSet .al-buttonBox span {
+    font-size: 15px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.al-contentSet .al-buttonBox .al-createButton {
+    background: #2899e6;
+    padding: 5px 22px;
+    color: #8EC8F6;
+    border-radius: 50px;
+    behavior: url("/js/third-party/pie/pie.htc");
+}
+
+.al-contentSet .al-buttonBox .al-createButton:hover {
+    background-color: #52a9e4;
+}
+
+.al-contentSet .al-buttonBox .active {
+    color: #fff;
+}
+
+.al-contentSet .al-buttonBox .al-cancelButon {
+    color: #aaa;
+}
+
+.al-webcast_selectHour {
+    display: none;
+    width: 260px;
+    position: absolute;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    z-index: 3;
+    top: 33px;
+    left: 0;
+    padding: 13px 14px 8px 18px;
+    background-color: #fff;
+    border-radius: 4px;
+    behavior: url("/js/third-party/pie/pie.htc");
+    -webkit-box-shadow: 2px 2px 3px #E2E5EC, -2px -2px 3px #E2E5EC;
+            box-shadow: 2px 2px 3px #E2E5EC, -2px -2px 3px #E2E5EC;
+}
+
+.al-webcast_selectHour:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.al-webcast_selectHour li {
+    float: left;
+    width: 53px;
+    height: 38px;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 38px;
+    margin: 0 2px;
+}
+
+.al-webcast_selectHour .al-maySelect {
+    color: #555;
+}
+
+.al-webcast_selectHour .al-maySelect:hover {
+    color: #3598db;
+}
+
+.al-webcast_selectHour .active {
+    width: 53px;
+    height: 38px;
+    background: transparent url("//img10.allinmd.cn/v3/webcast/Hour_Selected.png") center center no-repeat;
+}
+
+.al-webcast-selectMinute {
+    display: none;
+}
+
+.al-selectArrow {
+    position: absolute;
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    background: transparent url("//img10.allinmd.cn/v3/webcast/ArrowDown.png") center center no-repeat;
+    top: 15px;
+    left: 96px;
+}
+
+.webcast_dateIcon {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: transparent url("//img10.allinmd.cn/v3/webcast/Date.png") center center no-repeat;
+    top: 7px;
+    left: 116px;
+}
+
+.webcast_timeIcon {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    background: transparent url("//img10.allinmd.cn/v3/webcast/Time.png") center center no-repeat;
+    top: 9px;
+    left: 242px;
+}
+
+.al-bindPhoneBox {
+    width: 340px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.al-bindPhoneBox h3 {
+    margin-top: 170px;
+    font-size: 28px;
+    font-weight: 400;
+    color: #036eb8;
+}
+
+.al-bindPhoneBox footer {
+    text-align: left;
+    font-size: 12px;
+    font-family: "宋体";
+    color: #7a8795;
+}
+
+.al-bindPhoneBox footer a {
+    color: #3d84cb;
+}
+
+.al-bindPhoneMainInfo .al-bindPhoneText {
+    font-size: 14px;
+    color: #909090;
+    margin: 34px 0 15px;
+}
+
+.al-bindPhoneMainInfo input {
+    border: 1px solid #b3bdc8;
+    border-radius: 4px;
+    padding: 0 15px;
+    height: 50px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    color: #9eafc2;
+    font-size: 16px;
+}
+
+.al-bindPhoneMainInfo input:focus {
+    border: 1px solid #3598db;
+    -webkit-box-shadow: 1px 1px 1px #3598db, -1px -1px 1px #3598db;
+            box-shadow: 1px 1px 1px #3598db, -1px -1px 1px #3598db;
+}
+
+.al-bindPhoneMainInfo .al-bindPhoneNum {
+    position: relative;
+}
+
+.al-bindPhoneMainInfo .al-bindPhoneNum input {
+    width: 340px;
+    padding-left: 45px;
+}
+
+.al-bindPhoneMainInfo .al-bindPhoneNum:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: transparent url("//img10.allinmd.cn/v3/webcast/bindPhoneNumIcon.png") center center no-repeat;
+    top: 18px;
+    left: 16px;
+}
+
+.al-bindPhoneMainInfo .al-mesProveCode {
+    margin-top: 12px;
+}
+
+.al-bindPhoneMainInfo .al-mesProveCode input {
+    width: 184px;
+}
+
+.al-bindPhoneMainInfo .al-mesProveCode span {
+    display: inline-block;
+    width: 146px;
+    border: 1px solid #b3bdc8;
+    border-radius: 4px;
+    height: 50px;
+    line-height: 50px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: #fff;
+    cursor: pointer;
+    margin-left: 5px;
+    color: #555;
+}
+
+.al-bindPhoneMainInfo .al-bindPhoneBtn {
+    background-color: rgba(11, 131, 224, 0.7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B20B83E0,endColorstr=#B20B83E0);
+    border-radius: 4px;
+    height: 50px;
+    line-height: 50px;
+    width: 340px;
+    margin: 24px auto 25px;
+    font-size: 24px;
+    color: #8EC8F6;
+    cursor: pointer;
+}
+
+.al-bindPhoneMainInfo .al-bindPhoneBtn:hover {
+    background-color: #52a9e4;
+}
+
+.al-bindPhoneMainInfo .active {
+    color: #fff;
+}
+
+.error input, .error textarea {
+    border: solid 1px #f34b4b !important;
+    -webkit-box-shadow: 0 0 3px #f34b4b;
+            box-shadow: 0 0 3px #f34b4b;
+}
+
+.al-errorPromptInfo {
+    display: none;
+    color: #F34B4B;
+    font-size: 13px;
+    font-family: "宋体";
+}
+
+.al-errorPromptInfo:before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    margin-bottom: -3px;
+    background: transparent url("//img10.allinmd.cn/v3/common/icon/error_tips.png") center center no-repeat;
+}
+
+.error .al-errorPromptInfo {
+    display: inline-block;
+}
+
+.al-bindPhoneNum i {
+    position: absolute;
+    top: 18px;
+    right: -180px;
+}
+
+.al-mesProveCode {
+    position: relative;
+}
+
+.al-mesProveCode i {
+    position: absolute;
+    top: 18px;
+    right: -105px;
+}
+
+.al-webcastNoOpenShade {
+    display: none;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+    /*IE8支持*/
+}
+
+.al-webcastNoOpenContent {
+    width: 708px;
+    border-radius: 6px;
+    margin: 200px auto 0;
+    background-color: #fff;
+    padding: 24px 40px;
+}
+
+.al-webcastNoOpenContent:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.al-webcastNoOpenContent .al-wyQRcode {
+    float: right;
+    width: 23%;
+    margin-top: 24px;
+}
+
+.al-webcastNoOpenContent .al-wyQRcode > .al-closeBtn {
+    content: '';
+    float: right;
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
+    background: url("//img10.allinmd.cn/v3/common/icon/icon_close.png") center center no-repeat;
+    margin: -25px -15px 0 0;
+}
+
+.al-webcastNoOpenContent .al-wyQRcode figcaption {
+    padding-left: 20px;
+    font-size: 15px;
+    color: #808080;
+    line-height: 21px;
+}
+
+.al-webcastNoOpenContent .al-wyQRcode > img {
+    width: 140px;
+    height: 140px;
+    margin-top: 18px;
+}
+
+.al-webcasrNoOpenText {
+    float: left;
+    color: #222;
+    font-size: 18px;
+    line-height: 30px;
+    width: 60%;
+    text-align: center;
+}
+
+.al-webcasrNoOpenText:before {
+    content: '';
+    display: block;
+    width: 44px;
+    height: 44px;
+    background: url("//img10.allinmd.cn/v3/common/icon/icon_ask_lg.png") center center no-repeat;
+    margin: 56px auto 15px;
+}
+
+.al-phoneOpenWebcastStep {
+    margin-top: 30px;
+    width: 100%;
+    float: left;
+    border-top: 1px solid #F0F3F8;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.al-phoneOpenWebcastStep > p {
+    color: #626f8c;
+}
+
+.al-phoneOpenWebcastStep > figure {
+    color: #909090;
+    margin-top: 10px;
+}
+
+.al-phoneOpenWebcastStep > figure span:after {
+    content: '';
+    display: inline-block;
+    width: 11px;
+    height: 9px;
+    background: url("//img10.allinmd.cn/v3/webcast/arrow_ process.png") center center no-repeat;
+    margin: 0 14px;
+}
+
+.al-phoneOpenWebcastStep > figure .noArrow:after {
+    display: none;
+}
+
+.al-phoneOpenWebcastStep > div {
+    margin: 24px 0 16px;
+}
+
+.al-phoneOpenWebcastStep > div img {
+    width: 130px;
+    height: 130px;
+    margin-right: 26px;
+}

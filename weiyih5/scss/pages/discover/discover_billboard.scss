@@ -1,0 +1,737 @@
+@charset "UTF-8";
+//发现——权威专家
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_contentModule"; //内容区域
+@import "../../components/_searchList"; //搜索列表
+@import "../../components/_scrollShareBtn"; //浮动分享按钮
+@import "../../components/_bottomBtns"; //底部弹层组
+@import "../../components/_bottomSharePart"; //底部分享弹层
+@import "../../components/_cancelModal"; //取消关注弹层
+
+
+
+body{
+  padding-top: 0;
+}
+.al-indexHeader{
+  border:none ;
+}
+.al-indexHeaderItem{
+  font-size: rem(30px);
+  color: #626F8C;
+  i{
+    display: inline-block;
+    background: url("/images/img50/pages/discover/billboard/icon-questionmark.png") no-repeat;
+    width: rem(30px);
+    height: rem(30px);
+    background-size:contain ;
+    vertical-align: middle;
+    margin-right: rem(10px);
+  }
+}
+
+.billboard{
+  .headerNav{
+    overflow: hidden;
+    border-bottom: #d7dbde 1px solid;
+    background: #fff;
+    li{
+      float: left;
+      width: rem(136px);
+      text-align: center;
+      padding: rem(26px) 0 rem(30px) 0;
+      border-bottom: solid 4px #fff;
+      font-size: rem(32px);
+      color: #777777;
+      line-height: rem(32px);
+      margin-left: 12.5%;
+      &:nth-child(1){
+        margin-left: 25%;
+        //上面内容如果是三个Tab的时候10%
+      }
+      &.active{
+        border-bottom: solid 4px #2899E6;
+        color: #2899E6;
+      }
+    }
+  }
+  .ads{
+    img{
+      width: 100%;
+      height: rem(190px);
+      background: #fff;
+    }
+    figcaption{
+      height: rem(65px);
+      line-height: rem(65px);
+      font-size: rem(26px);
+      color: #909090;
+      text-align: center;
+      i{
+        display: inline-block;
+        opacity: 0.58;
+        background: #909090;
+        width: 8px;
+        height: 8px;
+        vertical-align: middle;
+        margin-right: rem(10px);
+        border-radius: 50%;
+      }
+    }
+  }
+  .billboardUser{
+    padding: rem(40px) rem(20px) rem(30px) rem(30px);
+    background: #FFFFFF;
+    box-shadow: 0 1px 0 0 #E4E9ED;
+    margin-bottom: rem(16px);
+    img{
+      width: rem(80px);
+      height: rem(80px);
+      border-radius: 50%;
+      vertical-align: top;
+      margin-right: rem(15px);
+    }
+
+    .describe{
+      display: inline-block;
+      p{
+        &:nth-child(1){
+          font-size: rem(30px);
+          color: #222222;
+          line-height: rem(30px);
+        }
+        &:nth-child(2){
+          font-size: rem(26px);
+          color: #808080;
+          line-height:rem(26px);
+          margin: rem(20px) 0 rem(16px);
+        }
+        &:nth-child(3){
+          font-size: rem(24px);
+          color: #909090;
+          background: #F4F4F4;
+          border-radius: 4px;
+          padding: 0 rem(14px);
+          height: rem(40px);
+          text-align: center;
+          line-height: rem(40px);
+        }
+      }
+    }
+
+    .ranking{
+      float: right;
+      margin-top: rem(35px);
+      display: inline-block;
+      vertical-align: top;
+      background: url("/images/img50/pages/discover/billboard/bg-rank.png") no-repeat;
+      background-size: contain;
+      width: rem(150px);
+      font-size: rem(32px);
+      color: #FE9225;
+      text-align: center;
+    }
+    .rankingNone{
+      float: right;
+      margin-top: rem(35px);
+      display: inline-block;
+      vertical-align: top;
+      background: url("/images/img50/pages/discover/billboard/Star_Ranking_Grey.png") no-repeat;
+      background-size: contain;
+      width: rem(135px);
+      font-size: rem(30px);
+      color: #AAAAAA;
+      text-align: center;
+    }
+  }
+  .billboardList{
+    box-shadow: 0 1px 0 0 #E4E9ED;
+    ul{
+      background: #FFFFFF;
+      li{
+        border-bottom: solid 1px #E4E9ED;
+        padding: rem(40px) rem(12px);
+        .placing{
+          display: inline-block;
+          width: rem(60px);
+          height: rem(60px);
+          vertical-align: top;
+          font-size: rem(34px);
+          color: #909090;
+          font-style: normal;
+          text-align: center;
+          margin-top: rem(13px);
+          &.first{
+            background: url("/images/img50/pages/discover/billboard/Rank1.png") no-repeat;
+            background-size: contain;
+          }
+          &.second{
+            background: url("/images/img50/pages/discover/billboard/Rank2.png") no-repeat;
+            background-size: contain;
+          }
+          &.third{
+            background: url("/images/img50/pages/discover/billboard/Rank3.png") no-repeat;
+            background-size: contain;
+          }
+        }
+        img{
+          width: rem(80px);
+          height: rem(80px);
+          border-radius: 50%;
+          vertical-align: top;
+          margin-left: rem(15px);
+        }
+        .describe{
+          display: inline-block;
+          margin-left: rem(20px);
+          .continuity{
+            i{
+              display: inline-block;
+              height: rem(26px);
+              line-height: rem(26px);
+              padding: 0 rem(9.4px) 0 0;
+              margin-left: rem(20px);
+              font-size: rem(20px);
+              color: #FF9224;
+              font-style: normal;
+              border: 2px solid #FF9224;
+              border-radius: 4px;
+              &:before{
+                content: '';
+                display: inline-block;
+                width: rem(28px);
+                height: rem(28px);
+                vertical-align: text-top;
+                background: url("/images/img50/pages/discover/billboard/bg-rankconsecutive.png") no-repeat;
+                background-size: contain;
+                margin-right: rem(9.4px);
+              }
+            }
+          }
+          .new{
+            i{
+              display: inline-block;
+              height: rem(26px);
+              line-height: rem(26px);
+              padding: 0 rem(9.4px) 0 0;
+              margin-left: rem(20px);
+              font-size: rem(20px);
+              color: #5DC82A;
+              font-style: normal;
+              margin-top: rem(-6px);
+              border: 2px solid #5DC82A;
+              border-radius: 4px;
+              &:before{
+                content: '';
+                display: inline-block;
+                width: rem(28px);
+                height: rem(28px);
+                vertical-align: text-top;
+                background: url("/images/img50/pages/discover/billboard/bg-ranknew.png") no-repeat;
+                background-size: contain;
+                margin-right: rem(9.4px);
+              }
+            }
+          }
+          p{
+             &:nth-child(1){
+               font-size: rem(30px);
+               color: #222222;
+               line-height: rem(30px);
+             }
+            &:nth-child(2){
+              font-size: rem(26px);
+              color: #808080;
+              margin: rem(16px) 0 rem(20px);
+              span{
+                margin-left: rem(15px);
+              }
+            }
+            &:nth-child(3){
+              font-size: rem(24px);
+              color: #909090;
+              span{
+                 font-size: rem(34px);
+                color:  #FF9224;
+              }
+            }
+          }
+        }
+      }
+    }
+    .listMore{
+      font-size: rem(26px);
+      color: #909090;
+      height: rem(78px);
+      line-height: rem(78px);
+      text-align: center;
+      &.up{
+        i{
+          transform:rotate(180deg);
+          -webkit-transform:rotate(180deg);
+        }
+      }
+      i{
+        display: inline-block;
+        width: rem(21px);
+        height: rem(12px);
+        vertical-align: middle;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAMCAMAAAC6EAb3AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACHUExURUxpcZGRkZGRkZCQkJycnJKSkpKSkpKSkpCQkJGRkZGRkZCQkJGRkZCQkJGRkZCQkJGRkZOTk////5CQkJCQkJSUlL+/v5CQkJGRkZCQkJCQkJCQkJKSkpKSkpKSkpGRkZCQkJGRkZSUlJWVlaKiopCQkJGRkZCQkJGRkZGRkZeXl5mZmZCQkIMBAPUAAAAsdFJOUwD8YVUSZXwV1NP+bEFF5Yr6SQL2mD4E8qU17bEcByMs/ckmDAvmwsa84BYPyAaC6gAAAHBJREFUGNNlz9kOgjAUhOFfBdu6AeK+g6Ko8/7PZ4whYHuuJl8mkxwILorfTGbjfzRWMdORhl18WbkI+j0lnaaTM98wSLWY+whZrs2q2WwQlmvtjz+0pl3b7lTffIRzpUfpI5yeugQIh0J3Ez7KtY0fvYEHpE0fbUEAAAAASUVORK5CYII=") no-repeat;
+        background-size: contain;
+        margin-left: rem(8px);
+      }
+    }
+  }
+
+  /*贡献了列表*/
+  .billboardListDetail{
+    margin-top: rem(16px);
+     .title{
+       background: #fff;
+       font-size: rem(26px);
+       color: #909090;
+       height: rem(79px);
+       line-height: rem(79px);
+       padding-left: rem(30px);
+       border-bottom: solid 1px  #DFDFDF;
+     }
+  }
+  .al-content{
+    margin: 0;
+  }
+}
+
+
+
+
+
+/*活动榜*/
+
+.billboardUser .describe .describeLi{
+  overflow: hidden;
+  margin: rem(16px) 0 rem(27px);
+  li{
+    font-size: rem(26px);
+    color: #808080;
+    /*border-right: solid 1px #D7DBDE;*/
+    padding-right: rem(20px);
+    float: left;
+    &:after{
+      content: '';
+      display: inline-block;
+      width: rem(2px);
+      height:rem(20px);
+      background: #d7dbde;
+      margin-left: rem(20px);
+    }
+    span{
+      margin-left: rem(8px);
+    }
+    &:last-child{
+      &:after{
+        margin: 0;
+        padding: 0;
+        background: none;
+      }
+    }
+  }
+}
+
+.billboardList .describe .describeLi{
+  overflow: hidden;
+  margin: rem(16px) 0 rem(27px);
+  li{
+    font-size: rem(26px);
+    color: #808080;
+    padding:0 rem(20px) 0 0;
+    float: left;
+    border-bottom: none;
+    line-height: .45333rem;
+    &:after{
+      content: "";
+      display: inline-block;
+      width: .02667rem;
+      height: .26667rem;
+      background: #d7dbde;
+      margin-left: 20px;
+    }
+    span{
+      font-size: .45333rem;
+      color: #FF9224;
+      margin-left: rem(8px);
+      font-weight: bold;
+      font-family: arial;
+    }
+    &:last-child{
+      margin: 0;
+      padding: 0;
+      background:none;
+      &:after{
+        background:none;
+      }
+    }
+  }
+}
+
+/*推荐榜*/
+.billboardList{
+  .titleCont{
+    @include clearfix();
+    margin: rem(16px) 0 0 0;
+    padding-right:rem(30px);
+    border-bottom: solid 1px #dfdfdf;
+    position: relative;
+    background: #FFFFFF;
+    .titleList{
+      position: absolute;
+      width: rem(200px);
+      right: rem(15px);
+      top:rem(77px);
+      z-index: 2;
+      background: #FFFFFF;
+      box-shadow: 0 rem(2px) rem(14px) 0 rgba(0,0,0,0.03), 0 rem(1px) rem(50px) 0 rgba(0,0,0,0.04);
+      border-radius: 2px;
+      text-align: center;
+      li{
+        border-bottom: solid 1px  #E4E9ED;
+        height: rem(93px);
+        line-height: rem(93px);
+        font-size: rem(32px);
+        color: #555555;
+        padding: 0;
+      }
+    }
+
+  }
+  .allTitle{
+    height: rem(78px);
+    line-height: rem(78px);
+    font-size: rem(26px);
+    color: #626F8C;
+    float: right;
+    &.up{
+      i{
+        transform: rotate(180deg);
+      }
+    }
+    i{
+      display: inline-block;
+      width: rem(21px);
+      height: rem(12px);
+      vertical-align: middle;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAMAAACOlf6TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAbUExURW15kmNwjWNvjExpcWNvjGh0l2JvjWNwjWJvjPl7nuUAAAAIdFJOUxXU0wDMFsPLgMs18AAAAERJREFUCNdNzksSACAIAlAK+9z/xNEUpQsH3wbRB5imRUfMmgxlDmh9Q9UBJpMUAb8d2WS7QtBmOcQmsxCv3GLSi+G4AMS/AgoSQF7wAAAAAElFTkSuQmCC") no-repeat;
+      background-size: contain;
+      margin-left: rem(8px);
+    }
+  }
+  .crown{
+    width: rem(56px);
+    text-align: center;
+    font-size: rem(24px);
+    color: #626F8C;
+    display: inline-block;
+    vertical-align: top;
+    margin:rem(30px) rem(40px) 0 0;
+    float: right;
+    &.active{
+      color: #3598DB;
+      i{
+        background: #3598DB;
+        color: #fff;
+        border: rem(2px) solid #3598DB;
+      }
+    }
+
+    i{
+      display: block;
+      width: rem(54px);
+      height: rem(54px);
+      color: #626F8C;
+      border: rem(2px) solid #626F8C;
+      border-radius: rem(100px);
+      line-height: rem(56px);
+      font-style: normal;
+      font-weight: 700;
+    }
+  }
+}
+
+
+.billboardList .recommend .describe{
+  width: rem(410px);
+  .describeLi li span{
+    font-size: rem(26px);
+    color: #808080;
+  }
+}
+
+
+.iWant{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: rem(90px);
+  text-align: center;
+  line-height: rem(90px);
+  font-size: rem(30px);
+  color: #3598DB;
+  background: rgba(248,248,248,0.97);
+  box-shadow: 0 -1px rem(8px) 0 #DFDFDF;
+}
+
+
+
+
+/*规则*/
+.rule{
+  padding-bottom: rem(100px);
+  .width{
+    padding: rem(80px) rem(30px) 0;
+  }
+  margin-top: rem(16px);
+  background: #FFF;
+  box-shadow: 0 1px 0 0 #E4E9ED;
+  .margin{
+    margin: rem(40px) 0 rem(80px);
+  }
+  .marginOther{
+    margin: rem(20px) 0 rem(40px);
+  }
+  .marginAnther{
+    margin: rem(20px) 0 rem(20px);
+  }
+  .title{
+    font-size: rem(34px);
+    color: #222222;
+    font-weight: bold;
+  }
+  .text{
+    font-size: rem(30px);
+    color: #666666;
+    line-height: rem(46px);
+    span{
+      color: #333;
+    }
+  }
+  .littleTitle{
+    font-size: rem(30px);
+    color: #555555;
+    line-height: rem(30px);
+    margin-top: rem(40px);
+    font-weight: bold;
+    i{
+      display: inline-block;
+      width: rem(8px);
+      height: rem(8px);
+      background: #555555;
+      vertical-align: middle;
+      margin-right: rem(12px);
+      margin-top: rem(-6.375px);
+    }
+  }
+  .line{
+    display: inline-block;
+    margin: 0 rem(30px);
+    border-bottom: solid rem(1px) #E4E9ED;
+  }
+
+  .welfare{
+    .title{
+      background: url("/images/img50/pages/discover/billboard/Title.png") no-repeat;
+      width: rem(504px);
+      height: rem(50px);
+      background-size: contain;
+      margin:0 auto rem(60px);
+    }
+
+    ul{
+      margin: 0 rem(30px);
+      li{
+        font-size: rem(30px);
+        color: #333333;
+        line-height: rem(45px);
+        margin-bottom: rem(30px);
+        &:last-child{
+          margin: rem(50px) 0 0 rem(50px);
+        }
+        i{
+          width: rem(30px);
+          height: rem(30px);
+          display: inline-block;
+          background: #FE9225;
+          border-radius: rem(2px);
+          text-align: center;
+          line-height: rem(30px);
+          font-style: normal;
+          font-size: rem(28px);
+          color: #FFFFFF;
+          margin:rem(10px) rem(22px) 0 0;
+          vertical-align: top;
+        }
+        span{
+          display: inline-block;
+          width: rem(630px);
+        }
+      }
+    }
+  }
+}
+
+.al-indexHeaderItem h1{
+  line-height: 1.17333rem;
+}
+
+
+/*我要上榜*/
+.iWantmain{
+  margin-top: rem(16px);
+  .content{
+    background: #fff;
+    .inputBox{
+      width: 100%;
+      height: rem(99px);
+      line-height: rem(99px);
+      margin: 0 rem(30px);
+      border-bottom: solid 1px #E4E9ED;
+      font-size: rem(28px);
+      color: #555555;
+      overflow: hidden;
+      span{
+        width: rem(160px);
+        display: inline-block;
+      }
+      input{
+        border: none;
+        line-height: rem(99px);
+      }
+    }
+  }
+  button{
+    width: rem(690px);
+    height: rem(90px);
+    text-align: center;
+    line-height: rem(90px);
+    background: #68B7ED;
+    border-radius: rem(4px);
+    opacity: 0.7;
+    font-size: rem(40px);
+    display: block;
+    color: #FFFFFF;
+    margin: rem(70px) auto 0;
+  }
+}
+
+
+.icon-contentWatchedNum {
+  @extend %icon-contentWatchedNum;
+  margin-right: rem(40px);
+}
+.icon-scrollShare{
+  @extend %icon-scrollShare;
+}
+.icon-tagComment {
+  @extend %icon-tagComment;
+}
+.icon-contentAuthor {
+  @extend %icon-contentAuthor;
+  max-width: 2rem;
+  @include ellipsis();
+}
+
+.listNoMore{
+  width:100%;
+  text-align: center;
+  padding:50px 0;
+  font-size: rem(26px);
+  color:#626f8c;
+}
+
+.icon-contentAuthor {
+  @extend %icon-contentAuthor;
+}
+
+/*
+.icon-contentWatchedNum {
+  @extend %icon-contentWatchedNum;
+}
+*/
+
+.icon-contentSeminarTime {
+  @extend %icon-contentSeminarTime;
+}
+
+.icon-contentSeminarPlace {
+  @extend %icon-contentSeminarPlace;
+}
+
+.al-newsNum {
+  @extend %al-newsNum;
+}
+
+.al-contentSeminarMark {
+  @extend %al-contentSeminarMark;
+}
+
+.al-contentNewest {
+  @extend %al-contentNewest;
+}
+
+.al-contentHotest {
+  @extend %al-contentHotest;
+}
+
+.al-contentAward {
+  @extend %al-contentAward;
+}
+
+.al-contentJoin {
+  @extend %al-contentJoin;
+}
+
+.al-contentPdf {
+  @extend %al-contentPdf;
+}
+
+.al-tagsRecommendHot {
+  @extend %al-tagsRecommendHot;
+}
+
+.al-tagsRecommendNew {
+  @extend %al-tagsRecommendNew;
+}
+
+/*.al-vipUser {
+  @extend %al-vipUser;
+}*/
+.icon-circleArrowRight{
+  @extend %icon-circleArrowRight;
+}
+.icon-discoverEntryHot{
+  @extend %icon-discoverEntryHot;
+  display: none;
+}
+
+.billboard .billboardList ul li.listNone{
+  text-align: center;
+  background: #eff4f8;
+  padding: rem(130px) 0;
+  img{
+    width: rem(514px);
+    height: rem(366px);
+    border-radius: 0;
+
+  }
+}
+
+
+.recommendNoneWeight .recommend .describe .describeLi li span{
+  font-weight: normal;
+}

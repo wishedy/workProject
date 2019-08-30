@@ -1,0 +1,772 @@
+@charset "UTF-8";
+body {
+    background-color: #eef3f8;
+}
+
+.eBookPageBox:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.eBookPageBox .al-exitReadBtn {
+    position: fixed;
+    top: 27px;
+    left: 60px;
+    font-size: 15px;
+    color: #62688c;
+    cursor: pointer;
+}
+
+.eBookPageBox .al-exitReadBtn b {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: transparent url("//img10.allinmd.cn/v3/terminal/ExitReading.png") center center no-repeat;
+    margin: 0 7px -3px 0;
+}
+
+.eBookPageBox .al-exitReadBtn:hover {
+    color: #3598db;
+}
+
+.eBookPageBox .al-exitReadBtn:hover b {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/ExitReading_Act.png") center center no-repeat;
+}
+
+.eBookPageBox .al-mainAnavBox {
+    max-width: 910px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 60px;
+}
+
+.al-eBookIndexContent {
+    width: 850px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0 95px 30px;
+    background-color: #fff;
+}
+
+.al-eBookIndexContent header {
+    font-size: 14px;
+    color: #777;
+    padding-bottom: 16px;
+    padding-top: 30px;
+    border-bottom: 1px solid #e4e9ed;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    background-color: #fff;
+    width: 660px;
+}
+
+.al-eBookIndexContent header span, .al-eBookIndexContent header i {
+    float: right;
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+    margin-left: 28px;
+}
+
+.al-eBookIndexContent header span {
+    background: url("//img10.allinmd.cn/v3/terminal/switchBtnIcon_dark.png") center center no-repeat;
+    margin-right: 20px;
+    margin-top: 1px;
+}
+
+.al-eBookIndexContent header span:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.al-eBookIndexContent header span > b {
+    display: none;
+    float: left;
+    margin-top: 25px;
+    margin-left: -30px;
+    width: 80px;
+    height: 30px;
+    line-height: 35px;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+    background: url("//img10.allinmd.cn/v3/terminal/changeEnglishIcon.png") center center no-repeat;
+}
+
+.al-eBookIndexContent header span:hover {
+    background: url("//img10.allinmd.cn/v3/terminal/switchBtnIcon_on.png") center center no-repeat;
+}
+
+.al-eBookIndexContent header span:hover b {
+    display: block;
+}
+
+.al-eBookIndexContent header > i {
+    position: relative;
+    background: url("//img10.allinmd.cn/v3/terminal/Details.png") center center no-repeat;
+}
+
+.al-eBookIndexContent header > i > b {
+    display: none;
+    position: absolute;
+    top: 21px;
+    left: -32px;
+    width: 80px;
+    height: 30px;
+    line-height: 35px;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+    background: url("//img10.allinmd.cn/v3/terminal/changeEnglishIcon.png") center center no-repeat;
+}
+
+.al-eBookIndexContent header > i:hover {
+    background: url("//img10.allinmd.cn/v3/terminal/Details_Act.png") center center no-repeat;
+}
+
+.al-eBookIndexContent header > i:hover b {
+    display: block;
+}
+
+.al-eBookIndexContent table td, .al-eBookIndexContent table th {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-width: 66px;
+}
+
+.al-eBookIndexContent table td img, .al-eBookIndexContent table th img {
+    max-width: 370px !important;
+}
+
+.al-eBookIndexContent table td p, .al-eBookIndexContent table th p {
+    line-height: 24px;
+}
+
+.al-textDetailsBox {
+    padding-top: 117px;
+}
+
+.al-textDetailsBox img {
+    width: 660px;
+}
+
+.al-textDetailsBox figcaption {
+    font-size: 26px;
+    line-height: 40px;
+    color: #626f8c;
+    margin-bottom: 30px;
+    word-wrap: break-word;
+}
+
+.al-textDetailsBox p {
+    text-align: justify;
+    color: #333;
+    line-height: 28px;
+    margin-bottom: 12px;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.al-textDetailsBox > p {
+    margin-bottom: 35px;
+}
+
+.al-textDetails_main img {
+    width: 660px;
+}
+
+.al-textDetails_main h5 {
+    font-weight: 400;
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+    color: #666;
+    margin: 10px 0 35px;
+    word-wrap: break-word;
+}
+
+.al-textDetails_main .al-moreText {
+    text-align: left;
+}
+
+.al-pageSplitLine {
+    margin: 50px 0;
+    border-bottom: 1px solid #e4e9ed;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.al-pageSplitLine:after {
+    content: '';
+    float: right;
+    width: 17px;
+    height: 23px;
+    background: transparent url("//img10.allinmd.cn/v3/terminal/bookMarkSplitIcon.png") center center no-repeat;
+}
+
+.al-pageSplitLine p {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.al-eProgressBarBox .al-progressLine {
+    width: 625px;
+    height: 4px;
+    background-color: #e4e9ed;
+    position: relative;
+}
+
+.al-eProgressBarBox .al-progressLine > p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #9CCFF2;
+    width: 20%;
+    max-width: 625px;
+    height: 4px;
+    z-index: 2;
+}
+
+.al-eProgressBarBox .al-progressLine > p .al-eProgressIcon {
+    position: absolute;
+    z-index: 3;
+    top: -18px;
+    right: -30px;
+    width: 37px;
+    height: 37px;
+    background: transparent url("//img10.allinmd.cn/v3/terminal/progressIcon.png") center center no-repeat;
+    cursor: pointer;
+}
+
+.al-eProgressBarBox .al-progressLine > p .al-eProgressIcon:hover .al-eProgressShow {
+    display: block;
+}
+
+.al-eProgressBarBox .al-progressLine .al-progressNum {
+    position: absolute;
+    font-size: 12px;
+    color: #777;
+    top: -4.5px;
+    right: -30px;
+}
+
+.al-eProgressBarBox .al-eProgressShow {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    top: -25px;
+    left: -21px;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    line-height: 24px;
+    color: #fff;
+    font-size: 16px;
+    background: transparent url("//img10.allinmd.cn/v3/terminal/eprogressShowIcon.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar {
+    position: absolute;
+    z-index: 4;
+    top: 110px;
+    left: 50%;
+    margin-left: 455px;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul {
+    text-align: center;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul li {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-collect {
+    position: relative;
+    background: transparent url("//img10.allinmd.cn/v3/terminal/Collect.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-collect span {
+    display: none;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-collect:hover {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/Collect_act.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-collect:hover span {
+    position: absolute;
+    top: 6px;
+    left: 35px;
+    display: inline-block;
+    font-size: 15px;
+    width: 70px;
+    color: #555;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .collectClick {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/Collect_Already.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-order {
+    position: relative;
+    margin: 14px 0 48px;
+    background: transparent url("//img10.allinmd.cn/v3/terminal/AddBookmark.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-order span {
+    display: none;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-order:hover {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/AddBookmark_act.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-order:hover span {
+    position: absolute;
+    top: 6px;
+    left: 35px;
+    display: inline-block;
+    font-size: 15px;
+    width: 70px;
+    color: #555;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .orderClick {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/AddBookmark_Already.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-search {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/Search.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-search:hover {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/Search_act.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-search span {
+    display: none;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .searchClick {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/Search_act.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-catalog {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/Catalog.png") center center no-repeat;
+    margin: 14px 0 15px;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-catalog:hover {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/Catalog_act.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-catalog span {
+    display: none;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .catalogClick {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/Catalog_act.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-bookmark {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/Bookmark_Operate.png") center center no-repeat;
+    margin: 14px 0 15px;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-bookmark:hover {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/Bookmark_Operate_act.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-bookmark span {
+    display: none;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .bookmarkClick {
+    background: transparent url("//img10.allinmd.cn/v3/terminal/Bookmark_Operate_act.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .searchClick, .al-eBookSideBarBox .al-eBookSideBar > ul .catalogClick, .al-eBookSideBarBox .al-eBookSideBar > ul .bookmarkClick {
+    position: relative;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .searchClick span, .al-eBookSideBarBox .al-eBookSideBar > ul .catalogClick span, .al-eBookSideBarBox .al-eBookSideBar > ul .bookmarkClick span {
+    position: absolute;
+    top: 6px;
+    left: 35px;
+    display: inline-block;
+    font-size: 15px;
+    width: 30px;
+    color: #555;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-toTopBtn, .al-eBookSideBarBox .al-eBookSideBar > ul .al-toDownBtn {
+    width: 40px;
+    height: 80px;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-toTopBtn {
+    position: relative;
+    margin: 55px 0 5px -7px;
+    background: transparent url("//img10.allinmd.cn/v3/terminal/toTop.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-toTopBtn span {
+    display: none;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-toTopHover {
+    position: relative;
+    background: transparent url("//img10.allinmd.cn/v3/terminal/toTop_act.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-toTopHover span {
+    position: absolute;
+    top: 32px;
+    left: 40px;
+    display: inline-block;
+    font-size: 15px;
+    width: 70px;
+    color: #555;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-toDownBtn {
+    position: relative;
+    margin-left: -7px;
+    background: transparent url("//img10.allinmd.cn/v3/terminal/toDown.png") center center no-repeat;
+    /* &:hover{background:transparent url("//img10.allinmd.cn/v3/terminal/toDown_act.png") center center no-repeat;}*/
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-toDownBtn span {
+    display: none;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-toDownHover {
+    position: relative;
+    background: transparent url("//img10.allinmd.cn/v3/terminal/toDown_act.png") center center no-repeat;
+}
+
+.al-eBookSideBarBox .al-eBookSideBar > ul .al-toDownHover span {
+    position: absolute;
+    top: 32px;
+    left: 40px;
+    display: inline-block;
+    font-size: 15px;
+    width: 70px;
+    color: #555;
+}
+
+.al-eBookSearchPop {
+    height: 920px;
+    overflow: auto;
+    position: absolute;
+    z-index: 4;
+    background-color: #fff;
+    top: -110px;
+    right: 60px;
+    width: 550px;
+    padding: 40px 30px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border: 1px solid #e4e9ed;
+    -webkit-box-shadow: 4px 4px 8px rgba(197, 206, 214, 0.5), -4px -4px 8px rgba(197, 206, 214, 0.5);
+            box-shadow: 4px 4px 8px rgba(197, 206, 214, 0.5), -4px -4px 8px rgba(197, 206, 214, 0.5);
+}
+
+.al-searchContentPart .al-searchArea {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.al-searchContentPart .al-searchArea input {
+    height: 34px;
+    line-height: 34px;
+    width: 488px;
+    border-radius: 20px;
+    behavior: url("/js/third-party/pie/pie.htc");
+    border: 1px solid #A1ADBE;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+    padding: 0 45px 0 20px;
+}
+
+.al-searchContentPart .al-searchArea input:focus {
+    border: 1px solid #3598db !important;
+    -webkit-box-shadow: 1px 1px 3px rgba(53, 152, 219, 0.8), -1px -1px 3px rgba(53, 152, 219, 0.8);
+            box-shadow: 1px 1px 3px rgba(53, 152, 219, 0.8), -1px -1px 3px rgba(53, 152, 219, 0.8);
+}
+
+.al-searchContentPart .al-searchArea b {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    width: 14px;
+    height: 14px;
+    background: transparent url("//img10.allinmd.cn/v3/message/top_search.png") center center no-repeat;
+}
+
+.al-searchContentItem {
+    padding-top: 24px;
+    border-bottom: 1px solid #ecf0f2;
+}
+
+.al-searchContentItem:hover {
+    background-color: #fafbfd;
+    margin: 0 -30px;
+    padding: 24px 30px 0;
+}
+
+.al-searchContentItem:hover .al-deleteBtn {
+    visibility: visible;
+}
+
+.al-searchContentItem > a {
+    display: block;
+}
+
+.al-searchContentItem > a > span {
+    color: #555;
+    line-height: 26px;
+    word-wrap: break-word;
+}
+
+.al-searchContentItem > a > span i {
+    color: #3598db;
+}
+
+.al-searchContentItem p {
+    font-size: 13px;
+    font-family: "宋体";
+    color: #909090;
+    margin: 20px 0;
+}
+
+.al-searchContentItem p i {
+    float: right;
+}
+
+.al-searchContentItem p .al-deleteBtn {
+    visibility: hidden;
+    float: right;
+    padding-right: 20px;
+    color: #ACB4C3;
+}
+
+.al-bookmarkContentPart h6 {
+    font-weight: 400;
+    font-size: 26px;
+    color: #555;
+}
+
+.al-bookmarkContentPart .al-noBookmarkBox {
+    display: none;
+    height: 810px;
+    line-height: 810px;
+    text-align: center;
+}
+
+.al-bookmarkContentPart .al-noBookmarkBox img {
+    width: 192px;
+    height: 239px;
+    vertical-align: middle;
+}
+
+.al-catalogContentPart h6 {
+    font-weight: 400;
+    font-size: 26px;
+    color: #555;
+}
+
+.al-catalogContentPart header {
+    font-size: 18px;
+    color: #555;
+    margin: 50px 0 20px;
+}
+
+.al-chapterListBox {
+    line-height: 58px;
+    margin-top: -1px;
+}
+
+.al-chapterListBox .al-chapterNumItem {
+    font-size: 18px;
+    color: #62688c;
+    cursor: pointer;
+}
+
+.al-chapterListBox .al-chapterNumItem figcaption {
+    border-top: 1px solid #e4e9ed;
+    border-bottom: 1px solid #e4e9ed;
+}
+
+.al-chapterListBox .al-chapterNumItem figcaption:hover {
+    color: #3598db;
+}
+
+.al-chapterListBox .al-chapterNumItem > p {
+    border-bottom: 1px solid #e4e9ed;
+    font-size: 16px;
+    color: #777;
+    padding-left: 20px;
+    word-wrap: break-word;
+}
+
+.al-chapterListBox .al-chapterNumItem > p:hover {
+    color: #3598db;
+}
+
+/*电子书全书阅读视频按钮样式*/
+.Ev-allReadingCon .Ev-videoPlayBtn {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: url("//img10.allinmd.cn/v3/common/icon/videoPlayIcon.png") center center no-repeat;
+    cursor: pointer;
+    top: 40%;
+    left: 50%;
+    margin-left: -40px;
+}
+
+.Ev-allReadingCon .Ev-videoImgSrc span {
+    position: absolute;
+    right: 3px;
+    bottom: 10px;
+    text-align: center;
+    color: #fff;
+    width: 81px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    background: url("//img10.allinmd.cn/v3/terminal/video_time.png") center center no-repeat;
+}
+
+.al-downLoad_PopBox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+    /*IE8支持*/
+}
+
+.al-downContainer {
+    width: 450px;
+    height: 262px;
+    background-color: #fff;
+    border-radius: 6px;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px;
+    margin-top: -131px;
+    position: relative;
+}
+
+.al-downContainer .closePopBtn {
+    float: right;
+    width: 13px;
+    height: 13px;
+    background: url("//img10.allinmd.cn/v3/terminal/popCloseBtn.png") center center no-repeat;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.al-downLoadContent {
+    padding: 40px 50px 45px;
+}
+
+.al-downLoadContent:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.al-downLoadContent figcaption {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.al-downLoadContent .downLoadWay {
+    float: left;
+    margin-top: 10px;
+}
+
+.al-downLoadContent .downLoadWay p {
+    padding: 25px 0 0 25px;
+}
+
+.al-downLoadContent .downLoadWay p i {
+    display: inline-block;
+    width: 28px;
+    height: 32px;
+    background: url("//img10.allinmd.cn/v3/terminal/AndroidIcon.png") center center no-repeat;
+    vertical-align: middle;
+    margin-right: 15px;
+    margin-top: -5px;
+}
+
+.al-downLoadContent .downLoadWay p .iPhoneIcon {
+    width: 25px;
+    height: 31px;
+    background: url("//img10.allinmd.cn/v3/terminal/iPhoneIcon.png") center center no-repeat;
+    margin-top: -10px;
+}
+
+.al-downLoadContent .downLoadWay p span {
+    font-size: 20px;
+}
+
+.al-downLoadContent .downLoadWay p .AndroidText {
+    color: #49BD38;
+}
+
+.al-downLoadContent .downLoadWay p .iPhoneText {
+    color: #14A7F0;
+}
+
+.al-downLoadContent .downLoad_QR {
+    float: right;
+}
+
+.al-downLoadContent .downLoad_QR img {
+    width: 140px;
+    height: 140px;
+    -webkit-box-shadow: 8px 8px 10px rgba(83, 101, 119, 0.2), -5px -5px 10px rgba(83, 101, 119, 0.2);
+            box-shadow: 8px 8px 10px rgba(83, 101, 119, 0.2), -5px -5px 10px rgba(83, 101, 119, 0.2);
+}
+
+/*--start视频终端点击产品引导下载app弹框start--*/
+.al-downContainer .al-downLoadContent figcaption {
+    text-align: center;
+}
+
+.al-downContainer .al-downLoadContent .allinmd-QR-code {
+    margin: 0 auto;
+    float: inherit;
+}
+
+.al-downContainer .al-downLoadContent .allinmd-QR-code img {
+    display: block;
+    margin: 0 auto;
+}
+
+/*--end视频终端点击产品引导下载app弹框end--*/

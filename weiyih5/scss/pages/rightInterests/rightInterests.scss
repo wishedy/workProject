@@ -1,0 +1,43 @@
+@charset "UTF-8";
+//样式模块调用
+@import "../../modules/utilities/utilities";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@include normalize(mobile);
+.al-mainInner{
+  padding-bottom: 0;
+}
+//  权益弹层
+.rightInterestsCont{
+  background-color: #ffffff;
+  .rigthDesc{
+      overflow-y: scroll;
+      li{
+        padding: 0 rem3(25px);
+        margin-bottom: rem3(15px);
+        span{
+          font-size:rem3(16px);
+          font-family:PingFangSC-Medium;
+          font-weight:500;
+          color:rgba(34,34,34,1);
+          line-height:rem3(22px);
+          margin-bottom: rem3(6px);
+          display: inline-block;
+          &:before{
+            content: '';
+            width:rem3(4px);
+            height:rem3(14px);
+            display: inline-block;
+            background:rgba(34,34,34,1);
+            margin-right: rem3(4px);
+          }
+        }
+        p{
+          font-size:rem3(15px);
+          font-family:PingFangSC-Regular;
+          font-weight:400;
+          color:rgba(85,85,85,1);
+          line-height:rem3(21px);
+        }
+      }
+    }
+}

@@ -1,0 +1,46 @@
+<template name="commentContent$06036310">
+  <view class="_div data-v-14b6b9bd">
+    <view class="_section data-v-14b6b9bd comment-content-item">
+      <view class="_header data-v-14b6b9bd comment-content-item-title">
+        <view class="_figure data-v-14b6b9bd comment-content-item-logo" wx:if="{{reviewItem}}">
+          <image src="{{reviewItem.headLogo}}" alt class="_img data-v-14b6b9bd"></image>
+        </view>
+        <view class="_section data-v-14b6b9bd comment-content-item-base" wx:if="{{reviewItem}}">
+          <view class="_h4 data-v-14b6b9bd name" wx:if="{{reviewItem.nickName&&reviewItem.nickName.length>0}}">{{reviewItem.nickName}} <label wx:if="{{reviewItem.isAuthor==1}}" class="_span data-v-14b6b9bd">（作者）</label></view>
+          <view class="_p data-v-14b6b9bd time">{{formatTime}}</view>
+        </view>
+      </view>
+      <view class="_section data-v-14b6b9bd comment-content-item-article">
+        <view class="_article data-v-14b6b9bd comment-content-item-mainText">
+          <rich-text class="_p data-v-14b6b9bd content" nodes="{{formatContent}}" wx:if="{{reviewItem.isValid==1}}"></rich-text>
+          <view class="_p data-v-14b6b9bd content" wx:if="{{reviewItem.isValid==0}}">该评论已删除</view> <label class="_span data-v-14b6b9bd toggle" bindtap="handleProxy" wx:if="{{reviewItem.isValid==1&&contentToggleShow&&contentToggle}}" data-eventid="{{'0'}}" data-comkey="{{$k}}">展开</label> <label class="_span data-v-14b6b9bd toggle hide" bindtap="handleProxy" wx:if="{{reviewItem.isValid==1&&contentToggleShow&&!contentToggle}}" data-eventid="{{'1'}}" data-comkey="{{$k}}">收起</label>
+        </view>
+        <view class="_figure data-v-14b6b9bd comment-content-img-box" wx:if="{{reviewItem&&reviewItem.isValid==1&&reviewItem.attList[0]}}">
+          <image src="{{reviewItem.attList[0]&&reviewItem.attList[0].attUrl}}" alt bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_img data-v-14b6b9bd"></image>
+        </view>
+      </view>
+      <view class="_section data-v-14b6b9bd comment-content-item-quote" wx:if="{{refReviewItem}}">
+        <view class="_article data-v-14b6b9bd comment-content-item-quote-article">
+          <view class="_p data-v-14b6b9bd content" wx:if="{{refReviewItem.isValid==1&&refReviewItem.status==1&&refReviewItem.reviewContent.length>0}}">
+            <rich-text nodes="{{formatQuote}}" class="_span data-v-14b6b9bd"></rich-text>
+          </view>
+          <view class="_p data-v-14b6b9bd content" wx:if="{{refReviewItem.isValid==1&&refReviewItem.status==1&&refReviewItem.reviewContent.length===0&&refReviewItem.attList.length>0}}"><label class="_span data-v-14b6b9bd quote">引用 {{(refReviewItem.nickName&&refReviewItem.nickName.length>0)?refReviewItem.nickName:""}}{{isAuthor}}的评论：</label>图片评论 </view>
+          <view class="_p data-v-14b6b9bd content" wx:if="{{refReviewItem.isValid==0||refReviewItem.status==0}}"><label class="_span data-v-14b6b9bd quote">引用 {{(refReviewItem.nickName&&refReviewItem.nickName.length>0)?refReviewItem.nickName:""}}{{isAuthor}}的评论：</label>该评论已删除 </view>
+          <view wx:if="{{refReviewItem.isValid==1&&quoteToggleShow}}" class="_article data-v-14b6b9bd"><label wx:if="{{quoteToggle}}" catchtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}" class="_span data-v-14b6b9bd">展开</label><label wx:else catchtap="handleProxy" style="margin-bottom: -28rpx;" data-eventid="{{'3'}}" data-comkey="{{$k}}" class="_span data-v-14b6b9bd">收起</label></view>
+        </view>
+        <view class="_figure data-v-14b6b9bd comment-content-quote-img-box" wx:if="{{refReviewItem&&refReviewItem.isValid==1&&refReviewItem.status==1&&refReviewItem.attList[0]}}">
+          <view class="_figure data-v-14b6b9bd list">
+            <image src="{{refReviewItem.attList[0]&&refReviewItem.attList[0].attUrl}}" alt bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}" class="_img data-v-14b6b9bd"></image>
+          </view>
+        </view>
+      </view>
+      <view class="_section data-v-14b6b9bd comment-content-controller" wx:if="{{reviewItem.isValid==1}}">
+        <view class="_section data-v-14b6b9bd delete" bindtap="handleProxy" wx:if="{{reviewItem.customerId==customerId}}" data-eventid="{{'6'}}" data-comkey="{{$k}}">
+          <view class="_i data-v-14b6b9bd icon-delete"></view> <label class="_span data-v-14b6b9bd">删除</label>
+        </view> <button class="_button data-v-14b6b9bd reply" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}">
+          <view class="_i data-v-14b6b9bd icon-replay"></view> <label class="_span data-v-14b6b9bd">回复</label>
+        </button>
+      </view>
+    </view>
+  </view>
+</template>

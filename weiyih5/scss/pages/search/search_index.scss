@@ -1,0 +1,441 @@
+@charset "UTF-8";
+//搜索终端
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_searchList"; //搜索列表组件
+@import "../../components/_indexNavbar"; //导航栏
+@import "../../components/_confirmModal"; //仿confirm模态框
+@import "../../components/_contentModule"; //内容模块
+@import "../../components/_animationModule"; //动画模块
+@import "../../components/_scrollShareBtn";//分享
+@import "../../components/_bottomBtns"; //底部弹层组
+@import "../../components/_bottomSharePart"; //底部分享弹层
+.al-searchInputBar {
+    background-color: #fff;
+    @include clearfix();
+    input {
+        //background-color: #f8f8f8;
+        padding-left:rem(110px);
+        //padding-right:rem(60px);
+    }
+}
+.search_doc .al-doctorRecommend{
+    background:#eff4f8;
+}
+.al-content-product{
+
+}
+.al-searchInputBar {
+    .platformSelect{
+        position:absolute;
+        @include font-dpr(14px);
+        height: rem(84px);
+        line-height: rem(84px);
+        color: #808080;
+        //text-align: center;
+        display:inline-block;
+        box-sizing:border-box;
+        z-index: 2;
+        padding:0 rem(30px) 0 rem(19px);
+        box-sizing:border-box;
+    }
+    .platformSelect:after{
+         content:"";
+         display: block;
+         position: absolute;
+         width:0;
+         height: 0;
+         border-color:#808080 transparent transparent transparent ;
+         border-style:solid;
+         border-width:rem(8px);
+         z-index: 3;
+         top:rem(43px);
+         right:rem(10px);
+     }
+    .platformSelect.active:after{
+        border-color:transparent transparent #808080 transparent ;
+        top:rem(28px);
+    }
+    width: 100%;    
+    input {
+        width: rem(586px);
+        transition:none;
+        -webkit-transition:none;
+    }
+    .al-searchCancel{
+        display: inline-block;
+        float: left;
+        background: #ADC6E3;
+        border-radius: 0 6px 6px 0;
+        /*position: absolute;
+        right: rem(30px);
+        top: 50%;
+        padding: 0;
+        transform:translateY(-50%);
+        -webkit-transform:translateY(-50%);*/
+        width: rem(105px);
+        height: rem(84px);
+        line-height: rem(84px);
+        font-size: rem(30px);
+        color: #FFFFFF;
+    }
+
+
+}
+    .icon-searchCancel{
+        right: 2rem;
+        position: absolute;
+        top: 50%;
+        margin-top: rem(-14px);
+        display: none;
+    }
+.al-searchItem {
+    margin-top: rem(20px);
+    background-color: #fff;
+    border-bottom: 1px solid $outerBorderColor;
+    .al-searchTitle {
+        padding: rem(27px) rem(30px);
+        border-bottom: 1px solid $innerBorderColor;
+        font-weight: normal;
+        @include font-dpr(14px);
+        color: #666;
+        line-height: 1;
+    }
+}
+
+.al-contentPartModule:nth-last-child(1) {
+    border-bottom: none;
+}
+.al-searchProduct-item{
+    width: rem(690px);
+    height: rem(148px);
+    padding: rem(30px);
+    border-bottom:1px solid rgba(235,235,235,1);
+    flex-direction: row;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content:space-around;
+    -o-justify-content: space-around;
+    webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction:row;
+    -webkit-flex-direction: row;
+    align-items: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    background: #fff;
+    .searchProduct-logo{
+        width: rem(120px);
+        height: rem(120px);
+        border-radius: 50%;
+        margin-right: rem(26px);
+        background: #ff3b30;
+    }
+    .searchProduct-detail{
+        .searchProduct-title{
+            width:rem(544px);
+            min-height:rem(48px);
+            height: auto;
+            font-size:rem(34px);
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(51,51,51,1);
+            line-height:rem(48px);
+            margin-bottom: rem(12px);
+
+        }
+        .searchBrand-title{
+            width:rem(544px);
+            height:rem(40px);
+            font-size:rem(28px);
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(153,153,153,1);
+            line-height:rem(40px);
+        }
+    }
+}
+
+.al-hotSearchContent {
+    padding: rem(40px) rem(30px);
+    padding-bottom: rem(20px);
+    .al-hotSearchWord {
+        padding: rem(16px) rem(20px);
+        @include font-dpr(13px);
+        color: #333;
+        border: 1px solid #e6e8ed;
+        border-radius: rem(500px);
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: rem(20px);
+        margin-bottom: rem(20px);
+        .icon{
+            display: none;
+        }
+        &.preRecommend{
+            .icon{
+                display: inline-block;
+                width: rem(22px);
+                height: rem(28px);
+                background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAcCAYAAABlL09dAAAABGdBTUEAALGPC/xhBQAAAvVJREFUSA2lVk1rE1EUfXeSlgR00QjWhaVIJa2L1iJutFYXfiwUkzY16saiqDvd+AeMiNCFbqwgbSF2IbRSmhRx0VURQVwoWBWkoBVquzDgpmhrTc1cz5tmJjPz3iRFH7zMu+eee+bkfcyMEDUa9/W1cU/POKdSzTWonrThiXSBabYK5nOiVJrDDS7rKDqstjBzR7kwghuMQPyaTsiP1RYW4oCriCB+n3t7j7gw7ZC0aBnkdDoqisUCwq0eHtG8qKtrp4mJXx7cFVR3XCwmFFFZzNyCG/a7dJRhdWEhLigVFeB6ZaiOAqcC07ADrhZRElbLykg4HKfJyU+6fLDj9fU7VUWlWql0TCcqMa0wVj2JebwUVOTg5a0I/gB63MExUKYChOPCNJ8iF3ETA8bTgugjTNxA/o1obDxIw8PrkutxDNEUSM+Ab0YUtuhoWVRq7ReFwk05kM1xjGdBF5zOgFi/kfqHX6KiMIw45XILlmNrB5hm7r9EpQ9pyjRvyaHlGOf/EcCLEghojL+9As6WgHwFJjLhemcI87oXBQ+RcaalwrJG30DsAWc3ol2+nC6UOotyKs6iB4l+hdNDlM/PgPMZfbPtlAEnJwPYa3CaoKmpeSsfCj0O4OngNum4VZeB07tw+s7OYaVfAHtix1WvzNulY2tDK0TDGFKwWOwqsJcK7geIlqXjD34czpbgcMmPUzb7A6frBPKv/DlPzPzeAGncA8qAeU7BygCO7KqIRhOoWw7iAM8boqlpBKQvPtI2X+wJaWzsO26e84B2QLQoGhqyBg0O/sbqn4d45TVD1MyZjHUqbb5yJVrQYCVg/TQ6umYVYz5fQziF/tMiM8fE7OxhpdAL+P/VCgymsT2fS5rjCltrGnE3+sZBYL4iCVVal5PDYotwuBsG8zbmCEsAd5sV9fUdcH4P4Rl8BdnfFDbfunIy2Y453odgFdzbeGPvwSvqrZsUdJQFHkwtIJ4WnZ0PKJP54y7C82XAEo1EhrCQ8vNAaX8By1Pm/iJGuLsAAAAASUVORK5CYII=") no-repeat center center;
+                background-size: cover;
+                margin-right: rem(8px);
+            }
+        }
+
+    }
+}
+.al-mainInner .al-hotSearchContent .al-hotSearchWord{
+    &.recommend{
+        background: rgba(60,174,250,.1);
+        color:rgba(60,174,250,1);
+    }
+}
+.al-historySearchContent {
+    background-color: #fff;
+    .al-historySearchItem {
+        border-bottom: 1px solid $innerBorderColor;
+        @include font-dpr(15px);
+        color: #333;
+        height: rem(98px);
+        line-height: rem(98px);
+        margin-left: rem(30px);
+        padding-right: rem(30px);
+        @include ellipsis();
+    }
+    .al-clearHistorySearch {
+        text-align: center;
+        @include font-dpr(13px);
+        color: #3598db;
+        height: rem(98px);
+        line-height: rem(98px);
+    }
+}
+
+.al-confirmModalEnsureBtn {
+    font-weight: normal !important;
+}
+
+.al-confirmModalCancelBtn {
+    font-weight: bold;
+}
+
+.al-indexNavbar {
+    background-color: #fff;
+    border-bottom: 1px solid $outerBorderColor;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: rem(95px);
+    line-height: rem(95px);
+    a{
+        display: block;
+        //padding: 0 rem(20px)
+    }
+}
+.al-indexNavbar ul .active a:after{
+    bottom: 0;
+//    left: 0;
+    right: 0;
+}
+.al-searchMoreUser {
+    @include font-dpr(13px);
+    color: $smallTextColor;
+    text-align: center;
+    height: rem(80px);
+    line-height: rem(80px);
+}
+
+.al-searchResultStatus {
+    padding-top: rem(45px);
+    padding-bottom: rem(150px);
+    color: #626f8c;
+    @include font-dpr(13px);
+    text-align: center;
+    & > .icon-searchLoading:before {
+        @include animate(rotate, 2s, linear, infinite);
+    }
+}
+
+.al-searchResultContent {
+    display: none;
+    background:#eff4f8;
+}
+
+.al-searchResultContent.active {
+    display: block;
+}
+
+.al-noContentTips {
+    width: 100%;
+    //height: 100%;
+    background-color: transparent;
+    text-align: center;
+    padding: rem(290px) 0;
+    //margin-top:rem(60px);
+    //margin-bottom:rem(30px);
+    figure {
+        width: rem(461px);
+        height: rem(326px);
+        display: inline-block;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+    &.recommend{
+        padding:rem(60px) 0 rem(30px) 0;
+    }
+    .al-searchErrorReport{
+        color:rgb(98,111,140);
+        display:block;
+        width:rem(176px);
+        height:rem(48px);
+        border-radius:rem(20px);
+        margin:0 auto;
+        margin-top:rem(30px);
+        margin-bottom:rem(50px);
+        border:1px solid rgb(98,111,140);
+        font-size: rem(24px);
+        line-height: rem(48px);
+        
+    }
+}
+
+.icon-searchWhite {
+    @extend %icon-searchWhite;
+}
+
+.icon-searchCancel {
+    @extend %icon-searchCancel;
+}
+
+.icon-searchRecommend {
+    @extend %icon-searchRecommend;
+}
+
+.icon-contentAuthor {
+    @extend %icon-contentAuthor;
+}
+
+.icon-contentWatchedNum {
+    @extend %icon-contentWatchedNum;
+}
+
+.icon-contentSeminarTime {
+    @extend %icon-contentSeminarTime;
+}
+
+.icon-contentSeminarPlace {
+    @extend %icon-contentSeminarPlace;
+}
+
+.icon-hotSearch {
+    @extend %icon-hotSearch;
+}
+
+.icon-historySearch {
+    @extend %icon-historySearch;
+}
+
+.icon-newTips {
+    @extend %icon-newTips;
+}
+
+.icon-searchMoreUser {
+    @extend %icon-searchMoreUser;
+}
+
+.icon-searchLoading {
+    @extend %icon-searchLoading;
+}
+
+.al-contentNewest {
+    @extend %al-contentNewest;
+}
+
+.al-contentHotest {
+    @extend %al-contentHotest;
+}
+
+.al-contentAward {
+    @extend %al-contentAward;
+}
+
+.al-contentJoin {
+    @extend %al-contentJoin;
+}
+
+.al-contentPdf {
+    @extend %al-contentPdf;
+}
+
+.al-tagsRecommendHot {
+    @extend %al-tagsRecommendHot;
+}
+
+.al-tagsRecommendNew {
+    @extend %al-tagsRecommendNew;
+}
+
+/*.al-vipUser {
+    @extend %al-vipUser;
+}*/
+.icon-scrollShare{
+    @extend %icon-scrollShare;
+}
+@import "../../components/_classSelector"; //类型筛选
+.al-searchInputBar form{
+    width: rem(586px);
+    float: left;
+}
+.al-personalContributionSelector{
+    position:absolute;
+    top:rem(100px);
+    z-index: 7;
+    left:rem(180px);
+
+}
+.al-personalContributionSelectorItem{
+    @include font-dpr(14px);
+    padding: rem(30px) rem(50px);
+}
+.al-personalContributionSelectorItem.activeP{
+    color:#3598db;
+}
+.al-personalContributionSelector ul{
+    right:rem(-60px);
+}
+.al-personalContributionSelector ul:before {
+    left: 18%;
+}
+.al-contentText{
+    .al-contentOtherMsg{
+        .label{
+            width:rem(52px);
+            height: rem(42px);
+            line-height: rem(42px);
+            border-radius:rem(4px);
+            border:1px solid rgba(100,131,233,.3);
+            margin-right: rem(30px);
+            padding: 0 rem(10px);
+            font-size: rem(26px);
+            text-align: center;
+            color: rgba(100, 131, 233, 1);
+
+        }
+    }
+}

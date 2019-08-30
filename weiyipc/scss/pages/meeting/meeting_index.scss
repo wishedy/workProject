@@ -1,0 +1,472 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+//公共组件引用
+@import "../../components/_iconsModule"; //小图标
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_message_rightSideBar";
+@import "../../components/_shareBoxModule";
+@import "../../components/meeting/_meetingList"; //会议列表
+@import "../../components/_swiperCont"; //轮播
+@import "../../components/meeting/_meetingScreen"; //会议列表
+
+.meetingCont{
+    width: 1000px;
+    margin: 0 auto;
+}
+/*轮播图*/
+.al-indexCarouselBanner {
+    height: 250px;
+    width: 1000px;
+    position: relative;
+    margin-top: 20px;
+   // border: 1px solid #dee6ee;
+}
+.swiper-slide{
+    width: 1000px;
+    height: 250px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*内导航*/
+.meetingNav{
+    margin-top: 20px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(215,222,229,0.50), 0 0 2px 0 #C7D3DF;
+    height: 66px;
+    @include clearfix();
+    line-height: 66px;
+    font-size: 20px;
+    color: #333333;
+    .meetingFellow{
+        width: 50%;
+        float: left;
+        text-align: center;
+        &:before{
+            content: '';
+            display: inline-block;
+            width: 32px;
+            height: 34px;
+            background: url("//img10.allinmd.cn/common/icon/png/meeting_follow_normal.png") no-repeat;
+            vertical-align: middle;
+            margin-right: 15px;
+        }
+        &:after{
+            content: '';
+            width: 1px;
+            height: 20px;
+            display: inline-block;
+            background: #ccc;
+            float: right;
+            margin-top: 23px;
+        }
+        &:hover{
+            color: #2899e6;
+            &:before{
+                background: url("//img10.allinmd.cn/common/icon/png/meeting_follow_hover.png") no-repeat;
+
+            }
+        }
+    }
+    .meetingCalender{
+        width: 50%;
+        float: left;
+        text-align: center;
+        &:before{
+            content: '';
+            display: inline-block;
+            width: 32px;
+            height: 34px;
+            background: url("//img10.allinmd.cn/common/icon/png/meeting_calender_normal.png") no-repeat;
+            vertical-align: middle;
+            margin-right: 15px;
+            margin-top: -8px;
+        }
+        &:hover{
+            color: #2899e6;
+            &:before{
+                background: url("//img10.allinmd.cn/common/icon/png/meeting_calender_hover.png") no-repeat;
+
+            }
+        }
+    }
+}
+
+/*筛选列表*/
+.meetingScreen{
+    margin-top: 20px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(215,222,229,0.50), 0 0 2px 0 #C7D3DF;
+    @include clearfix();
+    .title{
+        height: 52px;
+        line-height: 52px;
+        font-size: 17px;
+        color: #333333;
+        padding-left: 24px;
+        border-bottom: solid 1px #ECF0F2;
+    }
+    /*.screenCondition{
+        @include clearfix();
+        padding: 15px 0 0 0;
+        &:after{
+            content: '';
+            width: 892px;
+            height: 1px;
+            display: inline-block;
+            background: #ECF0F2;
+            margin-left: 108px;
+            //float: right;
+            //margin-top: 23px;
+        }
+        //border-bottom: solid 1px #ECF0F2;
+        div{
+            float: left;
+            //margin: 15px 0;
+        }
+        .text{
+            font-size: 16px;
+            color: #AAAAAA;
+            line-height: 30px;
+            padding-left: 24px;
+            margin-right: 20px;
+
+        }
+        .major{
+            background: #FFFFFF;
+            border: 1px solid #DBDBDB;
+            border-radius: 2px;
+            width: 78px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 16px;
+            color: #333333;
+            margin-bottom: 15px;
+            cursor: pointer;
+            &.active{
+                background-image: linear-gradient(-180deg, #FFFFFF 0%, #F2F2F2 100%);
+                border: 1px solid #E6E8ED;
+                border-radius: 2px;
+            }
+            &:after{
+                content: '';
+                display: inline-block;
+                width: 8px;
+                height: 6px;
+                background: url("//img10.allinmd.cn/common/icon/png/meeting_arrowdown.png") no-repeat;
+                vertical-align: middle;
+                margin-left: 10px;
+            }
+        }
+        .onlyLive{
+            float: right;
+            margin-right: 24px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #808080;
+            i{
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background: url("//img10.allinmd.cn/common/icon/png/icon_select.png") no-repeat;
+                vertical-align: middle;
+                margin-right: 10px;
+                &.active{
+                    background: url("//img10.allinmd.cn/common/icon/png/icon_selected.png") no-repeat;
+                }
+            }
+        }
+        .date{
+            background: #FFFFFF;
+            border: 1px solid #DBDBDB;
+            border-radius: 2px;
+            width: 78px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 16px;
+            color: #333333;
+            margin-left: 30px;
+            cursor: pointer;
+            &.active{
+                background-image: linear-gradient(-180deg, #FFFFFF 0%, #F2F2F2 100%);
+                border: 1px solid #E6E8ED;
+                border-radius: 2px;
+            }
+            &:after{
+                content: '';
+                display: inline-block;
+                width: 8px;
+                height: 6px;
+                background: url("//img10.allinmd.cn/common/icon/png/meeting_arrowdown.png") no-repeat;
+                vertical-align: middle;
+                margin-left: 10px;
+            }
+        }
+    }*/
+    .likeTab{
+        @include clearfix();
+        li{
+            float: left;
+            padding: 7px 14px;
+            font-size: 15px;
+            color: #808080;
+            line-height: 16px;
+            margin-right: 10px;
+            border: 1px solid #DBDBDB;
+            border-radius: 2px;
+            &.active{
+                background: #2899E6;
+                border-radius: 2px;
+                border: 1px solid #2899E6;
+                color: #fff;
+            }
+        }
+    }
+    .screenYouLike{
+        @include clearfix();
+        padding: 15px 0;
+        border-bottom: solid 1px #ECF0F2;
+        p{
+            float: left;
+            font-size: 13px;
+            color: #AAAAAA;
+            line-height: 30px;
+            padding-left: 24px;
+            margin-right: 20px;
+        }
+    }
+    .screenList{
+        /*.results{
+            font-size: 14px;
+            color: #808080;
+            line-height: 14px;
+            margin-top: 20px;
+            padding-left: 24px;
+        }*/
+        /*li{
+            padding: 30px 24px 26px;
+            border-bottom: 1px solid #E4E9ED;
+            p{
+                font-size: 22px;
+                color: #333333;
+                line-height: 22px;
+                margin-bottom: 24px;
+                span{
+                    background: #626F8C;
+                    border-radius: 2px;
+                    display: inline-block;
+                    width: 40px;
+                    height: 22px;
+                    line-height: 22px;
+                    text-align: center;
+                    font-size: 14px;
+                    color: #FFFFFF;
+                    vertical-align: bottom;
+                    margin-right: 10px;
+                }
+            }
+        }*/
+
+    }
+
+    /*.major{
+        position: relative;
+        ul{
+            position: absolute;
+            top: 31px;
+            left: 0;
+            background: #FFFFFF;
+            box-shadow: 0 8px 20px 0 rgba(197,206,214,0.80);
+            border-radius: 2px;
+            width: 78px;
+            padding: 4px 0 24px 0;
+            text-align: center;
+            li{
+                padding-top: 20px;
+                font-size: 15px;
+                color: #333333;
+                line-height: 15px;
+                &.active{
+                    color: #3598DB;
+                    text-align: left;
+                    margin-left: 8px;
+                    &:before{
+                        content: '';
+                        display: inline-block;
+                        width: 8px;
+                        height: 6px;
+                        background: url("//img10.allinmd.cn/common/icon/png/icon_selected1.png") no-repeat;
+                        vertical-align: middle;
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+    }*/
+    /*.date{
+        position: relative;
+        .dateBor{
+            position: absolute;
+            left: 0;
+            top: 31px;
+            width: 318px;
+            height: 262px;
+            background: #FFFFFF;
+            box-shadow: 0 8px 20px 0 rgba(197,206,214,0.80);
+            border-radius: 2px;
+            .titleTab{
+                height: 34px;
+                line-height: 34px;
+                font-size: 14px;
+                color: #808080;
+                @include clearfix();
+                padding-left: 24px;
+                border-bottom: solid 1px #ECF0F2;
+                width: 294px;
+                p{
+                    float: left;
+                    margin-right: 63px;
+                }
+            }
+        }
+    }*/
+    .dateText{
+        @include clearfix();
+        font-size: 15px;
+        color: #333333;
+        line-height: 15px;
+        width: 100%;
+        .dateYear{
+            float: left;
+            width: 75px;
+            text-align: center;
+            padding: 5px 0 4px 0;
+            li{
+                //margin-bottom: 20px;
+                line-height: 30px;
+                &.active{
+                    color: #2899e6;
+                    text-align: left;
+                    padding-left: 6px;
+                    &:before{
+                        content: '';
+                        display: inline-block;
+                        width: 8px;
+                        height: 6px;
+                        background: url("//img10.allinmd.cn/common/icon/png/icon_selected1.png") no-repeat;
+                        vertical-align: middle;
+                        margin-right: 7px;
+                    }
+                }
+            }
+        }
+        .dateDay{
+            float: left;
+            width: 213px;
+            margin-left: 27px;
+            p{
+                text-align: left;
+                margin-top: 14px;
+                &.active{
+                    color: #2899E6;
+                }
+            }
+            ul{
+                @include clearfix();
+            }
+            li{
+                float: left;
+                margin: 20px 20px 0 0;
+                &.active{
+                    color: #2899E6;
+                }
+            }
+        }
+    }
+    .dateBtn{
+        border-top: solid 1px #ECF0F2;
+        height: 34px;
+        @include clearfix();
+        width: 100%;
+        button{
+            display: inline-block;
+            width: 50%;
+            text-align: center;
+            float: left;
+            line-height: 34px;
+            font-size: 14px;
+            color: #808080;
+            cursor: pointer;
+            &.notActive{
+                background: #F3F6F9;
+                color: #c5c5c5;
+                cursor: default;
+            }
+            &.active{
+                background: #2899E6;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+
+/*.meetingListMore{
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(215,222,229,0.30), 0 0 2px 0 rgba(199,211,223,0.50);
+    font-size: 16px;
+    color: #626F8C;
+    text-align: center;
+    height: 52px;
+    line-height: 52px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    i{
+        display: inline-block;
+        width: 14px;
+        height: 7px;
+        background: url("//img10.allinmd.cn/common/icon/png/icon_arrow_more.png") no-repeat;
+        vertical-align: middle;
+        margin-left: 7px;
+    }
+}*/
+
+/*
+.screenNone{
+    text-align: center;
+    padding: 100px 0 134px;
+}
+*/
+
+
+.activeBg{
+    background: #fff;
+}
+
+.normalBg{
+    background: #f4f4f4;
+}
+
+
+
+.meetingListCont li a{
+    height: 18px;
+    height: 21px\9;
+    text-overflow: ellipsis;
+    //display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 94%;
+    white-space: nowrap;
+}

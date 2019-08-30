@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>评分页</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/score/scorePage.css">
+</head>
+
+<body>
+<section class="al-scorePagePopBox">
+    <header class="al-indexHeader al-scorePageHead">
+        <figure class="al-indexHeaderItem ev-backToMain">
+            关闭
+        </figure>
+        <figure class="al-indexHeaderItem">
+            <h1>评分</h1>
+        </figure>
+        <figure class="al-indexHeaderItem">
+        </figure>
+    </header>
+    <div class="al-scoreMainContentBox">
+        <h3 class="al-resourcesTitle">标题标题标题标题标题标题</h3>
+        <ul class="al-bigScoreStarBox">
+            <li><b></b></li>
+            <li><b></b></li>
+            <li><b></b></li>
+            <li><b></b></li>
+            <li></li>
+        </ul>
+        <p class="al-scoreResultText">不错</p>
+        <p class="al-anonymousScore"><i class="al-selectedBtn"></i>匿名评分</p>
+        <figure class="al-scoreContentTagList">
+            <figcaption>内容让你满意的地方？</figcaption>
+            <ul class="al-scoreTagSelect">
+                <li class="active">信息完整性</li>
+                <li>内容可靠性</li>
+                <li>图片清晰度</li>
+                <li>临床指导性</li>
+                <li>其他原因</li>
+            </ul>
+            <div class="al-scorePageInputBox">
+                <textarea name="" id="" cols="0" rows="0" placeholder="请输入你的想法"></textarea>
+                <span class="al-NumPrompt">66</span>
+            </div>
+            <div class="al-scorePageEmptyBox"></div>
+        </figure>
+    </div>
+    <footer class=" al-scorePageNoSubmitBtn al-scorePageFooterSubmitBtn al-scorePageSubmitOkBtn al-scorePageSubmitIngBtn ">
+        <i></i>正在提交
+    </footer>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+
+
+ <script src="/js/third-party/fastclick.js"></script>
+<script>
+    FastClick.attach(document.body);
+    comm.slideTabs();
+    $(".al-personalContributionSelector h2").on("click", function() {
+        if ($(".al-personalContributionSelector").hasClass('al-personalSelectorOn')) {
+            $(".al-personalContributionSelector").removeClass('al-personalSelectorOn');
+        } else {
+            $(".al-personalContributionSelector").addClass('al-personalSelectorOn');
+        }
+
+    });
+    $(".al-personalContributionSelectorItem").on("click", function() {
+        $(this).addClass('active').siblings().removeClass('active');
+        $(this).parents(".al-personalContributionSelector").removeClass('al-personalSelectorOn');
+        $(this).parents(".al-personalContributionSelector").find('h2').text($(this).text());
+    });
+</script>
+</body>
+
+</html>

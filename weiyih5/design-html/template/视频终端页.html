@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>${seoTitle!''}-医学视频-唯医,allinmd</title>
+    <meta name="description" content="${seoMetaDescription!''}">
+    <meta name="Keywords" content="医学视频,教学视频,手术视频,会议回放${seoMetaKeyword!''},唯医,allinmd">
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/dest/pages/detail/detail_video.css">
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/video-js.css" rel="stylesheet" type="text/css"/>
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/videojs.allinmd-h5.css" rel="stylesheet" type="text/css"/>
+    <meta name="data-alcode" content="a2">
+</head>
+
+
+<body data-alcode="255">
+
+<input type="hidden" value="1" id="relationType">
+<input type="hidden" value="<#if cms_video_att_source_mp4??>${cms_video_att_source_mp4.videoAttUrl}</#if>" id="videoMp4Src">
+<input type="hidden" value="${video.videoId?c}" id="resourceId">
+<input type="hidden" id="refCustomerId" value="${video.refCustomerId?c}"/>
+<input type="hidden" value="${videoAttUrlLogo!''}" id="playPic">
+<input type='hidden' id="shareImgSrc" value="${shareImgSrc!''}"/>
+<input type='hidden' id="videoType" value="${video.videoType!''}"/>
+<input type='hidden' id="bookId" value="${bookVideo.bookId!''}"/>
+<input type='hidden' id="catalogueId" value="${bookVideo.catalogueId!''}"/>
+
+<section class="al-mainInner">
+    <!--返回按钮-->
+    <figure class="al-videoBackBtn Ev-backBtn">
+        <img src="/images/img50/v3/video-detail/backBtn.png" alt=""/>
+    </figure>
+    <!--返回按钮结束-->
+    <!--视频被删除开始-->
+    <#if video??&&video.isValid=3>
+        <figure class="al-terminalNone">
+            <img src="/images/img50/pages/case/deleted.png" alt="">
+            <figcaption>
+                很抱歉，该视频已被作者删除
+            </figcaption>
+        </figure>
+    </#if>
+    <!--视频被删除结束-->
+
+    <!--视频被屏蔽开始-->
+    <#if video??&&video.isValid=0>
+        <figure class="al-terminalNone">
+            <img src="/images/img50/pages/case/deleted.png" alt="">
+            <figcaption>
+                很抱歉，该视频已被管理员屏蔽
+            </figcaption>
+        </figure>
+    </#if>
+    <!--视频被屏蔽结束-->
+
+    <#if video??&&video.isValid=1>
+
+        <!--视频区域-->
+        <figure class="al-termianlVideoHeader Ev-videoArea">
+            <!--新版分享-->
+            <section class="shareVideo Ev-shareBtn"><i></i>分享</section>
+            <!--新版分享 END-->
+            <div id="video" style="position: relative; z-index: 2;">
+                <video id="CKa1" class="video-js vjs-default-skin vjs-no-flex vjs-big-play-centered"><source></source></video>
+            </div>
+            <!--视频结束-->
+        </figure>
+        <!--视频区域结束-->
+    </#if>
+    <!--除视频播放器外的内容区-->
+    <section class="videoMainV2">
+        <section class="videoContV2 ev-videoContV2">
+            <#if video??&&video.isValid=1>
+                <#assign customer_page="//m.allinmd.cn/pages/personal/others_contribution.html?cid=${customer_auth.customerId?c}">
+                    <#if customer_auth.customerId?length==1>
+                        <#assign customer_page="javascript:;">
+                    </#if>
+                    <!--除了评论区外的区域开始-->
+                    <section class="ev-noReviewArea">
+                        <!--新版简介部分开始-->
+                        <section class="videoIntroduction" data-alcode-mod='535'>
+                            <aside class="title"><p class="al-titleName">${video.videoName!''}</p><span class="ev-absShowBtn">简介<i></i></span></aside>
+                            <aside class="scoreCont">
+                                <span class="ev-scoreNumBox" style="display: none;"><i class="ev-scoreNum"></i>分</span>
+                                <span><i class="Ev-browseNum"></i>浏览</span>
+                                <span><#if video.publishTime??><#if video.publishTime?length gt 10>${video.publishTime?substring(5,10)}</#if></#if>发布</span>
+                            </aside>
+                            <aside class="text">${video.videoAbstract!''}</aside><!--简介文本内容-->
+                            <#if bookVideo.videoType??>
+                                <#if bookVideo.videoType==19>
+                                    <#if bookVideo.docName??>
+                                        <!--所属文章开始（电子书视频时显示）-->
+                                        <aside class="videoColumn Ev-article" style="display: none;">所属文章：
+                                            <a class="Ev-articleName" href="${bookVideo.webStoragePath}">《${bookVideo.docName}》</a></aside>
+
+                                        <!--所属文章结束-->
+                                    </#if>
+                                </#if>
+                                <#else>
+                                    <!--所属会议开始-->
+                                    <aside class="videoColumn ev-joinMeeting" style="display: none;">所属会议：<a href="javascript:;"></a></aside>
+                                    <!--所属会议结束-->
+                            </#if>
+                            <!--所属活动开始-->
+                            <aside class="videoColumn Ev-activity" style="display: none;"><span></span><a class="Ev-actName" href="javascript:;"></a></aside>
+                            <!--所属活动结束-->
+                            <aside class="functionCont">
+                                <div class="ev-reviewPopShow"><i></i><span class="Ev-navReviewNum"></span>条热评</div>
+                                <div>
+                                    <p class="Ev-collectNum"><i></i><span>收藏</span></p>
+                                    <p class="Ev-praiseNum"><i></i><span>点赞</span></p>
+                                </div>
+                            </aside>
+                        </section>
+
+
+                        <#if bookVideo.videoType??>
+                            <#if bookVideo.videoType==19>
+                                <!--所属书籍开始-->
+                                <#if bookVideo.bookName??>
+                                    <section class="al-terminalMainContent al-terminalVideoSlider">
+                                        <h2>所属书籍</h2>
+                                        <section class="videoBook" data-alcode-mod='536'><a href="//m.allinmd.cn/pages/eBook/eBook_details.html?bId=${bookVideo.bookId?c}"><i></i>《${bookVideo.bookName}》</a></section>
+                                    </section>
+                                </#if>
+                                <!--所属书籍结束-->
+                            </#if>
+                            <#else>
+
+
+                                <!--作者开始-->
+                                <section class="authorCont">
+                                    <ul data-alcode-mod='510'>
+                                        <li>
+                                            <a href="${customer_page}" style="display:inline-block;">
+                                                <img src="${upload_author_logo.logoUrl}" alt=""/>
+                                            </a>
+                                            <aside>
+                                                <#if customer_auth??>
+                                                    <p><a class="Ev-authorName" href="${customer_page}">${customer_auth.lastName}${customer_auth.firstName}</a></p>
+                                                    <p>${customer_auth.medicalTitleShow}
+                                                        <span><#if customer_auth.company!="">${customer_auth.company!''}<#else>${customer_auth.schoolName!''}</#if></span>
+                                                    </p></#if>
+                                            </aside>
+                                        </li>
+                                    </ul>
+                                </section>
+
+                                <!--作者结束-->
+                        </#if>
+                        <!--新版简介部分结束-->
+                        <!--系列课开始
+                        <section class="al-terminalMainContent al-terminalVideoSlider Ev-seriesCourse" style="display: none;">
+                            <h2>系列课</h2>
+                            <section class="swiper-container Ev-terminalVideoSlideContent">
+                                <section class="swiper-wrapper Ev-sCListAppend">
+
+                                </section>
+                            </section>
+                        </section>
+                        系列课结束-->
+
+                        <!--系列视频开始-->
+                        <section class="al-terminalMainContent al-terminalVideoSlider Ev-seriesVideo" style="display: none;">
+                            <h2>系列内容</h2>
+                            <section class="swiper-container Ev-terminalVideoSlideContent">
+                                <section class="swiper-wrapper Ev-sVideoAppend" data-alcode-mod='513'>
+
+                                </section>
+                            </section>
+                        </section>
+                        <!--系列视频结束-->
+
+                        <!--推荐视频开始-->
+                        <section class="al-terminalMainContent Ev-recommendVideo" style="display: none;" data-alcode-mod='537'>
+
+                        </section>
+                        <!--推荐视频结束-->
+                        <!--相关产品开始-->
+                        <figure class="al-productRecommendPart" data-alcode-mod='504'>
+                            <figcaption>相关产品(<span class="num"></span>)</figcaption>
+                            <div class="al-productListMoveBox">
+                                <ul class="al-productRecommendListBox" id="al-productRecommendListBox"
+                                    style="width:3000px;position:relative;left:0;">
+                                </ul>
+                            </div>
+                        </figure>
+                        <!--相关产品结束-->
+                    </section>
+            </#if>
+            <!--除了评论区外的区域结束-->
+            <!--评论区开始-->
+            <section class="al-terminalMainContent al-terminalCommentContent Ev-discussArea">
+                <h2>
+                    评论(<span class="Ev-navReviewNum">0</span>)
+                    <section class="commentClose ev-commentClose" style="display: none;"></section>
+                    <section class="al-terminalSortChange">
+                        <button class="al-terminalSortChangeItem" sortType="3">最新</button>
+                        <button class="al-terminalSortChangeItem active" sortType="1">最旧</button>
+                    </section>
+                </h2>
+                <section class="commentInput Ev-discussBtn"><i></i>说说我的看法</section>
+                <section class="al-terminalComment">
+                    <div id="EQ_newReplyList" data-alcode-mod='499'>
+
+                    </div>
+                    <section class="al-terminalNoComment" style="display: none;">
+                        <span>暂无评论，快“加入讨论”参与进来~</span>
+                    </section>
+                </section>
+            </section>
+            <!--评论区结束-->
+
+            <!--没有更多-->
+            <article class="al-terminalFinish" style="display: none;">
+                ~<span>没有更多了</span>~
+            </article>
+            <!--没有更多结束-->
+        </section>
+        <!--简介展开内容区开始-->
+        <#if video??&&video.isValid=1>
+            <section class="introductionDetail ev-introDetail" style="display: none;">
+                <aside class="nav">简介<i></i></aside>
+                <section class="introductionDetailCont">
+                    <aside class="title">${video.videoName!''}</aside>
+                    <aside class="scoreCont">
+                        <span class="ev-scoreNumBox" style="display: none;"><i class="ev-scoreNum"></i>分</span>
+                        <span><i class="Ev-browseNum"></i>浏览</span>
+                        <span><#if video.publishTime??><#if video.publishTime?length gt 10>${video.publishTime?substring(5,10)}</#if></#if>发布</span>
+                    </aside>
+                    <div class="al-myScoreBox al-iAskScore">
+                        <span class="iScore">我要评分</span>
+                        <ul class="al-littleScoreStarBox">
+                            <li class="ev-startItem"><b></b></li>
+                            <li class="ev-startItem"><b></b></li>
+                            <li class="ev-startItem"><b></b></li>
+                            <li class="ev-startItem"><b></b></li>
+                            <li class="ev-startItem"><b></b></li>
+                        </ul>
+                        <p class="ev-scoreDetail">已有<span class="scoreNum"></span>人评分<b></b></p>
+                    </div>
+                    <aside class="videoDetailText">
+                        ${video.videoAbstract!''}
+                    </aside><!--简介文本内容-->
+                    <!--<aside class="introductionAuthor">简介纂写者：<span>呵呵</span></aside>-->
+
+                    <#if videoPropertyList?size gt 0>
+                        <aside class="videoDetailTag">
+                            <p>所属标签</p>
+                            <ul data-alcode-mod='498'>
+                                <#list videoPropertyList as property>
+                                    <li><a href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=${property.propertyId?c}">关节</a></li>
+                                </#list>
+                            </ul>
+                        </aside>
+                    </#if>
+                </section>  
+            </section>
+            <!--简介展开内容区结束-->
+        </#if>
+    </section>
+    <!--除视频播放器外的内容区结束-->
+</section>
+
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="//paas.allinmd.cn/modules/photoswipe/photoswipe.min.js"></script>
+<script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe-ui-default.js"></script>
+<script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+<script src="/js/react/JSXTransformer.js"></script>
+<script src="/js/react/react.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<script src="//paas.allinmd.cn/modules/allinmdplayer/video.js"></script>
+<script src="//paas.allinmd.cn/modules/allinmdplayer/videojs.allinmd.js"></script>
+<script src="/dest/pages/detail/detail_video.js"></script>
+<script type="text/jsx" src="/js/scene/case/comment.jsx" charset="utf-8"></script>
+</body>
+
+</html>

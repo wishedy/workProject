@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0">
+    <title>完善资料</title>
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <link href="/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.css" rel="stylesheet">
+    <!--build:css /dest/pages/passport/wanshanInfoConference.css-->
+    <link rel="stylesheet"  href="/css/common/base.css">
+    <link rel="stylesheet"  href="/css/common/main.css">
+    <link rel="stylesheet"  href="/css/common/top.css">
+    <link rel="stylesheet"  href="/css/scene/personal.css">
+    <link rel="stylesheet"  href="/css/scene/case.css">
+    <link rel="stylesheet"  href="/css/scene/auth.css">
+    <!--endbuild-->
+</head>
+<body>
+<section data-role="page" id="renzhengPage" class="content-page bg-f9 login">
+    <div id="successTip" class="hide"><img src="//img50.allinmd.cn/user/renzheng/tip-success.png" alt=""/></div>
+    <div id="loading_mask" style="display: none">
+        <div class="jxl_mask"></div>
+
+    </div>
+    <div class="login_width">
+        <input type="hidden" name="certificatesCodePic" id="certificatesCodePic"  data-role="none"  />
+        <div class="page-title">完善资料</div>
+        <div class="para fix">
+            亲爱的医师你好， <br/>
+            完善以下个人资料才可以继续浏览资源哦！
+        </div>
+
+        <form id="renzhengForm">
+            <div class="name_input n_i_margin fix">
+                <div class="name_xing">
+                    <div class="v3-input_parent">
+                        <div class="v3-input-wrap fix">
+                            <input type="text" name="lastName" id="lastName" placeholder="姓氏" data-role="none" />
+                        </div>
+                        <div class="l_warning hide"></div>
+                    </div>
+                </div>
+                <div class="name_ming name_margin">
+
+                    <div class="v3-input_parent">
+                        <div class="v3-input-wrap fix">
+                            <input type="text" name="firstName" id="firstName" placeholder="名字"  data-role="none"  />
+                        </div>
+                        <div class="l_warning hide"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="form-group-box">
+                <ul class="clearfix">
+                    <li class="arrow" id="areaExpertiseChoose">
+                        <div class="left">专业</div>
+                        <div class="text"></div>
+                    </li>
+                    <li class="arrow" id="companyChoose">
+                        <div class="left">医院</div>
+                        <div class="text"></div>
+                    </li>
+                    <li class="arrow" id="medicalTitleChoose">
+                        <div class="left">职称</div>
+                        <div class="text"></div>
+                    </li>
+                    <li>
+                        <div class="left" style="width:25%;">临床时间</div>
+                        <div class="text" style="width:60%;"> <select name="clinicalTime" id="clinicalTime">
+                            <option value="1-3年">1-3年</option>
+                            <option value="3-10年" selected>3-10年</option>
+                            <option value="10年以上">10年以上</option>
+                        </select></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="v3-blue-btn disabled"  id="submit">提交认证</div>
+
+        </form>
+    </div>
+</section>
+<section data-role="page" id="medicalTitlePage" class="content-page case_content">
+    <div class="case_header">
+        <div class="case_fh" id="back"><img src="//img50.allinmd.cn/case/fanhui.png"/></div>
+        <div class="new_case_title">选择职称</div>
+        <div class="clear"></div>
+    </div>
+    <div class="zc_content">
+        <div class="select01">
+            <ul class="add_tag_zc" id="medical01">
+
+            </ul>
+        </div>
+        <div class="select01">
+            <ul class="add_tag_zc" id="medical02">
+
+            </ul>
+        </div>
+        <div class="select01">
+            <ul class="add_tag_zc" id="medical03">
+
+            </ul>
+        </div>
+    </div>
+    <div class="bc_but"><img id="medicalTitleSave" src="//img50.allinmd.cn/personal_v2/baocun00@2x.png" /></div>
+</section>
+<section data-role="page" id="areasExpertisePage" class="content-page case_content" style="height:100% !important;">
+    <div class="baoxun_position" id="areasExpertiseSave">保存</div>
+    <div class="case_header">
+        <div class="case_fh" id="back"><a href="javascript:history.back(-1);" data-ajax="false"><img src="//img50.allinmd.cn/case/fanhui.png" /></a></div>
+        <div class="new_case_title">专业领域</div>
+        <div class="clear"></div>
+    </div>
+    <div class="zyly">
+        <ul class="add_tag_li">
+
+        </ul>
+    </div>
+</section>
+
+<section data-role="page" id="companyPage" class="content-page case_content" style="height:100% !important;">
+    <div id="sProvince">
+        <div class="case_header">
+            <div class="case_fh"><a href="javascript:history.back(-1);" data-ajax="false"><img id="back" src="//img50.allinmd.cn/case/fanhui.png" /></a></div>
+            <div class="new_case_title">任职医院</div>
+            <div class="clear"></div>
+        </div>
+        <div class="yy_content">
+            <div class="yy_search">
+                <img class="search_btn" src="//img50.allinmd.cn/personal_v2/sousuoyy.png" />
+            </div>
+            <div class="more_xx_title">
+                <div class="border_bottom">按省份选择医院</div>
+            </div>
+            <ul class="yy_select" id="province">
+
+            </ul>
+
+        </div>
+    </div>
+    <div id="sCity" style="display:none">
+        <div class="case_header">
+            <div class="case_fh"><img id="cityBack" src="//img50.allinmd.cn/case/fanhui.png" /></div>
+            <div class="new_case_title">任职医院</div>
+            <div class="clear"></div>
+        </div>
+        <div class="yy_content">
+            <div class="yy_search">
+                <img class="search_btn" src="//img50.allinmd.cn/personal_v2/sousuoyy.png" />
+            </div>
+            <div class="more_xx_title">
+                <div class="border_bottom">按城市选择医院</div>
+            </div>
+            <ul class="yy_select" id="city">
+
+            </ul>
+
+        </div>
+    </div>
+    <div id="sCompany" style="display:none">
+        <div class="case_header">
+            <div class="case_fh"><img id="companyBack" src="//img50.allinmd.cn/case/fanhui.png" /></div>
+            <div class="new_case_title">任职医院</div>
+            <div class="clear"></div>
+        </div>
+        <div class="yy_content">
+            <div class="yy_search">
+                <img class="search_btn" src="//img50.allinmd.cn/personal_v2/sousuoyy.png" />
+            </div>
+            <div class="more_xx_title">
+                <div class="border_bottom">请选择您任职的医院</div>
+            </div>
+            <ul class="yy_select" id="company">
+
+            </ul>
+            <div class="load"><img src="//img50.allinmd.cn/case/loading.gif"></div>
+            <div class="yy_none">没有找到?<span class="add">添加我任职的医院</span></div>
+        </div>
+    </div>
+
+    <div id="searchPop" class="search_com">
+        <div class="yy_search_input">
+            <div class="yy_s_input">
+                <input id="seachKey" type="text" data-role="none"/>
+                <div class="yy_s_close"><img src="//img50.allinmd.cn/personal_v2/close.png" /></div>
+            </div>
+            <div class="yy_sezrch_qx cancel">取消</div>
+            <div class="clear"></div>
+        </div>
+        <ul class="yy_select" id="search_list">
+
+        </ul>
+        <ul class="add_tag_li_loading">
+            <li>
+                <img src="//img50.allinmd.cn/case/loading.gif" />
+            </li>
+        </ul>
+        <div class="yy_none_search">
+            <div class="sorry_none">很抱歉，没有找到相关结果。</div>
+            <div class="add_yy_name">将 "<span class="name"></span>" <span class="addCompany">添加为我任职的医院</span></div>
+        </div>
+        <div class="yy_none">没有找到?<span class="add">添加我任职的医院</span></div>
+    </div>
+</section>
+
+<section data-role="page" id="addCompanyPage" class="content-page case_content" style="height:100% !important;">
+    <div class="case_header">
+        <div class="case_fh"><a href="javascript:history.back(-1);" data-ajax="false"><img id="back" src="//img50.allinmd.cn/case/fanhui.png" /></a></div>
+        <div class="new_case_title">添加医院</div>
+        <div class="clear"></div>
+    </div>
+    <div class="shuru_yy">请输入您所任职的医院的全称</div>
+    <div class="add_yy_text"><input id="companyName" type="text" data-role="none" placeholder="请填写"></div>
+    <div class="bc_but person_margin"><img id="addCompanySave" src="//img50.allinmd.cn/personal_v2/baocun00@2x.png" /></div>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.js"></script>
+<!--build:js /dest/pages/passport/wanshanInfoConference.js-->
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+<script src="/js/third-party/add-removeable-group-pic/plugin.readFile/plugin.readFile.js"></script>
+<script src="/js/third-party/add-removeable-group-pic/plugin.replaceInput/plugin.replaceInput.js"></script>
+<script src="/js/third-party/uploadReplace.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/jweixin-1.0.0.js"></script>
+<script src="/js/comm/WeixinJSApi.js"></script>
+<script src="/js/comm/Weixin_share.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/passport/renzheng/wanshanConference.js"></script>
+<!--endbuild-->
+</body>
+</html>

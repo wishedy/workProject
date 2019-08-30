@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+//首页——视频
+
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader";   //首页头部信息栏
+@import "../../components/_indexNavbar";   //首页导航栏
+@import "../../components/_contentModule"; //内容组件
+@import "../../components/_cancelModal";   //取消推荐按钮
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_updateBtnBar";  //查看每日每周更新按钮组
+@import "../../components/_footerBar"; //页脚功能栏
+.al-mainInner {
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+body {
+    padding-top: rem(180px);
+}
+
+.al-indexHeader,
+.al-indexNavbar {
+    //position: fixed;
+    z-index: 6;
+    left: 0;
+    right: 0;
+    top: rem(-1px)
+}
+
+
+.al-indexHeader{
+    height: rem(112.5px);
+}
+.al-indexHeaderItem {
+    line-height: rem(112.5px);
+    h1 {
+        @include font-dpr(20px);
+        height: 100%;
+        line-height: rem(112.5px);
+
+    }
+    &:nth-child(1) {
+        a {
+            display: block;
+            width: auto;
+            height: auto;
+            &:before{
+                height: 0.45333rem;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                vertical-align: top;
+            }
+        }
+    }
+    &:nth-child(3) {
+        a {
+            color: #626f8c;
+            @include font-dpr(14px);
+        }
+    }
+}
+
+.icon-download:before {
+    position: static;
+}
+.al-contentSeminarMark{
+    @extend %al-contentSeminarMark;
+}
+.icon-contentAuthor{
+    @extend %icon-contentAuthor;
+}
+.icon-contentWatchedNum{
+    @extend %icon-contentWatchedNum;
+}
+.icon-indexDownload{
+    @extend %icon-indexDownload;
+}
+.icon-search{
+    @extend %icon-search;
+}

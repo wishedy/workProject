@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>个人主页</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <!-- build-css base.css -->
+    <link rel="stylesheet" href="/css/v3/base.css">
+    <link rel="stylesheet" href="/css/v3/pages/personal/personal_index.css">
+    <link rel="stylesheet" href="/css/v3/pages/personal/personal_active.css"  type="text/css"/>
+    <!-- endbuild -->
+    
+    <!-- endbuild -->
+
+    <!--[if lt IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section class="test">
+
+</section>
+
+
+<!-- build-js base.js -->
+<script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/lib/jquery/jquery.form.js"></script>
+<script src="/js/lib/jquery/jquery-1.8.2.alpha.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.getUrlParams.js"></script>
+<script src="/js/comm/comm.equipment.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.fastError.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.dataAdapter.js"></script>
+<script src="/js/comm/comm.ajaxExistHtml.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<script src="/js/comm/comm.track.js"></script>
+<script src="/js/lib/jquery/jquery.cookie.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+<!-- endbuild -->
+
+
+<script src="/js/modules/resource-list-template/module.resource-list-template.js"></script>
+<script>
+	$(function(){
+		var html= '';
+		html= module.resourceListTemplate({tempName : "resource"})({
+            resType: 7,//资源类型传数字  1-视频，2-文库，3-会议，4-话题 ,7-病例,
+            resId:123123,//资源id
+            resName:"AAAA",//标题
+            resContent:"BBBBB",//内容
+            userName:"John",//作者
+            reviewNum:123,//观看数
+            resPic:'',//缩略图
+            playNum:23,//视频的时长   有值才传
+            resUrl:"/"//资源链接
+        });
+		
+		$('.test').append(html);
+	})
+</script>
+</body>
+
+</html>

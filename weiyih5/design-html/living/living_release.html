@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>直播详情</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/living/living_release.css">
+</head>
+
+<body>
+    <section class="al-mainInner">
+        <a href="" class="al-livingCancel"></a>
+        <header class="al-livingMode">
+            <figure class="al-livingModeItem on">
+                <img src="/images/img50/pages/living/Vertical_btn.png" alt="">
+                <img src="/images/img50/pages/living/Vertical_act_btn.png" alt="" role="act">
+                <figcaption>
+                    竖屏直播
+                </figcaption>
+            </figure>
+            <figure class="al-livingModeItem">
+                <img src="/images/img50/pages/living/Landscape_btn.png" alt="">
+                <img src="/images/img50/pages/living/Landscape_act_btn.png" alt="" role="act">
+                <figcaption>
+                    横屏直播
+                </figcaption>
+            </figure>
+        </header>
+        <section class="al-personalContent">
+            <section class="al-tableModule">
+                <article class="al-tableModuleItem">
+                    <h3>房间标题</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <input type="text" placeholder="请输入直播间标题(5-20字)">
+                    </figure>
+                </article>
+                <article class="al-tableModuleItem">
+                    <h3>直播分类</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <article class="al-tableModuleSelect">
+                            <select>
+                                <option value="0" selected="true">请选择直播分类</option>
+                            </select>
+                        </article>
+                    </figure>
+                </article>
+                <article class="al-tableModuleItem">
+                    <h3>直播时间</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <article class="al-tableModuleSelect">
+                            <select>
+                                <option value="0" selected="true">请选择直播分类</option>
+                            </select>
+                        </article>
+                    </figure>
+                </article>
+                <article class="al-tableModuleItem">
+                    <h3>直播时间</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <article class="al-tableModuleSelect">
+                            <select>
+                                <option value="0" selected="true">请选择直播分类</option>
+                            </select>
+                        </article>
+                    </figure>
+                </article>
+                <article class="al-tableModuleItem">
+                    <h3>房间公告</h3>
+                    <figure class="al-tableModuleItemInput" style="display:block;position: static;margin-top: 0.3rem">
+                        <input type="text" placeholder="请输入直播间标题">
+                        </textarea>
+                    </figure>
+                </article>
+                <article class="al-tableModuleItem imgUpload">
+                    <h3>选择封面</h3>
+                    <article class="al-tableModuleSelect">
+                        <figure class="al-tableModuleUploadImg">
+                            <img class="al-uploadTipsPic ev-attPath" src="/images/img50/pages/living/UplodeCover.png">
+                            <input type="file" name="file" refid="10" class="ev-attFile" id="attFile_10">
+                        </figure>
+                    </article>
+                </article>
+                <!-- 添加on为选中 -->
+                <article class="al-livingOpen on">
+                    <i class="icon-livingOpen"><span>同意将直播内容公开到唯医</span></i>
+                </article>
+                <section class="al-livingShare">
+                    <h2>邀请大家来看</h2>
+                    <section class="al-livingShareItemBox">
+                        <figure class="al-livingShareItem">
+                            <img src="/images/img50/pages/living/Share_Wechat_act_Openlive.png" alt="" rule="act">
+                            <img src="/images/img50/pages/living/Share_Wechat_Openlive.png" alt="" rule="">
+                        </figure>
+                        <figure class="al-livingShareItem">
+                            <img src="/images/img50/pages/living/Share_Friend_act_Openlive.png" alt="" rule="act">
+                            <img src="/images/img50/pages/living/Share_Friend_Openlive.png" alt="" rule="">
+                        </figure>
+                        <figure class="al-livingShareItem">
+                            <img src="/images/img50/pages/living/Share_QQ_act_Openlive.png" alt="" rule="act">
+                            <img src="/images/img50/pages/living/Share_QQ_Openlive.png" alt="" rule="">
+                        </figure>
+                        <figure class="al-livingShareItem on">
+                            <img src="/images/img50/pages/living/Share_QQZone_act_Openlive.png" alt="" rule="act">
+                            <img src="/images/img50/pages/living/Share_QQZone_Openlive.png" alt="" rule="">
+                        </figure>
+                        <figure class="al-livingShareItem">
+                            <img src="/images/img50/pages/living/Share_Sina_act_Openlive.png" alt="" rule="act">
+                            <img src="/images/img50/pages/living/Share_Sina_Openlive.png" alt="" rule="">
+                        </figure>
+                    </section>
+                </section>
+                <section class="al-livingCreate noReady">
+                    <button class="btn-primary-lg">创建</button>
+                </section>
+            </section>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script>
+    FastClick.attach(document.body);
+    $(".ordered").on("click", function() {
+        $(".al-bottomSelectorListMask").addClass("on");
+        //放弃
+        $(".giveup").on("click", function() {
+            window.location.href = "/pages/personal/customerInfoEdit.html";
+        });
+        //取消
+        $(".cancel").on("click", function() {
+            $(".al-bottomSelectorListMask").removeClass("on");
+        })
+    })
+    </script>
+</body>
+
+</html>

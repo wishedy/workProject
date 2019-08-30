@@ -1,0 +1,14 @@
+<template name="doctorMain$f18c0a38">
+  <view class="_ul data-v-d618dfae doc-guide-list">
+    <view class="_li data-v-d618dfae doc-guide-item" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" wx:for="{{doctorGuideList}}" wx:for-index="index" wx:for-item="item">
+      <view class="_div data-v-d618dfae doc-guide-left">
+        <image src="{{item.coverUrl}}" alt="图片加载失败" class="_img data-v-d618dfae node-img"></image>
+      </view>
+      <view class="_div data-v-d618dfae doc-guide-middle">
+        <view class="_h3 data-v-d618dfae guide-title">{{item.manualName}}</view>
+        <view class="_p data-v-d618dfae guide-content">共{{item.articleNum}}篇</view>
+      </view>
+      <view class="_div data-v-d618dfae doc-guide-right"></view>
+    </view>
+  </view>
+</template>

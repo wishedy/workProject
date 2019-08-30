@@ -1,0 +1,1473 @@
+@charset "UTF-8";
+html,
+body {
+    font-family: 'Microsoft Yahei', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #66657f;
+    background-color: #F6F6FA;
+}
+
+/*reset*/
+html {
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-shadow: none;
+}
+
+html * {
+    outline: 0;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+}
+
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+abbr,
+acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+    font-style: normal;
+    font-weight: 500;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+
+q:before,
+q:after {
+    content: "";
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ins,
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.ui-page-theme-a a:hover,
+html .ui-bar-a a:hover,
+html .ui-body-a a:hover,
+html body .ui-group-theme-a a:hover {
+    color: #66657f;
+}
+
+section.main {
+    overflow: hidden;
+}
+
+/*头部轮播*/
+.imageTitle {
+    width: 100%;
+    background-color: #058;
+}
+.imageTitle .imageSlide {
+    text-align: center;
+}
+.imageTitle .imageSlide img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.backToHome {
+    position: absolute;
+    width: 0.69333rem;
+    height: 0.69333rem;
+    top: 0.26667rem;
+    left: 0.26667rem;
+    z-index: 2;
+}
+.backToHome img {
+    width: 100%;
+    vertical-align: top;
+}
+
+/*导航条
+ *项目为6项时要求滑动查看
+ *届时添加类.moreNavItem至topNavBar
+ */
+.topNavbar {
+    height: 1.06667rem;
+    background-color: #fff;
+    text-align: center;
+}
+.topNavbar .navbarBox {
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    height: 100%;
+}
+.topNavbar .navbarText {
+    font-size: 0.4rem;
+    margin: 0 0.2rem;
+    color: #66657f;
+    position: relative;
+    display: block;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+.topNavbar .navbarText.on {
+    color: #7f5fc8;
+}
+.topNavbar .navbarText.on:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.04rem;
+    background-color: #7f5fc8;
+    position: absolute;
+    bottom: -0.26667rem;
+    left: 0;
+}
+
+.topNavbarSix {
+    height: 1.06667rem;
+    background-color: #fff;
+    text-align: center;
+}
+.topNavbarSix .swiper-wrapper {
+    width: auto !important;
+}
+.topNavbarSix .navbarText {
+    font-size: 0.4rem;
+    position: relative;
+    line-height: 1.06667rem;
+    color: #66657f;
+    width: auto !important;
+    margin: 0 0.5rem;
+}
+.topNavbarSix .navbarText.on {
+    color: #7f5fc8;
+}
+.topNavbarSix .navbarText.on:after {
+    content: "";
+    width: 100%;
+    height: 0.04rem;
+    background-color: #7f5fc8;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/*on:添加于.navbarText，当前页打开时添加*/
+.pageFooter {
+    text-align: center;
+    background-color: #fff;
+    height: 1.30667rem;
+    line-height: 1.30667rem;
+    margin-top: 1.6rem;
+    border-top: 1px solid #eae8ee;
+}
+.pageFooter .footerItem {
+    display: inline-block;
+}
+.pageFooter .footerItem a {
+    font-size: 0.32rem;
+    color: #0c8ef3;
+}
+.pageFooter .hr {
+    width: 1px;
+    height: 0.26667rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.34667rem;
+    background-color: #a8a8a9;
+}
+.pageFooter .footerHome:before {
+    content: "";
+    width: 0.32rem;
+    height: 0.30667rem;
+    display: inline-block;
+    background: transparent url("//img50.allinmd.cn/column/bayer_race/footerHome.png") center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: 0.16rem;
+}
+.pageFooter .footerDownload:before {
+    content: "";
+    width: 0.32rem;
+    height: 0.30667rem;
+    display: inline-block;
+    background: transparent url("//img50.allinmd.cn/column/bayer_race/footerDL.png") center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: 0.16rem;
+}
+.pageFooter .footerBackToTop:before {
+    content: "";
+    width: 0.32rem;
+    height: 0.30667rem;
+    display: inline-block;
+    background: transparent url("//img50.allinmd.cn/column/bayer_race/footerBack.png") center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: 0.16rem;
+}
+
+.pageFooter.takeInBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.upFile {
+    background-color: #DA278D;
+    margin-right: 0.4rem;
+    border-radius: 0.46667rem;
+}
+.upFile:before {
+    content: "";
+    width: 0.56rem;
+    height: 0.4rem;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent url("//img50.allinmd.cn/column/bayer_race/upFile.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.share {
+    background-color: #2398F4;
+    border-radius: 0.46667rem;
+}
+.share:before {
+    content: "";
+    width: 0.48rem;
+    height: 0.48rem;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent url("//img50.allinmd.cn/column/bayer_race/share.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+
+/*内容区基本共用样式*/
+.generalPart {
+    border-top: 1px solid #eae8ee;
+    border-bottom: 1px solid #eae8ee;
+    background-color: #fff;
+    margin-top: 0.26667rem;
+    font-size: 0.4rem;
+    text-shadow: none;
+}
+
+.generalTitle {
+    font-size: 0.42667rem;
+    color: #1f1f1f;
+    line-height: 1.04rem;
+    height: 1.04rem;
+    padding-left: 0.32rem;
+    border-bottom: 1px solid #dfdde4;
+    position: relative;
+}
+.generalTitle span {
+    color: #66657f;
+}
+.generalTitle:before {
+    content: "";
+    width: 0.08rem;
+    height: 0.42667rem;
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.21333rem;
+    left: 0;
+    background: transparent url("//img50.allinmd.cn/column/bayer_race/beforeTitle.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.generalText {
+    color: #66657f;
+}
+
+.generalMore {
+    text-align: center;
+    height: 1.17333rem;
+    line-height: 1.17333rem;
+}
+.generalMore a {
+    font-size: 0.4rem;
+    color: #66657f;
+}
+.generalMore a:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.13333rem;
+    width: 0.29333rem;
+    height: 0.32rem;
+    background: transparent url("//img50.allinmd.cn/column/bayer_race/moreArrow.png") left top no-repeat;
+    background-size: 100% 100%;
+}
+
+/*复活banner*/
+.revive {
+    margin-top: 0.26667rem;
+}
+.revive a {
+    width: 100%;
+}
+.revive a img {
+    width: 100%;
+    vertical-align: top;
+}
+
+/*复活排行榜*/
+.revive {
+    margin-top: 0.26667rem;
+}
+.revive a {
+    width: 100%;
+}
+.revive a img {
+    width: 100%;
+    vertical-align: top;
+}
+
+/*复活排行榜*/
+.reviveRankItem {
+    color: #9c9c9d;
+    font-size: 0.32rem;
+}
+.reviveRankItem .rankNum {
+    width: 0.50667rem;
+    height: 0.50667rem;
+    line-height: 0.50667rem;
+    text-align: center;
+    font-style: normal;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-left: -0.68rem;
+    margin-top: -0.30667rem;
+    background: transparent url("//img50.allinmd.cn/column/bayer_race/norZan.png") center center no-repeat;
+    background-size: cover;
+}
+.reviveRankItem:nth-last-child(1) {
+    border-bottom: none;
+}
+
+.reviveRankTop.reviveRankItem .rankNum {
+    background: transparent url("//img50.allinmd.cn/column/bayer_race/topZan.png") center center no-repeat;
+    background-size: cover;
+}
+
+.reviveRankItem {
+    display: block;
+    border-bottom: 1px solid #eae8ee;
+    margin-left: 0.93333rem;
+    position: relative;
+}
+.reviveRankItem .area {
+    display: inline-block;
+    width: 2rem;
+}
+.reviveRankItem h3 {
+    display: inline-block;
+    font-size: 0.4rem;
+    color: #1f1f1f;
+    width: 2rem;
+}
+.reviveRankItem .zanNum {
+    font-size: 0.4rem;
+    color: #1f1f1f;
+    text-align: center;
+    display: inline-block;
+    width: 1.06667rem;
+}
+.reviveRankItem .hr {
+    width: 1px;
+    height: 0.61333rem;
+    margin: 0.33333rem 0;
+    margin-left: 1.6rem;
+    margin-right: 0.4rem;
+    background-color: #ececec;
+    display: inline-block;
+    vertical-align: middle;
+}
+.reviveRankItem .clickZan {
+    margin-right: 0.37333rem;
+}
+
+/*新增分享区域*/
+.videoPK_share_pop {
+    width: 100%;
+    height: 4.26667rem;
+    background: #efeff4;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+    box-shadow: 7px 3px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.vPK_share_cont {
+    position: absolute;
+    top: -0.46667rem;
+    width: 81.25%;
+    z-index: 12;
+    left: 0;
+    height: 2.98667rem;
+    border-bottom: 1px solid #e6e9ea;
+    background: #fff;
+    padding: 0 9.375% 0.5em 9.375%;
+}
+
+.vPK_share_list {
+    width: 70%;
+    height: 2.98667rem;
+    margin: 0 auto;
+}
+
+.clear {
+    height: 0;
+    clear: both;
+    overflow: hidden;
+}
+
+#videoPK_sharebtn a {
+    display: block;
+    width: 1.28rem;
+    height: 1.28rem;
+    margin: 0 auto;
+    float: left;
+    text-align: center;
+}
+
+.share_sina_icon {
+    width: 1.28rem;
+    height: 1.28rem;
+    margin: 0 auto;
+}
+
+.share_qzone_icon {
+    width: 1.28rem;
+    height: 1.28rem;
+    margin: 0 auto;
+}
+
+.share_sina_icon img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.share_sina_text {
+    font-size: 0.32rem;
+    color: #333;
+    margin-top: 0.13333rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.share_qq_icon img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.share_qzone_icon img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#videoPK_sharebtn .share_qq {
+    margin: 0 22%;
+}
+
+#videoPK_sharebtn .share_qzone {
+    float: right;
+}
+
+.share_dao {
+    font-size: 0.37333rem;
+    color: #333;
+    line-height: 1;
+    text-align: center;
+    margin: 0.30667rem 0 0.14667rem 0;
+}
+
+.share_quxiao {
+    background: #868c95;
+    border-radius: 3px;
+    width: 93.75%;
+    line-height: 2.53;
+    border: solid 1px #7a7f89;
+    position: absolute;
+    bottom: 0.47em;
+    left: 3.125%;
+    font-size: 0.45333rem;
+    color: #fff;
+    text-align: center;
+    text-shadow: none;
+}
+
+.ui-popup-container {
+    z-index: 1100;
+    display: inline-block;
+    position: absolute;
+    padding: 0;
+    outline: 0;
+}
+
+#popupBasic2 {
+    padding: 1em;
+    background: #333;
+    color: #eee;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.ui-popup > p,
+.ui-popup > h1,
+.ui-popup > h2,
+.ui-popup > h3,
+.ui-popup > h4,
+.ui-popup > h5,
+.ui-popup > h6 {
+    margin: .5em .4375em;
+}
+
+#popupBasic2 a {
+    color: white;
+}
+
+.ui-btn.ui-btn-b {
+    background-color: #333;
+    border-color: #1f1f1f;
+    color: #fff;
+    text-shadow: 0 1px 0 #111;
+    right: -11px;
+    position: absolute;
+    top: -11px;
+    margin: 0;
+    z-index: 1101;
+    border-radius: 1em;
+    padding: 0;
+    width: 1.75em;
+    height: 1.75em;
+    text-indent: -9999px;
+    white-space: nowrap !important;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+.ui-loader-default {
+    display: none;
+}
+
+/*全部赛区列表*/
+.allArea .allAreaTitle {
+    border-bottom: none;
+}
+
+.areaList {
+    overflow: hidden;
+    margin-top: 0.16rem;
+    margin-left: 0.4rem;
+}
+.areaList .areaListItem.no-areaListItem {
+    border: 1px solid #c5c4d2;
+}
+.areaList .areaListItem.no-areaListItem a {
+    color: #c5c4d2;
+}
+.areaList .areaListItem {
+    float: left;
+    font-size: 0.4rem;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+    box-sizing: border-box;
+    border: 1px solid #7f5fc8;
+    border-radius: 0.06667rem;
+    height: 0.8rem;
+    width: 2rem;
+    text-align: center;
+    line-height: 0.8rem;
+    vertical-align: middle;
+}
+.areaList .areaListItem a {
+    color: #7f5fc8;
+}
+
+/*活动时间轴部分*/
+.timeLineList {
+    padding: 0.53333rem 0.4rem;
+    position: relative;
+}
+.timeLineList ul {
+    overflow: hidden;
+    text-align: center;
+}
+.timeLineList .line {
+    width: 9.05333rem;
+    height: 0.05333rem;
+    position: absolute;
+    margin-top: -0.89333rem;
+    left: 50%;
+    margin-left: -4.52667rem;
+    z-index: 1;
+}
+.timeLineList .line img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.timeLineMain.on {
+    color: #D71181;
+}
+
+.timeLineMain {
+    display: inline-block;
+    text-align: center;
+    width: 1.7rem;
+}
+.timeLineMain .timeLineTitle {
+    font-size: 0.32rem;
+}
+.timeLineMain .timeLineTitle h2 {
+    font-weight: 700;
+}
+.timeLineMain .activeTime {
+    font-size: 0.22667rem;
+    white-space: nowrap;
+}
+.timeLineMain .timeLinePoint {
+    width: 0.32rem;
+    height: 0.32rem;
+    display: inline-block;
+    padding: 0.26667rem 0.2rem;
+    position: relative;
+    background-color: #fff;
+    z-index: 2;
+}
+.timeLineMain .timeLinePoint img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.headTitle {
+    background-color: #3B3438;
+    width: 100%;
+    height: 1.17333rem;
+    text-align: center;
+    line-height: 1.17333rem;
+    position: relative;
+    text-shadow: none;
+}
+.headTitle h2 {
+    font-size: 0.50667rem;
+    color: #fff;
+}
+.headTitle a {
+    width: 0.66667rem;
+    height: 0.66667rem;
+    position: absolute;
+    left: 0.26667rem;
+    margin-top: -0.33333rem;
+    top: 50%;
+    background: url("/images/img50/column/activityTemplate/backIcon_white01.png") no-repeat 0.1rem 0.1rem;
+    background-size: 0.3rem 0.5rem;
+    display: inline-block;
+}
+
+
+
+
+/*shareAll分享样式*/
+
+.al-bottomSelectorListMask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 6;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .15s linear;
+    -webkit-transition: opacity .15s linear
+}
+
+.al-bottomSelectorListMask.on {
+    opacity: 1;
+    visibility: visible
+}
+
+.al-bottomSelectorListMask.on .al-bottomSelectorListBox {
+    opacity: 1;
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transform: translateY(0)
+}
+
+.al-bottomSelectorListBox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    background-color: #EFF4F8;
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transition: all .15s linear;
+    -webkit-transition: all .15s linear
+}
+
+.al-bottomSelectorList {
+    background-color: #fff
+}
+
+.al-bottomSelectorItem {
+    height: 1.33333rem;
+    text-align: center;
+    line-height: 1.33333rem;
+    font-size: 18px;
+    border-bottom: 1px solid #e4e9ed
+}
+
+[data-dpr="2"] .al-bottomSelectorItem {
+    font-size: 36px
+}
+
+[data-dpr="3"] .al-bottomSelectorItem {
+    font-size: 54px
+}
+
+.al-bottomSelectorItem a {
+    color: #333;
+    display: block
+}
+
+.al-bottomSelectorItem.active a {
+    color: #3598db
+}
+
+.al-bottomSelectorItem.title a {
+    color: #909090
+}
+
+.mgt {
+    margin-top: .26667rem
+}
+
+.al-bottomSelectorItem.al-bottomSelectorTitle a {
+    font-size: 15px;
+    color: #909090
+}
+
+[data-dpr="2"] .al-bottomSelectorItem.al-bottomSelectorTitle a {
+    font-size: 30px
+}
+
+[data-dpr="3"] .al-bottomSelectorItem.al-bottomSelectorTitle a {
+    font-size: 45px
+}
+
+.EV-giveUpConfig a {
+    color: #f34b4b
+}
+
+.al-bottomSelectorItem.al-bottomShareListBox {
+    height: auto;
+    text-align: center;
+    padding: .8rem 0
+}
+
+.al-bottomSelectorItem.al-bottomShareListBox h2 {
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: .8rem;
+    position: relative
+}
+
+[data-dpr="2"] .al-bottomSelectorItem.al-bottomShareListBox h2 {
+    font-size: 24px
+}
+
+[data-dpr="3"] .al-bottomSelectorItem.al-bottomShareListBox h2 {
+    font-size: 36px
+}
+
+.al-bottomSelectorItem.al-bottomShareListBox h2:after,
+.al-bottomSelectorItem.al-bottomShareListBox h2:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.86667rem;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    background-color: #dbdbdb
+}
+
+.al-bottomSelectorItem.al-bottomShareListBox h2:after {
+    right: 1.33333rem
+}
+
+.al-bottomSelectorItem.al-bottomShareListBox h2:before {
+    left: 1.33333rem
+}
+
+.al-bottomSelectorItem.al-bottomShareListBox .al-bottomShareItem {
+    display: inline-block;
+    padding: 0 .53333rem
+}
+
+.al-bottomSelectorItem.al-bottomShareListBox ul {
+    list-style: none;
+    line-height: 1
+}
+
+.al-bottomSelectorItem.al-bottomShareListBox .al-bottomShareImg {
+    width: 1.06667rem;
+    height: 1.06667rem;
+    border-radius: 50%;
+    background-color: transparent;
+    margin: 0 auto
+}
+
+.al-bottomSelectorItem.al-bottomShareListBox .al-bottomShareImg img {
+    width: 100%;
+    vertical-align: top;
+    height: 100%
+}
+
+.al-bottomSelectorItem.al-bottomShareListBox figcaption {
+    font-size: 12px;
+    line-height: 1;
+    margin-top: .26667rem
+}
+
+[data-dpr="2"] .al-bottomSelectorItem.al-bottomShareListBox figcaption {
+    font-size: 24px
+}
+
+[data-dpr="3"] .al-bottomSelectorItem.al-bottomShareListBox figcaption {
+    font-size: 36px
+}
+
+
+
+
+.headBanner {
+    width: 100%;
+    height: 5.66667rem;
+    text-shadow: none;
+}
+.headBanner .headBannerItem {
+    height: 100%;
+}
+.headBanner .swiper-pagination {
+    text-align: center;
+}
+.headBanner .swiper-pagination .swiper-pagination-bullet {
+    background-color: transparent;
+    border: 2px solid #fff;
+    margin: 0 0.04rem;
+}
+.headBanner .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #fff;
+}
+
+/*.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    left: -0.4rem;
+    bottom: 0.37333rem;
+}*/
+
+.headBannerItem {
+    position: relative;
+    width: 100%;
+}
+.headBannerItem img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+.headBannerItem .areaRaceImgTitle {
+    position: absolute;
+    bottom: 0;
+    font-size: 0.37333rem;
+    color: #fff;
+    left: 0;
+    right: 0;
+    padding: 0 0.26667rem;
+    padding-bottom: 0.4rem;
+    font-weight: normal;
+    background: -webkit-linear-gradient(bottom, black 0%, transparent 100%);
+    background: linear-gradient(to top, black 0%, transparent 100%);
+}
+.headBannerItem .areaRaceImgTitle .title {
+    display: inline-block;
+    width: 6rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+.headBannerItem .areaRaceImgTitle .author {
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+}
+
+/*精彩现场*/
+.broveShowList {
+    margin: 0.53333rem 0 0 0.4rem;
+    overflow: hidden;
+    padding-bottom: 0.53333rem;
+    border-bottom: 1px solid #d9d9e1;
+}
+.broveShowList:nth-last-child(1) {
+    border: none;
+}
+
+.broveShowImg {
+    width: 2.8rem;
+    height: 1.85333rem;
+    float: left;
+    border: 0.04rem solid #d5d5d5;
+    overflow: hidden;
+    text-align: center;
+    padding: 1px;
+    position: relative;
+}
+.broveShowImg img {
+    width: 100%;
+    vertical-align: middle;
+}
+.broveShowImg figure.levelUpIcon {
+    width: 1.33333rem;
+    height: 0.88rem;
+    position: absolute;
+    top: -1px;
+    left: -2px;
+    display: none;
+}
+.broveShowImg figure.levelUpIcon img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.broveShowList.levelUp .levelUpIcon {
+    display: block;
+}
+
+.broveShowText {
+    margin-left: 3.17333rem;
+    margin-right: 0.4rem;
+}
+.broveShowText a {
+    font-size: 0.4rem;
+    line-height: 0.58667rem;
+    color: #66657f;
+}
+.broveShowText a span {
+    font-size: 0.4rem;
+    color: #66657f;
+}
+.broveShowText p {
+    margin-top: 0.26667rem;
+}
+.broveShowText span {
+    font-size: 0.29333rem;
+    color: #969696;
+}
+.broveShowText .userName {
+    margin-right: 0.4rem;
+}
+.broveShowText .userName:before {
+    content: "";
+    width: 0.28rem;
+    height: 0.26667rem;
+    display: inline-block;
+    background: transparent url("//img50.allinmd.cn/column/bayer_race/doctor.png") center center no-repeat;
+    background-size: contain;
+    margin-right: 0.13333rem;
+    vertical-align: middle;
+}
+.broveShowText .watchNum:before {
+    content: "";
+    width: 0.32rem;
+    height: 0.26667rem;
+    display: inline-block;
+    background: transparent url("//img50.allinmd.cn/column/bayer_race/place.png") center center no-repeat;
+    background-size: contain;
+    margin-right: 0.13333rem;
+    vertical-align: middle;
+}
+
+.broveMore {
+    border-top: 1px solid #eae8ee;
+}
+/*淘汰赛阶段赛区列表*/
+.halfList {
+    text-align: center;
+    margin-bottom: 0.4rem;
+    overflow: hidden;
+}
+.halfList li {
+    font-size: 0.4rem;
+    width: 2.13333rem;
+    height: 0.93333rem;
+    display: inline-block;
+    line-height: 0.93333rem;
+}
+.halfList li a {
+    color: #fff;
+}
+.halfList li:nth-child(1) {
+    background-color: #7f5fc8;
+}
+.halfList li:nth-child(2) {
+    background-color: #7f5fc8;
+}
+.halfList li:nth-child(3) {
+    background-color: #7f5fc8;
+}
+.halfList li:nth-child(4) {
+    background-color: #d71181;
+}
+.halfList .no-areaListItem {
+    background-color: #e0e0e5 !important;
+}
+.halfList .no-areaListItem a {
+    color: #66657f;
+}
+/*拜耳赛区详情页新增20170419*/
+div {
+    max-height: 100%;
+}
+.spTemp_left {
+    float: left;
+}
+.spTemp_right {
+    float: right;
+}
+.resource_rank {
+    background: #fff;
+    margin-top: 0.27rem;
+}
+.resource_rank header {
+    width: 100%;
+    padding: 0.66667rem 0 0.69333rem 0;
+    text-align: center;
+}
+.resource_rank header p {
+    font-size: 16px;
+    color: #333333;
+}
+[data-dpr="2"] .resource_rank header p {
+    font-size: 32px;
+}
+[data-dpr="3"] .resource_rank header p {
+    font-size: 48px;
+}
+
+/*活动模板新增的样式*/
+.case_cont_right {
+    position: relative;
+}
+.case_cont_right  a {
+    display : block;
+}
+.case_cont_right .bg {
+    width: 2.8rem;
+    height: 1.86667rem;
+}
+.case_cont_right .actLabel {
+    font-size: 11px;
+    width: 0.6rem;
+    height: 0.77333rem;
+    line-height: 1rem;
+    color: #fff;
+    position: absolute;
+    left: 0.13333rem;
+    top: 0;
+    text-align: center;
+}
+[data-dpr="2"] .case_cont_right .actLabel {
+    font-size: 22px;
+}
+[data-dpr="3"] .case_cont_right .actLabel {
+    font-size: 33px;
+}
+
+.act_case_cont_left {
+    width: 5.13333rem;
+}
+
+.act_case_cont_left, .act_case_cont {
+    word-break: break-all;
+    word-wrap: break-word;
+    padding-left: 1rem;
+    position: relative;
+}
+.act_case_cont_left .actLabel, .act_case_cont .actLabel {
+    font-size: 11px;
+    width: 0.6rem;
+    height: 0.77333rem;
+    line-height: 1rem;
+    color: #fff;
+    position: absolute;
+    left: 0.13333rem;
+    top: 0;
+    text-align: center;
+}
+[data-dpr="2"] .act_case_cont_left .actLabel, [data-dpr="2"] .act_case_cont .actLabel {
+    font-size: 22px;
+}
+[data-dpr="3"] .act_case_cont_left .actLabel, [data-dpr="3"] .act_case_cont .actLabel {
+    font-size: 33px;
+}
+.act_case_cont_left .title, .act_case_cont .title {
+    margin-bottom: 0.42667rem;
+    margin-top: -0.08rem;
+}
+.act_case_cont_left .title a, .act_case_cont .title a {
+    font-size: 17px;
+    color: #222222;
+}
+[data-dpr="2"] .act_case_cont_left .title a, [data-dpr="2"] .act_case_cont .title a {
+    font-size: 34px;
+}
+[data-dpr="3"] .act_case_cont_left .title a, [data-dpr="3"] .act_case_cont .title a {
+    font-size: 51px;
+}
+.act_case_cont_left .doctor_info span, .act_case_cont .doctor_info span {
+    font-size: 11px;
+    color: #909090;
+}
+[data-dpr="2"] .act_case_cont_left .doctor_info span, [data-dpr="2"] .act_case_cont .doctor_info span {
+    font-size: 22px;
+}
+[data-dpr="3"] .act_case_cont_left .doctor_info span, [data-dpr="3"] .act_case_cont .doctor_info span {
+    font-size: 33px;
+}
+.act_case_cont_left .doctor_info .prof, .act_case_cont .doctor_info .prof {
+    margin: 0 0.21333rem;
+}
+.act_case_cont_left .doctor_info .case_author, .act_case_cont .doctor_info .case_author {
+    display: inline-block;
+    width: 0.29333rem;
+    height: 0.29333rem;
+    background: url(/images/img50/column/specialTemplate/name.png) no-repeat center center;
+    background-size: 0.29333rem 0.29333rem;
+    vertical-align: top;
+    margin-right: 0.13333rem;
+    margin-top: 0.06667rem;
+}
+.case_content {
+    padding-bottom: 60px;
+}
+.case_content:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.case_content .act_list_type span {
+    font-size: 12px;
+    color: #909090;
+    margin-right: 0.16rem;
+}
+[data-dpr="2"] .case_content .act_list_type span {
+    font-size: 24px;
+}
+[data-dpr="3"] .case_content .act_list_type span {
+    font-size: 36px;
+}
+.case_content .act_list_type .act_icons {
+    margin-right: 0.18667rem;
+    padding: 0.02667rem 0.06667rem;
+    border-radius: 0.02667rem;
+}
+.case_content .act_list_type .video_icon {
+    color: #FF9E31;
+    border: 1px solid #FF9E31;
+}
+.case_content .act_list_type .case_icon {
+    color: #2899E6;
+    border: 1px solid #2899E6;
+}
+.case_content .act_list_type .doc_icon {
+    color: #FF6831;
+    border: 1px solid #FF6831;
+}
+.case_content .act_list_type .topic_icon {
+    color: #9BCC4E;
+    border: 1px solid #9BCC4E;
+}
+.case_content .act_list_social {
+    margin-top: 0.32rem;
+}
+.case_content .act_list_social span {
+    font-size: 12px;
+    color: #909090;
+    margin-right: 0.26667rem;
+}
+[data-dpr="2"] .case_content .act_list_social span {
+    font-size: 24px;
+}
+[data-dpr="3"] .case_content .act_list_social span {
+    font-size: 36px;
+}
+
+.rank_list_border {
+    padding: 0.53333rem 0.4rem 0.4rem 0.4rem;
+    border-bottom: 1px solid #e4e9ed;
+}
+.case_cont_left {
+    width: 6.13333rem;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.case_cont_left .title {
+    margin-bottom: 0.42667rem;
+    margin-top: -0.08rem;
+}
+.case_cont_left .title a {
+    font-size: 17px;
+    color: #222222;
+}
+[data-dpr="2"] .case_cont_left .title a {
+    font-size: 34px;
+}
+[data-dpr="3"] .case_cont_left .title a {
+    font-size: 51px;
+}
+
+
+.spTemp_list_videoTime {
+    box-sizing: border-box;
+    width: 1.6rem;
+    height: 0.42667rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: url(/images/img50/column/specialTemplate/check-bg.png) no-repeat;
+    background-size: 1.6rem 0.4rem;
+    color: #fff;
+    font-size: 11px;
+    text-align: right;
+    padding-right: 0.13333rem;
+}
+[data-dpr="2"] .spTemp_list_videoTime {
+    font-size: 22px;
+}
+[data-dpr="3"] .spTemp_list_videoTime {
+    font-size: 33px;
+}
+
+.btn_small {
+    width: 0.77333rem;
+    height: 0.77333rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -0.38667rem;
+    margin-top: -0.38667rem;
+}
+.btn_small img {
+    width: 100%;
+    height: 100%;
+}
+
+/*分享*/
+.al-scrollShareBtn {
+    position: fixed;
+    right: 0.4rem;
+    bottom: 1.6rem;
+    width: 1.81333rem;
+    height: 0.93333rem;
+    line-height: 0.93333rem;
+    background-color: #2899e6;
+    font-size: 13px;
+    border-radius: 0.66667rem;
+    color: #fff;
+    text-align: center;
+    opacity: 0.9;
+    z-index: 5;
+}
+[data-dpr="2"] .al-scrollShareBtn {
+    font-size: 26px;
+}
+[data-dpr="3"] .al-scrollShareBtn {
+    font-size: 39px;
+}
+.al-ShareBtnApp{
+    bottom: 0.6667rem;
+}
+.icon-scrollShare:before {
+    content: "";
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    vertical-align: middle;
+    margin-right: 0.13333rem;
+    background: url("/images/img50/pages/index/shareBtn_icon.png") no-repeat;
+    background-size:contain;
+    margin-top: -0.05333rem;
+}
+.bayer_promotion{
+    background:url('/images/img50/column/bayer_race/bayer_promotion01.png') no-repeat;background-size:cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:1.4rem;
+    height:1.1rem;
+}
+.al-actAreaColor {
+    color: #7d66b9;
+}
+
+.al-actListTitleBox{
+    position: relative;
+    height:1.86667rem;
+}
+.al-actListTitleBox .act_list_type{
+    position: absolute;
+    bottom: 0;
+    font-size: 0;
+}

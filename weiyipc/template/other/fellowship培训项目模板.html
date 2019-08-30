@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><#if fellowship_main??>
+        <#if fellowship_main.fellowshipMainId==1429334288079>
+            青年医师培训项目
+            <#elseif fellowship_main.fellowshipMainId==1429334241535>
+                海外Fellowship项目
+        </#if>
+    </#if></title>
+
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<link rel="dns-prefetch" href="//comm.allinmd.cn">
+	<link rel="dns-prefetch" href="//modules.allinmd.cn">
+	<link rel="dns-prefetch" href="//plugins.allinmd.cn">
+	<link rel="dns-prefetch" href="//other.allinmd.cn">
+	<link rel="dns-prefetch" href="//scene.allinmd.cn">
+	<link rel="dns-prefetch" href="//img00.allinmd.cn">
+	<link rel="dns-prefetch" href="//img10.allinmd.cn">
+	<link rel="dns-prefetch" href="//img99.allinmd.cn">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+	<link href="//comm.allinmd.cn/base.css" rel="stylesheet" type="text/css"/>
+    <link href="//modules.allinmd.cn/lib.css" rel="stylesheet" type="text/css"/>
+
+    <link href="//other.allinmd.cn/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css" />
+    <link href="//other.allinmd.cn/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="reltive">
+<div id="meeting">
+    <#if fellowship_main??>
+        <input id="fellowShipMainId" type="hidden" value="${fellowship_main.fellowshipMainId?c}"/>
+    </#if>
+    <#if cms_fellowship_map_list??>
+        <#list cms_fellowship_map_list as list>
+            <#if list_index==0>
+                <#assign fellowshipobj = list.fellowship>
+
+                    <input id="fellowshipId" type="hidden" value="${fellowshipobj.fellowshipId?c}"/>
+            </#if>
+        </#list>
+    </#if>
+
+    <!--头部-->
+    <!--#include virtual="/includes/header.jsp"-->
+    <!--头部 stop-->
+    <div class="fellow_main">
+        <div class="">
+            <#if ad_data_list_fellowship??>
+                <#list ad_data_list_fellowship as list>
+                    <#if list_index==0>
+                        <div style="background:url(//img99.allinmd.cn/${list.adAttUrl}) no-repeat center; height:450px;"></div>
+                    </#if>
+                </#list>
+            </#if>
+        </div>
+        <div class="f_nav">
+            <div class="fellow_nav">
+                <ul class="f_nav_ul">
+                    <#if cms_mainmenu_map_list??>
+                        <#list cms_mainmenu_map_list as menulsit>
+                            <#assign menuobj = menulsit.fellowship_main_menu>
+                                <li><a href="${menuobj.menuUrlAllin!''}">${menuobj.fellowshipMainName!''}</a></li>
+
+                        </#list>
+                    </#if>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </div>
+        <div class="fellowship_content">
+            <#if cms_news_menu_list??>
+                <#list cms_news_menu_list as menunewslsit>
+                    <#if menunewslsit.menu_id_news??>
+                        <#assign menunewobj = menunewslsit.menu_id_news>
+                            ${menunewobj.newsBody!''}
+                    </#if>
+                </#list>
+            </#if>
+        </div>
+    </div>
+    <!--尾部-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--尾部 stop-->
+</div>
+<script src="//comm.allinmd.cn/base.js"></script>
+<script src="//modules.allinmd.cn/lib.js"></script>
+<script src="//scene.allinmd.cn/channel/scene.channel.fellow.js"></script>
+<script src="//scene.allinmd.cn/channel/scene.channel.fellow_html.js"></script>
+<script src="//scene.allinmd.cn/channel/scene.channel.fellowship_list.js"></script>
+
+<script src="//other.allinmd.cn/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="//other.allinmd.cn/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="//other.allinmd.cn/jquery-validate/jquery.validate.js"></script>
+<script src="//other.allinmd.cn/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src="//other.allinmd.cn/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="//other.allinmd.cn/uploadReplace/uploadReplace.js"></script>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>验证失效</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/personal/updateEmailInvalid.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_mailBoxFail.css">
+    <!--endbuild-->
+</head>
+
+<body>
+    <section class="al-mainInner">
+        <section class="al-contentBox">
+            <article class="al-validateResult">
+                <i class="icon-validateFail"></i>
+                <article class="al-validateContent">
+                    <h2>很抱歉，你正访问的链接已失效</h2>
+                    <p>你的登录邮箱为:<span id="email"></span></p>
+                </article>
+            </article>
+            <figure class="al-validateBtn btn-primary-lg">
+                <a href="javascript:void(0)" id="restSend">重新发送</a>
+            </figure>
+            <figure class="al-backIndex btn-primary-lg">
+                <a href="javascript:void(0)" class="check_mail">进入邮箱</a>
+            </figure>
+        </section>
+    </section>
+</body>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<!--build:js /dest/pages/personal/updateEmailInvalid.js-->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+
+<!--endbuild-->
+<script>
+    var email = comm.getpara().account;
+    $("#email").text(email);
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+    if(IsPC()){
+        window.location.href='//www.allinmd.cn/pages/singlePage/user/passport/reset_password_invalid_new.html?account='+email;
+    }
+    $(".check_mail").click(function(){
+        refEmail();
+    });
+    var emailName=email;
+    var email1=emailName.split("@")[0];
+    var email1_replace=email1.replace(email1.substring(3,email1.length),"***");
+    var newEmail=email1_replace+"@"+emailName.split("@")[1];
+
+    function refEmail(){
+        var customerEmail=newEmail;
+        if(customerEmail && customerEmail!=null){
+            var index=customerEmail.indexOf("@");
+            var domainE=customerEmail.substring(index+1,customerEmail.length);
+            if(domainE && domainE!=""){
+                window.location.href="http://mail."+domainE;
+            }
+        }
+    };
+
+    var customerId=TempCache.getItem("userId");
+    var sendPasswordEmail=M_CALL+"customer/reset/password/sendPasswordEmail3/";//发送邮件
+    $("#restSend").on("click",function(){
+        CommService.asyncExecute(sendPasswordEmail,{customerId:customerId,resetSite:7,email:email,applySource:2},function(){});
+        comm.alertBox({
+            mTitle: "绑定成功!",
+            title:"验证链接已发至邮箱，验证后能帮助你快速找回密码",
+            ensure:"知道了",
+            ensureCallback:function(){
+                //window.location.href="/";
+                $(".al-alertModalMask").removeClass("show");
+            }
+        });
+    })
+
+</script>
+</html>

@@ -1,0 +1,273 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+//公共组件引用
+@import "../../components/_iconsModule"; //小图标
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_message_rightSideBar";
+@import "../../components/_shareBoxModule";
+@import "../../components/meeting/_meetingList"; //会议列表
+@import "../../components/_swiperCont"; //轮播
+@import "../../components/meeting/_meetingScreen"; //会议列表
+.qa-container{
+  .update-chat-main{
+    position: inherit;
+    width: 100%;
+    height: 278px !important;
+    .chat-list{
+      position: absolute;
+    }
+    .chat-send{
+      position: inherit;
+      .chat-tips-scroll{
+        position: inherit;
+      }
+    }
+  }
+}
+.people{
+  height: 60px;
+}
+.chat-main{
+  .chat-cnt{
+    border-bottom: 1px solid rgba(255,255,255,.3);
+  }
+}
+
+.al-live-sendPanel{
+  width: 280px;
+  height: 36px;
+  border-radius: 4px;
+  background: #000;
+  margin-top: 13px;
+  .al-live-msgInput{
+    float: left;
+    font-size: 17px;
+    color: #FFFFFF;
+    line-height: 36px;
+    width: 208px;
+    padding: 0 10px;
+    word-break:keep-all;             /* 不换行 */
+    white-space:nowrap;            /* 不换行 */
+    overflow:hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    overflow-x: auto;
+    *{
+      display: inline !important;
+    }
+    &:empty:before{
+      content: attr(placeholder);
+      color:#bbb;
+      font-size: 14px;
+    }
+    &:focus:before{
+      content:none;
+    }
+    &::-webkit-scrollbar
+    {
+      width: 12px;
+      height: 8px;
+      //background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-track
+    {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      //background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+      border-radius: 10px;
+      //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      //background-color: #555;
+    }
+    img{
+      width: 22px;
+      height: 22px;
+      margin-top: 5px;
+    }
+  }
+  .al-live-msgSend{
+    float: right;
+    background: #2899E6;
+    width: 51px;
+    height: 100%;
+    border-radius: 0 4px 4px 0;
+    color: #fff;
+
+  }
+}
+.chat-main{
+  .chat-btm{
+    min-height: 67px;
+    height: auto;
+  }
+}
+
+.al-select-role{
+  width: 160px;
+  height: 24px;
+  margin-top: 6px;
+  position: relative;
+  .al-live-msgTo{
+    float: left;
+  }
+  .al-live-msgTo,.al-live-msgRole{
+    height: 14px;
+    padding: 5px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 14px;
+  }
+  .al-live-msgRole{
+    width: 80px;
+    background: rgba(0,0,0,0.8) url("/images/img00/conference/down.png") no-repeat 65px 50%;
+    background-size: 20%;
+    cursor: pointer;
+    float: left;
+    isplay: -webkit-box; //必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
+    text-overflow: ellipsis; //可以用来多行文本的情况下，用省略号“…”隐藏超出范围的文本 。
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    padding: 0 5px;
+    height: 24px;
+    line-height: 24px;
+    -webkit-box-orient: vertical;
+  }
+  .select-option{
+
+    position: absolute;
+    top:26px;
+    min-height: 26px;
+    height: auto;
+    left: 0;
+    width: 120px;
+    border: none;
+    background: rgba(0,0,0,0.8);
+    max-height: 300px;
+    overflow: inherit;
+    .teacher-list{
+      min-height: 34px;
+      height: auto;
+      width: 120px;
+      background: rgba(0,0,0,0.8);
+      color:#fff;
+      .other-people{
+        line-height: 24px;
+      }
+      li,li:hover{
+        height: 24px;
+        a,a:hover{
+          color: #fff;
+          font-size: 16px;
+          background: none;
+          isplay: -webkit-box; //必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
+          text-overflow: ellipsis; //可以用来多行文本的情况下，用省略号“…”隐藏超出范围的文本 。
+          overflow : hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
+      }
+    }
+  }
+  .al-live-emotion,.phiz-btn,.phiz-btn:hover{
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-left: 20px;
+    background: url("/images/img00/conference/SmileLaugh.png") no-repeat center 50%;
+    background-size: cover;
+    position: relative;
+    .phiz-list{
+      position: absolute;
+    }
+  }
+
+}
+.al-msg-item{
+  min-height: 31px;
+  height: auto;
+  line-height: 31px;
+  font-size: 17px;
+  color: #fff;
+  padding: 0;
+  width: 278px;
+  .al-msg-user{
+    display: inline;
+  }
+  .al-msg-content{
+    display: inline;
+  }
+  &.al-single-me{
+    .al-msg-user{
+      .al-msg-my{
+
+        color: #02B875;
+      }
+      .al-msg-to,.al-msg-you{
+        display: none;
+      }
+    }
+  }
+  &.al-single-other{
+    .al-msg-user{
+      .al-msg-my{
+        color: #2899E6;
+      }
+      .al-msg-to,.al-msg-you{
+        display: none;
+      }
+    }
+  }
+  &.al-single-teacher{
+    .al-msg-user{
+      .al-msg-my{
+      color: #FFA800;
+      }
+      .al-msg-to,.al-msg-you{
+        display: none;
+      }
+    }
+  }
+  &.al-single-talk{
+    .al-msg-user{
+      .al-msg-you{
+        color: #FFA800;
+      }
+      .al-msg-my{
+        color: #02B875;
+      }
+    }
+  }
+  .al-msg-time{
+    font-size: 14px;
+    color: rgba(255,255,255,0.40);
+  }
+
+}
+.al-live-hand-up{
+  cursor: pointer;
+}
+.video-wrap-end{
+  background: url(/images/img00/conference/live_end.png) no-repeat center 50%;
+}
+.al-msg-icon{
+  display: inline-block;
+  width: 45px;
+  height: 16px;
+  background: url(/images/img00/conference/label_meet@2x.png) no-repeat center 50%;
+  background-size: cover;
+}
+
+.al-msg-sysContent{
+  display: inline;
+  color: #FF9224;
+}

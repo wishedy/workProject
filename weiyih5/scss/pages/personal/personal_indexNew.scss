@@ -1,0 +1,985 @@
+@charset "UTF-8";
+//个人主页
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_contentModule"; //内容组件
+@import "../../components/_boneModule"; //云云内容组件
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_classSelector"; //分类筛选框
+@import "../../components/_baseInfoModule"; //表单组件
+.al-appWakeUpFigure .al-appWakeUpImg{
+    font-size: 0;
+}
+.al-mainInner{
+    background: #fff;
+    min-height: 100%;
+}
+.homePersonCon{
+    position: relative;
+    .personFixed{
+        position: absolute;
+        top: rem3(20px);
+        width: 100%;
+        padding: 0 rem3(15px);
+        box-sizing: border-box;
+        z-index: 3;
+        @include clearfix;
+        .fixedBack{
+            float: left;
+            img{
+                width: rem3(22px);
+                height: rem3(22px);
+            }
+        }
+        .al-personalShare{
+            float: right;
+            //margin-right: rem3(30px);
+        }
+
+    }
+}
+.al-personalScrollHead {
+    background-color: #fff;
+    height: rem(88px);
+    line-height: rem(88px);
+    @include font-dpr(17px);
+    font-weight: normal;
+    color: #333333;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    display: none;
+    .scrollBack{
+        float: left;
+    }
+    h2 {
+        font-weight: normal;
+    }
+    .al-personalShare {
+        color: #515c74;
+        position: absolute;
+        top: 0;
+        right: rem(30px);
+        float: right;
+        &:before {
+            content: "";
+            display: inline-block;
+            width: rem(30px);
+            height: rem(30px);
+            background: url('//img50.allinmd.cn/pages/personal/share_hide.png') center center no-repeat;
+            background-size: cover;
+            vertical-align: middle;
+            margin-right: rem(10px);
+        }
+    }
+}
+//封面收起时——动态类
+.al-personalHeadFixed {
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    display: block;
+    .scrollBack{
+        img{
+            vertical-align: middle;
+            width: rem3(30px);
+            height: rem3(30px);
+        }
+    }
+    .namecenter{
+        position: absolute;
+        left:50%;
+        transform: translateX(-50%);
+    }
+}
+//导航栏
+.al-personalNavbar {
+    width: rem3(345px);
+    margin: 0 auto;
+    margin-top: rem3(11px);
+    background: #FFFFFF;
+    box-shadow: 0 rem3(4px) rem3(26px) 0 rgba(104,123,173,0.13);
+    border-radius: rem3(3px);
+    @include flex();
+    @include justify-content(center);
+    @include align-items(center);
+    padding: rem3(21px) 0;
+    //border-bottom: 1px solid #e4e9ed;
+    z-index: 3;
+    .al-personNavbarItem {
+        color: #777777;
+        //margin: 0 rem(45px);
+        width: 25%;
+        text-align: center;
+        padding: 0 rem3(15px);
+        //padding-bottom: rem3(12px);
+        box-sizing: border-box;
+        display: inline-block;
+        img {
+            width: rem3(25px);
+            height: rem3(25px);
+            vertical-align: top;
+        }
+        .showOff {
+            display: inline-block;
+        }
+        .showOn {
+            display: none;
+        }
+        figcaption {
+            font-size: rem3(12px);
+            margin-top: rem3(8px);
+            color: #777777;
+            letter-spacing: 0;
+            line-height: rem3(13px);
+        }
+    }
+    .al-personNavbarItem.active {
+        color: #3598bd;
+        border-bottom: rem3(4px) solid #3598db;
+        .showOn {
+            display: inline-block;
+        }
+        .showOff {
+            display: none;
+        }
+    }
+}
+.al-newNologin{
+    padding: rem3(15px)  rem3(15px) 0 rem3(15px);
+    position: relative;
+    font-size: 0;
+    &:after {
+        content: "";
+        width: rem3(19px);
+        height: rem3(20px);
+        display: block;
+        position: absolute;
+        right: rem3(15px);
+        top: 50%;
+        margin-top: rem3(-7px);
+        //background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAPCAMAAADNjy/UAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA2UExURUxpcbe3t7e3t7i4uP///7i4uLi4uLi4uLe3t9XV1bi4uLe3t7e3t7y8vLm5ubq6uri4uLe3t4lCWEwAAAARdFJOUwD5Tq8CobFe/QZW4CAXUBr3HPGeLgAAAE9JREFUGNN1yVsSwBAQBMAJCXli73/ZKCllMenfBp4VTATua2Nnkse5CzmziAU8uTzuALs687UZT09//egbp9089dh8F+iUEz7lfiaf1fMCGnED5O9wdaoAAAAASUVORK5CYII=') center center no-repeat;
+        background: url('/static/images/personal/arrow_big_p.png') center center no-repeat;
+        //transform: rotate(-90deg);
+        background-size: cover;
+    }
+    .defalutImg{
+        display: inline-block;
+        vertical-align: middle;
+        img{
+            width: rem3(80px);
+            height: rem3(80px);
+            border-radius: 50%;
+        }
+    }
+    .defalutDesc{
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: rem3(16px);
+        //font-weight: medium;
+        //font-style: me;
+        .p-logBtn{
+            font-size: rem3(23px);
+            color: #222222;
+            letter-spacing: 0;
+            line-height: rem3(23px);
+            font-weight: bold;
+        }
+        .p-logDesc{
+            font-size: rem3(15px);
+            color: #999999;
+            letter-spacing: 0;
+            line-height: rem3(15px);
+            margin-top: rem3(13px);
+        }
+    }
+}
+.al-personalContent{
+    width: rem3(345px);
+    margin: auto;
+    margin-top: rem3(10px);
+    .al-personalBrowsedItem{
+        font-size: rem3(16px);
+        color: #555555;
+        letter-spacing: 0;
+        line-height:rem3( 56px);
+       &:after{
+           content: '';
+           display: block;
+           opacity: 0.5;
+           background:#E3E5E9;
+           height: rem3(1px);
+           width: 100%;
+       }
+        a {
+            position: relative;
+            display: block;
+            &:after {
+                content: "";
+                width: rem(28px);
+                height: rem(14px);
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                margin-top: rem(-7px);
+                background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAPCAMAAADNjy/UAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA2UExURUxpcbe3t7e3t7i4uP///7i4uLi4uLi4uLe3t9XV1bi4uLe3t7e3t7y8vLm5ubq6uri4uLe3t4lCWEwAAAARdFJOUwD5Tq8CobFe/QZW4CAXUBr3HPGeLgAAAE9JREFUGNN1yVsSwBAQBMAJCXli73/ZKCllMenfBp4VTATua2Nnkse5CzmziAU8uTzuALs687UZT09//egbp9089dh8F+iUEz7lfiaf1fMCGnED5O9wdaoAAAAASUVORK5CYII=') center center no-repeat;
+                transform: rotate(-90deg);
+                background-size: cover;
+            }
+        }
+    }
+}
+
+.al-personalBasicMsg{
+    padding: rem3(55px)  rem3(15px) 0 rem3(15px);
+    position: relative;
+    &.personalBase{
+        padding: rem3(15px)  rem3(15px) rem3(25px) rem3(15px);
+    }
+    .al-personalImg{
+        img{
+            width: rem3(80px);
+            height: rem3(80px);
+            border-radius: 50%;
+        }
+    }
+    .persCenter{
+        position: absolute;
+        right: 0;
+        font-size: rem3(12px);
+        color: #444444;
+        letter-spacing: 0;
+        line-height: rem3(30px);
+        background: #F2F4F7;
+        border-radius: rem3(100px) 0 0 rem3(100px);
+        padding: 0 rem3(9px) 0 rem3(12px);
+        top:rem3(20px);
+        &:before{
+            width: rem3(14px);
+            height: rem3(14px);
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            background: url("/static/images/personal/profile.png") 100% 100% no-repeat;
+            background-size: contain;
+            //border-radius: 50%;
+            margin-right: rem3(4px);
+            margin-top: rem3(-3px);
+        }
+    }
+    .perBotton{
+        position: absolute;
+        right: rem3(28px);
+        border-radius: rem3(3px);
+        font-size: rem3(14px);
+        color: #FFFFFF;
+        letter-spacing: 0;
+        height: rem3(30px);
+        padding: 0 rem3(13px);
+        margin-top: rem3(5px);
+        &.doctorOther{
+            background: #FB875A;
+            &:before{
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                background: url("/static/images/personal/add_white.png") 100% 100% no-repeat;
+                background-size: contain;
+                width: rem3(16px);
+                height: rem3(16px);
+                margin-top: rem3(-3px);
+                margin-right: rem3(2px);
+            }
+        }
+        &.attention{
+            //attention@2x.png
+            width: rem3(68px);
+            background: border-box;
+            background: rgba(255,255,255,0.05);
+            &:before{
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                background: url("/static/images/personal/attention@2x.png") 100% 100% no-repeat;
+                background-size: contain;
+                width: rem3(13px);
+                height: rem3(13px);
+                margin-top: rem3(-3px);
+            }
+        }
+        &.doctorAttention{
+            //width: rem3(68px);
+            box-sizing: border-box;
+            font-size: rem3(13px);
+            padding: 0 rem3(8px);
+            background: rgba(255,255,255,0.05);
+        }
+        &.doctorMy{
+            border:1px solid #fff;
+            border-opacity:0.6;
+            padding: 0 rem3(6px);
+        }
+    }
+}
+.al-personalHead{
+    font-size: 0;
+    .al-personalImg{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .al-personalBasicMsgContent{
+        display: inline-block;
+        vertical-align: top;
+        margin-left: rem3(16px);
+        margin-top: rem3(6px);
+        .doctorAuthor{
+            max-width: rem3(156px);
+        }
+        .doctorDesc{
+            max-width: rem3(224px);
+            margin-top: rem3(12px);
+            font-size: rem3(15px);
+            color: #999999;
+            letter-spacing: 0;
+            line-height: rem3(15px);
+            p{
+                margin-bottom: rem3(6px);
+            }
+        }
+        .doctorName{
+            font-size: rem3(23px);
+            color: #222222;
+            letter-spacing: 0;
+            line-height:rem3(27px);
+            font-weight: 400;
+        }
+    }
+}
+.al-personalContributionOver{
+    text-align: center;
+    margin-top: rem3(40px);
+}
+.al-personalHome{
+    background: -webkit-linear-gradient(-135deg, #3F5AB5 0% , #6177EF 100%); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(-135deg, #3F5AB5 0% , #6177EF 100%); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(-135deg, #3F5AB5 0% , #6177EF 100%); /* Firefox 3.6 - 15 */
+    background: linear-gradient(-135deg, #3F5AB5 0% , #6177EF 100%); /* 标准的语法 */
+    //height: rem3(210px);
+    min-height: rem3(210px);
+    //padding-bottom: rem3(12px);
+    box-sizing: border-box;
+    .al-personalBasicMsgContent{
+        display: inline-block;
+        vertical-align: top;
+        margin-left: rem3(16px);
+        .doctorName{
+            font-size: rem3(24px);
+            color: #FFFFFF;
+            letter-spacing: 0;
+            line-height:rem3(27px);
+            font-weight: 400;
+        }
+        .doctorDesc{
+            margin-top: rem3(12px);
+            font-size: rem3(16px);
+            color: #fff;
+            opacity: 0.75;
+            letter-spacing: 0;
+            line-height: rem3(16px);
+            p{
+                margin-bottom: rem3(6px);
+            }
+        }
+    }
+    .al-personalImg{
+        display: inline-block;
+        vertical-align: middle;
+        img{
+            width: rem3(86px);
+            height: rem3(86px);
+        }
+    }
+    .al-personalSnsNumCon{
+        margin-top: rem3(26px);
+        padding-bottom: rem3(12px);
+        background: url("/static/images/personal/snsNumBg.png") 100% 100% no-repeat;
+        background-size: 100% 100%;
+        .al-personalSnsNum{
+            display: inline-block;
+            vertical-align: middle;
+            font-size: rem3(16px);
+            color: #FFFFFF;
+            letter-spacing: 0;
+            line-height: rem3(16px);
+            text-align: center;
+            margin-left: rem3(38px);
+            &.grandNum{
+                width: rem3(120px);
+                text-align: center;
+                margin-right: rem3(10px);
+                margin-left: 0;
+                position: relative;
+                a{
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                &:after{
+                    position: absolute;
+                    right: 0;
+                    content: '';
+                    width: rem3(2px);
+                    background: white;
+                    opacity: .5;
+                    top:50%;
+                    transform: translateY(-50%);
+                    height: rem3(20px);
+                }
+            }
+            .numName{
+                font-size: rem3(14px);
+                opacity: 0.75;
+                letter-spacing: 0;
+                margin-top: rem3(5px);
+                line-height: rem3(14px);
+            }
+            &.noGrandNum{
+                width: rem3(125px);
+                margin-left: 0;
+            }
+        }
+    }
+}
+.personalInfo{
+    line-height: rem3(68px);
+    width: 100%;
+    background: #fff;
+    font-size: rem3(17px);
+    color: #222222;
+    letter-spacing: 0;
+    position: relative;
+    p{
+        margin-left: rem3(13px);
+        &:before{
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: rem3(22px);
+            height: rem3(22px);
+            margin-right: rem3(7px);
+            background: url("/static/images/personal/personal.png") 100% 100% no-repeat;
+            background-size: contain;
+            margin-top: rem3(-2px);
+        }
+    }
+    border-bottom:rem3(8px) solid #F1F4F9;
+    &:after{
+        content: '';
+       position: absolute;
+        width: rem3(15px);
+        height: rem3(16px);
+        margin-right: rem3(15px);
+        background: url("/static/images/personal/arrow_list_p.png") 100% 100% no-repeat;
+        background-size: contain;
+        right: 0;
+        top:50%;
+        transform: translateY(-50%);
+    }
+}
+.contentCon{
+    //height: rem3(67px);
+    width: 100%;
+    font-size: rem3(16px);
+    color: #555555;
+    letter-spacing: 0;
+    line-height: rem3(16px);
+    position: relative;
+    &.contentTabFix{
+        padding-top: rem3(65px);
+        .contentTab{
+            position: fixed;
+            top: rem3(44px);
+            background: #fff;
+            width: 100%;
+            z-index: 2;
+        }
+        .al-personalContributionHeader{
+            position: fixed;
+            top: rem3(82px);
+            z-index: 2;
+        }
+
+    }
+    .contentTab{
+        padding: rem3(30px) rem3(11px) rem3(10px) rem3(15px);
+        border-bottom: 1px solid #E6E6E6;
+    }
+    .tabItem{
+        display: inline-block;
+        vertical-align: bottom;
+        color: #777;
+        font-size: rem3(16px);
+        &.tabItemNew{
+            margin-left: rem3(32px);
+        }
+        span{
+            margin-left: rem3(6px);
+            font-size: rem3(14px);
+        }
+        &.active{
+            font-size: rem3(25px);
+            color: #000000;
+            letter-spacing: 0;
+            line-height: rem3(25px);
+            font-weight: 600;
+            span{
+                font-size: rem3(14px);
+                color: #222222;
+                letter-spacing: 0;
+                line-height:rem3(14px);
+                font-weight: normal;
+            }
+            position: relative;
+            &:after{
+                content: '';
+                width: rem3(16px);
+                height: rem3(3px);
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #6483E9;
+                border-radius: rem3(19px);
+                bottom:rem3(-10px);
+                margin-left: rem3(-10px);
+            }
+        }
+        &.tabList{
+            float: right;
+            position: relative;
+            margin-right: rem3(30px);
+            margin-top: rem3(8px);
+            .listName{
+                &:after{
+                    content: '';
+                    width: rem3(16px);
+                    height: rem3(16px);
+                    display: inline-block;
+                    vertical-align: middle;
+                    background: url("/static/images/personal/All-on.png") 100% 100% no-repeat;
+                    background-size: contain;
+                }
+            }
+
+            .listCon{
+                position: absolute;
+                background: #FFFFFF;
+                box-shadow: 0 rem3(2px) rem3(6px) 0 rgba(0,0,0,0.10);
+                border-radius: rem3(3px);
+                padding: 0 rem3(10px);
+
+                right: 0;
+                margin-top: rem3(4px);
+                li{
+                    font-size: rem3(16px);
+                    color: #222222;
+                    letter-spacing: 0;
+                    line-height: rem3(38px);
+                    width: rem3(60px);
+                    text-align: center;
+                    border-bottom: 1px solid  #E6E6E6;
+                }
+            }
+        }
+    }
+}
+
+.icon-config {
+    @extend %icon-config;
+}
+
+.icon-shareWhite {
+    @extend %icon-shareWhite;
+}
+
+.icon-shareDeepBlue {
+    @extend %icon-shareDeepBlue;
+}
+
+
+.icon-follow {
+    @extend %icon-follow;
+}
+
+.icon-history {
+    @extend %icon-history;
+}
+
+.icon-comment {
+    @extend %icon-comment;
+}
+
+.icon-draft {
+    @extend %icon-draft;
+}
+
+.icon-contentAuthor {
+    @extend %icon-contentAuthor;
+}
+
+.icon-commentNum {
+    @extend %icon-commentNum;
+}
+
+.icon-likeNum {
+    @extend %icon-likeNum;
+}
+
+.icon-contentWatchedNum {
+    //@extend %icon-contentWatchedNum;
+    margin-right: rem(40px);
+}
+
+.icon-commentLikeNum {
+    @extend %icon-commentLikeNum;
+}
+
+.icon-tagComment {
+    @extend %icon-tagComment;
+    margin-right: rem(40px);
+}
+
+.icon-pencilBlue {
+    @extend %icon-pencilBlue;
+}
+
+.icon-newTips {
+    @extend %icon-newTips;
+
+}
+
+.al-newsNum {
+    @extend %al-newsNum;
+}
+.al-footerBar .al-newsNum{
+    @include font-dpr(15px);
+}
+
+.al-contentNewest {
+    @extend %al-contentNewest;
+}
+
+.al-contentHotest {
+    @extend %al-contentHotest;
+}
+
+.al-contentAward {
+    @extend %al-contentAward;
+}
+
+.al-contentJoin {
+    @extend %al-contentJoin;
+}
+
+.al-contentPdf {
+    @extend %al-contentPdf;
+}
+
+/*.al-vipUser {
+    @extend %al-vipUser;
+}*/
+
+.icon-commentLikeNum {
+    @extend %icon-commentLikeNum;
+}
+.al-personalContributionHeader{
+    position: absolute;
+    top: rem3(37px);
+    right: rem3(19px);
+}
+.al-personalContributionSelector ul{
+    top:rem3(30px);
+    width: rem(160px);
+    box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.2), -1px -1px 5px rgba(51, 51, 51, 0.2);
+    &:before{
+        left: 43%;
+    }
+}
+.al-personalContributionSelector {
+    h2{
+        @include font-dpr(16px);
+        color: #555555;
+        &:after{
+            width: rem3(16px);
+            height: rem3(16px);
+            vertical-align: middle;
+            margin-top: rem3(-3px);
+            background: url("/static/images/personal/All-on.png") 100% 100% no-repeat;
+            background-size: contain;
+        }
+    }
+    &.al-personalSelectorOn{
+        h2{
+            &:after{
+                transform: none;
+                -webkit-transform:none;
+                background: url("/static/images/personal/All-off.png") 100% 100% no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+}
+.al-personalContributionSelectorItem{
+    padding: rem3(12px) rem(37px);
+}
+.eventInfo{
+    padding: 0 rem3(15px) 0 rem3(12px);
+    .eventTitle{
+        @include clearfix;
+        margin-top: rem3(40px);
+        margin-bottom: rem3(21px);
+        h2{
+            font-size: rem3(25px);
+            color: #000000;
+            letter-spacing: 0;
+            line-height: rem3(25px);
+            float: left;
+            &.infoBig{
+                font-size: rem3(18px);
+                color: #222222;
+                line-height: rem3(18px);
+                font-weight: 600;
+            }
+        }
+        span{
+            font-size: rem3(15px);
+            color: #6483E9;
+            letter-spacing: 0;
+            line-height: rem3(15px);
+            float: right;
+        }
+    }
+    .eventContent{
+        font-size: rem3(17px);
+        color: #222222;
+        letter-spacing: 0;
+        line-height:rem3(17px);
+        li{
+            &.eventItem{
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin-bottom: rem3(12px);
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+            &:before{
+                content: '';
+                width: rem3(22px);
+                height: rem3(22px);
+                display: inline-block;
+                vertical-align: top;
+                margin-top: rem3(-3px);
+                margin-right: rem3(13px);
+            }
+            &.systemEvent{
+                &:before{
+                    background: url("/static/images/personal/Big event-04.png")  no-repeat;
+                    background-size: contain;
+                }
+            }
+            &.userEvent{
+                &:before{
+
+                    background: url("/static/images/personal/Big event-01.png")  no-repeat;
+                    background-size: contain;
+                }
+                &:nth-child(2){
+                    &:before{
+                        background: url("/static/images/personal/Big event-02.png")  no-repeat;
+                        background-size: contain;
+                    }
+                }
+                &:nth-child(3){
+                    &:before{
+                        background: url("/static/images/personal/Big event-03.png")  no-repeat;
+                        background-size: contain;
+
+                    }
+                }
+            }
+
+            &.itemDetail{
+                margin-bottom: rem3(9px);
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                &:before{
+                    margin-top: 0;
+                }
+                .itemDesc{
+                    width: rem3(313px);
+                    display: inline-block;
+                    vertical-align: middle;
+                    line-height: rem3(23px);
+                }
+
+            }
+        }
+    }
+}
+
+.tagList{
+    margin-top: rem3(16px);
+    width: 100%;
+    overflow: auto;
+    ul{
+        padding-left: rem3(3px);
+        white-space: nowrap;
+    }
+    li{
+        display: inline-block;
+        background: rgba(100,131,233,.1);
+        border-radius: rem3(3px);
+        font-size: rem3(15px);
+        color: #6483E9;
+        letter-spacing: 0;
+        line-height:rem3(27px);
+        padding: 0 rem3(14px);
+        margin-left: rem3(12px);
+        &.active{
+            background: #6483E9;
+            color: #FFFFFF;
+        }
+    }
+}
+.contentAuthorName{
+    margin-right: rem3(15px);
+    display: inline-block;
+    vertical-align: middle;
+}
+.al-contentText{
+    //@include font-dpr();
+    @include font-dpr(18px);
+}
+.al-contentText .al-contentTitle{
+    @include font-dpr(18px);
+    height: rem3(41px);
+    line-height: rem3(20px);
+    margin-bottom: rem3(10px);
+    //@include font-dpr(18px);
+    //line-height: 1;
+}
+.al-contentOtherMsg{
+    margin-top: 0;
+    @include font-dpr(13px);
+    color: #999;
+}
+.al-videoPlayBtn{
+    width: rem3(30px);
+    height: rem3(30px);
+    margin-left: rem3(-15px);
+    margin-top: rem3(-15px);
+}
+//暂无专栏
+.al-personalContributionNone {
+    padding: rem(184px) 0;
+    text-align: center;
+    //display: none;
+    img {
+        display: block;
+        width: rem3(120px);
+        height: rem3(120px);
+        margin: 0 auto;
+    }
+    p {
+        //width: rem(220px);
+        //height: rem(60px);
+        @include font-dpr(16px);
+        color: #777;
+        margin-top: rem3(24px);
+        text-align: center;
+    }
+}
+.al-vipUserV1{
+    &:after{
+        width: rem3(20px);
+        height: rem3(18px);
+        //background: url('//img50.allinmd.cn/pages/personal/mark_vip.png') center center no-repeat;
+        background: url('/static/images/personal/v1_big.png') center center no-repeat;
+        background-size: 100% 100%;
+        vertical-align: rem(-3.75px);
+        margin-left: rem3(7px);
+    }
+}
+.al-vipUserV2{
+    &:after{
+        width: rem3(20px);
+        height: rem3(18px);
+        //background: url('//img50.allinmd.cn/pages/personal/mark_vip.png') center center no-repeat;
+        background: url('/static/images/personal/V2_big.png') center center no-repeat;
+        background-size: 100% 100%;
+        vertical-align: rem(-3.75px);
+        margin-left: rem3(7px);
+    }
+}
+.al-contentPartModule{
+   border-bottom: none;
+    padding-bottom: 0;
+    .al-tableBox{
+        padding-bottom: rem(40px);
+        border-bottom: 1px solid $innerBorderColor;
+    }
+}
+.al-personalContributionSelectorItem.active{
+    color: #6483e9;
+}
+//点击色
+.al-contentPartModule:active{
+    background-color: #F5F6F8;
+}
+
+//头像查看大图
+.logoBig{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: #000;
+    .hearTitle{
+        margin-top: rem3(14px);
+    }
+    .scrollBack{
+        float: left;
+        //width: rem3(37px);
+        height: rem3(22px);
+        padding-left: rem3(15px);
+        img{
+            width: rem3(22px);
+            height: 100%;
+        }
+        margin-top: rem3(1px);
+    }
+    .namecenter{
+        display: block;
+        text-align: center;
+        font-size:rem3(17px);
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        line-height:rem3(24px);
+        //margin-left: rem3(37px);
+    }
+    .logoImg{
+        position: absolute;
+        width: 100%;
+        max-height: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+    }
+}

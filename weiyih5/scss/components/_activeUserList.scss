@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+.userList{
+  .title{
+    height: rem(132px);
+    line-height: rem(132px);
+    text-align: center;
+    font-size: rem(32px);
+    color: #333333;
+    background: #fff;
+  }
+  .listCont{
+    margin-bottom: rem(60px);
+    p{
+      padding-left: rem(50px);
+      height: rem(78px);
+      line-height: rem(78px);
+      background: #EEF3F8;
+      font-size: rem(28px);
+      color: #0069DE;
+    }
+    ul{
+
+    }
+    li{
+      @include clearfix();
+      /*padding: rem(28px) 0;*/
+      font-size: rem(28px);
+      height: rem(136px);
+      line-height: rem(28px);
+      color: #555555;
+      padding-left: rem(30px);
+      overflow: hidden;
+      span{
+        display: block;
+        margin-bottom: rem(24px);
+      }
+      &:nth-child(odd){
+        background: #fff;
+      }
+      &:nth-child(even){
+        background: #EEEEEE;
+      }
+      .userName{
+        float: left;
+        line-height: rem(136px);
+        width:rem(164px);
+        a{
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
+      }
+      .userIntroduction{
+        float: left;
+        margin: rem(28px) 0 0 0;
+      }
+    }
+  }
+
+  .openMore{
+    height: rem(78px);
+    line-height: rem(78px);
+    background: #fff;
+    font-size: rem(26px);
+    color: #AAAAAA;
+    text-align: center;
+    &:after{
+      content: '';
+      display: inline-block;
+      width: rem(27px);
+      height: rem(15px);
+      background: url("//img50.allinmd.cn/authentication/arrow_down.png") no-repeat;
+      background-size: contain;
+      vertical-align: middle;
+      margin-left: rem(6px);
+    }
+    &.pickUp{
+      &:after{
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

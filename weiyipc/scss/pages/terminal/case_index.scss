@@ -1,0 +1,411 @@
+@charset "utf-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+@import "../../components/terminal_SideBar";  //页面右侧栏组件
+@import "../../components/_contentModule"; //主内容区域
+@import "../../components/_iconsModule";   //小图标
+@import "terminal_comm.scss";
+@import "../../components/_shareBoxModule"; //分享按钮盒
+@import "../../components/_commentModule";  //评论类内容
+@import "_screenedCommonStyle";  //屏蔽样式
+@import "../../components/_scoreModule";  //评分组件
+
+//文库终端页
+@import "../../components/classes/_classes_doc";
+ul,ol,li{
+  list-style: none;
+}
+.al-libraryInfoBox{
+  border:1px solid rgba(199,211,223,0.5);
+  box-shadow:2px 2px 4px rgba(215,222,229,0.1),-2px -2px 4px rgba(215,222,229,0.1);
+  background-color:#fff;
+  margin:20px 0;
+  padding:40px 24px 50px;
+  padding-left:15px\0;
+  padding-right:15px\0;
+  @include clearfix();
+  .al-libraryInfo_head{
+    font-size:13px;
+    font-family: "宋体";
+    float:left;
+    max-width: 550px;
+    h4{
+      font-size:24px;
+      margin-bottom:12px;
+      line-height:30px;
+      color:#000;
+//      max-width:580px;
+    }
+    a{
+      color:#626F8C;
+      font-family: "宋体";
+      margin-right: 18px;
+      &.noUserId {
+        color: #909090;
+      }
+      &:hover{
+        color: #2899e6;
+      }
+    }
+    p{
+      display: inline-block;
+      //padding-left:18px;
+      color:#909090;
+      font-family: "宋体";
+      margin-right: 15px;
+      span{font-family: "宋体";}
+    }
+  }
+  .al-browseData{
+    float:right;
+    text-align:center;
+    h4{   //1260
+      font-size:24px;
+      color:#3598DB;
+      margin-bottom:4px;
+    }
+    span{   //浏览
+      font-size:13px;
+      font-family: "宋体";
+      color:#909090;
+      //cursor: pointer;
+    }
+  }
+  .al-tagBox{ //标签容器
+    clear:both;
+    font-size:15px;
+    @include clearfix();
+    figcaption{
+      color: #777;
+      margin-bottom:3px;
+    }
+    a{   //标签项
+      float:left;
+      color:#808080;
+      border:1px solid #e4e9ed;
+      padding:10px 15px;
+      margin-top:12px;
+      margin-right:12px;
+      border-radius:25px;
+      //behavior:url("/js/third-party/pie/pie.htc");
+      position:relative;
+      height: 38px;
+      box-sizing: border-box;
+      /*20181130  终端页标签增加组织标签样式*/
+      .al-terminalOrgTag{
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        margin-right: 8px;
+        img{
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+      .al-terminalTagSpan{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      &:hover{
+//        background: #E0E1E7;
+        background: rgba(224,225,231,0.2);
+      }
+      &.al-lable-fourWrap{
+        margin-right: 0;
+        padding: 10px;
+        i{
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          vertical-align: middle;
+          background: #626f8c;
+          margin-right: 7px;
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.al-caseContentBox{
+  clear:both;
+  padding:10px 0 30px;
+  /*img{
+    width:100%;
+    height:100%;
+    vertical-align: top;
+  }*/
+  .title{
+    font-size:15px;
+    color:#777;
+    margin-top:40px;
+    margin-bottom:15px;
+    font-weight:normal;
+  }
+  .min_title{
+    color:#c0c0c0;
+  }
+  p{
+    color:#333;
+    word-break:break-all;
+    .age{
+      padding-left:6px;
+    }
+  }
+  //既往史
+  .MedicalHistory{
+    p{
+      line-height:30px;
+      margin-bottom:15px;
+      white-space: pre-wrap;
+    }
+    .title{margin-bottom:8px;}
+  }
+
+
+
+  //术前
+  .al-surgeryImgBox_1{
+    figure{
+      width: 660px;
+      text-align: center;
+      background: #000;
+      display: inline-table;
+      &:after{
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+      }
+      img{
+        max-width: 660px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    }
+  }
+
+  //术中
+  .al-surgeryImgBox_2{
+    margin-right:-12px;
+    @include clearfix();
+    figure{
+      float:left;
+      width:324px;
+      height:324px;
+      margin-right:12px;
+      text-align: center;
+      background: #000;
+      display: inline-table;
+      &:after{
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+      }
+      img{
+        max-width:324px;
+        display: inline-block;
+        vertical-align: middle;
+        max-height: 324px;
+      }
+    }
+  }
+
+  //术后
+  .surgery{
+    position:relative;
+    .al-surgeryImgBox_9{
+      margin-right:-12px;
+      @include clearfix();
+      figure{
+        float:left;
+        width:212px;
+        height:212px;
+        margin-top:12px;
+        margin-right:12px;
+        text-align: center;
+        background: #000;
+        display: inline-table;
+
+        &:after{
+          content: '';
+          display: inline-block;
+          //display: block \9;
+          vertical-align: middle;
+          height: 100%;
+        }
+        display: block \9;
+        img{
+          max-width: 212px;
+          display: inline-block;
+          vertical-align: middle;
+          max-height: 212px;
+        }
+      }
+    }
+    p{
+      width: 212px;
+      height: 106px;
+      background-color: rgba(10,30,43,0.5);
+      padding-top:106px;
+      text-align:center;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+
+
+  //讨论
+  .al-textDetails_discuss {
+    position: relative;
+    margin-top:40px;
+    i{
+      display: block;
+      width: 66px;
+      height: 38px;
+      background: url("//img10.allinmd.cn/v3/terminal/discussIcon_img.png") center center no-repeat;
+    }
+    p{
+      line-height:30px;
+      //margin-bottom:22px;
+      margin-top:6px;
+      white-space: pre-wrap;
+      a{
+        color: #3598DB;
+        padding: 0 3px;
+      }
+    }
+  }
+  //纠错·报错
+  .errorRecovery{
+    font-size:14px;
+    vertical-align: middle;
+    cursor: pointer;
+    text-align:right;
+    color:#aaa;
+    margin-top: 22px;
+  }
+  a{
+    color:#aaa;
+    &:hover{
+      color: #2899e6;
+    }
+  }
+}
+
+//视频播放
+.surgery{
+  .al-textDetails_main{
+    margin-top:0;
+    margin-bottom: 10px;
+    img{ width:660px;}
+    figure{
+      position:relative;
+      img{ width:660px;}
+      .videoPlayBtn{  //视频播放按钮
+        position:absolute;
+        width: 80px;
+        height:80px;
+        top:50%;
+        left:50%;
+        margin-top:-40px;
+        margin-left:-40px;
+        border-radius: 50%;
+        //behavior:url("/js/third-party/pie/pie.htc");
+        background: url("//img10.allinmd.cn/v3/common/icon/videoPlayIcon.png") center center no-repeat;
+        cursor: pointer;
+      }
+      span{
+        position: absolute;
+        right:0;
+        bottom:0;
+        text-align: center;
+        color: #fff;
+        width: 81px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 14px;
+        background: url("//img10.allinmd.cn/v3/terminal/video_time.png") center center no-repeat;
+      }
+    }
+    .littleImg{height:292px;}
+  }
+}
+.Ev-videoPic{
+  figure{
+    img{height:450px;}
+  }
+}
+
+
+
+
+/*详情页新增*/
+.subtitle{
+  font-size: 16px;
+  color: #777777;
+  line-height: 24px;
+  font-weight: normal;
+  margin: 10px 0;
+}
+.al-caseContentBox .surgery p{
+  line-height: 0;
+  margin-bottom: 0;
+  white-space: normal;
+}
+.surgery .al-textDetails_main .videoMore{
+  @include clearfix();
+  width: 741px;
+  margin-left: -12px;
+  li{
+    float: left;
+    width: 324px;
+    height: 220px;
+    margin: 12px 0 0 12px;
+    list-style: none;
+    figure{
+      width: 100%;
+      height: 100%;
+    }
+    figure img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+
+
+.uploadSuccess{
+  position:  absolute;
+  left:  0;
+  top: 0;
+  background: url('//img10.allinmd.cn/default/qiniu900_600.jpg') no-repeat;
+  width:  100%;
+  height: 100%;
+  background-size: cover;
+  z-index: 2;
+}
+.uploadFail{
+  position:  absolute;
+  left:  0;
+  top: 0;
+  background: url('//img10.allinmd.cn/default/qiniuFailing900_600.png') no-repeat;
+  width:  100%;
+  height: 100%;
+  background-size: cover;
+  z-index: 2;
+}
+@import "../../components/medplusDownLoad";

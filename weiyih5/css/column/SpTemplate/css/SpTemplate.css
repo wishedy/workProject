@@ -1,0 +1,834 @@
+ @charset "UTF-8";
+/*reset*/
+html {
+  color: #000;
+  background: #fff;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+html * {
+  outline: none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  font-family: 'microsoft yahei', sans-serif;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+
+/* 去掉各 Table  cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 去除默认边框 */
+fieldset,
+img {
+  border: 0;
+}
+
+/* 去掉 firefox 下此元素的边框 */
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+/* 一致的 del 样式 */
+del {
+  text-decoration: line-through;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* 去掉列表前的标识, li 会继承 */
+ol,
+ul {
+  list-style: none;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption,
+th {
+  text-align: left;
+}
+
+/* 来自 yahoo, 让标题都自定义, 适应多个系统应用 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+
+q:before,
+q:after {
+  content: '';
+}
+
+/* 统一上标和下标 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* 正常链接 未访问 */
+/* 鼠标悬停 */
+a:hover {
+  text-decoration: underline;
+}
+
+/* 默认不显示下划线，保持页面简洁 */
+ins,
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+/*主样式开始*/
+/*banner图像*/
+.banner {
+  width: 100%;
+  position: relative;
+}
+.banner .bannerImg {
+  width: 100%;
+}
+.banner .bannerImg img {
+  width: 100%;
+  vertical-align: top;
+}
+.banner .backToHome {
+  font-size: 0.4rem;
+  color: #fff;
+  position: absolute;
+  top: 0.46667rem;
+  left: 0.53333rem;
+}
+.banner .backToHome:before {
+  content: "";
+  display: inline-block;
+  width: 0.46667rem;
+  height: 0.46667rem;
+  background: transparent url("//img50.allinmd.cn/column/SpTemplate/home.png") center center no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+  margin-right: 0.26667rem;
+}
+
+/*标题*/
+.main {
+  width: 100%;
+  overflow: hidden;
+  background-color: #F0F5F8;
+}
+
+.mainTitle {
+  margin-top: 0.26667rem;
+  border-top: 0.01333rem solid #DBDBDB;
+  border-bottom: 0.01333rem solid #DBDBDB;
+}
+.mainTitle .titleImg {
+  width: 100%;
+}
+.mainTitle .titleImg img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+h2.genernalTitle {
+  width: auto;
+  text-align: center;
+  color: #969696;
+  padding-bottom: 0.53333rem;
+  position: relative;
+  font-weight: 300;
+}
+h2.genernalTitle:before, h2.genernalTitle:after {
+  content: "";
+  width: 0.93333rem;
+  height: 0.01333rem;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #DBDBDB;
+}
+h2.genernalTitle:before {
+  margin-right: 0.2rem;
+}
+h2.genernalTitle:after {
+  margin-left: 0.2rem;
+}
+
+/*.
+    clickMore {
+        width: 100%;
+        font-size: rem(28px);
+        padding: rem(30px) 0;
+        text-align: center;
+        border-top: 1px solid $borderBottom;
+        display: block;
+        color: #AAACBC;
+        &:after {
+            content: "";
+            $r: rem(30px);
+            display: inline-block;
+            width: $r;
+            height: $r;
+            vertical-align: middle;
+            margin-left: rem(15px);
+            background: transparent url('//img50.allinmd.cn/column/SpTemplate/more.png') center center no-repeat;
+            background-size: 100% 100%;
+    }
+}*/
+/*
+    .introduce {
+        ul {
+            position: relative;
+            left: rem(55px);
+            padding-right: rem(45px);
+        }
+        li {
+            list-style-type: disc;
+            color: #AAACBC;
+            margin-bottom: rem(35px);
+            padding-right: rem(20px);
+        }
+        span {
+            word-break: break-all;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: rem(28px);
+            width: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            color: #000;
+        }
+    }
+*/
+/*过往推荐*/
+.pastContentBox {
+  font-size: 0.4rem;
+  padding: 0 0.4rem;
+  padding-bottom: 0.4rem;
+  background-color: #fff;
+  border: 1px solid #DBDBDB;
+  text-align: center;
+  margin-top: 0.4rem;
+}
+.pastContentBox a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.pastContentBox .advTitle {
+  width: 100%;
+}
+.pastContentBox .advTitle img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.pastContent {
+  display: inline-block;
+  margin-right: 0.13333rem;
+  margin-bottom: 0.26667rem;
+}
+
+.pastContentBox.oneImg .pastContent {
+  width: 85%;
+  height: 4.13333rem;
+}
+
+.pastContentBox.twoImg .pastContent {
+  width: 45%;
+  height: 2.08rem;
+}
+
+.pastContentBox.threeImg .pastContent {
+  width: 31%;
+  height: 2.08rem;
+}
+
+.pastContentBox.fourImg .pastContent {
+  width: 45%;
+  height: 2.08rem;
+}
+
+.pastContentImg {
+  width: 100%;
+  height: 100%;
+}
+.pastContentImg img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+/*页脚按钮*/
+.bottomBtn {
+  width: 100%;
+  text-align: center;
+  padding: 0.6rem 0;
+}
+.bottomBtn li {
+  display: inline-block;
+  font-size: 0.34667rem;
+}
+.bottomBtn li a {
+  color: #73859e;
+}
+.bottomBtn hr.line {
+  display: inline-block;
+  height: 0.34667rem;
+  vertical-align: middle;
+  margin: 0 0.46667rem;
+}
+
+.bottomBtn.lessBottomBtn {
+  position: absolute;
+  bottom: 0;
+}
+
+/*按钮组*/
+.backPast {
+  width: 0.89333rem;
+  height: 0.89333rem;
+  background: transparent url("//img50.allinmd.cn/column/SpTemplate/back.png") center center no-repeat;
+  background-size: 100% 100%;
+  float: left;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 0.33333rem;
+  left: 0.26667rem;
+}
+
+.shareBtn {
+  width: 1.52rem;
+  height: 0.89333rem;
+  font-size: 0.32rem;
+  line-height: 0.89333rem;
+  display: block;
+  background: transparent url("//img50.allinmd.cn/column/SpTemplate/shareBtn.png") center center no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  bottom: 0.4rem;
+  right: 0.26667rem;
+}
+.shareBtn:before {
+  content: "";
+  display: inline-block;
+  width: 0.32rem;
+  height: 0.32rem;
+  background: transparent url("//img50.allinmd.cn/column/SpTemplate/share.png") center center no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
+
+/*以上样式为公用的标题、页脚等模块*/
+/*专题内容样式*/
+.innerTextBox {
+  margin: 0.26667rem 0.4rem 0 0.4rem;
+  border: 1px solid #DBDBDB;
+  background-color: #fff;
+}
+.innerTextBox .innerTextImg {
+  width: 100%;
+  height: 4.10667rem;
+  position: relative;
+}
+.innerTextBox .innerTextImg img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+.innerTextBox .innerTextImg .imgLink {
+  font-size: 0.34667rem;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.2rem 0.33333rem;
+}
+.innerTextBox .innerText {
+  padding: 0.26667rem;
+  padding-top: 0.26667rem;
+}
+.innerTextBox .innerText p {
+  font-size: 0.37333rem;
+  color: #666666;
+}
+
+/*导航条区域*/
+.navbar {
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #DBDBDB;
+  border-bottom: 1px solid #DBDBDB;
+  margin-top: 0.26667rem;
+}
+.navbar .navbarItem {
+  width: 19%;
+  float: left;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+}
+.navbar .navbarItem a {
+  display: block;
+  width: 100%;
+}
+.navbar .navbarItem .activeImage {
+  display: none;
+}
+.navbar .navbarItem .normalImage {
+  display: block;
+}
+.navbar .navbarItem img {
+  width: 100%;
+  vertical-align: top;
+  position: relative;
+}
+.navbar .navbarItem.on .activeImage {
+  display: block;
+}
+.navbar .navbarItem.on .normalImage {
+  display: none;
+}
+
+.navbar.fixed {
+  position: fixed;
+  top: -0.26667rem;
+  left: 0;
+  z-index: 2;
+}
+
+/*资源内容区*/
+.mainContent {
+  border-bottom: 1px solid #DBDBDB;
+  background-color: #fff;
+  margin-top: 0.26667rem;
+}
+.mainContent .contentTitle {
+  padding: 0.4rem 0;
+  padding-left: 0.4rem;
+  border-top: 1px solid #DBDBDB;
+}
+.mainContent .contentTitle figure {
+  width: 100%;
+}
+.mainContent .contentTitle figure img {
+  vertical-align: top;
+  width: 65%;
+}
+
+.contentBox {
+  border-top: 1px solid #dbdbdb;
+  overflow: hidden;
+  padding: 0.53333rem 0.4rem;
+}
+.contentBox .content,
+.contentBox .contentImgBox {
+  float: left;
+}
+
+.contentImgBox {
+  width: 3.46667rem;
+  height: 2rem;
+  position: relative;
+}
+.contentImgBox .contentImg {
+  width: 100%;
+  height: 100%;
+}
+.contentImgBox .contentImg a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.contentImgBox .contentImg img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+.contentImgBox .videoImg {
+  width: 0.77333rem;
+  height: 0.77333rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -0.38667rem;
+  margin-top: -0.38667rem;
+}
+.contentImgBox .videoImg img {
+  width: 100%;
+  vertical-align: top;
+}
+.contentImgBox .imgMark {
+  width: 0.77333rem;
+  height: 0.77333rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.contentImgBox .imgMark img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.content {
+  width: 58%;
+}
+.content .contentText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 0.42667rem;
+  line-height: 1.5;
+  color: #333333;
+}
+.content .contentText p {
+  display: inline;
+}
+.content .contentText .contentType {
+  font-size: 0.32rem;
+  color: #0c8ef3;
+  border: 1px solid #0c8ef3;
+  border-radius: 0.06667rem;
+  padding: 0.06667rem;
+  margin-right: 0.2rem;
+}
+.content .personalMsg {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.content span {
+  color: #666666;
+  font-size: 0.37333rem;
+  line-height: 2;
+}
+.content .point {
+  color: #dbdbdb;
+}
+
+/*左图右文情况*/
+.contentBox.imageLeft .content {
+  margin-left: 0.33333rem;
+  margin-right: 0;
+}
+
+/*右图左文情况*/
+.contentBox.imageRight .content {
+  margin-left: 0;
+  margin-right: 0.33333rem;
+}
+
+/*上图下文情况*/
+.imageUp {
+  padding: 0.53333rem 0.4rem;
+  text-align: center;
+  border-top: 1px solid #dbdbdb;
+  overflow: hidden;
+}
+.imageUp .contentBox {
+  width: 47%;
+  text-align: center;
+  display: inline-block;
+  padding: 0;
+  border: none;
+}
+.imageUp .contentBox:nth-child(1) {
+  float: left;
+}
+.imageUp .contentBox:nth-child(2) {
+  float: right;
+}
+.imageUp .contentBox .contentImgBox {
+  float: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.imageUp .contentBox .content {
+  width: 100%;
+  margin: 0;
+  margin-top: 0.26667rem;
+  text-align: left;
+}
+
+.videoPK_share_pop {
+  width: 100%;
+  height: 4.26667rem;
+  background: #efeff4;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 11;
+  box-shadow: 7px 3px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.vPK_share_cont {
+  position: absolute;
+  top: -0.46667rem;
+  width: 81.25%;
+  z-index: 12;
+  left: 0;
+  height: 2.98667rem;
+  border-bottom: 1px solid #e6e9ea;
+  background: #fff;
+  padding: 0 9.375% 0.5em 9.375%;
+}
+
+.vPK_share_list {
+  width: 70%;
+  height: 2.98667rem;
+  margin: 0 auto;
+}
+
+.clear {
+  height: 0;
+  clear: both;
+  overflow: hidden;
+}
+
+#videoPK_sharebtn a {
+  display: block;
+  width: 1.28rem;
+  height: 1.28rem;
+  margin: 0 auto;
+  float: left;
+  text-align: center;
+}
+
+.share_sina_icon {
+  width: 1.28rem;
+  height: 1.28rem;
+  margin: 0 auto;
+}
+
+.share_qzone_icon {
+  width: 1.28rem;
+  height: 1.28rem;
+  margin: 0 auto;
+}
+
+.share_sina_icon img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.share_sina_text {
+  font-size: 0.32rem;
+  color: #333;
+  margin-top: 0.13333rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.share_qq_icon img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.share_qzone_icon img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#videoPK_sharebtn .share_qq {
+  margin: 0 22%;
+}
+
+#videoPK_sharebtn .share_qzone {
+  float: right;
+}
+
+.share_dao {
+  font-size: 0.37333rem;
+  color: #333;
+  line-height: 1;
+  text-align: center;
+  margin: 0.30667rem 0 0.14667rem 0;
+}
+
+.share_quxiao {
+  background: #868c95;
+  border-radius: 3px;
+  width: 93.75%;
+  line-height: 2.53;
+  border: solid 1px #7a7f89;
+  position: absolute;
+  bottom: 0.47em;
+  left: 3.125%;
+  font-size: 0.45333rem;
+  color: #fff;
+  text-align: center;
+}
+
+.ui-popup-container {
+  z-index: 1100;
+  display: inline-block;
+  position: absolute;
+  padding: 0;
+  outline: 0;
+}
+
+#popupBasic2 {
+  padding: 1em;
+  background: #333;
+  color: #eee;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.ui-popup > p, .ui-popup > h1, .ui-popup > h2, .ui-popup > h3, .ui-popup > h4, .ui-popup > h5, .ui-popup > h6 {
+  margin: .5em .4375em;
+}
+
+#popupBasic2 a {
+  color: white;
+}
+
+.ui-btn.ui-btn-b {
+  background-color: #333;
+  border-color: #1f1f1f;
+  color: #fff;
+  text-shadow: 0 1px 0 #111;
+  right: -11px;
+  position: absolute;
+  top: -11px;
+  margin: 0;
+  z-index: 1101;
+  border-radius: 1em;
+  padding: 0;
+  width: 1.75em;
+  height: 1.75em;
+  text-indent: -9999px;
+  white-space: nowrap !important;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+.ui-loader-default {
+  display: none;
+}
+
+.dk-result-pointer-bg {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #2F2C2C;
+  opacity: 0.9;
+  z-index: 19;
+  /*  display: none;*/
+}
+
+.dk-result-pointer {
+  width: 100%;
+  position: fixed;
+  top: 0.8em;
+  right: 0.4em;
+  background: url("/image/share.png") no-repeat;
+  background-size: 100%;
+  /*  display: none; */
+  height: 30em;
+  z-index: 20;
+}

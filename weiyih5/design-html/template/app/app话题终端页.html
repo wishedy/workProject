@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5, user-scalable=no"/>
+    <title>话题</title>
+    <link rel="stylesheet" href="/css/app/app_topic_detail.css"/>
+    <script>
+        var refId="";
+        var qiniuId="";
+    </script>
+</head>
+<body>
+<section class="topic_section">
+    <div class="container_box">
+
+        <div class="publish_info">
+            <#if contentList??>
+                <#list contentList as list>
+                    <#if list.contentType == 0 >
+                        <p class="publish_con_text EV_text">
+                            ${list.content!''}
+                        </p>
+                    </#if>
+                    <#if list.contentType == 1 >
+                        <div class="publish_info_img">
+                            <img class="EV_attImg" src="${list.picAttUrl!''}" data-original="/images/img50/225_150.jpg" attName="${list.picAttName!''}"/>
+                        </div>
+                        <#if list.picAttName??&&list.picAttName?length!=0>
+                            <div class="publish_img_text">${list.picAttName!''}</div>
+                        </#if>
+                    </#if>
+                    <#if list.contentType == 2 >
+                        <script>
+                            refId="${list.topicId!''}";
+                            qiniuId="${list.topicAttId?c}";
+                        </script>
+                        <!--视频图片start-->
+                        <div class="publish_info_video EV_attVideo" style="display:none;">
+                            <img class="video_img" src="${list.attLogoUrl!''}" videoURL=""/>
+                            <img class="video_play_icon" src="/images/img50/detail/video_play.png" alt=""/>
+                            <span class="EV_attTime"></span>
+                            <div class="video_mask">
+                                <div class="video_mask_bg"></div>
+                                <div class="video_mask_tl">系统正在上传处理</div>
+                                <div class="video_mask_con">15分钟后再来看看吧~</div>
+                            </div>
+                        </div>
+                        <!--视频图片end-->
+                    </#if>
+                </#list>
+            </#if>
+
+        </div>
+    </div>
+</section>
+</body>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js" charset="utf-8"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js" type="text/javascript"></script>
+<script src="/js/third-party/jquery_lazyload/jquery.lazyload.js"></script>
+<script>
+    function getpara(){//获取参数的函数
+        var url = document.URL;
+        var param = {};
+        var str, item;
+        if (url.lastIndexOf("?") > 0) {
+
+            str = url.substring(url.lastIndexOf("?") + 1, url.length);
+            if (url.lastIndexOf("#") > 0) {
+                str = str.split("#")[0];
+            }
+            var arr = str.split("&");
+            for (var i = 0; i < arr.length; i++) {
+                item = arr[i].split("=");
+                param[item[0]] = decodeURI(item[1]);
+            }
+        }
+        return param;
+    }
+
+    $(function(){
+
+        /*$(".EV_attImg").lazyload({
+         effect:"fadeIn"
+         });*/
+
+        //var IOSVer=navigator.userAgent.match(/OS ([\d])[_\d][_\d]* like Mac OS X/i)
+        var IOSVerNum = IOSVer?IOSVer[1]:7;//ios版本号
+
+        var data={};
+        var param={};
+        data.refType=4;
+        data.refId=refId;
+        data.qiniuId=qiniuId;
+        data.attUseFlag=10;
+        param.paramJson=$.toJSON(data);
+        $.ajax({
+            type : "post",
+            url : "/mcall/qiniu/storage/getMapVideoList/",
+            data : param,
+            dataType : "json",
+            async: false,
+            success : function(rep){
+                if(rep&&rep.responseObject.responseStatus){
+                    if(rep.responseObject.responseData&&rep.responseObject.responseData.videoListMap&&rep.responseObject.responseData.videoListMap.length>0){
+                        var videoListMap=rep.responseObject.responseData.videoListMap[0];
+                        $(".EV_attVideo").show();
+                        if(videoListMap.qiniuStatus==2){//解码成功
+                            $(".EV_attVideo .video_img").attr("src",videoListMap.logoUrl).attr("videoURL",videoListMap.attUrl);
+                            $(".EV_attTime").text(videoListMap.playTime);
+                        }else{
+                            $(".EV_attVideo .video_img").attr("src","/images/img50/detail/default_video_img.png").attr("videoURL",videoListMap.attUrl);
+                            $(".EV_attTime").hide();
+                            var isHref=false;
+                            /*if(IOSVerNum >= 8){
+                                isHref=getpara().isSelf=="true"?true:false;
+                            }else{*/
+                                isHref=appjs.isAutho();
+                            //}
+                            var qiniuStatus=videoListMap.qiniuStatus;
+                            if(isHref){//是自己
+                                if(qiniuStatus==0){//上传中
+                                    $(".video_mask").addClass("uploading_mask");
+                                    $(".video_mask_tl").text("正在上传");
+                                    $(".video_mask_con").hide();
+                                }else if(qiniuStatus==1){//转码中
+                                    $(".video_mask").addClass("isHref_mask");
+                                    $(".video_mask_tl").text("上传成功");
+                                    $(".video_mask_con").text("待系统处理后即可预览");
+                                }else{//转码失败
+                                    $(".video_mask").addClass("uploading_mask");
+                                    $(".video_mask_tl").text("上传失败");
+                                    $(".video_mask_con").hide();
+                                }
+
+                            }
+                            $(".video_mask").show();
+                        }
+                    }
+
+                }
+            },
+            error:function(){}
+        });
+
+        //提醒的人点击
+        $(".EV_text a").on("click",function(){
+            customerUserID=$(this).attr("href");
+            /*if(IOSVerNum >= 8){
+                window.webkit.messageHandlers.appjs.postMessage($.toJSON({"customerUserID":customerUserID}));
+            }else{*/
+                appjs.gotoPersonalCenter($.toJSON({"customerUserID":customerUserID}));
+            //}
+            return false;
+        })
+        //图片点击
+        $(".EV_attImg").on("click",function(){
+            imageURL=$(this).attr("src");
+            imageDesc =$(this).attr("attName");
+            /*if(IOSVerNum >= 8){
+                window.webkit.messageHandlers.appjs.postMessage($.toJSON({"imageURL":imageURL,"imageDesc":imageDesc}));
+            }else{*/
+                appjs.gotoImageBrowser($.toJSON({"imageURL":imageURL,"imageDesc":imageDesc}));
+            //}
+
+        })
+        //视频点击
+        $(".EV_attVideo").on("click",function(){
+            videoURL=$(this).find(".video_img").attr("videoURL");
+            if(videoURL){
+
+                /*if(IOSVerNum >= 8){
+                    window.webkit.messageHandlers.appjs.postMessage($.toJSON({"videoURL":videoURL}));
+                }else{*/
+                    appjs.gotoVideoDetailVC($.toJSON({"videoURL":videoURL}));
+                //}
+            }
+        })
+    })
+</script>
+</html>

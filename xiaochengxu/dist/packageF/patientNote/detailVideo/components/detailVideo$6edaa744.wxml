@@ -1,0 +1,20 @@
+<import src="/components/authorization$8245c8b6" />
+<import src="/components/loading$2ff823fe" /><template name="detailVideo$6edaa744">
+  <view class="_section data-v-53677cba playVideoCon">
+    <view class="_div data-v-53677cba videoCon" wx:if="{{!isFinish}}"><video src="{{videoObj.videoUrl}}" ref="videoHtml" controls poster="{{videoObj.imgUrl}}" autoplay webkit-playsinline="true" x-webkit-airplay="true" playsinline="true" x5-playsinline bindended="handleProxy" id="myVideo" wx:if="{{videoObj.videoUrl}}" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_video data-v-53677cba"></video></view>
+    <view class="_div data-v-53677cba playNextTip" wx:if="{{isFinish}}">
+      <image src="{{videoObj.imgUrl}}" class="_img data-v-53677cba"></image>
+      <view class="_div data-v-53677cba tipContainer">
+        <view class="_div data-v-53677cba tipContent">
+          <view class="_p data-v-53677cba tipTitle" wx:if="{{videoObj.tipsContent}}">
+            <view class="_i data-v-53677cba iconTip"></view><label class="_span data-v-53677cba">温馨提示：{{videoObj.tipsContent}}</label>
+          </view>
+          <view class="_div data-v-53677cba tipPlaySel"><button class="_button data-v-53677cba playNextBtn wx-contact-text" wx:if="{{videoObj.nextEducationId}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">播放下一个</button> <button class="_button data-v-53677cba playReshBtn wx-contact-text" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">重新播放</button></view>
+        </view>
+      </view>
+    </view>
+    <view class="_article data-v-53677cba videoDesc">
+      <view class="_p data-v-53677cba videoText">{{videoObj.educationDesc}}</view>
+    </view> <template data="{{...$root[$kk+'0'], $root}}" is="authorization$8245c8b6"></template> <template wx:if="{{loading}}" data="{{...$root[$kk+'1'], $root}}" is="loading$2ff823fe"></template>
+  </view>
+</template>

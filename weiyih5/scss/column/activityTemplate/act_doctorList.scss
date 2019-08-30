@@ -1,0 +1,247 @@
+@charset "UTF-8";
+@import "../../base";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+/*分享*/
+.al-scrollShareBtn {
+  position: fixed;
+  right: rem(30px);
+  bottom: rem(120px);
+  width: rem(136px);
+  height: rem(70px);
+  line-height: rem(70px);
+  background-color: #2899e6;
+  @include font-dpr(13px);
+  border-radius: rem(50px);
+  color: #fff;
+  text-align: center;
+  opacity: 0.9;
+  z-index: 3;
+}
+.icon-scrollShare{
+  @extend %icon-scrollShare;
+}
+.icon-scrollShare:before{
+  margin-top: rem(-4px);
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+.al-ShareBtnApp{
+  bottom: rem(50px);
+}
+.icon-fixedTopShare {
+  @extend %icon-fixedTopShare;
+  span{
+    font-size: rem(24px);
+    vertical-align: middle;
+  }
+}
+.al-indexHeaderItem.headerBack{
+  float: left;
+  a{
+    img{
+      width: rem(19px);
+      height: rem(33px);
+      vertical-align: middle;
+    }
+  }
+}
+.al-indexHeaderItem h1.seoName{
+  font-size: rem(34px);
+}
+
+
+/*公用样式*/
+ol,ul,li{
+  list-style: none;
+}
+i{
+  font-style:normal;
+}
+div{
+  max-height:100%;
+}
+#header{
+  display: none;
+}
+//战队详情
+#canvasCont{
+  position: relative;
+}
+.act_teamDesc{
+  font-size: 0;
+  min-height: 100%;
+  position: relative;
+  .act_docTopCont{
+    position: relative;
+    img{
+      display: inline-block;
+      width: 100%;
+      height: rem(668px);
+      background-color: #010d19;
+    }
+    .act_docDesc{
+      position: absolute;
+      bottom: rem(218px);
+      right: rem(34px);
+      width: rem(250px);
+      min-height: rem(84px);
+      color: #ffffff;
+      border-radius:0 rem(16px) rem(16px) rem(16px);
+      border:2px solid rgba(118,97,40,1);
+      padding: rem(12px) rem(16px) rem(19px);
+      .act_title{
+        width:rem(138px);
+        height:rem(42px);
+        background:rgba(118,97,40,1);
+        border-radius:rem(10px) rem(10px) 0 0;
+        font-size:rem(28px);
+        font-weight:500;
+        position: absolute;
+        top: rem(-42px);
+        left: -2px;
+        text-align: center;
+        line-height: rem(46px);
+        vertical-align: middle;
+      }
+      .act_name{
+        font-size:rem(40px);
+        font-weight:600;
+        color:rgba(255,255,255,1);
+        margin-right: rem(25px);
+        line-height: rem(56px);
+      }
+      .act_auth{
+        display: inline-block;
+        font-size:rem(24px);
+        font-weight:400;
+        //margin-left: rem(25px);
+      }
+      .act_hospital{
+        display: inline-block;
+        font-size:rem(24px);
+        font-weight:400;
+        color:rgba(255,255,255,1);
+      }
+    }
+  }
+  .act_docBotCont{
+    background: #010d19;
+    color: #ffffff;
+    font-size: rem(28px);
+    position: relative;
+    padding-bottom: rem(300px);
+    margin-top: rem(-2px);
+    .act_teamDesc{
+      width:rem(600px);
+      min-height:rem(64px);
+      border-radius:0 rem(16px) rem(16px);
+      border:2px solid rgba(118,97,40,1);
+      position: relative;
+      padding: rem(35px) rem(32px);
+      margin: 0 auto;
+      line-height:rem(40px);
+      margin-bottom: rem(84px);
+      .act_title{
+        font-size: rem(28px);
+        font-weight:500;
+        color:rgba(255,255,255,1);
+        width:rem(146px);
+        height:rem(42px);
+        background:rgba(118,97,40,1);
+        border-radius:rem(10px) rem(10px) 0 0;
+        position: absolute;
+        top: rem(-42px);
+        left: -2px;
+        text-align: center;
+        line-height: rem(46px);
+        vertical-align: middle;
+      }
+      .act_declaration{
+        font-size:rem(30px);
+        width: rem(670px);
+      }
+    }
+
+  }
+  .act_codeDesc{
+    padding: rem(40px) 0 rem(40px) 0;
+    width: 100%;
+    height: rem(200px);
+    position: absolute;
+    bottom: rem(-1px);
+    background: #ffffff;
+    color: #000000;
+    .codeImg{
+      width: rem(200px);
+      height: rem(200px);
+      margin: 0 rem(48px) 0 rem(100px);
+
+    }
+    .docDesc{
+      display: inline-block;
+      font-size: rem(26px);
+      width: rem(370px);
+      vertical-align: text-bottom;
+      position: absolute;
+      top: 50%;
+      transform: translate(0,-50%);
+      span{
+        font-size: rem(26px);
+        font-weight:400;
+        color: #000000;
+        display: inline-block;
+        &.doctorName{
+          font-size:rem(36px);
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+.botTipBtn{
+  height: rem(88px);
+  text-align: center;
+  line-height: rem(88px);
+  background: #ffffff;
+  border-radius: rem(4px);
+  span{
+    font-size: rem(34px);
+  }
+  .h5Tip{
+    font-size: rem(28px);
+    font-weight:400;
+    color:rgba(153,153,153,1);
+  }
+  .appTip{
+    font-size:rem(32px);
+    color:rgba(85,85,85,1);
+    vertical-align: middle;
+    i{
+      width: rem(40px);
+      height: rem(40px);
+      background: url("/images/img50/column/activityTemplate/saveIcon.png") no-repeat center center;
+      display: inline-block;
+      background-size: cover;
+      vertical-align: middle;
+      margin: rem(-5px) rem(14px) 0 0;
+      line-height: rem(40px);
+
+    }
+  }
+}
+.appBot{
+  box-shadow:0 rem(-8px) rem(16px) 0 rgba(0,0,0,0.03);
+  height: rem(120px);
+  line-height: rem(120px);
+  margin-top: rem(16px);
+}
+.icon-fixedTopShare {
+  @extend %icon-fixedTopShare;
+}

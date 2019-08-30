@@ -1,0 +1,120 @@
+@charset "UTF-8";
+//个人主页——我的直播
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_bottomBtns"; //底部选择栏
+.icon-livingTime {
+    @extend %icon-livingTime;
+}
+
+.icon-livingClass {
+    @extend %icon-livingClass;
+}
+
+.icon-livingWatcherNum {
+    @extend %icon-livingWatcherNum;
+}
+.icon-livingPublic{
+    @extend %icon-livingNoticeIconGray;
+}
+.al-livingDetails {
+    background-color: #fff;
+    margin-top: rem(18px);
+    border-bottom: 1px solid $outerBorderColor;
+    padding-bottom: rem(60px);
+    .al-livingDetailsHead {
+        color: #222;
+        padding-top: rem(40px);
+        @include font-dpr(20px);
+        padding: 0 rem(30px);
+        padding-top: rem(40px);
+        h2 {
+            font-weight: normal;
+            border-bottom: 1px solid $outerBorderColor;
+            padding-bottom: rem(40px);
+            line-height: 1.5;
+        }
+    }
+    .al-livingDetailsItemsBox {
+        padding: 0 rem(30px);
+        padding-top: rem(50px);
+        @at-root {
+            .al-livingDetailsItem {
+                margin-bottom: rem(60px);
+                &:nth-last-child(1) {
+                    margin-bottom: 0;
+                }
+                .icon-livingWatcherNum:before {
+                    margin-right: rem(16px);
+                }
+                h3 {
+                    font-weight: normal;
+                    @include font-dpr(14px);
+                    color: #666;
+                    margin-bottom: rem(30px);
+                    line-height: 1;
+                    span {
+                        vertical-align: middle;
+                    }
+                }
+                & > p {
+                    color: #333;
+                    line-height: 1.5;
+                    @include font-dpr(14px);
+                    span {
+                        margin-left: rem(10px);
+                    }
+                }
+                & > article {
+                    p {
+                        color: #333;
+                        line-height: 1.5;
+                        @include font-dpr(14px);
+                        display: inline-block;
+                        margin-right: rem(60px);
+                        span {
+                            margin-left: rem(10px);
+                        }
+                    }
+                }
+                & > em {
+                    color: #2899e6;
+                    font-style: normal;
+                    @include font-dpr(14px);
+                    display: block;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+}
+
+.al-livingBtn {
+    padding: rem(60px) rem(30px);
+    text-align: center;
+    a {
+        padding-top: rem(30px);
+        display: block;
+        color: #909090;
+        @include font-dpr(16px)
+    }
+}
+
+.al-livingDetailsImg {
+    width: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+}
+
+.ordered{
+    background-color: #dfdfdf;
+    color: #909090;
+}

@@ -1,0 +1,34 @@
+<template name="calendar$41872bb1">
+  <view class="_div data-v-91ffa914 calendar {{[!lunar ? 'hasPrice' : '', isAppStyle ? 'isApp' : '']}}">
+    <view class="_div data-v-91ffa914 calendar-tools">
+      <view class="_div data-v-91ffa914 calendar-prev" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+        <image src="https://m.allinmed.cn/static/image/mp/im/arrow_back.png" class="_image data-v-91ffa914 calendar-prev-bg"></image>
+      </view>
+      <view class="_div data-v-91ffa914 calendar-next" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+        <image src="https://m.allinmed.cn/static/image/mp/im/arrow_back.png" class="_image data-v-91ffa914 calendar-next-bg"></image>
+      </view>
+      <view class="_div data-v-91ffa914 calendar-info">
+        <view class="_div data-v-91ffa914 month">
+          <view class="_div data-v-91ffa914 month-inner" style=" {{('top:' + monthHeight + ';')}}"><label wx:key="m" key="{{m}}" wx:for="{{months}}" wx:for-index="index" wx:for-item="m" class="_span data-v-91ffa914">{{m}}</label></view>
+        </view>
+        <view class="_div data-v-91ffa914 year">{{year}}</view>
+      </view>
+    </view>
+    <view cellpadding="5" class="_table data-v-91ffa914">
+      <view class="_thead data-v-91ffa914">
+        <view class="_tr data-v-91ffa914">
+          <view class="_td data-v-91ffa914 week" wx:key="week" key="{{week}}" wx:for="{{weeks}}" wx:for-index="index" wx:for-item="week">{{week}}</view>
+        </view>
+      </view>
+      <view class="_tbody data-v-91ffa914">
+        <view style="{'animation-delay',(k1*30)+'ms'}" wx:key="k1" key="{{k1}}" wx:for="{{days}}" wx:for-index="k1" wx:for-item="day" class="_tr data-v-91ffa914">
+          <view bindtap="handleProxy" wx:key="k2" key="{{k2}}" data-eventid="{{'2-'+k1+'-'+k2}}" data-comkey="{{$k}}" wx:for="{{day}}" wx:for-index="k2" wx:for-item="child" class="_td data-v-91ffa914 {{[child.disabled ? 'disabled' : '']}}"><label wx:if="{{child.enoughName==undefined&&child.hasCountName==undefined}}" class="_span data-v-91ffa914 {{[  k2 == 0 ||  k2 == 6 ||  ((child.isLunarFestival || child.isGregorianFestival) && lunar)    ? 'red'    : '',  child.today ? 'today' : '']}}">{{child.today?"今天":child.day}}</label> <label class="_span data-v-91ffa914 enough {{[  k2 == 0 ||  k2 == 6 ||  ((child.isLunarFestival || child.isGregorianFestival) &&    lunar &&    !child.today)    ? 'red'    : '',  child.today ? 'today' : '']}}" wx:if="{{child.enoughName!=undefined}}">{{child.today?"今天":child.enoughName}}</label> <label class="_span data-v-91ffa914 hasCount {{[  k2 == 0 ||  k2 == 6 ||  ((child.isLunarFestival || child.isGregorianFestival) &&    lunar &&    !child.today)    ? 'red'    : '',  child.today ? 'today' : '']}}" wx:if="{{child.hasCountName!=undefined}}">{{child.today?"今天":child.hasCountName}}</label>
+            <view class="_div data-v-91ffa914 text {{[  child.isLunarFestival ? 'isLunarFestival' : '',  child.isGregorianFestival ? 'isGregorianFestival' : '']}}" wx:if="{{lunar}}">{{child.lunar}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-91ffa914 calendar-years {{[yearsShow ? 'show' : '']}}"><label catchtap="handleProxy" wx:key="y" key="{{y}}" data-eventid="{{'3-'+index}}" data-comkey="{{$k}}" wx:for="{{years}}" wx:for-index="index" wx:for-item="y" class="_span data-v-91ffa914 {{[y == year ? 'active' : '']}}">{{y}}</label></view>
+  </view>
+</template>

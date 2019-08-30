@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>认证</title>
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <!--build:css /dest/singlePage/user/auth.css -->
+    <link rel="stylesheet" href="/css/v3/base.css" />
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css" />
+    <link rel="stylesheet" href="/css/v3/pageFooter.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/authentication/authentication.css"/>
+
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/publish/publish.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/weixin/module.weixin.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>-->
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/css/column/videoPK_v2/apply_zhezhao.css" rel="stylesheet" type="text/css"/>-->
+    <!--endbuild-->
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section class="al-mainInner">
+    <!-- 页头——本页面无超链接-->
+    <header class="al-header al-dis_header">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox">
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+    <section class="authentication authenticationFirst" id="firstStep">
+
+        <section class="authHelp">
+            <div class="helpText helpTextFirst">
+                <p class="ev-help">帮助</p>
+                <p class="ev-equity">认证权益</p>
+            </div>
+
+            <div class="helpInfo hide ev-helpInfo">
+                <p class="arrow"></p>
+                <p class="helpDate">请于周一至周五（9:00-18:00）联系我们（节假日除外）</p>
+                <p class="helpPhone">客服电话：010-59007006</p>
+                <p class="helpPhone">客服微信：allinmd2014(加微信号请备注姓名)</p>
+            </div>
+        </section>
+        <header>医师认证</header>
+        <article class="authText authTextCenter ev-authText">完成医师认证，免费浏览站内优质资源</article>
+        <section class="secondError hide ev-secondError"><i></i><span></span></section>
+        <section class="authInput">
+            <span class="auth_title">姓名</span>
+            <input type="text" id="fullName" placeholder="请输入姓名"/>
+            <p class="al-tableErrorTips" id="name_error"><i></i>请输入姓名！</p>
+        </section>
+        <section class="authInput sectionunit">
+            <span class="auth_title">性别</span>
+            <figure class="al-tableItemContent">
+                <article class="al-tableItemRadio ev-onUnit ev-sex" unittype="1">
+                    <i class="al-tableRadioOff"></i>男
+                </article>
+                <article class="al-tableItemRadio ev-onUnit right_none ev-sex" unittype="2">
+                    <i class="al-tableRadioOff"></i>女
+                </article>
+            </figure>
+            <p class="al-tableErrorTips" id="onSex_error" style="top:-10px"><i></i>请选择性别！</p>
+        </section>
+        <section class="authInput">
+            <span class="auth_title">出生日期</span>
+            <figure class="al-tableItemContent">
+                <article class="al-tableItemSelector">
+                    <select id="authYear" class="al-year"></select>
+                    <b>年</b>
+                </article><article class="al-tableItemSelector">
+                    <select id="authMonth" class="al-month"></select>
+                    <b>月</b>
+                </article>
+                <article class="al-tableItemSelector">
+                    <select id="authDay" class="al-day"><option value="0" selected="selected">选择</option></select>
+                    <b>日</b>
+                </article>
+            </figure>
+            <p class="al-tableErrorTips" id="date_error" style="right:-130px"><i></i>请选择出生年月！</p>
+        </section>
+        <section class="authInput sectionunit">
+            <span class="auth_title">单位</span>
+            <figure class="al-tableItemContent">
+                <article class="al-tableItemRadio ev-onUnit ev-unit" unittype="1">
+                    <i class="al-tableRadioOff"></i>我在医院
+                </article>
+                <article class="al-tableItemRadio ev-onUnit ev-unit right_none" unittype="2">
+                    <i class="al-tableRadioOff"></i>我在学校
+                </article>
+            </figure>
+            <p class="al-tableErrorTips" id="onUnit_error" style="top:-10px"><i></i>请选择单位！</p>
+        </section>
+        <section class="authInput" style="display: none;">
+            <span class="auth_title">&nbsp;</span>
+            <figure class="al-tableItemContent ev-inUnit" style="display: none"><input type="text" name="company" id="company"/></figure>
+            <figure class="al-tableItemContent ev-inUnit" style="display: none"><input type="text" name="schoolName" id="schoolName"/></figure>
+            <p class="al-tableErrorTips" id="company_error"><i></i>请填写医院！</p>
+        </section>
+        <section class="authInput">
+            <span class="auth_title">职称</span>
+            <figure class="al-tableItemContent al-clickJumpSelectBox" id="ev-medicalPar" style="position: relative;">
+                <figure id="ev-medTitle" class="al-selectDefault">选择职称</figure>
+            </figure>
+            <p class="al-tableErrorTips" id="med_error"><i></i>请选择职称！</p>
+        </section>
+        <section class="authInput sectionunit">
+            <span class="auth_title">专业</span>
+            <figure class="al-tableItemContent">
+                <article class="al-tableItemRadio ev-onUnit ev-division" unittype="1">
+                    <i class="al-tableRadioOff"></i>骨科
+                </article>
+                <article class="al-tableItemRadio ev-onUnit right_none ev-division" unittype="2">
+                    <i class="al-tableRadioOff"></i>手外科
+                </article>
+            </figure>
+            <p class="al-tableErrorTips" id="onDivision_error" style="top:-10px"><i></i>请选择科室！</p>
+        </section>
+        <section class="authInput">
+            <span class="auth_title">专科</span>
+            <figure class="al-tableItemContent al-clickJumpSelectBox" id="ev-areaPar" style="position: relative;">
+                <div id="ev-areaSed" class="al-selectDefault">选择专科</div>
+            </figure>
+            <p class="al-tableErrorTips" id="area_error"><i></i>请选择专科！</p>
+        </section>
+        <aside class="authNext">
+            <span class="ev-authCancel">取消</span>
+            <!--激活图标添加 active类名-->
+            <button class="next" id="ev-next">下一步</button>
+        </aside>
+    </section>
+
+    <section class="authentication_next authentication" id="secondStep">
+        <section class="authHelp">
+            <div class="helpText">
+                <p class="ev-help">帮助</p>
+                <p class="ev-equity" style="margin-right: 20px;">认证权益</p>
+            </div>
+            <div class="helpInfo hide ev-helpInfo">
+                <p class="arrow"></p>
+                <p class="helpDate">请于周一至周五(9:00-18:00)联系我们(节假日除外)</p>
+                <p class="helpPhone">客服电话：400-011-9200</p>
+                <p class="helpPhone">客服微信：allinmd2014<span>（加微信号请备注姓名）</span></p>
+            </div>
+        </section>
+        <article class="authText authTextTip">上传任意1项资质证明，成为唯医认证医师<br/>&nbsp;&nbsp;或上传4个标星证件，直接认证成为唯医执业医师</article>
+        <article class="authText authTip authTextTip">上传原件扫描件或高清照片，保证边角齐全字迹清晰</article>
+        <section class="secondError hide ev-secondError"><i></i><span></span></section>
+       <section class="ev-container">
+
+       </section>
+        <section class="clearFloat">
+            <aside class="authNext">
+                <span class="ev-authCancel">取消</span>
+                <!--激活图标添加 active类名-->
+                <button class="" id="ev-thirdNext" on="">提交</button>
+            </aside>
+        </section>
+    </section>
+
+    <!-- 公共页脚部分 -->
+    <!--#include virtual="/includes/footer.jsp"-->
+</section>
+
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src="//paas.allinmd.cn/modules/uploadCompressedImg/uploadCompressedImg.js"></script>
+<!--build:js /dest/singlePage/user/auth.js -->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.ajaxExistHtml.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<script src="/js/plugins/make-sure-popup/plugin.make-sure-popup.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+
+<script src="/js/modules/user/module.user.js"></script>
+<!--<script src="/js/scene/column/videoPK_v2/scene.column.videoPK_2.process.js"></script>-->
+<!--<script src="/js/modules/publish/module.select-type.js"></script>-->
+<script src="/js/modules/publish/module.video-upload.js" ></script>
+<script src="/js/modules/publish/module.doc-upload.js" ></script>
+<!--<script src="/js/modules/publish/module.topic-upload.js" ></script>-->
+<!--<script src="/js/modules/publish/module.case-upload.js" ></script>-->
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/validate-email/module.validate-email.js"></script>
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js" ></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/weixin/module.welcome.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+<script src="/js/plugins/medicalTitle/plugin.medicalTitleV3.js"></script>
+<script src="/js/plugins/areaExpertise-select/plugin.areaExpertiseSelect.js"></script>
+
+
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.new.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script><script src='/js/third-party/md5.js'></script>
+<!--<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>-->
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/uploadify/swfobject2.2.js" ></script>
+<script src="/js/third-party/uploadify/jquery.uploadify.js" ></script>
+<script src="/js/third-party/ajaxfileupload.js" ></script>
+<script src="/js/third-party/qiniu/qiniu.js" ></script>
+<script src="/js/third-party/qiniu/ui.js" ></script>
+<script src="/js/third-party/plupload/plupload.full.min.js" ></script>
+<script src="/js/third-party/plupload/i18n/zh_CN.js" ></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="/js/third-party/ymd.js"></script>
+
+<script src="/js/scene/singlePage/user/auth.js"></script>
+<!-- endbuild -->
+<section class="al-auth-grade">
+    <section class="al-auth-grade-details">
+        <h1 class="al-auth-grade-title">认证权益</h1>
+        <p class="al-auth-grade-produce" style="margin-bottom: 0;padding-bottom: 0;">认证后可在唯医、医鼎、医栈、唯医骨科拥有相应权限。</p>
+        <p class="al-auth-grade-produce" style="padding-top: 0;margin-top: 0;">根据认证资料完整度，认证分为两个等级：</p>
+        <div class="al-auth-grade-des">
+            <h1><i></i>V1-认证医师<span class="remark">上传任1资质证明</span></h1>
+            <p>拥有在唯医、医鼎、医栈的医师操作权限</p>
+        </div>
+        <div class="al-auth-grade-des">
+            <h1><i></i>V2-执业医师<span class="remark">上传4个标星证件</span></h1>
+            <p>拥有V1权限的同时，还具有在唯医骨科进行执业诊疗的权限</p>
+        </div>
+        <div class="al-auth-grade-close"></div>
+    </section>
+</section>
+</body>
+
+</html>

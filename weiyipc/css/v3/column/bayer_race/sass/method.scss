@@ -1,0 +1,28 @@
+@charset "UTF-8";
+$basicRem:75px;
+
+//px-rem单位换算函数
+@function rem($px) {
+  @return ($px/$basicRem)*1rem;
+}
+
+//根据设备像素缩放比dpr值动态改变字号
+@mixin font-dpr($font-size){
+	font-size:$font-size;
+	[data-dpr="2"] & {
+		font-size:$font-size * 2 ;
+	}
+	[data-dpr="3"] & {
+		font-size:$font-size * 3 ;
+	}
+}
+
+//公共变量
+$textColor:#66657f;
+$linkColor:#7f5fc8;
+$borderInnerTop:#dfdde4;
+$borderInnerBottom:#eceaf0;
+$borderOuter:#eae8ee;
+$headerColor:#1f1f1f;
+$smallTextColor:#9c9c9d;
+$footerColor:#0c8ef3;

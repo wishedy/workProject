@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2017年度唯医学习报告单</title>
+</head>
+<body>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script>
+    var firstRegist = localStorage.getItem("firstRegist"),
+        userId = localStorage.getItem("userId"), //登录用户的用户id
+        otherUserId = localStorage.getItem("otherUserId");
+    if(parseInt(firstRegist)===1){
+        window.location.href ="sorry.html";
+    }else{
+    /*他人的id*/
+        if(otherUserId){
+            $.ajax({
+                url:"/mcall/customer/statisticsStat/getMapByCustomerId/",
+                data: {
+                    paramJson: JSON.stringify({
+                    "customerId":otherUserId
+                    })
+                },
+                success: function (data) {
+                    if (data&&data.responseObject&&  data.responseObject.responseStatus === true) {
+                        var data = data.responseObject.responseData.data_list[0];
+                        localStorage.setItem("otherTranscriptData",JSON.stringify(data));
+                        if(data.customerType ==1){
+                            console.log("kol用户");
+                            window.location.href ="KOL.html";
+                            // kol用户
+                        }else if( data.customerType ==2){
+                            // 普通用户
+                            console.log("普通用户");
+                            window.location.href ="normalUser.html";
+                        }
+                    }else{
+                        console.log("无数据");
+                        window.location.href ="newUser.html";
+                    }
+                }
+            });
+        }else if( userId){
+            /*我的id*/
+            $.ajax({
+                url:"/mcall/customer/statisticsStat/getMapByCustomerId/",
+                data: {
+                    paramJson: JSON.stringify({
+                    "customerId":userId
+                    })
+                },
+                success: function (data) {
+                    if (data&&data.responseObject&&  data.responseObject.responseStatus === true) {
+                        var data = data.responseObject.responseData.data_list[0];
+                        localStorage.setItem("ownTranscriptData",JSON.stringify(data));
+                    if(data.customerType ==1){
+                        window.location.href ="KOL.html";
+                        // kol用户
+                    }else if( data.customerType ==2){
+                        // 普通用户
+                        window.location.href ="normalUser.html";
+                    }
+                    }else{
+                    window.location.href ="newUser.html";
+                    }
+                }
+            });
+        }else{ //未登录
+            localStorage.setItem("fromPage","//m.allinmd.cn/pages/column/transcript/jump.html");
+            localStorage.setItem("fromPageN", "//m.allinmd.cn/pages/column/transcript/jump.html");
+            window.location.href = "/pages/passport/loginV2/login.html";
+        }
+    }
+ </script>
+</body>
+</html>

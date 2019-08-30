@@ -1,0 +1,150 @@
+@charset "UTF-8";
+//个人主页——首页
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+//公共组件引用
+
+@import "../../components/_personalBasic"; //个人主页基础样式
+@import "../../components/_contentModule"; //主内容区域
+.al-personalInnerSidebarBox {
+    background-color: #fff;
+    text-align: left;
+    padding: 30px 20px;
+    border:1px solid #e4e9ed;
+    .al-personalAdviceTitle {
+        font-size: 16px;
+        color: #555;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    textarea {
+        width: 226px;
+        height: 170px;
+        border: 1px solid $innerBorderColor;
+
+      &:focus{
+        border: 1px solid #3598db!important;
+        box-shadow: 1px 1px 3px rgba(53,152,219,.8),-1px -1px 3px rgba(53,152,219,.8)
+      }
+    }
+}
+
+.al-textareaBox {   //个人主页设置文本域样式
+    position: relative;
+    /*width:212px;
+    height:186px;
+    border: 1px solid #DBDBDB;
+    overflow: hidden;
+    padding:12px 0 0 12px;*/
+    margin-bottom:10px;
+    textarea {
+      resize: none;
+      width:212px;
+      height:186px;
+      border: 1px solid #DBDBDB;
+      padding:12px 0 0 12px;
+    }
+    span {
+        font-size: 13px;
+        font-family: "宋体";
+        color: #aaa;
+        position: absolute;
+        right: 12px;
+        bottom: 8px;
+    }
+}
+
+.al-personalInnerContent {
+    .al-tableModule {
+        padding: 0;
+        border:1px solid #E4E9ED;
+        border-top:none;
+    }
+    .al-tableItem {
+//        cursor: pointer;
+        min-height: 60px;
+       // height:60px;  9/27
+        line-height:60px;
+        margin: 0;
+        padding: 0 24px;
+        p {width: 80px;}
+        a {
+            color: #3598DB;
+            font-size: 17px;
+        }
+        i {
+            font-style: normal;
+            font-size: 14px;
+            color: #3598DB;
+            float: right;
+            display: none;
+            cursor: pointer;
+        }
+        &:hover {
+            background-color: #fafbfd;
+        }
+    }
+    .al-tableItem.al-hasBinded{
+        a{
+            display: none;
+        }
+    }
+    .al-tableItem.al-hasBinded:hover {
+        
+        i.al-tableChangeItem {
+            display: inline;
+        }
+    }
+}
+
+.al-quitLoginBtn {
+    background-color:#fff;
+    margin-top:18px;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    color: #626f8c;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    padding:0;
+    border:1px solid #e4e9ed;
+}
+
+.al-tableItem {
+    &>p {
+        //margin-left: 24px;    帐号安全——文本靠左对齐  9/22
+    }
+    a {
+        margin-left: 40px;
+    }
+}
+
+.al-detailedTableItem:hover{
+
+}
+.al-detailedTableItem{  //  9/27  设置页——编辑状态下按钮下边距
+    .al-tableDetailedBtn{padding-bottom:15px;}
+    p{
+        vertical-align: middle;
+        margin-top:14px;
+    }
+}
+.al-vipBigUser {
+    display: inline-block;
+    width: 18px;
+    height: 16px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_vip.png') center center no-repeat;
+    margin-left: 3px;
+}
+.al-vipNewBigUser{
+    width: 35px;
+    height:18px;
+}
+@import "../../components/_shareBoxModule"; //分享按钮盒
+@import "../../components/_tableModule"; //表单公共样式
+@import "../../components/_uploadBox"; //上传弹窗
+//变更信息提示弹框：begin
+@import "../../components/_authenticationNew"; //认证四证齐全改版样式

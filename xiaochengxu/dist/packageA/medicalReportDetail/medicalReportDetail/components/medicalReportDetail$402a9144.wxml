@@ -1,0 +1,62 @@
+<import src="/components/backIndex$640b7ced" /><template name="medicalReportDetail$402a9144">
+  <view class="_section data-v-57e2fc89 main-inner medical-report-detail">
+    <view class="_section data-v-57e2fc89 tc-caseContentBox">
+      <view class="_section data-v-57e2fc89 tc-baseInfo">
+        <view class="_ul data-v-57e2fc89 tc-baseInfoList">
+          <view class="_li data-v-57e2fc89 tc-baseInfoItem">
+            <view class="_div data-v-57e2fc89 tc-baseInfoItemLeft">
+              <image src="{{logoUrl}}" alt class="_img data-v-57e2fc89"></image>
+            </view>
+            <view class="_div data-v-57e2fc89 tc-baseInfoItemRight">
+              <view class="_article data-v-57e2fc89 sexAgeBox"><label class="_span data-v-57e2fc89 tc-baseInfoName">{{formatName}}</label> <label class="_span data-v-57e2fc89 tc-baseInfoSex"> {{patientCasemap.sexName}}</label> <label class="_span data-v-57e2fc89 tc-baseInfoAge">{{patientCasemap.age}} 岁</label></view>
+              <view class="_div data-v-57e2fc89 inquiryTimeBox">咨询日期:{{caseTime}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="_section data-v-57e2fc89 recommendUserMainBox">
+          <view class="_div data-v-57e2fc89 recommendUserMainLeft">主诉</view>
+          <view class="_div data-v-57e2fc89 recommendUserMainRight">{{patientCasemap.caseMain.caseMain}}</view>
+        </view>
+      </view>
+      <view class="_section data-v-57e2fc89 tc-caseDescribe tc-module">
+        <view class="_section data-v-57e2fc89 tc-caseDescribeTitle title">
+          <view class="_h3 data-v-57e2fc89">详情</view>
+        </view>
+        <view class="_ul data-v-57e2fc89 tc-caseDescribeList">
+          <view class="_li data-v-57e2fc89 tc-caseDescribeItem" wx:if="{{caseType == 15}}"><label class="_span data-v-57e2fc89 tc-caseDescribeItemLeft">美年体检</label> <label class="_span data-v-57e2fc89 tc-caseDescribeItemRight tc-noRevice mei-nian" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">查看美年体检报告</label></view>
+          <view class="_li data-v-57e2fc89 tc-caseDescribeItem" wx:if="{{resultMainList[1] && resultMainList[1].symptomOptions[0] && resultMainList[1].symptomOptions[0].optionName}}"><label class="_span data-v-57e2fc89 tc-caseDescribeItemLeft">持续时间</label> <label class="_span data-v-57e2fc89 tc-caseDescribeItemRight tc-noRevice">{{resultMainList[1].symptomOptions[0].optionName}}</label></view>
+          <view class="_li data-v-57e2fc89 tc-caseDescribeItem" wx:if="{{VASGrade.length}}"><label class="_span data-v-57e2fc89 tc-caseDescribeItemLeft">VAS评分</label> <label class="_span data-v-57e2fc89 tc-caseDescribeItemRight tc-noRevice">{{VASGrade}}</label></view>
+          <view class="_li data-v-57e2fc89 tc-caseDescribeItem" wx:if="{{illnessDis.length && caseType != 15}}"><label class="_span data-v-57e2fc89 tc-caseDescribeItemLeft">病情补充</label> <label class="_span data-v-57e2fc89 tc-caseDescribeItemRight tc-noRevice">{{illnessDis}}</label></view>
+          <view class="_li data-v-57e2fc89 tc-caseDescribeItem"><label class="_span data-v-57e2fc89 tc-caseDescribeItemLeft">想获得的帮助</label> <label class="_span data-v-57e2fc89 tc-caseDescribeItemRight tc-noRevice">{{getHelp}}</label></view>
+        </view>
+      </view>
+      <view class="_section data-v-57e2fc89 tc-caseDescribe tc-module">
+        <view class="_section data-v-57e2fc89 tc-caseDescribeTitle title">
+          <view class="_h3 data-v-57e2fc89">诊治情况</view>
+        </view>
+        <view class="_ul data-v-57e2fc89 tc-caseDescribeList">
+          <view class="_li data-v-57e2fc89 tc-caseDescribeItem"><label class="_span data-v-57e2fc89 tc-caseDescribeItemLeft">检查资料</label> <label class="_span data-v-57e2fc89 tc-caseDescribeItemRight tc-noRevice">{{imageList1.length===0?(isUpload===1?"暂不上传片子":"未拍片子"):"  "}}</label>
+            <view class="_ul data-v-57e2fc89 uploadListsBox" wx:if="{{imageList1.length!==0}}">
+              <view wx:key="index" key="{{index}}" bindtap="handleProxy" hidden="{{!(item.isShow)}}" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}" wx:for="{{imageList1}}" wx:for-index="index" wx:for-item="item" class="_li data-v-57e2fc89">
+                <image src="{{item.caseAttUrl}}" class="_img data-v-57e2fc89"></image> <label class="_span data-v-57e2fc89 moreImg" wx:if="{{imageList1.length>9&&index == 8&&showMoreImg}}">更多{{imageList1.length - 9}}张</label>
+              </view>
+            </view>
+          </view>
+          <view class="_li data-v-57e2fc89 tc-caseDescribeItem" wx:if="{{treatmentList.length>0 && (patientCasemap.caseType == 12 || patientCasemap.caseType == 13)}}"><label class="_span data-v-57e2fc89 tc-caseDescribeItemLeft">治疗情况</label> <label class="_span data-v-57e2fc89 tc-caseDescribeItemRight tc-noRevice">{{all_find}}</label></view>
+          <view wx:key="index" key="{{index}}" wx:if="{{treatmentList.length>0 && (patientCasemap.caseType == 12 || patientCasemap.caseType == 13)}}" wx:for="{{treatmentList}}" wx:for-index="index" wx:for-item="item" class="_section data-v-57e2fc89">
+            <view class="_li data-v-57e2fc89 tc-caseDescribeItem" wx:if="{{item.optionDesc.length>0}}"><label class="_span data-v-57e2fc89 tc-caseDescribeItemLeft">{{item.commOptionDesc}}</label> <label class="_span data-v-57e2fc89 tc-caseDescribeItemRight tc-noRevice">{{item.optionDesc}}</label></view>
+            <view class="_li data-v-57e2fc89 tc-caseDescribeItem" wx:if="{{item.commIsAttachment == 4}}"><label class="_span data-v-57e2fc89 tc-caseDescribeItemLeft">手术时间</label> <label class="_span data-v-57e2fc89 tc-caseDescribeItemRight tc-noRevice">{{item.optionRemark}}</label></view>
+          </view>
+        </view>
+      </view>
+      <view class="_section data-v-57e2fc89 tc-caseDescribe tc-module">
+        <view class="_section data-v-57e2fc89 tc-caseDescribeTitle title">
+          <view class="_h3 data-v-57e2fc89">基本信息</view>
+        </view>
+        <view class="_ul data-v-57e2fc89 tc-caseDescribeList">
+          <view class="_li data-v-57e2fc89 tc-caseDescribeItem"><label class="_span data-v-57e2fc89 tc-caseDescribeItemLeft">手机号码</label> <label class="_span data-v-57e2fc89 tc-caseDescribeItemRight tc-noRevice">{{patientCasemap.mobile}}</label></view>
+        </view>
+      </view>
+    </view> <template wx:if="{{backIndexShow}}" data="{{...$root[$kk+'0'], $root}}" is="backIndex$640b7ced"></template>
+  </view>
+</template>

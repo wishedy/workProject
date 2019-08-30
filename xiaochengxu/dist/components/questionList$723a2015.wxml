@@ -1,0 +1,65 @@
+<import src="/components/upLoadPlugn$f25b8f4a" />
+<import src="/components/upLoadPlugn$f25b8f4a" />
+<import src="/components/confirm$5251c782" />
+<import src="/components/loading$2ff823fe" />
+<import src="/components/toast$1074ede9" /><template name="questionList$723a2015">
+  <view class="_section data-v-43f363a0 question-list">
+    <view class="_header data-v-43f363a0 question-partName">已选部位：{{patientMessage.partName}}</view>
+    <view class="_section data-v-43f363a0 question-slideL"></view>
+    <view class="_section data-v-43f363a0 question-list-inner">
+      <view class="_article data-v-43f363a0 question-list-item" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"><label class="_span data-v-43f363a0 question-list-item-title">已选部位不适症状</label>
+        <view class="_p data-v-43f363a0 question-list-item-content"><label class="_span data-v-43f363a0 {{[  questionOneDes.length > 0 ? 'selected' : '',  !questionOneDes.length && noSlected ? 'no-selected' : '']}}">{{formatQuestionOneDes}}</label></view>
+      </view>
+      <view class="_section data-v-43f363a0 question-slide"></view>
+      <view class="_article data-v-43f363a0 question-list-item" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+        <picker mode="selector" value="{{0}}" range="{{delayTimePicker}}" range-key="{{'text'}}" bindchange="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_picker data-v-43f363a0"><label class="_span data-v-43f363a0 question-list-item-title">患病时长</label>
+          <view class="_p data-v-43f363a0 question-list-item-content"><label class="_span data-v-43f363a0 {{[  delayTimeContent.length > 0 ? 'selected' : '',  !delayTimeContent.length && noSlected ? 'no-selected' : '']}}">{{delayTimeContent.length>0?delayTimeContent:"请选择"}}</label></view>
+        </picker>
+      </view>
+      <view class="_section data-v-43f363a0 question-slideL"></view>
+    </view>
+    <view class="_section data-v-43f363a0 question-list-inner">
+      <view class="_article data-v-43f363a0 question-list-item" wx:if="{{scene==='findDoctor'}}" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}"><label class="_span data-v-43f363a0 question-list-item-title">治疗情况</label>
+        <view class="_p data-v-43f363a0 question-list-item-content"><label class="_span data-v-43f363a0 {{[  questionTwoDes.length > 0 ? 'selected' : '',  !questionTwoDes.length && noSlected ? 'no-selected' : '']}}">{{questionDescSubFn}}</label></view>
+      </view>
+      <view class="_article data-v-43f363a0 question-list-item" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}"><label class="_span data-v-43f363a0 question-list-item-title">病情补充<view class="_i data-v-43f363a0 question-list-item-tip">(选填)</view></label>
+        <view class="_p data-v-43f363a0 question-list-item-content"><label class="_span data-v-43f363a0 {{[  patientMessage.descriptionDisease &&  patientMessage.descriptionDisease.length > 0    ? 'selected'    : '']}}">{{descriptionDisease}}</label></view>
+      </view>
+      <view class="_section data-v-43f363a0 question-slide"></view>
+      <view class="_article data-v-43f363a0 question-list-item uploadPic">
+        <view class="_section data-v-43f363a0 question-list-hasPic"><label class="_span data-v-43f363a0 question-list-item-title">是否有就诊时片子的照片</label>
+          <view class="_p data-v-43f363a0 question-list-item-content no-arrowIcon"><label class="_span data-v-43f363a0 question-hasPic {{[  isShowImgEnter == 1 ? 'actived' : '',  isShowImgEnter == -1 && noSlected ? 'no-selected' : '']}}" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">有</label> <label class="_span data-v-43f363a0 question-noPic {{[  isShowImgEnter == 0 ? 'actived' : '',  isShowImgEnter == -1 && noSlected ? 'no-selected' : '']}}" bindtap="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}">没有</label></view>
+        </view>
+        <view class="_section data-v-43f363a0 question-list-image" wx:if="{{isShowImgEnter==1}}">
+          <view class="_section data-v-43f363a0 question-loadTitle"><label class="_span data-v-43f363a0 loadTitle-l">如何翻拍片子？</label> <label class="_span data-v-43f363a0 loadTitle-r" bindtap="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}">点击查看</label></view>
+          <view class="_section data-v-43f363a0 question-list-image-list">
+            <view class="_figure data-v-43f363a0 question-list-image-item" hidden="{{!(imageList.length==0)}}">
+              <view class="_figure data-v-43f363a0 question-image-addBtn">
+                <view class="_section data-v-43f363a0 question-image-btnBox"><label class="_span data-v-43f363a0 question-image-btnIcon"></label><label class="_span data-v-43f363a0 question-image-btnText">点击上传照片</label></view> <template bindbeforeUpload="handleProxy" binduploadDone="handleProxy" data-eventid="{{'8'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="upLoadPlugn$f25b8f4a"></template>
+              </view>
+            </view>
+            <view class="_ul data-v-43f363a0 qu-upLoadItemBox-s" wx:if="{{imageList.length>0}}">
+              <view class="_li data-v-43f363a0 tc-upLoadItemList" wx:if="{{index<9}}" wx:key="index" key="{{index}}" wx:for="{{imageList}}" wx:for-index="index" wx:for-item="item">
+                <image src="{{item.blob}}" bindtap="handleProxy" data-eventid="{{'9-'+index}}" data-comkey="{{$k}}" class="_img data-v-43f363a0"></image> <label class="_span data-v-43f363a0 tc-upLoadDel" bindtap="handleProxy" data-eventid="{{'10-'+index}}" data-comkey="{{$k}}"></label> <label class="_span data-v-43f363a0 imgItem-cover" wx:if="{{item.uploading}}"><label class="_span data-v-43f363a0 imgItem-loading"></label></label>
+                <view class="_figure data-v-43f363a0 imgItem-fail" wx:if="{{item.fail}}" bindtap="handleProxy" data-eventid="{{'11-'+index}}" data-comkey="{{$k}}">
+                  <view class="_p data-v-43f363a0 imgItem-failText">上传失败</view>
+                  <view class="_p data-v-43f363a0 imgItem-reloadText">点击重试</view>
+                </view>
+              </view> <template bindbeforeUpload="handleProxy" binduploadDone="handleProxy" wx:if="{{isReadyLoad}}" data-eventid="{{'12'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="upLoadPlugn$f25b8f4a"></template>
+            </view>
+            <view class="_p data-v-43f363a0 upLoadContentNum" hidden="{{!(imageList.length>0)}}">已上传{{imageList.length}}张，<label class="_span data-v-43f363a0 upLoadViewAll" bindtap="handleProxy" data-eventid="{{'13'}}" data-comkey="{{$k}}">查看全部</label></view>
+          </view>
+          <view class="_article data-v-43f363a0 question-list-image-hide" hidden="{{!(false)}}">片子是您咨询的重要依据，请尽量上传</view>
+        </view>
+      </view>
+      <view class="_section data-v-43f363a0 question-slide" wx:if="{{isShowImgEnter != 1}}"></view>
+    </view>
+    <view class="_section data-v-43f363a0 question-list-inner">
+      <view class="_article data-v-43f363a0 question-list-item" bindtap="handleProxy" data-eventid="{{'14'}}" data-comkey="{{$k}}"><label class="_span data-v-43f363a0 question-list-item-title">想要医生提供的帮助</label>
+        <view class="_p data-v-43f363a0 question-list-item-content"><label class="_span data-v-43f363a0 {{[  patientMessage.needHelp && patientMessage.needHelp.length > 0    ? 'selected'    : '',  !(patientMessage.needHelp && patientMessage.needHelp.length > 0) && noSlected    ? 'no-selected'    : '']}}">{{needHelp}}</label></view>
+      </view>
+      <view class="_section data-v-43f363a0 question-slide"></view>
+    </view>
+    <form action bindsubmit="handleProxy" data-eventid="{{'16'}}" data-comkey="{{$k}}" class="_form data-v-43f363a0"><button class="_button data-v-43f363a0 submit-btn" formType="submit" bindtap="handleProxy" data-eventid="{{'15'}}" data-comkey="{{$k}}">提交给医生</button></form> <template wx:if="{{deletePicTip}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'17'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="confirm$5251c782"></template> <template wx:if="{{loading}}" data="{{...$root[$kk+'3'], $root}}" is="loading$2ff823fe"></template> <template wx:if="{{toastShow}}" data="{{...$root[$kk+'4'], $root}}" is="toast$1074ede9"></template>
+  </view>
+</template>

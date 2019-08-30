@@ -1,0 +1,104 @@
+@charset "UTF-8";
+//类型筛选下拉框组件
+//Created by qiangkailiang on 2016/08/05
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.al-personalContributionSelector {
+    float: right;
+    position: relative;
+    h2 {
+        font-weight: normal;
+        @include font-dpr(13px);
+        color: #626f8c;
+        vertical-align: middle;
+        &:after {
+            content: "";
+            width: rem(18px);
+            height: rem(11px);
+            display: inline-block;
+            vertical-align: 0.05rem;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAMAAACOlf6TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAbUExURW15kmNwjWNvjExpcWNvjGh0l2JvjWNwjWJvjPl7nuUAAAAIdFJOUxXU0wDMFsPLgMs18AAAAERJREFUCNdNzksSACAIAlAK+9z/xNEUpQsH3wbRB5imRUfMmgxlDmh9Q9UBJpMUAb8d2WS7QtBmOcQmsxCv3GLSi+G4AMS/AgoSQF7wAAAAAElFTkSuQmCC') center center no-repeat;
+            background-size: cover;
+            margin-left: rem(8px);
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            transition: all 0.2s linear;
+            -webkit-transition: all 0.2s linear;
+        }
+    }
+    ul {
+        background-color: #fff;
+        position: absolute;
+        z-index: 1;
+        width: rem(210px);
+        right: rem(-25px);
+        list-style: none;
+        visibility: hidden;
+        opacity: 0;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2), -1px -1px 5px rgba(0, 0, 0, 0.2);
+        transition: all 0.15s linear;
+        -webkit-transition: all 0.15s linear;
+        &:before{
+            content:'';
+            display: inline-block;
+            position: absolute;
+            width: rem(25px);
+            height: rem(25px);
+            background-color: #fff;
+            border: solid #e4e9ed;
+            border-width: 1px 0 0 1px;
+            left:50%;
+            top:rem(-13px);
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            z-index:9;
+        }
+    //    &:before {
+    //        content: "";
+    //        @include triangle(rem(30px),
+    //        #fff,
+    //        up);
+    //        position: absolute;
+    //        top: rem(-30px);
+    //        right: rem(60px);
+    //        z-index: 3;
+    //    }
+    //    &:after{
+    //        content: "";
+    //        @include triangle(rem(37px),
+    //        #eff4f8,
+    //        up);
+    //        position: absolute;
+    //            top: -0.5rem;
+    //right: 0.745rem;
+    //        z-index: 2;
+    //    }
+    }
+}
+
+.al-personalContributionSelectorItem {
+    padding: rem(30px) rem(62px);
+    line-height: 1;
+    @include font-dpr(16px);
+    border-bottom: 1px solid $innerBorderColor;
+    text-align: center;
+    color: #555555;
+}
+
+.al-personalContributionSelectorItem.active {
+    color: #3598db;
+}
+
+.al-personalContributionSelector.al-personalSelectorOn {
+    ul {
+        opacity: 1;
+        visibility: visible;
+    }
+    h2:after {
+        transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+    }
+}

@@ -1,0 +1,21 @@
+<template name="fileMessage$740ed663">
+  <view class="_section data-v-3216b93e main-message-box" bindlongpress="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+    <view class="_article data-v-3216b93e main-message-box-item {{[  fileMessage.from === userData.account ? 'my-message' : '',  fileMessage.from === targetData.account ? 'others-message' : '']}}" data-clientid="{{fileMessage.idClient}}">
+      <view class="_figure data-v-3216b93e main-message-img" wx:if="{{fileMessage.from===targetData.account}}">
+        <image src="https://m.allinmed.cn/static/image/imScene/chatting_portrait_system@2x.png" alt class="_img data-v-3216b93e"></image>
+      </view>
+      <view class="_figcaption data-v-3216b93e main-message-content file-message-box"><label class="_span data-v-3216b93e delete-msg-btn" catchtap="handleProxy" wx:if="{{currentIndex===deleteMsgIndex&&showDeleteMsg&&fileMessage.from===userData.account}}" data-eventid="{{'0'}}" data-comkey="{{$k}}">撤回</label>
+        <view class="_section data-v-3216b93e file-box">
+          <view class="_figure data-v-3216b93e file-content" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+            <image class="_img data-v-3216b93e file-image" src="https://m.allinmed.cn/static/image/imScene/pdf@3x.png"></image>
+            <view class="_figcaption data-v-3216b93e file-name" wx:if="{{custom}}">{{custom.name}}</view>
+          </view>
+        </view>
+        <view class="_article data-v-3216b93e disclaimer-content" wx:if="{{fileMessage.from===targetData.account}}"><label class="_span data-v-3216b93e">重要提示：在线咨询不能代替面诊，医生建议仅供参考。</label></view>
+      </view>
+      <view class="_figure data-v-3216b93e main-message-img" wx:if="{{fileMessage.from===userData.account}}">
+        <image src="{{logoUrl}}" alt class="_img data-v-3216b93e"></image>
+      </view>
+    </view>
+  </view>
+</template>

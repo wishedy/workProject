@@ -1,0 +1,378 @@
+@charset "UTF-8";
+//直播结束
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_twoFloorsFilter"; //首页头部信息栏
+@import "../../components/_bottomBtns"; //首页头部信息栏
+@import "../../components/_bottomSharePart"; //分享
+@import "../../components/meeting/_meetingList"; //会议列表
+
+.al-indexHeader{
+  border-bottom: none;
+}
+.meetingTrailer{
+  .titleTab{
+    background: #fff;
+    width: 100%;
+    overflow: auto;
+    border-bottom: 1px solid #d7dbde;
+    ul{
+      @include clearfix();
+      width: 168%;
+      margin-left: rem(13px);
+    }
+    li{
+      float: left;
+      font-size: rem(32px);
+      color: #777777;
+      list-style: none;
+      position: relative;
+      padding: 0 rem(24px) rem(17px);
+      &.active {
+        color: #2899e6;
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          height: 0.05333rem;
+          width: 0.4rem;
+          background-color: #2899e6;
+          bottom: 0.13333rem;
+          left: 50%;
+          margin-left: -0.2rem;
+          border-radius: 0.06667rem;
+        }
+      }
+    }
+  }
+}
+
+
+.screenOptions{
+  margin-top: rem(16px);
+  background: #fff;
+  height: rem(83px);
+  line-height: rem(83px);
+  border-bottom: 1px solid #DFDFDF;
+  position: relative;
+  .allinLive{
+    float: left;
+    width: 33%;
+    text-align: center;
+    font-size: rem(30px)  ;
+    color: #555555;
+    border-right: solid 1px #D8D8D8;
+    &.active{
+      color:#2899e6;
+    }
+  }
+  .major,.meetingState{
+    float: left;
+    width: 33%;
+    text-align: center;
+    font-size: rem(30px)  ;
+    color: #555555;
+    border-right: solid 1px #D8D8D8;
+
+    &:after{
+      content: '';
+      width: rem(12px);
+      height: rem(6px);
+      display: inline-block;
+      //background: url("//img50.allinmd.cn/meeting/meeting_index/more_down_gray.png") no-repeat;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAMAAADAMI+zAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURUxpcXd3d3h4eHl5eXh4eHh4eHh4eHh4eHd3d3h4eHl5eXd3d+wM/MsAAAALdFJOUwD+ZmFq5P3Ta1VUZbuSRwAAAC9JREFUCNdFx8cRACAMA0E5G9x/v8SB/UiHqCegPxRIOpcSE+8ixiZe5YKrm7W1A1b4Ab7/I/+vAAAAAElFTkSuQmCC") no-repeat;
+      background-size: contain;
+      vertical-align: middle;
+      margin-left: rem(10px);
+    }
+    &.active{
+      color: #2899e6;
+      &:after{
+        content: '';
+        width: rem(12px);
+        height: rem(6px);
+        display: inline-block;
+        //background: url("//img50.allinmd.cn/meeting/meeting_index/more_up_blue.png") no-repeat;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAMAAADAMI+zAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAnUExURUxpcTWZ3DeZ2zaY2zWY3DeZ3DeY3Tea3TaZ3Deb3jWY3DaZ2zWY24Zh6G4AAAAMdFJOUwD+a+T9ZmFq1FTTVYVMK/4AAAAwSURBVAjXRcfHEQAgDMTAcyS5/3oxYUCvFZANkYaba4T6sVFkZMu8ncfpeBXUP30CM2EB3L8xtI0AAAAASUVORK5CYII=") no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        margin-left: rem(10px);
+      }
+    }
+    &.checkHover{
+      color: #2899e6;
+      &:after{
+        content: '';
+        width: rem(12px);
+        height: rem(6px);
+        display: inline-block;
+        //background: url("//img50.allinmd.cn/meeting/meeting_index/more_up_blue.png") no-repeat;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAMAAADAMI+zAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAnUExURUxpcTWZ3DeZ2zaY2zWY3DeZ3DeY3Tea3TaZ3Deb3jWY3DaZ2zWY24Zh6G4AAAAMdFJOUwD+a+T9ZmFq1FTTVYVMK/4AAAAwSURBVAjXRcfHEQAgDMTAcyS5/3oxYUCvFZANkYaba4T6sVFkZMu8ncfpeBXUP30CM2EB3L8xtI0AAAAASUVORK5CYII=") no-repeat;
+        transform: rotate(-180deg);
+        background-size: contain;
+        vertical-align: middle;
+        margin-left: rem(10px);
+      }
+    }
+  }
+}
+.screenTwo .major, .screenTwo .allinLive {
+    width: 49.5%;
+}
+.allinFellow{
+  @include clearfix();
+  div{
+    float: left;
+    line-height: rem(48px);
+    margin-bottom: rem(10px);
+  }
+
+  .allinLive{
+    font-size: rem(24px);
+    color: #909090;
+    &:before{
+      content: '';
+      width: rem(34px);
+      height: rem(20px);
+      display: inline-block;
+      //background: url("//img50.allinmd.cn/meeting/meeting_index/camera.png") no-repeat;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAUCAMAAADfuh9AAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABmUExURUxpccrKysbGxs7OzszMzMXFxcbGxsfHx8bGxsXFxcbGxsbGxsbGxsbGxsXFxcfHx8XFxcnJycbGxsXFxcbGxsXFxcjIyMbGxsXFxcjIyMbGxsbGxsjIyMbGxsXFxczMzMXFxcXFxSEcM/AAAAAhdFJOUwAdvxUF76U3huWHUbfO3E3rOZOs+m4OxPwl9hsc/Z8j5iqPfi0AAABnSURBVCjP5dJHDoAwEAPABQJJ6L23/f8nCZGAAyT7AHyy5DkamJD4jh94cCfE77gP2Q0EHT1HSQwmgVyBolPFRoZKFzPJyhoJ0l/FTPCPRKQk4azJKQLQivEk0nqGeV0kealtAvqYB92nTYI5icuAAAAAAElFTkSuQmCC") no-repeat;
+      background-size: contain;
+      margin-right: rem(8px);
+    }
+  }
+  .allinNone{
+    font-size: rem(24px);
+    color: #AAAAAA;
+    &:before{
+      background:none;
+      width: 0;
+    }
+  }
+  .fellow{
+    font-size: rem(24px);
+    color: #2899E6;
+    width: rem(124px);
+    height: rem(48px);
+    text-align: center;
+    line-height: rem(48px);
+    float: right;
+    border: 1px solid #2899E6;
+    border-radius: 100px;
+    position: relative;
+    .fellowTip{
+      position: absolute;
+      right: rem(30px);
+      top: rem(60px);
+      z-index: 3;
+      //background: url("//img50.allinmd.cn/meeting/meeting_index/bg_guidance_follow.png") no-repeat;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVoAAAB4CAMAAACEnMrNAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURQoeK0xpcRUrKwoeLAsfLAofLAodMQsfLAsfLAoeLCAuCGcAAAAKdFJOU+YADLPQlhrWnNynJ04jAAAAoUlEQVR42u3UMRaDMAxEQRmQTO5/4RwBxw9Vmam3+sXG4EfH/bmPhV1I9WvZMyLOQ9qeskttpd0qu9JW2r2yC22l3Sz73Fba3bKPbaXdLvvUNkblFbzsyhpRU4gOsyJV6JHhDbo+QQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+AOXBF1hU4QeGTVV6DArRqVPeP8NssYX1bELbPjpUG8AAAAASUVORK5CYII=") no-repeat;
+      background-size: contain;
+      width: rem(346px);
+      height: rem(142px);
+      p{
+        font-size: rem(32px);
+        color: #FF9224;
+        padding-left: rem(21px);
+        text-align: left;
+        line-height: rem(32px);
+        &:first-child{
+          margin: rem(23px) 0 rem(15px);
+        }
+        &:last-child{
+          color: #fff;
+        }
+      }
+    }
+    &:before{
+      content: '';
+      width: rem(18px);
+      height: rem(18px);
+      display: inline-block;
+      //background: url("//img50.allinmd.cn/meeting/meeting_index/notice_focus_default.png") no-repeat;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAADpJREFUOBFjYCAANGY++w/CBJQxMBFSQKz8qEGEQ2rwhREjMWmEsMcYqJeOCFo2mrKpF9iDL0FSzUUAmhkNXp1W+UIAAAAASUVORK5CYII=") no-repeat;
+      background-size: contain;
+      margin-right: rem(6px);
+    }
+    &.fellowed{
+      border: 1px solid #C5C5C5;
+      color: #C5C5C5;
+      &:before{
+        content: '';
+        //background: url("//img50.allinmd.cn/meeting/meeting_index/notice_focus_complete.png") no-repeat;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAMAAABhEH5lAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAC0UExURUxpcc/Pz8zMzMXFxcbGxsjIyMbGxsbGxsjIyMbGxsXFxcbGxsfHx8XFxcbGxsXFxczMzMXFxcjIyMbGxsXFxcbGxsbGxsbGxsXFxcnJycbGxsXFxcbGxsbGxsbGxszMzMbGxsbGxtLS0sbGxsXFxcbGxsbGxsXFxcrKysXFxczMzMbGxs7OzsnJyczMzMvLy8XFxcXFxdHR0cbGxsjIyMrKysbGxsbGxsXFxcXFxcXFxcXFxTtboiEAAAA7dFJOUwAQCrUkFxIJDtHCxJEW1dQUnyW95bzk1s8TyMe328oPzdcRzMvaG9kY2BnOGiEjItzhC8AcHb/j3eLDGfjK6wAAAHtJREFUGNNjYKAS4OVmRhNh5bfmQhMRt+YUQBHRULSWkGRg4BFkh4loaVprswFpPmtRqJiOurUCSIRBSMRamAnEUFO1VlaCSLKIWZsBxUxkrVUYYUawmFsbG5kaWMsxIizSs7S2srCWkke2XN/Q2lqaA9WJupwyHJQHBgA/+wqKr51lewAAAABJRU5ErkJggg==") no-repeat;
+        background-size: contain;
+      }
+    }
+    &.likeView{
+      border: 1px solid #626F8C;
+      color: #626F8C;
+      &:before{
+        content: '';
+        //background: url("//img50.allinmd.cn/meeting/meeting_index/notice_see_default.png") no-repeat;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAF9UExURUxpcWNwjG2AkmNvjWJwjWqAlWJwjWJwjICA/2NvjWZ1kmRxjmZzjGNwjKqqqmJwjGJvjWl4lmNvjGd1kWNvjGNxjmJvjGNwjWNxjmaAmWNvjGNvjGR6kGJwjWNvjWNxjGZwj2JvjGNvjWJwjXFxjmZwj2Vwj2NvjP///2ZzjGVyjWJvjWJvjmNwjGNwjGhxjmNvjWVxjmNxjmJwjGNwjWNwjGNvjmJvjWRwjWNvjmJwjWRyjWRxjmNvjWNxjWVzkGNwjWNwjWNvjWNxjnBwj2h0l2RvjmNvjWJvjGNwjWNvjWJxjmNyjWRxjGNwjYCAqmNwjWRxjGNwjWJxjWNwjWJwjWNwjmZxjmNwjGp1lWNwjWJvjWRzjGNwjWNwjWlxj2JwjGRwjGNwjWRwjWdzkmJwjWZzjGNwjGNwjWJvjGJvjWR2km15kmJwjYCAn2NxjmNvjW2SkmNvjWJwjWVxjmt5lGJwjWNwjGJvjWNxjmNwjWNvjWRwj2NwjWJvjOIx5fkAAAB+dFJOUwDYDrXvDM30ArcjYRT9A5nxEd4l3Dbn7RIK05UX4qpvMveTcgkZSe4BPCb8dfDyG6MrX+mvz3zXcH72SnP4mjXCeWckEBaF9crU+mgxZrkG63iYkcTdkC1kGLH+M2KoIrtZyZIq0ChQsNrFHBWmCFi+B+HkPxNgwepalncp2wS7ZoMAAAE/SURBVCjPzVLlksIwGEyp0fagULS4c7jDOefu7u7ufn32IwkMMLwA+ZHdnf1mZ+dLAGjbE4znCxRVyMeDLZaHjL2IP1/ZYpqKkZ4mS+XTkK9qzJ8uGI1PVfcMhDHUMKretBCGmoiEuVGI7x+J0vcbZAe2cAR7puQKSrxTyKL903wOOc0lTRB5ywmaySoPlfv27FgL1f2jhQdAtl12InNwH+cos7hjySYDu7HaLDGM27BCtSVrB9yVHgtiCAGt6cX6V8cBq/E6gMTA1AIEd08HkqnnP2ulUO5QhmpscXsLaOe8fci7IXI8xIx5FQ1vMDtrrNeP6p1K5gxOj0rOMkTt7l4IZx6xUrS2Ij3X3x2ory+VVjh9wza7dM4ZK+Yj4xM6t7rpXRwiOz2/7l9anlRY0dHyorTgYiiKcQl0+37If13mKSNfZ2a1AAAAAElFTkSuQmCC") no-repeat;
+        background-size: contain;
+      }
+    }
+    &.likeViewNum{
+      border: 1px solid #fff;
+      width: auto;
+      color: #AAAAAA;
+      i{
+        font-style: normal;
+      }
+      &:before{
+        content: '';
+        width: rem(28px);
+        height: rem(28px);
+        //background: url("//img50.allinmd.cn/meeting/meeting_index/notice_see_complete.png") no-repeat;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAF9UExURUxpcaqqqra2tqqqqqurq6qqqqqqqqqqqv///6qqqq+vr6urq7Ozs6qqqqqqqqqqqqqqqrS0tKqqqqysrKqqqqqqqqqqqqqqqqqqqrOzs6qqqqurq7Gxsaurq6qqqqqqqq2traqqqqqqqqqqqqqqqq2traqqqqurq////6qqqq6urqqqqqqqqqqqqqurq6qqqqurq6ysrKysrKurq6qqqqqqqqurq6urq6urq6qqqqqqqqurq6ysrKurq62traurq6urq6urq6urq6qqqqqqqq6urqurq6+vr6urq6urq6qqqqysrKqqqqysrKurq6qqqqurq6qqqqqqqqqqqqurq6qqqqysrKurq6qqqqqqqqurq6urq6qqqqqqqqqqqq2traqqqqysrKqqqqurq6qqqqysrKqqqqysrKurq6urq6urq62trb+/v6qqqqurq6urq6qqqra2tqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6urqqqqqurq6qqqq6urqqqqv5ujYwAAAB+dFJOUwDYDrXvDM30ArcjYRT9A5nxEd4l3Dbn7RIK05UXquJvMveTcgkZ7kkBPCb8dfDyG6MrX+mvz3zXcH72c0r4NWeawnnKJBaFEPXU+mhmMbnrmHgGxJEtYt0YsWT+kDOoIrtZyZIqKNBQsNrFHAgVpli+B+E/5GBaweoTlnfbKezcjyIAAAE/SURBVCjPzVLlksIwGEyp0fagULS4c7jDOefu7u7ufn32IwkMMLwA+ZHdnf1mZ+dLAGjbE4znCxRVyMeDLZaHjL2KP+/ZYpqKkZ4mS+XTkC9qzJ8uGI1PVfcMhDHcMKrethCGmoiEuAmIbx+J0vcXZAe2UAR7puQqSrxXyKL903wGOc0lTRB5ywmaySoPlfvu/FgL1e2jhQdAtl12InNoH+coc7hjySYDu7HaLFHGbVih2pK1A+5KjwUxjIDW9GH9p+OA1XgdQGJwahmCu6cDydTzr7VSKHcoQzW2sLUJtLPeXuTdEDkeYsa8gobXmJ0N1utH9U4lcwanRyXXAETt3noYZx6xUrS2Ij3X3x2ory+VVjh9wza7dK4ZK+aj45M6t7rpXRwiOz2/619aHFFY0dHyorTgZCiKcQp0+37If2QsKSMFOCwUAAAAAElFTkSuQmCC") no-repeat;
+        background-size: contain;
+        vertical-align: text-top;
+      }
+    }
+
+  }
+}
+.meetingIntroduction{
+  word-wrap:break-word;
+  font-size: rem(30px);
+  color: #808080;
+  line-height: rem(45px);
+  margin-top: rem(6px);
+  i{
+    font-size: rem(24px);
+    color: #626F8C;
+    font-style:normal;
+    margin-left: rem(8px);
+    &:after{
+      content: '';
+      display: inline-block;
+      //background: url(//img50.allinmd.cn/meeting/arrow_about.png) no-repeat;
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAMAAACOlf6TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURW15kmNvjExpcWNwjWh0l2NwjWNwjGJvjLVRmDwAAAAHdFJOUxXTANQWxLQmL6NjAAAAQklEQVQI103OwREAIAgDwQhG++9YQOPA7zYfsAhrBy5wj2bwTUxvhhEBa1ZiEd+uJMlCPLPmMsmlMsmjNInIJv/LB6JzAbODzfg/AAAAAElFTkSuQmCC) no-repeat;
+      background-size: cover;
+      width: 0.24rem;
+      height: 0.13333rem;
+      vertical-align: middle;
+      margin-left: 0.08rem;
+    }
+    &.packUp{
+      &:after{
+        content: '';
+        //background: url(//img50.allinmd.cn/meeting/arrow_up_about.png) no-repeat;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKBAMAAABLZROSAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURW15kmNvjExpcWNwjWNwjWNvjWNwjGJvjOENfRYAAAAHdFJOUxXTANTEtbSeBgqKAAAAUElEQVQI12NQUlJScGECkgxAzFxuAGEpmAsWM4FZzIUM4gYgloK5gBIjUJABKMSkpAAUZFAQFwAqBwoyMBaCjAAKMriDhICCJQwhTGCWghsAie4NFwSJW3UAAAAASUVORK5CYII=) no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}
+
+.doubt{
+  padding: rem(60px) 0 rem(110px);
+  text-align: center;
+  p{
+    font-size: rem(30px);
+    color: #626F8C;
+    margin-bottom: rem(21px);
+  }
+  button{
+    border: 1px solid #2899E6;
+    border-radius: 100px;
+    width: rem(200px);
+    height: rem(56px);
+    text-align: center;
+    line-height: rem(56px);
+    font-size: rem(26px);
+    color: #2899E6;
+    a{
+      display: inline-block;
+    }
+  }
+}
+.screenPosition{
+  position: fixed;
+  top: rem(248px);
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+}
+.major,.meetingState,.allinLive{
+  /*position: relative;*/
+  ul{
+    position: fixed;
+    top: rem(248px);
+    left: 0;
+    width:rem(750px );
+    background: #fff;
+    z-index: 2;
+    text-align: left;
+    /*display: none;*/
+    li{
+      height: rem(100px);
+      line-height: rem(100px);
+      font-size: rem(30px);
+      color: #333333;
+      padding-left: rem(62px);
+      border-bottom: solid 1px #E4E9ED;
+      list-style: none;
+      &.active{
+        color: #2899e6;
+      }
+    }
+  }
+}
+
+
+.meetingNoneMouth{
+  text-align: center;
+  margin: rem(317px) auto 0;
+  img{
+    width: rem(207px);
+    height: rem(324px);
+    margin-bottom:  rem(70px);
+  }
+  p{
+    text-align: center;
+    font-size: rem(30px);
+    color: #626F8C;
+    &:last-child{
+      width: rem(200px);
+      height: rem(56px);
+      border: 1px solid #2899E6;
+      border-radius: rem(100px);
+      text-align: center;
+      line-height: rem(56px);
+      font-size: rem(26px);
+      color: #2899E6;
+      margin: rem(21px) auto 0;
+    }
+  }
+}
+
+.screenNoResult{
+  img{
+    width: rem(462px);
+    height: rem(331px );
+  }
+}
+.al-indexHeaderItem i {
+  display: inline-block;
+  //background: url(//img50.allinmd.cn/classes/course_share.png) no-repeat;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABOUExURUxpcVRgdVFcdlFcdVFcdVVjgFJddVJmelJddFFcdVhidlJedVJcdFJcdVFddVFcdFNedVJddVFddFJddVFcdFFcdVFcdVFnd1FkfFFcdBN2+VIAAAAZdFJOUwA9d+XYEv0Zss8aeub5s7Z4dq232dP7Lyk4nisSAAAAn0lEQVQoz73TyxLCIAwF0ABKY0utb83//6gJrTWYdOvdZQ5ZwFwAIGAhzhFqkGoKBpmGPI8tEuWB9/IYOzB53h458MmTJeh2dCeERL1rhxcVIPJtL+LgbD4u5uLHPFzNwa9ZVAaILWpbljdNozGF1hRejSk8X1qbJvfhN+75H3RrUq/NNUGKPkYumFTT2e3jyNVcS/0bKbV8h2QpyXd4A6QSEau3i/DhAAAAAElFTkSuQmCC) no-repeat;
+  width: 0.37333rem;
+  height: 0.37333rem;
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 0.13333rem;
+}
+
+

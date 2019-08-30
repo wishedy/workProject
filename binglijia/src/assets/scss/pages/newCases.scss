@@ -1,0 +1,895 @@
+﻿@charset "UTF-8";
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/emr-variables";
+
+@import "../components/form";
+.alEmr-mainInner{
+    padding-top: 200px;
+    .headerTopNav{
+        height: 70px;
+        line-height: 70px;
+    }
+    .alEmr-indexInner{
+        //padding-left: 270px;
+        .navLeftWidth{
+            width: 1000px;
+            min-height: 600px;
+            margin: 20px auto;
+            .formCommonLrContainer{
+                @include clearfix();
+                .formCommonWrap:nth-child(2){
+                    .formContentLr{
+                        margin-left: -144px;
+                    }
+                }
+            }
+        }
+    }
+}
+.newCases{//报错时添加error  获取焦点添加focus
+    .headerTopNav .alEmr-logo{
+        height: 70px;
+    }
+/*    .casesWidth{
+        width: 550px;
+
+    }*/
+
+    /*.articleText{
+        display: inline-block;
+        vertical-align: middle;
+        //font-size: 18px;
+        //color: #333333;
+        @include fontSize(18px,#333);
+        width: 72px;
+        text-align: center;
+        margin-right: 22px;
+        i{
+            //font-size: 16px;
+            //color: #F34B4B;
+            @include fontSize(16px,#F34B4B);
+            margin-right: 6px;
+        }
+    }*/
+    .formCommon{
+        margin-bottom: 26px;
+        font-size: 0;
+        display: block;
+        &.formContentLr{
+            float: left;
+        }
+    }
+    .formInput{
+        &.formInput814{
+            .inputCont {
+                width: 814px;
+            }
+        }
+        &.formInput112{
+            .inputCont {
+                width: 112px;
+                input{
+                    width: 60%;
+                }
+            }
+            span{
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 14px;
+                color: #333;
+                margin: 0 36px 0 20px;
+            }
+        }
+        .inputCont{
+            width: 451px;
+            height: 40px;
+            @include formBorder();
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            .formSelectIcon{
+                display: none;
+            }
+            input{
+                height: 100%;
+                border: none;
+                width: 90%;
+                border-radius: 4px;
+                //font-size: 18px;
+                //color: #000000;
+                @include fontSize(14px);
+                padding: 0 12px;
+            }
+            i{
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                -moz-transform:translateY(-50%);
+                -webkit-transform: translateY(-50%);
+                -o-transform:translateY(-50%);
+                font-family: Arial;
+                //font-size: 18px;
+                //color: #999999;
+                @include fontSize(14px,#999);
+            }
+        }
+    }
+    .formInputAge{
+        .inputText{
+            width: 42px;
+            height: 38px;
+            @include formBorder();
+            padding-left: 12px;
+            @include fontSize(14px)
+        }
+        span{
+            //font-size: 18px;
+            //color: #333333;
+            @include fontSize(14px,#333);
+            margin: 0 30px 0 12px;
+        }
+    }
+    .formRadio{
+        &.formCheck .radioRight{
+            /*.radioIconSelect{
+                i{
+                    @include iconImgI(inline-block,32px,32px);
+                    background: url("/static/images/common/icon/moreselect.png") no-repeat;
+                    vertical-align: middle;
+                }
+                span{
+                    color: #2888FF;
+                }
+            }*/
+            .radioIconNormal{
+                i{
+                    @include iconImgI(inline-block,18px,18px);
+                    background: #FFFFFF;
+                    border: 1px solid #AAAAAA;
+                    border-radius: 2px;
+                    vertical-align: middle;
+                }
+                &.active{
+                    i{
+                        @include iconImgI(inline-block,20px,20px);
+                        background: url("/static/images/common/icon/moreselect.png") no-repeat;
+                        vertical-align: middle;
+                        border: none;
+                    }
+                    span{
+                        color: #2888FF;
+                    }
+                }
+
+            }
+            div {
+                display: block;
+                margin-bottom: 16px;
+                input{
+                    vertical-align: top;
+                    border: 1px solid #C8C8C8;
+                    border-radius: 4px;
+                    width: 389px;
+                    height: 62px;
+                    line-height: 62px;
+                    padding: 0 20px;
+                    @include fontSize(18px,#000);
+                }
+
+            }
+        }
+        .radioRight{
+            display: inline-block;
+            max-width: 816px;
+        }
+        &.formRow .radioRight{
+            div{
+                display: block;
+                margin-bottom: 16px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                input{
+                    vertical-align: top;
+                    border: 1px solid #C8C8C8;
+                    border-radius: 4px;
+                    width: 389px;
+                    height: 40px;
+                    line-height: 40px;
+                    padding:0 12px;
+                    @include fontSize(14px,#000);
+                }
+            }
+        }
+        div{
+            display: inline-block;
+            vertical-align: middle;
+            span{
+                display: inline-block;
+                vertical-align: middle;
+                //font-size: 18px;
+                //color: #333333;
+                @include fontSize(14px,#333);
+                margin: 0 26px 0 10px;
+                max-width: 675px;
+            }
+        }
+        /*.radioIconSelect{
+            i{
+                @include iconImgI(inline-block,32px,32px);
+                background: url("/static/images/common/icon/onlyselect.png") no-repeat;
+                vertical-align: middle;
+            }
+            span{
+                color: #2888FF;
+            }
+        }*/
+        .radioIconNormal{
+            i{
+                @include iconImgI(inline-block,18px,18px);
+                background: #FFFFFF;
+                border: 1px solid #AAAAAA;
+                border-radius: 100px;
+                vertical-align: middle;
+            }
+            &.active{
+                i{
+                    @include iconImgI(inline-block,20px,20px);
+                    background: url("/static/images/common/icon/onlyselect.png") no-repeat;
+                    vertical-align: middle;
+                    border: none;
+                }
+                span{
+                    color: #2888FF;
+                }
+            }
+
+        }
+    }
+    .formNumber{
+        font-size: 0;
+        .selectCont{
+            //width: 116px;
+            width: 94px;
+            height: 40px;
+            @include formBorder();
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 20px;
+            position: relative;
+            //font-size: 18px;
+            //color: #000000;
+            @include fontSize(14px);
+            line-height: 40px;
+            padding-left: 12px;
+            .formSelectItem{
+                display: inline-block;
+                width: 89px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .formInputSelectItem{
+                display: inline-block;
+                width: 72px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            &:after{
+                width: 0;
+                height: 0;
+                position: absolute;
+                content: "";
+                border-color: rgba(0,0,0,0.5) transparent transparent;
+                border-style: solid;
+                border-width: 6px;
+                top: 18px;
+                right: 12px;
+            }
+            .selectOption{
+                position: absolute;
+                top: 41px;
+                padding: 10px;
+                left: 0;
+                width: 87px;
+                //font-size: 18px;
+                //color: #333333;
+                @include fontSize(14px,#333);
+                line-height: 26px;
+                max-height: 271px;
+                background: #FFFFFF;
+                box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+                border-radius: 4px;
+                z-index: 1;
+                li{
+                    padding-left: 6px;
+                    display: inline-block;
+                    width: 80px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    position: relative;
+
+                    &:hover{
+                        background: rgba(40,136,255,0.1);
+                        border-radius: 2px;
+                    }
+                }
+                .formInputSelectItem{
+                    display: inline-block;
+                    width: 80px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+        .inputCont{
+            width: 275px;
+            height: 40px;
+            @include formBorder();
+            //font-size: 18px;
+            //color: #000000;
+            @include fontSize(14px);
+            padding: 0 12px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    .formSelect{
+        .selectCont{
+            //width: 116px;
+            width: 433px;
+            height: 40px;
+            @include formBorder();
+            display: inline-block;
+            vertical-align: middle;
+            //margin-right: 20px;
+            position: relative;
+            //font-size: 18px;
+            //color: #000000;
+            @include fontSize(14px);
+            line-height: 40px;
+            padding-left: 20px;
+            .formSelectIcon{
+                display: none;
+            }
+            .formSelectItem{
+                display: inline-block;
+                width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .formInputSelectItem{
+                display: inline-block;
+                width: 89px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            &:after{
+                width: 0;
+                height: 0;
+                position: absolute;
+                content: "";
+                border-color: rgba(0,0,0,0.5) transparent transparent;
+                border-style: solid;
+                border-width: 6px;
+                top: 18px;
+                right: 20px;
+            }
+            .selectOption{
+                position: absolute;
+                top: 41px;
+                padding: 10px;
+                left: 0;
+                width: 433px;
+                //font-size: 18px;
+                //color: #333333;
+                @include fontSize(14px,#333);
+                line-height: 26px;
+                max-height: 271px;
+                background: #FFFFFF;
+                box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+                border-radius: 4px;
+                z-index: 1;
+                li{
+                    padding-left: 6px;
+                    cursor: pointer;
+                    display: inline-block;
+                    width: 420px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    &:hover{
+                        background: rgba(40,136,255,0.1);
+                        border-radius: 2px;
+                    }
+                }
+                .formInputSelectItem{
+                    display: inline-block;
+                    width: 89px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+    .formTag{
+        .tagCont{
+            width: 450px;display: inline-block;vertical-align: middle;
+        }
+        ul{}
+        li{
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            padding: 0 20px;
+            background: #F0F0F0;
+            border-radius: 4px;
+            margin: 0 16px 16px 0;
+            cursor: pointer;
+            border: 1px solid #F0F0F0;
+            //font-size: 18px;
+            //color: #000000;
+            @include fontSize(14px);
+            &.active{
+                background: rgba(40,136,255,0.10);
+                border: 1px solid #2888FF;
+                color: #2888ff;
+                border-radius: 4px;
+            }
+            &.addTag{
+                background: rgba(40,136,255,0.10);
+                border: 1px solid #2888FF;
+                color: #2888ff;
+                border-radius: 4px;
+                i{
+                    @include iconImgI(inline-block,14px,12px);
+                    background: url("/static/images/common/icon/label_close.png") no-repeat;
+                    margin-left: 20px;
+                }
+            }
+        }
+        .tagInput{
+            height: 40px;
+            line-height: 40px;
+            font-size: 0;
+            .tagInputCont{
+                display: inline-block;
+                vertical-align: middle;
+                border: 1px solid #C8C8C8;
+                border-radius: 4px 0 0 4px;
+                width: 366px;
+                height: 38px;
+                line-height: 38px;
+                position: relative;
+            }
+            input{
+                width: 80%;
+                height: 38px;
+                line-height: 38px;
+                border: none;
+                border-radius: 4px 0 0 4px;
+                padding-left: 12px;
+                //font-size: 18px;
+                //color: #999999;
+                @include fontSize(14px,#999);
+            }
+            i{
+                position: absolute;
+                right: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                -moz-transform:translateY(-50%);
+                -webkit-transform: translateY(-50%);
+                -o-transform:translateY(-50%);
+                font-family: Arial;
+                //font-size: 18px;
+                //color: #999999;
+                @include fontSize(14px,#999);
+            }
+            p{
+                width: 70px;
+                text-align: center;
+                background: #BDC3CF;
+                display: inline-block;
+                border-radius: 0 4px 4px 0;
+                vertical-align: middle;
+                cursor: pointer;
+                //font-size: 18px;
+                //color: #FFFFFF;
+                @include fontSize(14px,#fff);
+                &.active{
+                    background: #2888FF;
+                }
+            }
+        }
+    }
+    .nextBtn{
+        height: 144px;
+        background: url("/static/images/pages/newCases/bottomBtnBg.png") no-repeat center;
+        @include clearfix();
+        //border-top: 1px #DFDFDF solid;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -moz-transform:translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -o-transform:translateX(-50%);
+        width: 550px;
+        p{
+            width: 146px;
+            height: 64px;
+            line-height: 64px;
+            text-align: center;
+            //font-size: 20px;
+            //color: #FFFFFF;
+            @include fontSize(20px,#fff);
+            background: #2888FF;
+            box-shadow: 0 2px 10px 0 rgba(67,130,241,0.16);
+            border-radius: 4px;
+            float: right;
+            margin-top: 50px;
+        }
+    }
+    .formCommon .focusBorder{
+        background: #FFFFFF;
+        border: 1px solid #2888FF;
+        box-shadow: 0 0 4px 0 rgba(67,130,241,0.47);
+        border-radius: 4px;
+    }
+    .formCommon .error{
+        background: #FFFFFF;
+        border: 1px solid #F34B4B;
+        box-shadow: 0 0 4px 0 rgba(243,75,75,0.59);
+        border-radius: 4px;
+    }
+    .formCommon .errorText{
+        color: #F34B4B;
+    }
+
+    h2{
+         //font-size: 32px;
+         //color: #000000;
+        @include fontSize(24px,#000);
+         margin-bottom: 50px;
+     }
+    //.chiefWidth{
+    //    width: 400px;
+    //    margin: 56px auto 0;
+
+        .formCommon {
+            /*.articleText{
+                width: 145px;
+                text-align: right;
+                display: inline-block;
+                margin-right: 39px;
+            }*/
+            .inputSelect{
+                display: inline-block;
+                vertical-align: middle;
+                @include clearfix();
+                input{
+                    float: left;
+                    width: 30px;
+                    height: 40px;
+                    line-height: 40px;
+                    padding: 0 12px;
+                    //font-size: 18px;
+                    //color: #000000;
+                    @include fontSize(14px);
+                    border: 1px solid #C8C8C8;
+                    border-radius: 4px;
+                    margin-right: 20px;
+                }
+                .SelectCont{
+                    float: left;
+                    width: 50px;
+                    height: 40px;
+                    border: 1px solid #C8C8C8;
+                    border-radius: 4px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    position: relative;
+                    //font-size: 18px;
+                    //color: #000000;
+                    @include fontSize(14px,#000);
+                    line-height: 40px;
+                    padding-left: 12px;
+                    /*.formInputSelectItem{
+                        display: inline-block;
+                        width: 89px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }*/
+                    &:after {
+                        width: 0;
+                        height: 0;
+                        position: absolute;
+                        content: "";
+                        border-color: rgba(0, 0, 0, 0.5) transparent transparent;
+                        border-style: solid;
+                        border-width: 6px;
+                        top: 18px;
+                        right: 12px;
+                    }
+                    .selectOption {
+                        position: absolute;
+                        top: 41px;
+                        padding: 10px;
+                        left: 0;
+                        width: 60px;
+                        //font-size: 18px;
+                        //color: #333333;
+                        @include fontSize(14px,#333);
+                        line-height: 26px;
+                        max-height: 271px;
+                        background: #FFFFFF;
+                        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+                        border-radius: 4px;
+                        z-index: 2;
+                        li{
+                            padding-left: 6px;
+                            cursor: pointer;
+                            &:hover{
+                                background: rgba(40,136,255,0.1);
+                                border-radius: 2px;
+                            }
+                            .formInputSelectItem{
+                                display: inline-block;
+                                width: 89px;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    //}
+    .caseBottomBtn{
+         position: fixed;
+         bottom: 0;
+        width: 1000px;
+        background: #fff;
+         left: 50%;
+         transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -moz-transform:translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -o-transform:translateX(-50%);
+         border-top: 1px solid #DFDFDF;
+         padding: 18px 0;
+        z-index: 3;
+        &.caseBottomBtnW{
+            width: 100%;
+            .caseBWCont{
+                width: 1000px;
+                margin: 0 auto;
+            }
+        }
+        p{
+            width: 94px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            //font-size: 20px;
+            //color: #FFFFFF;
+            @include fontSize(16px,#fff);
+            background: #2888FF;
+            box-shadow: 0 2px 10px 0 rgba(67, 130, 241, 0.16);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .casePrevBtn{
+            float: left;
+        }
+        .caseNextBtn{
+            float: right;
+        }
+     }
+    /*.caseWidth814{
+        width: 814px;
+    }*/
+    //.nowMedical{
+    //    margin: 57px auto 0;
+    //    padding-bottom: 125px;
+        .caseHistoryMsg{
+            margin-bottom: 26px;
+        }
+        h3{
+            @include fontSize(18px,#333);
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+        article{
+            //font-size: 18px;
+            //color: #999999;
+            @include fontSize(18px,#999);
+            margin-bottom: 20px;
+        }
+        .textarea{
+            box-sizing: border-box;
+            width: 775px;
+            height: 140px;
+            border: 1px solid #C8C8C8;
+            border-radius: 4px;
+            padding: 12px;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            textarea{
+                border: none;
+                width: 100%;
+                height: 100%;
+                border-radius: 4px;
+                resize:none;
+                @include fontSize(14px);
+                font-family: "Microsoft YaHei";
+            }
+            i{
+                display: inline-block;
+                position: absolute;
+                right: 28px;
+                bottom: 12px;
+                @include fontSize(14px,#999);
+            }
+        }
+    //}
+    /*.caseWidth1000{
+        width: 1000px;
+    }*/
+    //.surgeryCure{
+    //    padding-bottom: 130px;
+    //    margin: 0 auto;
+        h2{
+            margin: 0 0 50px;
+        }
+        p.articleText{
+            width: 146px;
+            text-align: right;
+            margin-right: 40px;
+        }
+        .formSelectS{
+            .cont{
+                display: inline-block;
+                vertical-align: middle;
+            }
+            b {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 14px;
+                color: #333;
+                margin: 0 30px 0 20px;
+                font-weight: normal;
+            }
+        }
+        .selectCont{
+            width:70px;
+            .selectOption{
+                width: 63px;
+            }
+        }
+        .width83{
+            width: 50px;
+            .selectOption{
+                width: 43px;
+            }
+        }
+    //}
+    /*.surgeryInfluence{
+
+    }*/
+    .selectOption{
+        overflow: auto;
+    }
+    .addColumnBtn{
+        width: 600px;
+        height: 64px;
+        text-align: center;
+        line-height: 64px;
+        border: 1px solid #2888FF;
+        border-radius: 4px;
+        i{
+            @include iconImgI(inline-block,22px,22px);
+            background: url("/static/images/common/icon/add_label.png") no-repeat;
+            margin-right: 11px;
+        }
+        span{
+            vertical-align: middle;
+            @include fontSize(20px,#2888FF)
+        }
+    }
+    .addTagBtn{
+        background: #E9F3FF;
+        border-radius: 4px;
+        width: 86px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        cursor: pointer;
+        i{
+            @include iconImgI(inline-block,18px,18px);
+            background: url("/static/images/common/icon/add_label.png") no-repeat;
+        }
+    }
+}
+
+
+
+
+.lookMore{
+    padding: 20px;
+    width: 270px;
+    background: rgba(0,0,0,0.8);
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+    position: absolute;
+    right:-320px;
+    top: 0;
+    @include fontSize(18px,#fff);
+    line-height: 26px;
+    z-index: 2;
+    &:before{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: -22px;
+        top: 50%;
+        transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -moz-transform:translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -o-transform:translateY(-50%);
+        width: 0;
+        height: 0;
+        border-width: 11px;
+        border-style: solid;
+        border-color:  transparent rgba(0,0,0,0.8) transparent transparent;
+        z-index: 3;
+    }
+}
+.selectOption li{
+    position: relative;
+    &:hover{
+        display: block;
+    }
+}
+
+
+@media screen and (max-width:1540px){
+    .newCases{
+        .alEmr-logo{
+            background: url("/static/images/common/logo.png") no-repeat center 50%;
+            width: 143px;
+            height: 37px;
+        }
+    }
+
+}
+
+.formError{
+    font-size: 14px;
+    color: #F34B4B;
+    margin-left: 184px;
+    margin-top: 14px;
+}
+.formErrorTwo{
+    //font-size: 14px;
+    //color: #F34B4B;
+    margin-left: 90px;
+    //margin-top: 0;
+}
+

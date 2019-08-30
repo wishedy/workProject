@@ -1,0 +1,101 @@
+@charset "UTF-8";
+//首页——会议
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_indexNavbar"; //首页导航栏
+@import "../../components/_bannerCarousel"; //轮播banner
+@import "../../components/_contentModule"; //内容组件
+.al-indexHeader {
+    height: rem(112.5px);
+}
+
+.al-indexHeaderItem {
+    line-height: rem(112.5px);
+    h1 {
+        @include font-dpr(20px);
+        height: 100%;
+        line-height: rem(112.5px);
+    }
+}
+
+.al-contentMeetingTitle {
+    position: relative;
+    padding-left: 0;
+}
+
+.refresh {
+    position: absolute;
+    right: .5rem;
+    top: .3rem;
+}
+
+.refresh i {
+    position: absolute;
+    left: -0.5rem;
+    width: 0.4rem;
+    height: 0.6rem;
+    display: inline-block;
+    background: url('//img50.allinmd.cn/meeting/meeting2016/refresh.png') no-repeat center;
+    background-size: contain;
+}
+
+.al-contentSeminarTime2 {
+    width: rem(18px);
+    height: rem(20px);
+    display: inline-block;
+    background: url('//img50.allinmd.cn/meeting/meeting2016/icon_date.png') no-repeat;
+    background-size: cover;
+    margin-right: rem(10px)
+}
+
+.al-contentSeminarPlace {
+    width: rem(18px);
+    height: rem(22px);
+    display: inline-block;
+    background: url('//img50.allinmd.cn/meeting/meeting2016/icon-place.png') no-repeat;
+    background-size: cover;
+    margin-right: rem(10px)
+}
+
+.bytePlace {
+    display: inline-block;
+    width: 40%;
+    overflow: hidden;
+}
+
+.al-meetingNewest span {
+    position: absolute;
+    left: 0.2rem;
+    top: 0.43rem;
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url('//img50.allinmd.cn/meeting/meeting2016/icon_new.png') no-repeat;
+    background-size: contain;
+}
+
+.al-meetingRecommend span {
+    position: absolute;
+    left: 0.2rem;
+    top: 0.43rem;
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url('//img50.allinmd.cn/meeting/meeting2016/icon_recommend.png') no-repeat;
+    background-size: contain;
+}
+
+.al-meetingAll span {
+    position: absolute;
+    left: 0.2rem;
+    top: 0.43rem;
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url('//img50.allinmd.cn/meeting/meeting2016/allMeeting.png') no-repeat;
+    background-size: contain;
+}

@@ -1,0 +1,32 @@
+<template name="image$14a62b72">
+  <view class="_section data-v-83c18266 main-message-box" bindlongpress="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">
+    <view class="_article data-v-83c18266 main-message-box-item {{[  imageMessage.from === userData.account ? 'my-message' : '',  imageMessage.from === targetData.account ? 'others-message' : '']}}" data-clientid="{{imageMessage.idClient}}">
+      <view class="_figure data-v-83c18266 main-message-img" wx:if="{{imageMessage.from===targetData.account}}" catchtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+        <block wx:if="{{isFindDoctor}}">
+          <image src="https://m.allinmed.cn/static/image/mp/personal/profilePhoto.png" alt class="_img data-v-83c18266"></image>
+        </block>
+        <block wx:else>
+          <image src="https://m.allinmed.cn/static/image/mp/index/imSceneLogo.png" alt class="_img data-v-83c18266"></image>
+        </block>
+      </view>
+      <view class="_i data-v-83c18266 fail-button" style="display:none"></view>
+      <view class="_figcaption data-v-83c18266 main-message-content image-message">
+        <view class="_section data-v-83c18266 middle-tip-box" wx:if="{{progress&&progress.uploading}}">
+          <view class="_figure data-v-83c18266 middle-tip-box-text">
+            <image class="_img data-v-83c18266 notShow" src="//m.allinmed.cn/image/img00/patientConsult/symptom_photo_loading@2x.png" alt="loading..." bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}"></image>
+            <view class="_figcaption data-v-83c18266 progress">
+              <view class="_p data-v-83c18266">{{progress.progress}}</view>
+            </view>
+          </view>
+        </view> <label class="_span data-v-83c18266 delete-msg-btn" catchtap="handleProxy" wx:if="{{currentIndex===deleteMsgIndex&&showDeleteMsg&&imageMessage.from===userData.account}}" data-eventid="{{'2'}}" data-comkey="{{$k}}">撤回</label>
+        <view class="_figure data-v-83c18266 im-image-con" catchtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">
+          <image class="_img data-v-83c18266 im-image im-image-img" src="{{imageMessage.file.url}}" alt></image>
+        </view>
+        <view class="_article data-v-83c18266 disclaimer-content" wx:if="{{imageMessage.from===targetData.account}}"><label class="_span data-v-83c18266">重要提示：在线咨询不能代替面诊，医生建议仅供参考。</label></view>
+      </view>
+      <view class="_figure data-v-83c18266 main-message-img" wx:if="{{imageMessage.from===userData.account}}">
+        <image src="{{logoUrl}}" alt class="_img data-v-83c18266"></image>
+      </view>
+    </view>
+  </view>
+</template>

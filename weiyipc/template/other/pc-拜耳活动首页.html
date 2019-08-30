@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>“Xa例之声”活动首页－全国关节病例演讲赛</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<link rel="dns-prefetch" href="//comm.allinmd.cn">
+	<link rel="dns-prefetch" href="//modules.allinmd.cn">
+	<link rel="dns-prefetch" href="//other.allinmd.cn">
+	<link rel="dns-prefetch" href="//scene.allinmd.cn">
+	<link rel="dns-prefetch" href="//img00.allinmd.cn">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+	<link href="//comm.allinmd.cn/base.css" rel="stylesheet" type="text/css"/>
+    <link href="//modules.allinmd.cn/lib.css" rel="stylesheet" type="text/css"/>
+    <link href="//other.allinmd.cn/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css" />
+    <link href="//other.allinmd.cn/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css" />
+    <link href="//other.allinmd.cn/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href='//m.allinmd.cn/html/m/activity/1459416619774/activity_index.html';
+        }
+    </script>
+
+
+
+</head>
+<body>
+<!--#include virtual="/includes/header.jsp"-->
+<div class="bayer_sound">
+    <!--banner图-->
+    <div class="sound_banner">
+        <div class="banMain">
+            <div class="soundShare" id="hr_share">
+                <span>分享至:</span>
+                <a href="javascript:;" class="share_ico_tsina"><img src="//img00.allinmd.cn/column/bayer/micro-blog.png"></a>
+                <a href="javascript:;" class="share_ico_tqq"><img src="//img00.allinmd.cn/column/bayer/QQ.png"></a>
+                <a href="javascript:;" class="share_ico_qzone"><img src="//img00.allinmd.cn/column/bayer/QQk.png"></a>
+                <div class="clear">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <!--导航-->
+    <div style="height:66px;width:100%">
+        <div class="sound_nav Ev-BayerNavFixedEvent">
+            <div class="navMain">
+                <ul>
+<#if (activityMenu??)&&(activityMenu?size>0)>
+    <#list activityMenu as MenuList>
+		<li <#if MenuList_index ==0>class="navLi click"</#if>><a href="${MenuList.activityMenuUrl}">${MenuList.activityMenuName}</a></li>
+    </#list>
+</#if>
+
+                    <li><a href="//www.allinmd.cn/pages/column/bayer/sound_disease2.html">海选优秀病例</a></li>
+                    <div class="clear">&nbsp;</div>
+                </ul>
+               
+            </div>
+        </div>
+    </div>
+<!--新闻01-->
+<#if (cms_news_list??)&&(cms_news_list?size>0)>
+    <#list cms_news_list as newsList>
+        <#if newsList_index==0>
+            ${newsList.newsBody}
+        </#if>
+    </#list>
+</#if>
+    <!--优秀病列-->
+    <div class="sound_dis">
+        <div class="disMain">
+            <a class="disMore" href="//www.allinmd.cn/pages/column/bayer/sound_disease2.html">更多
+                <div class="clear">&nbsp;</div>
+            </a>
+            <ul>
+  
+                <!-- 优秀病例 -->
+<#if (case_list??)&&(case_list?size>0)>
+	<#list case_list as caseList>
+	<#assign v_caseInfo = caseList.caseInfo>
+	<#assign v_customerAuth = caseList.customerAuth>
+	  <li>
+		   <div class="disLi">
+			   <div class="disText">
+					<a href="${v_caseInfo.pageStoragePath}" target="_blank"><#if v_caseInfo.caseName?length gt 25>${v_caseInfo.caseName?substring(0,25)}…<#else>${v_caseInfo.caseName}</#if></a>
+			   </div>
+			   <div class="disLiBot">
+					<div class="disName">
+<#if (v_customerAuth.lastName+v_customerAuth.firstName)?length gt 6>${(v_customerAuth.lastName+v_customerAuth.firstName)?substring(0,6)}…<#else>${(v_customerAuth.lastName+v_customerAuth.firstName)}</#if>
+                                          </div>
+					<div class="disAdd"><#if v_customerAuth.company?length gt 9>${v_customerAuth.company?substring(0,9)}…<#else>${v_customerAuth.company}</#if></div>
+					<div class="disDate">${v_caseInfo.createTime?substring(0,10)}</div>
+					<div class="clear">&nbsp;</div>
+			   </div>
+		   </div>
+	   </li>
+   </#list>
+</#if>  
+
+                <div class="clear" id="Ev-Clear">&nbsp;</div>
+            </ul>
+            <div class="disBtn">
+                <a href="//www.allinmd.cn/html/activity/1459416619774/activity_details.html#entQua"><img src="//img00.allinmd.cn/column/bayer/disbtn01.png" alt=""/></a>
+                <a class="disBtnMid" href="//www.allinmd.cn/html/activity/1459416619774/activity_details.html#schedule"><img src="//img00.allinmd.cn/column/bayer/disbtn02.png" alt=""/></a>
+                <a href="//www.allinmd.cn/html/activity/1459416619774/activity_details.html#bonus"><img src="//img00.allinmd.cn/column/bayer/disbtn03.png" alt=""/></a>
+                <div class="clear">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <!--底部二维码-->
+    <div class="sound_bot">
+        <div class="botMain"><img src="//img00.allinmd.cn/column/bayer/bot01.png" alt=""/></div>
+    </div>
+</div>
+<!--#include virtual="/includes/footer.jsp"-->
+
+<script src="//comm.allinmd.cn/base.js"></script>
+<script src="//modules.allinmd.cn/lib.js"></script>
+<script src="//scene.allinmd.cn/column/bayer/scene.column.bayer.bayerComm.js"></script>
+
+<script src="//other.allinmd.cn/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="//other.allinmd.cn/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu-con.js"></script>
+<script src="//other.allinmd.cn/jquery-validate/jquery.validate.js"></script>
+<script src="//other.allinmd.cn/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src="//other.allinmd.cn/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="//other.allinmd.cn/uploadReplace/uploadReplace.js"></script>
+<script src="//other.allinmd.cn/uploadify/jquery.uploadify.js"></script>
+
+</body>
+</html>

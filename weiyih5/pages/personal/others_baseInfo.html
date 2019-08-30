@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            var url=document.URL;
+            var str=url.substring(url.lastIndexOf("?"),url.length);
+            window.location.href='//www.allinmd.cn/pages/personal/others_baseInfo.html'+str;
+        }
+    </script>
+    <title>简介－个人资料,全面展现,唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <meta name="description" content="［xxx］的学术专栏－唯医,allinmd">
+    <meta name="keywords" content="［xxx］，学术专栏，医学专栏，医师主页，医生专栏，医生交流，关注医师，唯医,allinmd">
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/others/others_index.css">
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="236">
+<section class="al-mainInner">
+    <!-- 顶部信息栏 -->
+    <header class="al-personalHead" data-alcode-mod="561">
+        <p class="al-othersSnsBar">
+            <span class="al-personalLike" id="ev-praise"><i class="icon-othersLike"></i><span class="ev-upNum"></span></span>
+            <span class="al-personalShare"><i class="icon-shareWhite"></i>分享</span>
+        </p>
+        <a href="javascript:history.back(-1);" class="al-othersBackToIndex"><i class="icon-othersToIndex"></i></a>
+        <article class="al-personalBasicMsg">
+            <figure class="al-personalImg">
+                <a href="javascript:void(0)" class="ev-logoUrl">
+
+                </a>
+            </figure>
+            <figcaption class="al-personalBasicMsgContent">
+                <h2><span class="ev-name"></span></h2>
+                <article class="al-personalJobMsg ev-companymedical">
+
+                </article>
+                <ul class="ev-noAuth">
+                    <li class="al-personalSnsNum"><a href="" class="ev-fansUrl">粉丝<span class="ev-fansNum"></span></a></li>
+                    <li class="al-personalSnsNum"><a href="" class="ev-followUrl">关注<span class="ev-followNum"></span></a></li>
+                    <li class="al-personalSnsNum"><a href="" class="ev-collectUrl">收藏<span class="ev-collectionNum"></span></a></li>
+                </ul>
+            </figcaption>
+        </article>
+        <button class="al-personalGoLogined al-whiteBtn">
+            <span class="ev-followBtn"></span>
+        </button>
+    </header>
+    <!-- 滚动距离时——顶部信息 -->
+    <header class="al-personalScrollHead">
+        <h2><a href="javascript:history.back(-1);"><i class="icon-backArrow"></i></a><span class="ev-name"></span></h2>
+    </header>
+    <!-- 导航栏部分 -->
+    <nav class="al-personalNavbar" data-alcode-mod="488">
+        <a href="" class="ev-activeHref">
+        <figure class="al-personNavbarItem" data-role="active">
+            <figcaption>动态</figcaption>
+        </figure>
+        </a>
+        <a href="" class="ev-contributeHref">
+        <figure class="al-personNavbarItem" data-role="contribution">
+            <figcaption>贡献</figcaption>
+        </figure>
+        </a>
+        <figure class="al-personNavbarItem active" data-role="intro">
+            <figcaption>简介</figcaption>
+        </figure>
+    </nav>
+
+    <section class="al-personalContent al-personalIntro" data-role="intro">
+        <section class="al-tableModule">
+            <header class="al-personalContentTitle">
+                <h2>基本信息</h2>
+            </header>
+            <article class="al-tableModuleContent">
+                <p class="ev-nameSex"></p>
+                <p class="ev-platform"></p>
+                <p class="ev-medicalTitle"></p>
+                <p class="ev-company"></p>
+                <p class="ev-clinicalTime"></p>
+                <article class="al-basicMsgTag ev-areas">
+
+                </article>
+            </article>
+        </section>
+        <section class="al-tableModule ev-summaryPar" style="display: none">
+            <header class="al-personalContentTitle">
+                <h2>个人简介</h2>
+            </header>
+            <article class="al-tableModuleContent">
+                <span class="al-tableModuleContentText ev-summary"></span>
+            </article>
+        </section>
+        <section class="al-tableModule" style="display: none">
+            <header class="al-personalContentTitle">
+                <h2>工作经历</h2>
+            </header>
+            <scetion class="ev-occList"></scetion>
+        </section>
+        <section class="al-tableModule" style="display: none">
+            <header class="al-personalContentTitle">
+                <h2>教育背景</h2>
+            </header>
+            <scetion class="ev-eduList"></scetion>
+        </section>
+        <section class="al-tableModule" style="display: none">
+            <header class="al-personalContentTitle">
+                <h2>继续教育</h2>
+            </header>
+            <scetion class="ev-cEduList"></scetion>
+        </section>
+        <section class="al-tableModule" style="display: none">
+            <header class="al-personalContentTitle">
+                <h2>获得荣誉</h2>
+            </header>
+            <scetion class="ev-honorList"></scetion>
+        </section>
+        <section class="al-tableModule" style="display: none">
+            <header class="al-personalContentTitle">
+                <h2>科研基金</h2>
+            </header>
+            <scetion class="ev-fundList"></scetion>
+        </section>
+        <section class="al-tableModule" style="display: none">
+            <header class="al-personalContentTitle">
+                <h2>社会任职</h2>
+            </header>
+            <scetion class="ev-socialList"></scetion>
+        </section>
+        <section class="al-tableModule" style="display: none">
+            <header class="al-personalContentTitle">
+                <h2>学术专著</h2>
+            </header>
+            <section class="ev-opusList"></section>
+        </section>
+        <section class="al-tableModule" style="display: none">
+            <header class="al-personalContentTitle">
+                <h2>发明专利</h2>
+            </header>
+            <section class="ev-patentList"></section>
+        </section>
+    </section>
+</section>
+<!-- 底部选项 -->
+<section class="al-bottomSelectorListMask">
+    <section class="al-bottomSelectorListBox">
+        <section class="al-bottomSelectorList">
+            <figure class="al-bottomSelectorItem al-bottomSelectorTitle"><a href="javascript:void(0)">确定不再关注此人？</a></figure>
+            <figure class="al-bottomSelectorItem ev-sureBtn"><a href="javascript:void(0)">确定</a></figure>
+        </section>
+        <section class="al-bottomSelectorList mgt">
+            <figure class="al-bottomSelectorItem ev-cancelBtn"><a href="javascript:void(0)">取消</a></figure>
+        </section>
+    </section>
+</section>
+<!-- 中部弹窗 -->
+<section class="al-middleTipsModal ev-addSuccess" style="display: none;">
+    <article class="al-middleTipsModalText">
+        <p><i class="icon-othersFollowed"></i>已关注</p>
+    </article>
+</section>
+<!-- 查看头像 -->
+<section class="al-personalHeadImgWatcher">
+    <figure>
+        <img class="ev-bigLogo" src="" alt="">
+    </figure>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/log.js"></script>
+
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/plugins/plugin.follow.js"></script>
+<script src="/js/scene/personal/othersCommon.js"></script>
+<script src="/js/scene/personal/othersBaseInfo.js"></script>
+
+</body>
+</html>

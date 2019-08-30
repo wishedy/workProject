@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>科研基金</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_eduBackground.css">
+</head>
+
+<body>
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem">
+                <a href="/design-html/personal/personal_index.html">
+                    <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>科研基金</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)">
+                </a>
+            </figure>
+        </header>
+        <section class="al-personalContent">
+            <section class="al-tableModule">
+                <article class="al-tableModuleItem">
+                    <h3>项目名称</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <input type="text" placeholder="请输入项目名称">
+                    </figure>
+                </article>
+                <article class="al-tableModuleItem">
+                    <h3>项目编号</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <input type="text" placeholder="请输入项目编号">
+                    </figure>
+                </article>
+            </section>
+            <section class="al-tableModule">
+                <article class="al-tableModuleItem">
+                    <h3>批注年份</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <article class="al-tableModuleSelect">
+                            <select class="al-dateSelector" name="" id="">
+                                <option value="" selected>1111</option>
+                                <option value="">1992</option>
+                                <option value="">1993</option>
+                                <option value="">1994</option>
+                            </select>
+                            <span>年</span>
+                        </article>
+                    </figure>
+                </article>
+            </section>
+        </section>
+        <section class="al-saveBtnBox al-msgWriting">
+            <button class="btn-primary-lg">
+                保存
+            </button>
+        </section>
+        <!-- 底部选项 -->
+        <section class="al-bottomSelectorListMask">
+
+            <section class="al-bottomSelectorListBox">
+                <section class="al-bottomSelectorList">
+                    <figure class="al-bottomSelectorItem active"><a href="javascript:void(0)">保存</a></figure>
+                    <figure class="al-bottomSelectorItem"><a href="javascript:void(0)">放弃</a></figure>
+                </section>
+                <section class="al-bottomSelectorList mgt">
+                    <figure class="al-bottomSelectorItem" id="EV-cancelUploadImg"><a href="javascript:void(0)">取消</a></figure>
+                </section>
+            </section>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script>
+    FastClick.attach(document.body);
+    $(function() {
+        $(".al-saveBtnBox").on("click", function(e) {
+            if ($(".al-bottomSelectorListMask").hasClass('on')) {
+                return;
+            }
+            $(".al-bottomSelectorListMask").addClass('on');
+
+        });
+        $('#EV-cancelUploadImg').on("click", function(e) {
+            $(".al-bottomSelectorListMask").removeClass('on');
+        });
+    });
+    </script>
+</body>
+
+</html>

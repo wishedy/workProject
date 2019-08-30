@@ -1,0 +1,60 @@
+@charset "UTF-8";
+@import "../modules/common-modules";
+
+.selectCont{
+    //width: 94px;
+    height: 40px;
+    @include formBorder();
+    display: inline-block;
+    vertical-align: middle;
+    //margin-right: 20px;
+    position: relative;
+    @include fontSize(14px);
+    line-height: 40px;
+    padding-left: 12px;
+    &:after{
+        width: 0;
+        height: 0;
+        position: absolute;
+        content: "";
+        border-color: rgba(0,0,0,0.5) transparent transparent;
+        border-style: solid;
+        border-width: 6px;
+        top: 18px;
+        right: 12px;
+    }
+    .selectOption{
+        position: absolute;
+        top: 41px;
+        padding: 10px;
+        left: 0;
+        //width: 96px;
+        @include fontSize(14px,#333);
+        line-height: 22px;
+        max-height: 271px;
+        background: #FFFFFF;
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+        border-radius: 4px;
+        z-index: 1;
+        li{
+            padding-left: 6px;
+            &:hover{
+                background: rgba(40,136,255,0.1);
+                border-radius: 2px;
+            }
+        }
+    }
+}
+.newCases .formCommon .articleText {
+    width: 145px;
+    text-align: right;
+    display: inline-block;
+    margin-right: 39px;
+    vertical-align: middle;
+    @include fontSize(14px,#333);
+    line-height: 17px;
+    i{
+        @include fontSize(16px,#F34B4B);
+        margin-right: 6px;
+    }
+}

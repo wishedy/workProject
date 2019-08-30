@@ -1,0 +1,866 @@
+﻿<!doctype html>
+<html xmlns:gs="http://www.gensee.com/ec">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<title>直播demo</title>
+<link href="css/live.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--
+说明
+1、替换site="192.168.1.138"里的值为自己站点的域名
+2、替换ownerid="5bdf01c4a34b4a63b1f980f2642728b4"为当前直播的id
+3、替换uid="55831"的值为当前用户id
+4、替换uname="user5623"为当前用户昵称
+5、如果设置密码请设置authcode=""的值为直播密码
+-->
+<div class="main_web">
+	<div class="main_left">
+    	<!--视频区域-->
+    	<div class="video_area">
+        	<!--插入Video Widget -->
+        	<gs:video-live id="videoComponent" site="product.gensee.com" ctx="training" ownerid="qnYvtuDg1R" uid="5583122" uname="user5623222" authcode="444444" bar="false"/>
+        </div>
+        <!--问答区域-->
+        <div class="qa_area">
+        	<div class="qa_title">问答</div>
+            <div class="qa_list">
+            	<div id="qa_body">
+                </div>
+            </div>
+            <div class="qa_frm">
+            	<p>专家为你解答一切问题</p>
+                <div>
+                	<form>
+                    <textarea id="qa_area" placeholder="在线教育有哪些？" class="t box-sizing"></textarea>
+                    <input class="i" type="button" id="qa_btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main_center">
+    	<!--标题状态区域-->
+    	<div class="title_area">
+        	<p><em id="play_status">未开始</em><span>直播demo</span></p>
+            <div>欢迎你 ,<span id="uname">user5623</span></div>
+        </div>
+        <!--文档区域-->
+        <div class="doc_area">
+        	<!--插入Doc Widget-->
+        	<gs:doc id="docComponent" site="product.gensee.com" ownerid="qnYvtuDg1R" />
+        </div>
+        <div class="tool_area">
+        	<!--音量控制区域-->
+        	<div class="volume_area">
+            	<a href="javascript:void(0);" class="volume_a"></a>
+                <div class="volume_slide">
+                	
+                </div>
+            </div>
+            <a href="javascript:void(0);" id="wifi_a" class="wifi_a"></a>
+        </div>
+    </div>
+    <!--聊天区域-->
+    <div class="main_right">
+    	<div class="chat_title">聊天</div>
+        <div class="chat_list">
+        	<div id="chat_body">
+            </div>
+        </div>
+        <div class="chat_frm">
+        	<form>
+            	<a href="javascript:void(0);" id="emotion_a" class="emotion_a"></a>
+                <div class="emotion_list" id="emotion_list">
+                	<a href="javascript:;"><img src="images/emotion/emotion.smile.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/emotion.goodbye.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/emotion.laugh.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/emotion.cry.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/emotion.angerly.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/emotion.nod.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/emotion.lh.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/emotion.question.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/emotion.bs.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/rose.up.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/rose.down.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/chat.gift.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/feedback.quickly.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/feedback.slowly.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/feedback.agreed.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/feedback.against.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/feedback.applaud.png"></a>
+                    <a href="javascript:;"><img src="images/emotion/feedback.think.png"></a>
+               </div>
+               <div>
+               <div id="chat-area" class="chat_edit" contenteditable="true"></div>
+               <input type="button" class="b" id="chat_btn">
+               </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--遮罩层-->
+<div class="cover" id="cover"></div>
+<!--点名区域-->
+<div class="rollcall_area">
+	<div class="t">
+    	<p>点名开始咯</p>
+        <a href="javascript:void(0);" id="rollcall_close"></a>
+    </div>
+    <div class="b" id="rollcall_body">
+    	<div class="time_item">
+            <strong class="minute_show">00</strong>
+            <strong>:</strong>
+            <strong class="second_show">00</strong>
+        </div>
+        <a href="javascript:void(0);" class="rollcall_btn" id="rollcall-submit">签到</a>
+    </div>
+    <div class="c" id="rollcall_msg">
+    	<p class="err">您错过了当次点名</p>
+    </div>
+</div>
+<!--优选网络-->
+<div class="net_area">
+	<div class="t">
+    	<p>优选网络</p>
+        <a href="javascript:void(0);" id="net_close"></a>
+    </div>
+    <div class="b">
+    	<div class="net_list">
+        	
+        </div>
+        <a href="javascript:void(0);" id="net_btn" class="net_btn">确定</a>
+    </div>
+</div>
+<!--问卷-->
+<!--
+<div class="survey_area">
+	<div class="t">
+    	<p>XXXXXXXXXXXXXXXXXXXXXXXXXXX问卷调查</p>
+        <a href="#" class="survey_close"></a>
+    </div>
+    <div class="survey_body">
+    	<div class="survey_select single">
+        	<h3>1、【单选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+            </div>
+        </div>
+        <div class="survey_select multi">
+        	<h3>2、【多选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+            </div>
+        </div>
+        <div class="survey_select diaocha">
+        	<h3>3、【问答】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <p><textarea></textarea></p>
+        </div>
+        <div class="survey_select single">
+        	<h3>1、【单选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+            </div>
+        </div>
+        <div class="survey_select multi">
+        	<h3>2、【多选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+            </div>
+        </div>
+        <div class="survey_select diaocha">
+        	<h3>3、【问答】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <p><textarea></textarea></p>
+        </div>
+        <div class="survey_select single">
+        	<h3>1、【单选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+            </div>
+        </div>
+        <div class="survey_select multi">
+        	<h3>2、【多选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+            </div>
+        </div>
+        <div class="survey_select diaocha">
+        	<h3>3、【问答】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <p><textarea></textarea></p>
+        </div>
+    </div>
+    <div class="survey_btn">
+    	<a href="#">提交</a>
+    </div>
+</div>
+-->
+<!--问卷结果-->
+<!--
+<div class="result_area">
+	<div class="t">
+    	<p>XXXXXXXXXXXXXXXXXXXXXXXXXXX问卷调查</p>
+        <a href="#"></a>
+    </div>
+    <div class="result_body">
+    	<div class="result_block">
+        	<h3>1、【单选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<p>
+                	<span>A. 第一方案</span>
+                    <em>15%（15人）</em>
+                </p>
+                <p>
+                	<span>A. 第一方案</span>
+                    <em>15%（15人）</em>
+                </p>
+                <p>
+                	<span>A. 第一方案</span>
+                    <em>15%（15人）</em>
+                </p>
+                <p>
+                	<span>A. 第一方案</span>
+                    <em>15%（15人）</em>
+                </p>
+            </div>
+        </div>
+        <div class="result_block">
+        	<h3>1、【多选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<p>
+                	<span>A. 第一方案</span>
+                    <em>15%（15人）</em>
+                </p>
+                <p>
+                	<span>A. 第一方案</span>
+                    <em>15%（15人）</em>
+                </p>
+                <p>
+                	<span>A. 第一方案</span>
+                    <em>15%（15人）</em>
+                </p>
+                <p>
+                	<span>A. 第一方案</span>
+                    <em>15%（15人）</em>
+                </p>
+            </div>
+        </div>
+        <div class="result_block">
+        	<h3>1、【多选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<div class="d"></div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="result_btn">
+    	<a href="#">关闭</a>
+    </div>
+</div>
+-->
+<script type="text/javascript" src="http://static.gensee.com/webcast/static/sdk/js/gssdk.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="js/utils.js?t=2"></script>
+<script type="text/javascript">
+	var uid=$('#videoComponent').attr('uid');
+	//根据组获得通讯通道
+	var channel = GS.createChannel();
+	
+	//直播状态监听
+	channel.bind("onStart", function (event) {
+		console.log(event);
+		$('#play_status').html("播放中");
+	});
+	channel.bind("onPause", function (event) {
+		console.log(event);
+		$('#play_status').html("已暂停");
+		
+	});
+	channel.bind("onPlay", function (event) {
+		console.log(event);
+		$('#play_status').html("播放中");
+	});
+	channel.bind("onStop", function (event) {
+		console.log(event);
+		$('#play_status').html("已结束");
+	});
+	
+	//收到系统消息
+	channel.bind("onMessage", function (event) {
+		console.log(event);
+		$('#chat_body').append('<dl class="system"><dt><p>系统消息</p><span>'+Util.formatTime(event.data.time*1000)+'</span></dt><dd>'+event.data.content+'</dd></dl>');
+		$('#chat_body').scrollTo();
+	});
+	
+	//收到公聊消息
+	channel.bind("onPublicChat ", function (event) {
+		console.log(event);
+		$('#chat_body').append('<dl data-chat-id="'+event.data.id+'" data-senderUid="'+event.data.senderUid+'"><dt><p>'+event.data.sender+'</p><span>'+Util.formatTime(new Date().getTime())+'</span></dt><dd>'+emotion2Local(event.data.richtext)+'</dd></dl>');
+		$('#chat_body').scrollTo();
+	});
+	
+	//收到私聊消息
+	channel.bind("onPriChat", function (event) {
+		console.log(event);
+		$('#chat_body').append('<dl class="privatechat" data-chat-id="'+event.data.id+'" data-senderUid="'+event.data.senderUid+'"><dt><p>'+event.data.sender+'对我说</p><span>'+Util.formatTime(new Date().getTime())+'</span></dt><dd>'+emotion2Local(event.data.richtext)+'</dd></dl>');
+		$('#chat_body').scrollTo();
+	});
+	
+	//收到问答历史记录
+	channel.bind("onQAList", function (event) {
+		console.log(event);
+		var txt='';
+		for(var i=0;i<event.data.list.length;i++){
+			var qa=event.data.list[i];
+			if(qa.answer){
+				
+				txt+='<dl id="qa-'+qa.id+'" name="'+qa.id+'"><dt><p>'+(qa.qaownerId==uid?"我":qa.submitor)+' 问</p><span>'+Util.formatTime(qa.submitTime)+'</span></dt><dd>'+qa.question+'</dd></dl>';
+				
+				txt+='<dl id="qa-'+qa.id+'-'+qa.answerTime+'" name="'+qa.id+'"><dt><p>'+qa.answerBy+' 回复 '+(qa.qaownerId==uid?"我":qa.submitor)+'</p><span>'+Util.formatTime(qa.answerTime)+'</span></dt><dd>'+qa.answer+'</dd></dl>';
+			}else{
+				txt+='<dl id="qa-'+qa.id+'" name="'+qa.id+'"><dt><p>'+(qa.qaownerId==uid?"我":qa.submitor)+' 问</p><span>'+Util.formatTime(qa.submitTime)+'</span></dt><dd>'+qa.question+'</dd></dl>';
+			}
+		}
+		$('#qa_body').append(txt);
+		$('#qa_body').scrollTo();
+	});
+	
+	//收到问答消息
+	channel.bind("onQA", function (event) {
+		console.log(event);
+		if(!$('#qa-'+event.data.id)[0]){
+			$('#qa_body').append('<dl id="qa-'+event.data.id+'" name="'+event.data.id+'"><dt><p>'+(event.data.qaownerId==uid?"我":event.data.submitor)+' 问</p><span>'+Util.formatTime(event.data.submitTime)+'</span></dt><dd>'+event.data.question+'</dd></dl>');
+		}
+		if(event.data.answer){
+			$('#qa_body').append('<dl id="qa-'+event.data.id+'-'+event.data.answerTime+'" name="'+event.data.id+'"><dt><p>'+event.data.answerBy+' 回复 '+(event.data.qaownerId==uid?"我":event.data.submitor)+'</p><span>'+Util.formatTime(event.data.answerTime)+'</span></dt><dd>'+event.data.answer+'</dd></dl>');
+		}
+		$('#qa_body').scrollTo();
+	});
+	
+	//清除某条问答
+	channel.bind("onQARemove", function (event) {
+		console.log(event);
+		var eles = $('dl[name="'+event.data.id+'"]');
+		if(eles.length!=0){
+			eles.remove();
+		}
+	});
+	
+	//获取优选网络信息
+	channel.bind("onNetSettings", function (event) {
+		console.log(event);
+		var txt='';
+		for(var i=0;i<event.data.list.length;i++){
+			txt+='<a href="javascript:void(0);"'+(event.data.list[i].selected=="true"?' class="on"':'')+'>'+event.data.list[i].label+'</a>';
+		}
+		$('.net_list').html(txt);
+		$('#cover').fadeIn();
+		$('.net_area').fadeIn();
+	});
+	
+	//收到调查问卷
+	var VoteSurvey = {};
+	channel.bind("onVote", function (event) {
+		console.log(event);
+		if($('#cover').css('display')=='none'){
+			$('#cover').fadeIn();
+		}
+		loadVote(event.data);
+	});
+	
+	//加载问卷
+	function loadVote(vs){
+		console.log(vs);
+		VoteSurvey[vs.id] = vs;
+		var txt='';
+		txt+='<div class="survey_area" id="vs_'+vs.id+'" data-id="'+vs.id+'">';
+		txt+='<div class="t">';
+			txt+='<p>'+vs.subject+'</p>';
+			if(vs.skip=="true"){//非强制显示关闭按钮
+				txt+='<a href="javascript:void(0);" class="survey_close"></a>';
+			}
+		txt+='</div>';
+		txt+='<div class="survey_body">';
+		for(var i in vs.questions){
+			var question = vs.questions[i];
+			if(question.type=="single" || question.type=="multi"){
+				txt += createVote(i, question);
+			}else if(question.type=="text"){
+				txt += createSurvey(i, question);
+			}
+		}
+		txt+='</div>';
+		txt+='<div class="survey_btn" id="vote-select-'+vs.id+'">';
+			txt+='<a href="javascript:void(0);">提交</a>';
+		txt+='</div>';
+		txt+='</div>';
+		$('body').append(txt);
+		$('#vs_'+vs.id).fadeIn();
+		$("#vs_"+ vs.id+" .survey_btn").bind("click", function(){
+			commitVoteAndSurvey(vs.id);
+		});
+	}
+	//单选多选创建
+	function createVote(idx, vote){
+		var sVoteElem = '<div class="survey_select'+(vote.type=="single"?' single':' multi')+'" id="'+vote.id+'">'+
+		'<h3>'+(Number(idx)+1)+'、'+vote.subject+'</h3><div>';
+		for(var i in vote.items){
+			var item = vote.items[i];
+			sVoteElem += '<a rel="'+(Number(i)+1)+'">'+item.option+'</a>';
+		}
+		sVoteElem +=  '</div></div>';
+		return sVoteElem;
+	}
+	//问答创建
+	function createSurvey(idx, survey){
+		var sSurveyElem = '<div class="survey_select diaocha" id="'+survey.id+'">' +
+				'<h3>'+(Number(idx)+1)+'、'+survey.subject+'</h3>'+
+				'<p><textarea></textarea></p>'+
+			'</div>';
+		return sSurveyElem;
+	}
+	//提交答案
+	function commitVoteAndSurvey(vsId){
+		var vsData = VoteSurvey[vsId];
+		if(vsData.skip=="false"){
+			if(isAllQuestionAnswered(vsData)>0){
+				alert("强制问答请选择所有问题");
+				return false;
+			}
+		}
+		//答案设置
+		$("#vs_"+vsId).find(".survey_select").each(function(){
+			
+			if($(this).hasClass("single")){
+				var answer = "";
+				if($(this).find('a.on').length>0){
+					if(answer.length==0){
+						answer = $(this).find('a.on').attr('rel');
+					}else{
+						answer += ","+ $(this).find('a.on').attr('rel');
+					}
+				}
+				setAnswer(vsId, $(this).attr("id"), answer);
+				$(this).off();
+				
+			}else if($(this).hasClass("multi")){
+				var answer = "";
+				$(this).find("a.on").each(function(){
+					if(answer.length==0){
+						answer = $(this).attr('rel');
+					}else{
+						answer += ","+ $(this).attr('rel');
+					}
+					
+				});
+				setAnswer(vsId, $(this).attr("id"), answer);
+				$(this).off();
+			}else if($(this).hasClass("diaocha")){
+				var testarea = $(this).find("textarea");
+				var answer = testarea.val();
+				setAnswer(vsId, $(this).attr("id"), answer);
+				testarea.attr("disabled", "disabled");
+			}
+			
+		});
+		
+		//提交调查问卷结果
+		console.log(VoteSurvey[vsId]);
+		channel.send("submitVote", VoteSurvey[vsId]);
+		if(vsData.skip=="false"){
+			if(($('.survey_area').length+$('.result_area').length)==1){
+				$('#cover').fadeOut();
+			}
+			$("#vs_"+vsId).fadeOut(
+				function(){
+					$(this).remove();
+				}
+			);
+		}else{
+			$('#vs_'+vsId).find('.survey_close').trigger('click');
+		}
+	}
+	//判断是否全部有答案
+	function isAllQuestionAnswered(vsData){
+		var i=0;
+		var h=0;
+		$("#vs_"+vsData.id).find(".survey_select").each(function(){
+			var that=this;
+			if($(that).hasClass("single")){
+				if($(that).find("a.on").length==0){
+					jQuery(that).parent('.survey_body').animate({scrollTop:h},500);
+					i++;
+					return false;
+				}
+			}else if($(that).hasClass("multi")){
+				if($(that).find("a.on").length==0){
+					jQuery(that).parent('.survey_body').animate({scrollTop:h},500);
+					i++;
+					return false;
+				}
+			}else if($(that).hasClass("diaocha")){
+				var val = $(that).find("textarea").val();
+				if(!val||$.trim(val).length<1){
+					jQuery(that).parent('.survey_body').animate({scrollTop:h},500);
+					i++;
+					return false;
+				}
+			}
+			h+=$(that).height();
+		});
+		return i;
+	}
+	//设置答案
+	function setAnswer(vsId, itemId, value){
+		//console.log(VoteSurvey[vsId],itemId,value);
+		for(var i in VoteSurvey[vsId].questions){
+			if(VoteSurvey[vsId].questions[i].id===itemId){
+				VoteSurvey[vsId].questions[i].answer = value;
+				if(VoteSurvey[vsId].questions[i].type=='single' || VoteSurvey[vsId].questions[i].type=='multi'){
+					var value_arr=value.split(',');
+					for(var j=0;j<value_arr.length;j++){
+						VoteSurvey[vsId].questions[i].items[Number(value_arr[j])-1].selected="true";
+					}
+				}
+				break;
+			}
+		}
+	}
+	
+	//调查结果
+	channel.bind("onVoteResult", function (event) {
+		console.log(event);
+		if($('#cover').css('display')=='none'){
+			$('#cover').fadeIn();
+		}
+		popupVoteAndSurveyResult(event.data);
+	});
+	//加载结果
+	function popupVoteAndSurveyResult(vsrData){
+		
+		var questions = vsrData.questions;
+		var txt='';
+		txt+='<div class="result_area" id="vsr_'+vsrData.id+'">';
+		txt+='<div class="t">';
+			txt+='<p>'+vsrData.subject+'</p>';
+			txt+='<a href="javascript:void(0);" class="result_close"></a>';
+		txt+='</div>';
+		txt+='<div class="result_body">';
+		for(var i in questions){
+			var vsr = questions[i];
+			if(vsr.type==="single"||vsr.type==="multi"){
+				txt += createVoteResult(vsr);
+			}else if(vsr.type==="text"){
+				txt += createSurveyResult(vsr);
+			}
+		}
+			
+		txt+='</div>';
+		txt+='<div class="result_btn">';
+			txt+='<a href="javascript:void(0);">关闭</a>';
+		txt+='</div>';
+		txt+='</div>';
+		
+		$('body').append(txt);
+		$('#vsr_'+vsrData.id).fadeIn();
+	}
+	
+	//创建单选多选
+	function createVoteResult(voteResultData){
+		var vateTotal = 0;
+		for(var j in voteResultData.items){
+			vateTotal = vateTotal + Number(voteResultData.items[j].total);
+		}
+		var sVoteR = '<div class="result_block">'+
+					'<h3>'+(voteResultData.type=='multi'?'【多选】':'【单选】')+voteResultData.subject+'</h3><div>';
+		for(var i in voteResultData.items){
+			var item = voteResultData.items[i];
+			var itemTotal = item.total;
+			var rate=calcRate(itemTotal, vateTotal);
+			sVoteR +='<p><span>'+item.option+'</span><em>'+rate+'% ('+itemTotal+'人)</em></p>';
+		}
+		sVoteR +='</div></div>';
+		return sVoteR;
+	}
+	
+	//比例计算
+	function calcRate(v, total){
+		if(isNaN(v)||Number(v)==0)return "0";
+		if(isNaN(total) || Number(total)==0)return "0";
+		return Math.round(Number(v)*100/Number(total));
+	}
+	//创建问答
+	function createSurveyResult(surveyResultData){
+		var sSurveyR = '<div class="result_block">'+
+							'<h3>【问答】'+surveyResultData.subject+'</h3>'+
+						'<div class="d">参加人数：'+surveyResultData.total+'人</div></div>';
+		return sSurveyR;
+	}
+	
+	//被踢出
+	channel.bind("onKickOut", function (event) {
+		console.log(event);	
+		alert("您已经被踢出");
+	});
+	
+	//SDK状态通知 
+	channel.bind("onStatus", function (event) {
+		console.log(event);	
+		alert("SDK状态通知 "+event.data.type+" "+event.data.explain);
+	});
+	
+	//SDK加载完毕，所有API生效
+	channel.bind("onDataReady", function (event) {
+		console.log(event);	
+		setTimeout(function(){sdkgo();},0);	
+	});
+	//异步执行sdk交互
+	function sdkgo(){
+		//发送聊天
+		$('#chat_btn').on('click',function(){
+			if($('#emotion_list').css('display')!='none'){
+				$('#emotion_list').hide();
+			}
+			var html = $.trim($("#chat-area").html().replace(/ /ig,' ').replace(/\s+/g,' '));
+			if(Util.isEmpty(html) || html ==="<br>" || html ==="<br/>"){
+				alert("请输入聊天内容");
+				return;
+			}else{
+				$('#chat_body').append('<dl class="mine"><dt><p>我</p><span>'+Util.formatTime(new Date().getTime())+'</span></dt><dd>'+html+'</dd></dl>');
+				$('#chat_body').scrollTo();
+				var richtext = emotionNormalize(html, false);
+				var text = emotionNormalize(html, true).replace(/<br>/gi,'').replace(/[\r\n]/g,"").replace(/<\/?.+?>/g,"");
+				console.log(richtext);
+				console.log(text);
+				channel.send("submitChat", {
+					"content" : text,
+					"richtext" : richtext,
+					"security" : "high"
+				},function(data){
+					console.log(data);
+					$("#chat-area").html('');
+				});
+			}
+		});
+		
+		
+		
+		//提交问题
+		$('#qa_btn').on('click',function(){
+			var content=$('#qa_area').val();
+			if(Util.isEmpty(content) || content ==="<br>" || content ==="<br/>"){
+				alert("请输入提问内容");
+				return;
+			}else{
+				channel.send("submitQuestion", {
+					"content" : content
+				},function(data){
+					console.log(data);
+					$('#qa_body').append('<dl id="qa-'+data.id+'" name="'+data.id+'"><dt><p>我 问</p><span>'+Util.formatTime(new Date().getTime())+'</span></dt><dd>'+content+'</dd></dl>');
+					$('#qa_body').scrollTo();
+					$("#qa_area").val('');
+				});
+			}
+		});
+		
+		//提交音量信息
+		$(".volume_slide").bind( "slidechange", function( event, ui ) {
+			console.log(ui.value);
+			channel.send("submitVolume", {
+				"value":ui.value/100
+			});
+		});
+		
+		//获取优选网络
+		$('#wifi_a').on('click',function(){
+			channel.send("requireNetSettings", {
+			});
+		});
+		
+		
+		//提交优选网络
+		$('#net_btn').on('click',function(){
+			if($('.net_list a.on').length>0){
+				var label=$('.net_list a.on').text();
+				//提交优选网络选择信息
+				channel.send("submitNetChoice", {
+					"label":label
+				});
+				$('#net_close').trigger('click');
+			}else{
+				alert("请选择一个网络");
+			}
+		});
+		
+		
+		//收到点名通知
+		var rolltime;
+		channel.bind("onRollcall", function (event) {
+			console.log(event);
+			
+			$('#cover').fadeIn();
+			$('#rollcall_body').show();
+			$('#rollcall_msg').hide();
+			$('#rollcall_close').hide();
+			$('.rollcall_area').attr('data-id',event.data.id).fadeIn();
+			startRollcallCountdown(event.data.timeout);
+		});
+		
+		//提交点名
+		$('#rollcall-submit').on('click',function(){
+			if(rolltime){
+				clearTimeout(rolltime);
+			}
+			var id=$('.rollcall_area').attr('data-id');
+			//提交点名
+			channel.send("submitRollcall", {
+				"id":id
+			});
+			
+			$('#rollcall_close').show();
+			$('#rollcall_body').hide();
+			$('#rollcall_msg p').removeClass().addClass('succ').html('签到成功');
+			$('#rollcall_msg').show();
+		});
+		//倒计时展示
+		function setRollcallTime(dtime){
+			var m;
+			if(dtime<60){
+				m='00';
+			}else{
+				m=parseInt(dtime/60);
+				m=m<10?'0'+""+m:m;
+			}
+			var t;
+			if(dtime<60){
+				t=dtime;
+			}else{
+				t=dtime-60*parseInt(dtime/60);
+			}
+			t=t<10?'0'+""+t:t;
+			$('.minute_show').html(m);
+			$('.second_show').html(t);
+		}
+		//点名倒计时
+		function startRollcallCountdown(sec){
+			if($(".rollcall_area").is(":hidden"))return;//已报到
+			setRollcallTime(sec);
+			if(sec>0){
+				rolltime=setTimeout(function(){
+					startRollcallCountdown(sec-1);
+				}, 1000);
+			}else{
+				$('#rollcall_close').show();
+				$('#rollcall_body').hide();
+				$('#rollcall_msg p').removeClass().addClass('err').html('您错过了当次点名');
+				$('#rollcall_msg').show();
+			}
+		}
+	}
+	//API错误通知
+	channel.bind("onAPIError", function (event) {
+		console.log(event);
+	});
+	
+	//相关操作处理
+	$(function(){
+		$('#uname').html($('#videoComponent').attr('uname'));
+		
+		//显示隐藏标签
+		$('#emotion_a').on('click',function(){
+			$('#emotion_list').toggle();
+		});
+		//点击标签插入到聊天输入框
+		$("#emotion_list a").on("click", function(e){
+			$('#chat-area').append($(this).find('img')[0].outerHTML);
+		});
+		
+		//设置音量默认75
+		$(".volume_slide").slider({
+			value: 75,
+			range:"min",
+			change: function() {
+				$(".volume_slide span").width($(".volume_slide a").css("left"));
+			}
+		});
+		
+		//设置网路选中
+		$('.net_list').on('click','a',function(){
+			if(!$(this).hasClass('on')){
+				$('.net_list a.on').removeClass();
+				$(this).addClass('on');
+			}
+		});
+		//关闭优选网络
+		$('#net_close').on('click',function(){
+			$('#cover').fadeOut();
+			$('.net_area').fadeOut();
+		});
+		
+		//关闭点名界面
+		$('#rollcall_close').on('click',function(){
+			$('#cover').fadeOut();
+			$('.rollcall_area').fadeOut();
+		});
+		
+		//关闭问卷
+		$('body').on('click','.survey_close',function(){
+			if(($('.survey_area').length+$('.result_area').length)==1){
+				$('#cover').fadeOut();
+			}
+			$(this).parent().parent().fadeOut(
+				function(){
+					$(this).remove();
+				}
+			);
+		});
+		//单选多选设置答题
+		$('body').on('click','.survey_select div a',function(){
+			var that=this;
+			var is_radio=$(that).parents('.survey_select').hasClass('single');
+			if($(that).hasClass('on') && !is_radio){
+				$(that).removeClass('on');
+			}else{
+				if(is_radio){
+					$(that).parent('div').find('a').removeClass('on');
+				}
+				$(that).addClass('on');
+			}
+		});
+		
+		//关闭结果
+		$('body').on('click','.result_close,.result_btn a',function(){
+			if(($('.survey_area').length+$('.result_area').length)==1){
+				$('#cover').fadeOut();
+			}
+			$(this).parents('.result_area').fadeOut(
+				function(){
+					$(this).remove();
+				}
+			);
+		});
+	});
+	
+</script>
+</body>
+</html>

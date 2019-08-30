@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>个人主页-主页</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/css/v3/base.css">
+    <link rel="stylesheet" href="/css/v3/pages/personal/personal_index.css">
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!--全内容容器——mainInner-->
+    <section class="al-mainInner">
+        <!-- 页头——本页面无超链接-->
+        <header class="al-header">
+        </header>
+        <!-- 主侧边栏——Logo于此放置 -->
+        <aside class="al-mainSidebar">
+            <header class="al-mainLogo">
+                <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+            </header>
+            <section class="al-mainSidebarList">
+                <ul>
+                    <li class="al-mainSidebarItem">
+                        <a href="javascript:void(0)">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                            <figcaption>首页</figcaption>
+                        </a>
+                    </li>
+                    <li class="al-mainSidebarItem">
+                        <a href="javascript:void(0)">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find.png" alt="">
+                            <figcaption>发现</figcaption>
+                        </a>
+                    </li>
+                    <li class="al-mainSidebarItem">
+                        <a href="javascript:void(0)">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                            <figcaption>发布</figcaption>
+                        </a>
+                    </li>
+                    <li class="al-mainSidebarItem">
+                        <a href="javascript:void(0)">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                            <figcaption>消息</figcaption>
+                        </a>
+                    </li>
+                    <li class="al-mainSidebarItem active">
+                        <a href="javascript:void(0)">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                            <figcaption>个人</figcaption>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="al-mainSidebarOtherList">
+                    <li class="al-mainSidebarItem">
+                        <a href="javascript:void(0)">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                            <figcaption>唯客服</figcaption>
+                        </a>
+                    </li>
+                    <li class="al-mainSidebarItem">
+                        <a href="javascript:void(0)">
+                            <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                            <figcaption>手机端</figcaption>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <!-- 用户未认证——悬浮提示 -->
+        <navbar class="al-personalUserNoQualification">
+            <article>
+                我们需要认证您的邮箱<span class="al-personalUserEmail">nyanyanyanya@nya.com</span>,点击<a href="javascript:void(0)">点击发送验证邮件</a>。如果邮箱有误，您可以在<a href="javascript:void(0)">这里</a>更改邮箱地址
+                <i class="al-close">x</i>
+            </article>
+        </navbar>
+        <!-- 主内容容器 -->
+        <section class="al-personal">
+            <!-- 上传头像 -->
+            <section class="al-personalUploadMask">
+                <section class="al-personalUploadBox">
+                    <header>编辑个人头像</header>
+                    <section class="al-personalUpload">
+                        <figure class="al-personalUploadArea">
+                            <button>+选择图片</button>
+                            <p>只支持JPG、PNG，大小不超过5M</p>
+                        </figure>
+                        <section class="al-personalUploadPreview">
+                            <h3>预览</h3>
+                            <figure class="preview100">
+                                <img src="//img00.allinmd.cn/v3/personal/head_icon.png" alt="">
+                                <figcaption>100<span>x</span>100</figcaption>
+                            </figure>
+                            <figure class="preview65">
+                                <img src="//img00.allinmd.cn/v3/personal/head_icon.png" alt="">
+                                <figcaption>65<span>x</span>65</figcaption>
+                            </figure>
+                            <figure class="preview40">
+                                <img src="//img00.allinmd.cn/v3/personal/head_icon.png" alt="">
+                                <figcaption>40<span>x</span>40</figcaption>
+                            </figure>
+                        </section>
+                    </section>
+                    <footer class="al-personalUploadBtn">
+                        <button class="al-personalUploadRelease">发布</button>
+                        <button class="al-personalUploadCancel">取消</button>
+                    </footer>
+                </section>
+            </section>
+            <section class="al-personalInner">
+                <header class="al-personalHeader">
+                    <section class="al-personalLogoMsg">
+                        <figure class="al-personalLogo">
+                            <img src="//img00.allinmd.cn/v3/personal/head_icon.png" alt="">
+                            <i class="al-personalLogoMask">
+                                <img src="//img10.allinmd.cn/v3/common/icon/icon_camera.png" alt="">
+                            </i>
+                            <section class="al-uploadImgSuccess">
+                                <h2><i class="al-iconSuccess"></i>更新头像成功</h2>
+                                <p>现在其他医师可以看到您的新头像了</p>
+                                <span class="al-uploadingImgSuccessTips">3秒后消失</span>
+                            </section>
+                        </figure>
+                        <p class="al-personalName"><span>张艳丽<i class="al-vipBigUser"></i></span></p>
+                        <figcaption class="al-personalJobMsg">
+                            <p>住院医师</p>
+                            <p>北京医科大学附属医院三院</p>
+                            <p id="EV-NoQualificationUser">用户尚未认证</p>
+                        </figcaption>
+                    </section>
+                    <section class="al-personalFollowMsg">
+                        <a href="/design-html/personal/personal_sns.html" class="al-personalFollowNum">粉丝<span>169</span><i class="al-newNumTips"></i></a>
+                        <hr>
+                        <a href="/design-html/personal/personal_sns.html" class="al-personalFollowNum">关注<span>1w+</span></a>
+                        <hr>
+                        <a href="/design-html/personal/personal_sns.html" class="al-personalFollowNum">赞<span>367</span></a>
+                    </section>
+                    <button class="al-personalConfig">
+                        <span><i class="al-iconConfig"></i>设置</span>
+                    </button>
+                </header>
+                <nav class="al-personalNavbar">
+                    <figure class="al-personalNavbarItem active">
+                        <i class="al-iconMyIndex"></i>
+                        <a href="javascript:void(0)">主页</a>
+                    </figure>
+                    <figure class="al-personalNavbarItem">
+                        <i class="al-iconMyContribution"></i>
+                        <a href="/design-html/personal/personal_contribution.html">贡献</a>
+                    </figure>
+                    <figure class="al-personalNavbarItem">
+                        <i class="al-iconMyActive"></i>
+                        <a href="/design-html/personal/personal_active.html">动态</a>
+                    </figure>
+                    <figure class="al-personalNavbarItem">
+                        <i class="al-iconMyMsg"></i>
+                        <a href="/design-html/personal/personal_msg.html">简介</a>
+                    </figure>
+                </nav>
+                <aside class="al-personalInnerSidebar">
+                    <section class="al-personalInnersidebarBox">
+                        <figure class="al-personalInnerSidebarItem" data-role="collect">
+                            <p><i class="al-iconMyCollect"></i>我收藏的<span>20</span></p>
+                        </figure>
+                        <figure class="al-personalInnerSidebarItem" data-role="follow">
+                            <p><i class="al-iconMyFollow"></i>我关注的<span>2</span></p>
+                        </figure>
+                        <figure class="al-personalInnerSidebarItem" data-role="browsed">
+                            <p><i class="al-iconMyBrowsed"></i>浏览记录<span>20</span></p>
+                        </figure>
+                        <figure class="al-personalInnerSidebarItem" data-role="comment">
+                            <p><i class="al-iconMyComment"></i>我的评论<span>8</span></p>
+                        </figure>
+                        <figure class="al-personalInnerSidebarItem" data-role="draft">
+                            <p><i class="al-iconMyDraft"></i>我的草稿<span>20</span></p>
+                        </figure>
+                    </section>
+                </aside>
+                <section class="al-personalInnerContent">
+                    <section class="al-contentItem al-NoContributionUser">
+                        <article>
+                            <p>快来贡献资源，和大家一起讨论</p>
+                            <p>您可以
+                                <a href="javscript:void(0)">传视频</a>、
+                                <a href="javscript:void(0)">发病例</a>、
+                                <a href="javscript:void(0)">写文章</a>、
+                                <a href="javscript:void(0)">聊话题</a>
+                            </p>
+                        </article>
+                    </section>
+                    <section class="al-personalInnerSidebarDefault">
+                        <section class="al-contentItem">
+                            <header class="al-contentItemTitle">
+                                <h2>个人资料完整度<span class="al-autoUser al-contentItemOtherMsg">认证用户<i class="al-vipBigUser"></i></span></h2>
+                            </header>
+                            <section class="al-personalMsgCompletion">
+                                <p class="al-personalMsgCompletionLine">
+                                    <i class="al-personalMsgCompletionLineMask">
+                                    <strong class="al-personalMsgCompletionLineTips">10%</strong>
+                                    <b class="al-personalMsgCompletionLinePoint"></b>
+                                </i>
+                                </p>
+                                <a href="javascript:void(0)" class="al-personalMsgCompletionBtn al-contentBlueBtn"><i></i>完善简历</a>
+                            </section>
+                        </section>
+                        <section class="al-contentItem">
+                            <header class="al-contentItemTitle">
+                                <h2>我的评论<a class="al-contentItemOtherMsg al-more">更多<i></i></a></h2>
+                            </header>
+                            <section class="al-tableBox">
+                                <article class="al-contentText">
+                                    <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                    <p class="al-contentMainText">
+                                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                    </p>
+                                    <p class="al-contentOtherMsg">
+                                        <span class="al-contentNewest">最新</span>
+                                        <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                        <span><i class="al-contentWatchedNum"></i>233</span>
+                                        <span class="al-contentDelete">取消收藏</span>
+                                    </p>
+                                </article>
+                                <figure class="al-contentImgBox">
+                                    <a href="javascript:void(0)">
+                                        <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                    </a>
+                                </figure>
+                            </section>
+                            <section class="al-tableBox">
+                                <article class="al-contentText">
+                                    <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                    <p class="al-contentMainText">
+                                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                    </p>
+                                    <p class="al-contentOtherMsg">
+                                        <span class="al-contentNewest">最新</span>
+                                        <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                        <span><i class="al-contentWatchedNum"></i>233</span>
+                                        <span class="al-contentDelete">取消收藏</span>
+                                    </p>
+                                </article>
+                                <figure class="al-contentImgBox">
+                                    <a href="javascript:void(0)">
+                                        <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                    </a>
+                                </figure>
+                            </section>
+                            <section class="al-tableBox">
+                                <article class="al-contentText">
+                                    <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                    <p class="al-contentMainText">
+                                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                    </p>
+                                    <p class="al-contentOtherMsg">
+                                        <span class="al-contentNewest">最新</span>
+                                        <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                        <span><i class="al-contentWatchedNum"></i>233</span>
+                                        <span class="al-contentDelete">取消收藏</span>
+                                    </p>
+                                </article>
+                                <figure class="al-contentImgBox">
+                                    <a href="javascript:void(0)">
+                                        <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                    </a>
+                                </figure>
+                            </section>
+                            <section class="al-tableBox">
+                                <article class="al-contentText">
+                                    <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                    <p class="al-contentMainText">
+                                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                    </p>
+                                    <p class="al-contentOtherMsg">
+                                        <span class="al-contentNewest">最新</span>
+                                        <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                        <span><i class="al-contentWatchedNum"></i>233</span>
+                                        <span class="al-contentDelete">取消收藏</span>
+                                    </p>
+                                </article>
+                                <figure class="al-contentImgBox">
+                                    <a href="javascript:void(0)">
+                                        <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                    </a>
+                                </figure>
+                            </section>
+                        </section>
+                        <section class="al-contentItem">
+                            <header class="al-contentItemTitle">
+                                <h2>我的评论<a class="al-contentItemOtherMsg al-more">更多<i></i></a></h2>
+                            </header>
+                            <section class="al-contentInALine">
+                                <article class="al-contentText">
+                                    <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                    <p class="al-contentOtherMsg">
+                                        <span class="al-contentFollows"><i>3</i>人关注</span>
+                                        <span class="al-contentComments"><i><i></i>233</i>个评论</span>
+                                    </p>
+                                    <span class="al-followCancel">取消关注</span>
+                                </article>
+                                <article class="al-contentText">
+                                    <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                    <p class="al-contentOtherMsg">
+                                        <span class="al-contentFollows"><i>3</i>人关注</span>
+                                        <span class="al-contentComments"><i><i></i>233</i>个评论</span>
+                                    </p>
+                                    <span class="al-followCancel">取消关注</span>
+                                </article>
+                                <article class="al-contentText">
+                                    <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                    <p class="al-contentOtherMsg">
+                                        <span class="al-contentFollows"><i>3</i>人关注</span>
+                                        <span class="al-contentComments"><i><i></i>233</i>个评论</span>
+                                    </p>
+                                    <span class="al-followCancel">取消关注</span>
+                                </article>
+                                <article class="al-contentText">
+                                    <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                    <p class="al-contentOtherMsg">
+                                        <span class="al-contentFollows"><i>3</i>人关注</span>
+                                        <span class="al-contentComments"><i><i></i>233</i>个评论</span>
+                                    </p>
+                                    <span class="al-followCancel">取消关注</span>
+                                </article>
+                            </section>
+                        </section>
+                        <section class="al-contentItem">
+                            <section class="al-contentInALine">
+                                <article class="al-contentText">
+                                    <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                    <figure class="al-contentImgBox">
+                                        <a href="javascript:void(0)">
+                                            <img src="//img00.allinmd.cn/v3/index/meeting_img.jpg" alt="">
+                                            <i class="al-mark">
+                                                    <img src="//img10.allinmd.cn/v3/common/icon/mark_topic.png" alt="">
+                                                </i>
+                                        </a>
+                                    </figure>
+                                    <p class="al-contentOtherMsg">
+                                        <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                        <span><i class="al-contentWatchedNum"></i>233</span>
+                                        <span class="al-contentDelete">取消关注</span>
+                                    </p>
+                                </article>
+                            </section>
+                            <section class="al-contentInALine">
+                                <article class="al-contentText">
+                                    <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                    <figure class="al-contentImgBox">
+                                        <a href="javascript:void(0)">
+                                            <img src="//img00.allinmd.cn/v3/index/meeting_img.jpg" alt="">
+                                            <i class="al-mark">
+                                                    <img src="//img10.allinmd.cn/v3/common/icon/mark_topic.png" alt="">
+                                                </i>
+                                        </a>
+                                    </figure>
+                                    <p class="al-contentOtherMsg">
+                                        <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                        <span><i class="al-contentWatchedNum"></i>233</span>
+                                        <span class="al-contentDelete">取消关注</span>
+                                    </p>
+                                </article>
+                            </section>
+                            <section class="al-contentInALine">
+                                <article class="al-contentText">
+                                    <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                    <figure class="al-contentImgBox">
+                                        <a href="javascript:void(0)">
+                                            <img src="//img00.allinmd.cn/v3/index/meeting_img.jpg" alt="">
+                                            <i class="al-mark">
+                                                    <img src="//img10.allinmd.cn/v3/common/icon/mark_topic.png" alt="">
+                                                </i>
+                                        </a>
+                                    </figure>
+                                    <p class="al-contentOtherMsg">
+                                        <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                        <span><i class="al-contentWatchedNum"></i>233</span>
+                                        <span class="al-contentDelete">取消关注</span>
+                                    </p>
+                                </article>
+                            </section>
+                            <section class="al-contentInALine">
+                                <article class="al-contentText">
+                                    <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                    <figure class="al-contentImgBox">
+                                        <a href="javascript:void(0)">
+                                            <img src="//img00.allinmd.cn/v3/index/meeting_img.jpg" alt="">
+                                            <i class="al-mark">
+                                                    <img src="//img10.allinmd.cn/v3/common/icon/mark_topic.png" alt="">
+                                                </i>
+                                        </a>
+                                    </figure>
+                                    <p class="al-contentOtherMsg">
+                                        <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                        <span><i class="al-contentWatchedNum"></i>233</span>
+                                        <span class="al-contentDelete">取消关注</span>
+                                    </p>
+                                </article>
+                            </section>
+                        </section>
+                        <section class="al-contentItem">
+                            <section class="al-personalFollowTag">
+                                <article class="al-personalFollowTagItem">
+                                    <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                    <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                </article>
+                                <article class="al-personalFollowTagItem">
+                                    <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                    <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                </article>
+                                <article class="al-personalFollowTagItem">
+                                    <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                    <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                </article>
+                                <article class="al-personalFollowTagItem">
+                                    <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                    <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                </article>
+                                <article class="al-personalFollowTagItem">
+                                    <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                    <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                </article>
+                                <article class="al-personalFollowTagItem">
+                                    <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                    <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                </article>
+                                <article class="al-personalFollowTagItem">
+                                    <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                    <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                </article>
+                                <article class="al-personalFollowTagItem">
+                                    <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                    <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                </article>
+                                <article class="al-personalFollowTagItem">
+                                    <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                    <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                </article>
+                                <article class="al-personalFollowTagItem">
+                                    <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                    <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                </article>
+                            </section>
+                        </section>
+                        <section class="al-contentItem">
+                            <header class="al-contentItemTitle">
+                                <h2>我的评论<a class="al-contentItemOtherMsg al-more">更多<i></i></a></h2>
+                            </header>
+                            <section class="al-contentComment">
+                                <figure class="al-contentCommentUserImg">
+                                    <a href="">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/comment_user.png" alt="">
+                                        <i class="al-contentCommentTips"></i>
+                                    </a>
+                                </figure>
+                                <section class="al-contentCommentMain">
+                                    <article class="al-contentCommentItem">
+                                        <article class="al-contentCommentItemTitle">
+                                            <a class="al-contentCommentUserName">王娜<i class="al-vipUser"></i></a>
+                                            <span>评论了</span>
+                                            <p class="al-contentCommentTime">刚刚</p>
+                                        </article>
+                                    </article>
+                                    <p class="al-contentCommentText">
+                                        除了除了演示相关的手术方法，作者对该领域的文献进行完善。
+                                    </p>
+                                    <article class="al-contentMyComment">
+                                        <a href="javascript:void(0)">
+                                我的评论：除了演示相关的手术方法，作者对该领域的文献进行完善。
+                            </a>
+                                    </article>
+                                    <article class="al-contentCommentOtherMsg">
+                                        <i class="al-commentDeleteBtn">删除</i><a href="javascript:void(0)" class="al-coomentWatchBtn">查看评论</a><span><i class="al-commentBtn"></i>评论</span>
+                                        <span><i class="al-likeBtn"></i>2</span>
+                                        <span><i class="al-shareBtn"></i>分享</span>
+                                        <span><i class="al-collectBtn"></i>30</span>
+                                    </article>
+                                </section>
+                            </section>
+                            <section class="al-contentComment">
+                                <figure class="al-contentCommentUserImg">
+                                    <a href="">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/comment_user.png" alt="">
+                                        <i class="al-contentCommentTips"></i></a>
+                                </figure>
+                                <section class="al-contentCommentMain">
+                                    <article class="al-contentCommentItem">
+                                        <article class="al-contentCommentItemTitle">
+                                            <a class="al-contentCommentUserName">王娜<i class="al-vipUser"></i></a>
+                                            <span>评论了</span>
+                                            <p class="al-contentCommentTime">刚刚</p>
+                                        </article>
+                                    </article>
+                                    <p class="al-contentCommentText">
+                                        除了除了演示相关的手术方法，作者对该领域的文献进行...
+                                        <span class="al-contentCollapse expandOrShrink">展开</span>
+                                    </p>
+                                    <section class="al-commentVideoPart">
+                                        <figure class="al-commentVideoItem">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                        </figure>
+                                    </section>
+                                    <section class="al-contentImagePart">
+                                        <figure class="al-contentImgBox">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        </figure>
+                                        <figure class="al-contentImgBox">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        </figure>
+                                    </section>
+                                    <article class="al-contentMyComment">
+                                        <a href="javascript:void(0)">
+                                我的评论：除了演示相关的手术方法，作者对该领域的文献进行完。善
+                            </a>
+                                    </article>
+                                    <article class="al-contentCommentOtherMsg">
+                                        <i class="al-commentDeleteBtn">删除</i><a href="javascript:void(0)" class="al-coomentWatchBtn">查看评论</a><span><i class="al-commentBtn"></i>评论</span>
+                                        <span><i class="al-likeBtn"></i>2</span>
+                                        <span><i class="al-shareBtn"></i>分享</span>
+                                        <span><i class="al-collectBtn"></i>30</span>
+                                    </article>
+                                </section>
+                            </section>
+                            <section class="al-contentComment">
+                                <figure class="al-contentCommentUserImg">
+                                    <a href="">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/comment_user.png" alt="">
+                                        <i class="al-contentCommentTips"></i>
+                                    </a>
+                                </figure>
+                                <section class="al-contentCommentMain">
+                                    <article class="al-contentCommentItem">
+                                        <article class="al-contentCommentItemTitle">
+                                            <a class="al-contentCommentUserName">王娜<i class="al-vipUser"></i></a>
+                                            <span>评论了</span>
+                                            <p class="al-contentCommentTime">刚刚</p>
+                                        </article>
+                                    </article>
+                                    <p class="al-contentCommentText">
+                                        除了除了演示相关的手术方法，作者对该领域的文献进行...
+                                        <span class="al-contentCollapse expandOrShrink">展开</span>
+                                    </p>
+                                    <section class="al-commentVideoPart">
+                                        <figure class="al-commentVideoItem">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                        </figure>
+                                    </section>
+                                    <section class="al-contentImagePart">
+                                        <figure class="al-contentImgBox">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        </figure>
+                                        <figure class="al-contentImgBox">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        </figure>
+                                        <figure class="al-contentImgBox">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentImgMask">
+                                            更多
+                                        </i>
+                                        </figure>
+                                    </section>
+                                    <article class="al-contentMyComment">
+                                        <a href="javascript:void(0)">
+                                我的评论：除了演示相关的手术方法，作者对该领域的文献进行完。善
+                            </a>
+                                    </article>
+                                    <article class="al-contentCommentOtherMsg">
+                                        <i class="al-commentDeleteBtn">删除</i><a href="javascript:void(0)" class="al-coomentWatchBtn">查看评论</a><span><i class="al-commentBtn"></i>评论</span>
+                                        <span><i class="al-likeBtn"></i>2</span>
+                                        <span><i class="al-shareBtn"></i>分享</span>
+                                        <span><i class="al-collectBtn"></i>30</span>
+                                    </article>
+                                </section>
+                            </section>
+                            <section class="al-contentComment">
+                                <figure class="al-contentCommentUserImg">
+                                    <a href="">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/comment_user.png" alt="">
+                                        <i class="al-contentCommentTips"></i>
+                                    </a>
+                                </figure>
+                                <section class="al-contentCommentMain">
+                                    <article class="al-contentCommentItem">
+                                        <article class="al-contentCommentItemTitle">
+                                            <a class="al-contentCommentUserName">王娜<i class="al-vipUser"></i></a>
+                                            <span>评论了</span>
+                                            <p class="al-contentCommentTime">刚刚</p>
+                                        </article>
+                                    </article>
+                                    <p class="al-contentCommentText">
+                                        除了除了演示相关的手术方法，作者对该领域的文献进行完善。<span class="al-contentCollapse expandOrShrink">收起</span>
+                                    </p>
+                                    <section class="al-commentVideoPart">
+                                        <figure class="al-commentVideoItem">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                        </figure>
+                                    </section>
+                                    <section class="al-contentImagePart al-commentImageOne">
+                                        <figure class="al-contentImgBox">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        </figure>
+                                    </section>
+                                    <article class="al-contentMyComment">
+                                        <a href="javascript:void(0)">
+                                我的评论：除了演示相关的手术方法，作者对该领域的文献进行完善。
+                            </a>
+                                    </article>
+                                    <article class="al-contentCommentOtherMsg">
+                                        <i class="al-commentDeleteBtn">删除</i><a href="javascript:void(0)" class="al-coomentWatchBtn">查看评论</a><span><i class="al-commentBtn"></i>评论</span>
+                                        <span><i class="al-likeBtn"></i>2</span>
+                                        <span><i class="al-shareBtn"></i>分享</span>
+                                        <span><i class="al-collectBtn"></i>30</span>
+                                    </article>
+                                </section>
+                            </section>
+                            <section class="al-contentComment">
+                                <figure class="al-contentCommentUserImg">
+                                    <a href="">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/comment_user.png" alt="">
+                                        <i class="al-contentCommentTips"></i>
+                                    </a>
+                                </figure>
+                                <section class="al-contentCommentMain">
+                                    <article class="al-contentCommentItem">
+                                        <article class="al-contentCommentItemTitle">
+                                            <a class="al-contentCommentUserName">王娜<i class="al-vipUser"></i></a>
+                                            <span>评论了</span>
+                                            <p class="al-contentCommentTime">刚刚</p>
+                                        </article>
+                                    </article>
+                                    <p class="al-contentCommentText">
+                                        除了除了演示相关的手术方法，作者对该领域的文献进行完善。
+                                    </p>
+                                    <article class="al-contentMyComment">
+                                        <a href="javascript:void(0)">
+                                我的评论：除了演示相关的手术方法，作者对该领域的文献进行完善。
+                            </a>
+                                    </article>
+                                    <article class="al-contentCommentOtherMsg">
+                                        <i class="al-commentDeleteBtn">删除</i><a href="javascript:void(0)" class="al-coomentWatchBtn">查看评论</a><span><i class="al-commentBtn"></i>评论</span>
+                                        <span><i class="al-likeBtn"></i>2</span>
+                                        <span><i class="al-shareBtn"></i>分享</span>
+                                        <span><i class="al-collectBtn"></i>30</span>
+                                    </article>
+                                </section>
+                            </section>
+                        </section>
+                        <section class="al-contentItem">
+                            <header class="al-contentItemTitle">
+                                <h2>浏览记录<a class="al-contentItemOtherMsg al-more">更多<i></i></a></h2>
+                            </header>
+                            <section class="al-contentBrowseBox">
+                                <section class="al-contentBrowse">
+                                    <h2>今天</h2>
+                                    <article class="al-contentBrowseItem">
+                                        <span>视频</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                    <article class="al-contentBrowseItem">
+                                        <span>文库</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                    <article class="al-contentBrowseItem">
+                                        <span>病例</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                </section>
+                                <section class="al-contentBrowse">
+                                    <h2>昨天</h2>
+                                    <article class="al-contentBrowseItem">
+                                        <span>视频</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                    <article class="al-contentBrowseItem">
+                                        <span>文库</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                    <article class="al-contentBrowseItem">
+                                        <span>病例</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                </section>
+                                <section class="al-contentBrowse">
+                                    <h2>更早</h2>
+                                    <article class="al-contentBrowseItem">
+                                        <span>视频</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                    <article class="al-contentBrowseItem">
+                                        <span>文库</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                    <article class="al-contentBrowseItem">
+                                        <span>病例</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="al-personalInnerSidebarChange" data-role="collect">
+                        <section class="al-contentItem">
+                            <header class="al-contentTabsChange">
+                                <figure class="al-contentTabsItem" data-role="tabVideo">
+                                    视频<span>(40)</span>
+                                </figure>
+                                <figure class="al-contentTabsItem" data-role="tabCase">
+                                    病例<span>(5)</span>
+                                </figure>
+                                <figure class="al-contentTabsItem" data-role="tabDoc">
+                                    文库<span>(5)</span>
+                                </figure>
+                                <figure class="al-contentTabsItem" data-role="tabTopic">
+                                    话题<span>(5)</span>
+                                </figure>
+                                <figure class="al-contentTabsItem" data-role="tabDiscuss">
+                                    讨论<span>(5)</span>
+                                </figure>
+                            </header>
+                            <section class="al-contentTabPages active" data-role="tabVideo">
+                                <section class="al-tableBox">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentMainText">
+                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                        </p>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentNewest">最新</span>
+                                            <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消收藏</span>
+                                        </p>
+                                    </article>
+                                    <figure class="al-contentImgBox">
+                                        <a href="javascript:void(0)">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                        </a>
+                                    </figure>
+                                </section>
+                            </section>
+                            <section class="al-contentTabPages" data-role="tabCase">
+                                <section class="al-tableBox">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentMainText">
+                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                        </p>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentNewest">最新</span>
+                                            <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消收藏</span>
+                                        </p>
+                                    </article>
+                                    <figure class="al-contentImgBox">
+                                        <a href="javascript:void(0)">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                        </a>
+                                    </figure>
+                                </section>
+                            </section>
+                            <section class="al-contentTabPages" data-role="tabDoc">
+                                <section class="al-tableBox">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentMainText">
+                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                        </p>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentNewest">最新</span>
+                                            <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消收藏</span>
+                                        </p>
+                                    </article>
+                                    <figure class="al-contentImgBox">
+                                        <a href="javascript:void(0)">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                        </a>
+                                    </figure>
+                                </section>
+                            </section>
+                            <section class="al-contentTabPages" data-role="tabTopic">
+                                <section class="al-tableBox">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentMainText">
+                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                        </p>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentNewest">最新</span>
+                                            <span><i class="al-contentAuthor"></i>喵喵喵喵╮(╯_╰)╭</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消收藏</span>
+                                        </p>
+                                    </article>
+                                </section>
+                            </section>
+                            <section class="al-contentTabPages" data-role="tabDiscuss">
+                                <section class="al-tableBox">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentMainText">
+                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                        </p>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentNewest">最新</span>
+                                            <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消收藏</span>
+                                        </p>
+                                    </article>
+                                    <figure class="al-contentImgBox">
+                                        <a href="javascript:void(0)">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                            <i class="al-contentVideoTime">04:24</i>
+                                        </a>
+                                    </figure>
+                                </section>
+                                <section class="al-tableBox">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentMainText">
+                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                        </p>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentNewest">最新</span>
+                                            <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消收藏</span>
+                                        </p>
+                                    </article>
+                                    <figure class="al-contentImgBox">
+                                        <a href="javascript:void(0)">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                        </a>
+                                    </figure>
+                                </section>
+                                <section class="al-tableBox">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentMainText">
+                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                        </p>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentNewest">最新</span>
+                                            <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消收藏</span>
+                                        </p>
+                                    </article>
+                                    <figure class="al-contentImgBox">
+                                        <a href="javascript:void(0)">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentVideoBtn">
+                                                <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                            </i>
+                                        </a>
+                                    </figure>
+                                </section>
+                                <section class="al-contentInALine">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentMainText">
+                                            <span>小儿脊柱退变侧凸长节段与短阶段融合手术小儿脊柱退变侧凸长节段与短阶段融合手术小儿脊柱退变侧凸长节段与短阶段融合手术</span>
+                                        </p>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentPdf">PDF</span>
+                                            <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消收藏</span>
+                                        </p>
+                                    </article>
+                                </section>
+                                <section class="al-tableBox">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentMainText">
+                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                        </p>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentNewest">最新</span>
+                                            <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消收藏</span>
+                                        </p>
+                                    </article>
+                                    <figure class="al-contentImgBox">
+                                        <a href="javascript:void(0)">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                        </a>
+                                    </figure>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="al-personalInnerSidebarChange" data-role="follow">
+                        <section class="al-contentItem">
+                            <header class="al-contentTabsChange">
+                                <figure class="al-contentTabsItem active" data-role="tabCase">
+                                    病例<span>(7)</span>
+                                </figure>
+                                <figure class="al-contentTabsItem" data-role="tabTopic">
+                                    话题<span>(5)</span>
+                                </figure>
+                                <figure class="al-contentTabsItem" data-role="tabTag">
+                                    标签<span>(5)</span>
+                                </figure>
+                            </header>
+                            <section class="al-contentTabPages active" data-role="tabCase">
+                                <section class="al-contentInALine">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentFollows"><i>3</i>人关注</span>
+                                            <span class="al-contentComments"><i><i></i>233</i>个评论</span>
+                                        </p>
+                                        <span class="al-followCancel">取消关注</span>
+                                    </article>
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentFollows"><i>3</i>人关注</span>
+                                            <span class="al-contentComments"><i><i></i>233</i>个评论</span>
+                                        </p>
+                                        <span class="al-followCancel">取消关注</span>
+                                    </article>
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentFollows"><i>3</i>人关注</span>
+                                            <span class="al-contentComments"><i><i></i>233</i>个评论</span>
+                                        </p>
+                                        <span class="al-followCancel">取消关注</span>
+                                    </article>
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentFollows"><i>3</i>人关注</span>
+                                            <span class="al-contentComments"><i><i></i>233</i>个评论</span>
+                                        </p>
+                                        <span class="al-followCancel">取消关注</span>
+                                    </article>
+                                </section>
+                            </section>
+                            <section class="al-contentTabPages" data-role="tabTopic">
+                                <section class="al-contentInALine">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <figure class="al-contentImgBox">
+                                            <a href="javascript:void(0)">
+                                                <img src="//img00.allinmd.cn/v3/index/meeting_img.jpg" alt="">
+                                                <i class="al-mark">
+                                                    <img src="//img10.allinmd.cn/v3/common/icon/mark_topic.png" alt="">
+                                                </i>
+                                            </a>
+                                        </figure>
+                                        <p class="al-contentOtherMsg">
+                                            <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消关注</span>
+                                        </p>
+                                    </article>
+                                </section>
+                                <section class="al-contentInALine">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span>
+                                        <i class="al-mark">
+                                            <img src="//img10.allinmd.cn/v3/common/icon/mark_topic.png" alt="">
+                                        </i></a>
+                                        <p class="al-contentMainText">
+                                            <span>小儿脊柱退变侧凸长节段与短阶段融合手术</span>
+                                        </p>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentPdf">PDF</span>
+                                            <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消关注</span>
+                                        </p>
+                                    </article>
+                                </section>
+                                <section class="al-tableBox">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentMainText">
+                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                        </p>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentNewest">最新</span>
+                                            <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消收藏</span>
+                                        </p>
+                                    </article>
+                                    <figure class="al-contentImgBox">
+                                        <a href="javascript:void(0)">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-mark">
+                                                <img src="//img10.allinmd.cn/v3/common/icon/mark_topic.png" alt="">
+                                           </i>
+                                        </a>
+                                    </figure>
+                                </section>
+                                <section class="al-tableBox">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <p class="al-contentMainText">
+                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>
+                                        </p>
+                                        <p class="al-contentOtherMsg">
+                                            <span class="al-contentNewest">最新</span>
+                                            <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消收藏</span>
+                                        </p>
+                                    </article>
+                                    <figure class="al-contentImgBox">
+                                        <a href="javascript:void(0)">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-mark">
+                                                <img src="//img10.allinmd.cn/v3/common/icon/mark_topic.png" alt="">
+                                            </i>
+                                        </a>
+                                    </figure>
+                                </section>
+                                <section class="al-contentInALine">
+                                    <article class="al-contentText">
+                                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                        <figure class="al-contentImgBox">
+                                            <a href="javascript:void(0)">
+                                                <img src="//img00.allinmd.cn/v3/index/meeting_img.jpg" alt="">
+                                                <i class="al-mark">
+                                                    <img src="//img10.allinmd.cn/v3/common/icon/mark_topic.png" alt="">
+                                                </i>
+                                            </a>
+                                        </figure>
+                                        <p class="al-contentOtherMsg">
+                                            <span><i class="al-contentAuthor"></i>艹飞机</span>
+                                            <span><i class="al-contentWatchedNum"></i>233</span>
+                                            <span class="al-contentDelete">取消关注</span>
+                                        </p>
+                                    </article>
+                                </section>
+                            </section>
+                            <section class="al-contentTabPages" data-role="tabTag">
+                                <section class="al-personalFollowTag">
+                                    <article class="al-personalFollowTagItem">
+                                        <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                        <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                    </article>
+                                    <article class="al-personalFollowTagItem">
+                                        <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                        <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                    </article>
+                                    <article class="al-personalFollowTagItem">
+                                        <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                        <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                    </article>
+                                    <article class="al-personalFollowTagItem">
+                                        <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                        <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                    </article>
+                                    <article class="al-personalFollowTagItem">
+                                        <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                        <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                    </article>
+                                    <article class="al-personalFollowTagItem">
+                                        <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                        <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                    </article>
+                                    <article class="al-personalFollowTagItem">
+                                        <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                        <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                    </article>
+                                    <article class="al-personalFollowTagItem">
+                                        <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                        <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                    </article>
+                                    <article class="al-personalFollowTagItem">
+                                        <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                        <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                    </article>
+                                    <article class="al-personalFollowTagItem">
+                                        <h2 class="al-personalFollowTagTitle">关节喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</h2>
+                                        <span class="al-personalFollowTagNums">3124个资源
+                                            <b>取消关注</b>
+                                        </span>
+                                    </article>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="al-personalInnerSidebarChange" data-role="browsed">
+                        <section class="al-contentItem">
+                            <header class="al-contentItemTitle">
+                                <h2>浏览记录<a class="al-contentItemOtherMsg">清空<i></i></a></h2>
+                            </header>
+                            <section class="al-contentBrowseBox">
+                                <section class="al-contentBrowse">
+                                    <h2>今天</h2>
+                                    <article class="al-contentBrowseItem">
+                                        <span>视频</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                    <article class="al-contentBrowseItem">
+                                        <span>文库</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                    <article class="al-contentBrowseItem">
+                                        <span>病例</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                </section>
+                                <section class="al-contentBrowse">
+                                    <h2>昨天</h2>
+                                    <article class="al-contentBrowseItem">
+                                        <span>视频</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                    <article class="al-contentBrowseItem">
+                                        <span>文库</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                    <article class="al-contentBrowseItem">
+                                        <span>病例</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                </section>
+                                <section class="al-contentBrowse">
+                                    <h2>更早</h2>
+                                    <article class="al-contentBrowseItem">
+                                        <span>视频</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                    <article class="al-contentBrowseItem">
+                                        <span>文库</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                    <article class="al-contentBrowseItem">
+                                        <span>病例</span><a href="javascript:void(0)">腰椎PLIF手术的并发症及术的并发症及其防治</a>
+                                    </article>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="al-personalInnerSidebarChange" data-role="comment">
+                        <section class="al-contentItem">
+                            <header class="al-contentItemTitle">
+                                <h2>我的评论<a class="al-contentItemOtherMsg al-more">更多<i></i></a></h2>
+                            </header>
+                            <section class="al-contentComment">
+                                <figure class="al-contentCommentUserImg">
+                                    <a href="">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/comment_user.png" alt="">
+                                        <i class="al-contentCommentTips"></i>
+                                    </a>
+                                </figure>
+                                <section class="al-contentCommentMain">
+                                    <article class="al-contentCommentItem">
+                                        <article class="al-contentCommentItemTitle">
+                                            <a class="al-contentCommentUserName">王娜<i class="al-vipUser"></i></a>
+                                            <span>评论了</span>
+                                            <p class="al-contentCommentTime">刚刚</p>
+                                        </article>
+                                    </article>
+                                    <p class="al-contentCommentText">
+                                        除了除了演示相关的手术方法，作者对该领域的文献进行完善。
+                                    </p>
+                                    <article class="al-contentMyComment">
+                                        <a href="javascript:void(0)">
+                                我的评论：除了演示相关的手术方法，作者对该领域的文献进行完善。
+                            </a>
+                                    </article>
+                                    <article class="al-contentCommentOtherMsg">
+                                        <i class="al-commentDeleteBtn">删除</i><a href="javascript:void(0)" class="al-coomentWatchBtn">查看评论</a><span><i class="al-commentBtn"></i>评论</span>
+                                        <span><i class="al-likeBtn"></i>2</span>
+                                        <span><i class="al-shareBtn"></i>分享</span>
+                                        <span><i class="al-collectBtn"></i>30</span>
+                                    </article>
+                                </section>
+                            </section>
+                            <section class="al-contentComment">
+                                <figure class="al-contentCommentUserImg">
+                                    <a href="">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/comment_user.png" alt="">
+                                        <i class="al-contentCommentTips"></i></a>
+                                </figure>
+                                <section class="al-contentCommentMain">
+                                    <article class="al-contentCommentItem">
+                                        <article class="al-contentCommentItemTitle">
+                                            <a class="al-contentCommentUserName">王娜<i class="al-vipUser"></i></a>
+                                            <span>评论了</span>
+                                            <p class="al-contentCommentTime">刚刚</p>
+                                        </article>
+                                    </article>
+                                    <p class="al-contentCommentText">
+                                        除了除了演示相关的手术方法，作者对该领域的文献进行...
+                                        <span class="al-contentCollapse expandOrShrink">展开</span>
+                                    </p>
+                                    <section class="al-commentVideoPart">
+                                        <figure class="al-commentVideoItem">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                        </figure>
+                                    </section>
+                                    <section class="al-contentImagePart">
+                                        <figure class="al-contentImgBox">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        </figure>
+                                        <figure class="al-contentImgBox">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        </figure>
+                                    </section>
+                                    <article class="al-contentMyComment">
+                                        <a href="javascript:void(0)">
+                                我的评论：除了演示相关的手术方法，作者对该领域的文献进行完。善
+                            </a>
+                                    </article>
+                                    <article class="al-contentCommentOtherMsg">
+                                        <i class="al-commentDeleteBtn">删除</i><a href="javascript:void(0)" class="al-coomentWatchBtn">查看评论</a><span><i class="al-commentBtn"></i>评论</span>
+                                        <span><i class="al-likeBtn"></i>2</span>
+                                        <span><i class="al-shareBtn"></i>分享</span>
+                                        <span><i class="al-collectBtn"></i>30</span>
+                                    </article>
+                                </section>
+                            </section>
+                            <section class="al-contentComment">
+                                <figure class="al-contentCommentUserImg">
+                                    <a href="">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/comment_user.png" alt="">
+                                        <i class="al-contentCommentTips"></i>
+                                    </a>
+                                </figure>
+                                <section class="al-contentCommentMain">
+                                    <article class="al-contentCommentItem">
+                                        <article class="al-contentCommentItemTitle">
+                                            <a class="al-contentCommentUserName">王娜<i class="al-vipUser"></i></a>
+                                            <span>评论了</span>
+                                            <p class="al-contentCommentTime">刚刚</p>
+                                        </article>
+                                    </article>
+                                    <p class="al-contentCommentText">
+                                        除了除了演示相关的手术方法，作者对该领域的文献进行...
+                                        <span class="al-contentCollapse expandOrShrink">展开</span>
+                                    </p>
+                                    <section class="al-commentVideoPart">
+                                        <figure class="al-commentVideoItem">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                        </figure>
+                                    </section>
+                                    <section class="al-contentImagePart">
+                                        <figure class="al-contentImgBox">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        </figure>
+                                        <figure class="al-contentImgBox">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        </figure>
+                                        <figure class="al-contentImgBox">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentImgMask">
+                                            更多
+                                        </i>
+                                        </figure>
+                                    </section>
+                                    <article class="al-contentMyComment">
+                                        <a href="javascript:void(0)">
+                                我的评论：除了演示相关的手术方法，作者对该领域的文献进行完。善
+                            </a>
+                                    </article>
+                                    <article class="al-contentCommentOtherMsg">
+                                        <i class="al-commentDeleteBtn">删除</i><a href="javascript:void(0)" class="al-coomentWatchBtn">查看评论</a><span><i class="al-commentBtn"></i>评论</span>
+                                        <span><i class="al-likeBtn"></i>2</span>
+                                        <span><i class="al-shareBtn"></i>分享</span>
+                                        <span><i class="al-collectBtn"></i>30</span>
+                                    </article>
+                                </section>
+                            </section>
+                            <section class="al-contentComment">
+                                <figure class="al-contentCommentUserImg">
+                                    <a href="">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/comment_user.png" alt="">
+                                        <i class="al-contentCommentTips"></i>
+                                    </a>
+                                </figure>
+                                <section class="al-contentCommentMain">
+                                    <article class="al-contentCommentItem">
+                                        <article class="al-contentCommentItemTitle">
+                                            <a class="al-contentCommentUserName">王娜<i class="al-vipUser"></i></a>
+                                            <span>评论了</span>
+                                            <p class="al-contentCommentTime">刚刚</p>
+                                        </article>
+                                    </article>
+                                    <p class="al-contentCommentText">
+                                        除了除了演示相关的手术方法，作者对该领域的文献进行完善。<span class="al-contentCollapse expandOrShrink">收起</span>
+                                    </p>
+                                    <section class="al-commentVideoPart">
+                                        <figure class="al-commentVideoItem">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                            <i class="al-contentVideoBtn">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/video_btn.png" alt="">
+                                    </i>
+                                        </figure>
+                                    </section>
+                                    <section class="al-contentImagePart al-commentImageOne">
+                                        <figure class="al-contentImgBox">
+                                            <img src="//img10.allinmd.cn/v3/default/sc_right_img1.jpg" alt="">
+                                        </figure>
+                                    </section>
+                                    <article class="al-contentMyComment">
+                                        <a href="javascript:void(0)">
+                                我的评论：除了演示相关的手术方法，作者对该领域的文献进行完善。
+                            </a>
+                                    </article>
+                                    <article class="al-contentCommentOtherMsg">
+                                        <i class="al-commentDeleteBtn">删除</i><a href="javascript:void(0)" class="al-coomentWatchBtn">查看评论</a><span><i class="al-commentBtn"></i>评论</span>
+                                        <span><i class="al-likeBtn"></i>2</span>
+                                        <span><i class="al-shareBtn"></i>分享</span>
+                                        <span><i class="al-collectBtn"></i>30</span>
+                                    </article>
+                                </section>
+                            </section>
+                            <section class="al-contentComment">
+                                <figure class="al-contentCommentUserImg">
+                                    <a href="">
+                                        <img src="//img10.allinmd.cn/v3/common/icon/comment_user.png" alt="">
+                                        <i class="al-contentCommentTips"></i>
+                                    </a>
+                                </figure>
+                                <section class="al-contentCommentMain">
+                                    <article class="al-contentCommentItem">
+                                        <article class="al-contentCommentItemTitle">
+                                            <a class="al-contentCommentUserName">王娜<i class="al-vipUser"></i></a>
+                                            <span>评论了</span>
+                                            <p class="al-contentCommentTime">刚刚</p>
+                                        </article>
+                                    </article>
+                                    <p class="al-contentCommentText">
+                                        除了除了演示相关的手术方法，作者对该领域的文献进行完善。
+                                    </p>
+                                    <article class="al-contentMyComment">
+                                        <a href="javascript:void(0)">
+                                我的评论：除了演示相关的手术方法，作者对该领域的文献进行完善。
+                            </a>
+                                    </article>
+                                    <article class="al-contentCommentOtherMsg">
+                                        <i class="al-commentDeleteBtn">删除</i><a href="javascript:void(0)" class="al-coomentWatchBtn">查看评论</a><span><i class="al-commentBtn"></i>评论</span>
+                                        <span><i class="al-likeBtn"></i>2</span>
+                                        <span><i class="al-shareBtn"></i>分享</span>
+                                        <span><i class="al-collectBtn"></i>30</span>
+                                    </article>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="al-personalInnerSidebarChange" data-role="draft">
+                        <section class="al-contentItem al-contentInALine">
+                            <header class="al-contentItemTitle">
+                                <h2>我的草稿</a></h2>
+                            </header>
+                            <article class="al-contentText">
+                                <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                <p class="al-contentOtherMsg">
+                                    <span class="al-draftWriteTime">2016/04/01 13:45</span>
+                                </p>
+                            </article>
+                            <article class="al-contentText">
+                                <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                <p class="al-contentOtherMsg">
+                                    <span class="al-draftWriteTime">2016/04/01 13:45</span>
+                                </p>
+                            </article>
+                            <article class="al-contentText">
+                                <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                <p class="al-contentOtherMsg">
+                                    <span class="al-draftWriteTime">2016/04/01 13:45</span>
+                                </p>
+                            </article>
+                            <article class="al-contentText">
+                                <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                                <p class="al-contentOtherMsg">
+                                    <span class="al-draftWriteTime">2016/04/01 13:45</span>
+                                </p>
+                            </article>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section class="al-backToTop">
+            <figure class="al-backToTopItem al-backToTopFirst">
+                <i class="al-backToTopIcon"></i>
+            </figure>
+            <figure class="al-backToTopItem">
+                分享
+                <section class="al-shareBox">
+                    <figure class="al-shareListItem">
+                        <img src="//img10.allinmd.cn/v3/common/icon/share_inset.png" alt="">
+                        <figcaption>站内动态</figcaption>
+                    </figure>
+                    <figure class="al-shareListItem">
+                        <img src="//img10.allinmd.cn/v3/common/icon/share_weixin.png" alt="">
+                        <figcaption>微信</figcaption>
+                    </figure>
+                    <figure class="al-shareListItem">
+                        <img src="//img10.allinmd.cn/v3/common/icon/share_weibo.png" alt="">
+                        <figcaption>微博</figcaption>
+                    </figure>
+                    <figure class="al-shareListItem">
+                        <img src="//img10.allinmd.cn/v3/common/icon/share_zone.png" alt="">
+                        <figcaption>QQ空间</figcaption>
+                    </figure>
+                    <figure class="al-shareListItem">
+                        <img src="//img10.allinmd.cn/v3/common/icon/share_qq.png" alt="">
+                        <figcaption>QQ</figcaption>
+                    </figure>
+                </section>
+            </figure>
+            <figure class="al-backToTopItem al-clickToShowErweiCode">
+                <i class="icon-erweiCodeBottom"></i>
+                <section class="al-shareBox al-erweiCodeShareBox">
+                    <figure class="al-shareListItem">
+                        <img src="//img10.allinmd.cn/v3/common/icon/erweiCode_1.png" alt="">
+                    </figure>
+                    <figcaption>唯医骨科官方微信</figcaption>
+                </section>
+            </figure>
+        </section>
+        <!-- 公共页脚 -->
+        <footer class="al-mainFooter">
+            <section class="al-mainFooterInner">
+                <section class="al-mainFooterContent">
+                    <section class="al-mainFooterLinks">
+                        <a href="javascript:void(0)" class="al-mainFooterLinkItem" style="padding-left: 0;">隐私声明</a>
+                        <a href="javascript:void(0)" class="al-mainFooterLinkItem">服务条款</a>
+                        <a href="javascript:void(0)" class="al-mainFooterLinkItem">关于我们</a>
+                        <a href="javascript:void(0)" class="al-mainFooterLinkItem" style="padding-right: 0;border-right: none;">联系我们</a>
+                    </section>
+                    <article class="al-mainFooterMsg">
+                        <figure class="al-mainFooterMsgImg">
+                            <img src="//img10.allinmd.cn/v3/common/icon/site_1.png" alt="">
+                        </figure>
+                        <figure class="al-mainFooterMsgImg">
+                            <img src="//img10.allinmd.cn/v3/common/icon/site_2.png" alt="">
+                        </figure>
+                    </article>
+                    <article class="al-mainFooterRecordMsg">
+                        <p>京ICP证150380号 | 京ICP备14007118号-2号 京公网安备11010802014986号京卫计网审[2014] 第0378号 </p>
+                        <p>Copyright©2019 Allinmd.cn All Rights Reserved.版权所有©北京欧应科技有限公司</p>
+                    </article>
+                </section>
+                <figure class="al-mainFooterErWeiCode">
+                    <img src="//img10.allinmd.cn/v3/common/icon/erweiCode_1.png" alt="">
+                </figure>
+            </section>
+        </footer>
+    </section>
+    <script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+    <script>
+    $(function() {
+
+        //sidebar切换
+        $(".al-personalInnerSidebarItem").on("click", function(e) {
+            var tabRole = $(this).data("role");
+            $(this).addClass('active').siblings().removeClass('active');
+            $(".al-personalInnerSidebarChange").removeClass('active');
+            $('.al-personalInnerSidebarChange[data-role=' + tabRole + ']').addClass('active');
+
+        });
+        //tab切换
+        $(".al-contentTabsItem").on("click", function(e) {
+            var tabRole = $(this).data("role");
+            $(this).addClass('active').siblings().removeClass('active');
+            $(".al-contentTabPages").removeClass('active');
+            $('.al-contentTabPages[data-role=' + tabRole + ']').addClass('active');
+        });
+    });
+    </script>
+</body>
+
+</html>

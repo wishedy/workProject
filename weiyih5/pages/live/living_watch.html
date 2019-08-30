@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:gs="http://www.gensee.com/ec">
+
+<head>
+    <script>
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/live/living_watch.html'+location.search;
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>在线直播,唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="keywords" content="在线直播，医学直播，手术直播，医生直播，医师直播，唯医，allinmd">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/live/living_watch.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/living/living_watch.css">
+    <!--endbuild-->
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="354">
+<section class="al-mainInner">
+    <figure class="al-livingVideoBox" id="livePlayer">
+        <!--<img src="//img50.allinmd.cn/live/live_start.png" alt="" style="display: block" class="ev_videoDefaultBg">-->
+        <!--<gs:video-live id="videoComponent" class="gsVideo" site="weiyiwang.gensee.com"  ctx="webcast" bgimg="" ownerid="fe7a2e6ba76f4ba09218f8ecf9f0b9ac" uname="usl" authcode="333333" bar="true" />-->
+    </figure>
+    <style>
+        canvas{
+            display: none !important;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+    <div id="drawPanel" style="display: none;"></div>
+    <section class="al-livingWatcherMsg" style="background-color: #f8f8f8;">
+        <!-- slide-navbar-->
+        <nav class="al-livingWatcherChangeBar">
+            <a href="javascript:;" class="active ev-chatNav">互动</a>
+            <a href="javascript:;" class="ev-infoNav">主播信息</a>
+            <a href="javascript:;" class="ev-countNav hide"><img class="onlineCountBg" src="//img50.allinmd.cn/live/pepo.png"><span id="ev_countNo">0</span></a>
+            <a href="javascript:;" class="shareIcon ev-shareNav" style="display: none;"><img class="shareBg" src="//img50.allinmd.cn/live/share_live@2x.png">分享</a>
+        </nav>
+        <section class="al-livingContentWrapper">
+                <section class="al-livingWatcherContent" id="chat-list" style="overflow: auto;">
+                    <section class="al-livingChatBox ev_chatBox" style="height: auto;">
+
+                    </section>
+                    <!-- 被禁言增加class：gag  gag-->
+                    <footer class="al-commentInputBar">
+                        <form action="javascript:;"><input type="text" class="al-livingInput ev_chat" placeholder="说点什么一起互动" readonly></form>
+                    </footer>
+                </section>
+                <section class="al-livingWatcherContent ev_info" style="display: none;overflow:auto;">
+
+                </section>
+            </section>
+
+    </section>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<!--build:js /dest/pages/live/living_watch.js-->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/third-party/liveSDK.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/plugins/plugin.follow.js"></script>
+<script src="/js/third-party/gssdk.js"></script>
+<script src="/js/third-party/jquery-ui-1.10.3.custom.min.js"></script>
+<!--<script src="/js/scene/live/gensee/lang.zh_CN.js"></script>
+<script src="/js/scene/live/gensee/new-player.base.js"></script>
+<script src="/js/scene/live/gensee/new-player.common.js"></script>
+<script src="/js/scene/live/gensee/new-player.survey.js"></script>
+&lt;!&ndash;<script src="/js/scene/live/gensee/webplayer.common.js"></script>&ndash;&gt;
+<script src="/js/scene/live/gensee/new-player.chat.js"></script>-->
+<script src="/js/scene/live/live_common.js"></script>
+<script src="/js/scene/live/chatPage.js"></script>
+<!--endbuild-->
+</body>
+
+</html>

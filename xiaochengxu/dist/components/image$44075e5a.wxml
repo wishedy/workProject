@@ -1,0 +1,28 @@
+<template name="image$44075e5a">
+  <view class="_section data-v-a61b9824 main-message-box" bindlongpress="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">
+    <view class="_article data-v-a61b9824 main-message-box-item {{[  imageMessage.from === userData.account ? 'my-message' : '',  imageMessage.from === targetData.account ? 'others-message' : '']}}" data-clientid="{{imageMessage.idClient}}">
+      <view class="_figure data-v-a61b9824 main-message-img" wx:if="{{imageMessage.from===targetData.account}}" catchtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+        <image src="{{targetLogo}}" alt class="_img data-v-a61b9824"></image>
+      </view>
+      <view class="_i data-v-a61b9824 fail-button" style="display:none"></view>
+      <view class="_figcaption data-v-a61b9824 main-message-content image-message">
+        <view class="_section data-v-a61b9824 middle-tip-box" wx:if="{{progress&&progress.uploading}}">
+          <view class="_figure data-v-a61b9824 middle-tip-box-text">
+            <image class="_img data-v-a61b9824 notShow" src="//m.allinmed.cn/image/img00/patientConsult/symptom_photo_loading@2x.png" alt="loading..." bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}"></image>
+            <view class="_figcaption data-v-a61b9824 progress">
+              <view class="_p data-v-a61b9824">{{progress.progress}}</view>
+            </view>
+          </view>
+        </view>
+        <transition name="fade" class="_transition data-v-a61b9824"><label class="_span data-v-a61b9824 delete-msg-btn" catchtap="handleProxy" wx:if="{{currentIndex===deleteMsgIndex&&showDeleteMsg&&imageMessage.from===userData.account}}" data-eventid="{{'2'}}" data-comkey="{{$k}}">撤回</label></transition>
+        <view class="_figure data-v-a61b9824 im-image-con" catchtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">
+          <image class="_img data-v-a61b9824 im-image im-image-img" src="{{imageMessage.file.url}}" alt></image>
+        </view>
+        <view class="_article data-v-a61b9824 disclaimer-content" wx:if="{{imageMessage.from===targetData.account}}"><label class="_span data-v-a61b9824">重要提示：在线咨询不能代替面诊，医生建议仅供参考。</label></view>
+      </view>
+      <view class="_figure data-v-a61b9824 main-message-img" wx:if="{{imageMessage.from===userData.account}}">
+        <image src="{{logoUrl}}" alt class="_img data-v-a61b9824"></image>
+      </view>
+    </view>
+  </view>
+</template>

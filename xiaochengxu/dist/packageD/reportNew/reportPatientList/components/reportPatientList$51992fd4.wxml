@@ -1,0 +1,17 @@
+<import src="/components/LogoLoading$2b721f9a" /><template name="reportPatientList$51992fd4">
+  <view class="_div data-v-d0325a4a">
+    <view class="_div data-v-d0325a4a head"> 请选择就诊人，让我知道您是谁 </view>
+    <view class="_section data-v-d0325a4a patient-list">
+      <view class="_section data-v-d0325a4a patient {{[item.stateText == '' ? 'non-start' : '']}}" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" wx:for="{{patientList}}" wx:for-index="index" wx:for-item="item">
+        <view class="_div data-v-d0325a4a name"><label class="_span data-v-d0325a4a patient-name">{{item.patientName}}</label> <label class="_span data-v-d0325a4a patient-info">  {{item.patientSex==1?"男":"女"}}  {{item.patientAge}}岁</label></view>
+        <view class="_div data-v-d0325a4a state" wx:if="{{item.stateText!=''}}">
+          {{item.stateText}}
+        </view>
+        <view class="_section data-v-d0325a4a patientItem-card" wx:if="{{false}}"></view>
+      </view>
+    </view>
+    <form action bindsubmit="handleProxy" report-submit="true" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_form data-v-d0325a4a"><button class="_button data-v-d0325a4a add-patient" bindtap="handleProxy" formType="submit" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+        <image src="https://m.allinmed.cn/static/image/mp/index/1.2.0/add.png" alt class="_img data-v-d0325a4a"></image> 添加就诊人
+      </button></form> <template wx:if="{{loading}}" data="{{...$root[$kk+'0'], $root}}" is="LogoLoading$2b721f9a"></template>
+  </view>
+</template>

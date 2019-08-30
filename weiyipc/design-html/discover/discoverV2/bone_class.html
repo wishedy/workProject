@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if (!IsPC()) {
+            window.location.href = '//m.allinmd.cn/pages/discover/discover_index.html';
+        }
+    </script>
+    <title>骨课大讲堂</title>
+    <meta name="keywords" content="医学资源分类，医学资源查找，手术视频,医学文献,病例讨论,骨科,唯医,allinmd">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <!-- build:css /dest/discover/discover_index.css -->
+    <link rel="stylesheet" href="/css/v3/base.css"/>
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css"/>
+    <link rel="stylesheet" href="/css/v3/pageFooter.css"/>
+    <link rel="stylesheet" href="/js/modules/indexLogin/module.indexLogin.css">
+    <link rel="stylesheet" href="/js/modules/user/module.user.css"/>
+    <link rel="stylesheet" href="/js/modules/user/module.user-v2.css"/>
+    <link rel="stylesheet" href="/js/modules/find-password-v2/module.find-password-v2.css"/>
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/publish/publish.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/css/v3/pages/discover/discoverV2/bone_class.css"/>
+    <!--endbuild-->
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="62">
+<!--全内容容器——mainInner-->
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-dis_header">
+        <section class="al-headerContainer">
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text"/>
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar al-mainSidebarCollapse">
+        <header class="al-mainLogo">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+        <section class="al-mainSidebarList">
+            <ul data-alcode-mod='52'>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>首页</h4>
+
+                            <p>HOME</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem active">
+                    <a href="//www.allinmd.cn/pages/discover/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find_active.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发现</h4>
+
+                            <p>DISCOVERY</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发布</h4>
+
+                            <p>RELEASE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navMes">
+                    <a href="//www.allinmd.cn/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>消息</h4>
+
+                            <p>MESSAGE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navIndex">
+                    <a href="//www.allinmd.cn/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                        <figcaption>我的</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>我的</h4>
+
+                            <p>PROFILE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList" data-alcode-mod='72'>
+                <li class="al-mainSidebarItem al-siteSwitch">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_siteSwitch.png" alt="">
+                        <figcaption class="ev_siteSwitchName">骨科</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4 class="ev_siteSwitchName">骨科</h4>
+
+                                <p>SITE SWITCH</p>
+                            </div>
+                        </article>
+                    </a>
+
+                    <div class="al_siteSwitch_popBox">
+                        <div class="al_siteSwitch_orthopaedics"><i></i>骨科</div>
+                        <div class="al_siteSwitch_handSurgery"><i></i>手外科</div>
+                    </div>
+                </li>
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>小唯</h4>
+
+                            <p>SERVICE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navPhone">
+                    <a href="//www.allinmd.cn/pages/singlePage/iphone-app-download.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>手机端</h4>
+
+                            <p>MOBILES</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <section class="boneClassCont">
+        <aside class="banner">
+            <aside class="bannerCont">
+                <figure class="title">
+                    <p class="titleImg"><img src="//img10.allinmd.cn/v3/discover/discoverV2/word_gukedajiangtang.png">
+                    </p>
+
+                    <p class="viewFollew"><span class="line">1222人浏览</span><span>1222人关注</span></p>
+
+                    <p class="fellowBtn">关注<span class="promptBoneClass"><img src="//img10.allinmd.cn/v3/discover/discoverV2/prompt02.png"> </span></p>
+                </figure>
+                <figure class="introductions">
+                    <p>你的治疗，大佬来教！ 骨科大讲堂是邀请德高望重的骨科大佬讲授临床实践经验的特色栏目，汇集了精
+                        彩的临床病例讲解、分析，可深刻指导临床实战。分析，可深刻指导临床实战。分析，可深刻...</p>
+
+                    <p class="moreOpen">展开</p><!--pickUp收起-->
+                </figure>
+            </aside>
+
+        </aside>
+        <aside class="personal">
+            <aside class="personalCont">
+                <div class="personalWrapper">
+                    <div class="personalImg">
+                        <img src="https://img05.allinmd.cn/public1/M00/08/1D/wKgBMFkmRMSAKZR9AAAdVqMhLUM139_c_p_150_150.jpg">
+                    </div>
+                    <div class="personalName">
+                        <p>峰会<span>副主任医师</span></p>
+
+                        <p class="hospital">北京市人名医院第三附属医院北京市人名医院第三附属医院北京市...</p>
+                    </div>
+                    <p class="userIntroduction">
+                    <span>讲师个人简介就职于北京市人民医院第三附属医院，曾就职于301
+                    武警总医院第三讲师个人简介就职于北京市</span>
+                    </p>
+                </div>
+                <div class="recommendDoctor">推荐讲师</div>
+            </aside>
+        </aside>
+        <aside class="typeNavCont">
+            <aside class="typeNav">
+                <ul class="typeNavText">
+                    <li class="active"><p>全部</p></li>
+                    <li><p><i></i>创伤</p></li>
+                    <li><p>关节</p></li>
+                    <li><p>脊柱</p></li>
+                </ul>
+            </aside>
+            <div class="screenCont">
+                <p>筛选：</p>
+                <ul>
+                    <li>全部<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li class="active">手外科师<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>手外治医师<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>手外科主治医师<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>手外治医师<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>手外科主治<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>手外科<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>手外科主治<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>手外科<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>手外科主治<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>手外科<span>122</span></li>
+                    <li>全部<span>122</span></li>
+                    <li>成人脊柱蜕变主治病例腰椎手术失败综合征发生率高达10%—40%腰椎手术失败综合征发生率高达10%—40%…<span>222</span></li>
+                </ul>
+                <div class="pickUp">收起</div>
+                <!--更多viewMore-->
+            </div>
+            <aside class="hotNew">
+                <div class="active">最热</div>
+                <div class="newCont">最新</div>
+            </aside>
+            <ul class="boneClassList">
+                <li class="afterVisit"><!--点击过后 加类名 ‘afterVisit’-->
+                    <aside class="boneClassListCont">
+                        <div class="typeNameParent"><p class="typeName"><i></i>
+                            <!--几种状态  视频videoIcon 文库docIcon 话题topicIcon 病例caseIcon-->
+                            <!--<span class="videoIcon">手术视频</span></p></div>-->
+                            <span>手术视频</span></p></div>
+                        <div class="listIntroduction">
+                            <p class="title">骨科大讲堂-经皮内镜技术在腰椎术后微创翻修中的应用<i></i></p>
+
+                            <p class="text">文献报道：腰椎手术失败综合征发生率高达10%—40%，常需翻修手术治疗，而开
+                                放翻修手术如何提高翻修手术的成功率一直是大家关注的焦点。</p>
+
+                            <div class="personalMsg">
+                                <aside class="perMsg">
+                                    <img src="https://img05.allinmd.cn/public1/M00/08/1D/wKgBMFkmRMSAKZR9AAAdVqMhLUM139_c_p_150_150.jpg">
+                                    <span>刘强东</span>
+                                    <i>北京市人名医院第三附属医院</i>
+                                </aside>
+                                <aside class="viewFollowNum">
+                                    <span class="time"><i class="al-contentWatchedNum"></i>5小时前</span>
+                                    <span class="num"><i></i>12666</span>
+                                </aside>
+                            </div>
+                        </div>
+                        <div class="listImg"><img
+                                src="https://img05.allinmd.cn/public1/M00/09/43/wKgBL1mjqoeAdkqIAACG20lZ-Fw314_c_t_225_150.JPG">
+                        </div>
+                    </aside>
+                </li>
+                <li>
+                    <aside class="boneClassListCont">
+                        <div class="typeNameParent"><p class="typeName"><i></i>
+                            <!--几种状态  视频videoIcon 文库docIcon 话题topicIcon 病例caseIcon-->
+                            <span class="videoIcon">手术视频</span></p></div>
+                        <div class="listIntroduction">
+                            <p class="title">骨科大讲堂-经皮内镜技术在腰椎术后微创翻修中的应用</p>
+
+                            <p class="text">文献报道：腰椎手术失败综合征发生率高达10%—40%，常需翻修手术治疗，而开
+                                放翻修手术如何提高翻修手术的成功率一直是大家关注的焦点。</p>
+
+                            <div class="personalMsg">
+                                <aside class="perMsg">
+                                    <img src="https://img05.allinmd.cn/public1/M00/08/1D/wKgBMFkmRMSAKZR9AAAdVqMhLUM139_c_p_150_150.jpg">
+                                    <span>刘强东</span>
+                                    <i>北京市人名医院第三附属医院</i>
+                                </aside>
+                                <aside class="viewFollowNum">
+                                    <span class="time"><i class="al-contentWatchedNum"></i>5小时前</span>
+                                    <span class="num"><i></i>12666</span>
+                                </aside>
+                            </div>
+                        </div>
+                        <div class="listImg">
+                            <figure></figure>
+                            <p>14:30</p> <img
+                                src="https://img05.allinmd.cn/public1/M00/09/43/wKgBL1mjqoeAdkqIAACG20lZ-Fw314_c_t_225_150.JPG">
+                        </div>
+                    </aside>
+                </li>
+                <li>
+                    <aside class="boneClassListCont">
+                        <div class="typeNameParent"><p class="typeName"><i></i>
+                            <!--几种状态  视频videoIcon 文库docIcon 话题topicIcon 病例caseIcon-->
+                            <span class="videoIcon">手术视频</span></p></div>
+                        <div class="listIntroduction">
+                            <p class="title">骨科大讲堂-经皮内镜技术在腰椎术后微创翻修中的应用</p>
+
+                            <p class="text">文献报道：腰椎手术失败综合征发生率高达10%—40%，常需翻修手术治疗，而开
+                                放翻修手术如何提高翻修手术的成功率一直是大家关注的焦点。</p>
+
+                            <div class="personalMsg">
+                                <aside class="perMsg">
+                                    <img src="https://img05.allinmd.cn/public1/M00/08/1D/wKgBMFkmRMSAKZR9AAAdVqMhLUM139_c_p_150_150.jpg">
+                                    <span>刘强东</span>
+                                    <i>北京市人名医院第三附属医院</i>
+                                </aside>
+                                <aside class="viewFollowNum">
+                                    <span class="time"><i class="al-contentWatchedNum"></i>5小时前</span>
+                                    <span class="num"><i></i>12666</span>
+                                </aside>
+                            </div>
+                        </div>
+                        <div class="listImg"><img
+                                src="https://img05.allinmd.cn/public1/M00/09/43/wKgBL1mjqoeAdkqIAACG20lZ-Fw314_c_t_225_150.JPG">
+                        </div>
+                    </aside>
+                </li>
+
+            </ul>
+        </aside>
+    </section>
+    <!--公共底部 start-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--公共底部 End-->
+</section>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<!-- build:js /dest/discover/discover_index.js -->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<!--<script src="/js/comm/comm.track.js"></script>-->
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/user/module.user.js"></script>
+<!--<script src="/js/modules/auth/module.auth.js"></script>-->
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<script src="/js/modules/publish/module.video-upload.js"></script>
+<script src="/js/modules/publish/module.doc-upload.js"></script>
+<script src="/js/modules/publish/module.topic-upload.js"></script>
+<script src="/js/modules/publish/module.case-upload.js"></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<script src="/js/third-party/uploadify/swfobject2.2.js"></script>
+<script src="/js/third-party/uploadify/jquery.uploadify.js"></script>
+<script src="/js/third-party/ajaxfileupload.js"></script>
+<script src="/js/third-party/qiniu/qiniu.js"></script>
+<script src="/js/third-party/qiniu/ui.js"></script>
+<script src="/js/third-party/plupload/plupload.full.min.js"></script>
+<script src="/js/third-party/plupload/i18n/zh_CN.js"></script>
+
+<script src="/js/scene/discovery/scene.discover.index.js"></script>
+<!--endbuild-->
+
+</body>
+
+</html>

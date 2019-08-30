@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href='//m.allinmd.cn/dist/message/message_index.html';
+        }
+    </script>
+    <title>关注提醒－唯医,allinmd</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <!--build:css /dest/message/message_main.css-->
+    <link rel="stylesheet" href="/css/v3/base.css" />
+    <link rel="stylesheet" href="/css/v3/pageFooter.css" />
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css" />
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/auth/module.auth.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/view-big-img/module.view-big-img.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/publish/publish.css" rel= "stylesheet" type="text/css" />
+    <link href="/css/v3/pages/personal/personal_msg.css" rel="stylesheet" type="text/css" />
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+    <link href="/js/plugins/select-cut-user-pic/plugin.select-cut-user-pic.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/add-removeable-group-picV3/plugin.add-removeable-group-pic.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/pagination/pager.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>-->
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/css/column/videoPK_v2/apply_zhezhao.css" rel="stylesheet" type="text/css"/>-->
+
+    <link rel="stylesheet" href="/css/v3/pages/message/message_index.css" />
+    <link rel="stylesheet" href="/css/v3/pages/message/message_index2.css" />
+    <!--endbuild-->
+
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/video-js.css" rel="stylesheet" type="text/css"/>
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/videojs.allinmd.css" rel="stylesheet" type="text/css"/>
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+
+</head>
+
+<body data-alcode="63" >
+
+<!--删除提示弹层:begin-->
+<div class="al-deletePopBox Ev-mesDeletePop" style="display: none;">
+    <div class="al-systemMes_deletePrompt">
+        <header>
+            <span>删除消息</span>
+            <p class="al-deletePromptClose Ev-delCancel"></p>
+        </header>
+        <section class="al-systemMes_deleteMain">
+            <figure>
+                <i></i><span>确定删除这<a class="Ev-mesDeleteNum"></a>条消息吗？</span>
+            </figure>
+        </section>
+        <footer class="al-systemMes_deleteFooter">
+            <span class="Ev-mesDelSure">确定</span>
+            <span class="deleteFooter_cancel Ev-delCancel">取消</span>
+        </footer>
+    </div>
+</div>
+<!--删除提示弹层:end-->
+<!--全内容容器——mainInner-->
+<section class="al-mainInner">
+    <!--评论弹层:begin-->
+    <div class="al-contentItemPopBox Ev-mesDoctorList" style="display: none;">
+        <section class="al-personal">
+            <!-- 评论区域 -->
+            <section class="al-personalInnerContent al-messageMain al-contentItemPop" id="ev-reviewUserList">
+                <section class="al-contentItem">
+                    <header class="al-contentItemTitle">
+                        <h2>
+                            <a class="Ev-mesDocPopText">4</a>人评论了
+                            <!--关闭按钮-->
+                            <b class="al-popCloseBtn Ev-mesDocPopCloseBtn"></b>
+                        </h2>
+                    </header>
+                    <div class="Ev-mesDocListBox" style="height:615px; overflow: auto"></div>
+                </section>
+            </section>
+        </section>
+    </div>
+    <!--评论弹层:end-->
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header">
+        <section class="al-headerContainer">
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'></div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar al-mainSidebarCollapse">
+        <header class="al-mainLogo">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+        <section class="al-mainSidebarList">
+            <ul data-alcode-mod='52'>
+                <li class="al-mainSidebarItem">
+                    <a href="/">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>首页</h4>
+                            <p>HOME</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="/pages/college/college_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_college.png" alt="">
+                        <figcaption>唯医学院</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>唯医学院</h4>
+                            <p>HOME</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="/pages/discover/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发现</h4>
+                            <p>DISCOVERY</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发布</h4>
+                            <p>RELEASE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navMes active">
+                    <a href="/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>消息</h4>
+                            <p>MESSAGE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navIndex">
+                    <a href="/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                        <figcaption>我的</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>我的</h4>
+                            <p>PROFILE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList" data-alcode-mod='72'>
+                <li class="al-mainSidebarItem al-siteEmr">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_emrIcon.png" alt="">
+                        <figcaption>病历管理</figcaption>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-siteSwitch">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_siteSwitch.png" alt="">
+                        <figcaption class="ev_siteSwitchName">骨科</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4 class="ev_siteSwitchName">骨科</h4>
+                                <p>SITE SWITCH</p>
+                            </div>
+                        </article>
+                    </a>
+                    <div class="al_siteSwitch_popBox">
+                        <div class="al_siteSwitch_orthopaedics"><i></i>骨科</div>
+                        <div class="al_siteSwitch_handSurgery"><i></i>手外科</div>
+                    </div>
+                </li>
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>小唯</h4>
+                            <p>SERVICE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navPhone">
+                    <a href="/pages/singlePage/iphone-app-download.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>手机端</h4>
+                            <p>MOBILES</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+
+    <!--未登录-->
+    <section class="al-personal Ev-messageNoLogin hide">
+        <section class="al-personalInnerContent al-messageMain">
+            <section class="al-contentItem">
+                <header class="al-contentItemTitle">
+                    <h2>关注提醒</h2>
+                </header>
+                <div class="al-login_imgBox">
+                    <img src="//img10.allinmd.cn/v3/message/login_loginImg.png" alt=""/>
+                </div>
+            </section>
+        </section>
+        <aside class="al-loginBox">
+            <p>快去登录</p>
+            <p>及时获取所有互动消息</p>
+            <a class="Ev-MesLoginBtn" href="javascript:;">立即登录</a>
+        </aside>
+    </section>
+    <!--未登录结束-->
+    <!--已登录-->
+    <section class="al-personal Ev-messageLogin hide">
+        <!-- 评论区域 -->
+        <section class="al-personalInnerContent al-messageMain Ev-mesSysAppendClass">
+            <section class="MesListAppend Ev-MesListAppend" data-alcode-mod='243'>
+                <section class="mesListhead">
+                    <h2>请前往唯医骨科App中查看所有未读消息</h2>
+                    <button class="ev-iKnow">下载App</button>
+                </section>
+                <section class="mesListDesc">
+                    <section class="mesListItem ev-isReceiveRead">
+                        <div class="itemNum waitVisit">
+                            <img src="/images/img10/common/icon/personal_v2/waitVisit.png" alt="">
+                            <i></i>
+                        </div>
+                        <div class="itemType">待接诊提示</div>
+                        <div class="itemTime"></div>
+                    </section>
+                    <section class="mesListItem ev-isReplyRead">
+                        <div class="itemNum waitVisit">
+                            <img src="/images/img10/common/icon/personal_v2/patientQue.png" alt="">
+                            <i></i>
+                        </div>
+                        <div class="itemType">患者咨询</div>
+                        <div class="itemTime"></div>
+                    </section>
+                    <section class="mesListItem ev-isNoticeRead">
+                        <div class="itemNum waitVisit">
+                            <img src="/images/img10/common/icon/personal_v2/mesAttention.png" alt="">
+                            <i></i>
+                        </div>
+                        <div class="itemType">通知提示</div>
+                        <div class="itemTime"></div>
+                    </section>
+                    <section class="mesListItem ev-isofficialRead">
+                        <div class="itemNum waitVisit">
+                            <img src="/images/img10/common/icon/personal_v2/Official.png" alt="">
+                            <i></i>
+                        </div>
+                        <div class="itemType">唯医官方</div>
+                        <div class="itemTime"></div>
+                    </section>
+                </section>
+            </section>
+            <!--分页区-->
+            <div class="page-container newPage-container">
+                <div class="pagination newPagination pager" data-alcode-mod='129' data-alcode-item-selector="li">
+
+                </div>
+            </div>
+            <!--分页区结束-->
+        </section>
+        <!--没有相关列表信息-->
+        <section class="al-personalInnerContent al-messageMain Ev-mesNoList hide">
+            <section class="al-contentItem">
+                <header class="al-contentItemTitle">
+                    <h2></h2>
+                </header>
+                <div class="al-noMessage_imgBox">
+                    <img src="//img10.allinmd.cn/v3/message/mes_noMessage.png" alt=""/>
+                </div>
+            </section>
+        </section>
+        <!--没有相关列表信息结束-->
+        <!-- 头像及SNS信息 -->
+        <aside class="al-mesMainR " data-alcode-mod='75'>
+            <aside class="userMsg">
+                <a class="Ev-LogoUrl" target="_blank" href="/pages/personal/personal_index.html">
+                    <img src="//img10.allinmd.cn/default-user/user_img65.png" alt="" />
+
+                    <span  href="/pages/personal/personal_index.html" target="_blank" class="al-mesMainR-userName  Ev-mesUserName"></span><!--用户名-->
+                    <span class="al-mesMainR-userTitle  Ev-mesUserTitle"></span><!--用户职称-->
+                    <p class="al-mesMainR-userUnit  Ev-mesCompany"></p><!--工作单位-->
+                </a>
+            </aside>
+            <ul>
+                <li>
+                    <a target="_blank" href="/pages/personal/sns.html?action=fans">
+                        <span class="Ev-mesFansNum"></span><!--粉丝数-->
+                        <!--</a>
+                        <a target="_blank" href="/pages/personal/sns.html?action=fans">--><p>粉丝</p></a>
+
+                </li>
+                <li class="al-mesMain-ul_Notice">
+                    <a target="_blank" href="/pages/personal/sns.html?action=follow">
+                        <span class="Ev-mesFollowNum"></span><!--关注-->
+                        <!--</a>
+                        <a target="_blank" href="/pages/personal/sns.html?action=follow">--><p>关注</p></a>
+                </li>
+                <li>
+                    <a target="_blank" href="/pages/personal/sns.html?action=praise">
+                        <span class="Ev-mesUpNum"></span><!--点赞-->
+                        <!--</a>
+                        <a target="_blank" href="/pages/personal/sns.html?action=praise">--><p>点赞</p></a>
+
+                </li>
+            </ul>
+        </aside>
+    </section>
+    <!--已登录结束-->
+    <!--下载视频弹层：begin-->
+    <div class="al-downLoad_PopBox Ev-al-downLoad_PopBox">
+        <div class="al-downContainer Ev-al-downContainer">
+            <h6 class="closePopBtn Ev-closePopBtn"></h6>
+            <figure class="al-downLoadContent">
+                <figcaption>扫一扫，安装手机客户端免费下载视频</figcaption>
+                <div class="downLoadWay">
+                    <p class="Ev-ADownBtn">
+                        <i></i>
+                        <span class="AndroidText">Android版</span>
+                    </p>
+                    <p class="Ev-IDownBtn">
+                        <i class="iPhoneIcon"></i>
+                        <span class="iPhoneText">iPhone版</span>
+                    </p>
+                </div>
+                <section class="downLoad_QR Ev-downLoad_QR">
+                    <img src="//img10.allinmd.cn/v3/terminal/downLoad-QR.png" alt=""/>
+                </section>
+            </figure>
+        </div>
+    </div>
+    <!--下载视频弹层：end-->
+    <!--公共底部 start-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--公共底部 End-->
+</section>
+<!--打开App弹层提示-->
+<section class="mesListPopup">
+    <section class="mesListCon">
+        <i></i>
+        <div>消息提示</div>
+        <!--<h2></h2>-->
+        <article>查看所有消息详情，请前往唯医骨科App中查看</article>
+        <button>知道了</button>
+    </section>
+</section>
+<!--打开App弹层提示结束-->
+
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.form.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<!--为保证IE8下正常使用，需要引入-->
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/ie8/videojs-ie8.min.js"></script>
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/video.js"></script>
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/videojs.allinmd.js"></script>
+<!--build:js /dest/message/message_main.js-->
+<script src="/js/lib/jquery/jquery-1.8.2.alpha.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<!--<script src="/js/comm/comm.track.js"></script>-->
+<script src="/js/comm/comm.textChange.js" ></script>
+<script src="/js/comm/comm.ajaxExistHtml.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+<script src="/js/plugins/view-dialog/plugin.view-dialog.js"></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+<script src="/js/plugins/scroll-box/plugin.scroll-box.js"></script>
+<script src="/js/plugins/expand-shrink/plugin.expand-shrink.js"></script>
+<script src="/js/plugins/view-dialog/plugin.view-dialog.js"></script>
+<script src="/js/plugins/add-removeable-group-picV3/plugin.replaceInput/plugin.replaceInput.js"></script>
+<script src="/js/plugins/add-removeable-group-picV3/plugin.add-removeable-group-pic.js"></script>
+<script src="/js/plugins/add-removeable-group-picV3/plugin.readFile/plugin.readFile.js"></script>
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+<script src="/js/plugins/reference-resourceV3/reference-resource.js"></script>
+<script src="/js/plugins/follow/plugin.follow.js"></script>
+<script src="/js/plugins/make-sure-popup/plugin.make-sure-popup.js"></script>
+
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js" ></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<script src="/js/modules/publish/module.video-upload.js" ></script>
+<script src="/js/modules/publish/module.doc-upload.js" ></script>
+<script src="/js/modules/share/module.share.js"></script>
+<script src="/js/modules/view-big-img/module.view-big-img.js"></script>
+<script src="/js/modules/user/module.user.js"></script>
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/background-video/module.background-video.js"></script>
+<script src="/js/modules/list2-template/module.list2-template.js"></script>
+<script src="/js/modules/review-box/module.review-box.js"></script>
+<script src="/js/modules/review-page/module.review-page.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/resource-list-template/module.resource-list-template.js"></script>
+
+<script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script><script src='/js/third-party/md5.js'></script>
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<script src="/js/third-party/uploadify/swfobject2.2.js" ></script>
+<script src="/js/third-party/uploadify/jquery.uploadify.js" ></script>
+<script src="/js/third-party/ajaxfileupload.js" ></script>
+<script src="/js/third-party/qiniu/qiniu.js" ></script>
+<script src="/js/third-party/qiniu/ui.js" ></script>
+<script src="/js/third-party/plupload/plupload.full.min.js" ></script>
+<script src="/js/third-party/plupload/i18n/zh_CN.js" ></script>
+<script src="/js/third-party/pagination/jquery.pager.js"></script>
+
+<script src="/js/scene/message/scene.message.mesMain2.js"></script>
+<!--endbuild-->
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href=window.location.href.replace(/m.allinmd/,'www.allinmd');
+        }
+    </script>
+    <title>列表页评分</title>
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/index/weekly_list.css">
+    <link rel="stylesheet" href="/css/pages/index/case_index.css">
+</head>
+<body>
+<section class="al-mainInner">
+    <!-- 专题合集 -->
+    <section class="al-content ">
+        <section class="ev_resBox">
+            <section class="al-contentPartModule ev_flow">
+                <div class="al_flow_type">
+                    <span class="al_flow_span al_flow_doc">文库</span>
+                    <ul class="al-littleScoreStarBox">
+                        <li><b></b></li>
+                        <li><b></b></li>
+                        <li><b></b></li>
+                        <li><b></b></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <section class="al-tableBox">
+                    <article class="al-contentText">
+                        <a href="https://m.allinmd.cn/html/m/doc//2016/12/28/1482928269503.html" class="al-contentTitle">1228001文章221</a>
+                        <p class="al-contentOtherMsg">
+                            <span class="al-contentAuthor icon-contentAuthor">唯医小编</span>
+                            <span class="icon-contentWatchedNum">134</span>
+                            <span class="al-contentDelete" itemtype="2" itemid="1482928269503">x</span>
+                        </p>
+                    </article>
+                    <figure class="al-contentImgBox" docid="1482928269503">
+                        <a href="https://m.allinmd.cn/html/m/doc//2016/12/28/1482928269503.html">
+                            <img src="https://img04.allinmd.cn/doc/2016/12/28/1482928269503_1482928388452_300_200.png" alt="">
+                        </a>
+                    </figure>
+                </section>
+            </section>
+        </section>
+        <section class="ev_scrollPage">
+        </section>
+    </section>
+</section>
+</body>
+</html>

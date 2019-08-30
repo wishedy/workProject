@@ -1,0 +1,32 @@
+<import src="/components/LogoLoading$2b721f9a" /><template name="reportRegister$3eda9fe0">
+  <view class="_section data-v-2f58998a out-box">
+    <view class="_section data-v-2f58998a doctorInfoBox">
+      <image src="{{doctorMessage.logoUrl}}" alt class="_img data-v-2f58998a doctorLogo"></image>
+      <view class="_div data-v-2f58998a doctorInfo">
+        <view class="_p data-v-2f58998a doctorInfoTop"><label class="_span data-v-2f58998a doctorName">{{doctorMessage.fullNameClip}}</label> <label class="_span data-v-2f58998a doctorTitle">{{doctorMessage.medicalTitle}}</label></view>
+        <view class="_p data-v-2f58998a doctorHospital">{{doctorMessage.company}}</view>
+      </view>
+    </view>
+    <view class="_section data-v-2f58998a loginRegisterBox">
+      <view class="_article data-v-2f58998a phoneInputBox">
+        <view class="_aside data-v-2f58998a">手机号</view>
+        <view class="_figure data-v-2f58998a InputBox phone-box"><input type="number" placeholder="请输入手机号" bindblur="handleProxy" bindinput="handleProxy" value="{{phoneMessage}}" placeholder-class="placeholderClass" cursor-spacing="{{100}}" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_input data-v-2f58998a" />
+          <view wx:if="{{clearPhone}}" class="_i data-v-2f58998a icon-clear" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}"></view>
+        </view>
+      </view>
+      <view class="_article data-v-2f58998a phoneInputBox">
+        <view class="_aside data-v-2f58998a">验证码</view>
+        <view class="_figure data-v-2f58998a InputBox code-box"><input type="number" placeholder="请输入" bindblur="handleProxy" bindinput="handleProxy" value="{{codeMessage}}" class="_input data-v-2f58998a codeInput" placeholder-class="placeholderClass" cursor-spacing="{{100}}" data-eventid="{{'2'}}" data-comkey="{{$k}}" />
+          <view wx:if="{{clearCode}}" class="_i data-v-2f58998a icon-clear" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}"></view>
+        </view> <label wx:if="{{!countShow}}" class="_span data-v-2f58998a getCode" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">{{getCodeText}}</label><label wx:else class="_span data-v-2f58998a codeCountdown {{[codeMessage.length > 0 ? 'hasContent' : '']}}">
+          <view class="_i data-v-2f58998a">{{codeTime}}</view>秒后重新获取
+        </label>
+      </view>
+      <view class="_article data-v-2f58998a tphoneTips">*手机号仅{{doctorMessage.fullName}}医生可见</view>
+    </view>
+    <form class="_form data-v-2f58998a go-next" bindsubmit="handleProxy" report-submit="true" data-eventid="{{'7'}}" data-comkey="{{$k}}"><button class="_button data-v-2f58998a loginButton {{[codeMessage.length && phoneMessage.length ? 'next' : '']}}" disabled="{{loading || !codeMessage.length && !phoneMessage.length}}" bindtap="handleProxy" formType="submit" data-eventid="{{'5'}}" data-comkey="{{$k}}">下一步</button>
+      <view class="_section data-v-2f58998a stipulation">点击按钮表示您同意<view bindtap="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}" class="_i data-v-2f58998a">《唯医骨科用户注册协议》</view>
+      </view>
+    </form> <template wx:if="{{loading}}" data="{{...$root[$kk+'0'], $root}}" is="LogoLoading$2b721f9a"></template>
+  </view>
+</template>

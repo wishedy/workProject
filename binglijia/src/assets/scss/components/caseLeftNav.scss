@@ -1,0 +1,111 @@
+@charset "UTF-8";
+@import "../modules/common-modules";
+.caseLeftNav{
+    position: fixed;
+    left: 0;
+    top: 100px;
+    background: #F2F2F2;
+    width: 270px;
+    height: 100%;
+    z-index: 3;
+    overflow: auto;
+    .addColumn{
+        height: 60px;
+        background: #E6E6E6;
+        @include fontSize(14px,#2887FF);
+        line-height: 60px;
+        cursor: pointer;
+        i{
+            @include iconImgI(inline-block,24px,24px);
+            background: url("/static/images/pages/newCases/addIcon.png") no-repeat;
+            border-radius: 2px;
+            margin: 0 15px 0 46px;
+        }
+        span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    ul{
+
+    }
+    li{
+        @include fontSize(14px,#333);
+        cursor: pointer;
+        padding: 18px 35px;
+        line-height: 24px;
+        .delete{
+            display: none;
+        }
+
+        &:hover{
+            background: #E9F3FF;
+            .delete{
+                @include iconImgI(inline-block,24px,20px);
+                background: url("/static/images/common/icon/delete.png") no-repeat;
+                float: right;
+                margin: 26px 45px 0 0;
+                position: relative;
+                .deletePopup{
+                    background: #FFFFFF;
+                    box-shadow: 0 0 16px 0 rgba(204,214,231,0.80);
+                    border-radius: 4px;
+                    width: 380px;
+                    height: 162px;
+                    z-index: 2;
+                    top: 41px;
+                    left: -45px;
+                    position: absolute;
+                    cursor: default;
+                    button{
+                        width: 86px;
+                        height: 36px;
+                        text-align: center;
+                        line-height: 36px;
+                        background: #F2F2F2;
+                        border-radius: 4px;
+                        @include fontSize(16px,#666);
+                        margin-left: 22px;
+                        cursor: pointer;
+                    }
+                    .deleteBtn{
+                        float: right;
+                        font-size: 0;
+                        margin: 38px 18px 0 0;
+                    }
+                    p{
+                        margin: 33px 0 0 28px;
+                        @include fontSize(18px,#333);
+                        line-height: 18px;
+                    }
+                    &:before{
+                        @include iconImgI(inline-block,0,0);
+                        content: "";
+                        display: inline-block;
+                        position: absolute;
+                        left: 45px;
+                        height: 0;
+                        width: 0;
+                        top: -22px;
+                        border: 11px solid transparent;
+                        border-bottom: 11px solid #fff;
+                    }
+                }
+            }
+        }
+        &.active{
+            background: #FFFFFF;
+            position: relative;
+            &:before{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: inline-block;
+                background: #2888FF;
+                width: 4px;
+                height: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+    </script>
+    <title>成绩单</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="keywords" content="医学资源分类，医学资源查找，手术视频,医学文献,病例讨论,骨科,唯医,allinmd">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="//m.allinmd.cn/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/column/activity/transcript/transcript.css">
+    <link rel="stylesheet" href="/css/vander/swiper.min.css">
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="192">
+<section class="transcriptBg">
+    <!--1-->
+    <aside class="startUp1 hide">
+        <p><span>100</span>%</p>
+        <figure></figure>
+    </aside>
+    <audio id="audio" loop="loop" autoplay="autoplay">
+        <source src="./muice/song.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio1" loop="loop">
+        <source src="./muice/1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio2" loop="loop">
+        <source src="./muice/2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio3" loop="loop">
+        <source src="./muice/3.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio4" loop="loop">
+        <source src="./muice/4.mp3" type="audio/mpeg">
+    </audio>
+    <!--2-->
+    <aside class="startUp2">
+        <p class="startNav"></p>
+        <p class="startBtn hide"></p>
+        <p class="startMenu startMenuActive hide"></p>
+        <p class="startTime"><i>01:34 PM</i></p>
+        <div class="winFind">
+            <p class="winFindText"><span>2017年度成绩报告</span><i></i></p>
+            <p class="okEnter"></p>
+        </div>
+    </aside>
+</section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script><script src="/js/third-party/fastclick.js"></script>
+
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+
+    <script src="/design-html/activity/transcript/transcript.js"></script>
+
+</body>
+
+</html>

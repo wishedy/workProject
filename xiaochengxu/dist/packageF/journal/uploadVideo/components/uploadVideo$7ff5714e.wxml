@@ -1,0 +1,56 @@
+<import src="/components/confirm$5251c782" /><template name="uploadVideo$7ff5714e">
+  <view class="_section data-v-15231dda videoContent">
+    <view class="_section data-v-15231dda first-box">
+      <view class="_section data-v-15231dda title-box">
+        <view class="_p data-v-15231dda title-box-title"><label class="_span data-v-15231dda title-icon"></label>术前视频</view>
+        <view class="_p data-v-15231dda title-box-describe">因肢体功能异常造成的生活和行动不便的视频</view>
+      </view>
+      <view class="_section data-v-15231dda videoBox">
+        <view class="_li data-v-15231dda videoList" wx:key="index" key="{{index}}" wx:for="{{videoList1}}" wx:for-index="index" wx:for-item="item">
+          <view class="_div data-v-15231dda videoItem" wx:if="{{!item.fail&&item.finish&&item.imageUrl.length>0}}" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}">
+            <image src="{{item.imageUrl}}" alt class="_img data-v-15231dda"></image> <label class="_span data-v-15231dda play-btn"></label> <label class="_span data-v-15231dda video-time">{{item.playTime}}</label>
+          </view> <label class="_span data-v-15231dda delateVideoBtn" wx:if="{{item.finish}}" bindtap="handleProxy" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}"></label>
+          <view class="_div data-v-15231dda upload-coverImg" wx:if="{{!item.finish}}">
+            <view class="_div data-v-15231dda tc-videoLoadingImg">
+              <image src="https://m.allinmed.cn/static/image/img00/patientConsult/symptom_photo_loading@2x.png" alt class="_img data-v-15231dda"></image>
+            </view>
+            <view class="_p data-v-15231dda tc-videoLoadingText">上传中 {{upLoadPercent1}} %...</view>
+          </view>
+          <view class="_div data-v-15231dda upload-success" wx:if="{{item.finish&&!item.fail&&item.imageUrl.length==0}}">
+            <image src="https://m.allinmed.cn/static/image/mp/index/1.1.4/videoBanner.jpg" alt class="_img data-v-15231dda"></image>
+          </view>
+          <view class="_div data-v-15231dda upload-fail" wx:if="{{item.finish&&item.fail}}"><label class="_span data-v-15231dda fail-first">上传失败</label><label class="_span data-v-15231dda fail-second">请重新上传</label></view>
+        </view>
+        <view class="_section data-v-15231dda wxChoseFileBtn" wx:if="{{!videoUploading1&&videoList1.length<2}}" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}"></view>
+      </view>
+    </view>
+    <view class="_section data-v-15231dda second-box">
+      <view class="_section data-v-15231dda title-box">
+        <view class="_p data-v-15231dda title-box-title"><label class="_span data-v-15231dda title-icon"></label>术后视频</view>
+        <view class="_p data-v-15231dda title-box-describe">术后下地活动视频、日常锻炼小视频</view>
+      </view>
+      <view class="_section data-v-15231dda videoBox">
+        <view class="_li data-v-15231dda videoList" wx:key="index" key="{{index}}" wx:for="{{videoList2}}" wx:for-index="index" wx:for-item="item">
+          <view class="_div data-v-15231dda videoItem" wx:if="{{!item.fail&&item.finish&&item.imageUrl.length>0}}" bindtap="handleProxy" data-eventid="{{'3-'+index}}" data-comkey="{{$k}}">
+            <image src="{{item.imageUrl}}" alt class="_img data-v-15231dda"></image> <label class="_span data-v-15231dda play-btn"></label> <label class="_span data-v-15231dda video-time">{{item.playTime}}</label>
+          </view> <label class="_span data-v-15231dda delateVideoBtn" wx:if="{{item.finish}}" bindtap="handleProxy" data-eventid="{{'4-'+index}}" data-comkey="{{$k}}"></label>
+          <view class="_div data-v-15231dda upload-coverImg" wx:if="{{!item.finish}}">
+            <view class="_div data-v-15231dda tc-videoLoadingImg">
+              <image src="https://m.allinmed.cn/static/image/img00/patientConsult/symptom_photo_loading@2x.png" alt class="_img data-v-15231dda"></image>
+            </view>
+            <view class="_p data-v-15231dda tc-videoLoadingText">上传中 {{upLoadPercent2}} %...</view>
+          </view>
+          <view class="_div data-v-15231dda upload-success" wx:if="{{item.finish&&!item.fail&&item.imageUrl.length==0}}">
+            <image src="https://m.allinmed.cn/static/image/mp/index/1.1.4/videoBanner.jpg" alt class="_img data-v-15231dda"></image>
+          </view>
+          <view class="_div data-v-15231dda upload-fail" wx:if="{{item.finish&&item.fail}}"><label class="_span data-v-15231dda fail-first">上传失败</label><label class="_span data-v-15231dda fail-second">请重新上传</label></view>
+        </view>
+        <view class="_section data-v-15231dda wxChoseFileBtn" wx:if="{{videoList2.length<2&&!videoUploading2}}" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}"></view>
+      </view>
+    </view>
+    <view class="_section data-v-15231dda videoBtn-box">
+      <view class="_section data-v-15231dda videoBtn ensure" bindtap="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}"><label class="_span data-v-15231dda">完成</label></view>
+      <view class="_section data-v-15231dda videoBtn later" bindtap="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}"><label class="_span data-v-15231dda">稍后上传</label></view>
+    </view> <template wx:if="{{deleteVideoTip}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'8'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="confirm$5251c782"></template>
+  </view>
+</template>

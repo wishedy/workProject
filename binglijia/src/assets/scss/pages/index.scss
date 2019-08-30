@@ -1,0 +1,1346 @@
+@charset "UTF-8";
+@import "../base.scss";
+
+@mixin scrollbar($width:7px,$height:7px,$border:5px,$baColor:#D8D8D8){
+    /*CHROME滚动条样式*/
+    &::-webkit-scrollbar {/*滚动条整体样式*/
+        width: $width;     /*高宽分别对应横竖滚动条的尺寸*/
+        height: $height;
+    }
+    &::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+        border-radius: $border;
+        background: $baColor;
+    }
+    &::-webkit-scrollbar-track {/*滚动条里面轨道*/
+        border-radius: $border;
+    }
+}
+.alEmr-mainInner{
+    padding-top: 80px;
+    .alEmr-mainIndex{
+        .alEmr-indexInner{
+            position: relative;
+            &.indexEditStatus{
+                margin-bottom: 130px;
+            }
+            /*默认首页无病历的情况*/
+            .alEmr-indexNoCase{
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                -ms-transform: translate(-50%,-50%);
+                -moz-transform:translate(-50%,-50%);
+                -webkit-transform: translate(-50%,-50%);
+                -o-transform:translate(-50%,-50%);
+                .noCaseImg{
+                    width: 390px;
+                    height: 282px;
+                }
+                .noCaseText{
+                    margin-top: 31px;
+                    @include fontSize(14px,#333);
+                    a{
+                        cursor: pointer;
+                        color: #419bf9;
+                        position: relative;
+                        &:after{
+                            content: '';
+                            display: block;
+                            height: 1px;
+                            width: 56px;
+                            background-color:#2586FF;
+                            position: absolute;
+                            left: 0;
+                            bottom: 1px;
+                        }
+                    }
+                }
+            }
+            /*搜索无结果*/
+            .alEmr-searchNoList{
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                -ms-transform: translate(-50%,-50%);
+                -moz-transform:translate(-50%,-50%);
+                -webkit-transform: translate(-50%,-50%);
+                -o-transform:translate(-50%,-50%);
+                .noSearchImg{
+                    width: 390px;
+                    height: 282px;
+                }
+                .noSearchText{
+                    margin-top: 31px;
+                    @include fontSize(14px,#333);
+                }
+            }
+            /*筛选无结果*/
+            .alEmr-screeningNoList{
+                margin: 85px 0 150px 0;
+                position: relative;
+                text-align: center;
+                .noScreeningImg{
+                    width: 390px;
+                    height: 282px;
+                }
+                p{
+                    margin-top: 30px;
+                    @include fontSize(14px,#333);
+                }
+            }
+
+
+            /*首页筛选条件*/
+            .alEmr-screeningItems{
+                margin-top: 30px;
+                padding-bottom: 8px;
+                width: 100%;
+                .screeningTips{
+                    font-size: 0;
+                    position: relative;
+                    .tipsName{
+                        display: inline-block;
+                        @include fontSize(14px,#666);
+                        vertical-align: top;
+                        width: 85px;
+                        margin-top: 8px;
+                    }
+                    ul.scTipsUl{
+                        display: inline-block;
+                        width: 1000px;
+                        &.showMore{
+                            max-height: 132px;
+                            overflow: auto;
+                            /*CHROME滚动条样式*/
+                            @include scrollbar();
+                        }
+                        &.closeStatus{
+                            height: 44px;
+                            overflow: hidden;
+                        }
+                        li.scTipsLi{
+                            display: inline-block;
+                            margin: 0 15px 14px 0;
+                            padding: 8px 10px;
+                            position: relative;
+                            @include fontSize(14px,#222);
+                            &.active{
+                                padding: 7px 9px;
+                                background: #F7F7F7;
+                                border: 1px solid #C8C8C8;
+                                border-radius: 2px;
+                                cursor: pointer;
+                            }
+                            &:hover{
+                                padding: 7px 9px;
+                                background: #F7F7F7;
+                                border: 1px solid #C8C8C8;
+                                border-radius: 2px;
+                                cursor: pointer;
+                            }
+                            &.timeFreeText{
+                                &:hover{
+                                    padding: 8px 10px;
+                                    background: none;
+                                    border: none;
+                                    border-radius: 0;
+                                    cursor: pointer;
+                                    color: #2888FF;
+                                }
+                            }
+                            span{
+                                cursor: pointer;
+                                &.timeActive{/*自定义时间的样式*/
+                                    color: #2888FF;
+                                }
+                            }
+                            .timeComponent{
+                                width: 544px;
+                                height: 306px;
+                                background: #FFFFFF;
+                                border: 1px solid rgba(98,111,140,0.15);
+                                box-shadow: 0 3px 8px 0 rgba(178,183,187,0.35);
+                                position: absolute;
+                                top: 40px;
+                                left: -70%;
+                                z-index: 1;
+                                &:before{
+                                    content: "";
+                                    display: inline-block;
+                                    position: absolute;
+                                    left: 118px;
+                                    height: 0;
+                                    width: 0;
+                                    top: -19px;
+                                    border: 9px solid transparent;
+                                    border-bottom: 9px solid rgba(98, 111, 140, 0.15);
+                                }
+                                &:after{
+                                    content: "";
+                                    display: inline-block;
+                                    position: absolute;
+                                    left: 118px;
+                                    height: 0;
+                                    width: 0;
+                                    top: -18px;
+                                    border: 9px solid transparent;
+                                    border-bottom: 9px solid #fff;
+                                }
+                                .timeBtn{
+                                    margin:50px 0 50px 156px;
+                                    height: 40px;
+                                    width: 388px;
+                                    p{
+                                        display: inline-block;
+                                        width: 94px;
+                                        height: 40px;
+                                        margin-right: 20px;
+                                        line-height: 40px;
+                                        text-align: center;
+                                        @include fontSize(14px,#fff);
+                                        border-radius: 4px;
+                                        cursor: pointer;
+                                    }
+                                    .timeCancel{
+                                        background: #BBBBBB;
+                                    }
+                                    .timeSure{
+                                        background: #2888FF;
+                                    }
+                                }
+                            }
+                            &.sexLi{
+                                margin-bottom: 9px;
+                            }
+                        }
+                    }
+                    .ageLabel{
+                        margin-top: 13px;
+                    }
+                    .ageBox{
+                        display: inline-block;
+                        width: 1000px;
+                        margin-left: 10px;
+                        .commAge{
+                            display: inline-block;
+                            font-size: 0;
+                            p{
+                                display: inline-block;
+                            }
+                            input{
+                                display: inline-block;
+                                vertical-align: middle;
+                                font-size: 14px;
+                                width: 62px;
+                                height: 40px;
+                                border-radius:4px;
+                                border:1px solid rgba(200,200,200,1);
+                                box-sizing: border-box;
+                                color:rgba(34,34,34,1);
+                                line-height:14px;
+                                margin-right: 12px;
+                                padding-left: 12px;
+                                &.error{
+                                    box-shadow:0 0 4px 0 rgba(243,75,75,0.59);
+                                    border:1px solid rgba(243,75,75,1);
+                                }
+                            }
+                            span{
+                                display: inline-block;
+                                vertical-align: middle;
+                                font-size: 14px;
+                                color:rgba(51,51,51,1);
+                                line-height:14px;
+                                margin-right: 26px;
+                            }
+                        }
+                        .ageLine{
+                            display: inline-block;
+                            vertical-align: middle;
+                            width:14px;
+                            height:1px;
+                            background:rgba(85,85,85,1);
+                            margin-right: 10px;
+                        }
+                        .startAge{
+                            p.forInBox{
+                                &:last-child{
+                                    span{
+                                        margin-right: 10px;
+                                    }
+                                }
+
+                            }
+                        }
+                        .endAge{
+                            p.forInBox{
+                                &:last-child{
+                                    span{
+                                        margin-right: 50px;
+                                    }
+                                }
+
+                            }
+                        }
+                        .ageSureBtn{
+                            display: inline-block;
+                            vertical-align: middle;
+                            text-align: center;
+                            width:94px;
+                            height:40px;
+                            background:rgba(40,136,255,1);
+                            border-radius:2px;
+                            font-size:14px;
+                            color:rgba(255,255,255,1);
+                            line-height:40px;
+                            cursor: pointer;
+                        }
+                        &.disableInput{
+                            .commAge{
+                                input{
+                                    pointer-events: none;
+                                    color:rgba(153,153,153,1);
+                                }
+                            }
+                        }
+                    }
+                    .screeningMoreBtn{
+                        @include fontSize(14px,#2888FF);
+                        cursor: pointer;
+                        position: absolute;
+                        right: 0;
+                        top:9px;
+                        span{
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                        &:after{
+                            content: '';
+                            display: inline-block;
+                            width: 11px;
+                            height: 6px;
+                            background: url("/static/images/common/icon/moreBtn.png") no-repeat;
+                            background-size: contain;
+                            margin-left: 3px;
+                            vertical-align: middle;
+                        }
+                        &.active{
+                            &:after{
+                                transform: rotate(180deg);
+                                -ms-transform: rotate(180deg);
+                                -moz-transform:rotate(180deg);
+                                -webkit-transform: rotate(180deg);
+                                -o-transform:rotate(180deg);
+                            }
+                        }
+                    }
+                }
+                /*选择时间*/
+                .formSelectS{
+                    font-size: 0;
+                    margin: 50px 0;
+                    section{
+                        &:last-child{
+                            margin-top: 36px;
+                        }
+                    }
+                    p.articleText{
+                        @include fontSize(14px,#333);
+                        width: 116px;
+                        text-align: right;
+                        margin-right: 40px;
+                    }
+                    .cont,p.articleText{
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    .cont{
+                        width: 388px;
+                        font-size: 0;
+                        b {
+                            display: inline-block;
+                            vertical-align: middle;
+                            @include fontSize(14px,#333);
+                            margin: 0 31px 0 12px;
+                            font-weight: normal;
+                        }
+                    }
+                    .selectCont{
+                        box-sizing: border-box;
+                        display: inline-block;
+                        vertical-align: middle;
+                        position: relative;
+                        width: 62px;
+                        height: 40px;
+                        border: 1px solid #C8C8C8;
+                        border-radius: 4px;
+                        line-height: 40px;
+                        cursor: pointer;
+                        &:first-child{
+                            width: 83px;
+                        }
+                        &:after{
+                            width: 0;
+                            height: 0;
+                            position: absolute;
+                            content: "";
+                            border-color: rgba(0,0,0,0.5) transparent transparent;
+                            border-style: solid;
+                            border-width: 6px;
+                            top: 17px;
+                            right: 13px;
+                        }
+                        span{
+                            padding-left: 12px;
+                            @include fontSize(15px,#000);
+                        }
+                        .selectOption{
+                            position: absolute;
+                            top: 38px;
+                            left: 0;
+                            width: 83px;
+                            @include fontSize(15px,#333);
+                            line-height: 40px;
+                            max-height: 281px;
+                            overflow: auto;
+                            background: #FFFFFF;
+                            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+                            border-radius: 4px;
+                            z-index: 2;
+                            /*CHROME滚动条样式*/
+                            @include scrollbar();
+                            li{
+                                text-align: center;
+                                cursor: pointer;
+                                position: relative;
+                                &:hover{
+                                    background: rgba(40,136,255,0.1);
+                                    border-radius: 2px;
+                                }
+                                &:active{
+                                    color: #fff;
+                                    background: #2888FF;
+                                    border-radius: 2px;
+                                    i{
+                                        display: inline-block;
+                                        vertical-align: middle;
+                                        background: url("/static/images/common/icon/dateSelectIcon.png") no-repeat;
+                                        background-size: contain;
+                                        width: 13px;
+                                        height: 10px;
+                                        position: absolute;
+                                        right:5px;
+                                        top: 50%;
+                                        margin-top: -5px;
+                                    }
+                                }
+                                &.active{
+                                    color: #fff;
+                                    background: #2888FF;
+                                    border-radius: 2px;
+                                    i{
+                                        display: inline-block;
+                                        vertical-align: middle;
+                                        background: url("/static/images/common/icon/dateSelectIcon.png") no-repeat;
+                                        background-size: contain;
+                                        width: 13px;
+                                        height: 10px;
+                                        position: absolute;
+                                        right:5px;
+                                        top: 50%;
+                                        margin-top: -5px;
+                                    }
+                                }
+                                &.gray{
+                                    color: #bbb;
+                                    cursor: default;
+                                    &:hover{
+                                        background: #fff;
+                                    }
+                                    &:active{
+                                        color: #bbb;
+                                        background: #fff;
+                                        i{
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .width83{
+                            width: 62px;
+                        }
+                    }
+                }
+            }
+            /*筛选条件的选中展示*/
+            .alEmr-screeningShow{
+                padding-top: 20px;
+                font-size: 0;
+                border-top: 1px solid #eee;
+                .showTips{
+                    display: inline-block;
+                    margin-right: 20px;
+                    @include fontSize(14px,#333);
+                    vertical-align: top;
+                    margin-top: 8px;
+                }
+                .activeTips{
+                    width: 1000px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    li{
+                        cursor: pointer;
+                        display: inline-block;
+                        height: 30px;
+                        line-height: 30px;
+                        @include fontSize(15px,#FFF);
+                        text-align: right;
+                        margin:0 10px 10px 0;
+                        padding:0 8px 0 10px;
+                        background: #2888FF;
+                        border-radius: 2px;
+                        i{
+                            display: inline-block;
+                            width: 10px;
+                            height: 10px;
+                            background: url("/static/images/common/icon/closeBtnWhite.png") no-repeat;
+                            background-size: contain;
+                            margin-left: 5px;
+                        }
+                        &:active{
+                            background: #F34B4B;
+                        }
+                    }
+                }
+            }
+            /*病历列表和归属按钮的展示*/
+            .alEmr-caseList{
+                position: relative;
+                margin: 20px 0 28px 0;
+                &.screening{//有筛选条件时修改上margin
+                    margin-top: 0;
+                }
+                &.noPage{
+                    margin-bottom: 60px;
+                }
+                .attrBtnBox{
+                    height: 38px;
+                    margin-bottom: 30px;
+                    .attrBtn{
+                        box-sizing: border-box;
+                        background: #EBF4FF;
+                        border: 1px solid #2888FF;
+                        border-radius: 2px;
+                        width: 88px;
+                        height: 38px;
+                        line-height: 38px;
+                        @include fontSize(14px,#2888FF);
+                        text-align: center;
+                        cursor: pointer;
+                        float: right;
+                    }
+                    .attrSureBtn{
+                        margin-right: 15px;
+                        position: relative;
+                        span{
+                            width: 176px;
+                            height: 48px;
+                            line-height: 50px;
+                            background: #FFFFFF;
+                            border: 1px solid rgba(98,111,140,0.15);
+                            box-shadow: 0 3px 8px 0 rgba(178,183,187,0.35);
+                            position: absolute;
+                            top: 52px;
+                            left: -47px;
+                            @include fontSize(14px,#333);
+                            &:before{
+                                content: "";
+                                display: inline-block;
+                                position: absolute;
+                                left: 50%;
+                                margin-left: -5px;
+                                height: 0;
+                                width: 0;
+                                top: -19px;
+                                border: 9px solid transparent;
+                                border-bottom: 9px solid rgba(98, 111, 140, 0.15);
+                            }
+                            &:after{
+                                content: "";
+                                display: inline-block;
+                                position: absolute;
+                                left: 50%;
+                                margin-left: -5px;
+                                height: 0;
+                                width: 0;
+                                top: -18px;
+                                border: 9px solid transparent;
+                                border-bottom: 9px solid #fff;
+                            }
+                        }
+                        &.margin0{
+                            margin-right: 0;
+                        }
+                    }
+                }
+                .caseItems{
+                    font-size: 0;
+                    aside{
+                        margin-bottom: 20px;
+                        p{
+                            display: inline-block;
+                            @include fontSize(14px,#222);
+                            font-weight: bold;
+                        }
+                        span{
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                        .commOrder{
+                            cursor: pointer;
+                            &:after{
+                                content: '';
+                                display: inline-block;
+                                background: url("/static/images/common/icon/orderBtn.png") no-repeat;
+                                background-size: contain;
+                                width: 10px;
+                                height: 12px;
+                                margin-left: 10px;
+                                vertical-align: middle;
+                            }
+                            &:last-child{
+                                &:after{
+                                    margin-left: 8px;
+                                }
+                            }
+                            &.orderOn{
+                                &:after{
+                                    background: url("/static/images/common/icon/orderOnBtn.png") no-repeat;
+                                }
+                            }
+                            &.orderUn{
+                                &:after{
+                                    background: url("/static/images/common/icon/orserUnBtn.png") no-repeat;
+                                }
+                            }
+                        }
+                        .orderOne{
+                            width: 133px;
+                        }
+                        .orderTwo{
+                            width: 79px;
+                        }
+                        .orderThree{
+                            width: 99px;
+                        }
+                        .orderFour{
+                            width: 201px;
+                        }
+                        .orderFive{
+                            width: 107px;
+                        }
+                        .orderSix{
+                            width: 178px;
+                        }
+                        .orderSeven{
+                            width: 128px;
+                        }
+                        .orderEight{
+                            width: 62px;
+                        }
+                        .orderNine{
+                            width: 105px;
+                        }
+                        .orderTen{
+                            width: 107px;
+                        }
+                    }
+                    ul{
+                        li{
+                            height: 46px;
+                            line-height: 46px;
+                            font-size: 0;
+                            border-top: 1px solid #EEEEEE;
+                            cursor: pointer;
+                            &:first-child{
+                                border-top: 1px solid #fff;
+                            }
+                            a{
+                                display: inline-block;
+                            }
+                            &:hover{
+                                background-color: #EBF4FF;
+                                border-top: 1px solid #EBF4FF;
+                            }
+                            span{
+                                display: inline-block;
+                                vertical-align: middle;
+                                @include fontSize(14px,#000);
+                                i{
+                                    display: inline-block;
+                                    margin-left: 4px;
+                                    width: 18px;
+                                    height: 18px;
+                                    background: url("/static/images/common/icon/teamIcon.png") no-repeat;
+                                    background-size: contain;
+                                    vertical-align: middle;
+                                    &.personal{
+                                        background: none;
+                                    }
+                                }
+                            }
+
+                            .listOne{
+                                width: 133px;
+                                span{
+                                    width: 56px;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+                            }
+                            .listTwo{
+                                width: 79px;
+                            }
+                            .listThree{
+                                width: 99px;
+                            }
+                            .listFour{
+                                width: 201px;
+                            }
+                            .listFive{
+                                width: 107px;
+                            }
+                            .listSix{
+                                width: 178px;
+                            }
+                            .listSeven{
+                                width: 128px;
+                            }
+                            .listEight{
+                                width: 62px;
+                            }
+                            .listNine{
+                                width: 105px;
+                            }
+                            .listTen{
+                                width: 107px;
+                            }
+                        }
+                    }
+                    &.editStatus{
+                        aside{
+                            //margin-bottom: 5px;
+                            font-size: 0;
+                            p{
+                                display: inline-block;
+                                @include fontSize(14px,#222);
+                                font-weight: bold;
+                            }
+                            span{
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+                            .commOrder{
+                                cursor: pointer;
+                                &:after{
+                                    content: '';
+                                    display: inline-block;
+                                    background: url("/static/images/common/icon/orderBtn.png") no-repeat;
+                                    background-size: contain;
+                                    width: 10px;
+                                    height: 12px;
+                                    margin-left: 10px;
+                                    vertical-align: middle;
+                                }
+                                &:last-child{
+                                    &:after{
+                                        margin-left: 8px;
+                                    }
+                                }
+                            }
+                            p{
+                                vertical-align: middle;
+                            }
+                            b.allBtn{
+                                box-sizing:border-box;
+                                cursor: pointer;
+                                display: inline-block;
+                                width: 20px;
+                                height: 20px;
+                                margin-right: 34px;
+                                border: 1px solid #C4C9CC;
+                                border-radius: 2px;
+                                vertical-align: middle;
+                                &.active{
+                                    background: url("/static/images/common/icon/multiBtnIcon_c01.png") no-repeat;
+                                    background-size: contain;
+                                    border: none;
+                                }
+                            }
+                            .orderOne{
+                                width: 131px;
+                            }
+                            .orderTwo{
+                                width: 73px;
+                            }
+                            .orderThree{
+                                width: 92px;
+                            }
+                            .orderFour{
+                                width: 195px;
+                            }
+                            .orderFive{
+                                width: 101px;
+                            }
+                            .orderSix{
+                                width: 171px;
+                            }
+                            .orderSeven{
+                                width: 121px;
+                            }
+                            .orderEight{
+                                width: 62px;
+                            }
+                            .orderNine{
+                                width: 98px;
+                            }
+                            .orderTen{
+                                width: 101px;
+                            }
+                        }
+
+                        ul{
+                            li{
+                                font-size: 0;
+                                cursor:default;
+                                b{
+                                    box-sizing: border-box;
+                                    cursor:pointer;
+                                    display: inline-block;
+                                    width: 20px;
+                                    height: 20px;
+                                    margin-right:34px;
+                                    border: 1px solid #C4C9CC;
+                                    border-radius: 2px;
+                                    vertical-align: middle;
+                                    background-color: #fff;
+                                    &.active{
+                                        background: url("/static/images/common/icon/multiBtnIcon_c01.png") no-repeat;
+                                        background-size: contain;
+                                        border: none;
+                                    }
+                                }
+                                .listOne{
+                                    width: 131px;
+                                }
+                                .listTwo{
+                                    width: 73px;
+                                }
+                                .listThree{
+                                    width: 92px;
+                                }
+                                .listFour{
+                                    width: 195px;
+                                }
+                                .listFive{
+                                    width: 101px;
+                                }
+                                .listSix{
+                                    width: 171px;
+                                }
+                                .listSeven{
+                                    width: 121px;
+                                }
+                                .listEight{
+                                    width: 62px;
+                                }
+                                .listNine{
+                                    width: 98px;
+                                }
+                                .listTen{
+                                    width: 101px;
+                                }
+                            }
+                        }
+                    }
+                    /*20181214changebyhj 增加删除状态样式*/
+                    &.deleteStatus{
+                        aside{
+                            //margin-bottom: 5px;
+                            font-size: 0;
+                            p{
+                                display: inline-block;
+                                @include fontSize(14px,#222);
+                                font-weight: bold;
+                            }
+                            span{
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+                            .commOrder{
+                                cursor: pointer;
+                                &:after{
+                                    content: '';
+                                    display: inline-block;
+                                    background: url("/static/images/common/icon/orderBtn.png") no-repeat;
+                                    background-size: contain;
+                                    width: 10px;
+                                    height: 12px;
+                                    margin-left: 10px;
+                                    vertical-align: middle;
+                                }
+                                &:last-child{
+                                    &:after{
+                                        margin-left: 8px;
+                                    }
+                                }
+                            }
+                            p{
+                                vertical-align: middle;
+                            }
+                            b.allBtn{
+                                box-sizing:border-box;
+                                display: inline-block;
+                                width: 20px;
+                                height: 20px;
+                                margin-right: 34px;
+                                border: none;
+                                vertical-align: middle;
+                                cursor: default;
+                                &.active{
+                                    background: none;
+                                    border: none;
+                                }
+                            }
+                            .orderOne{
+                                width: 131px;
+                            }
+                            .orderTwo{
+                                width: 73px;
+                            }
+                            .orderThree{
+                                width: 92px;
+                            }
+                            .orderFour{
+                                width: 195px;
+                            }
+                            .orderFive{
+                                width: 101px;
+                            }
+                            .orderSix{
+                                width: 171px;
+                            }
+                            .orderSeven{
+                                width: 121px;
+                            }
+                            .orderEight{
+                                width: 62px;
+                            }
+                            .orderNine{
+                                width: 98px;
+                            }
+                            .orderTen{
+                                width: 101px;
+                            }
+                        }
+
+                        ul{
+                            li{
+                                font-size: 0;
+                                cursor:default;
+                                b{
+                                    box-sizing: border-box;
+                                    cursor:pointer;
+                                    display: inline-block;
+                                    width: 20px;
+                                    height: 20px;
+                                    margin-right:34px;
+                                    border: 1px solid #C4C9CC;
+                                    border-radius: 50%;
+                                    vertical-align: middle;
+                                    background-color: #fff;
+                                    &.active{
+                                        background: url("/static/images/common/icon/onlyselect_c01.png") no-repeat;
+                                        background-size: contain;
+                                        border: none;
+                                    }
+                                }
+                                .listOne{
+                                    width: 131px;
+                                }
+                                .listTwo{
+                                    width: 73px;
+                                }
+                                .listThree{
+                                    width: 92px;
+                                }
+                                .listFour{
+                                    width: 195px;
+                                }
+                                .listFive{
+                                    width: 101px;
+                                }
+                                .listSix{
+                                    width: 171px;
+                                }
+                                .listSeven{
+                                    width: 121px;
+                                }
+                                .listEight{
+                                    width: 62px;
+                                }
+                                .listNine{
+                                    width: 98px;
+                                }
+                                .listTen{
+                                    width: 101px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width:1400px){
+            .alEmr-indexInner{
+                padding: 0 40px;
+            }
+        }
+    }
+
+    /*归属弹层*/
+    .alEmr-belongPop{
+        width: 100%;
+        height: 88px;
+        position: fixed;
+        bottom: 0;
+        z-index: 5;
+        background-color: rgba(0,0,0,0.6);
+        p{
+            @include fontSize(14px,#222);
+            width: 88px;
+            height: 38px;
+            background: #FFFFFF;
+            border-radius: 2px;
+            float: right;
+            line-height: 38px;
+            text-align: center;
+            margin-top: 25px;
+            cursor: pointer;
+            &.wid116{
+                width: 116px;
+            }
+        }
+        .firstBtn{
+            margin-right: 225px;
+        }
+        .secBtn{
+            margin-right: 10px;
+        }
+        .deleteTips{
+            position: absolute;
+            right:470px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size:14px;
+            color:rgba(255,255,255,1);
+            line-height:19px;
+            &.redTips{
+                color:rgba(255,128,128,1);
+            }
+            &.greenTips{
+                right:240px;
+                i{
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    margin-right:12px;
+                    vertical-align: middle;
+                    background: url("/static/images/common/icon/deleteSuc.png") no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+
+    /*归属成功提示遮罩层 */
+    .alEmr-sucPop{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 4;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.6);
+        .sucText{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            -moz-transform:translate(-50%,-50%);
+            -webkit-transform: translate(-50%,-50%);
+            -o-transform:translate(-50%,-50%);
+            background: #FFFFFF;
+            box-shadow: 0 2px 10px 0 rgba(26,47,85,0.16);
+            border-radius: 8px;
+            font-size:0;
+            text-align: center;
+            aside{
+                display: inline-block;
+                padding: 40px 46px 40px 35px;
+                font-size: 0;
+                i{
+                    display: inline-block;
+                    width: 28px;
+                    height: 28px;
+                    margin-right:10px;
+                    vertical-align: middle;
+                    background: url("/static/images/common/icon/completeIcon_01.png") no-repeat;
+                    background-size: contain;
+                    &.failTips{
+                        background: url("/static/images/common/icon/errorIcon_01.png") no-repeat;
+                    }
+                }
+                p{
+                    display: inline-block;
+                    vertical-align: middle;
+                    max-width: 381px;
+                    line-height: 20px;
+                    text-align: left;
+                    word-break: break-all;
+                    .textBelong,.textTeam{
+                        @include fontSize(14px,#333);
+                    }
+                    .textTeam{
+                        font-weight: bold;
+                    }
+                }
+            }
+
+        }
+    }
+
+    /*不能归属的病历弹层提示*/
+    .alEmr-noBelongCasePop{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.6);
+        z-index: 4;
+        .alEmr-noBelongCaseList{
+            background: #fff;
+            position: absolute;
+            width: 800px;
+            max-height: 600px;
+            h2{
+                @include fontSize(14px,#909090);
+                line-height: 14px;
+                padding: 40px 0;
+                text-align: center;
+                font-weight: normal;
+            }
+            .textBox{
+                width: 720px;
+                margin:0 auto;
+                overflow: hidden;
+                h3{
+                    @include fontSize(14px,#222);
+                    text-align: justify;
+                    line-height: 14px;
+                    margin-bottom: 30px;
+                }
+                ul{
+                    margin-bottom: 50px;
+                    max-height: 322px;
+                    overflow: auto;
+                    width: 740px;
+                    /*CHROME滚动条样式*/
+                    @include scrollbar();
+                    li{
+                        width: 720px;
+                        font-size: 0;
+                        height: 50px;
+                        line-height: 50px;
+                        border-bottom: 1px solid #EEEEEE;
+                        &:last-child{
+                            border: none;
+                        }
+                        span{
+                            @include fontSize(14px,#555);
+                            display: inline-block;
+                            white-space:nowrap;
+                            overflow:hidden;
+                            text-overflow:ellipsis;
+                        }
+                        .itemOne{
+                            width: 90px;
+                        }
+                        .itemTwo{
+                            width: 64px;
+                        }
+                        .itemThree{
+                            width: 75px;
+                        }
+                        .itemFour{
+                            width: 188px;
+                        }
+                        .itemFive{
+                            width: 189px;
+                        }
+                        .itemSix{
+                            width: 114px;
+                        }
+
+                    }
+                }
+            }
+            aside{
+                padding-bottom: 40px;
+                text-align: center;
+                p{
+                    display: inline-block;
+                    width: 120px;
+                    height: 50px;
+                    line-height: 50px;
+                    @include fontSize(14px,#FFF);
+                    cursor: pointer;
+                    border-radius: 4px;
+                    background: #2888FF;
+                    &.cancelBtn{
+                        background: #BBBBBB;
+                        margin-right: 20px;
+                    }
+                    &.gray{
+                        background: #BBBBBB;
+                        cursor: default;
+                    }
+                }
+            }
+        }
+    }
+
+    /*归属团队列表弹层提示*/
+    .alEmr-selectTeamPop{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.6);
+        z-index: 4;
+        .alEmr-selectTeamList{
+            width: 500px;
+            max-height: 600px;
+            background: #fff;
+            h2{
+                @include fontSize(14px,#909090);
+                line-height: 14px;
+                text-align: center;
+                margin-bottom: 40px;
+                padding-top: 30px;
+                font-weight: normal;
+            }
+            .textBox{
+                margin-left: 45px;
+                h3{
+                    @include fontSize(14px,#222);
+                    margin-bottom: 30px;
+                    text-align: justify;
+                    line-height: 14px;
+                }
+                ul{
+                    width: 445px;
+                    max-height: 353px;
+                    overflow: auto;
+                    font-size: 0;
+                    margin-bottom: 40px;
+                    /*CHROME滚动条样式*/
+                    @include scrollbar();
+                    li{
+                        font-size: 0;
+                        margin-bottom: 30px;
+                        cursor: pointer;
+                        &:last-child{
+                            margin-bottom:0;
+                        }
+                        i{
+                            box-sizing: border-box;
+                            display: inline-block;
+                            width: 24px;
+                            height: 24px;
+                            border: 1px solid #AAAAAA;
+                            border-radius: 50%;
+                            vertical-align: middle;
+                            margin-right: 10px;
+                        }
+                        span{
+                            width: 356px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            @include fontSize(14px,#333);
+                        }
+                        &.active{
+                            i{
+                                width: 24px;
+                                height: 24px;
+                                background: url("/static/images/common/icon/onlyselect_c01.png") no-repeat;
+                                background-size: contain;
+                                border: none;
+                            }
+                            span{
+                                color: #2888FF;
+                            }
+                        }
+                    }
+                }
+
+            }
+            aside{
+                text-align: center;
+                padding-bottom: 40px;
+                font-size: 0;
+                p{
+                    width: 96px;
+                    height: 40px;
+                    line-height: 40px;
+                    border-radius: 2px;
+                    display: inline-block;
+                    @include fontSize(14px,#fff);
+                    background: #2888FF;
+                    cursor: pointer;
+                    &.cancelBtn{
+                        background: #BBBBBB;
+                        margin-right: 20px;
+                    }
+                    &.gray{
+                        background: #BBBBBB;
+                        cursor: default;
+                    }
+                }
+            }
+        }
+    }
+    /*2秒弹窗样式*/
+    .popup{
+        padding: 20px;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: rgba(0,0,0,0.7);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 5px;
+    }
+}

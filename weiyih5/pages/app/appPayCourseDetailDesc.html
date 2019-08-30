@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>app内嵌详情页的课程简介部分</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta content="telephone=no,email=no" name="format-detection">
+	<script src="/js/third-party/flexible.js"></script>
+	<link rel="stylesheet" href="/css/pages/app/appPayCourseDetailDesc.css">
+	<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+	<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+	<script>
+	  function getpara(symbol) {
+		  var url = document.URL;
+		  var param = {};
+		  var str, item;
+		  if (url.lastIndexOf(symbol ? symbol : "?") > 0) {
+			  str = url.substring(url.lastIndexOf(symbol ? symbol : "?") + 1, url.length);
+			  var arr = str.split("&");
+			  for (var i = 0; i < arr.length; i++) {
+				  item = arr[i].split("=");
+				  param[item[0]] = decodeURIComponent(item[1]);
+			  }
+		  }
+		  return param;
+	  }
+
+	  var courseId, customerId;
+
+	  courseId = getpara().courseId;
+	  customerId = getpara().customerId;
+	  var param = {
+	  	courseId: courseId,
+		  customerId:customerId,
+		  attType:6
+	  };
+	  if (customerId) {
+		  param.customerId = customerId;
+	  }
+	  $.ajax({
+		  url: '/mcall/college/course/getCourseDescribe/',
+		  type: 'get',
+		  dataType: 'json',
+		  data: {
+			  paramJson: JSON.stringify(param)
+		  },
+		  success: function (data) {
+		  	if(data && data.responseObject && data.responseObject.responseData && data.responseObject.responseData.dataList){
+		  		if(data.responseObject.responseData.dataList.length>0){
+		  			var item = data.responseObject.responseData.dataList[0];
+						if(parseInt(item.courseDescribeType,10)===2){
+							if(item.attHtmlContent){
+								$("body").html(data.responseObject.responseData.dataList[0].attHtmlContent)
+						    }
+						}else if(parseInt(item.courseDescribeType,10)===1){
+							var imageStr = '';
+							for(var num = 0;num<item.coursePicList.length;num++){
+								imageStr+='<img src="'+item.coursePicList[num]+'" style="width: 100%;">';
+							}
+							$("body").html(imageStr)
+						}
+					}
+				}
+
+		  }
+	  })
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

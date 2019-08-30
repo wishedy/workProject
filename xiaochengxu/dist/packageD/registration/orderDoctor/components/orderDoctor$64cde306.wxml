@@ -1,0 +1,34 @@
+<import src="/components/OrderRule$60ed4c51" /><template name="orderDoctor$64cde306">
+  <view class="_section data-v-771221d8 doctor">
+    <view class="_section data-v-771221d8 doctor-title"><label class="_span data-v-771221d8 doctor-department"><label style="color: #888;" class="_span data-v-771221d8">科室:</label>{{department}}</label> <label class="_span data-v-771221d8 doctor-time"><label style="color: #888;" class="_span data-v-771221d8">日期:</label>{{date}}</label> <template data="{{...$root[$kk+'0'], $root}}" is="OrderRule$60ed4c51"></template></view>
+    <view class="_section data-v-771221d8 doctor-list">
+      <view class="_section data-v-771221d8 doctor-item" hidden="{{!(!noDoctor)}}" wx:key="idx" key="{{idx}}" wx:for="{{doctors}}" wx:for-index="idx" wx:for-item="doctor">
+        <view class="_div data-v-771221d8 doctor-name">
+          <image wx:if="{{doctor.avatarUrl}}" src="{{doctor.avatarUrl}}" class="_img data-v-771221d8"></image>
+          <image wx:else class="_img data-v-771221d8 default-img"></image>
+          <view class="_div data-v-771221d8 doctor-name-right"><label class="_span data-v-771221d8 name">{{doctor.doctorName}}</label> <label class="_span data-v-771221d8 title" wx:if="{{doctor.clinicType}}">{{doctor.clinicType}}</label></view>
+        </view>
+        <view class="_div data-v-771221d8 doctor-good"><label wx:if="{{doctor.expertArea}}" class="_span data-v-771221d8"><label class="_span data-v-771221d8">擅长：</label>{{doctor.expertArea}}</label><label wx:else class="_span data-v-771221d8"><label class="_span data-v-771221d8">擅长：</label>暂无数据</label></view>
+        <form class="_form data-v-771221d8 doctor-order-btn" bindsubmit="handleProxy" report-submit="true" data-eventid="{{'1-'+idx}}" data-comkey="{{$k}}"><button bindtap="handleProxy" data-eventid="{{'0-'+idx}}" data-comkey="{{$k}}" class="_button data-v-771221d8"><label class="_span data-v-771221d8">免费挂号 <image src="https://m.allinmed.cn/static/image/mp/index/1.5.0/order_no_go.png" class="_img data-v-771221d8"></image></label></button></form>
+      </view>
+      <view wx:if="{{noDoctor}}" class="_section data-v-771221d8 no-doctor-item">
+        <image src="https://m.allinmed.cn/static/image/mp/index/1.5.0/doctor_list_none.png" class="_img data-v-771221d8"></image> <label class="_span data-v-771221d8">如遇到页面错误，您可以向我们进行反馈</label>
+        <form class="_form data-v-771221d8 doctor-advice-btn" bindsubmit="handleProxy" report-submit="true" data-eventid="{{'3'}}" data-comkey="{{$k}}"><button bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_button data-v-771221d8">建议反馈</button></form>
+      </view>
+    </view>
+    <view class="_section data-v-771221d8 select-time" wx:if="{{showSelectTime}}">
+      <view class="_div data-v-771221d8 select-time-popup">
+        <view class="_div data-v-771221d8 select-time-title">
+          <image src="https://m.allinmed.cn/static/image/mp/index/1.5.0/select_time.png" class="_img data-v-771221d8"></image> <label class="_span data-v-771221d8">选择挂号时间</label>
+        </view>
+        <view class="_div data-v-771221d8 select-time-item"><label class="_span data-v-771221d8 time-am">上午</label> <label class="_span data-v-771221d8 time-am-hours">08:00-12:00</label>
+          <form class="_form data-v-771221d8 select-time-order" bindsubmit="handleProxy" report-submit="true" data-eventid="{{'6'}}" data-comkey="{{$k}}"><button type="button" class="_button data-v-771221d8 no-select" wx:if="{{isMoningOver}}" formType="submit">已结束</button> <button type="button" class="_button data-v-771221d8 no-select" wx:if="{{!isMoningOver && !moningHasNo}}" formType="submit">已约满</button> <button type="button" wx:if="{{!isMoningOver && moningHasNo && hasPhone}}" formType="submit" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}" class="_button data-v-771221d8">挂号 <image src="https://m.allinmed.cn/static/image/mp/index/1.5.0/order_no_go.png" class="_img data-v-771221d8"></image></button> <button wx:if="{{!isMoningOver && moningHasNo && !hasPhone}}" open-type="getPhoneNumber" bindgetphonenumber="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}" class="_button data-v-771221d8">挂号 <image src="https://m.allinmed.cn/static/image/mp/index/1.5.0/order_no_go.png" class="_img data-v-771221d8"></image></button></form>
+        </view>
+        <view class="_div data-v-771221d8 select-time-item pm"><label class="_span data-v-771221d8 time-am">下午</label> <label class="_span data-v-771221d8 time-am-hours">14:00-17:30</label>
+          <form class="_form data-v-771221d8 select-time-order" bindsubmit="handleProxy" report-submit="true" data-eventid="{{'9'}}" data-comkey="{{$k}}"><button type="button" class="_button data-v-771221d8 no-select" wx:if="{{isAfternoonOver}}" formType="submit">已结束</button> <button type="button" class="_button data-v-771221d8 no-select" wx:if="{{!isAfternoonOver && !afternoonHasNo}}" formType="submit">已约满</button> <button type="button" wx:if="{{!isAfternoonOver && afternoonHasNo && hasPhone}}" formType="submit" bindtap="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}" class="_button data-v-771221d8">挂号 <image src="https://m.allinmed.cn/static/image/mp/index/1.5.0/order_no_go.png" class="_img data-v-771221d8"></image></button> <button wx:if="{{!isAfternoonOver && afternoonHasNo && !hasPhone}}" open-type="getPhoneNumber" bindgetphonenumber="handleProxy" data-eventid="{{'8'}}" data-comkey="{{$k}}" class="_button data-v-771221d8">挂号 <image src="https://m.allinmed.cn/static/image/mp/index/1.5.0/order_no_go.png" class="_img data-v-771221d8"></image></button></form>
+        </view>
+      </view>
+      <view class="_div data-v-771221d8 select-time-close" bindtap="handleProxy" data-eventid="{{'10'}}" data-comkey="{{$k}}"></view>
+    </view>
+  </view>
+</template>

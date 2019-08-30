@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/discover/discover_subject.html';
+        }
+    </script>
+    <title>专题列表－唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="keywords" content="专题列表，全部专题，专题查找，唯医,allinmd">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/discover/discover_seminar.css">
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="197">
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-searchHead">
+            <header class="al-indexHeader" data-alcode-mod='401'>
+                <figure class="al-indexHeaderItem">
+                    <a href="javascript:history.back(-1);" class="ev_digHole" data-alcode='e45'>
+                        <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                    </a>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                    <h1>专题</h1>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                </figure>
+            </header>
+            <section class="subjectTab">
+                <ul data-alcode-mod='410' data-alcode-item-selector="li">
+                    <li class="active subjectTabItem" data-subjectType="00">全部</li>
+                    <li class="subjectTabItem" data-subjectType="1">基础骨病</li>
+                    <li class="subjectTabItem" data-subjectType="2">骨科技术</li>
+                    <li class="subjectTabItem" data-subjectType="3">精品栏目</li>
+                    <li class="subjectTabItem" data-subjectType="4">特色专题</li>
+                </ul>
+            </section>
+        </header>
+        <section class="al-searchInputBar" data-alcode-mod='411'>
+            <i class="icon-searchWhite"></i>
+            <input type="text" placeholder="请输入标签关键词" id="EV-SearchInput">
+            <a class="al-searchCancel" data-alcode='e47'>
+                <i class="icon-searchCancel"></i> 取消
+            </a>
+        </section>
+        <section class="searchResultsText">匹配结果</section>
+        <section class="al-discoverSeminarNone">
+        </section>
+        <section class="al-discoverSeminarInnerBox" data-subjectCntType="00" data-alcode-mod='412'>
+        </section>
+        <!-- 申请权威专家 -->
+        <section class="al-applicaptionMaster" data-alcode-mod='413'>
+            <i class="icon-aplMaster"></i>
+            <p>没有找到喜欢的专题？</p>
+            <a href="/pages/discover/discover_sendMsg.html" data-alcode='e48'>告诉我们</a>
+        </section>
+    </section>
+    <!-- 分享按钮 -->
+    <section class="al-scrollShareBtn" data-alcode-mod='406'>
+        <i class="icon-scrollShare"  data-alcode="e46"></i>分享
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+    <script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/scene/discover/find_subject.js"></script>
+
+</body>
+
+</html>

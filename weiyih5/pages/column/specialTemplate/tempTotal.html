@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>专题页面</title>
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/column/specialTemplate/specialTemplate.css">
+    <link rel="stylesheet" href="/css/column/specialTemplate/questionnaire.css">
+    <link rel="stylesheet" href="/css/column/specialTemplate/newsModule.css"/>
+    <link rel="stylesheet" href="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.css">
+    <link rel="stylesheet" href="/js/third-party/photoswipe/photoswipe-master/dist/default-skin/default-skin-new.css">
+    <script src="/js/third-party/flexible.js"></script>
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            var sharePos = location.search;
+            window.location.href="${showPagePath}"+sharePos;
+        }
+    </script>
+    <style type="text/css">
+        .textColorYesOne{color:blue;}
+        .textColorNoOne{color:#333;}
+        .textColorYesTwo{color:#658abc}
+        .textColorNoTwo{color:#555}
+        .bgColorYesOne{background:#257833}
+        .bgColorNoOne{background:#fff}
+        .bgColorYesTwo{background:#fff}
+        .bgColorNoTwo{background:#fff}
+    </style>
+
+</head>
+
+<body>
+    <input type='hidden' value=''  id='shareLoc'/>
+    <input type='hidden' value='1480647316221'  id='themeId'/>
+    <!--banner和nav-->
+    <section class="spTemp_total_up">
+        <header class="spTemp_total_banner">
+            <figure class="spTemp_total_bannerImg">
+                <img src="//img50.allinmd.cn/column/SpTemplate/banner.png">
+            </figure>
+        </header>
+        <section class="spTemp_total_nav textColorNoOne bgColorNoOne">
+            <ul class="spTemp_total_nav_list">
+                <li><span class="textColorYesOne" data-type="1" data-themeMenuId="1480646716047" data-layoutId="1479287627802" data-href="/pages/column/specialTemplate/listItem1.html" data-navText='哈哈'>哈哈</span></li>
+                <li><span data-type="1" data-themeMenuId="1480986893031" data-layoutId="1479287627802" data-href="/pages/column/specialTemplate/listItem2.html" data-navText='惊声尖叫'>惊声尖叫</span></li>
+                <li class="nav_cut_hasTwo nav_cut_hasTwo_up">
+                    <!--<span  data-type="1" data-themeMenuId="1479293922635" data-layoutId="1478066014194" data-href="/pages/column/specialTemplate/listItem2.html">吼吼吼吼</span>-->
+                    <span>吼吼吼吼</span>
+                    <section class="spTemp_total_nav_lists_two">
+                        <i class="spTemp_total_nav_lists_two_topArrow"></i>
+                        <dl class="bgColorNoTwo">
+                            <dd data-type="1" data-href="/pages/column/specialTemplate/tempMainModel_s5.html" class="textColorYesTwo">吼吼吼吼</dd>
+                            <dd data-type="2" data-href="https://www.baidu.com">视频</dd>
+                            <dd data-type="1" data-href="/pages/column/specialTemplate/tempMainModel_s7.html">文理</dd>
+                            <dd data-type="1" data-href="/pages/column/specialTemplate/tempMainModel_s8.html">话题</dd>
+                        </dl>
+                    </section>
+                </li>
+                <!--<li><span>要机会呢</span></li>-->
+                <!--<li>-->
+                    <!--<span>全部</span>-->
+                <!--</li>-->
+                <!--<li><span>嘻嘻</span></li>-->
+                <!--<li><span>及哦啊哦啊</span></li>-->
+                <!--<li><span>开始从昆明</span></li>-->
+                <!--<li><span>卡兹克紧急</span></li>-->
+                <!--<li><span>及时拉斯阿里</span></li>-->
+            </ul>
+            <button class="spTemp_nav_more spTemp_nav_more_spread"></button>
+        </section>
+    </section>
+    <section class="spTemp_total_down">
+
+    </section>
+    <section class="al-scrollShareBtn Ev-ShareBtn">
+        <i class="icon-scrollShare"></i>分享
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm.ajax.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/jweixin-1.0.0.js"></script>
+    <script src="/js/comm/WeixinJSApi.js"></script>
+    <script src="/js/comm/Weixin_share.js"></script>
+    <script src="/js/comm/shareAll.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/column/specialTemplate/iscroll.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.js"></script>
+    <script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe-ui-default.js"></script>
+    <script src="/js/third-party/jquery.plugin.picshow.js"></script>
+    <script src="/js/third-party/jquery.plugin.picshow-comment.js"></script>
+    <script src="/js/social_intercourse/share.js"></script>
+
+    <script src="/js/column/specialTemplate/column.specialTemplate.comn.js"></script>
+    <script src="/js/column/specialTemplate/specialTemplate.js"></script>
+    <script src="/js/column/specialTemplate/questionnaire.js"></script>
+</body>
+
+</html>
+<script>
+    $(function(){
+        $.ajax({
+            type:"post",
+            url:"//m.allinmd.cn/mcall/log/customer/browse/createBrowse/",
+            data:{paramJson:$.toJSON({browseUrl:window.location.href,browseType:34,opDesc:"专题页面"})},
+            success:function(){}
+        });
+    })
+</script>

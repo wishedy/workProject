@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>用户权限</title>
+    <link href="/css/common/base.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/module/user/module.user.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/module/user/module.user-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/module/auth/module.auth.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/module/indexLogin/indexLogin.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/module/find-password-v2/module.find-password-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/ui-card/plugin.ui-card.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <script>
+        var debugMode = 1;
+    </script>
+    <script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/lib/jquery/jquery.cookie.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/comm.customer.js"></script>
+    <script src="/js/comm/comm.cutArray.js"></script>
+    <script src="/js/comm/comm.checkAddress.js"></script>
+
+    <script src="/js/module/user/module.user.js"></script>
+    <script src="/js/module/user/module.user-v2.js"></script>
+    <script src="/js/module/auth/module.auth.js"></script>
+    <script src="/js/module/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+    <script src="/js/module/user/operator_auth.js"></script>
+    <script src="/js/module/indexLogin_v2/module.indexLogin_v2.js"></script>
+    <script src="/js/module/find-password-v2/module.find-password-v2.js"></script>
+    <script src="/js/plugins/ui-card/plugin.ui-card.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-con.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+    <script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+    <script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+    <script src="/js/comm/comm.file.js"></script>
+    <script src="/js/comm/comm.lightBox.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/scene/scene.header.js"></script>
+    <style>
+        body {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .test {
+            width: 100px;
+            height: 40px;
+        }
+
+        #table {
+            width: 95%;
+            clear: both;
+        }
+
+        #table .row {
+            clear: both;
+            margin-top: 1px;
+            padding: 3px;
+        }
+
+        #table .row :after {
+            clear: both;
+        }
+
+        #table .row .td {
+            width: 3%;
+            padding: 2px;
+            float: left;
+            margin: 1px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #table .row .need {
+            background: green;
+            color: white;
+
+        }
+
+        #table .row .not-need {
+            background: lawngreen;
+            color: green;
+        }
+
+        .left {
+            width: 5%;
+            background: #e0dfe3;
+            float: left;
+        }
+
+        .right {
+            width: 70%;
+            background: #f1f1e3;
+            float: left;
+        }
+    </style>
+</head>
+
+<body class="reltive">
+<div id="table">
+    <div class="left">角色</div>
+    <div class="right">Action</div>
+    <div class="clear"></div>
+</div>
+<script>
+    $(function () {
+
+
+        var data = user.privDataUtils.privData;
+        /*生成表格*/
+        function buildTable() {
+            var table = $("#table");
+
+            for (var key in data.customeRole) {
+
+                buildRow(key).insertBefore(table.find(".clear"));
+
+            }
+        }
+
+        /*生成一行*/
+        function buildRow(row) {
+            var tr = $('<div class="row"></div>');
+            var actionArr = null;
+            var privStr = data.customeRole[row].roleOps;
+            var privArr = privStr.split(",");
+            tr.append("<div class='left'>" + row + "</div><div class='right'></div>");
+            var right = tr.find(".right");
+            for (var i = 0; i < privArr.length; i++) {
+                sceneArr = privArr[i].split("-");
+                right.append("<div " +
+                        "class='td " + (sceneArr[1] == "1" ? "need" : "not-need") + "' " +
+                        "onclick='simulate(" + sceneArr[0] + "," + row + ")'>"
+                        + sceneArr[0] + ":" + (sceneArr[1] == 1 ? "√" : "X") +
+                        "</div>");
+            }
+            return tr;
+        }
+
+
+        buildTable();
+    });
+    /**
+     * 模拟测试执行某个方法
+     * @param action  要执行的方法
+     * @param customerRole 当前用户角色
+     */
+    function simulate(scene, customerRole) {
+        user.login({
+            callback: function () {
+                alert("较验成功");
+            },
+            scene: scene,
+            customerRole: customerRole         // TODO:不能以这种方式设置 不安全，需改进
+        })
+    }
+
+
+    function logout() {
+        user.logout(function () {
+            alert("已退出")
+        });
+    }
+</script>
+<hr>
+<input type="button" value="退出" onclick="logout()" id="newBtn3" class="test"/>
+
+</body>
+</html>

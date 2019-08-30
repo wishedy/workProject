@@ -1,0 +1,42 @@
+<import src="/components/miniProgram$5452e122" />
+<import src="/components/recureJournal$16132301" />
+<import src="/components/ensure$5e95f728" />
+<import src="/components/BlackList$219144df" />
+<import src="/components/customizedTabbar$03f1cf26" />
+<import src="/components/authorization$8245c8b6" /><template name="mIndex$c4f730ce">
+  <view class="_section data-v-1a68a634 mHome">
+    <view class="_section data-v-1a68a634 Home">
+      <view class="_section data-v-1a68a634 searchDocOut">
+        <view class="_section data-v-1a68a634 searchDoc" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">搜索医生、康复日记</view>
+      </view> <button class="_button data-v-1a68a634 registered" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+        <image src="https://m1.allinmed.cn/static/image/mp/index/1.5.0/order_door.png" class="_img data-v-1a68a634"></image>
+      </button>
+      <view class="_section data-v-1a68a634 indexBox"><button class="_button data-v-1a68a634 halfPart1" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+          <image src="https://m1.allinmed.cn/static/image/mp/index/1.5.0/index_found_doctor.png" class="_img data-v-1a68a634"></image>
+        </button> <button class="_button data-v-1a68a634 halfPart2" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">
+          <image src="https://m1.allinmed.cn/static/image/mp/index/1.5.0/index_quick_visits.png" class="_img data-v-1a68a634"></image>
+        </button></view>
+      <view class="_section data-v-1a68a634 AIminiProgram" wx:if="{{AIminiProgramStatus}}" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">
+        <image src="https://m.allinmed.cn/static/image/mp/index/bannerNew.jpg" alt class="_img data-v-1a68a634"></image> <template data="{{...$root[$kk+'0'], $root}}" is="miniProgram$5452e122"></template>
+      </view>
+      <view class="_section data-v-1a68a634 health-card" wx:if="{{isCoverCity&&!hasCard}}" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}"></view>
+      <view class="_section data-v-1a68a634 middle-box"></view>
+      <view class="_figure data-v-1a68a634 history">
+        <view class="_header data-v-1a68a634">
+          <form action bindsubmit="handleProxy" report-submit="true" data-eventid="{{'7'}}" data-comkey="{{$k}}" class="_form data-v-1a68a634">
+            <view class="_h3 data-v-1a68a634 journalTitle">康复日记</view> <button class="_button data-v-1a68a634 addJournal" open-type="getUserInfo" type="submit" formType="submit" bindgetuserinfo="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}">
+              <image class="_img data-v-1a68a634 addIcon" src="https://m1.allinmed.cn/static/image/mp/index/1.6.0/write.png"></image> <label class="_span data-v-1a68a634 addText">我也要写</label>
+            </button>
+          </form>
+        </view>
+        <view class="_ul data-v-1a68a634 journalClassifyList">
+          <view class="_li data-v-1a68a634 journalClassifyItem {{[partSelected == -1 ? 'selected' : '']}}" bindtap="handleProxy" data-eventid="{{'8'}}" data-comkey="{{$k}}"> 全部 </view>
+          <view class="_li data-v-1a68a634 journalClassifyItem {{[partSelected == index ? 'selected' : '']}}" bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'9-'+index}}" data-comkey="{{$k}}" wx:for="{{partList}}" wx:for-index="index" wx:for-item="item">
+            {{item.propertyName}}
+          </view>
+        </view> <template bindFromChild="handleProxy" bindclickCallback="handleProxy" data-eventid="{{'10'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="recureJournal$16132301"></template>
+        <view class="_section data-v-1a68a634 extraLine" hidden="{{!(recureJournalList.length>0)}}">{{toBottom?'正在加载..':'--到底了--'}}</view>
+      </view> <template wx:if="{{ensureShow}}" bindensureClickEvent="handleProxy" data-eventid="{{'11'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="ensure$5e95f728"></template> <template data="{{...$root[$kk+'3'], $root}}" is="BlackList$219144df"></template>
+    </view> <template bindFromChild="handleProxy" bindgoToMessage="handleProxy" data-eventid="{{'12'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'4'], $root}}" is="customizedTabbar$03f1cf26"></template> <template data="{{...$root[$kk+'5'], $root}}" is="authorization$8245c8b6"></template>
+  </view>
+</template>

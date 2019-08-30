@@ -1,0 +1,306 @@
+@charset "UTF-8";
+//终端页评论区组件
+//Created by qiangkailiang on 2016/10/21
+.al-terminalCommentContent {
+    h2 {
+        height: rem(90px);
+        line-height: rem(90px);
+    }
+    .al-terminalSortChange {
+        float: right;
+        margin-top: rem(8px);
+        margin-right: rem(30px);
+        font-size: 0;
+        border-radius: rem(5px);
+
+        &Item {
+            padding: rem(14px) rem(20px);
+            background-color: #f4f4f4;
+            @include font-dpr(12px);
+            color: $smallTextColor;
+            transition: all 0.2s linear;
+            outline:none;
+        }
+        .active {
+            color: #626f8c;
+            background-color: #fff;
+            border: rem(1px) solid #cfcfcf;
+            box-sizing: border-box;
+            box-shadow: 5px 3px 3px #dedede;
+            border-radius: rem(5px);
+        }
+    }
+    .al-checkComment{
+        color: #ff9224;
+        @include font-dpr(12px);
+        margin-top: rem(10px);
+        display: block;
+        float: left;
+    }
+}
+
+.al-terminalCommentItem {
+    padding: rem(40px) rem(30px);
+    @include clearfix();
+    border-bottom: 1px solid $innerBorderColor;
+}
+
+.al-terminalCommentItemHeader {
+    margin-bottom: rem(30px);
+    display: table;
+    width: 100%;
+    .al-terminalCommentItemImg {
+        display: table-cell;
+        @include circle(rem(70px), transparent);
+        vertical-align: top;
+        position: relative;
+        a {
+            display: block;
+            @include circle(rem(70px), transparent);
+            img {
+                width: 100%;
+                height: 100%;
+                vertical-align: top;
+                border-radius: 50%;
+            }
+        }
+    }
+    
+    .al-terminalCommentItemHeadMsg {
+        padding-left: rem(16px);
+        position: relative;
+        vertical-align: top;
+        & > h3 {
+            font-weight: normal;
+            color: #222;
+            @include font-dpr(13px);
+            margin-bottom: rem(10px);
+            .lz {
+                color: #ff9224;
+                @include font-dpr(12px);
+                border: 1px solid #ff9224;
+                border-radius: rem(5px);
+                padding: rem(5px) rem(10px);
+                display: inline-block;
+                vertical-align: initial;
+                margin-left: rem(16px);
+            }
+        }
+        & > p {
+            @include font-dpr(12px);
+            color: $smallTextColor;
+        }
+        .al-terminalCommentTime {
+            @include font-dpr(12px);
+            color: $smallTextColor;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+}
+
+.al-terminalCommentContent {
+    .content {
+        @include font-dpr(15px);
+        color: #333;
+        line-height: 1.5;
+        margin-bottom: rem(30px);
+        word-break: break-all;
+    }
+    .quote {
+        @include font-dpr(14px);
+        color: #555;
+        line-height: 1.5;
+        margin: rem(30px) 0;
+        a {
+            @include font-dpr(14px);
+            color: #626f8c;
+        }
+    }
+    .quoteComment {
+        border-left: 4px solid #f4f4f4;
+        padding-left: rem(20px);
+        color: #808080;
+        @include font-dpr(14px);
+        line-height: 1.5;
+        margin-bottom: rem(37px);
+        word-break: break-all;
+    }
+    .al-terminalCommentImgBox {
+        margin-top: rem(30px);
+        //width: rem(510px);
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+    .al-terminalCommentImgOne {
+        .al-terminalCommentImg {
+            width: rem(400px);
+        }
+    }
+    .al-terminalCommentImgMore {
+        font-size: 0;
+        .al-terminalCommentImg {
+            display: inline-block;
+            box-sizing: border-box;
+            margin-right: rem(10px);
+            margin-bottom: rem(10px);
+            vertical-align: top;
+            position: relative;
+            @include square(rem(170px));
+        }
+    }
+    .alImgHasMore{
+        position:absolute;
+        width:100%;
+        height:100%;
+        text-align: center;
+        line-height: rem(170px);
+        color:#fff;
+        background:rgb(0,0,0);
+        opacity: 0.5;
+        font-size:rem(24px);
+        top:0;
+        left:0;
+    }
+    .detail-publisher{
+        color:#ff9224;
+        padding:rem(2px) rem(6px);
+        margin-left:rem(16px);
+        border-radius:rem(5px);
+        font-size:rem(18px);
+        border:1px solid #ff9224;
+        display: inline-block;
+        vertical-align: baseline;
+        top:rem(-8px);
+    }
+    .al-terminalImgVideo {
+        width: rem(350px);
+        position: relative;
+        box-sizing:border-box;
+        .al-terminalImg {
+            img {
+                width: 100%;
+                height: 100%;
+                vertical-align: top;
+            }
+        }
+        & + .al-terminalCommentImgBox {
+            margin-top: rem(10px);
+        }
+        .commentVideo{
+            width:rem(350px);
+            position: absolute;
+            top:0;
+            left:0;
+            height: 100%;
+        }
+    }
+}
+.al-terminalCommentSnsMsg {
+    float: right;
+    .al-terminalCommentSnsItem {
+        padding: rem(5px) rem(20px);
+        border: 1px solid #d0d4dc;
+        color: #626f8c;
+        @include font-dpr(12px);
+        border-radius: rem(50px);
+        margin-left:rem(10px);
+        outline:none;
+        display:inline-block;
+//        height: rem(40px);
+//        line-height: rem(40px);
+        span {
+            font-style: normal;
+            vertical-align: middle;
+        }
+        .more {
+
+            display: inline-block;
+//            margin: 0 0.13333rem;
+            background: url(//img50.allinmd.cn/detail/CombinedShape.png) no-repeat;
+            width: 0.33333rem;
+            height: 0.06667rem;
+            background-size: contain;
+           /* img{
+               width: rem(25px);
+                height: rem(5px);
+            }*/
+        }
+    }
+}
+
+.al-terminalFinish {
+    padding-top: rem(50px);
+//    padding-bottom: rem(240px);
+    text-align: center;
+    @include font-dpr(13px);
+    color: #626f8c;
+    span {
+        padding: 0 rem(12px);
+    }
+}
+
+.al-terminalNoComment {
+    color: #909090;
+    background-color: #fff;
+    padding: rem(110px) 0;
+    text-align: center;
+    @include font-dpr(16px)
+}
+
+figure.ev-sureBtn a{
+    color: #eb4340;
+}
+
+
+
+
+.joinBoneClass{
+    height: rem(111px);
+    line-height: rem(111px);
+    font-size: rem(28px);
+    padding-left:rem(21px);
+    color: #333333;
+    background: #fff;
+    margin-top: rem(16px);
+    .join{
+        display: inline-block;
+        width: rem(128px);
+        height: rem(42px);
+        text-align: center;
+        line-height: rem(42px);
+        border-radius: 100px;
+        font-size: rem(24px);
+        color: #FFFFFF;
+        background: #2899E6;
+        margin-left: rem(15px);
+    }
+}
+
+
+.videoColumn{
+    font-size: rem(30px);
+    color: #666;
+    margin-top: rem(30px);
+    line-height: rem(45px);
+    a{
+        color: #626f8c;
+    }
+}
+
+//唯医3.7终端页广告样式处理
+.al-advertisement-video{
+    background: #fff;
+    height: rem(144px);
+    padding: rem(22px) rem(30px) rem(20px) rem(30px);
+    .al-advertisement-picture{
+        width: rem(690px);
+        height: rem(144px);
+        display: block;
+        background: #0a77e5;
+    }
+}

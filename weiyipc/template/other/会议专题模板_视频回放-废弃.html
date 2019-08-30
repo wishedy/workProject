@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:gs="http://www.gensee.com/gsml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${conference_sub.conSubName}</title>
+<meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<link rel="dns-prefetch" href="//comm.allinmd.cn">
+	<link rel="dns-prefetch" href="//modules.allinmd.cn">
+	<link rel="dns-prefetch" href="//plugins.allinmd.cn">
+	<link rel="dns-prefetch" href="//other.allinmd.cn">
+	<link rel="dns-prefetch" href="//scene.allinmd.cn">
+	<link rel="dns-prefetch" href="//img00.allinmd.cn">
+	<link rel="dns-prefetch" href="//img10.allinmd.cn">
+	<link rel="dns-prefetch" href="//img99.allinmd.cn">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+	<link href="//comm.allinmd.cn/base.css" rel="stylesheet" type="text/css"/>
+    <link href="//modules.allinmd.cn/lib.css" rel="stylesheet" type="text/css"/>
+
+<link href="//other.allinmd.cn/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css" />
+<link href="//other.allinmd.cn/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css" />
+<link href="http://goodservice-zd.gensee.com/webcast/static/new-player/css/jquery-ui-1.10.3.custom.gs.min.css"  type="text/css" rel="stylesheet">
+<script src="http://goodservice-zd.gensee.com/webcast/static/sdk/js/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="//comm.allinmd.cn/base.js"></script>
+<script src="//modules.allinmd.cn/lib.js"></script>
+<script src="//other.allinmd.cn/jquery_lazyload/jquery.lazyload.js" type="text/javascript"></script>
+<script src="//other.allinmd.cn/jquery_lazyload/jquery.scrollstop.js" type="text/javascript"></script>
+<script src="//other.allinmd.cn/util/fragment-util.js"  type="text/javascript"></script>
+<script src="//other.allinmd.cn/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="//other.allinmd.cn/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="//other.allinmd.cn/jquery-validate/jquery.validate.js"></script>
+<script src="//other.allinmd.cn/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src="//other.allinmd.cn/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="//other.allinmd.cn/uploadReplace/uploadReplace.js"></script>
+<script type="text/javascript" src="http://goodservice-zd.gensee.com/webcast/static/sdk/js/gssdk.js"></script>
+<script type="text/javascript" src="http://goodservice-zd.gensee.com/webcast/static/sdk/js/gssdk.js"></script>
+<script type="text/javascript" src="http://goodservice-zd.gensee.com/webcast/static/jquery-ui/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="http://goodservice-zd.gensee.com/webcast/static/new-player/js/json2.js"></script>
+<script type="text/javascript" src="http://goodservice-zd.gensee.com/webcast/static/new-player/js/lang/lang.zh_CN.js"></script>
+<script type="text/javascript" src="http://goodservice-zd.gensee.com/webcast/static/new-player/js/new-player.base.js"></script>
+<script type="text/javascript" src="http://goodservice-zd.gensee.com/webcast/static/new-player/js/new-player.common.js"></script>
+<script type="text/javascript" src="http://goodservice-zd.gensee.com/webcast/static/new-player/js/new-player.chat.js"></script>
+<script type="text/javascript" src="http://goodservice-zd.gensee.com/webcast/static/new-player/js/new-player.live.js"></script>
+<script type="text/javascript" src="http://goodservice-zd.gensee.com/webcast/static/new-player/js/webplayer.live.js"></script>
+<script type="text/javascript" src="http://goodservice-zd.gensee.com/webcast/static/new-player/js/webplayer.common.js"></script>
+<style>
+body{height:auto; overflow:normal;}
+#widget-qa{
+	border-top: 1px solid #000;
+    height: 393px;
+    left: 0px !important;
+    padding: 10px;
+    top: 0px !important;
+    visibility: visible;
+    width:auto !important;
+	z-index:2 !important;
+}
+.state-tips{
+	display:none !important;
+}
+</style>
+
+<script type="text/javascript">
+$(function(){
+	initParams();
+});
+
+function initParams(){
+	var viewer = playVideo.nameAjax();
+	User.nickname = Util.trim(viewer.nickname?viewer.nickname:playVideo.random.nickname);
+	User.id = viewer.id?viewer.id:playVideo.random.id;
+}
+
+if("false"=="true"){
+    window.webPriChat = false;
+}
+</script>
+</head>
+
+<body>
+	<!--top start-->
+<!--#include virtual="/includes/header.jsp"-->
+	<!--top End--> 
+
+<input id="conId" type="hidden" value="${conference_sub.conId?c}" />
+
+
+
+ <#list conference_agenda_list as list>
+            	<#assign data_id_first = list.playBackId> 	
+            	<#break>       
+	     </#list>
+
+<div class="live_main">
+  <div class="live_top">
+    <div class="live_going">
+      <div class="live_content"> 
+        <div>
+            <div class="live_going" id="evColumn" data-naviId="1">${conference_sub.conSubName}</div>
+            <div class="live_wait">
+                <ul id="evMainNavi">
+               		  <#list conference_sub_list as list>
+                         <#if (list_index>0 && list_index < 6)>
+                   		 <li data-naviId="${list.id}">${list.conSubName}</li>
+                   		 </#if>
+                     </#list>
+                    <div class="clear"></div>
+                </ul>
+                <#list conference_sub_list as list>
+                         <#if (list_index>0 && list_index < 6)>
+                   		 <div id="evDown" class="zk_sq">更多</div>
+                   		 </#if>
+                 </#list>
+            </div>
+            <div class="clear"></div>
+        </div><div class="clear"></div>
+        <div class="live_list" >
+            <ul id="evNaviList">
+                    <#list conference_sub_list as list>
+                         <#if (list_index > 6 && list_index < 20)>
+                   		 <li data-naviId="${list.id}">${list.conSubName}</li>
+                   		 </#if>
+                     </#list>
+                <div class="clear"></div>
+            </ul><div class="clear"></div>
+        </div><div class="clear"></div>
+    </div><div class="clear"></div>
+      <div class="live_left">
+        <div class="live_height"> 
+          <!--video s-->
+          <div class="document3">
+            <div id="ifr-2"  style="width:100%;height: 100%;"><!--id="gsVideo" -->
+              <gs:video-vod id="videoComponent" site="allinmd.gensee.com" class="gsVideo" ctx="webcast" ownerid="${data_id_first}" uid="1231231231233" uname="usl" authcode="${conference_sub.authcode?default('')}"/>
+            </div>
+            <div class="overlay"></div>
+          </div>
+          <!--video e--> 
+        </div>
+        <div class="people">
+          <div class="people_num">同步观看: <span id="peopleNum">0</span>人</div>
+          <div class="qiehuan" id="changeWindows">
+            <div class="qh_img"></div>
+            <div class="qh_text" >切换</div>
+          </div>
+        </div>
+      </div>
+      <div class="live_right">
+        <div class="live_r_t">
+          <div class="live_caos"> 
+            <!--doc s-->
+            <div class="video3">
+              <div id="ifr-1" style="width:100%;height: 100%;">
+                <gs:doc id="docComponent" site="allinmd.gensee.com" class="gsVideo" ctx="webcast" ownerid="${data_id_first}" uid="1231231231233" uname="usl" authcode="${conference_sub.authcode?default('')}"/>
+              </div>
+              <div class="overlay"></div>
+            </div>
+            <!--doc e--> 
+          </div>
+         <!-- Area-->
+	<div class="main" style="background-color: #1d1d1d; height:320px; ">
+		<!--QA Area-->
+		<div id="widget-qa" class="qa-container" style="  visibility: visible; width: 300px !important; height: 300px !important; left: 0 !important; top: 0 !important; padding:10px; border-top:#000 solid 1px;">
+	      <div class="my-qa"><span style="color:#fff;">互动问答</span></div>
+			<div class="qa-main">
+				
+				<div id="qa-list" class="qa-list" style="height:240px !important;"><ul></ul></div>
+		
+			</div>
+            <div class="ask-input">
+						<div class="text-area">
+							<input id="qa-text-area" placeholder="我们在处理你的请求时遇到了问题？"></input>
+						</div>
+						<div class="qa-send-btn-wrap">
+							<input id="qa-submit" style="background:url(http://img00.allinmd.cn/conference/send.png);width:45px;height:40px;border:none;" value="" type="submit">
+						</div>
+					</div>
+		</div>
+		<!--QA Area End-->
+		</div>
+
+<!--QA Area End-->
+        </div>
+        
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+   
+  
+  <input id="liveType" type="hidden" value="trauma" />
+  <div class="live_bottom">
+    <div class="live_b_cont">
+      <div class="live_b_left">
+		    <div class="live_time_day">
+          <ul class="time_title">
+            <#list conference_date_list as list>
+		          <li class="on">${list[5..6]}月${list[8..9]}日<div class="biao_position"></div></li>
+		          <#if (list_has_next)>
+                <div class="line_rc">|</div>
+              </#if>
+		        </#list>
+          </ul>
+        </div>  
+      
+        <div class="richeng">
+           <ul>
+             <#list conference_agenda_list as list>
+               <#assign aa="">
+		           <#if conference_date_list[0]==list.startTime[0..9] && aa!="1">
+                     <#assign aa="1">
+               </#if>
+               <#if aa!="">
+                 <li>
+                   <div class="biao_top"></div>
+                   <div class="position_time">${list.startTime[11..15]}</div>
+                   <a href="#" data-id="${list.playBackId}"><span style="color:#266ba2; margin:0 13px;">${list.lecturer}</span>${list.conName}</a>
+                 </li>
+               </#if>
+    	       </#list>     
+           </ul>
+          
+           <ul style="display:none;">
+             <#list conference_agenda_list as list>
+               <#assign aa="">
+		           <#if conference_date_list[1]==list.startTime[0..9] && aa!="1">
+                 <#assign aa="1">
+               </#if>
+               <#if aa!="">
+                 <li>
+                   <div class="biao_top"></div>
+                   <div class="position_time">${list.startTime[11..15]}</div>
+                   <a href="#" data-id="${list.playBackId}"><span style="color:#266ba2; margin:0 13px;">${list.lecturer}</span>${list.conName}</a>
+                 </li>
+               </#if>
+    	       </#list>
+           </ul>
+         </div>
+      </div>
+      
+      
+      <div class="live_b_right">
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+
+  	<!--footer start-->
+<!--#include virtual="/includes/footer.jsp"-->
+	<!--footer End-->
+</body>
+</html>

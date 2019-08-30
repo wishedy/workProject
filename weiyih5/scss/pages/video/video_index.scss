@@ -1,0 +1,1396 @@
+@charset "UTF-8";
+//终端——病例首页
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_bottomSharePart"; //底部分享弹层
+@import "../../modules/rightDialog/rightDialog"; //会员权益弹层
+@import "../../modules/buySuccessDialog/buySuccessDialog"; //购买成功弹层
+
+@import "../../components/_videoAnchor";
+
+.al-mainInner {
+    overflow-x: visible;
+}
+.al-mainInner-wakeApp{
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+@import "../../components/_terminalDoc";
+@import "../../components/_terminalContent";
+@import "../../components/_terminalFooter";
+@import "../../components/_bottomBtns";
+@import "../../components/_bottomSharePart"; //底部分享弹层
+.al-terminalHeader > section {
+    border-bottom: none;
+}
+
+.al-termianlVideoHeader {
+    width: 100%;
+    margin-bottom: rem(16px);
+}
+//视频评分遮罩层
+.al-videoScorePartBox{
+    & > img {
+        width: 100%;
+        vertical-align: top;
+    }
+    .al-videoScorePopBox{
+        position: absolute;
+        z-index: 5;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        background-color: rgba(10, 30, 43, 0.9);
+        text-align: center;
+        figcaption{
+            @include font-dpr(14px);
+            color:rgba(255,255,255,0.6);
+            padding:rem(120px) 0 rem(40px);
+        }
+        .al-bigScoreStarBox{
+            margin:0 rem(130px);
+            li{
+                background-image: url("//img50.allinmd.cn/score/videoScorePopIcon.png");
+                b{display: none;}
+            }
+        }
+        .al-anonymousScoreText{
+            position:absolute;
+            bottom:rem(70px);
+            right:rem(30px);
+            b{
+                display: inline-block;
+                width:rem(28px);
+                height:rem(28px);
+                border:1px solid #e4e9ed;
+                box-sizing: border-box;
+                margin-right:rem(10px);
+                vertical-align: sub;
+            }
+            .active{
+                border: none;
+                background-image: url("//img50.allinmd.cn/score/Choose_SelectedBtn.png");
+                background-size: 0.37333rem 0.37333rem;
+            }
+            span{
+                @include font-dpr(13px);
+                color:rgba(255,255,255,0.4);
+            }
+        }
+    }
+}
+
+
+.al-terminalVideoSns {
+    background-color: #fff;
+    @include flex();
+    @include justify-content(center);
+    height: rem(90px);
+    line-height: rem(90px);
+    &Item {
+        @include font-dpr(14px);
+        color: #626f8c;
+        padding: 0 rem(45px);
+        & > span {
+            vertical-align: middle;
+            display: inline-block;
+        }
+    }
+    &Item.on.Ev-praiseNum{
+        .icon-videoLike:before{
+            background-image: url(//img50.allinmd.cn/pages/details/details_like_on.png);
+        }
+    }
+}
+
+.al-terminalVideoMain {
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.al-terminalVideoTitle {
+    display: table;
+    background-color: #fff;
+    padding: 0 rem(30px);
+    box-sizing: border-box;
+    & > h2 {
+        display: table-cell;
+        width: 100%;
+        color: #222;
+        font-weight: normal;
+        @include font-dpr(17px);
+        vertical-align: top;
+        line-height: 1.5;
+        padding-right: rem(50px);
+    }
+    & > button {
+        display: table-cell;
+        color: #fff;
+        width: rem(182px);
+        vertical-align: top;
+        @include font-dpr(15px);
+        span {
+            vertical-align: middle;
+        }
+    }
+    .collect {
+        background-color: #2899e6;
+    }
+    .collected {
+        background-color: #F4F4F4;
+        border: 1px solid #ccc;
+        .icon-videoCollect:before{
+            background-image: url('//img50.allinmd.cn/pages/video/icon_collectedNew.png');
+        }
+        span{
+            color: #888888;
+        }
+    }
+}
+
+.al-terminalVideoContent {
+    color: #808080;
+    @include font-dpr(15px);
+    border-bottom: 1px solid $innerBorderColor;
+    padding: rem(40px) rem(30px);
+    box-sizing: border-box;
+    margin-bottom: rem(70px);
+    position: relative;
+    p {
+        line-height: 1.5;
+        min-height: 2rem;
+        transition: all 0.2s linear;
+        word-break: break-all;
+    }
+    .al-terminalVideoContentOpen {
+        position: absolute;
+        bottom: rem(-41px);
+        left: 50%;
+        width: rem(128px);
+        background-color: #fff;
+        height: rem(32px);
+        text-align: center;
+        line-height: rem(32px);
+        border: 1px solid $innerBorderColor;
+        border-top: 1px solid #fff;
+        transform: translateX(-50%);
+        padding-bottom: rem(10px);
+        span {
+            vertical-align: middle;
+        }
+    }
+    .icon-videoOpen:after {
+        transition: all 0.2s linear;
+    }
+}
+
+.al-terminalVideoContentHide {
+    p {
+        @include ellipsis(2);
+        min-height: 1rem;
+    }
+    .icon-videoOpen:after {
+        transform: rotate(180deg);
+    }
+}
+
+.al-terminalVideoActivity {
+    background-color: #fff;
+    padding: rem(40px) rem(30px);
+    padding-top: rem(20px);
+    p {
+        color: #555;
+        @include font-dpr(15px);
+        & > a {
+            color: #3598db;
+        }
+    }
+}
+
+.al-terminalContentTags {
+    display: none;
+    margin-bottom: 0;
+}
+
+// .al-terminalContentTags {
+//     margin-bottom: 0;
+//     visibility: hidden;
+//     display: none;
+//     opacity: 0;
+//     transition:all 0.2s linear;
+// }
+// .al-terminalContentTags.show{
+//     visibility: visible;
+//     opacity: 1;
+// }
+.al-terminalVideoSlider {
+    word-break: break-all;
+    .swiper-container {
+        padding:0 rem(15px) rem(40px) rem(15px);
+        word-break: break-all;
+    }
+    .swiper-slide {
+        width: rem(246px);
+        height: rem(124px);
+        margin: 0 rem(15px);
+        padding: rem(25px) rem(20px);
+        color: #555;
+        @include font-dpr(14px);
+        background-color: #eff4f8;
+        overflow: hidden;
+        border-radius: rem(10px);
+        position: relative;
+        line-height: 1.5;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .swiper-slide.living {
+        color: #3598db;
+        .livingMark {
+            background-color: #f76465;
+            color: #fff;
+            @include font-dpr(12px);
+            padding: rem(5px) rem(15px);
+            border-top-left-radius: rem(10px);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+    .swiper-slide.allElement {
+        width: rem(80px);
+        height: rem(124px);
+        text-align: center;
+        line-height: rem(124px);
+        color: #626f8c;
+        @include font-dpr(13px);
+        span{
+            vertical-align: middle;
+            margin-right:rem(10px);
+        }
+
+    }
+}
+/*电子书视频终端页增加*/
+.icon-videoDetailsMore{
+    @extend %icon-videoDetailsMore;
+}
+
+//视频评分关闭按钮
+.al-scorePopCloseBtn{
+    position: absolute;
+    right:rem(30px);
+    top:rem(45px);
+    width:rem(29px);
+    height:rem(29px);
+    background-image: url("//img50.allinmd.cn/score/scorePopCloseIcon.png");
+    background-size:100% 100%;
+}
+
+
+
+
+
+//返回按钮
+.al-videoBackBtn{
+    position: absolute;
+    top: rem(20px);
+    left: rem(30px);
+    width: rem(60px);
+    height: rem(60px);
+    z-index: 3;
+    & > img{
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+}
+
+.al-eBookHeader{
+    .al-terminalAuthorImg{
+        border-radius: 0;
+        & >a{
+            border-radius: 0;
+            width: rem(78px);
+            height: rem(110px);
+            & > img{
+                border-radius: 0;
+            }
+        }
+    }
+    .al-terminalAuthorMsg{
+        h2{
+            width: 5rem;
+        }
+    }
+}
+.icon-terminalComment {
+    @extend %icon-terminalComment;
+}
+
+.icon-terminalLike {
+    @extend %icon-terminalLike;
+}
+.icon-terminalLiked {
+    @extend %icon-terminalLiked;
+}
+
+.icon-terminalBack {
+    @extend %icon-terminalBack;
+}
+
+.icon-terminalJoin {
+    @extend %icon-terminalJoin;
+}
+
+.icon-terminalCommentNum {
+    @extend %icon-terminalCommentNum;
+}
+
+.icon-terminallike {
+    @extend %icon-terminallike;
+}
+
+.icon-terminalCollect {
+    @extend %icon-terminalCollect;
+}
+
+.icon-simCase {
+    @extend %icon-simCase;
+}
+
+.icon-fixedTopShare {
+    @extend %icon-fixedTopShare;
+}
+
+.icon-terminalConfig {
+    @extend %icon-terminalConfig;
+}
+
+/*.al-vipUser {
+    @extend %al-vipUser;
+}*/
+
+.icon-terminalFollowed {
+    @extend %icon-terminalFollowed;
+}
+
+.icon-videoDownload {
+    @extend %icon-videoDownload;
+}
+
+.icon-videoReply {
+    @extend %icon-videoReply;
+}
+
+.icon-videoLike {
+    @extend %icon-videoLike;
+}
+
+.icon-videoShare {
+    @extend %icon-videoShare;
+}
+
+.icon-videoCollect {
+    @extend %icon-videoCollect;
+}
+
+.icon-videoOpen {
+    @extend %icon-videoOpen;
+}
+.icon-videoBrowseNum{
+    @extend %icon-videoBrowseNum;
+    font-style: normal;
+    float: right;
+    span{
+        vertical-align: middle;
+    }
+}
+
+/*新版*/
+.al-termianlVideoHeader{
+    margin-bottom: 0;
+}
+.al-termianlVideoHeader{
+    position: relative;
+}
+.shareVideo{
+    font-size: rem(28px);
+    color: #FFFFFF;
+    width: rem(130px);
+    height: rem(60px);
+    text-align: center;
+    line-height: rem(60px);
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 100px;
+    position: absolute;
+    right:rem(20px);
+    top:rem(20px);
+    z-index:4;
+    i{
+        display: inline-block;
+        width: rem(28px);
+        height: rem(28px);
+        background: url("//img50.allinmd.cn/classes/share.png") no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: rem(9px);
+    }
+}
+
+/*简介部分*/
+.videoIntroduction{
+    background: #fff;
+    padding: rem(40px) rem(30px) rem(50px);
+    .title{
+        font-size: rem(36px);
+        color: #222222;
+        line-height: rem(36px);
+        .al-titleName{
+            display: inline-block;
+            width: rem(600px);
+        }
+        span{
+            font-size: rem(28px);
+            color: #AAAAAA;
+            float: right;
+        }
+        i{
+            display: inline-block;
+            width: rem(26px);
+            height: rem(14px);
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAPCAMAAADNjy/UAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA2UExURUxpcbe3t7e3t7i4uP///7i4uLi4uLi4uLe3t9XV1bi4uLe3t7e3t7y8vLm5ubq6uri4uLe3t4lCWEwAAAARdFJOUwD5Tq8CobFe/QZW4CAXUBr3HPGeLgAAAE9JREFUGNN1yVsSwBAQBMAJCXli73/ZKCllMenfBp4VTATua2Nnkse5CzmziAU8uTzuALs687UZT09//egbp9089dh8F+iUEz7lfiaf1fMCGnED5O9wdaoAAAAASUVORK5CYII=") no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+            margin-left: rem(6px);
+            transform: rotate(-90deg);
+        }
+    }
+
+    .text{
+        font-size: rem(30px);
+        color: #333333;
+        line-height: rem(50px);
+        margin-top: rem(50px);
+        @include ellipsis(2);
+    }
+
+
+    .functionCont{
+        margin-top: rem(47px);
+        div{
+            display: inline-block;
+            &:first-child{
+                font-size: rem(26px);
+                color: #515C74;
+                line-height: rem(26px);
+                margin-top: rem(20px);
+                i{
+                    display: inline-block;
+                    width: rem(44px);
+                    height: rem(44px);
+                    background: url("//img50.allinmd.cn/classes/comment.png") no-repeat;
+                    background-size: contain;
+                    vertical-align: middle;
+                    margin-right: rem(16px);
+                }
+            }
+            p{
+                display: inline-block;
+                text-align: center;
+            }
+            &:last-child{
+                font-size: rem(22px);
+                color: #515C74;
+                float: right;
+                p{
+                    &:last-child{
+                        margin-left: rem(66px);
+                    }
+                }
+                p:first-child i{
+                    display: block;
+                    width: rem(44px);
+                    height: rem(44px);
+                    background: url("//img50.allinmd.cn/classes/collage.png") no-repeat;
+                    background-size: contain;
+                    vertical-align: middle;
+                    margin-bottom: rem(15px);
+                    &.active{
+                        //background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAYAAABxlTA0AAAAAXNSR0IArs4c6QAACK5JREFUeAHtnHuMFEUex+vX1cMuBzERFZ/RBAMmJl7uRL3EBznxFd+eD+LtyKooGKMYQWBn1T82apxZXMEoxogPvMVZFfUMejlOBY2if6BBjSbGYCSHj1PxgXIg7G53l9/f4OBsd09Pd09P78BWJZvuqvrV7/erz/66uqeruoTQSRPQBDQBTUAT0AQ0AU1AE9AENAFNQBPQBDSB9AhQkqZUof1wRzhnK6FOht6DlRIHEqmDhBL7CEHfKRLfklLfCBKb8LdajqbVdFNxa5I+uHWp+7P72DvU6fCB/45QRAcR/BJCHQAftipF3xD8QruvSdBbhjBWUa73c7eeuPm6Aavu7GGWErPh/Hlw+ugojsA4moq3DaLnjVHjH6W5i3dEaV9NVi2aM9oZ2Hyto9QlsHESbJjVZP3L6WPA/5dJ4gHqKH7pLxOuNDZg1T3jENvZ2QlHZiJSW8KZqy5FxJGk8sb4UUvp6id2VpesXqOWXdXqbB6YhajsVApXTp0Jkd2PwHlEGq156nj8f3HURQasVqyQ1saVXbjM5mEoaI1jNKgNLtOvUD/b7Cy+ECTnrrO6r7hIOGoJfDrUXVdvHj7txPDWY064sIumTbOj6IsEWPXM2t+2tj+N6DgtipGosogcmKCCmZt4O1GXE9ReqS7DKnx6F6I/hyspUn+C9PrV4SpbI80xl9O8pd/71fuVhXZI5dsm20T/RM8P91PUiDJEziuypfXvNPexH/30q0XXjLP7dz6FqD3Tr74RZYD8uVTqYursWx9GfyjAKt/+Z5vstYA7JozShGU2mC3mVJrby0PH7qQWtR9q9VuvoWDS7sKUTgB5u1TyFOrsfb+WyZqAd93M+t9pxNhWy7lyPZzcKDNiKs3r28RlqqftCHtQvIangwllmbSPfK+QRssJtW5+gYDVw7P+YG3Z9gbupMel3QG3vdKlOYpKY789oNakOVS5fanIrzfHjZ1C1y39paJsyKkxJOfK2D9uW9wMcNktBmoPOG/wX5PAZbcmlxjxWZVUNYJVT/Zo21If4s4sq7TVxSCAJx5bmvRHmlf82A9I1QjGGJfXcP2QDS1jRgjEwtDS33O+EYx3Cidbylr7u5g+q0XAJPMUvMN4yy3nG8G2sGa6BXU+mEA1Zh7A/FNYKDo3WJ2u9RAAsxI7V4UHsPjviyfimXc/l5zO1iBQYgZ2bjEPYMtReO2oUxwCfuw8gHHXOyqOct0Gj2w+7DyAEeoHa1jxCPix8wDGe14NOB5f4cfOAxhxPj6mft1M8Fzf0OQFLMT/h4roXGgCmER1y3oAY1Lga7eQzocj4MfOAxizNbEm98K5sHdLYQz2BKcHsBBGXdPUezfCGr0j+sIt4QOYVruFdD4sAS87D2ApRq/C7MFgWJVabhcBZiZb5H/cPDyAKbf0Zwi96RbU+VoE1Fqa88RPbikPYBbA+rEVbkGdDyaAG9wzfhK+gI1xY5dhKuQzvwa6zEsA7yA2MjNvDR4Z/AoxS4oxWN7uV6fLfAiQvG0XM2+d75QRi2HmlqxC9l2cTvY20yUVBNabueLxuMlhmYY3+UYwi3ED0zRn4D+wzdtMl5QYgU2JURW4LFMVcEnB/N4PBck2rGIJXIDHsiMtlZgwG2YUkAIBczszt/wlRPP8AB0jsgpX9gJmU6vzVcdgd8PBQharfNTN7vIRmSe6L5MrzgnT95oRXFZSUki0sJwfsUcwCAuXGYUGzMJQ3IG73x18PiIT+l5iEKHzoYeISp12d7bTcdTdlWV7+7lh0K2yo5iP2s9YgNmInW+bg0eLRVEN7onyuMznys6+xXF8jw2YjdmFK65Xwnmw0d9GxOlYEm34WxESxg0y9+RDcfXVBZiNWvnsDBwewZR1pPE8rsNptfvt2X8mvnZ6vB6bdQNm4/iEKiuU84+9Zbkrr/kVZFxpdjxZrAcut00EMCuyurOXYjV8H95hZDi/pyZ+cQ4qbWZH8bkk+pAYYHbGKkw/HyPzs4jkliScS1sHIrcfbxEvC/MLLaxviQJmo4OF6WfhCnsBkEeHdaIZ5AB3Bxar/y2TW/5ykv4kDpidG+xuO5UUvYThYji+q4vMB8PCdkXq/ExH3+uRG9do0BDAbFMtzJ5k2+LfeLrAVgbNm/C0sFVKcQ4tKL7dCC8bBpidxZdKx9uD6mW8id63Ec7XqxOd3yIzdBa+EOKJhYakhgJmj9XCtj/ZjngVY/L+DelBTKUYc7+XhjiDFvR9EFNFqGYN/3HAHZAi81f8J3lXkaZI7EvJpwbD5c42PILLRNW97ZPsARvfFye/n0PZRpgjxtyv5Cg5lW7p3RBGvl6Zhkdw2UHuED5fmoIObiqXpX1k2yUfUoLL/UsNMBvDHgsbJckpGP9SX3PBNku24QP7klZKFTB3ind0ktQ6BaefpNVJtsU2k9xNKqzvqY3BbofUPdPHW7azGvN8x7jrEs0TfWRK43Sav3xzonpDKhs2wOyfWtK+n7XNfgWQjw3pbzQxovfMsfJMurH3h2gNk5NOfYiodJ07brZksMkGrassT+ac1rHu4YTL/RhWwOwAL/k0jZYzcJbg1/20lnX6LSdlm2mmYR0iKjvK29fYW7a/iBdEiOj4CS9u1sh9x1wQtM1LfO3RWzYNYHadd+6zvx3krcPOjt4VXANEq+SBmYvj7hwYx2atNsM+RFQ6yGDkhIkXAdTKyvIw59ym1DbmtoxhbMSRaaoILndAvd5l2us+LSKSp5XLgo6Au0L+ZWKWTu2yguSGo64pATMI3tzC/mzlMry7mB4EBj9/l8sjL7w66p6SQTqTrGtawNxJ3pfSXrjhYeWIa/06TYZ4VC6YdF2t/S392qZV1tSAGQKGCbIL2fvx0v7GSihwfInMFW/C8OC7srxSdjjPm+om5weCAZqdfbOxTqFnd71B93JZs8Pd7e+ecoI1yncO5rN37Sn+aj81AU1AE9AENAFNQBPQBDSBkUrgV0SQlSRWvwbwAAAAAElFTkSuQmCC") no-repeat;
+                        background-image: url("/images/img50/detail/likeOrange.png");
+                      background-size: contain;
+                    }
+                }
+                p:last-child i{
+                    display: block;
+                    width: rem(44px);
+                    height: rem(44px);
+                    background: url("//img50.allinmd.cn/classes/praise.png") no-repeat;
+                    background-size: contain;
+                    vertical-align: middle;
+                    margin-bottom: rem(15px);
+                    &.active{
+                        //background: url("data:image/png;base64,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") no-repeat;
+                        background-image: url("/images/img50/detail/collectOrange.png");
+                      background-size: contain;
+                    }
+                }
+                span{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.scoreCont{
+    margin-top: rem(24px);
+    span{
+        display: inline-block;
+        font-size: rem(26px);
+        color: #AAAAAA;
+        line-height: rem(26px);
+        &:last-child{
+            &:after{
+                background: none;
+            }
+        }
+        &:after{
+            content: '';
+            display: inline-block;
+            width: rem(5px);
+            height: rem(5px);
+            background: url("//img50.allinmd.cn/classes/circle.png") no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+            margin:0 rem(15px);
+        }
+        i{
+            font-style: normal;
+        }
+    }
+}
+.noIdUserName{
+    margin-top: rem(30px);
+    font-size: rem(30px);
+    span{
+        color: #909090;
+        &.userNameContent{
+        color: #333;
+        }
+    }
+    &.showPop{
+        padding: 0 rem(30px);
+    }
+}
+.authorCont{
+    margin-top: rem(20px);
+    background: #fff;
+    ul li {
+        margin: 0 .4rem;
+        padding: .53333rem 0;
+        border-bottom: solid 1px #E4E9ED;
+        &:last-child{
+            border: none;
+        }
+        img {
+            width: 1.06667rem;
+            height: 1.06667rem;
+            border-radius: 50%;
+            margin-right: .26667rem;
+        }
+        aside {
+            display: inline-block;
+            vertical-align: top;
+        }
+        p:first-child {
+            margin: .12rem 0 .18667rem 0;
+            &:after {
+                content: "";
+                display: inline-block;
+                width: .32rem;
+                height: .24rem;
+                background: url(//img50.allinmd.cn/pages/personal/mark_vip.png) center center no-repeat;
+                background-size: 100% 100%;
+                vertical-align: .01rem;
+                margin-left: .13333rem;
+            }
+        }
+        .taecherIntroduction ul li aside p:last-child span {
+            margin-left: .26667rem;
+        }
+        p {
+            font-size: .4rem;
+            color: #222;
+            line-height: .4rem;
+        }
+    }
+}
+.authorNewCont{
+    margin-top: rem(20px);
+    background: #fff;
+    width: 100%;
+    overflow: auto;
+    ul{
+        padding:rem(36px) rem(4px);
+        white-space: nowrap;
+    }
+    li{
+        white-space: normal;
+        display: inline-block;
+        width:rem(112px);
+        margin:0 rem(9px);
+        text-align: center;
+        img{
+            width:rem(80px);
+            height:rem(80px);
+            border-radius: 50%;
+        }
+        .author_name{
+            width:rem(112px);
+            margin-top: rem(20px);
+            text-align: center;
+            font-size: rem(28px);
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+}
+
+
+.al-terminalVideoSlider .swiper-container{
+    margin-top: rem(40px);
+}
+
+.al-terminalMainContent h2,.al-productRecommendPart>figcaption{
+    font-size: rem(32px);
+    color: #333333;
+    border: none;
+    line-height: rem(32px);
+    padding-top: rem(50px);
+    box-sizing: inherit;
+    height: auto;
+}
+.Ev-discussBtnWrap{
+    padding:rem(20px) 0;
+    background:#fff;
+}
+.commentInput{
+    background: #F4F4F4;
+    border-radius: rem(100px);
+    width: rem(690px);
+    height: rem(68px);
+    text-align: center;
+    line-height: rem(68px);
+    margin: 0 auto;
+    font-size: rem(28px);
+    color: #909090;
+    i{
+        display: inline-block;
+        width: rem(22px);
+        height: rem(24px);
+        background: url("//img50.allinmd.cn/classes/edit.png") no-repeat;
+        vertical-align: middle;
+        background-size: contain;
+        margin-right: rem(12px);
+    }
+}
+
+.al-productRecommendPart figcaption, .al-terminalMainContent h2{
+    @include clearfix();
+}
+
+.videoBook{
+    font-size: rem(34px);
+    color: #626F8C;
+    line-height: rem(34px);
+    padding: rem(50px) rem(30px);
+    i{
+        display: inline-block;
+        width: rem(50px);
+        height: rem(50px);
+        background: url("//img50.allinmd.cn/classes/BOOK.png") no-repeat;
+        vertical-align: middle;
+        background-size: contain;
+        margin-right: rem(12px);
+    }
+}
+
+.al-terminalCommentContent .al-terminalSortChange{
+    margin-top: rem(-10px);
+}
+.al-terminalMainContent h2{
+    box-sizing: inherit;
+}
+
+
+/*简介内容*/
+.introductionDetail{
+    background: #fff;
+    .nav{
+        font-size: rem(32px);
+        color: #333333;
+        line-height: rem(32px);
+        padding: rem(40px) rem(30px);
+        position: relative;
+        &.moveUp{
+            background: #FFFFFF;
+            box-shadow: 0 1px 0 0 #D7DBDE;
+            position: fixed;
+        }
+        i{
+            display: inline-block;
+            width: rem(24px);
+            height: rem(24px);
+            background: url("//img50.allinmd.cn/v3/video-detail/close.png") no-repeat;
+            background-size: rem(24px);
+            background-position:center;
+            position: absolute;
+            top:rem(24px);
+            right:rem(24px);
+            padding:rem(24px);
+        }
+    }
+    .title{
+        font-size: rem(36px);
+        color: #222;
+        line-height: rem(56px);
+        padding: 0 rem(30px);
+    }
+
+    .videoDetailText{
+        font-size: rem(30px);
+        color: #333333;
+        line-height: rem(48px);
+        margin-top: rem(50px);
+        padding: 0 rem(30px) rem(30px);
+    }
+    .videoDetailTag{
+        padding: 0 rem(30px);
+        p{
+            font-size: rem(32px);
+            line-height: rem(32px);
+            color: #333333;
+            margin-top: rem(50px);
+        }
+        ul{
+            @include  clearfix();
+            margin-top: rem(40px);
+        }
+        li{
+            float: left;
+            border: solid 1px #e5e8ed;
+            padding: 0 rem(14px);
+            height: rem(58px);
+            line-height: rem(58px);
+            margin: 0 rem(20px) rem(20px) 0;
+            border-radius: rem(4px);
+            font-size: rem(26px);
+            color: #777;
+            img{
+                display: inline-block;
+                border-radius: 50%;
+                width: rem3(16px);
+                height: rem3(16px);
+                margin-right: rem3(6px);
+                vertical-align: sub;
+            }
+        }
+    }
+    .scoreCont,.al-myScoreBox{
+        padding: 0 rem(30px);
+    }
+
+    .introductionAuthor{
+        font-size: rem(30px);
+        color: #909090;
+        line-height: rem(30px);
+        border-bottom: solid 1px #E4E9ED;
+        padding: 0 rem(30px) rem(50px);
+        span{
+            color: #210000;
+        }
+    }
+}
+
+.commentContDetail{
+    margin:0;
+    h2{
+        padding-top: rem(30px);
+    }
+}
+
+.commentClose{
+    width: .32rem;
+    height: .32rem;
+    background: url(//img50.allinmd.cn/v3/video-detail/close.png) no-repeat;
+    background-size: contain;
+    display:block;
+}
+.commentCloseWrap{
+    padding:rem(10px) rem(30px) rem(10px) rem(17px);
+    display:inline-block;
+    float:right;
+}/*简介部分*/
+.video-app-wrapper{
+    background: #fff;
+    width: 100%;
+    padding: rem(26px) 0;
+    height: rem(90px);
+    .videoAppBtn{
+        width:rem(690px);
+        height: rem(90px);
+        font-family: PingFangSC-Medium;
+        font-size: rem(34px);
+        margin: 0 auto;
+        text-align: center;
+        border: rem(2px) solid #3598DB;
+        border-radius: rem(6px);
+        color: #3598DB;
+        letter-spacing: 0;
+        line-height: rem(90px);
+        &.al-selectionCourse-wakeBtn{
+            font-size: rem(30px);
+        }
+    }
+
+}
+
+//付费课视频终端页样式处理
+.al-charge-mask{
+    height: rem(420px);
+    background:rgba(0,0,0,1);
+    position: absolute;
+    width: 100%;
+    .al-charge-title{
+        width:100%;
+        float: left;
+        padding-top: rem(180px);
+        height:rem(28px);
+        font-size:rem(32px);
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(237,237,237,1);
+        line-height:rem(28px);
+        text-align: center;
+        margin-bottom: rem(36px);
+    }
+    .al-charge-bar{
+        width: 100%;
+        float: left;
+        height:rem(64px);
+        .al-charge-btn{
+            text-align: center;
+            width:rem(208px);
+            height:rem(64px);
+            line-height:rem(64px);
+            margin:0 auto;
+            background:rgba(7,107,146,1);
+            box-shadow:0 rem(8px) rem(24px) 0px rgba(4,30,57,0.16);
+            border-radius:rem(8px);
+            font-size:rem(30px);
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(255,255,255,1);
+        }
+    }
+
+}
+.al-discount-coupon{
+    height:rem(80px);
+    padding: 0 rem(30px);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:rem(-80px);
+    background:linear-gradient(140deg,rgba(251,246,234,1) 0%,rgba(250,245,232,1) 100%);
+    .coupon-des{
+        float: left;
+        font-size:rem(28px);
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(117,83,16,1);
+        line-height:rem(80px);
+    }
+    .coupon-btn{
+        float: right;
+        width:rem(88px);
+        margin-top: rem(16px);
+        height:rem(48px);
+        line-height:rem(48px);
+        background:rgba(234,199,127,1);
+        font-size:rem(28px);
+        text-align: center;
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+        color:rgba(117,83,16,1);
+        border-radius: rem(6px);
+    }
+}
+.al-terminalComment{
+    .communication-teacher{
+        display: none;
+    }
+    .communication-num{
+        display: none;
+    }
+}
+.al-college-payCourse{
+    .al-terminalCommentSnsMsg{
+        display: none !important;
+    }
+    .Ev-discussBtnPlaceholder{
+        display: none !important;
+    }
+    .communication-teacher {
+        width: rem3(22px);
+        padding: 0 rem3(3px);
+        height: rem3(15px);
+        font-size: rem3(11px);
+        background: rgba(24, 45, 76, 1);
+        border-radius: rem3(2px);
+        color: rgba(255, 255, 255, 1);
+        line-height: rem3(15px);
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: rem(20px);
+    }
+    .communication-num{
+        width: auto;
+        display: inline-block;
+        color:rgba(119,119,119,1);
+        font-size: rem3(11px);
+        line-height: rem3(15px);
+        text-align: center;
+        vertical-align: middle;
+        height:rem3(15px);
+        background:rgba(235,235,235,1);
+        border-radius:rem3(2px);
+        padding: 0 rem3(3px);
+        margin-left: rem(20px);
+    }
+
+}
+.al-charge-maskFullScreen{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:100;
+}
+.al-terminalVideoSlider .swiper-slide.payType-selection{
+    a{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}
+.al-terminalVideoSlider .swiper-slide.living .livingMark,.al-terminalVideoSlider .swiper-slide.payType-selection .livingMark{
+    &.payType{
+        width:rem3(32px);
+        height:rem3(17px);
+        line-height:rem3(17px);
+        background:rgba(216,43,43,1);
+        border-radius:0px rem3(2px) 0px rem3(2px);
+        top:0;
+        bottom:inherit;;
+        border:1px solid rgba(216,43,43,1);
+        font-size:rem3(13px);
+        font-family:PingFangSC-Medium;
+        text-align: center;
+        font-weight:500;
+        color:rgba(255,255,255,1);
+        position: absolute;
+        right: 0;
+    }
+}
+.al-advertisement-video{
+    background: #fff;
+    height: rem(144px);
+    padding: rem(22px) rem(30px) rem(20px) rem(30px);
+    .al-advertisement-picture{
+        width: rem(690px);
+        height: rem(144px);
+        display: block;
+        background: #0a77e5;
+    }
+}
+.wakeUpAppMask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    .fakePlayBtn{
+        width:rem(126px);
+        height: rem(126px);
+        position: absolute;
+        top:50%;
+        left: 50%;
+        margin-left: rem(-63px);
+        margin-top: rem(-63px);
+    }
+}
+.mainInnerwakeUpAppMask{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,.5);
+    z-index: 30;
+    .dialog{
+        position: absolute;
+        z-index: 31;
+        bottom:0;
+        left: 0;
+        right: 0;
+        width:rem(750px);
+        height:rem(458px);
+        background:rgba(255,255,255,1);
+        border-radius:rem(32px) rem(32px) 0px 0px;
+        padding-bottom: rem(100px);
+        .title{
+            width: 100%;
+            height:rem(34px);
+            font-size:rem(36px);
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(0,0,0,1);
+            line-height:rem(34px);
+            padding-top: rem(100px);
+            padding-bottom: rem(80px);
+            text-align: center;
+
+
+        }
+        .closeBtn{
+            width:rem(30px);
+            height:rem(30px);
+            position: absolute;
+            top:rem(36px);
+            right: rem(40px);
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAXRJREFUSA3Fl+t1gzAMRoGTcboFLNPHOi3DwBjZh+q6iDoJwpJLT/QD21j6LgIsQ9OITdP0Os/z57IsLeP/MLRhwEL/Qqdt2wSViVYc3mW8nAlXqGjCWoTZdNJ5yTI9PfMcSjKMYXZ933/IeOTkaqfB76Gr/ggzPVPLYRiG6tte0txeppKj3g5P69HawAh6Akpgr8YN+K9wLxTOA7gWHoGa4Cg8Cj0Ee+E10CK4BGeeMihNKoOMxUbPMtx9xj/xv0crq9UjDCXOBcbRgDOl5spUnd1gAg7gIShaHYdnmDvjg2z1ukNZu8AGVHe0qpfropdrtRaUJUOMLCcahbOl8i4Ud7XDjI+gfElA9Pjgd28mOCIY8dUL2AXXCEVjHsBRAc2ANhJ7A44E5sC879XYwN6AHGL1PVoJ7HG0INb5kiYf8OkLXwR0LaIVqkJVcPZTgb9lwadAVW8vMakBX51MXLUYnJWpQmnRXqtcKrGMYSafZ/y0fQMHqdVNjE2nUwAAAABJRU5ErkJggg==") no-repeat center center/cover;
+        }
+        .openAppBtn{
+            width:rem(380px);
+            height:rem(90px);
+            background:rgba(100,131,233,1);
+            border-radius:rem(6px);
+            font-size:rem(34px);
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            line-height: rem(90px);
+            text-align: center;
+            margin: 0 auto rem(48px) auto;
+            color:rgba(255,255,255,1);
+        }
+        .goOnWebVideo{
+            width: 100%;
+            height:rem(34px);
+            font-size:rem(32px);
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(102,102,102,1);
+            line-height:rem(34px);
+            text-align: center;
+        }
+    }
+}
+.al-appWakeUpFigure{
+    display: none;
+}
+//3.11购买课程
+.videoPayContent{
+    width: 100%;
+    height: rem3(60px);
+    background:#ffffff;
+    box-shadow:0 rem3(-2px) rem3(4px) 0 rgba(0,0,0,0.05);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    .payInfo{
+        height: 100%;
+        line-height: rem3(60px);
+        span{
+            display: inline-block;
+        }
+        .moneyNum{
+            font-size:rem3(13px);
+            font-weight:400;
+            color:rgba(221,153,51,1);
+            margin-left: rem3(15px);
+            vertical-align: -webkit-baseline-middle;
+            i{
+                font-size:rem3(28px);
+                font-family:PingFangSC;
+                font-weight:500;
+                line-height:rem3(40px);
+            }
+        }
+        .grayLine{
+            font-size:rem3(13px);
+            font-family:PingFangSC;
+            font-weight:400;
+            color:rgba(137,137,137,1);
+            //line-height:rem3(18px);
+            text-decoration: line-through;
+            vertical-align: -webkit-baseline-middle;;
+        }
+        .payRedTips{
+            width:rem3(60px);
+            height:rem3(18px);
+            background: url("/static/images/payDetail/redBgTip.png") no-repeat center center;
+            background-size: contain;
+            font-size:rem3(11px);
+            font-family:PingFangSC;
+            font-weight:400;
+            color:rgba(255,255,255,1);
+            line-height:rem3(18px);
+            text-align: center;
+            margin-left: rem3(5px);
+        }
+    }
+    .submitBtn{
+        display: inline-block;
+        width:rem3(136px);
+        height:rem3(42px);
+        background:linear-gradient(128deg,rgba(255,239,202,1) 0%,rgba(236,214,150,1) 100%);
+        box-shadow:0 rem3(2px) rem3(6px) 0 rgba(131,102,46,0.14);
+        border-radius:rem3(4px);
+        font-size:rem3(17px);
+        font-family:PingFangSC;
+        font-weight:500;
+        color:rgba(98,77,24,1);
+        line-height:rem3(42px);
+        vertical-align: middle;
+        position: absolute;
+        top: 50%;
+        right: rem3(15px);
+        transform: translate(0,-50%);
+        text-align: center;
+    }
+}
+//3.11购买会员
+.vipPayContent{
+    width: 100%;
+    height: rem3(60px);
+    background:#ffffff;
+    box-shadow:0 rem3(-2px) rem3(4px) 0 rgba(0,0,0,0.05);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    .submitBtn{
+        width:rem3(335px);
+        height:rem3(42px);
+        background:linear-gradient(128deg,rgba(255,239,202,1) 0%,rgba(236,214,150,1) 100%);
+        box-shadow:0 rem3(2px) rem3(6px) 0 rgba(131,102,46,0.14);
+        border-radius:rem3(4px);
+        font-size:rem3(16px);
+        font-family:PingFangSC;
+        font-weight:500;
+        color:rgba(98,77,24,1);
+        line-height:rem3(42px);
+        position: absolute;
+        top: 50%;
+        right: rem3(15px);
+        transform: translate(0,-50%);
+        text-align: center;
+    }
+}
+//领取优惠券样式
+.couponGet{
+    width:100%;
+    height:rem3(40px);
+    background:linear-gradient(129deg,rgba(254,245,216,1) 0%,rgba(253,237,198,1) 100%);
+    line-height: rem3(40px);
+    position: relative;
+    span{
+        display: inline-block;
+    }
+    .couponInfo{
+        font-size:rem3(14px);
+        font-family:PingFangSC;
+        font-weight:400;
+        color:rgba(171,106,9,1);
+        line-height:rem3(20px);
+        position: absolute;
+        left: rem3(15px);
+        top: 50%;
+        transform: translate(0,-50%);
+     }
+    .couponGetBtn{
+        width:rem3(44px);
+        height:rem3(24px);
+        background:linear-gradient(129deg,rgba(232,194,132,1) 0%,rgba(246,213,162,1) 100%);
+        font-size:rem3(14px);
+        font-family:PingFangSC;
+        font-weight:500;
+        color:rgba(98,77,24,1);
+        line-height:rem3(24px);
+        position: absolute;
+        text-align: center;
+        right: rem3(15px);
+        top: 50%;
+        transform: translate(0,-50%);
+        &.couponAlreadyGetBtn{
+            width: rem3(59px);
+            height: rem3(24px);
+            //color:rgba(221,175,101,1);
+            color: #ab6a09;
+            border-radius:2px;
+            border:1px solid rgba(219,181,119,1);
+        }
+    }
+}
+//开通会员提示栏
+.vipPayTipsInfo{
+    width: 100%;
+    height:rem3(66px);
+    background:rgba(255,255,255,1);
+    position: relative;
+    .vipPayImg{
+        //background: url("/static/images/payDetail/vipPayItem.png") no-repeat center center;
+        //background-size: contain;
+        margin:0 rem3(10px) 0 0;
+        width: rem3(50px);
+        height: rem3(41px);
+        display: inline-block;
+        position: absolute;
+        text-align: center;
+        left: rem3(15px);
+        top: 50%;
+        transform: translate(0,-50%);
+        .vipImgBg{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .vipPayInfo{
+        display: inline-block;
+        width: rem3(213px);
+        position: absolute;
+        left: rem3(75px);
+        top: 50%;
+        transform: translate(0,-50%);
+        .vipPayInfoTop{
+            font-size:rem3(15px);
+            font-family:PingFangSC;
+            font-weight:500;
+            color:rgba(0,0,0,1);
+            line-height:rem3(21px);
+            display: inline-block;
+        }
+        .vipPayInfoBot{
+            font-size:rem3(13px);
+            font-family:PingFangSC;
+            font-weight:400;
+            color:rgba(212,143,38,1);
+            line-height:rem3(18px);
+            display: inline-block;
+        }
+    }
+    .vipPayMoreBtn{
+        font-size:rem3(14px);
+        font-family:PingFangSC;
+        font-weight:400;
+        color:rgba(51,51,51,1);
+        line-height:rem3(20px);
+        position: absolute;
+        text-align: center;
+        right: rem3(15px);
+        top: 50%;
+        transform: translate(0,-50%);
+    }
+    .hasVipInfo{
+        .hasVipTitle{
+            font-size:rem3(16px);
+            font-family:PingFangSC;
+            font-weight:500;
+            color:rgba(0,0,0,1);
+            line-height:rem3(22px);
+            text-align: center;
+            position: absolute;
+            left: rem3(75px);
+            top: 50%;
+            transform: translate(0,-50%);
+        }
+        .hasVipMore{
+            position: absolute;
+            right: rem3(15px);
+            top: 50%;
+            transform: translate(0,-50%);
+            font-size:rem3(16px);
+        }
+    }
+}
+//视频蒙层显示
+.videoGrayBg{
+    height: rem(420px);
+    background:rgba(0,0,0,1);
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+
+    .videoGrayBgCont{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+    }
+    .videoGrayBgTitle{
+        width:rem3(218px);
+        height:rem3(32px);
+        background:linear-gradient(123deg,rgba(255,239,202,1) 0%,rgba(237,209,153,1) 100%);
+        border-radius:rem3(16px);
+        font-size:rem3(15px);
+        font-weight:500;
+        color:rgba(105,65,5,1);
+        line-height:rem3(32px);
+        text-align: center;
+        margin: 0 auto;
+    }
+    .videoGrayBgMore{
+        font-size:rem3(15px);
+        font-family:PingFangSC;
+        font-weight:400;
+        color:rgba(235,197,138,1);
+        line-height:rem3(21px);
+        width: 100%;
+        text-align: center;
+
+
+        i{
+            background: url("/static/images/payDetail/lookMore.png") no-repeat center center;
+            background-size: contain;
+            display: inline-block;
+            width: rem3(11px);
+            height: rem3(11px);
+            margin-left: rem3(6px);
+            margin-top: rem3(15px);
+        }
+    }
+}

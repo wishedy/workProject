@@ -1,0 +1,138 @@
+@charset "UTF-8";
+//首页——朋友圈
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_commentModule"; //评论/回复模块
+@import "../../components/_iconModule"; //图标组件
+@import "../../components/_indexNavbar"; //导航栏模块
+@import "../../components/_bottomBtns";
+@import "../../components/_bottomSharePart"; //分享组件
+.al-newActive {
+    height: rem(80px);
+    z-index: 9;
+    top: rem(70px);
+}
+
+//未关注医师提示
+.al-noFriendsTips {
+    height: rem(300px);
+    background-color: #eff4f8;
+    @include font-dpr(14px);
+    color: $smallTextColor;
+    text-align: center;
+    line-height: 1.5;
+    &:before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    & > article {
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+
+.al-indexHeaderItem.al-commentRelease a {
+    color: #2899e6;
+}
+
+//发布功能区
+.al-commentReleaseMask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.al-commentReleaseMask.show {
+    visibility: visible;
+    opacity: 1;
+    .al-commentReleaseBox {
+        opacity: 1;
+        transform: translateY(0%);
+        -webkit-transform: translateY(0%);
+    }
+}
+
+.al-commentReleaseBox {
+    background-color: #f0f5f8;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: all 0.1s linear;
+    -webkit-transform: translateY(100%);
+    -webkit-transition: all 0.1s linear;
+}
+
+.al-commentReleaseItem {
+    background-color: #fff;
+    text-align: center;
+    .al-commentReleaseItemBtn {
+        display: inline-block;
+        padding: rem(50px) 0;
+        @include font-dpr(16px);
+        a {
+            display: block;
+            color: #333;
+        }
+        figcaption {
+            margin-top: rem(10px);
+            letter-spacing: rem(5px)
+        }
+        img {
+            border-radius: 50%;
+            vertical-align: top;
+            @include circle(rem(120px));
+            margin: 0 rem(80px)
+        }
+    }
+}
+
+.al-commentReleaseCancel {
+    @include font-dpr(16px);
+    text-align: center;
+    background-color: #fff;
+    padding: rem(25px) 0;
+    width: 100%;
+    margin-top: rem(15px);
+}
+.al-personalContributionOver{
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    font-size: 0.34667rem;
+    color: #626f8c;
+    background:#eff4f8;
+}
+.icon-recommend{
+    @extend %icon-recommend;
+}
+.icon-commentNum{
+    @extend %icon-commentNum;
+}
+.icon-commentLikeNum{
+    @extend %icon-commentLikeNum;
+}
+.icon-commentShare{
+    @extend %icon-commentShare;
+}
+.icon-commentCollect{
+    @extend %icon-commentCollect;
+}
+.icon-commentCollected{
+    @extend %icon-commentCollected;
+}

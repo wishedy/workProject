@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>${seoTitle!''} -话题讨论-唯医,allinmd</title>
+    <meta name="description" content="${seoMetaDescription!''}">
+    <meta name="Keywords" content="话题,话题讨论${seoMetaKeyword!''},${customer_auth.lastName}${customer_auth.firstName},唯医,allinmd">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/dest/pages/detail/detail_topic.css">
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/video-js.css" rel="stylesheet" type="text/css"/>
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/videojs.allinmd-h5.css" rel="stylesheet" type="text/css"/>
+    <meta name="data-alcode" content="a2">
+
+</head>
+
+<body data-alcode="254">
+<input type="hidden" value="4" id="relationType"/>
+<input type="hidden" value="8" id="preferReviewType"/>
+<input type="hidden" value="${cms_topic.topicId?c}" id="resourceId"/>
+<input type='hidden' id="shareImgSrc" value="${shareImgSrc!''}"/>
+
+<section class="al-mainInner">
+
+    <!--话题被删除开始-->
+    <#if cms_topic??&&cms_topic.isValid=3>
+        <figure class="al-terminalNone">
+            <img src="/images/img50/pages/case/deleted.png" alt="">
+            <figcaption>
+                很抱歉，该话题已被作者删除
+            </figcaption>
+        </figure>
+    </#if>
+    <!--话题被删除结束-->
+
+    <!--话题被屏蔽开始-->
+    <#if cms_topic??&&cms_topic.isValid=0>
+        <figure class="al-terminalNone">
+            <img src="/images/img50/pages/case/deleted.png" alt="">
+            <figcaption>
+                很抱歉，该话题已被管理员屏蔽
+            </figcaption>
+        </figure>
+    </#if>
+    <!--话题被屏蔽结束-->
+
+    <#if cms_topic??&&cms_topic.isValid=1>
+        <#assign customer_page="//m.allinmd.cn/pages/personal/others_contribution.html?cid=${customer_auth.customerId?c}">
+            <#if customer_auth.customerId?length==1>
+                <#assign customer_page="javascript:;">
+            </#if>
+        <!--作者信息开始-->
+        <header class="al-terminalHeader" data-alcode-mod='510'>
+            <section>
+                <figure class="al-terminalAuthorImg">
+
+                    <a href="${customer_page}">
+                        <img src="${upload_author_logo.logoUrl}" alt=""/>
+                    </a>
+                </figure>
+                <figcaption class="al-terminalAuthorMsg">
+                    <h2><#if customer_auth??>
+                        <a class="Ev-authorName" href="${customer_page}">${customer_auth.lastName}${customer_auth.firstName}</a>
+                    </#if>
+                        <i class="al-vipUser"></i></h2>
+                    <p><#if customer_auth??><span>${customer_auth.medicalTitleShow}
+                        </span></#if>
+                        <#if customer_auth??><span><#if customer_auth.company!="">${customer_auth.company!''}<#else>${customer_auth.schoolName!''}</#if></span></#if>
+                    </p>
+                    <span class="al-terminalReleaseTime">
+                    ${cms_topic.createTime?substring(0,10)}
+                </span>
+                </figcaption>
+            </section>
+        </header>
+        <!--作者信息结束-->
+
+
+
+        <!--话题主体内容-->
+        <section class="al-terminalContent">
+            <!--话题标题、浏览数、关注数、关注状态-->
+            <header class="al-terminalContentTitle Ev-caseTitle">
+                <!--话题标题-->
+                <h2> ${cms_topic.topicName!''}</h2>
+                <!--话题标题结束-->
+                <!--浏览数、关注数、关注话题按钮-->
+                <article class="al-terminalContentSnsMsg Ev-caseDetail">
+                    <span class="al-terminalBrowsedNum"><em class="Ev-browseNum"></em>浏览</span>
+                    <i class="point">·</i>
+                    <span class="al-terminalFollowedNum"><em class="Ev-followNum"></em>关注</span>
+                    <button class="btn-primary Ev-FollowBtn" style="display: none"><i class="icon-terminalFollow"></i><span>关注</span></button>
+                    <button class="btn-done Ev-alFollowBtn"><i class="icon-terminalFollowed"></i><span>已关注</span></button>
+                </article>
+                <!--浏览数、关注数、关注话题按钮结束-->
+            </header>
+            <!--话题标题、浏览数、关注数、关注状态结束-->
+
+            <!--话题正文-->
+            <section class="al-terminalContentContext">
+
+                <article class="al-terminalContextItem">
+                    <#if ((contentList??)&&(contentList?size>0))>
+                        <#list contentList as topicContent>
+                            <#if topicContent.contentType==0>
+                                <p class="Ev-disPerCenter">${topicContent.content!''}</p>
+                            </#if>
+
+                            <#if topicContent.contentType==1>
+                                <!--话题页面内容图片-->
+                                <section class="al-terminalImgBox al-terminalImgOne Ev-imgCtrl" typeTitle="话题" topicId="${cms_topic.topicId?c}">
+                                    <figure class="al-terminalImg Ev-maxImg">
+                                        <img class="Ev-maxImgTopic" src="${topicContent.picAttUrl!''}"  alt="">
+                                    </figure>
+                                </section>
+                                <!--话题页面内容图片结束-->
+                            </#if>
+
+                            <#if topicContent.contentType==2>
+
+                                <!--话题页面内容视频-->
+                                <section class="al-terminalImgBox al-terminalImgVideo Ev-videoCtrl" data-qiniuId="${topicContent.topicAttId?c}">
+                                    <figure class="al-terminalImg Ev-maxVideo">
+                                        <!--视频默认展示-->
+                                        <img class="Ev-videoBcImg" src="" alt="">
+                                        <i class="al-terminalVideoBtn">
+                                            <img src="/images/img50/pages/case/video.png" alt="">
+                                        </i>
+                                        <span class="al-videoTime Ev-videoTime"></span>
+                                        <!--默认展示结束-->
+
+                                        <!--视频播放中-->
+                                        <figure class="Ev-videoPlay" style="display: none;"></figure>
+                                        <!--播放中结束-->
+                                    </figure>
+                                </section>
+                                <!--话题页面内容视频结束-->
+
+                            </#if>
+                        </#list>
+                    </#if>
+
+
+                </article>
+
+
+                <!--标签开始-->
+                <article class="al-terminalContextItem al-terminalContentTags" data-alcode-mod='498'>
+
+                    <#if topicPropertyList?size gt 0>
+
+                        <h3>标签</h3>
+                        <#list topicPropertyList as property>
+
+                            <a class="al-terminalTags" href="//m.allinmd.cn/pages/discover/discover_tagSubject.html?tId=${property.propertyId?c}" >${property.propertyName!''}</a>
+                        </#list>
+                    </#if>
+
+                </article>
+                <!--标签结束-->
+
+
+            </section>
+            <!--话题正文结束-->
+
+            <!--所属活动或者专辑-->
+            <article class="al-terminalActivition Ev-activity" style="display: none;">
+                <span></span><a class="Ev-actName" href="javascript:void(0)"></a>
+            </article>
+            <!--所属活动或专题结束-->
+
+            <!--分享区-->
+            <section class="al-terminalShare" data-alcode-mod='406' data-alcode-item-selector="section">
+                <h3>分享给好友 共同讨论</h3>
+                <section class="al-terminalShareItem Ev-shareBtn" ref="trend">
+                    <figure class="al-bottomShareImg">
+                        <img src="/images/img50/pages/index/share_allin.png" _mce_src="/images/img50/pages/index/share_allin.png" alt=""></figure>
+                    <figcaption>站内动态</figcaption>
+                </section>
+                <section class="al-terminalShareItem Ev-shareBtn" ref="qzone">
+                    <figure class="al-bottomShareImg">
+                        <img src="/images/img50/pages/index/share_kongjian.png" _mce_src="//m.allinmd.cn/images/img50/pages/index/share_kongjian.png" alt="">
+                    </figure>
+                    <figcaption>QQ空间</figcaption>
+                </section>
+                <section class="al-terminalShareItem Ev-shareBtn" ref="sina">
+                    <figure class="al-bottomShareImg">
+                        <img src="/images/img50/pages/index/share_weibo.png" alt="">
+                    </figure>
+                    <figcaption>微博</figcaption>
+                </section>
+            </section>
+            <!--分享区结束-->
+        </section>
+        <!--话题主体内容结束-->
+    </#if>
+
+    <!--相关推荐开始-->
+    <section class="al-terminalMainContent Ev-similarRecommend" style="display: none" data-alcode-mod='505'>
+        <h2>相关推荐</h2>
+
+    </section>
+    <!--相关推荐结束-->
+
+    <!--评论区-->
+    <section class="al-terminalMainContent al-terminalCommentContent Ev-discussArea">
+        <h2>
+            评论(<span class="Ev-navReviewNum">0</span>)
+            <section class="al-terminalSortChange">
+                <button class="al-terminalSortChangeItem" sortType="3">最新</button>
+                <button class="al-terminalSortChangeItem active"  sortType="1">最旧</button>
+            </section>
+        </h2>
+        <section class="al-terminalComment">
+            <div id="EQ_newReplyList" data-alcode-mod='499'>
+
+            </div>
+            <section class="al-terminalNoComment" style="display: none;">
+                <span>暂无评论，快“加入讨论”参与进来~</span>
+            </section>
+        </section>
+    </section>
+    <!--评论区结束-->
+
+    <!--没有更多-->
+    <article class="al-terminalFinish"  style="display: none;">
+        ~<span>没有更多了</span>~
+    </article>
+    <!--没有更多结束-->
+
+    <!--底部悬浮-->
+    <footer class="al-terminalFooter">
+        <figure class="al-terminalFooterItem Ev-backBtn">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalBack"></i>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem al-terminalJoinDiscuss Ev-discussBtn">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalJoin"><span>加入讨论</span></i>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-reviewNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalCommentNum"></i>
+                <span class="al-newsNum" style="display: none;"></span>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-praiseNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminallike"></i>
+                <span class="al-newsNum"  style="display: none;"></span>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-collectNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalCollect"></i>
+                <span class="al-newsNum" style="display: none;"></span>
+            </a>
+        </figure>
+    </footer>
+    <!--底部悬浮结束-->
+</section>
+<!-- 底部选项 -->
+<section class="al-bottomSelectorListMask Ev-cancelFollow">
+    <section class="al-bottomSelectorListBox">
+        <section class="al-bottomSelectorList">
+            <figure class="al-bottomSelectorItem al-bottomSelectorTitle"><a href="javascript:void(0)">取消关注后，你将无法接收到相关提醒~</a></figure>
+            <figure class="al-bottomSelectorItem ev-sureBtn"><a href="javascript:void(0)">取消关注</a></figure>
+        </section>
+        <section class="al-bottomSelectorList mgt">
+            <figure class="al-bottomSelectorItem ev-cancelBtn"><a href="javascript:void(0)">取消</a></figure>
+        </section>
+    </section>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="//paas.allinmd.cn/modules/photoswipe/photoswipe.min.js"></script>
+<script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe-ui-default.js"></script>
+<script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+<script src="/js/react/JSXTransformer.js"></script>
+<script src="/js/react/react.js"></script>
+
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<script src="//paas.allinmd.cn/modules/allinmdplayer/video.js"></script>
+<script src="//paas.allinmd.cn/modules/allinmdplayer/videojs.allinmd.js"></script>
+<script src="/dest/pages/detail/detail_topic.js"></script>
+<script type="text/jsx" src="/js/scene/case/comment.jsx" charset="utf-8"></script>
+</body>
+
+</html>

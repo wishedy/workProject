@@ -1,0 +1,489 @@
+//﻿@charset "UTF-8";
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/emr-variables";
+.bodyHidden{
+    height: 100%;
+    overflow: hidden;
+}
+@media screen and (max-width:1540px){
+    .alEmr-logo{
+        background: url("/static/images/common/logo.png") no-repeat center 50%;
+        width: 37px;
+        height: 37px;
+    }
+}
+.alEmr-mainInner{
+    background: #ffffff;;
+}
+.alEmr-mainIndex{
+    margin-top: 110px;
+}
+.patListCon{
+    //医生筛选
+    font-size: 0;
+    .docTitle{
+        font-size:16px;
+        color:rgba(51,51,51,1);
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .selectCont{
+        margin-bottom: 48px;
+        .selectItem{
+            display: inline-block;
+            margin-right: 50px;
+            &:last-child{
+                margin-right: 20px;
+            }
+        }
+        .subBtn{
+            width:94px;
+            height:40px;
+            background:rgba(235,244,255,1);
+            border-radius:2px;
+            border:1px solid rgba(40,136,255,1);
+            font-size:16px;
+            color:rgba(40,136,255,1);
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .docSelect{
+            display: inline-block;
+            vertical-align: middle;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #C8C8C8;
+            border-radius: 4px;
+            position: relative;
+            z-index: 1;
+            margin-left: 25px;
+            &.selectResult{
+                cursor: pointer;
+                input{
+                    font-size: 14px;
+                }
+            }
+            &.focus{
+                background: #FFFFFF;
+                border: 1px solid #2888FF;
+                box-shadow: 0 0 4px 0 rgba(67,130,241,0.47);
+                border-radius: 4px;
+            }
+            &.error{
+                background: #FFFFFF;
+                border: 1px solid #F34B4B;
+                box-shadow: 0 0 4px 0 rgba(243, 75, 75, 0.59);
+                border-radius: 4px;
+            }
+            .docList{
+                background: #FFFFFF;
+                box-shadow: 0 8px 16px 0 rgba(204,214,231,0.80);
+                border-radius: 4px;
+                width: 100%;
+                max-height: 200px;
+                overflow: auto;
+                padding: 10px 0;
+                position: absolute;
+                left: 0;
+                top: 40px;
+                z-index: 2;
+                &.selectList{
+                    top:41px;
+                }
+                li{
+                    position: relative;
+                    padding: 15px 0 15px 20px;
+                    line-height: 30px;
+                    cursor: pointer;
+                    @include fontSize(22px,#000);
+                    &:hover{
+                        background: #EBF4FF;
+                    }
+                    i{
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: #F34B4B;
+                    }
+                }
+            }
+            span{
+                @include fontSize(22px,#000);
+                margin-left: 20px;
+            }
+            input{
+                @include fontSize(22px,#000);
+                margin-left: 20px;
+                border: none;
+                height: 100%;
+                float: left;
+                width: 115px;
+                &:disabled{
+                    background-color: #ffffff;
+                }
+            }
+            p{
+                float: right;
+                margin-right: 10px;
+                cursor: pointer;
+                @include fontSize(15px,#666666);
+                i.tabBtn{
+                    @include iconImgI(inline-block,20px,20px);
+                    background: url("/static/images/pages/teamsetting/switching_on.png") no-repeat;
+                }
+                i.redPoint{
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-top: 16px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #F34B4B;
+                }
+            }
+            .changeNameError{
+                position: absolute;
+                left: 0;
+                bottom: -36px;
+                @include fontSize(18px,#F34B4B);
+                line-height: 18px;
+            }
+        }
+    }
+    .importBtn{
+        width: 88px;
+        height: 38px;
+        font-size: 14px;
+        color: #FFFFFF;
+        background: #2888FF;
+        border-radius: 2px;
+        text-align: center;
+        //margin: 20px 0 0 1093px;
+        margin: 20px 0 0 330px;
+        position: relative;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        display: inline-block;
+        &.noneP{
+            background: #BBBBBB;
+        }
+        .patChoNum{
+            line-height: 38px;
+        }
+        .patTip{
+            //display: none;
+            position: absolute;
+            background: #fff;
+            //box-shadow:  0 3px 8px 0 rgba(98,111,140,0.15);
+            box-shadow:  0 0 16px 0 rgba(204,214,231,.8);
+            font-size: 14px;
+            color: #333;
+            padding: 18px 20px 14px;
+            left: -57px;
+            top: 50px;
+            text-align: center;
+            width: 128px;
+            &:before{
+                content: "";
+                display: inline-block;
+                position: absolute;
+                left: 65%;
+                margin-left: -5px;
+                height: 0;
+                width: 0;
+                top: -19px;
+                border: 9px solid transparent;
+                border-bottom: 9px solid #eceff2;
+            }
+            &:after{
+                content: "";
+                display: inline-block;
+                position: absolute;
+                left: 65%;
+                margin-left: -5px;
+                height: 0;
+                width: 0;
+                top: -18px;
+                border: 9px solid transparent;
+                border-bottom: 9px solid #fff;
+            }
+        }
+        .impPro{
+            line-height: 50px;
+            li{
+                @include iconImgI(inline-block,12px,12px);
+                background: rgba(255,255,255,0.7);
+                border-radius: 50px;
+                -webkit-animation: pointerHS 1.4s infinite ease-in-out;
+                animation: pointerHS 1.4s infinite ease-in-out;
+                &:nth-child(1){
+                    -webkit-animation-delay: -0.32s;
+                    animation-delay: -0.32s;
+                }
+                &:nth-child(2){
+                    background: rgba(255,255,255,0.7);
+                    margin: 0 12px;
+                    -webkit-animation-delay: -0.16s;
+                    animation-delay: -0.16s;
+                }
+                &:nth-child(3){
+                    background: #ffffff;
+                    //animation: pointerHS 1s ease infinite 1s;
+                }
+            }
+        }
+    }
+    .patLists{
+        margin-bottom: 25px;
+        .calendar{
+            padding-bottom: 10px;
+            vertical-align: middle;
+            i{
+                display: inline-block;
+                width: 27px;
+                height: 26px;
+                background: url("/static/images/common/icon/calendarIcon.png") no-repeat center 50%;
+                vertical-align: middle;
+            }
+            span{
+                display: inline-block;
+                width: 75px;
+                height: 21px;
+                border: 1px solid #BBBBBB;
+                border-left: none;
+                font-size: 14px;
+                color: #BBBBBB;
+                line-height: 21px;
+                text-align: center;
+                vertical-align: middle;
+                margin-top: 4px;
+            }
+        }
+        .patListItem{
+            padding: 15px 0;
+            border-top: 1px solid #EEEEEE;
+            font-size: 0;
+            &:hover{
+                background: #EBF4FF;
+                border-top: 1px solid #ffffff;
+            }
+
+            &:first-child{
+                border: none;
+            }
+            span{
+                display: inline-block;
+                //text-align: center;
+                font-size: 14px;
+                line-height: 14px;
+                color: #000000;
+                vertical-align: middle;
+            }
+            &.active{
+                .patChooBtn{
+                    width: 20px;
+                    height: 20px;
+                    background: url("/static/images/common/icon/checkBoxAct.png") no-repeat center 50%;
+                    border: none;
+                    &:hover{
+                        border: none;
+                    }
+                }
+            }
+            &.unchecked{
+                span{
+                    color: #909090;
+                }
+                .patChooBtn{
+                    width: 20px;
+                    height: 20px;
+                    background: url("/static/images/common/icon/checkBoxGrey.png") no-repeat center 50%;
+                    border: none;
+                    cursor: auto;
+                }
+                .patType{
+                    background: #BBBBBB;
+                    color: #ffffff;
+                }
+            }
+            .patChooBtn{
+                width: 18px;
+                height: 18px;
+                border: 1px solid #C4C9CC;
+                border-radius: 2px;
+                background: #ffffff;
+                cursor: pointer;
+                margin-right: 30px;
+                &:hover{
+                    border: 1px solid #2888FF;
+                }
+            }
+            .patType{
+                width: 58px;
+                height: 20px;
+                border-radius: 2px;
+                font-size: 13px;
+                background: #00C761;
+                color: #FFFFFF;
+                line-height: 20px;
+                margin-right: 40px;
+                text-align: center;
+                &.typeTwo{
+                    background: #FF7B37;
+                }
+            }
+            &.unchecked{
+                span{
+                    color: #909090;
+                }
+                .patChooBtn{
+                    width: 20px;
+                    height: 20px;
+                    background: url("/static/images/common/icon/checkBoxGrey.png") no-repeat center 50%;
+                    border: none;
+                }
+                .patType{
+                    background: #BBBBBB;
+                    color: #ffffff;
+                }
+            }
+            .patName{width: 115px;}/*122*/
+            .patSex{width: 60px;}/*87*/
+            .patAge{width: 70px;}/*95*/
+            .patNum1{width: 158px;}/*211*/
+            .patNum110{width: 100px}
+            .patNum145{width: 100px}
+            .patNum200{width: 190px}
+            .patNum{width: 600px;overflow: hidden;line-height: 14px}
+        }
+    }
+}
+.patPopupCont{
+    background: rgba(#304364,0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    z-index: 2;
+    .importError{
+        width: 500px;
+        height: 218px;
+        background: #FFFFFF;
+        border-radius: 4px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -moz-transform:translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        -o-transform:translate(-50%,-50%);
+        .impClose{
+            background: url("/static/images/pages/teamsetting/member_cancel.png") no-repeat center 50%;
+            width: 13px;
+            height: 13px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+        }
+        .impErrTop{
+            margin:60px 0 40px;
+            text-align: center;
+            font-size: 0;
+            p{
+                font-size: 14px;
+                color: #333333;
+                line-height: 18px;
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 7px;
+                font-weight: 600;
+            }
+            i{
+                background: url("/static/images/common/icon/errorIcon28x28.png") no-repeat center 50%;
+                width: 28px;
+                height: 28px;
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+        .impErrBot{
+            text-align: center;
+            line-height: 44px;
+            font-size: 0;
+            .impCancle{
+                width: 80px;
+                height: 40px;
+                color: #ffffff;
+                font-size: 14px;
+                background: #BBBBBB;
+                border-radius: 2px;
+                margin-right: 20px;
+                cursor: pointer;
+            }
+            .impAgain{
+                width: 94px;
+                height: 40px;
+                color: #ffffff;
+                font-size: 14px;
+                background: #2888FF;
+                border-radius: 2px;
+                cursor: pointer;
+            }
+        }
+        &.importSuc{
+            height: 255px;
+            .impErrTop{
+                i{
+                    background: url("/static/images/common/icon/successIcon28x28.png") no-repeat center 50%;
+                    width: 28px;
+                    height: 28px;
+                    display: inline-block;
+                    margin-right: 10px;
+                    vertical-align: top;
+                }
+                div{
+                    width: 288px;
+                    display: inline-block;
+                    p{
+                        font-weight: 600;
+                        width: 288px;
+                        margin-top: 0;
+                        text-align: left;
+                        &:nth-child(2){
+                            font-size: 14px;
+                            margin-top: 13px;
+                            font-weight: 100;
+                        }
+                    }
+                }
+            }
+            .impAgain{
+                cursor: pointer;
+            }
+        }
+    }
+}
+.NonePatients{//没有患者提示
+    width: 100%;
+    text-align: center;
+    margin-top: 200px;
+    div{
+        font-size: 16px;
+        color: #333333;
+        line-height: 20px;
+        margin-top: 31px;
+    }
+}

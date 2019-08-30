@@ -1,0 +1,527 @@
+@charset "UTF-8";
+//样式模块调用
+@import "../../modules/utilities/utilities";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@include normalize(mobile);
+.al-mainInner{
+  background-color: #ffffff;
+}
+.grayBgLine{
+  height: rem3(8px);
+  width: 100%;
+  display: inline-block;
+  background:rgba(240,241,242,1);
+}
+//购买详情样式
+.payDetailContent{
+  font-size: 0;//解决幽灵间距
+  .payHeaderInfo{
+    height: rem3(145px);
+    background-color: #ffffff;
+    padding: 0 rem3(15px);
+    position: relative;
+    &.vipBg{
+      background: url("/static/images/payDetail/vipBgImg.png") no-repeat center center;
+      background-size: contain;
+    }
+    .payImgInfo{
+      width: rem3(74px);
+      height: rem3(93px);
+      display: inline-block;
+      border-radius: rem3(4px);
+      margin-top: rem3(24px);
+      margin-right: rem3(14px);
+    }
+    .payTextInfo{
+      display: inline-block;
+      vertical-align: top;
+      width: rem3(257px);
+      .payTitle{
+        margin: rem3(32px) 0 0;
+        font-size:rem3(16px);
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+        color:rgba(34,34,34,1);
+      }
+      .payDescCont{
+        position: absolute;
+        left: rem3(103px);
+        bottom:rem3(32px);
+        article{
+          display: inline-block;
+        }
+        .payVipDesc{
+          span{
+            &:nth-child(1){
+              font-size:rem3(18px);
+              font-family:PingFangSC-Medium;
+              font-weight:500;
+              color:rgba(216,43,43,1);
+              i{
+                font-size:rem3(12px);
+              }
+            }
+            &:nth-child(2){
+              font-size:rem3(13px);
+              font-family:PingFangSC-Medium;
+              font-weight:500;
+              color:rgba(128,128,128,1);
+            }
+            &:nth-child(3){
+              font-size:rem3(13px);
+              font-family:PingFangSC-Medium;
+              font-weight:500;
+              color:rgba(128,128,128,1);
+              margin-left: rem3(5px);
+              text-decoration: line-through;
+            }
+          }
+          .redTip{
+            font-size:rem3(11px);
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(255,255,255,1);
+            background: url("/static/images/payDetail/redBgTip.png") no-repeat center center;
+            background-size: contain;
+            width: rem3(60px);
+            height: rem3(18px);
+            display: inline-block;
+            margin-left: rem3(10px);
+            text-align: center;
+            line-height: rem3(18px);
+            vposition: absolute;
+            top: 50%;
+            transform: translate(0,-50%);
+          }
+        }
+        .payCourseDesc{
+          position: relative;
+          span{
+            &:nth-child(1){
+              font-size:rem3(12px);
+              font-family:PingFangSC-Regular;
+              font-weight:400;
+              color:rgba(216,43,43,1);
+            }
+            &:nth-child(2){
+              font-size:rem3(18px);
+              font-family:PingFangSC-Medium;
+              font-weight:500;
+              color:rgba(216,43,43,1);
+            }
+            &:nth-child(3){
+              font-size:rem3(13px);
+              font-family:PingFangSC-Medium;
+              font-weight:500;
+              color:rgba(128,128,128,1);
+              text-decoration: line-through;
+              margin-left: rem3(5px);
+            }
+          }
+          .redTip{
+            font-size:rem3(11px);
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(255,255,255,1);
+            background: url("/static/images/payDetail/redBgTip.png") no-repeat center center;
+            background-size: contain;
+            width: rem3(60px);
+            height: rem3(18px);
+            display: inline-block;
+            margin-left: rem3(10px);
+            text-align: center;
+            line-height: rem3(18px);
+            position: absolute;
+            top: 50%;
+            transform: translate(0,-50%);
+          }
+        }
+      }
+    }
+  }
+  //会员购买项
+  .vipPayItem{
+    height: rem3(73px);
+    width: 100%;
+    position: relative;
+    img{
+      width: rem3(50px);
+      height: rem3(41px);
+      display: inline-block;
+      margin:rem3(15px) rem3(10px) 0 rem3(15px);
+    }
+    .vipPayItemInfo{
+      font-size:rem3(14px);
+      font-family:PingFangSC-Medium;
+      font-weight:500;
+      color:rgba(98,77,24,1);
+      max-width: rem3(144px);
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      transform: translate(0,-50%);
+    }
+    section{
+      font-size:0;
+      font-family:PingFangSC-Medium;
+      font-weight:500;
+      color:rgba(216,43,43,1);
+      position: absolute;
+      right: rem3(15px);
+      top: 50%;
+      transform: translate(0,-50%);
+      span{
+        font-size:rem3(18px);
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+        color:rgba(216,43,43,1);
+        margin-right: rem3(4px);
+        height: 100%;
+        vertical-align: middle;
+        &:nth-child(1){
+          i{
+            font-size: rem3(13px);
+          }
+        }
+        &:nth-child(2){
+          font-size:rem3(13px);
+          color: #808080;
+        }
+        &:nth-child(3){
+          float: right;
+          width: rem3(22px);
+          height: rem3(22px);
+          background: url("/static/images/payDetail/payNotChecked.png") no-repeat center center;
+          background-size: contain;
+          margin-left: rem3(8px);
+          //margin-top: rem3(2px);
+          &.active{
+            background: url("/static/images/payDetail/payChecked.png") no-repeat center center;
+            background-size: contain;
+          }
+        }
+      }
+    }
+  }
+  //权益
+  .payRightInterests{
+    height: rem3(191px);
+    background-color: #ffffff;
+    padding: 0 rem3(15px);
+    .rightTitle{
+      span{
+        &:nth-child(1){
+          font-size:rem3(15px);
+          font-family:PingFangSC-Regular;
+          font-weight:400;
+          color:rgba(51,51,51,1);
+          margin-top: rem3(20px);
+          display: inline-block;
+        }
+        &:nth-child(2){
+          font-size:rem3(14px);
+          font-family:PingFangSC-Regular;
+          font-weight:400;
+          color:rgba(137,95,57,1);
+          float: right;
+          margin-top: rem3(20px);
+          display: inline-block;
+          i{
+            display: inline-block;
+            width: rem3(12px);
+            height: rem3(12px);
+            background: url("/static/images/payDetail/lookMore.png") no-repeat center center;
+            background-size: contain;
+            margin-left: rem3(5px);
+          }
+        }
+      }
+    }
+    .rightItem{
+      margin-bottom: rem3(8px);
+      margin-left: rem3(15px);
+      li{
+        display: inline-block;
+        width: rem3(60px);
+        margin: rem3(20px) rem3(28px) 0 0;
+        &:last-child{
+          margin-right: 0;
+        }
+        img{
+          display: inline-block;
+          width: rem3(50px);
+          height: rem3(50px);
+          border-radius: 50%;
+        }
+        span{
+          font-size:rem3(14px);
+          font-family:PingFangSC-Regular;
+          font-weight:400;
+          color:rgba(51,51,51,1);
+          margin-top: rem3(10px);
+          text-align: center;
+          display: inline-block;
+        }
+      }
+    }
+  }
+  //购买类型
+  .payTypeCont{
+    background-color: #ffffff;
+    padding: 0 rem3(15px);
+    li{
+      height: rem3(56px);
+      border-bottom: rem3(1px) solid rgba(227,229,233,1);
+      &:last-child{
+        border: none;
+      }
+      &.payType{
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(51,51,51,1);
+        font-size:rem3(15px);
+        line-height: rem3(56px);
+        span{
+          &:nth-child(2){
+            float: right;
+          }
+        }
+      }
+      &.payDiscount{
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(51,51,51,1);
+        font-size:rem3(15px);
+        line-height: rem3(56px);
+        span{
+          i{
+            margin-left: rem3(4px);
+            color: rgba(170,170,170,1);
+          }
+          &.nothingCoupon{
+            float: right;
+            color:rgba(204,204,204,1);
+          }
+          &.couponNum,&.availableCoupon,&.canCollectCoupon{
+            float: right;
+            font-size:rem3(15px);
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(216,43,43,1);
+          }
+        }
+      }
+    }
+  }
+  //支付方式
+  .payWayCont{
+    background-color: #ffffff;
+    padding: 0 rem3(15px);
+    height: 100%;
+    .payWayTitle{
+      font-size:rem3(14px);
+      font-family:PingFangSC-Regular;
+      font-weight:400;
+      color:rgba(85,85,85,1);
+      margin: rem3(20px) 0;
+      display: inline-block;
+    }
+    .payWayItem{
+      position: relative;
+      li{
+        border-bottom: rem3(1px) solid rgba(227,229,233,1);
+        height: rem3(57px);
+        line-height: rem3(57px);
+        &:nth-child(1){
+          span{
+            display: inline-block;
+            &:nth-child(1){
+              width: rem3(23px);
+              height: rem3(21px);
+              background: url("/static/images/payDetail/weixinIcon.png") no-repeat center center;
+              background-size: contain;
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translate(0,-50%);
+            }
+            &:nth-child(2){
+              font-size:rem3(16px);
+              font-family:PingFangSC-Regular;
+              font-weight:400;
+              color:rgba(51,51,51,1);
+              vertical-align: super;
+              margin-left: rem3(34px);
+            }
+            &:nth-child(3){
+              float: right;
+              width: rem3(22px);
+              height: rem3(22px);
+              background: url("/static/images/payDetail/payNotChecked.png") no-repeat center center;
+              background-size: contain;
+              position: absolute;
+              top: 50%;
+              right: 0;
+              transform: translate(0,-50%);
+              &.active{
+                border-radius: 50%;
+                background: url("/static/images/payDetail/payChecked.png") no-repeat center center;
+                background-size: contain;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+//  提交按钮
+  .paySubmitBtn{
+    height: rem3(49px);
+    width: 100%;
+    background:rgba(246,246,246,1);
+    line-height: rem3(49px);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    .vipTip{
+      font-size:rem3(14px);
+      width: 100%;
+      height: rem3(36px);
+      background:rgba(254,252,237,1);
+      padding-left: rem3(15px);
+      line-height: rem3(36px);
+      position: fixed;
+      left: 0;
+      bottom: rem3(49px);
+      color:rgba(137,84,35,1);
+    }
+    span{
+      display: inline-block;
+      &:nth-child(1){
+        font-size:rem3(11px);
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+        color:rgba(221,153,51,1);
+        width: 62%;
+        margin-left: rem3(15px);
+        vertical-align: unset;
+        .moneyNum{
+          font-size:rem3(28px);
+          vertical-align: inherit;
+        }
+        .grayLine{
+          width: rem3(1px);
+          height: rem3(15px);
+          background:rgba(170,170,170,1);
+          margin: 0 rem3(5px);
+          display: inline-block;
+        }
+        .discount{
+          font-size:rem3(14px);
+          font-family:PingFangSC;
+          font-weight:400;
+          color:rgba(128,128,128,1);
+          line-height:rem3(20px);
+          vertical-align: text-bottom;
+        }
+      }
+      &:nth-child(2){
+        width: 34%;
+        height: 100%;
+        background:rgba(100,131,233,1);
+        font-size:rem3(17px);
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        float: right;
+        text-align: center;
+      }
+    }
+  }
+//  权益弹层
+  .rightInterestsTip{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background:rgba(0,0,0,0.7);
+    z-index: 4;
+    .rightInterestsCont{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: rem3(345px);
+      height: rem3(400px);
+      margin: 0 auto;
+      background-color: #ffffff;
+      background-size: contain;
+      border-radius: rem3(12px);
+      overflow: hidden;
+      i{
+        width: 100%;
+        height: rem3(56px);
+        background: url("/static/images/payDetail/tipBg.png") no-repeat center center;
+        background-size: contain;
+        display: inline-block;
+        font-size:rem3(19px);
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+        color:rgba(34,34,34,1);
+        text-align: center;
+        line-height: rem3(56px);
+        margin-bottom: rem3(15px);
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      .rigthDesc{
+        overflow-y: scroll;
+        margin-top: rem3(70px);
+        max-height: rem3(344px);
+        li{
+          padding: 0 rem3(25px);
+          margin-bottom: rem3(15px);
+          span{
+            font-size:rem3(16px);
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(34,34,34,1);
+            line-height:rem3(22px);
+            margin-bottom: rem3(6px);
+            display: inline-block;
+            &:before{
+              content: '';
+              width:rem3(4px);
+              height:rem3(14px);
+              display: inline-block;
+              background:rgba(34,34,34,1);
+              margin-right: rem3(4px);
+            }
+          }
+          p{
+            font-size:rem3(15px);
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(85,85,85,1);
+            line-height:rem3(21px);
+          }
+        }
+      }
+    }
+    .tipCloseBtn{
+      width: rem3(40px);
+      height: rem3(40px);
+      display: inline-block;
+      background: url("//img50.allinmd.cn/index/close_small_popup.png") no-repeat center 50%;
+      background-size: contain;
+      margin: 0 auto;
+      margin-top: rem3(29px);
+      position: fixed;
+      left: 50%;
+      bottom: rem3(29px);
+      transform: translate(-50%,0);
+    }
+  }
+}

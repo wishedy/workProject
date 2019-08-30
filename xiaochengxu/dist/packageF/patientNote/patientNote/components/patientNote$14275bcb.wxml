@@ -1,0 +1,84 @@
+<import src="/components/shareNode$54881678" />
+<import src="/components/loading$2ff823fe" />
+<import src="/components/backIndex$640b7ced" />
+<import src="/components/BlackList$219144df" />
+<import src="/components/authorization$8245c8b6" /><template name="patientNote$14275bcb">
+  <view class="_section data-v-21e0f110 patientNoteCon {{[isHidden ? 'patientHidden' : '', isTable ? ' patient-table' : '']}}">
+    <view class="_header data-v-21e0f110">
+      <view class="_h1 data-v-21e0f110 headerTitle">{{nodeDetail.manualName}}</view>
+      <view class="_p data-v-21e0f110 headerInfo" wx:if="{{!isTable}}"><label class="_span data-v-21e0f110 headerNum">{{nodeDetail.totalBrowseNum}}浏览</label></view>
+    </view>
+    <view wx:if="{{!isTable}}" class="_section data-v-21e0f110">
+      <view class="_section data-v-21e0f110 noteContent">
+        <view class="_article data-v-21e0f110 noteItem" wx:if="{{nodeDetail.adaptCrowd}}">
+          <view class="_h2 data-v-21e0f110 itemTitle"><label class="_span data-v-21e0f110 itemMidd">适应人群</label></view>
+          <view class="_div data-v-21e0f110 itemDesc">
+            <view class="_p data-v-21e0f110 itemdescCon">
+              {{nodeDetail.adaptCrowd}}
+            </view>
+          </view>
+        </view>
+        <view class="_article data-v-21e0f110 noteItem" wx:if="{{nodeDetail.expertsSay}}">
+          <view class="_h2 data-v-21e0f110 itemTitle"><label class="_span data-v-21e0f110 itemMidd">专家说</label></view>
+          <view class="_div data-v-21e0f110 itemDesc">
+            <view class="_p data-v-21e0f110 itemdescCon">
+              {{nodeDetail.expertsSay}}
+            </view>
+          </view>
+        </view>
+        <view class="_article data-v-21e0f110 noteItem" wx:if="{{nodeDetail.recommenderList&&nodeDetail.recommenderList.length}}">
+          <view class="_h2 data-v-21e0f110 itemTitle"><label class="_span data-v-21e0f110 itemMidd">推荐专家</label><label class="_span data-v-21e0f110 doctorTip">(点击头像咨询)</label></view>
+          <view class="_ul data-v-21e0f110 itemDesc doctorList">
+            <view class="_li data-v-21e0f110 doctorItem" bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" wx:for="{{nodeDetail.recommenderList}}" wx:for-index="index" wx:for-item="item">
+              <image src="{{item.logoUrl}}" class="_img data-v-21e0f110"></image>
+              <view class="_div data-v-21e0f110 doctorInfo">
+                <view class="_p data-v-21e0f110 doctorName"><label class="_span data-v-21e0f110">{{item.fullName}}</label></view>
+                <view class="_p data-v-21e0f110 doctorDesc"><label class="_span data-v-21e0f110 doctorMed" wx:if="{{item.medicalTitle}}">{{item.medicalTitle}}  </label><label class="_span data-v-21e0f110 doctorCom">{{item.hospital}}</label></view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="_article data-v-21e0f110 noteItem" wx:if="{{totalNum}}">
+          <view class="_h2 data-v-21e0f110 itemTitle"><label class="_span data-v-21e0f110 itemMidd">{{totalNum}}个内容</label></view>
+          <view class="_figure data-v-21e0f110 contentCon" wx:key="index" key="{{index}}" wx:for="{{contentList}}" wx:for-index="index" wx:for-item="item">
+            <view class="_h3 data-v-21e0f110 contentTitle" wx:if="{{item.contentTypeName}}"><label class="_span data-v-21e0f110">{{item.contentTypeName}}</label></view>
+            <view class="_ul data-v-21e0f110">
+              <view class="_li data-v-21e0f110 contentItem {{[  itemC.educationContentType == 5 ? 'itemVideo' : '',  itemC.educationContentType != 5 ? 'itemContentDesc' : '']}}" wx:key="indexC" key="{{indexC}}" wx:for="{{item.contentList}}" wx:for-index="indexC" wx:for-item="itemC">
+                <view wx:if="{{itemC.educationContentType==5}}" bindtap="handleProxy" data-eventid="{{'2-'+index+'-'+indexC}}" data-comkey="{{$k}}" class="_div data-v-21e0f110">
+                  <view class="_div data-v-21e0f110 videoPic">
+                    <image src="{{itemC.videoMap.imgUrl}}" class="_img data-v-21e0f110"></image> <label class="_span data-v-21e0f110 iconPlay"></label> <label class="_span data-v-21e0f110 timeContaier">{{itemC.playTime}}</label>
+                  </view>
+                  <view class="_div data-v-21e0f110 videoInfo">
+                    <view class="_p data-v-21e0f110 videoTitle">{{itemC.educationName}}</view>
+                    <view class="_p data-v-21e0f110 repetition">{{itemC.tipsContent}}</view>
+                  </view>
+                </view>
+                <view class="_div data-v-21e0f110 itemContainer" wx:else bindtap="handleProxy" data-eventid="{{'1-'+index+'-'+indexC}}" data-comkey="{{$k}}">
+                  <view class="_p data-v-21e0f110 itemConTitle">{{itemC.educationName}}</view>
+                  <view class="_p data-v-21e0f110 itemConDesc"><label class="_span data-v-21e0f110 browseNum">{{itemC.browseNum}}个浏览</label><label class="_span data-v-21e0f110 creatTime">{{itemC.webCreateTime}}</label></view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="_footer data-v-21e0f110 btnFooter"><button class="_button data-v-21e0f110 shareSend wx-contact-text" open-type="share">
+          <view class="_i data-v-21e0f110 iconShare"></view><label class="_span data-v-21e0f110 shareSend">转发</label>
+        </button> <button class="_button data-v-21e0f110 shareBtn wx-contact-text" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">
+          <view class="_i data-v-21e0f110 iconShare"></view><label class="_span data-v-21e0f110 shareText">分享</label>
+        </button></view>
+    </view>
+    <view class="_section data-v-21e0f110 node-nodata" wx:if="{{isTable}}">
+      <view class="_figure data-v-21e0f110 nodata-tip">
+        <image src="https://m.allinmed.cn/static/image/mp/index/1.1.7/none_conten.png" class="_img data-v-21e0f110"></image>
+        <view class="_p data-v-21e0f110 tip-text">手册内没有内容</view>
+      </view>
+    </view>
+    <view class="_div data-v-21e0f110 doctorInvite" wx:if="{{isShowInvite}}" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">
+      <view class="_i data-v-21e0f110 closeDoctor" catchtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}"></view>
+      <view class="_p data-v-21e0f110 doctorName"><label class="_span data-v-21e0f110 doctorText">{{doctorName}}医生</label>
+        <view class="_br data-v-21e0f110"></view>邀您阅读
+      </view>
+    </view> <template wx:if="{{isShowShare}}" bindshareClose="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="shareNode$54881678"></template> <template wx:if="{{loading.length}}" data="{{...$root[$kk+'1'], $root}}" is="loading$2ff823fe"></template> <template wx:if="{{backIndexShow}}" data="{{...$root[$kk+'2'], $root}}" is="backIndex$640b7ced"></template> <template data="{{...$root[$kk+'3'], $root}}" is="BlackList$219144df"></template> <template data="{{...$root[$kk+'4'], $root}}" is="authorization$8245c8b6"></template>
+  </view>
+</template>

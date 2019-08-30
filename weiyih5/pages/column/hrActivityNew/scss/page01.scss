@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+@import "./common";
+
+html,body{
+  height:100%;
+  width:100%;
+}
+.wrap {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes myfirst {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes myfirst /* Safari 与 Chrome */
+{
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*第一页*/
+.notice {
+  width: 100%;
+  height: 100%;
+  background: url("../images/phoneBg.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.notice ul {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+
+.notice ul li {
+  height:rem(150px);
+  background: #FFFFFF;
+  border-radius: 23px;
+  opacity: 0;
+  margin-bottom:0.21rem ;
+}
+
+.notice ul li:nth-of-type(1) {
+  background: url(../images/msg01.png) center center no-repeat;
+  background-size:96% 100% ;
+}
+
+.notice ul li:nth-of-type(2) {
+  background: url(../images/msg02.png) center center no-repeat;
+  background-size:96% 100% ;
+}
+
+.notice ul li:nth-of-type(3) {
+  background: url(../images/msg03.png) center center no-repeat;
+  background-size:96% 100% ;
+}
+
+//mgsList 用于动画
+.animation {
+  animation: myfirst 0.5s 0.5s;
+  animation-fill-mode: forwards;
+  -webkit-animation: myfirst 0.5s 0.5s;
+  -webkit-animation-fill-mode: forwards;
+  will-change: transform;
+}
+
+//.msgList li:nth-of-type(2) {
+//  animation: myfirst 0.5s 1s;
+//  animation-fill-mode: forwards;
+//  will-change: transform;
+//  -webkit-animation: myfirst 0.5s 1s;
+//  -webkit-animation-fill-mode: forwards;
+//}
+//
+//.msgList li:nth-of-type(3) {
+//  animation: myfirst 0.5s 1.5s;
+//  animation-fill-mode: forwards;
+//  will-change: transform;
+//  -webkit-animation: myfirst 0.5s 1.5s;
+//  -webkit-animation-fill-mode: forwards;
+//}

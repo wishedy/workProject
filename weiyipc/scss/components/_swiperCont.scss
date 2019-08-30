@@ -1,0 +1,56 @@
+@charset "UTF-8";
+//按钮组件
+//Created by qiangkailiang on 2016/08/04
+//公共方法模块调用
+@import "../modules/_common-modules";
+//公共变量引用
+@import "../variables/_allinmdV3-variables";
+
+.swiper-button-prev {
+    background: url(//img10.allinmd.cn/v3/common/icon/left_banner.png) no-repeat;
+    width: 27px;
+    height: 46px;
+    position: absolute;
+    left: 30px;
+    top: 115px;
+    z-index: 6;
+    cursor: pointer;
+    display: none;
+}
+.swiper-button-next {
+    background: url(//img10.allinmd.cn/v3/common/icon/right_banner.png) no-repeat;
+    width: 27px;
+    height: 46px;
+    position: absolute;
+    right: 30px;
+    top: 115px;
+    z-index: 6;
+    cursor: pointer;
+    display: none;
+}
+.al-pagination {
+    position: absolute;
+    z-index: 20;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+.swiper-pagination-switch {
+    behavior: url(/js/third-party/pie/pie.htc);
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background: #fff;
+    margin: 0 5px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    border: 1px solid #fff;
+    cursor: pointer;
+    position: relative;
+}
+.swiper-active-switch{
+    background: #fff;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}

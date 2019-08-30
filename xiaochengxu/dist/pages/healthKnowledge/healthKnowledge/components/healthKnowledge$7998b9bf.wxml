@@ -1,0 +1,34 @@
+<import src="/components/healthKnowledge$2c86ff37" />
+<import src="/components/healthItemList$7d04fde1" />
+<import src="/components/loading$2ff823fe" /><template name="healthKnowledge$7998b9bf">
+  <view class="_section data-v-615ab0cc healthMain {{[!fromDocHomeShow ? 'fromDoc' : '']}}"><template wx:if="{{searchFlag}}" data="{{...$root[$kk+'0'], $root}}" is="healthKnowledge$2c86ff37"></template>
+    <view wx:if="{{!searchFlag}}" style="height:100%;" class="_article data-v-615ab0cc">
+      <view class="_header data-v-615ab0cc headContent {{[headFixed ? 'fixed' : '']}}" wx:if="{{false}}">
+        <view class="_section data-v-615ab0cc searchBox" bindtap="handleProxy" wx:if="{{fromDocHomeShow}}" data-eventid="{{'0'}}" data-comkey="{{$k}}">请输入关键词</view>
+        <view class="_section data-v-615ab0cc healthBanner {{[!bannerShow ? 'hide' : '']}}" wx:if="{{fromDocHomeShow && bannerList.length>0}}">
+          <swiper autoplay="true" interval="3000" duration="300" class="_swiper data-v-615ab0cc">
+            <block wx:key="index" key="{{index}}" wx:for="{{bannerList}}" wx:for-index="index" wx:for-item="item">
+              <swiper-item class="_swiper-item data-v-615ab0cc banner-slider">
+                <view class="_a data-v-615ab0cc">
+                  <image src="{{item.adAttUrl}}" class="_img data-v-615ab0cc slide-image"></image>
+                </view>
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        <view class="_ul data-v-615ab0cc fourTypes">
+          <view bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_li data-v-615ab0cc {{[fourTypesIndex == -1 ? 'on' : '']}}">
+            <view class="_i data-v-615ab0cc icon-all"></view> <label class="_span data-v-615ab0cc">全部</label>
+          </view>
+          <view bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}" wx:for="{{educationTypeList}}" wx:for-index="index" wx:for-item="item" class="_li data-v-615ab0cc {{[fourTypesIndex == index ? 'on' : '']}}">
+            <view class="_i data-v-615ab0cc {{item.titleIcon}}"></view> <label class="_span data-v-615ab0cc">{{item.titleName}}</label>
+          </view>
+        </view>
+      </view>
+      <scroll-view bindscroll="handleProxy" scroll-y style="height:100%;" bindscrolltolower="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" class="_scroll-view data-v-615ab0cc">
+        <view class="_section data-v-615ab0cc mainContent {{[!fromDocHomeShow ? 'cancleTop' : '']}}"><template from="home" data="{{...$root[$kk+'2'], $root}}" is="healthItemList$7d04fde1"></template></view>
+        <view class="_footer data-v-615ab0cc noMore" wx:if="{{noMore}}">~没有更多了~</view>
+      </scroll-view>
+    </view> <template wx:if="{{finish}}" data="{{...$root[$kk+'3'], $root}}" is="loading$2ff823fe"></template>
+  </view>
+</template>

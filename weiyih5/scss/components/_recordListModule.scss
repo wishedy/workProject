@@ -1,0 +1,61 @@
+@charset "UTF-8";
+//记录列表组件
+//Created by qiangkailiang on 2016/08/09
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.al-recordListBox{
+    margin-top: rem(15px);
+}
+.al-recordList{
+    background-color: #fff;
+    margin: rem(15px) 0;
+
+    &Title{
+        border-bottom: 1px solid $innerBorderColor;
+        @include font-dpr(12px);
+        height: rem(50px);
+        line-height: rem(50px);
+        padding-left: rem(30px);
+        color: #555;
+    }
+    &Item{
+        padding: rem(40px) rem(30px);
+        background-color: #fff;
+        border-bottom: 1px solid $innerBorderColor;
+        @include clearfix();
+        article{
+            float: left;
+            padding-left: rem(20px);
+        }
+        &Type{
+            height: rem(36px);
+            width: rem(68px);
+            text-align: center;
+            line-height: rem(36px);
+            border: 1px solid #626f8c;
+            border-radius: rem(5px);
+            color: #626f8c;
+            display: inline-block;
+            vertical-align: middle;
+            float: left;
+        }
+        &Content{
+            color: #333;
+            @include font-dpr(15px);
+
+            width: 7rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &Time{
+            @include font-dpr(12px);
+            color: $smallTextColor;
+            margin-top: rem(15px);
+        }
+        .icon-arrowRight{
+            float: right;
+        }
+    }
+}

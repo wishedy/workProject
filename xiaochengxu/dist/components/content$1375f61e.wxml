@@ -1,0 +1,19 @@
+<template name="content$1375f61e">
+  <view class="_section data-v-4162e568 main-message-box" bindlongpress="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+    <view class="_article data-v-4162e568 main-message-box-item {{[  contentMessage.from === userData.account ? 'my-message' : '',  contentMessage.from === targetData.account ? 'others-message' : '']}}" data-clientid="{{contentMessage.idClient}}">
+      <view class="_figure data-v-4162e568 main-message-img" wx:if="{{contentMessage.from===targetData.account}}" catchtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+        <image src="{{targetLogo}}" alt class="_img data-v-4162e568"></image>
+      </view>
+      <view class="_i data-v-4162e568 fail-button" style="display:none"></view>
+      <view class="_figcaption data-v-4162e568 main-message-content">
+        <transition name="fade" class="_transition data-v-4162e568"><label class="_span data-v-4162e568 delete-msg-btn" catchtap="handleProxy" wx:if="{{currentIndex===deleteMsgIndex&&showDeleteMsg&&contentMessage.from===userData.account}}" data-eventid="{{'1'}}" data-comkey="{{$k}}">撤回</label></transition>
+        <view class="_p data-v-4162e568">{{contentMessage.text}}</view>
+        <view class="_article data-v-4162e568 disclaimer-content" wx:if="{{from==='report'&&currentIndex<2&&contentMessage.from===targetData.account}}"><label class="_span data-v-4162e568">重要提示：在线咨询不能代替面诊，医生建议仅供参考。</label></view>
+        <view class="_article data-v-4162e568 disclaimer-content" wx:if="{{from!=='report'&&currentIndex<=3&&contentMessage.from===targetData.account}}"><label class="_span data-v-4162e568">重要提示：在线咨询不能代替面诊，医生建议仅供参考。</label></view>
+      </view>
+      <view class="_figure data-v-4162e568 main-message-img" wx:if="{{contentMessage.from===userData.account}}">
+        <image src="{{logoUrl}}" alt class="_img data-v-4162e568"></image>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,948 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+@import "../../components/_message_rightSideBar";//右侧栏组件
+@import "../../components/_makeSurePopup";
+@import "../../components/_focusOnTagsPerson"; //关注标签的人
+@import "../../components/_iconsModule"; //图标
+/*发现入口侧栏*/
+.billboardStar{
+  margin:0 20px;
+  .contribution{
+    padding-bottom: 20px;
+    border-bottom: solid 1px #ECF0F2;
+    margin-top: 20px;
+    width: 228px;
+    &:last-child{
+      border: none;
+    }
+    header{
+      font-size: 14px;
+      color: #666666;
+      line-height: 14px;
+     i{
+        background: #909090;
+        border-radius: 1px;
+        width: 4px;
+        height: 14px;
+        display: inline-block;
+        vertical-align: bottom;
+        margin-right: 10px;
+     }
+    }
+    .user{
+      margin-top: 20px;
+      a{
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 5px;
+        width: 40px;
+        height: 40px;
+        i{
+          position: absolute;
+          left: -12px;
+          top: 0px;
+          z-index: 2;
+          display: inline-block;
+          background: url("/images/img10/v3/discover/billboard/icon-rankno1_small.png") no-repeat;
+          height: 25px;
+          width: 25px;
+          background-size: contain;
+          text-align: center;
+          padding-top: 3px;
+          font-size: 12px;
+          color: #fff;
+        }
+      }
+      img{
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+      }
+      aside{
+        display: inline-block;
+        font-size: 12px;
+        line-height: 12px;
+        .name{
+          font-size: 15px;
+          color: #333333;
+          line-height: 15px;
+          display: inline;
+          cursor: pointer;
+          &:hover{
+            color: #2899e6;
+          }
+        }
+        .hospital{
+          color: #666666;
+          margin: 10px 0;
+          span{
+            margin-left: 10px;
+          }
+        }
+        .describe{
+          color: #9B9B9B;
+          overflow: hidden;
+          display: inline;
+          li{
+            float: left;
+            //border-right: solid 1px #E4E9ED;
+            //padding-right: 4px;
+            margin-right: 4px;
+            &:after{
+              content: '';
+              background: #E4E9ED;
+              height: 12px;
+              width: 1px;
+              display: inline-block;
+              margin-left: 4px;
+              vertical-align: middle;
+            }
+            &:last-child{
+              border: none;
+              padding: 0;
+              margin: 0;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+
+
+/*贡献榜*/
+.contribution{
+  width: 1000px;
+  margin: 16px auto 0;
+  .contributionLeft{
+    float: left;
+    width: 708px;
+    .conNav{
+      background: #fff;
+      nav{
+        height: 55px;
+        line-height: 53px;
+        @include clearfix();
+        li{
+          font-size: 18px;
+          color: #777777;
+          width: 94px;
+          text-align: center;
+          float: left;
+          border-bottom:#fff solid 2px ;
+          margin: 0 20px;
+          cursor: pointer;
+          &.active{
+            color: #2899e6;
+            border-bottom:#2899E6 solid 2px ;
+          }
+          &:hover{
+            color: #2899e6;
+          }
+        }
+        aside{
+          font-size: 14px;
+          color: #626F8C;
+          float: right;
+          margin-right: 24px;
+          cursor: pointer;
+          i{
+            background: url("/images/img10/v3/discover/billboard/icon-questionmark.png") no-repeat;
+            height: 14px;
+            width: 14px;
+            background-size: cover;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 4px;
+          }
+          &:hover{
+            color: #2899e6;
+            i{
+              background: url("/images/img10/v3/common/icon/icon-questionmarkHover.png") no-repeat;
+            }
+          }
+        }
+      }
+
+      figure{
+        position: relative;
+        img{
+          width: 708px;
+          height: 180px;
+        }
+        figcaption{
+          position: absolute;
+          bottom: 5px;
+          left: 10px;
+          opacity: 0.8;
+          font-size: 16px;
+          color: #FFFFFF;
+          i{
+            background: url("/images/img10/v3/discover/billboard/calender.png") no-repeat;
+            width: 22px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            display: inline-block;
+            font-size: 24px;
+            color: #3598DB;
+            vertical-align: middle;
+            margin: 0 4px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .ranking{
+      margin-top: 20px;
+      height: 117px;
+      background: #FFFFFF;
+      box-shadow: 0 2px 4px 0 rgba(215,222,229,0.50), 0 0 2px 0 #C7D3DF;
+      span{
+        font-size:18px;
+        color: #909090;
+        display: inline-block;
+        width: 24px;
+        height: 18px;
+        text-align: center;
+        line-height: 117px;
+        margin:0 7px 0 14px;
+      }
+      figure{
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+        img{
+          width: 54px;
+          height: 54px;
+          border-radius: 50%;
+        }
+      }
+
+      .describe{
+        display: inline-block;
+        vertical-align: middle;
+        .userName{
+          font-size: 16px;
+          color: #333333;
+          margin-bottom: 11px;
+          a{
+            color: #333333;
+            &:hover{
+              color: #2899e6;
+            }
+          }
+        }
+        .describeText{
+          font-size: 10px;
+          color: #666666;
+          b{
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0 10px 0 4px;
+            color: #666666;
+          }
+          i{
+            font-size: 14px;
+            color: #909090;
+          }
+        }
+      }
+      aside{
+        background: url("/images/img10/v3/discover/billboard/bg-rank.png") no-repeat;
+        width: 125px;
+        height: 32px;
+        line-height:32px;
+        float: right;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 18px;
+        color: #FE9225;
+        text-align: center;
+        background-size: contain;
+        margin: 40px 25px 0 0;
+        &.none{
+          background: none;
+          font-size: 14px;
+          color: #909090;
+          width: auto;
+        }
+      }
+    }
+    .conList{
+      margin-top: 20px;
+      background: #FFFFFF;
+      box-shadow: 0 2px 4px 0 rgba(215,222,229,0.50), 0 0 2px 0 #C7D3DF;
+
+      li{
+        div{
+          display: inline-block;
+          border-bottom: solid 1px  #ECF0F2;
+          padding-bottom: 20px;
+          width: 550px;
+        }
+        padding: 20px 0 0 10px;
+        .placing{
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          margin-top: 10px;
+          vertical-align: top;
+          text-align: center;
+          line-height: 30px;
+          font-size: 18px;
+          color: #909090;
+          &.placingIcon{
+            font-size: 0;
+          }
+          &.first{
+            background: url("/images/img10/v3/discover/billboard/first.png") no-repeat;
+          }
+          &.second{
+            background: url("/images/img10/v3/discover/billboard/second.png") no-repeat;
+          }
+          &.third{
+            background: url("/images/img10/v3/discover/billboard/third.png") no-repeat;
+          }
+        }
+
+        figure{
+          display: inline-block;
+          margin: 0 20px 0 5px;
+          vertical-align: top;
+          width: 54px;
+          height: 54px;
+          img{
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+          }
+        }
+        .describe{
+          display: inline-block;
+          margin-top: 4px;
+        }
+
+        .userName{
+          font-size: 16px;
+          color: #333333;
+          a{
+            color: #333333;
+            &:hover{
+              color: #2899e6;
+            }
+          }
+          &.new{
+            span{
+              i{
+                display: inline-block;
+                background: url("/images/img10/v3/discover/billboard/ranknew.png") no-repeat;
+                width: 14px;
+                height: 14px;
+                vertical-align: top;
+                margin-right: 7px;
+              }
+              display: inline-block;
+              height: 14px;
+              font-size: 10px;
+              color: #5DC82A;
+              line-height: 14px;
+              padding:0 7px 0 0;
+              margin-left: 10px;
+              border: solid 1px #5DC82A;
+              border-radius: 2px;
+            }
+          }
+          &.continuity{
+            span{
+              display: inline-block;
+              width: 71px;
+              height: 16px;
+              background: url("/images/img10/v3/discover/billboard/bg-rankconsecutive.png") no-repeat;
+              font-size: 10px;
+              color: #FF9224;
+              line-height: 16px;
+              margin-left: 10px;
+              padding-left:21px;
+            }
+          }
+        }
+        .userType{
+          font-size: 14px;
+          color: #666666;
+          line-height: 16px;
+          margin: 8px 0;
+        }
+        .userHospital{
+          font-size: 14px;
+          color: #666666;
+        }
+        ul {
+          float: right;
+          overflow: hidden;
+          margin-top: 20px;
+          li{
+            padding: 0;
+            font-size: 12px;
+            float: left;
+            //border-right: #E4E9ED solid 1px;
+            //padding-right: 10px;
+            margin-right: 10px;
+            color: #AAAAAA;
+            line-height: 18px;
+
+            &.week{
+              color: #909090;
+              &:after{
+                content: '';
+                background: #E4E9ED;
+                height: 12px;
+                width: 1px;
+                display: inline-block;
+                margin-left: 10px;
+              }
+              span{
+                font-size: 18px;
+                color: #FE9225;
+              }
+            }
+            &:last-child{
+              border: none;
+              padding: 0;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .contributionRight{
+    float: right;
+    width: 268px;
+    .al-discover_sidebar{
+      margin: 0;
+    }
+    .conSuccess{
+      padding-bottom: 20px;
+      background: #FFFFFF;
+      border: 1px solid rgba(199,211,223,0.34);
+      .title{
+        font-size: 18px;
+        color: #333333;
+        height: 53px;
+        line-height: 53px;
+        border-bottom: solid 1px #E4E9ED;
+        padding-left: 20px;
+      }
+      ul{
+        margin: 0 20px;
+        li{
+          height: 64px;
+          &.resourseNoneImg{
+            aside {
+              width: auto;
+              float: none;
+            }
+          }
+          margin-top: 20px;
+          figure{
+            display: inline-block;
+            position: relative;
+            b{
+              display: inline-block;
+              background: url("/images/img10/v3/discover/billboard/billboardVideo.png") no-repeat;
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              margin: -15px 0 0 -15px;
+              font-weight: normal;
+            }
+            img{
+              width: 95px;
+              height: 62px;
+            }
+          }
+          aside{
+            width: 120px;
+            float: right;
+            p{
+              font-size: 14px;
+              color: #555555;
+              line-height: 20px;
+              &:hover{
+                color: #2899e6;
+              }
+            }
+            figure{
+              margin-top: 4px;
+              p{
+                display: inline-block;
+              }
+               .userName{
+                 font-family: '宋体';
+                 font-size: 10px;
+                 color: #909090;
+                 line-height: 13px;
+                 margin-right: 15px;
+                 i{
+                   display: inline-block;
+                   width: 13px;
+                   height: 13px;
+                   background: transparent url(//img10.allinmd.cn/v3/common/icon/personal_user.png) center center no-repeat;
+                   background-size:contain;
+                   vertical-align: text-bottom;
+                   margin-right: 5px;
+                 }
+               }
+              .num{
+                font-family: '宋体';
+                font-size: 10px;
+                color: #909090;
+                line-height: 13px;
+                i{
+                  display: inline-block;
+                  width: 15px;
+                  height: 10px;
+                  background: transparent url(//img10.allinmd.cn/v3/common/icon/personal_watchNum.png) center center no-repeat;
+                  background-size:contain;
+                  vertical-align: middle;
+                  margin-right: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/*活跃榜*/
+.contribution .contributionLeft .ranking{
+  .describe{
+
+    .describeText{
+      font-size: 12px;
+      color: #909090;
+      margin-top: 8px;
+    }
+  }
+}
+
+
+.contribution .contributionLeft .conList li .userContribution{
+  margin-top: 10px;
+  li{
+    line-height: 14px;
+  }
+
+}
+
+.contribution .contributionLeft .conList li .userContribution{
+  overflow: hidden;
+  float: left;
+  li{
+    font-family: SimSun;
+    font-size: 12px;
+    color: #666666;
+    float: left;
+    /*border-right: #E4E9ED solid 1px;
+    margin-right: 10px;
+    padding-right: 10px;*/
+    b{
+      font-size: 14px;
+      color: #666666;
+      line-height: 14px;
+      display: inline-block;
+      vertical-align: text-top;
+      font-weight: normal;
+    }
+  }
+}
+
+.userContribution{
+  overflow: hidden;
+  li{
+    font-family: SimSun;
+    font-size: 12px;
+    color: #666666;
+    float: left;
+    //border-right: #E4E9ED solid 1px;
+    margin-right: 10px;
+    //padding-right: 10px;
+    &:after{
+      content: '';
+      background: #E4E9ED;
+      height: 12px;
+      width: 1px;
+      display: inline-block;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    &:last-child{
+      &:after{
+        content: '';
+        display: none;
+      }
+    }
+    b{
+      font-size: 14px;
+      color: #666666;
+      line-height: 14px;
+      display: inline-block;
+      vertical-align: text-top;
+      font-weight: normal;
+      margin-left: 6px;
+    }
+  }
+}
+
+
+/*推荐榜*/
+.contribution .contributionLeft .listNav{
+  ul{
+    overflow: hidden;
+    padding:12px 24px;
+    border-bottom: 1px solid  #ECF0F2;
+    li{
+      padding: 0;
+      font-size: 16px;
+      color: #909090;
+      float: left;
+      width: 72px;
+      height: 26px;
+      line-height: 26px;
+      text-align: center;
+      cursor: pointer;
+      &.active{
+        background: #2899E6;
+        border-radius: 2px;
+        color: #fff;
+        &:hover{
+          color: #fff;
+        }
+      }
+      &:hover{
+        color: #2899e6;
+      }
+    }
+  }
+}
+.contribution .contributionLeft .conList li div{
+  .crown{
+    display: inline-block;
+    float: right;
+    opacity: 0.88;
+    font-size: 16px;
+    color: #666666;
+    margin-top: 10px;
+    cursor: pointer;
+    &:hover{
+      i{
+        display: inline-block;
+        background: #8DC6EC;
+        border: solid 1px  #8DC6EC;
+        border-radius: 100px;
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 30px;
+        margin-left: 6px;
+        color: #fff;
+      }
+    }
+    &.active{
+      color: #3598DB;
+      i{
+        display: inline-block;
+        background: #3598DB;
+        border: solid 1px  #3598DB;
+        border-radius: 100px;
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 30px;
+        margin-left: 6px;
+        color: #fff;
+      }
+    }
+    i{
+      display: inline-block;
+      border: 1px solid #626F8C;
+      border-radius: 100px;
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+      text-align: center;
+      line-height: 30px;
+      margin-left: 6px;
+    }
+  }
+}
+
+
+/*说明规则*/
+.rule{
+  display: none;
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  background: rgba(10,30,43,0.70);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#bb0A1E2B, endColorstr=#bb0A1E2B); BOTTOM: 0px;
+  .illustrate{
+    background: #fff;
+    width: 708px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    height: 76%;
+    *margin-left: -354px;
+    *margin-top:-18%;
+    margin-left: -354px\9;
+    margin-top:-18%\9;
+    border-radius: 4px;
+    .illustrateCont{
+      overflow: auto;
+      width: 708px;
+      height: 93%;
+      //padding-bottom: 40px;
+      background: #fff;
+    }
+    .lineBorder{
+      width: 660px;
+      margin: 0 auto;
+      display: table;
+      border-bottom: 1px solid rgba(116,136,145,0.13);
+    }
+    .title{
+      height: 52px;
+      line-height: 52px;
+      font-size: 15px;
+      color: #666666;
+      border-bottom: solid 1px #D8D8D8;
+      padding-left: 20px;
+      overflow: hidden;
+      i{
+        cursor: pointer;
+        display: inline-block;
+        background: url("/images/img10/v3/discover/billboard/icon-artboard.png") no-repeat;
+        width: 15px;
+        height: 15px;
+        float: right;
+        margin: 20px 20px 0 0;
+        vertical-align: middle;
+      }
+    }
+    .illustrateText{
+      font-size: 14px;
+      color: #9B9B9B;
+      line-height: 22px;
+      padding: 2px 24px;
+      border-bottom: solid 1px #D8D8D8;
+    }
+    .illustrateTitle{
+      width: 363px;
+      margin: 49px auto 29px;
+      border-bottom: solid 1px #D8D8D8;
+      position: relative;
+      i{
+        font-size: 18px;
+        color: #FF9224;
+        padding: 0 20px;
+        background: #fff;
+        position: absolute;
+        left: 100px;
+        top: -9px;
+      }
+    }
+    ul{
+      li{
+        margin: 0 45px 30px;
+         i{
+           width: 8px;
+           height: 8px;
+           display: inline-block;
+           transform: rotate(-315deg);
+           background: #FE9225;
+           margin-right: 9px;
+           vertical-align: middle;
+         }
+        p{
+          font-size: 16px;
+          color: #808080;
+          margin-left: 17px;
+          &.firstImg{
+            display: inline-block;
+            vertical-align: middle;
+            img{
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+        .other{
+          font-size: 16px;
+          color: #666666;
+          display: inline-block;
+          width: 500px;
+          line-height: 30px;
+          vertical-align: text-top;
+        }
+        em{
+          font-size: 16px;
+          color: #666666;
+          display: block;
+          margin-left: 17px;
+          margin-bottom: 11px;
+          span{
+            font-size: 14px;
+            color: #808080;
+            margin-left: 11px;
+          }
+        }
+        .smallText{
+          font-size: 14px;
+          color: #909090;
+          margin:0 0 0 17px;
+          line-height: 22px;
+          span{
+            display: inline-block;
+            vertical-align: top;
+          }
+          b{
+            display: inline-block;
+            font-weight: normal;
+            width: 525px;
+            margin-bottom: 6px;
+          }
+        }
+        .column{
+          display: inline-block;
+          font-size: 16px;
+          color: #666666;
+          line-height: 16px;
+          font-weight: bold;
+          margin-bottom: 15px;
+          margin-left: 0;
+          span{
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+  .reward{
+    margin-top: 30px;
+    padding-bottom: 40px;
+    .rewardTitle{
+      width: 305px;
+      height: 27px;
+      margin: 0 auto 17px;
+      background: url("/images/img10/v3/discover/billboard/bg-bonus.png") no-repeat;
+      font-size: 20px;
+      color: #FE9225;
+      line-height: 27px;
+      text-align: center;
+     }
+    .rewardText{
+      width: 660px;
+      margin: 0 auto;
+      padding: 26px 0 14px ;
+      background: rgba(254,145,36,0.05);
+      ul{
+        li{
+          font-size: 14px;
+          color: #666666;
+          line-height: 14px;
+          margin: 0 0 12px 20px;
+          i{
+            transform: inherit;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            line-height: 14px;
+            text-align: center;
+            vertical-align: middle;
+            background: #FE9225;
+            border-radius: 2px;
+            font-size: 12px;
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+  }
+}
+
+.upToDate{
+  display: inline-block;
+  width: 51px;
+  height: 16px;
+  background: url(/images/img10/v3/discover/billboard/bg-ranknew.png) no-repeat;
+  font-size: 10px;
+  color: #5DC82A;
+  line-height: 16px;
+  padding-left: 22px;
+  margin-left: 10px;
+}
+.continuityWeek{
+  display: inline-block;
+  width: 71px;
+  height: 16px;
+  background: url(/images/img10/v3/discover/billboard/bg-rankconsecutive.png) no-repeat;
+  font-size: 10px;
+  color: #FF9224;
+  line-height: 16px;
+  padding-left: 22px;
+  margin-left: 10px;
+}
+.al-discover_sidebar .al-discover_sidebarMain{
+  .al-submit-invalid{
+    background-color: #2899E6;
+    color: #fff;
+    cursor: default;
+    opacity: 0.7;
+  }
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+  color:#aaa;
+  font-size: 14px;
+}
+　　:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:#aaa;
+  font-size: 14px;
+}
+　　::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:#aaa;
+  font-size: 14px;
+}
+　　:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:#aaa;
+  font-size: 14px;
+}
+
+
+.applyBtn{
+  float: right;
+}
+.contribution .contributionLeft .conList li.listNone{
+  padding: 140px 0 160px 0;
+  text-align: center;
+}

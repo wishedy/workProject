@@ -1,0 +1,554 @@
+@charset "UTF-8";
+html,
+body {
+  font-family: 'Microsoft Yahei', Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #66657f;
+  background-color: #F6F6FA;
+}
+
+/*reset*/
+html {
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+html * {
+  outline: 0;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: 500;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+
+q:before,
+q:after {
+  content: "";
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ins,
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+/*头部及导航条*/
+/*头部轮播*/
+.imageTitle.swiper-container {
+  width: 100%;
+  background-color: #058;
+}
+.imageTitle.swiper-container .imageSlide.swiper-slide {
+  text-align: center;
+}
+.imageTitle.swiper-container .imageSlide.swiper-slide img {
+  width: 100%;
+  vertical-align: top;
+}
+.imageTitle.swiper-container .imagePagination {
+  text-align: right;
+  left: -0.26667rem;
+}
+.imageTitle.swiper-container .imagePagination span {
+  width: 0.2rem;
+  height: 0.2rem;
+}
+.imageTitle.swiper-container .swiper-pagination-bullet-active {
+  background-color: #7f5fc8;
+}
+
+.backToHome {
+  position: absolute;
+  width: 0.69333rem;
+  height: 0.69333rem;
+  top: 0.26667rem;
+  left: 0.26667rem;
+  z-index: 2;
+}
+.backToHome img {
+  width: 100%;
+  vertical-align: top;
+}
+
+/*导航条
+ *目前为3个tab切换，超过3个时可滑动查看更多
+ *届时添加类.moreNavItem
+ */
+.topNavbar {
+  width: 100%;
+  height: 1.06667rem;
+  background-color: #fff;
+  text-align: center;
+}
+.topNavbar .navbarText {
+  font-size: 0.4rem;
+  line-height: 1.06667rem;
+  display: inline-block;
+  position: relative;
+  margin: 0 0.66667rem;
+  color: #66657f;
+}
+
+/*动态样式类
+ *.moreNavItem:添加于.topNavBar，当导航条目为6项时添加
+ */
+.moreNavItem {
+  overflow-x: scroll;
+}
+.moreNavItem .navbarBox {
+  width: 200%;
+}
+
+/*on:添加于.navbarText，当前页打开时添加*/
+.navbarText.on {
+  color: #7f5fc8;
+}
+.navbarText.on:after {
+  content: "";
+  width: 100%;
+  height: 0.04rem;
+  background-color: #7f5fc8;
+  position: absolute;
+  bottom: 0;
+  margin-left: -50%;
+}
+
+.pageFooter {
+  text-align: center;
+  background-color: #fff;
+  height: 1.30667rem;
+  line-height: 1.30667rem;
+  margin-top: 1.6rem;
+  border-top: 1px solid #eae8ee;
+}
+.pageFooter .footerItem {
+  display: inline-block;
+}
+.pageFooter .footerItem a {
+  font-size: 0.32rem;
+  color: #0c8ef3;
+}
+.pageFooter hr {
+  width: 1px;
+  height: 0.26667rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.34667rem;
+}
+.pageFooter .footerHome:before {
+  content: "";
+  width: 0.32rem;
+  height: 0.30667rem;
+  display: inline-block;
+  background: transparent url("//m.allinmd.cn/image/column/bayer_race/footerHome.png") center center no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+  margin-right: 0.16rem;
+}
+.pageFooter .footerDownload:before {
+  content: "";
+  width: 0.32rem;
+  height: 0.30667rem;
+  display: inline-block;
+  background: transparent url("//m.allinmd.cn/image/column/bayer_race/footerDL.png") center center no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+  margin-right: 0.16rem;
+}
+.pageFooter .footerBackToTop:before {
+  content: "";
+  width: 0.32rem;
+  height: 0.30667rem;
+  display: inline-block;
+  background: transparent url("//m.allinmd.cn/image/column/bayer_race/footerBack.png") center center no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+  margin-right: 0.16rem;
+}
+
+/*悬浮按钮*/
+.footerBtn {
+  position: fixed;
+  bottom: 1.6rem;
+  right: 0.26667rem;
+  z-index: 2;
+  font-weight: normal;
+  text-shadow: none;
+}
+.footerBtn a {
+  height: 0.93333rem;
+  line-height: 0.93333rem;
+  font-size: 0.32rem;
+  color: #fff;
+  padding: 0.26667rem;
+  box-shadow: -2px -2px 2px #EFEFEF, 5px 5px 5px #B9B9B9;
+}
+
+.upFile {
+  background-color: #DA278D;
+  margin-right: 0.4rem;
+  border-radius: 0.46667rem;
+}
+.upFile:before {
+  content: "";
+  width: 0.56rem;
+  height: 0.4rem;
+  display: inline-block;
+  vertical-align: middle;
+  background: transparent url("//m.allinmd.cn/image/column/bayer_race/upFile.png") center center no-repeat;
+  background-size: 100% 100%;
+}
+
+.share {
+  background-color: #2398F4;
+  border-radius: 0.46667rem;
+}
+.share:before {
+  content: "";
+  width: 0.48rem;
+  height: 0.48rem;
+  display: inline-block;
+  vertical-align: middle;
+  background: transparent url("//m.allinmd.cn/image/column/bayer_race/share.png") center center no-repeat;
+  background-size: 100% 100%;
+}
+
+/*内容区基本共用样式*/
+.generalPart {
+  border-top: 1px solid #eae8ee;
+  border-bottom: 1px solid #eae8ee;
+  background-color: #fff;
+  margin-top: 0.26667rem;
+  font-size: 0.4rem;
+}
+.generalPart .generalText {
+  color: #66657f;
+}
+
+.generalTitle {
+  font-size: 0.42667rem;
+  color: #1f1f1f;
+  line-height: 1.04rem;
+  height: 1.04rem;
+  padding-left: 0.32rem;
+  border-bottom: 1px solid #dfdde4;
+  position: relative;
+}
+.generalTitle:before {
+  content: "";
+  width: 0.08rem;
+  height: 0.42667rem;
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.21333rem;
+  left: 0.13333rem;
+  background: transparent url("//m.allinmd.cn/image/column/bayer_race/beforeTitle.png") center center no-repeat;
+  background-size: 100% 100%;
+}
+
+.generalMore {
+  text-align: center;
+  height: 1.17333rem;
+  line-height: 1.17333rem;
+}
+.generalMore a {
+  font-size: 0.4rem;
+  color: #66657f;
+}
+.generalMore a:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.13333rem;
+  width: 0.29333rem;
+  height: 0.32rem;
+  background: transparent url("//m.allinmd.cn/image/column/bayer_race/moreArrow.png") left top no-repeat;
+  background-size: 100% 100%;
+}
+
+/*新增分享区域*/
+.videoPK_share_pop {
+  width: 100%;
+  height: 4.26667rem;
+  background: #efeff4;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 11;
+  box-shadow: 7px 3px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.vPK_share_cont {
+  position: absolute;
+  top: -0.46667rem;
+  width: 81.25%;
+  z-index: 12;
+  left: 0;
+  height: 2.98667rem;
+  border-bottom: 1px solid #e6e9ea;
+  background: #fff;
+  padding: 0 9.375% 0.5em 9.375%;
+}
+
+.vPK_share_list {
+  width: 70%;
+  height: 2.98667rem;
+  margin: 0 auto;
+}
+
+.clear {
+  height: 0;
+  clear: both;
+  overflow: hidden;
+}
+
+#videoPK_sharebtn a {
+  display: block;
+  width: 1.28rem;
+  height: 1.28rem;
+  margin: 0 auto;
+  float: left;
+  text-align: center;
+}
+
+.share_sina_icon {
+  width: 1.28rem;
+  height: 1.28rem;
+  margin: 0 auto;
+}
+
+.share_qzone_icon {
+  width: 1.28rem;
+  height: 1.28rem;
+  margin: 0 auto;
+}
+
+.share_sina_icon img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.share_sina_text {
+  font-size: 0.32rem;
+  color: #333;
+  margin-top: 0.13333rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.share_qq_icon img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.share_qzone_icon img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#videoPK_sharebtn .share_qq {
+  margin: 0 22%;
+}
+
+#videoPK_sharebtn .share_qzone {
+  float: right;
+}
+
+.share_dao {
+  font-size: 0.37333rem;
+  color: #333;
+  line-height: 1;
+  text-align: center;
+  margin: 0.30667rem 0 0.14667rem 0;
+}
+
+.share_quxiao {
+  background: #868c95;
+  border-radius: 3px;
+  width: 93.75%;
+  line-height: 2.53;
+  border: solid 1px #7a7f89;
+  position: absolute;
+  bottom: 0.47em;
+  left: 3.125%;
+  font-size: 0.45333rem;
+  color: #fff;
+  text-align: center;
+}
+
+.ui-popup-container {
+  z-index: 1100;
+  display: inline-block;
+  position: absolute;
+  padding: 0;
+  outline: 0;
+}
+
+#popupBasic2 {
+  padding: 1em;
+  background: #333;
+  color: #eee;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.ui-popup > p, .ui-popup > h1, .ui-popup > h2, .ui-popup > h3, .ui-popup > h4, .ui-popup > h5, .ui-popup > h6 {
+  margin: .5em .4375em;
+}
+
+#popupBasic2 a {
+  color: white;
+}
+
+.ui-btn.ui-btn-b {
+  background-color: #333;
+  border-color: #1f1f1f;
+  color: #fff;
+  text-shadow: 0 1px 0 #111;
+  right: -11px;
+  position: absolute;
+  top: -11px;
+  margin: 0;
+  z-index: 1101;
+  border-radius: 1em;
+  padding: 0;
+  width: 1.75em;
+  height: 1.75em;
+  text-indent: -9999px;
+  white-space: nowrap !important;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+.ui-loader-default {
+  display: none;
+}

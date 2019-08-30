@@ -1,0 +1,29 @@
+<import src="/components/toast$1074ede9" />
+<import src="/components/doctorItem$7814c800" />
+<import src="/components/loading$2ff823fe" />
+<import src="/components/confirm$5251c782" /><template name="history$750c0ae3">
+  <view class="_section data-v-49db0ebe main" style="height: 100vh; overflow:hidden">
+    <transition name="fade" class="_transition data-v-49db0ebe">
+      <view class="_section data-v-49db0ebe masker" wx:if="{{maskerShow}}" catchtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></view>
+    </transition>
+    <view class="_section data-v-49db0ebe header">
+      <view class="_section data-v-49db0ebe input-box">
+        <view class="_div data-v-49db0ebe sd_searchGroup" data-alcode-mod="759">
+          <image class="_img data-v-49db0ebe search-icon" src="https://m.allinmed.cn/static/image/mp/index/serch_moren.png" catchtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}"></image> <input placeholder-style="color:#999999" class="_input data-v-49db0ebe sd_searchInput {{[searchVal.length > 0 ? 'paddingShow' : '']}}" data-alcode="e174" type="text" value="{{searchVal}}" bindinput="handleProxy" placeholder="输入医院、医生、疾病关键词搜索" bindfocus="handleProxy" focus="true" data-eventid="{{'2'}}" data-comkey="{{$k}}" />
+          <image class="_img data-v-49db0ebe sd_delete_icon" src="https://m.allinmed.cn/static/image/mp/personal/delet.png" catchtap="handleProxy" wx:if="{{searchVal.length>0}}" data-eventid="{{'3'}}" data-comkey="{{$k}}"></image> <label class="_span data-v-49db0ebe sd_searchBtn" data-alcode="e175" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">搜索</label>
+        </view>
+        <transition name="fade" class="_transition data-v-49db0ebe"><template wx:if="{{errorShow}}" data="{{...$root[$kk+'1'], $root}}" is="toast$1074ede9"></template></transition>
+      </view>
+    </view>
+    <scroll-view wx:if="{{indexShow}}" class="_scroll-view data-v-49db0ebe main-inner1" scroll-y="true" bindscrolltolower="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}">
+      <image class="_img data-v-49db0ebe noResult-img" hidden="{{!(noResult&&indexShow)}}" src="https://m1.allinmed.cn/static/image/mp/index/1.6.0/default.png"></image>
+      <view class="_p data-v-49db0ebe Noresult" hidden="{{!(noResult&&indexShow)}}">未找到符合条件的结果</view> <template bindFromChild="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'3'], $root}}" is="doctorItem$7814c800"></template> <label class="_span data-v-49db0ebe no-more" wx:if="{{extraShow&&doctorList.length!=0&&toBottom}}">--到底了--</label> <label class="_span data-v-49db0ebe no-more" wx:if="{{extraShow&&doctorList.length!=0&&!toBottom}}">正在加载...</label>
+    </scroll-view> <template wx:if="{{finish}}" data="{{...$root[$kk+'4'], $root}}" is="loading$2ff823fe"></template>
+    <view class="_figure data-v-49db0ebe dr_searchHistory" wx:if="{{!indexShow && historyInfo.length>0}}">
+      <view class="_figcaption data-v-49db0ebe">历史记录<view class="_i data-v-49db0ebe dr_deleteBtnIcon" catchtap="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}"></view>
+      </view>
+      <view class="_ul data-v-49db0ebe dr_searchList"><label class="_span data-v-49db0ebe history-item" bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'8-'+index}}" data-comkey="{{$k}}" wx:for="{{historyInfo}}" wx:for-index="index" wx:for-item="item">{{item.keyWord}}</label></view>
+      <transition name="fade" class="_transition data-v-49db0ebe"><template wx:if="{{confirmShow}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'9'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'5'], $root}}" is="confirm$5251c782"></template></transition>
+    </view>
+  </view>
+</template>

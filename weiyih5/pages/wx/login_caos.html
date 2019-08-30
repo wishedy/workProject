@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="/js/comm/domain.js"></script>
+	<script src="/js/wx/login_caos.js"></script>
+    <title>使用CAOS帐户登录</title>
+</head>
+<body>
+    <section id="loginPage" data-role="page" class="login content-page bg-f9">
+        <div class="login_width">
+            <div class="v3-login-return ">  返回</div>
+            <script>
+                loginPageInit();
+            </script>
+            <div class="clear"></div>
+            <div class="para">使用CAOS帐户登录</div>
+
+            <form id="loginForm">
+                <div class="v3-input_parent">
+                    <div class="v3-input-wrap fix">
+                        <div class="left-img user"></div>
+                    	<input type="text" name="email" id="email" placeholder="你在caos的用户名" data-role="none" />
+                    </div>
+                    <div class="l_warning"></div>
+                </div>
+                <div class="v3-input_parent">
+                    <div class="v3-input-wrap fix">
+                        <div class="left-img pwd"></div>
+                        <input type="password" name="passwd" placeholder="你在caos的密码" data-role="none" />
+                    </div>
+                    <div class="l_warning"></div>
+                </div>
+                <!--  <input type="submit" value="登录" />-->
+                <div class="v3-blue-btn mt-1em" id="loginBtn">绑定</div>
+
+            </form>
+
+            <!--<div class="v3-links">
+                <a href="/mcall/customer/reset/password/send_email_input/?resetSite=2" data-ajax="false" data-role="none"> 忘记密码？ </a>
+            </div>-->
+        </div>
+
+    </section>
+
+</body>
+</html>

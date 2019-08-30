@@ -1,0 +1,104 @@
+@charset "UTF-8";
+//身份认证弹层
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+
+html,body{
+  background-color:#fff;
+}
+.al-idSureHead{
+  ul{
+    padding:0 rem(30px);
+    height:rem(88px);
+    line-height:rem(88px);
+    border-bottom: 1px solid #d7dbde;
+    @include clearfix();
+  }
+  p{
+    height:rem(15px);
+    background-color:#eff4f8;
+  }
+}
+
+//.al-idSureHead{
+//  background-color:#fff;
+//  padding:0 rem(30px);
+//  @include flex();
+//  @include justify-content(space-between);
+//  height:rem(88px);
+//  line-height:rem(88px);
+//  border-bottom: 1px solid #d7dbde;
+//  margin-bottom:rem(15px);
+//}
+
+.al-idSureHeadItem{
+  width:33.33%;
+  height:100%;
+  float:left;
+  list-style: none;
+  &:nth-child(1){
+    text-align: left;
+    img{
+      width:rem(60px);
+      height:rem(60px);
+      vertical-align: middle;
+    }
+  }
+  &:nth-child(2){
+    text-align: center;
+    color:#333;
+    white-space:nowrap;
+    @include font-dpr(17px);
+
+  }
+  &:nth-child(3){
+    text-align: right;
+    color:#626f8c;
+    white-space:nowrap;
+    @include font-dpr(13px);
+    margin-top:rem(4px);
+  }
+}
+
+.al-idSurePopMain{
+   background-color:#fff;
+   padding:rem(126px) rem(30px) rem(400px);
+   text-align: center;
+  .al-doctorIcon{   //图标
+    display:inline-block;
+    width:rem(58px);
+    height:rem(68px);
+    background:url('//img50.allinmd.cn/user/renzheng/al-doctorIcon.png') center center no-repeat;
+    background-size:cover;
+  }
+  .al-idSureText{
+    @include font-dpr(16px);
+    color:#555;
+    line-height:rem(48px);
+    margin:rem(35px) auto rem(130px);
+    width:100%;
+  }
+  span{
+    @include font-dpr(15px);
+    color:#808080;
+  }
+  >a{
+    display: block;
+    @include font-dpr(18px);
+    color:#fff;
+    width:84%;
+    height:rem(100px);
+    line-height:rem(100px);
+    border-radius:rem(50px);
+  }
+  .al-orthopaedicsBtn{
+    background-color:#4AA8E2;
+    margin:rem(65px) auto rem(50px);
+  }
+  .al-surgeryBtn{
+    background-color:#A1D06E;
+    margin:0 auto;
+  }
+}

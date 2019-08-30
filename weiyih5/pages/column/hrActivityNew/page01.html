@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超多内推大奖</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--<script src="/js/third-party/flexible.js"></script>-->
+    <link rel="stylesheet" href="./css/baseNew.css">
+</head>
+<body>
+<audio id="audio" src="./video/newMess.mp3" preload="auto"> </audio>
+<section class="wrap">
+    <section class="notice" id="container">
+        <!--<ul>-->
+            <!--<li>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--</li>-->
+        <!--</ul>-->
+    </section>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="./js/pixi.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./js/pixi-tween.js" type="text/javascript" charset="utf-8"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<script src="./js/share.js"></script>
+<script>
+
+    $(function () {
+        var winw = $(window).width();
+        var winh = $(window).height();
+        //窗口比例
+        var windowScale = winw / winh;
+        PIXI.loader
+            .add(["./images/phoneBg.jpg","./images/msg01.png"])
+            .load();
+        var app = new PIXI.Application(750, 750/windowScale, {
+            forceCanvas:true,//不使用webGL渲染
+        });
+        //将舞台放入dom中
+        document.getElementById('container').appendChild(app.view);
+        //创建一个背景图片纹理
+        var texture = PIXI.Texture.fromImage('./images/phoneBg.jpg');
+        //设置背景图片大小
+        var tilingSprite = new PIXI.extras.TilingSprite(
+            texture,
+            750,
+            1219
+        );
+        app.stage.addChild(tilingSprite);
+       function stageChild() {
+           $("#audio")[0].play();
+           var arr=["./images/msg01.png","./images/msg02.png","./images/msg03.png"],arrIndex=0,messoryArr=[];
+           messory(arr);
+           function messory(arr) {
+               var texture=new PIXI.Sprite.fromImage(arr[arrIndex]);
+               texture.width=722;
+               texture.height=149;
+               app.stage.addChild(texture);
+               texture.y=arrIndex*149+568;
+               texture.vy=0;
+               texture.x=15;
+               messoryArr.push(texture);
+               app.ticker.add(function () {
+                   if(messoryArr[arrIndex].y<arrIndex*149+32*arrIndex+600){
+                       messoryArr[arrIndex].vy=1;
+                       messoryArr[arrIndex].y+= messoryArr[arrIndex].vy;
+                   }
+               });
+               setTimeout(function () {
+                   arrIndex++;
+                   if(arrIndex<3){
+                       messory(arr,arrIndex)
+                   }else {
+                       app.ticker.stop();
+                       app.ticker.remove();
+                   }
+               },1000)
+           }
+       }
+        var isWeChat = false;
+        var isAudio = false;
+        var isFisrt = false;
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            $("#audio")[0].load();
+            isWeChat = true;
+            if (isWeChat && isAudio) {
+                stageChild();
+            }
+        }, false);
+
+        $("#audio")[0].addEventListener("canplaythrough", function () {
+            if (isFisrt) {
+                return;
+            }
+            isFisrt = true;
+            isAudio = true;
+            if (isWeChat && isAudio) {
+                stageChild();
+            }
+        }, false);
+
+        $("#audio")[0].addEventListener('ended', function () {
+            $("#audio")[0].load();
+        }, false);
+
+        $(document).on("click touchstart",function(){
+            window.location.href='./page02.html'
+        })
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1016 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+
+//资源列表模块
+@import "../../components/classes/_classes_resourceList";
+//相关课程
+@import "../../components/classes/_classes_course";
+//右侧输入框
+@import "../../components/_rightTextarea";
+@import "../../components/classes/classes_doc";
+@import "../../components/_makeSurePopup";
+@mixin coupon{
+  .discount-coupon{
+    width:auto;
+    float: right;
+    cursor: pointer;
+    margin-right: 20px;
+    height:30px;
+    margin-top: 16px;
+    line-height: 30px;
+    .al-buyVipBtn{
+      width:70px;
+      height:35px;
+      background:linear-gradient(131deg,rgba(242,226,187,1) 0%,rgba(234,199,127,1) 100%);
+      box-shadow:0px 2px 4px 0px rgba(133,96,18,0.12);
+      border-radius:2px;
+      padding-left: 10px;
+      padding-right: 9px;
+      font-size:14px;
+      font-family:PingFangSC-Medium;
+      font-weight:500;
+      color:rgba(117,83,16,1);
+      line-height: 35px;
+      cursor: pointer;
+      .openVip{
+        width: 100%;
+        float: left;
+        .icon{
+          background: url("/images/img00/college/openVip.png") no-repeat center center/cover;
+          width:9px;
+          height:9px;
+          float: right;
+          margin-left: 2px;
+          margin-top: 11px;
+        }
+      }
+    }
+  }
+}
+@mixin buyCourseBtn{
+  .buyCourseBtn{
+    float: right;
+    margin-right: 20px;
+    margin-top: 7px;
+    width:108px;
+    text-align: center;
+    height:40px;
+    background:rgba(7,107,146,1);
+    border-radius:4px;
+    font-size:16px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    line-height:40px;
+  }
+}
+.al-college-headerTab{
+  position: fixed;
+  height: 56px;
+  margin-left: 80px;
+  width: 100%;
+  z-index: 4;
+  border-top:1px solid rgba(240,240,240,1);
+  top:70px;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow:0px 2px 3px 0px rgba(116,137,145,0.13);
+  .headerTab-container{
+    min-width:1000px;
+    width: auto;
+    height: 100%;
+    margin:0 auto;
+    .tab-item{
+      line-height: 60px;
+      height: 100%;
+      float: left;
+      cursor: pointer;
+      padding: 0 12px 0 12px;
+      &:nth-of-type(1){
+        width: 51px;
+        margin-left: 99px;
+        margin-right: 135px;
+      }
+      &:nth-of-type(2){
+        width:68px;
+
+        margin-right: 112px;
+      }
+      &:nth-of-type(3){
+        width:68px;
+      }
+      &.active{
+        font-size:17px;
+        font-family:MicrosoftYaHei-Bold;
+        font-weight:bold;
+        color:rgba(215,166,82,1);
+        position: relative;
+        &::after{
+          position: absolute;
+          bottom:0;
+          content:'';
+          width: 100%;
+          height:3px;
+          left: 50%;
+          transform: translateX(-50%);
+          background:rgba(215,166,82,1);
+        }
+      }
+    }
+    .headerTab-price{
+      height: 100%;
+      margin-left: 140px;
+      float: left;
+      cursor: pointer;
+      padding: 0 12px 0 12px;
+      @include clearfix();
+      .price-label{
+        height:20px;
+        margin-right: 9px;
+        font-size:14px;
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(136,136,136,1);
+        float: left;
+        margin-top: 21px;
+        line-height: 23px;
+      }
+      .real-price{
+        float: left;
+        height:42px;
+        font-size:30px;
+        font-family:PingFangSC-Semibold;
+        font-weight:600;
+        color:rgba(216,43,43,1);
+        line-height:42px;
+        margin-right: 20px;
+        padding-top: 7px;
+        i,em{
+          float: left;
+        }
+        i{
+          line-height: 55px;
+          font-size:14px;
+          font-family:PingFangSC-Medium;
+          font-weight:500;
+          color:rgba(216,43,43,1);
+        }
+      }
+      @include buyCourseBtn;
+    }
+    @include coupon;
+  }
+}
+.al-college-container{
+  width: 709px;
+  margin: 20px auto;
+  .al-college-banner {
+    width: 100%;
+    height: 236px;
+    background:rgba(175,86,86,1);
+    position: relative;
+    &.second{
+      height:189px;
+      .al-buyVipBtn{
+        width:auto;
+        height:35px;
+        background:linear-gradient(131deg,rgba(242,226,187,1) 0%,rgba(234,199,127,1) 100%);
+        box-shadow:0px 2px 4px 0px rgba(133,96,18,0.12);
+        border-radius:2px;
+        position: absolute;
+        right: 20px;
+        bottom:42px;
+        padding-left: 17px;
+        padding-right: 15px;
+        font-size:14px;
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+        color:rgba(117,83,16,1);
+        line-height: 35px;
+        cursor: pointer;
+        .money{
+          float: left;
+          position: relative;
+          padding-right: 7px;
+          &:after{
+            position: absolute;
+            content:" ";
+            width:2px;
+            height:13px;
+            background:rgba(117,83,16,1);
+            right: -2px;
+            top:50%;
+            margin-top: -6px;
+          }
+        }
+        .openVip{
+          float: left;
+          padding-left: 11px;
+          .icon{
+            background: url("/images/img00/college/openVip.png") no-repeat center center/cover;
+            width:9px;
+            height:9px;
+            float: right;
+            margin-left: 4px;
+            margin-top: 11px;
+          }
+        }
+      }
+    }
+    .al-course-title{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom:0;
+      width: 690px;
+      background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+      padding: 30px 0 12px 20px;
+      .course-mainTitle{
+        height:28px;
+        font-size:20px;
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+        color:rgba(255,255,255,1);
+        line-height:28px;
+        float: left;
+        margin-right: 17px;
+      }
+      .course-subTitle{
+        height:21px;
+        font-size:15px;
+        font-family:PingFangSC-Regular;
+        float: left;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        line-height:21px;
+        padding-top: 3px;
+      }
+    }
+  }
+  .al-course-price{
+    width:709px;
+    height:60px;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(199,211,223,0.5);
+    span{
+      float: left;
+    }
+    .al-price-label{
+      margin-right: 8px;
+      padding-top: 22px;
+      margin-left: 21px;
+      font-size: 14px;
+      color:rgba(210,152,30,1);
+      line-height: 23px;
+    }
+    .real-price{
+      height:42px;
+      font-size:30px;
+      font-family:PingFangSC-Semibold;
+      font-weight:600;
+      color:rgba(216,43,43,1);
+      line-height:42px;
+      margin-right: 9px;
+      padding-top: 7px;
+      i,em{
+        float: left;
+      }
+      i{
+        line-height: 55px;
+        font-size:14px;
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+        margin-right: 2px;
+        color:rgba(216,43,43,1);
+      }
+    }
+    .original-price{
+      padding-top: 22px;
+      height:20px;
+      font-size:14px;
+      font-family:PingFangSC-Regular;
+      font-weight:400;
+      color:rgba(136,136,136,1);
+      line-height:20px;
+      margin-right: 10px;
+      position: relative;
+      .ev-shareabolish-price-line{
+        width: 100%;
+        height: 1px;
+        background: rgba(136,136,136,1);
+        left: 0;
+        right: 0;
+        top:32px;
+        position: absolute;
+      }
+    }
+    .sale-time{
+      margin-top: 20px;
+      width:auto;
+      height:20px;
+      background:rgba(248,242,227,1);
+      font-size:13px;
+      font-family:PingFangSC-Regular;
+      font-weight:400;
+      color:rgba(117,83,16,1);
+      line-height:20px;
+      text-align: center;
+      margin-right: 58px;
+      padding: 0 4px;
+    }
+
+    @include buyCourseBtn;
+    @include coupon;
+    &.second-college{
+      .al-price-label{
+        height:21px;
+        font-size:15px;
+        font-family:PingFangSC;
+        font-weight:500;
+        color:rgba(210,152,30,1);
+        line-height:21px;
+      }
+      .buyCourseBtn{
+        width:60px;
+        height:29px;
+        background:linear-gradient(131deg,rgba(242,226,187,1) 0%,rgba(234,199,127,1) 100%);
+        box-shadow:0px 2px 4px 0px rgba(133,96,18,0.12);
+        border-radius:2px;
+        margin-top: 16px;
+        line-height: 29px;
+        font-size:14px;
+        font-family:PingFangSC;
+        font-weight:500;
+        color:rgba(117,83,16,1);
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+
+  }
+  .al-course-container{
+    width:708px;
+    height: auto;
+    @include clearfix();
+    box-shadow:0px 2px 4px 0px rgba(215,222,229,0.3);
+    border-bottom:1px solid rgba(102,132,162,0.06);
+    margin-top: 20px;
+    .al-course-tab{
+      width: 100%;
+      height:60px;
+      background: #fff;
+      line-height: 60px;
+      border-bottom:1px solid rgba(240,240,240,1);
+      font-size:17px;
+      font-family:MicrosoftYaHei;
+      color:rgba(102,102,102,1);
+      text-align: center;
+      .tab-item{
+        line-height: 60px;
+        height: 100%;
+        float: left;
+        cursor: pointer;
+        padding: 0 12px 0 12px;
+        &:nth-of-type(1){
+          width: 51px;
+          margin-left: 99px;
+          margin-right: 135px;
+        }
+        &:nth-of-type(2){
+          width:68px;
+
+          margin-right: 112px;
+        }
+        &:nth-of-type(3){
+          width:68px;
+        }
+        &.active{
+          font-size:17px;
+          font-family:MicrosoftYaHei-Bold;
+          font-weight:bold;
+          color:rgba(215,166,82,1);
+          position: relative;
+          &::after{
+            position: absolute;
+            bottom:0;
+            content:'';
+            width: 100%;
+            height:3px;
+            left: 50%;
+            transform: translateX(-50%);
+            background:rgba(215,166,82,1);
+          }
+        }
+      }
+    }
+    .al-course-content{
+      background: #fff;
+      .al-produceContent-image{
+        img{
+          width: 100% ;
+        }
+      }
+      &.al-schedule-list{
+        .al-schedule-item{
+          height: 50px;
+          background-color: #fff;
+          padding: 19px 21px 20px 20px;
+          border-bottom:2px solid rgba(240,240,240,1);
+          position: relative;
+          display: block;
+          span{
+            float: left;
+          }
+          .schedule-title{
+            width:90%;
+            height:22px;
+            font-size:16px;
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(34,34,34,1);
+            line-height:22px;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            margin-bottom:8px;
+          }
+          .schedule-detail{
+            line-height: 21px;
+            .schedule-author-name,.schedule-review-num{
+              font-size:15px;
+              font-family:PingFangSC-Regular;
+              font-weight:400;
+              color:rgba(136,136,136,1);
+              margin-right: 20px;
+            }
+            .schedule-review-num{
+              margin-right: 24px;
+            }
+            .schedule-charge-type{
+              width: auto;
+              height:19px;
+              background:rgba(255,223,223,1);
+              border-radius:2px;
+              line-height: 19px;
+              padding: 0 6px;
+              font-size:12px;
+              font-family:PingFangSC-Regular;
+              font-weight:400;
+              color:rgba(216,43,43,1);
+            }
+          }
+          .schedule-play{
+            height: 17px;
+            position: absolute;
+            top:35px;
+            width: auto;
+            right: 21px;
+            font-size:12px;
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            line-height:16px;
+            color:rgba(153,153,153,1);
+            .icon{
+              width:17px;
+              height:17px;
+              float: left;
+              margin-right: 6px;
+              background: url("/images/img00/college/schedule-play.png") no-repeat center center;
+              background-size: cover;
+            }
+          }
+          &:hover{
+            background:rgba(238,249,255,1);
+            .schedule-play{
+              height: 17px;
+              position: absolute;
+              top:35px;
+              width: auto;
+              right: 21px;
+              //daima
+              font-size:12px;
+              font-family:PingFangSC-Regular;
+              font-weight:400;
+              line-height:16px;
+              color:rgba(7,107,146,1);
+              .icon{
+                width:17px;
+                height:17px;
+                float: left;
+                margin-right: 6px;
+                background: url("/images/img00/college/play-ready.png") no-repeat center center;
+                background-size: cover;
+              }
+            }
+          }
+        }
+      }
+      &.al-college-schedule{
+        padding: 31px 20px 33px 20px;
+        @include clearfix();
+        .schedule-item{
+          width:212px;
+          height:222px;
+          background:rgba(252,252,252,1);
+          border-radius:2px;
+          border:1px solid rgba(226,226,226,1);
+          margin: 0 13px 18px 0;
+          position: relative;
+          float: left;
+          cursor: pointer;
+          &:nth-of-type(3n){
+            margin: 0;
+          }
+          .user-logo{
+            width:212px;
+            height:127px;
+            background:linear-gradient(180deg,rgba(136,145,160,1) 0%,rgba(156,164,179,1) 100%);
+            border-radius:2px 2px 0px 0px;
+            position: relative;
+            .vipSign{
+              width:25px;
+              height:15px;
+              background:linear-gradient(129deg,rgba(232,194,132,1) 0%,rgba(246,213,162,1) 100%);
+              border-radius:0px 0px 2px 2px;
+              font-size:11px;
+              font-family:PingFangSC-Medium;
+              font-weight:500;
+              color:rgba(98,77,24,1);
+              line-height: 15px;
+              text-align: center;
+              position: absolute;
+              right: 7px;
+              top:0;
+            }
+          }
+          .course-detail{
+            padding: 11px 12px 13px 12px;
+            height: 71px;
+            width: 188px;
+            .title{
+              height:22px;
+              font-size:16px;
+              font-family:PingFangSC-Medium;
+              font-weight:500;
+              color:rgba(0,0,0,1);
+              line-height:22px;
+              margin-bottom: 3px;
+              overflow: hidden;
+              text-overflow:ellipsis;
+              white-space: nowrap;
+            }
+            .des{
+              height:18px;
+              font-size:13px;
+              font-family:PingFangSC-Regular;
+              font-weight:400;
+              color:rgba(119,119,119,1);
+              line-height:18px;
+              margin-bottom: 10px;
+              overflow:hidden;
+              text-overflow:ellipsis;
+              white-space:nowrap;
+            }
+            .subject{
+              height:18px;
+              font-size:13px;
+              font-family:PingFangSC-Regular;
+              font-weight:400;
+              color:rgba(119,119,119,1);
+              line-height:18px;
+            }
+            .surgery{
+              width:49px;
+              height:18px;
+              border-radius:2px;
+              border:1px solid rgba(27,121,221,1);
+              font-size:13px;
+              font-family:PingFangSC-Regular;
+              font-weight:400;
+              color:rgba(27,121,221,1);
+              text-align: center;
+              line-height: 18px;
+            }
+          }
+          .buyBtn,.vipDes{
+            width:64px;
+            height:24px;
+            background:linear-gradient(129deg,rgba(244,224,171,1) 0%,rgba(234,205,120,1) 100%);
+            box-shadow:0px 2px 3px 0px rgba(223,191,102,0.39);
+            border-radius:2px;
+            position: absolute;
+            font-size:12px;
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(98,77,24,1);
+            line-height: 24px;
+            text-align: center;
+            right: 12px;
+            bottom:10px;
+            cursor: pointer;
+          }
+          .vipDes{
+            height:20px;
+            font-size:14px;
+            font-family:PingFangSC;
+            font-weight:500;
+            color:rgba(212,143,38,1);
+            line-height:20px;
+            background: none;
+            border: none;
+            box-shadow: none;
+          }
+          &.advance{
+            .course-detail{
+              .title{
+                color: #999999;
+              }
+
+              .des{
+                color: #777777;
+                position: absolute;
+                left:12px;
+                bottom:13px;
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+      &.al-surgery-case{
+        padding: 11px 20px 40px 20px;
+        .surgery-case-item{
+          height: 105px;
+          padding: 20px 0 19px 0;
+          position: relative;
+          .border-line{
+            width:345px;
+            height:2px;
+            position: absolute;
+            bottom:-2px;
+            left: 0;
+            background: rgba(227,229,233,.5)
+          }
+          .surgery-logo{
+            width:105px;
+            height:105px;
+            position: relative;
+            margin-right: 14px;
+            float: left;
+            background:rgba(216,216,216,1);
+            border-radius:3px;
+            cursor: pointer;
+            .play-time{
+              width:auto;
+              @include clearfix();
+              height:16px;
+              background:rgba(0,0,0,.1474);
+              border-radius:8px;
+              position: absolute;
+              bottom:6px;
+              right: 6px;
+              font-size:10px;
+              font-family:PingFangSC-Regular;
+              font-weight:400;
+              color:rgba(255,255,255,1);
+              line-height: 16px;
+              padding-left: 6px;
+              padding-right: 4px;
+              .icon{
+                float: left;
+                margin-top: 4px;
+                margin-right: 2px;
+                background:url("/images/img00/college/playIcon.png") no-repeat center center/cover;
+                display: inline-block;
+                width:7px;
+                height:8px;
+              }
+              em{
+                font-style: normal;
+                float: left;
+              }
+            }
+          }
+          .surgery-detail{
+            margin-left: 14px;
+            float: left;
+            position: relative;
+            height:105px;
+            width: 535px;
+            .title{
+              height:18px;
+              font-size:18px;
+              font-family:PingFangSC-Medium;
+              font-weight:500;
+              color:rgba(34,34,34,1);
+              line-height:18px;
+              padding-top: 3px;
+              margin-bottom: 69px;
+              cursor: pointer;
+            }
+            .userName{
+              height:13px;
+              font-size:13px;
+              font-family:PingFangSC-Regular;
+              font-weight:400;
+              color:rgba(119,119,119,1);
+              line-height:13px;
+            }
+            .course-price{
+              height:21px;
+              font-size:15px;
+              font-family:PingFangSC-Medium;
+              font-weight:500;
+              color:rgba(212,143,38,1);
+              line-height:21px;
+              position: absolute;
+              bottom:0;
+              right: 0;
+              i{
+                font-size:13px;
+                font-family:PingFangSC-Regular;
+                font-weight:400;
+                color:rgba(187,187,187,1);
+                margin-right: 8px;
+                line-height: 21px;
+                position: relative;
+                em{
+                  position: absolute;
+                  width:120%;
+                  height:1px;
+                  background: rgba(187,187,187,1);
+                  left: 50%;
+                  top:50%;
+                  transform: translateX(50%);
+                  margin-top: -1px;
+                }
+              }
+            }
+          }
+        }
+        .surgery-case-more{
+          padding-top: 23px;
+          height: 20px;
+          font-size:14px;
+          line-height: 20px;
+          font-family:PingFangSC-Regular;
+          font-weight:400;
+          color:rgba(119,119,119,1);
+          .icon{
+            width:16px;
+            height:16px;
+            background:url("/images/img00/college/moreCase.png") no-repeat center center/cover;
+            border-radius: 50%;
+            float: left;
+            margin-right: 8px;
+            margin-top: 2px;
+
+          }
+        }
+      }
+    }
+  }
+}
+//课程介绍
+.al-produceContent-text{
+  padding-bottom: 40px;
+  &:after{
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
+  .al-introduce-container{
+    //padding-bottom: 31px;
+    padding-top: 31px;
+    h3 {
+      margin-left: 30px;
+      padding-left: 6px;
+      font-size: 19px;
+      font-weight:500;
+      color:rgba(0,0,0,1);
+      position: relative;
+      &:after{
+        position: absolute;
+        content: " ";
+        left: -4px;
+        width:4px;
+        height:17px;
+        background:rgba(219,175,88,1);
+        border-radius:2px;
+        top:50%;
+        transform:translateY(-50%) ;
+      }
+    }
+
+    hr {
+      background: transparent;
+      height: 20px;
+      border: none;
+      margin: 10px 0;
+    }
+
+    p {
+      margin: 16px 20px 10px 30px;
+      line-height: 30px;
+      font-size: 16px;
+      color:rgba(51,51,51,1);
+    }
+
+    ul, ol {
+      margin: 0 20px;
+      -webkit-padding-start: 20px;
+    }
+
+
+    ol {
+      list-style-type: decimal;
+
+    }
+
+    li {
+      font-size: 16px;
+      line-height: 30px;
+      margin: 3px 0;
+      padding: 0;
+      font-weight:400;
+      color:rgba(51,51,51,1);
+      &:first-child{
+        margin: 16px 0 0 0;
+      }
+
+    }
+    ul{
+      li:first-child{
+        margin-top: 0;
+      }
+    }
+  }
+}
+//学员交流样式处理
+.al-schedule-list{
+  .al-contentItem{
+    .al-contentComment{
+      border: none !important;
+      .al-contentCommentMain{
+        .al-contentCommentOtherMsg{
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}
+.al-contentCommentOtherMsg{
+  .ev-delete{
+    visibility: hidden !important;
+  }
+  .ev-review{
+    visibility: hidden!important;
+  }
+  .ev-prefer{
+    visibility: hidden!important;
+  }
+  .ev-collection{
+    visibility: hidden!important;
+  }
+  .ev-share{
+    visibility: hidden!important;
+  }
+}
+.al-lookMore_comment{
+  margin-top: -60px;
+}
+//app下载弹层：begin
+.al-downLoad_PopBox{
+  display:none;
+  //display:flex;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:7;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);  /*IE8支持*/
+}
+.al-downContainer{
+  width:450px;
+  height:262px;
+  left: 50%;
+  top:50%;
+  margin-top: -131px;
+  margin-left: -225px;
+  background-color:#fff;
+  border-radius:6px;
+  //behavior:url("/js/third-party/pie/pie.htc");
+  position: relative;
+  .closePopBtn{ //关闭按钮
+    float:right;
+    width:13px;
+    height:13px;
+    background:url("//img10.allinmd.cn/v3/terminal/popCloseBtn.png") center center no-repeat;
+    margin:20px;
+    cursor: pointer;
+  }
+}
+.al-downLoadContent{
+  @include clearfix();
+  padding:40px 50px 45px;
+  figcaption{
+    color:#555;
+    margin-bottom:20px;
+  }
+  .downLoadWay{
+    float:left;
+    margin-top:10px;
+    p{
+      padding:25px 0 0 25px;
+      i{
+        display:inline-block;
+        width:28px;
+        height:32px;
+        background:url("//img10.allinmd.cn/v3/terminal/AndroidIcon.png") center center no-repeat;
+        vertical-align: middle;
+        margin-right:15px;
+        margin-top:-5px;
+      }
+      .iPhoneIcon{
+        width:25px;
+        height:31px;
+        background:url("//img10.allinmd.cn/v3/terminal/iPhoneIcon.png") center center no-repeat;
+        margin-top:-10px;
+      }
+      span{font-size:20px;}
+      .AndroidText{color:#49BD38;}
+      .iPhoneText{color:#14A7F0;}
+    }
+  }
+  .downLoad_QR{ //下载二维码
+    float:right;
+    img{
+      width:140px;
+      height:140px;
+      box-shadow:8px 8px 10px rgba(83,101,119,0.2),-5px -5px 10px rgba(83,101,119,0.2);
+    }
+  }
+}
+//app下载弹层：end
+.al-contentCommentMain{
+  .al-contentCommentItem{
+    .al-contentCommentItemTitle{
+      .teacherIcon{
+        width:28px;
+        height:15px;
+        background:rgba(7,107,146,1);
+        border-radius:2px;
+        font-size:10px;
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+        color:rgba(255,255,255,1);
+        line-height: 15px;
+        text-align: center;
+        display: inline-block;
+        margin-left: 8px;
+        padding: 0 3px;
+      }
+      .studyNum{
+        padding: 0 3px;
+        min-width:35px;
+        width: auto;
+        display: inline-block;
+        height:15px;
+        background:rgba(235,235,235,1);
+        border-radius:2px;
+        font-size:11px;
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+        color:rgba(119,119,119,1);
+        line-height: 15px;
+        text-align: center;
+        margin-left: 8px;
+      }
+    }
+  }
+}
+.vipState{
+  a{
+    position: relative;
+    border-radius: 50%;
+    &:after{
+      position: absolute;
+      top:-7px;
+      right: -7px;
+      content:" ";
+      width: 18px;
+      height: 18px;
+      background: url("data:image/png;base64,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") no-repeat center center/cover;
+    }
+    img{
+      display: block;
+      border:1px solid rgba(228,185,119,1);
+    }
+  }
+}

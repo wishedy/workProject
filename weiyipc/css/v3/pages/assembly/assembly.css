@@ -1,0 +1,435 @@
+@charset "UTF-8";
+.yearMouthDay {
+    display: inline-block;
+}
+
+.yearMouthDay div {
+    background: #FFFFFF;
+    border: 1px solid #DFDFDF;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-size: 16px;
+    color: #AAAAAA;
+    display: inline-block;
+    height: 46px;
+    line-height: 46px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 4px;
+}
+
+.yearMouthDay div span {
+    width: auto;
+    margin: 0;
+    color: #aaa;
+}
+
+.yearMouthDay div span.reset {
+    color: #333333;
+}
+
+.yearMouthDay div i {
+    display: inline-block;
+    width: 8px;
+    height: 6px;
+    background: url("/design-html/assembly/form/images/icon_solidarrow_down_blue.png") no-repeat;
+    vertical-align: middle;
+    margin: 0 0 0 8px;
+}
+
+.yearMouthDay div.reset {
+    color: #333333;
+}
+
+.yearMouthDay div.active {
+    background: #FFFFFF;
+    border: 1px solid #4382F1;
+    -webkit-box-shadow: 0 0 4px 0 rgba(67, 130, 241, 0.47);
+            box-shadow: 0 0 4px 0 rgba(67, 130, 241, 0.47);
+    border-radius: 4px;
+}
+
+.yearMouthDay div.active span {
+    color: #4382F1;
+}
+
+.yearMouthDay div.active i {
+    background: url("/design-html/assembly/form/images/icon_solidarrow_down_small_blue.png") no-repeat;
+}
+
+/*模拟下拉选项*/
+.selectDropDown {
+    background: #FFFFFF;
+    -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    position: absolute;
+    top: 52px;
+    left: 0;
+    z-index: 6;
+    padding: 9px 0;
+    max-height: 270px;
+    overflow: auto;
+    width: 100%;
+    display: none;
+}
+
+.selectDropDown::-webkit-scrollbar {
+    width: 2px;
+}
+
+.selectDropDown::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+.selectDropDown::-webkit-scrollbar-thumb {
+    background-color: #DFDFDF;
+}
+
+.selectDropDown::-webkit-scrollbar-thumb:hover {
+    background-color: #DFDFDF;
+}
+
+.selectDropDown::-webkit-scrollbar-thumb:active {
+    background-color: #fff;
+}
+
+.selectDropDown li {
+    font-size: 16px;
+    color: #333333;
+    padding: 0 20px 0 6px;
+    height: 40px;
+    margin: 0 10px;
+    line-height: 40px;
+    position: relative;
+}
+
+.selectDropDown li:hover {
+    background: rgba(67, 130, 241, 0.1);
+    border-radius: 2px;
+}
+
+/*多字数的下拉框模拟*/
+.moreTextColumn div {
+    width: 176px;
+}
+
+.moreTextColumn div i {
+    float: right;
+    margin-top: 21px;
+}
+
+.moreTextColumn div .titleColumnText {
+    position: absolute;
+    left: 194px;
+    top: 0;
+    background: #FFFFFF;
+    -webkit-box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    line-height: 22px;
+    padding: 8px 16px;
+    width: 280px;
+    font-size: 14px;
+    color: #333333;
+    z-index: 4;
+    display: none;
+}
+
+.moreTextColumn li {
+    max-width: 200px;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.caseColumnR {
+    position: relative;
+}
+
+.caseColumnR .errorText {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    z-index: 1;
+    font-size: 13px;
+    color: #F34B4B;
+    display: none;
+}
+
+.caseColumnR .errorText i {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("/design-html/assembly/form/images/icon_warning_small_red.png") no-repeat;
+    vertical-align: middle;
+    margin: 0 8px 0 0;
+}
+
+.caseColumnR {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.caseColumnR .limitNum {
+    position: absolute;
+    right: 16px;
+    bottom: 19px;
+    font-size: 12px;
+    color: #AAAAAA;
+}
+
+.radiosColumn {
+    display: inline-block;
+}
+
+.radiosColumn p {
+    display: inline-block;
+    font-size: 16px;
+    color: #777777;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.radiosColumn p i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("/design-html/assembly/form/images/btn_Radio_buttons_unselected.png") no-repeat;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.radiosColumn p:hover {
+    color: #4382F1;
+}
+
+.radiosColumn p:hover i {
+    background: url("/design-html/assembly/form/images/icon_Radio_buttons_hover.png") no-repeat;
+}
+
+.radiosColumn p.active {
+    color: #333333;
+}
+
+.radiosColumn p.active i {
+    background: url("/design-html/assembly/form/images/btn_Radio_buttons_selected.png") no-repeat;
+}
+
+/*多选*/
+.multitermList {
+    display: inline-block;
+}
+
+.multitermList .multitermListLi {
+    font-size: 16px;
+    color: #777777;
+    line-height: 26px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.multitermList .multitermListLi.none {
+    display: none;
+}
+
+.multitermList .multitermListLi:hover {
+    color: #4382F1;
+}
+
+.multitermList .multitermListLi:hover i {
+    background: url("/design-html/assembly/form/images/btn_checkbox_hover.png") no-repeat;
+}
+
+.multitermList .multitermListLi.active {
+    color: #333333;
+}
+
+.multitermList .multitermListLi.active i {
+    background: url("/design-html/assembly/form/images/btn_checkbox_selected.png") no-repeat;
+}
+
+.multitermList .multitermListLi i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("/design-html/assembly/form/images/btn_checkbox_unselected.png") no-repeat;
+    vertical-align: top;
+    margin: 6px 10px 0 0;
+}
+
+.multitermList .multitermListLi b {
+    font-weight: normal;
+    display: inline-block;
+    width: 618px;
+}
+
+.multitermList .multitermListMore {
+    font-size: 16px;
+    color: #626F8C;
+    cursor: pointer;
+}
+
+.multitermList .multitermListMore.packUp i {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.multitermList .multitermListMore i {
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    background: url("/design-html/assembly/form/images/icon_arrow_down_darkblue.png") no-repeat;
+    vertical-align: middle;
+    margin: 0 0 0 8px;
+}
+
+.formBorder textarea {
+    width: 628px;
+    height: 24px;
+    line-height: 26px;
+    background: #FFFFFF;
+    border: 1px solid #DFDFDF;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333333;
+    resize: none;
+    padding: 11px 0 11px 16px;
+    overflow: hidden;
+}
+
+.formBorder .formColumnTitle {
+    font-size: 16px;
+    color: #333333;
+    display: inline-block;
+    width: 96px;
+    text-align: right;
+    margin-right: 30px;
+    vertical-align: middle;
+    line-height: 24px;
+}
+
+.formBorder .formColumnTitle.multitermTitle {
+    vertical-align: top;
+}
+
+.formBorder.error {
+    margin-bottom: 57px;
+}
+
+.formBorder.error .caseColumnR {
+    position: relative;
+}
+
+.formBorder.error input {
+    background: #FFFFFF;
+    border: 1px solid #F34B4B;
+    -webkit-box-shadow: 0 0 4px 0 rgba(243, 75, 75, 0.59);
+            box-shadow: 0 0 4px 0 rgba(243, 75, 75, 0.59);
+    border-radius: 4px;
+}
+
+.formBorder.error span {
+    color: #F34B4B;
+}
+
+.formBorder.error .yearMouthDay div {
+    background: #FFFFFF;
+    border: 1px solid #F34B4B;
+    -webkit-box-shadow: 0 0 4px 0 rgba(243, 75, 75, 0.59);
+            box-shadow: 0 0 4px 0 rgba(243, 75, 75, 0.59);
+    border-radius: 4px;
+}
+
+.formBorder.error .yearMouthDay div i {
+    display: inline-block;
+    width: 8px;
+    height: 6px;
+    background: url("/design-html/assembly/form/images/icon_solidarrow_down_red.png") no-repeat;
+    vertical-align: middle;
+    margin: 0 0 0 8px;
+}
+
+.al-translatorIntrItem {
+    padding: 0 24px 0 24px;
+}
+
+.al-translatorIntrItem .fellowBtn {
+    display: inline-block;
+    width: 88px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.al-translatorIntrItem .fellowBtn img {
+    width: 88px;
+    height: 34px;
+    border-radius: 0;
+}
+
+.al-translatorIntrItem > a {
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+    vertical-align: middle;
+    margin-right: 18px;
+}
+
+.al-translatorIntrItem img {
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    behavior: url("/js/third-party/pie/pie.htc");
+    margin-bottom: 30px;
+    vertical-align: middle;
+}
+
+.al-translatorIntrItem .al-translatorInfo {
+    display: inline-block;
+    vertical-align: middle;
+    border-bottom: 1px solid #ecf0f2;
+    padding-top: 0;
+    width: 576px;
+}
+
+.al-translatorIntrItem .al-translatorInfo .al-translatorInfoContent {
+    margin-left: 0;
+    border-bottom: none;
+    padding: 32px 0;
+}
+
+.al-translatorIntrItem .al-translatorInfo .al-translatorInfoContent > a {
+    color: #333;
+}
+
+.al-translatorIntrItem .al-translatorInfo .al-translatorInfoContent > a:hover {
+    color: #3598db;
+}
+
+.al-translatorIntrItem .al-translatorInfo .al-translatorInfoContent p {
+    margin-top: 12px;
+    font-size: 15px;
+    color: #555;
+}
+
+.al-translatorIntrItem .al-translatorInfo .al-translatorInfoContent p .al-translatorUnit {
+    padding-left: 14px;
+}
+
+.al-translatorIntrItem .al-translatorInfo .al-translatorUserText {
+    display: inline-block;
+    width: 480px;
+    vertical-align: middle;
+}
+
+.al-translatorIntrItem .al-translatorInfo .fellowBtn {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0;
+}

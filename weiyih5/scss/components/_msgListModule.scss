@@ -1,0 +1,189 @@
+@charset "UTF-8";
+//消息列表组件
+//Created by qiangkailiang on 2016/08/10
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.al-msgListPart {
+    background-color: #fff;
+}
+.al-msgListPartBottomShow{
+
+}
+.al-indexHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.al-msgListPart.al-msgListConfigType {
+	padding-bottom: rem(82px);
+    .al-msgListItem {
+        padding-left: 0;
+        margin-left: rem(100px);
+        position: relative;
+        &:before {
+            content: "";
+            display: inline-block;
+            @include circle(rem(38px), transparent);
+            border: 1px solid #b4b4b4;
+            position: absolute;
+            left: rem(-70px);
+            top: 50%;
+            margin-top: rem(-19px);
+        }
+    }
+    .al-msgListItem.al-msgListItemDeleteSelected:before {
+        background: transparent url('//img50.allinmd.cn/pages/message/delete_selected.png') center center no-repeat;
+        background-size: cover;
+        border: none;
+    }
+}
+
+.al-msgListItem {
+    border-bottom: 1px solid $innerBorderColor;
+    padding: rem(40px) rem(30px);
+        opacity: 1;
+    visibility: visible;
+    transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+}
+
+.al-msgListTitle {
+    @include clearfix();
+    display: table;
+    width: 100%;
+    .al-msgListHeadImg {
+        @include circle(rem(50px),
+        transparent);
+        vertical-align: middle;
+        display: table-cell;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                vertical-align: top;
+            }
+        }
+    }
+}
+
+.al-msgListTitleContent {
+    display: table-cell;
+    padding-left: rem(30px);
+    vertical-align: middle;
+    a {
+        @include font-dpr(15px);
+        color: #333;
+        display: inline-block;
+        vertical-align: middle;
+        .icon-vipUser {
+            margin-left: rem(8px);
+        }
+    }
+    .al-msgListStatus {
+        @include font-dpr(14px);
+        color: #aaa;
+        margin-left: rem(18px);
+        vertical-align: middle;
+    }
+    .al-msgListTime {
+        @include font-dpr(12px);
+        float: right;
+        color: $smallTextColor;
+    }
+}
+
+.al-msgListItemContent {
+    p {
+        @include font-dpr(16px);
+        color: #222;
+        margin-top: rem(20px);
+        line-height: 1.5;
+    }
+}
+
+.al-msgListItemContent.al-msgHasDeletedOrShield p {
+    color: $smallTextColor;
+}
+
+.al-msgListTitleContent.al-msgListManyUserNews {
+    width: 100%;
+    position: relative;
+    &:before {
+        content: "";
+        display: block;
+        @include circle(rem(14px),
+        #f34b4b);
+        position: absolute;
+        top: 50%;
+        margin-top: rem(-7px);
+        left: 0;
+    }
+}
+
+.al-msgListDeleteBtns {
+    border: 1px solid $outerBorderColor;
+    border-right: none;
+    border-left: none;
+    background-color: #fff;
+    box-sizing: border-box;
+    height: rem(82px);
+    line-height: rem(82px);
+    @include font-dpr(15px);
+    width: 100%;
+    @include clearfix();
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+	transform:translateY(100%);
+	-webkit-transform:translateY(100%);
+	transition:opacity,transform 0.2s linear;
+	-webkit-transition:opacity,transform 0.2s linear;
+    button {
+        text-align: center;
+        width: 50%;
+        box-sizing: border-box;
+        height: 100%;
+        float: left;
+    }
+    .al-msgListDeleteSelectAll {
+        color: #555;
+        border-right: 1px solid $innerBorderColor;
+    }
+    .al-msgListDelete {
+        color: #aaa;
+        
+    }
+    .al-msgListDeleteHasItem{
+    	color: #f34b4b;
+    }
+}
+
+.al-msgListDeleteBtns.show{
+	opacity: 1;
+	transform:translateY(0%);
+	-webkit-transform:translateY(0%);
+}
+
+.al-msgListItemMyContent{
+    @include font-dpr(14px);
+    color: #808080;
+
+    margin-top: rem(40px);
+    padding-top: rem(40px);
+    border-top: 1px solid $innerBorderColor;
+}
+.al-msgListItem.delete{
+    opacity: 0;
+    visibility: hidden;
+}

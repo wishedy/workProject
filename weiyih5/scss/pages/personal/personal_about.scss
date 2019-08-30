@@ -1,0 +1,74 @@
+@charset "UTF-8";
+//个人主页——关于我们
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+
+html,body{
+    background-color: #fff;
+}
+.al-aboutBox{
+    margin-top: rem(20px);
+    padding: rem(85px) rem(60px);
+    background-color: #fff;
+}
+.al-aboutLogo{
+    width: rem(224px);
+    height: rem(80px);
+    text-align: center;
+    margin:0 auto;
+    img{
+        width: 100%;
+        vertical-align: top;
+    }
+}
+.al-aboutContentItem{
+    @include font-dpr(15px);
+    color: #333;
+    line-height: 1.5;
+    margin: rem(50px) 0;
+
+}
+.al-aboutOtherContent{
+    @include font-dpr(12px);
+    color: #aaa;
+    line-height: 1.5;
+    padding-bottom:rem(80px);
+}
+.al-versionContent{
+    padding-top: rem(80px);
+    border-top: rem(4px) dashed #e4e9ed;
+    .al-versionContentItem> h2{
+        color: #333;
+        @include font-dpr(18px);
+        text-align: center;
+        font-weight: normal;
+        margin-bottom: rem(50px);
+    }
+    ol{
+        @include font-dpr(15px);
+        color: #333;
+        line-height: 1.5;
+        color: #777;
+    }
+}
+.icon-numCircle{
+    @include font-dpr(16px);
+    border-radius: 50%;
+    border: 1px solid #999;
+    display: inline-block;
+    vertical-align: baseline;
+    font-style: normal;
+    @include circle(rem(32px),transparent);
+    text-align: center;
+    line-height: rem(32px);
+    margin-right: rem(20px);
+}
+.al-versionContent .al-aboutOtherContent{
+    margin-top: rem(120px);
+    text-align: center;
+}

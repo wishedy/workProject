@@ -1,0 +1,208 @@
+@charset "UTF-8";
+//评分详情
+//公共方法模块调用
+@import "../../modules/common-modules";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_starModule"; //评分星星组件
+
+//评分详情页头部、底部固定定位
+.al-indexHeader{
+  position: fixed;
+  top:0;
+  z-index: 5;
+  width:100%;
+}
+.al-scoreDetailsFoot,.al-myScorePart{
+  position: fixed;
+  bottom:0;
+  z-index: 3;
+  left:0;
+  right:0;
+}
+
+
+.al-overallScorePart{
+  background-color:#fff;
+  margin:rem(104px) 0 rem(16px);
+  h3{
+    font-weight:400;
+    padding-top:rem(50px);
+    padding-bottom:rem(30px);
+    color:#909090;
+    @include font-dpr(13px);
+    text-align: center;
+    span{
+      color:#3598db;
+      @include font-dpr(22px);
+      padding-left:rem(10px);
+    }
+  }
+  .al-bigScoreStarBox{
+    margin: 0 rem(120px) rem(60px);
+  }
+}
+
+//评分详情：标签列表
+.al-scoreDetailsTagBox{
+  display: flex;
+  display: -webkit-flex;
+  flex-flow:row wrap;
+  -o-flex-flow:row wrap;
+  -ms-flex-flow:row wrap;
+  -webkit-flex-flow:row wrap;
+  margin:0 rem(30px);
+  .al-scoreDetailsTagItem{
+    border:1px solid #DFDFDF;
+    border-radius:rem(30px);
+    color:#909090;
+    @include font-dpr(13px);
+    padding:rem(12px) rem(26px);
+    box-sizing: border-box;
+    margin:0 rem(20px) rem(20px) 0;
+    b{
+      display: inline-block;
+      width:rem(24px);
+      height:rem(24px);
+      margin-left:rem(20px);
+      background-image:url("//img50.allinmd.cn/score/scoreDetailsTag_goodIcon.png");
+      margin-top:rem(5px);
+      background-size: 100% 100%;
+    }
+    .badIcon{
+      background-image:url("//img50.allinmd.cn/score/scoreDetailsTag_badIcon.png");
+      margin-bottom:rem(-3px);
+    }
+  }
+}
+
+  //展开、收缩按钮
+.al-scoreDetailsTag{
+  text-align:center;
+  padding-bottom:rem(20px);
+  color:#626f8c;
+  @include font-dpr(12px);
+  i{
+    content: "";
+    display: inline-block;
+    width: 0.24rem;
+    height: 0.13333rem;
+    margin-left: 0.08rem;
+    margin-bottom:rem(4px);
+    background-image: url("//img50.allinmd.cn/pages/video/icon_open.png");
+    background-size: 100% 100%;
+  }
+  .al-scoreTagOpenIcon{
+    transform: rotate(180deg);
+  }
+}
+
+
+//评分评论UI:begin
+.al-scoreCommentBox{
+  margin-bottom:rem(90px);
+}
+.al-scoreCommentItem{
+  background-color:#fff;
+  padding:rem(30px) rem(30px) rem(25px);
+  border-bottom:1px solid #e4e9ed;
+  .al-littleScoreStarBox{
+    float: none;
+    display: block;
+    li{margin-right:rem(6px);}
+  }
+}
+.al-scoreCommentUserBox{
+  @include clearfix();
+  margin-bottom:rem(30px);
+  >a{
+    float:left;
+    width:rem(70px);
+    height:rem(70px);
+    border-radius:50%;
+    overflow: hidden;
+    margin-top:rem(4px);
+    img{
+      width:100%;
+      height:100%;
+    }
+  }
+}
+.al-scoreUserDetails{
+  margin-left:rem(86px);
+  .al-userName{
+    color:#222;
+    @include font-dpr(13px);
+    i{
+      content: "";
+      display: inline-block;
+      width: 0.34667rem;
+      height: 0.26667rem;
+      background: url("//img50.allinmd.cn/pages/personal/mark_vip.png") center center no-repeat;
+      background-size: 100% 100%;
+      vertical-align: 0.01rem;
+      margin-left: rem(6px);
+    }
+  }
+  .al-commentTime{float:right;}
+  .al-userTitle,.al-commentTime{
+    color:#808080;
+    @include font-dpr(12px);
+    margin-top:rem(10px);
+  }
+}
+      //评论语
+.al-scoreCommentText{
+  color:#333;
+  line-height:rem(50px);
+  @include font-dpr(15px);
+  margin-top:rem(15px);
+  word-wrap:break-word;
+}
+
+      //评论中的标签列表
+.al-scoreCommentItem{
+  .al-scoreDetailsTagBox{
+    margin:0;
+    .al-scoreDetailsTagItem{
+      margin:rem(20px) rem(20px) 0 0;
+      b{background-image:url("//img50.allinmd.cn/score/scoreComment_goodIcon.png");}
+      .badIcon{background-image:url("//img50.allinmd.cn/score/scoreComment_badIcon.png");}
+    }
+  }
+}
+//评分评论UI:end
+
+    //底部：立即评分
+.al-scoreDetailsFoot{
+  height:rem(90px);
+  line-height:rem(90px);
+  text-align: center;
+  @include font-dpr(15px);
+  color:#fff;
+  background-color:rgba(40,153,230,0.9);
+}
+    //底部：我的评分
+.al-myScorePart{
+  box-shadow:0px 4px 8px rgba(223, 223, 223, 0.7), 0px -4px 8px rgba(223, 223,223, 0.7);
+  height:rem(90px);
+  @include font-dpr(13px);
+  color:#555;
+  background-color:rgba(248,248,248,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .al-littleScoreStarBox{
+    margin-left:rem(4px);
+    li{
+      width:rem(28px);
+      height:rem(28px);
+      background-image: url("//img50.allinmd.cn/score/footer_GrayStar.png");
+      background-size: 100% 100%;
+      margin-left:rem(6px);
+      b{
+        background-image: url("//img50.allinmd.cn/score/footer_blueStar.png");
+        background-size:rem(28px) rem(28px);
+      }
+    }
+  }
+}

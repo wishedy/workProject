@@ -1,0 +1,13 @@
+<template name="middleTips$f1ea5634">
+  <view class="_div data-v-2ee2bb2a">
+    <view class="_section data-v-2ee2bb2a main-message-box grey-tips">
+      <view class="_figcaption data-v-2ee2bb2a first-message">
+        <view wx:if="{{tipsType == 4}}" class="_p data-v-2ee2bb2a">您已重新购买分诊医生的咨询，可重新提问</view>
+        <view wx:elif="{{tipsType == 5}}" class="_p data-v-2ee2bb2a">系统提示：分诊为您推荐的「 {{doctorName}} 」医生已经接诊，请尽快与医生沟通</view>
+        <view wx:elif="{{tipsType == 6}}" class="_p data-v-2ee2bb2a">{{tipsText}}</view>
+        <view wx:elif="{{tipsType == 7}}" class="_p data-v-2ee2bb2a">系统提示：医生助理的服务已经结束啦，点击上方卡片，与医生沟通详细病情</view>
+      </view>
+    </view>
+    <view wx:if="{{tipsType !=4 && tipsType !=5 && tipsType !=7}}" class="_p data-v-2ee2bb2a receive-treatment"><label class="_span data-v-2ee2bb2a">咨询已结束</label></view>
+  </view>
+</template>

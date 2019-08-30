@@ -1,0 +1,332 @@
+@charset "UTF-8";
+//首页——病例
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_contentModule"; //内容组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_iconModule"; //按钮组件
+@import "../../components/_classSelector"; //类型筛选
+//头部信息
+.al-mainInner {
+    overflow-x: visible;
+}
+
+.al-tagSeminarHeader {
+    background: transparent url('//img50.allinmd.cn/pages/index/tag_bg.png') center center no-repeat;
+    background-size: 100% 100%;
+    padding: rem(50px) rem(30px);
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    & > a {
+        width: rem(18px);
+        height: rem(32px);
+        display: block;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+    &Content {
+        display: table;
+        width: 100%;
+        margin-top: rem(36px);
+    }
+    &Title {
+        display: table-cell;
+        vertical-align: top;
+        width: 100%;
+        padding-right: 0.4rem;
+        word-break: break-all;
+        .al-tagSeminarTitle {
+            font-weight: 400;
+            @include font-dpr(18px);
+            font-weight: bold;
+        }
+        .al-tagSeminarTitle.middle {
+            @include font-dpr(15px);
+        }
+        .al-tagSeminarTitle.small {
+            @include font-dpr(12px);
+        }
+    }
+    .al-tagSeminarNumMsg {
+        @include font-dpr(12px);
+        margin-top: rem(30px);
+        em {
+            font-style: normal;
+            padding-left: rem(8px);
+            padding-right: rem(7px);
+        }
+        span {
+            padding-right: rem(18px);
+            display: inline-block;
+            vertical-align: middle;
+        }
+        a {
+            @include font-dpr(12px);
+            color: #fff;
+            display: inline-block;
+            vertical-align: middle;
+            background-color: rgba(0, 0, 0, .1);
+            padding: rem(5px) rem(10px);
+            box-sizing: border-box;
+        }
+    }
+}
+
+.al-tagSeminarFollow {
+    display: table-cell;
+    @include font-dpr(12px);
+    vertical-align: top;
+    text-align: center;
+    .al-whiteBtn {
+        white-space: nowrap;
+        &:before {
+            content: "";
+            @include square(rem(18px));
+            background: url('//img50.allinmd.cn/pages/discover/follow_plus.png') center center no-repeat;
+            background-size: cover;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: rem(6px);
+        }
+    }
+}
+
+.al-tagSeminarFollowMsg {
+    background-color: #fff;
+    padding: rem(20px) rem(30px);
+    border-bottom: 1px solid $innerBorderColor;
+    @include clearfix();
+    .al-tagSeminarFollowNum {
+        @include font-dpr(12px);
+        color: #777;
+        font-weight: normal;
+        float: left;
+        line-height: 2;
+        span {
+            padding: 0 rem(8px);
+        }
+    }
+}
+
+.al-tagSeminarFollowList {
+    float: right;
+    list-style: none;
+    text-align: right;
+    &Item {
+        display: inline-block;
+        @include circle(rem(42px),
+        #fff);
+        margin: 0 rem(8px);
+        text-align: center;
+        line-height: rem(42px);
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-right: 50%;
+            & > img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                vertical-align: top;
+            }
+        }
+        &:nth-last-child(1) {
+            margin-right: 0;
+        }
+        &:nth-child(6) {
+            border-radius: 50%;
+            border: 1px solid #ededed;
+            color: #a6a6a6;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.al-tagSeminarChange {
+    padding: 0 rem(30px);
+    height: rem(80px);
+    line-height: rem(80px);
+    background-color: #fff;
+    margin-top: rem(16px);
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.al-tagSeminarSelection {
+    display: inline-block;
+}
+
+.al-tagSeminarSelectionItem {
+    @include font-dpr(14px);
+    color: #777;
+    vertical-align: middle;
+    span{
+        vertical-align: middle;
+    }
+
+    &:nth-last-child(1) {
+        &:after{
+            display: none;
+        }
+    }
+    &:after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: rem(16px);
+        width: rem(2px);
+        background-color: #ebebeb;
+        margin: 0 rem(20px)
+    }
+}
+
+.icon-contentAuthor {
+    margin-right: rem(40px);
+}
+
+.al-tagSeminarSelectionItem.active {
+    color: #3598db;
+}
+
+@import "../../components/_scrollShareBtn"; //浮动分享按钮
+.al-tagSeminarFollow.EV-followed .al-whiteBtn:before {
+    content: "";
+    width: rem(18px);
+    height: rem(12px);
+    background: url('//img50.allinmd.cn/pages/discover/follow_followed.png') center center no-repeat;
+    background-size: cover;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem(6px);
+}
+
+.al-tagScrollHead {
+    background-color: #fff;
+    padding: rem(30px) 0;
+    @include font-dpr(17px);
+    font-weight: normal;
+    color: #333333;
+    text-align: center;
+    position: relative;
+    display: none;
+    z-index: 1;
+    h2 {
+        font-weight: normal;
+    }
+    .btn-primary,
+    .btn-done {
+        @include font-dpr(12px);
+        position: absolute;
+        right: rem(30px);
+        top: rem(30px);
+    }
+    .btn-primary {
+        &:before {
+            content: "";
+            @include square(rem(18px));
+            background: url('//img50.allinmd.cn/pages/discover/scroll_plus.png') center center no-repeat;
+            background-size: cover;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: rem(6px);
+        }
+    }
+    .btn-done:before {
+        content: "";
+        display: inline-block;
+        width: 0.24rem;
+        height: 0.16rem;
+        margin-right: 0.1rem;
+        background: url("/images/img50/pages/index/icon_followed.png") center center no-repeat;
+        background-size: cover;
+        vertical-align: middle;
+    }
+    a:nth-child(1) {
+        position: absolute;
+        left: rem(30px);
+        top: 50%;
+        width: 0.8rem;
+        height: 0.8rem;
+        margin-top: -0.4rem;
+        img {
+            width: 0.8rem;
+            height: 0.8rem;
+            vertical-align: top;
+        }
+    }
+}
+
+.al-noContentTips {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    text-align: center;
+    padding: rem(380px) 0;
+    figure {
+        width: rem(229px);
+        height: rem(336px);
+        display: inline-block;
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.al-scrollBoxFixed {
+    background-color: #eff4f8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+}
+
+.al-content {
+    display: none;
+}
+
+.al-content.active {
+    display: block;
+}
+
+.al-tagSeminarFollowMsg.noFollow {
+    display: none !important;
+}
+
+.icon-contentAuthor {
+    @extend %icon-contentAuthor;
+    margin-right:rem(30px);
+}
+
+.icon-contentWatchedNum {
+    @extend %icon-contentWatchedNum;
+    margin-right: rem(30px);
+}
+
+.icon-tagComment {
+    @extend %icon-tagComment;
+}
+
+.icon-scrollShare {
+    @extend %icon-scrollShare;
+}
+
+.icon-tagConfig {
+    @extend %icon-tagConfig;
+}
+
+@import "../../components/_bottomBtns";
+@import "../../components/_bottomSharePart";

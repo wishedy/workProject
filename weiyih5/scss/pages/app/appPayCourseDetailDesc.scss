@@ -1,0 +1,63 @@
+@charset "UTF-8";
+@import "../../modules/utilities/_utilities";
+//公共变量引用
+
+
+
+
+body {
+  background: #ffffff;
+  color:#D3D3D3;
+  margin:0;
+  padding:0;
+}
+
+h3{
+  margin:rem3(30px) rem3(20px) rem3(20px) rem3(20px);
+  padding-left:rem3(8px);
+  font-size:rem3(18px);
+  height:rem3(18px);
+  line-height: rem3(18px);
+  position: relative;
+  color: #000;
+  &:after{
+    position: absolute;
+    content: " ";
+    left: -0.10667rem;
+    width: 0.10667rem;
+    height: 0.42667rem;
+    background: #dbaf58;
+    border-radius: 0.05333rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+hr{
+  background: #ffffff;
+  height:rem3(20px);
+  border:none;
+  margin:rem3(30px) 0;
+}
+p{
+  margin:0 rem3(20px) rem3(16px) rem3(20px);
+  line-height:rem3(24px);
+  font-size:rem3(16px);
+  color: #333;
+}
+
+ul,ol{
+  margin:0 rem3(20px);
+  -webkit-padding-start:rem3(20px);
+  color: #333;
+}
+body > ol{
+  list-style-type:decimal;
+
+}
+li{
+  font-size:rem3(16px);
+  line-height: rem3(24px);
+  margin:0 0 rem3(6px) 0;
+  padding:0;
+  color: #333;
+}

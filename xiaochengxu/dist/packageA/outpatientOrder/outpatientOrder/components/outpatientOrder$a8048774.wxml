@@ -1,0 +1,41 @@
+<import src="/components/backIndex$640b7ced" /><template name="outpatientOrder$a8048774">
+  <view class="_section data-v-887786ea outpatient-order-inner">
+    <view class="_header data-v-887786ea outpatient-order-header">
+      <view class="_h2 data-v-887786ea">请选择当天具体时间<label class="_span data-v-887786ea">(单选)</label></view>
+    </view>
+    <view class="_section data-v-887786ea outpatient-order-info-content">
+      <view class="_section data-v-887786ea info-container select-time">
+        <view class="_ul data-v-887786ea time-list">
+          <view class="_li data-v-887786ea time-item am {{[timeSeleted == 1 ? 'selected' : '']}}" data-alcode="e191" wx:if="{{timeinterval == 'AL' || timeinterval == 'AM'}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">{{params.month + '-' + params.day}}
+            {{params.weekDay}} 上午 </view>
+          <view class="_li data-v-887786ea time-item pm {{[timeSeleted == 2 ? 'selected' : '']}}" data-alcode="e191" wx:if="{{timeinterval == 'AL' || timeinterval == 'PM'}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">{{params.month + '-' + params.day}}
+            {{params.weekDay}} 下午 </view>
+        </view>
+      </view>
+      <view class="_h3 data-v-887786ea info-title">就诊人信息</view>
+      <view class="_section data-v-887786ea info-container patient-info">
+        <view class="_ul data-v-887786ea patient-info-list" data-alcode-mod="770">
+          <view class="_li data-v-887786ea patient-info-item"><label class="_span data-v-887786ea patient-info-item-left">患者姓名</label> <label class="_span data-v-887786ea patient-info-item-right">{{patientInfo.patientName}}</label></view>
+          <view class="_li data-v-887786ea patient-info-item"><label class="_span data-v-887786ea patient-info-item-left">身份证</label> <label class="_span data-v-887786ea patient-info-item-right">{{certificateCodeEncrypt}}</label></view>
+          <view class="_li data-v-887786ea patient-info-item" bindtap="handleProxy" data-alcode="e189" data-eventid="{{'3'}}" data-comkey="{{$k}}"><label class="_span data-v-887786ea patient-info-item-left phone">手机号</label>
+            <view class="_div data-v-887786ea patient-info-item-right" wx:if="{{!changePhone}}"><label class="_span data-v-887786ea phone-number">{{telphoneNumber}}</label><label class="_span data-v-887786ea change">修改</label></view>
+            <view class="_div data-v-887786ea patient-info-item-right" wx:else><input focus="{{changePhone}}" name="telphoneNumber" value="{{telphoneNumber}}" bindinput="handleProxy" class="_input data-v-887786ea phone-input" bindblur="handleProxy" type="number" placeholder="便于接收重要信息" data-eventid="{{'2'}}" data-comkey="{{$k}}" /></view>
+          </view>
+        </view>
+      </view>
+      <view class="_section data-v-887786ea info-container pay-way"><label class="_span data-v-887786ea pay-way-left">支付方式</label> <label class="_span data-v-887786ea pay-way-right">去医院支付</label></view>
+      <view class="_section data-v-887786ea info-container order-tips">
+        <view class="_p data-v-887786ea order-tips-top">挂号费以医院挂号窗口为主,平台不收取任何费用</view>
+        <view class="_section data-v-887786ea order-tips-bottom">
+          <view class="_p data-v-887786ea order-tips-bottom-title">就诊须知：</view>
+          <view class="_p data-v-887786ea order-tips-bottom-item">停诊将短信通知，请保持手机畅通</view>
+          <view class="_p data-v-887786ea order-tips-bottom-item">实名制预约，就诊人信息不符将无法取号</view>
+        </view>
+      </view>
+      <view data-alcode-mod="771" class="_section data-v-887786ea">
+        <view data-alcode="e190" wx:if="{{timeSeleted != -1}}" class="_footer data-v-887786ea order-submit on" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">提交</view>
+        <view wx:if="{{timeSeleted == -1}}" class="_footer data-v-887786ea order-submit off">提交</view>
+      </view>
+    </view> <template wx:if="{{backIndexShow}}" data="{{...$root[$kk+'0'], $root}}" is="backIndex$640b7ced"></template>
+  </view>
+</template>

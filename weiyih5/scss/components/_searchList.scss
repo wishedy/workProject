@@ -1,0 +1,199 @@
+@charset "UTF-8";
+//搜索列表组件
+//Created by qiangkailiang on 2016/07/31
+//公共方法模块调用
+.al-searchHead {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.al-searchResult {
+    margin-bottom: rem(20px);
+    background-color: #fff;
+}
+
+.al-searchResultTitle {
+    @include font-dpr(13px);
+    color: $smallTextColor;
+    padding: rem(10px) rem(30px);
+    border-bottom: 1px solid $innerBorderColor;
+}
+
+.al-searchResultItem em {
+    font-style: normal;
+    color: #3598db;
+}
+
+.al-searchInputBar {
+    background-color: #EFF4F8;
+    padding: rem(20px) 0 rem(20px) rem(30px);
+    box-sizing: border-box;
+    position: relative;
+    text-align: left;
+    width: 115%;
+
+    input {
+        -webkit-appearance: none;
+        height: rem(84px);
+        line-height: rem(84px);
+        padding: 0;
+        padding-left: rem(110px);
+        box-shadow: none;
+        border: 1px solid $innerBorderColor;
+        background: #fff;
+        box-sizing:border-box;
+        width: rem(586px);
+        font-size: rem(30px);
+        color: #222;
+        font-family: "microsoft yahei";
+        border-radius: rem(4px) 0 0 rem(4px);
+        overflow: visible;
+        transition: all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+        background: rgba(205,205,205,0.2) url("//img50.allinmd.cn/index/searchBorder.png") no-repeat;
+        background-size: cover;
+        &:focus{
+            line-height: rem(30px);
+        }
+
+    }
+    input.focus {
+        width: 75%;
+        outline: none;
+    }
+    #seachCompany,#seachSchool{
+        width: 83%;
+        height: rem(60px);
+        line-height: rem(60px);
+        padding: rem(15px) 0 rem(15px) rem(74px);
+        background: #FFFFFF;
+        border: 1px solid #E4E9ED;
+        border-radius: 8px;
+        &.focus{
+            width: 75%;
+        }
+    }
+    .al-searchCancel.show {
+        display: inline-block;
+        //color: #3598db !important;
+        font-size: rem(30px);
+        color: #3598DB;
+        vertical-align: baseline;
+    }
+    input::-webkit-input-placeholder {
+        @include font-dpr(14px);
+        color: $smallTextColor;
+        vertical-align: rem(-3px);
+        display: inline-block;
+        font-family: "microsoft yahei";
+
+    }
+    .icon-searchWhite {
+        position: absolute;
+        left: rem(45px);
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+    }
+    .al-searchCancel {
+        @include font-dpr(15px);
+        //color: #3598db !important;
+        //margin-left: rem(25px);
+        vertical-align: middle;
+        display: none;
+        padding: 0;
+        .icon-searchCancel {
+            position: absolute;
+            left: 69%;
+            display: none;
+            &:before {
+                vertical-align: baseline;
+            }
+        }
+    }
+}
+
+.al-searchTips {
+    border-bottom: 1px solid $outerBorderColor;
+    text-align: left;
+    @include font-dpr(13px);
+    color: $smallTextColor;
+    padding-left: rem(30px);
+    height: rem(50px);
+    line-height: rem(50px);
+    background-color: #fff;
+
+}
+
+.al-searchResultItem {
+    margin-left: rem(30px);
+    padding-right: rem(30px);
+    border-bottom: 1px solid $innerBorderColor;
+    background-color: #fff;
+//    @include font-dpr(15px);
+    font-size: rem(32px);
+    color: #333;
+    height: rem(100px);
+    line-height: rem(100px);
+    display: block;
+    @include ellipsis();
+    .icon-selected {
+        float: right;
+        display: none;
+        margin-right: rem(30px);
+    }
+}
+
+.al-searchResultItem.selected {
+    .icon-selected {
+        display: block;
+    }
+}
+
+.al-searchFailed {
+    margin-top: rem(70px);
+    text-align: center;
+    @include font-dpr(14px);
+    color: #5f6f8f;
+    a {
+        display: inline-block;
+        margin-top: rem(20px);
+        padding: rem(10px) rem(45px)
+    }
+}
+
+.al-noResult {
+    margin: rem(200px) 0;
+}
+
+.al-searchFocusMask {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+.al-searchFocusMaskShow {
+    opacity: 1;
+    visibility: visible;
+}
+
+.al-searchHeadShow {
+    margin-top: rem(-90px)
+}
+
+// 获取焦点——头部隐藏
+.al-searchHead {
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}

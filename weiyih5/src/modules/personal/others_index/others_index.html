@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            if(location.hash.indexOf('baseInfo')>-1){
+				window.location.href='//www.allinmd.cn/pages/personal/others_baseInfo.html'+location.search;
+            }else if(location.hash.indexOf('dynamic')>-1){
+				window.location.href='//www.allinmd.cn/pages/personal/others_index.html'+location.search;
+			}else{
+				window.location.href='//www.allinmd.cn/pages/personal/others_contribution.html'+location.search;
+			}
+
+        }
+    </script>
+    <title></title>
+    <meta name="Keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <meta name="description" content="［xxx］的学术专栏－唯医,allinmd">
+    <meta name="keywords" content="［xxx］，学术专栏，医学专栏，医师主页，医生专栏，医生交流，关注医师，唯医,allinmd">
+    <meta name="data-alcode" content="a2">
+    <script src="//m.allinmd.cn/js/third-party/flexible.js"></script>
+</head>
+
+<body data-alcode="233">
+    <div id="app">
+
+    </div>
+
+<script src="//m.allinmd.cn/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="//paas.allinmd.cn/modules/sps/sps.js"></script>
+</body>
+
+</html>

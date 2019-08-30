@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/js/lib/jquery/jquery-1.8.0.min.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/modules/modules.select_date/modules.select_date.js"></script>
+    <style>
+        .active{
+            color: red;
+        }
+        .activeBg{
+            background: yellow;
+        }
+    </style>
+    <script>
+        $(function(){
+            module.selectDate({
+                yearContainer:$('.dateYear ul'),//包含年份的标签
+                monthContainer:$('.dateDay'),//包含月份的标签
+                insure:$('.insure'),//确定按钮
+                reset:$('.reset'),//重置按钮
+                yearcallBack:function(){},//点击年的时候回调
+                monthcallBack:function(){},//点击月的时候回调
+                callBack:function(){}//点击确定回调函数
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="dateYear">
+            <ul>
+            </ul>
+        </div>
+        <div class="dateDay" style="display: none">
+            <p class="active">全部</p>
+            <ul>
+                <li>01月</li>
+                <li>02月</li>
+                <li>03月</li>
+                <li>04月</li>
+                <li>05月</li>
+                <li>06月</li>
+                <li>07月</li>
+                <li>08月</li>
+                <li>09月</li>
+                <li>10月</li>
+                <li>11月</li>
+                <li>12月</li>
+            </ul>
+        </div>
+        <button class="insure">确定</button>
+        <button class="reset">重置</button>
+    </div>
+</body>
+</html>

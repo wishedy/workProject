@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>浏览记录</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_browsed.css">
+</head>
+
+<body>
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem">
+                <a href="/design-html/personal/personal_index.html">
+                    <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>浏览记录</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)">
+                </a>
+            </figure>
+        </header>
+         <!-- 头部信息 -->
+        <header class="al-indexHeader" style="position:static;visibility:hidden">
+            <figure class="al-indexHeaderItem">
+                <a href="/design-html/personal/personal_index.html">
+                    <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>收藏的</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)">
+                </a>
+            </figure>
+        </header>
+        <section class="al-noContentTips">
+            <figure>
+                <img src="/images/img50/pages/personal/no_browsed.png" alt="">
+            </figure>
+        </section>
+        <!-- 主内容区域 根据导航栏激活条目显示 -->
+        <section class="al-recordListBox">
+            <section class="al-recordList">
+                <header class="al-recordListTitle">
+                    今天
+                </header>
+                <article class="al-recordListItem">
+                    <span class="al-recordListItemType">视频</span>
+                    <article>
+                        <span class="al-recordListItemContent">喵喵喵喵喵？喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span>
+                    </article>
+                    <i class="icon-arrowRight"></i>
+                </article>
+            </section>
+            <section class="al-recordList">
+                <header class="al-recordListTitle">
+                    今天
+                </header>
+                <article class="al-recordListItem">
+                    <span class="al-recordListItemType">视频</span>
+                    <article>
+                        <span class="al-recordListItemContent">喵喵喵喵喵？喵喵喵喵喵喵喵喵</span>
+                    </article>
+                    <i class="icon-arrowRight"></i>
+                </article>
+            </section>
+            <section class="al-recordList">
+                <header class="al-recordListTitle">
+                    今天
+                </header>
+                <article class="al-recordListItem">
+                    <span class="al-recordListItemType">视频</span>
+                    <article>
+                        <span class="al-recordListItemContent">喵喵喵喵喵？喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span>
+                    </article>
+                    <i class="icon-arrowRight"></i>
+                </article>
+            </section>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script>
+    FastClick.attach(document.body);
+    $(function() {
+        //导航切换
+        tabChange();
+
+        function tabChange() {
+            var tabRole = $(".al-personNavbarItem.active").data("role");
+            $(".al-personalContent").hide();
+            $(".al-personalContent[data-role=" + tabRole + "]").show();
+            $(".al-personNavbarItem").on("click", function(e) {
+                tabRole = $(this).data("role");
+                var img = $(this).find("img");
+                var imgSrc = img.attr("src");
+                if ($(this).hasClass('active')) {
+                    return;
+                }
+                $(".al-personalContent").hide();
+                $(this).addClass('active').siblings('.al-personNavbarItem').removeClass('active');
+                $(".al-personalContent[data-role=" + tabRole + "]").show();
+            });
+        }
+    });
+    </script>
+</body>
+
+</html>

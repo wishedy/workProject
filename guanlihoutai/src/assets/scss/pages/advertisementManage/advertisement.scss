@@ -1,0 +1,296 @@
+/*
+首页-广告管理——推荐广告recommendAdvertisement/课程广告curriculumAdvertisement/直播广告liveBroadcastAdvertisement
+*/
+.currAdConent{
+  width: 1200px;
+  margin: 0 auto;
+}
+/*title*/
+.TopTitle{
+  font-size:20px;
+  font-weight:600;
+  color:rgba(44,52,58,1);
+  line-height:20px;
+  margin: 32px 0 20px 0;
+}
+/*筛选按钮*/
+.currScreeningBox{
+  position: relative;
+  width:1200px;
+  height:325px;
+  background:rgba(255,255,255,1);
+  box-shadow:0 4px 10px 0 rgba(42,53,102,0.04);
+  border-radius:3px;
+  padding: 25px 15px;
+  box-sizing: border-box;
+  .currItem{
+    display: inline-block;
+    margin-bottom: 22px;
+    margin-left: 20px;
+  }
+  .titleName{
+    margin-right: 10px;
+    font-size: 14px;
+  }
+  .txtInput{
+    width: 200px;
+  }
+  .btnBox{
+    margin-top: 24px;
+    //height: 32px;
+    p{
+      display: inline-block;
+      position: absolute;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+    .resetBtn{
+      font-size:14px;
+      font-weight:400;
+      color:rgba(44,52,58,1);
+      line-height:14px;
+      margin-right: 20px;
+      right: 124px;
+      bottom: 32px;
+    }
+    .screeningBtn{
+      right: 34px;
+      bottom: 25px;
+      width:90px;
+      height:32px;
+      border-radius:3px;
+      border:1px solid rgba(75,103,214,1);
+      box-sizing: border-box;
+      line-height: 32px;
+      font-size:14px;
+      font-weight:400;
+      color:rgba(75,103,214,1);
+      text-align: center;
+    }
+  }
+}
+/*按钮*/
+.el-button {
+  /*新建按钮*/
+  &.NewAd{
+    margin: 30px 0 30px;
+    color: #4B67D6;
+    border: 1px solid #4B67D6;
+    border-radius: 3px;
+  }
+  /*编辑按钮*/
+  &.editBtn{
+    width: 74px;
+    height: 28px;
+    padding: 0;
+    border: 1px solid #4B67D6;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #4B67D6;
+    letter-spacing: 0;
+  }
+  /*上架按钮*/
+  &.upBtn{
+    background: #EDF1FF;
+    width: 74px;
+    height: 28px;
+    padding: 0;
+    border: 1px solid #4B67D6;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #4B67D6;
+    letter-spacing: 0;
+  }
+  /*下架按钮*/
+  &.downBtn{
+    width: 74px;
+    height: 28px;
+    padding: 0;
+    background: #FFEBE3;
+    border: 1px solid #FF7E4D;
+    color: #FF7E4D;
+    border-radius: 3px;
+    font-size: 13px;
+    letter-spacing: 0;
+  }
+}
+/*发布按钮样式*/
+.el-button--primary{
+  width: 150px;
+  padding: 9px 15px;
+  background-color: #4B67D6;
+  border-color: #4B67D6;
+}
+.el-button--primary:focus, .el-button--primary:hover{
+  background:#4B67D6;
+}
+.el-table td:nth-child(2) .cell{
+  width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: nowrap;
+}
+/*表头样式*/
+.el-table thead{
+  font-size: 14px;
+  color: #111111;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+// 列表查看大图
+.tableBigImgDialog {
+  font-size: 0;
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 0 5px 16px 0 rgba(20, 38, 95, 0.27);
+  border-radius: 3px;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width: auto;
+  height: auto;
+  z-index: 2;
+  img {
+    width:336px;
+    height: 100%;
+    vertical-align: top;
+    display: inline-block;
+    //精英会广告管理时7:2配图
+    &.eliteImg{
+      width: 502.5px;
+      height: 150px;
+    }
+    //唯品学院广告管理时1035:390配图
+    &.allinSchoolImg{
+      width: 517.5px;
+      height: 195px;
+    }
+    //终端页广告管理时1035:216配图
+    &.terminalImg{
+      width: 517.5px;
+      height: 72px;
+    }
+  }
+  span{
+    width: 316px;
+    position: absolute;
+    left: 0;
+    color: #222222;
+    font-size: 16px;
+    padding: 10px 10px 20px;
+    background-color: #ffffff;
+    line-height: 20px;
+    box-shadow: 0 5px 16px 0 rgba(20, 38, 95, 0.27);
+    border-radius: 0 0 3px 3px;
+    //精英会广告管理时7:2配图
+    &.eliteTxt{
+      top: 150px;
+      width: 482.5px;
+    }
+    //精英会广告管理
+    &.allinSchoolTxt{
+      top: 195px;
+      width: 497.5px;
+    }
+    //终端页广告管理
+    &.terminalTxt{
+      top: 72px;
+      width: 497.5px;
+    }
+  }
+}
+/*编辑/新建弹层中的样式*/
+.el-dialog__body {
+  /*新建/编辑广告时广告id后需要一个确认按钮，当新建时广告id是不可输入的并且点击确认的*/
+  .NewOrEditAd{
+    width: 80%;
+  }
+  .NewOrEditBtn{
+    margin:0 0 0 10px;
+    width: 100px;
+  }
+  /*input输入框宽度*/
+  .el-input{
+    width: 50%;
+  }
+  .el-select .el-input{
+    width: 137%;
+  }
+  .el-form-item.is-success .el-input__inner{
+    border-color: #e4e7ed;
+  }
+  /*确认按钮*/
+  .el-button:hover{
+    color: #4B67D6;
+    border-color: #4B67D6;
+  }
+  /*图片*/
+  .adImg336{
+    width: 150px;
+    height: 150px;
+  }
+  .adImg212{
+    width: 150px;
+    height: 95px;
+  }
+  .adImg464{
+    width: 150px;
+    height: 207px;
+  }
+  .adImg335{
+    width: 335px;
+    height: 100px;
+  }
+  //唯品学院图片尺寸
+  .adImg1035{
+    width: 345px;
+    height: 130px;
+  }
+  // 终端页图片
+  .adImg1035_216{
+    width: 345px;
+    height: 72px;
+  }
+  /*将广告id/广告名称/精英会广告管理7:2配图前面的必填*号进行隐藏*/
+  .adId .el-form-item__label:before{
+    content: '';
+  }
+  .adName .el-form-item__label:before{
+    content: '';
+  }
+  .imgUrl .el-form-item__label:before{
+    content: '';
+  }
+  //结束
+  .el-input.is-disabled .el-input__inner{
+    color: #606266;
+  }
+  .el-textarea.is-disabled .el-textarea__inner{
+    color: #606266;
+  }
+  .NewOrEditAd.el-textarea{
+    width: 50%;
+  }
+}
+.el-dialog__title{
+  font-weight: 600;
+}
+.el-table th {
+  text-align: center;
+  .cell{
+    font-weight: bold;
+  }
+}
+.el-table .cell{
+  text-align: center;
+}
+.el-pagination{
+  text-align: center;
+  margin: 20px 0;
+}
+.tipTxt{
+  font-size: 12px;
+}

@@ -1,0 +1,286 @@
+/*
+*门诊路径第1个问题
+*/
+<template>
+  <section class="reportMain">
+    <report-progress
+      :progress="'10%'"
+      v-if="isProgress"
+    ></report-progress>
+    <!--<question-text-area-->
+      <!--:title="textAreaTitle"-->
+      <!--:textDesc="textDesc"-->
+      <!--@textDesc="textChange"-->
+    <!--&gt;</question-text-area>-->
+    <section class="question-textarea">
+      <article class="question-title">
+        <span>{{textAreaTitle}}</span>
+        <p v-if="titleTip" class="question-desc">{{titleTip}}</p>
+      </article>
+      <figure class="textarea-con">
+      <textarea
+        v-model="textDesc"
+        @input="contentLimit"
+        placeholder="请输入"
+      ></textarea>
+        <span class="textarea-num" :class="{'active':textareaLen<20}">{{textareaLen}}</span>
+      </figure>
+    </section>
+    <select-time
+      :timeObj="clinicTime"
+    ></select-time>
+    <form action="" @submit="formSubmit" report-submit="true">
+      <button class="question-next"
+              type="submit"
+              formType="submit"
+              @click="nextSubmit"
+              :class="{'active':textDesc}"
+      >下一步</button>
+    </form>
+    <logo-loading v-if="isLoading"></logo-loading>
+  </section>
+</template>
+
+<script>
+  import api from 'common/js/util/util';
+  import sendFormId from "common/js/HttpRequest/sendFormId";
+  import createReport from "common/js/report/createReport";//完善保存信息
+  import getReportList from "common/js/report/getReportList";//获取保存信息
+  import reportProgress from './components/ReportProgress';
+  import logoLoading from 'components/LogoLoading';
+  import questionTextArea from './components/QuestionTextarea';
+  import selectTime from "./components/SelectTime";
+  import {createNamespacedHelpers} from 'vuex';
+  import dataLog from "common/js/dataLog/dataLog";
+  const {mapState, mapActions, mapMutations} = createNamespacedHelpers('reportNew');
+    export default {
+        data(){
+          return{
+            isProgress:false,
+            textAreaTitle:'请填写本次就诊的疾病（或症状）',
+            textDesc:'',
+            textareaLen:100,
+            titleTip:'',
+            clinicTime:{
+              title:'本次就诊的时间',
+              timeDate:'',
+            },
+            isLoading:false,
+            isBtnClick:false,
+            reportContentList:[]
+          }
+        },
+        components:{
+          questionTextArea,
+          selectTime,
+          reportProgress,
+          logoLoading
+        },
+      computed:{
+        ...mapState(['reportId','doctorCustomerId','patientId','caseId'])
+      },
+      methods:{
+        textChange(text){
+          this.textDesc=text;
+        },
+        /** 发送formId */
+        formSubmit(e) {
+          sendFormId(e.target.formId);
+        },
+        contentLimit() {
+          let _this=this,getLen=api.getByteLen(_this.textDesc);
+          _this.textareaLen=100-getLen;
+          if (_this.textDesc&& getLen> 100){
+            _this.textDesc=api.getStrByteLen(_this.textDesc,100);
+            _this.textareaLen=0;
+          }
+        },
+        //下一步
+        nextSubmit(){
+          let _this=this;
+          if(_this.textDesc&&(!_this.isBtnClick)){
+            _this.isBtnClick=true;
+            let paramData={
+              reportId:_this.reportId,
+              sortId:1,
+              patientId:_this.patientId,
+              doctorId:_this.doctorCustomerId,
+              reportIsFinish:0,
+              attIdList:"",
+              reportContentList:[
+                {reportValue:_this.textDesc},
+                {reportValue:_this.clinicTime.timeDate},
+              ],
+              oldReportContentList:_this.reportContentList
+            };
+            _this.isLoading=true;
+            createReport(paramData).then((res)=>{
+              _this.isLoading=false;
+              _this.isBtnClick=false;
+                if(res&&res.responseObject&&res.responseObject.responseStatus){
+                  wx.navigateTo({
+                    url:'/packageD/reportNew/clinicTwo'
+                  })
+                }else {
+                  wx.showToast({
+                    title:'保存失败，请重试',
+                    icon:'none'
+                  });
+                }
+            });
+
+          }
+        },
+        getCurrentTime(){
+          let str='',
+            date=new Date(),
+            year=date.getFullYear(),
+            month=date.getMonth()+1,
+            day=date.getDate();
+          if(month<10){
+            month='0'+month;
+          }
+          if(day<10){
+            day='0'+day;
+          }
+          str=year+'-'+month+'-'+day;
+          return str;
+        },
+        //获取报道信息
+        getReportInfo(){
+          let _this=this,paramData={
+            reportId:_this.reportId,
+            // pageSort:'QA1'
+            sortId:1,
+          };
+          _this.isLoading=true;
+          getReportList(paramData).then((res)=>{
+            _this.isLoading=false;
+            if(res&&res.reportMap&&res.reportMap.reportContentList&&res.reportMap.reportContentList.length){
+              _this.reportContentList=res.reportMap.reportContentList;
+              _this.textDesc=_this.reportContentList[0].illnessContent;
+              if(_this.reportContentList[1].visitDate){
+                _this.clinicTime.timeDate=_this.reportContentList[1].visitDate;
+              }
+              _this.contentLimit();
+            }else{
+              _this.reportContentList=[];
+            }
+
+
+          })
+        }
+      },
+      onShow(){
+        this.isBtnClick=false;
+        this.isLoading=false;
+        this.getReportInfo();
+        dataLog.enterBrowse({
+          resourceId:JSON.stringify({
+            doctorId:this.doctorCustomerId,
+            patientId:this.patientId
+          })
+        })
+      },
+      onHide(){
+        dataLog.leaveBrowse();
+      },
+      onLoad(){
+        this.isProgress=true;
+          this.textDesc='';
+          this.textareaLen=100;
+          this.clinicTime.timeDate=this.getCurrentTime();
+      },
+      onUnload(){
+        this.isProgress=false;
+      },
+    }
+</script>
+
+<style scoped lang="scss">
+  .reportMain{
+    min-height: 100%;
+    position: relative;
+  }
+  .question-next{
+    position: absolute;
+    bottom: 80px;
+    width:560px;
+    height:96px;
+    background:rgba(204,204,204,1);
+    border-radius:8px;
+    font-size:36px;
+    font-family:PingFangSC-Medium;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    outline: none;
+    &.active{
+      background:rgba(0,185,173,1);
+    }
+    &:after {
+      border: 0;
+    }
+  }
+  .question-textarea{
+    .question-title{
+      margin-left: 30px;
+      padding: 72px 0 66px;
+      font-size:46px;
+      font-family:PingFangSC-Medium;
+      font-weight:bold;
+      color:rgba(51,51,51,1);
+      line-height:46px;
+      .question-desc{
+        width:690px;
+        height:68px;
+        background:rgba(88,128,237,0.08);
+        border-radius:6px;
+        font-size:28px;
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(102,102,102,1);
+        line-height:68px;
+        padding-left: 20px;
+        box-sizing: border-box;
+        margin-top: 40px;
+      }
+    }
+    .textarea-con{
+      position: relative;
+      width:690px;
+      margin: auto;
+      margin-bottom: 30px;
+      textarea{
+        border:1px solid #999999;
+        width: 100%;
+        height: 242px;
+        font-size:34px;
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(34,34,34,1);
+        line-height:34px;
+        padding: 26px 24px 38px 20px;
+        box-sizing: border-box;
+        &::placeholder{
+          color: #aaaaaa;
+        }
+      }
+      .textarea-num{
+        position: absolute;
+        bottom: 16px;
+        right: 12px;
+        font-size:26px;
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(170,170,170,1);
+        line-height:28px;
+        &.active{
+          color:rgba(252,116,106,1);
+        }
+      }
+    }
+  }
+</style>

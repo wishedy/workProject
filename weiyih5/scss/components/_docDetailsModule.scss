@@ -1,0 +1,295 @@
+@charset "UTF-8";
+//文库转换样式
+//Created by qiangkailiang on 2016/08/05
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+
+.detail_cont_zy {
+    @include font-dpr(18px);
+    color: #808080;
+    line-height: rem(30px);
+    text-align: left;
+    text-indent: rem(36px);
+    margin: 1em 0;
+}
+
+.detail_cont_doc {
+    @include font-dpr(18px);
+    color: #333;
+    line-height: rem(30px);
+    text-align: left;
+    text-indent: rem(36px);
+    margin: 1em 0;
+}
+
+.detail_cont_doc img {
+    width: 100%;
+    overflow: hidden;
+    margin-left: -rem(36px);
+}
+
+.detail_cont_doc p {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    line-height: rem(35px);
+}
+
+.detail_cont_doc h1,
+.detail_cont_doc h2,
+.detail_cont_doc h3,
+.detail_cont_doc h4,
+.detail_cont_doc h5,
+.detail_cont_doc h6 {
+   @include font-dpr(12px);
+    line-height: rem(35px);
+    color: #0c8ef3;
+}
+
+.doc_sc_success {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 8;
+    filter: alpha(opacity=70);
+    -moz-opacity: .7;
+    opacity: .7;
+    height:rem(96px);
+    width: rem(144px);
+    background: #000;
+    border-radius: rem(16px);
+}
+
+.doc_sc_success_content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 8;
+    height:rem(96px);
+    width: rem(64px);
+    border-radius: rem(16px);
+    background: url('//img50.allinmd.cn/video_list/dui.png') 10% center / 18% no-repeat;
+    font-size: rem(17px);
+    line-height:rem(96px);
+    color: #fff;
+    text-align: left;
+    padding-left: rem(36px);
+}
+
+.oe_en {
+    display: none;
+}
+
+.oe_ch {
+    display: block;
+}
+
+.case_detail_cont .title {
+    text-align: left;
+    margin: rem(16px) 0;
+}
+
+.case_detail_cont .title .oe_en,
+.case_detail_cont .title .oe_ch {
+    @include font-dpr(18px);
+    color: #333;
+    text-align: left;
+    line-height: rem(20px);
+}
+
+.oe_title_blue {
+    /* 因OE 与 JOA 都用到，所以提出来了 */
+    @include font-dpr(18px);
+    color: #388ad7;
+    font-weight: bold;
+    line-height: rem(48px);
+    margin-bottom: rem(5px);
+}
+
+.oe_title_blue span {
+    color: #595959;
+}
+
+.oe_title_blue a {
+    color: #036eb8;
+    text-decoration: none;
+}
+
+.oe_content .oe_title {
+    font-family: "Microsoft Yahei";
+    @include font-dpr(18px);
+    color: #000;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: rem(20px);
+    margin-top: rem(25px);
+}
+
+.oe_content .oe_title a {
+    color: #388ad7;
+    text-decoration: none;
+    @include font-dpr(13px);
+    font-weight: normal;
+}
+
+.oe_content .floor03 .oe_ch {
+    display: block;
+}
+
+.oe_content .yw_title {
+    @include font-dpr(14px);
+    color: #595959;
+    line-height: 1.5;
+    margin-bottom:rem(15px);
+}
+
+.oe_content .oe_background {
+    margin: rem(23px) 0 rem(24px) 0;
+}
+
+.oe_content .oe_background:before,
+.oe_content .oe_background:after {
+    content: " ";
+    display: table;
+}
+
+.oe_content .oe_background:after {
+    clear: both;
+}
+
+.oe_content .oe_background .oe_background_q,
+.oe_content .oe_background .oe_background_s {
+    padding: rem(20px);
+    margin-bottom: rem(2px);
+    font-size: rem(30px);
+}
+
+.oe_content .oe_background .oe_background_q:before,
+.oe_content .oe_background .oe_background_s:before,
+.oe_content .oe_background .oe_background_q:after,
+.oe_content .oe_background .oe_background_s:after {
+    content: " ";
+    display: table;
+}
+
+.oe_content .oe_background .oe_background_q:after,
+.oe_content .oe_background .oe_background_s:after {
+    clear: both;
+}
+
+.oe_content .oe_background .oe_background_q div,
+.oe_content .oe_background .oe_background_s div {
+    float: left;
+}
+
+.oe_content .oe_background .oe_background_q {
+    background: #8fbfec;
+    color: #215280;
+}
+
+.oe_content .oe_background .oe_background_s {
+    background: #388ad7;
+    color: #fff;
+}
+
+.oe_content .oe_background .oe_s_right,
+.oe_content .oe_background .oe_q_right {
+    width: 820px;
+    @include font-dpr(12px);
+}
+
+.oe_content .oe_background .oe_q_left,
+.oe_content .oe_background .oe_s_left {
+    width: rem(75px);
+   @include font-dpr(12px);
+    font-weight: bold;
+}
+
+.oe_content .zizhu_main {
+    margin: rem(25px) 0 rem(15px) 0;
+}
+
+.oe_content .zizhu_cont {
+    margin: rem(25px) 0 rem(15px) 0;
+    font-size: rem(30px);
+}
+
+.oe_content .zizhu_cont table {
+    border-collapse: collapse;
+}
+
+.oe_content .zizhu_cont td {
+    border-bottom: solid 10px #ffffff;
+    line-height: rem(50px);
+}
+
+.oe_content .zizhu_cont .bold_fff {
+    color: #fff;
+    font-weight: bold;
+    border-right: solid 10px #ffffff;
+}
+
+.oe_content .zizhu_cont .zizhu_left,
+.oe_content .zizhu_cont .zizhu_right {
+    float: left;
+    padding-left: rem(20px);
+    margin-bottom: rem(10px);
+}
+
+.oe_content .zizhu_cont .zhizhu_right {
+    width: 790px;
+    background: #8fbfec;
+    color: #215280;
+    @include font-dpr(12px);
+    padding-left: 20px;
+}
+
+.oe_content .ch_en {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.oe_content .ch_en_center {
+    width: auto;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #fff;
+    padding: 0 7px;
+    background: #e64638;
+    border-radius: 2px;
+    font-weight: normal;
+    font-family: "宋体";
+}
+
+
+/* oe 文档 */
+
+.journal_floor01 {
+    padding: 20px 0 0 0;
+}
+
+.floor03 .doc_joa_v2_text {
+    color: #333;
+    @include font-dpr(18px);
+    line-height: 2.3em;
+}
+
+.floor03 .doc_joa_v2_img {
+    width: 93.75%;
+    text-align: center;
+    margin: 1.5em 0;
+}
+
+.floor03 .doc_joa_v2_img img {
+    width: 100%;
+}
+
+.floor03 .doc_joa_v2_title {
+    color: #0c8ef3;
+    @include font-dpr(18px);
+    line-height: 2.3em;
+}
+

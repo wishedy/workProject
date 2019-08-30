@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-dpr="3">
+<head>
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/conference/live_list.html'+window.location.search;
+        }
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=0, minimum-scale=0.5, maximum-scale=0.5">
+    <meta name="Keywords" content="医学会议，会议回放，会议日程，会议直播，主讲人，会议视频，骨科视频，手术视频，手术讲解，日程回顾">
+    <title>正在直播第12届中国骨科医师年会课程－唯医，allinmd</title>
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <link rel="stylesheet" href="/css/base.css">
+    <link href="/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/pages/conference/liveList.css">
+</head>
+  <body>
+  <div class="meeting_annual">
+      <div class="annual_top clearFloat">
+          <div class="topLogo"><img src="//img50.allinmd.cn/meeting/meeting_annual/logo.png" alt=""/></div>
+          <div class="topText"><img src="//img50.allinmd.cn/meeting/meeting_annual/annual01.png" alt=""/></div>
+          <div class="topAct"><a href="javascript:;"><img src="//img50.allinmd.cn/meeting/meeting_annual/annual02.png" alt=""/></a></div>
+      </div>
+      <div class="annual_tit">
+          <div class="annualLog"><a href="/" data-ajax="false"><span><img src="//img50.allinmd.cn/meeting/meeting_annual/home.png" alt=""/></span>返回唯医</a></div>
+          <div class="annualTime">
+              <div class="timeText"><span class="Evlive_year">2019</span>年<span><img src="//img50.allinmd.cn/meeting/meeting_annual/annual04.png" alt=""/></span><span class="Evlive_month"></span>月<span><img src="//img50.allinmd.cn/meeting/meeting_annual/annual04.png" alt=""/></span><span class="Evlive_time"></span>日</div>
+          </div>
+      </div>
+      <!--有直播-->
+      <ul class="annual_list">
+
+      </ul>
+      <!--没有直播-->
+      <!--<div class="annual_no" style="display:none;">
+          <div class="noImg"><img src="//img50.allinmd.cn/meeting/meeting_annual/nohave.png" alt=""/></div>
+          <p class="annual_no_text">当天直播已结束，请耐心等待录播上线...</p>
+          <div class="noBut"><a href="/dist/channel/meeting_index.html" data-ajax="false">查看更多会议</a></div>
+      </div>-->
+
+      <div class="annual_footer"><img src="//img50.allinmd.cn/meeting/meeting_annual/annualShar.png" alt=""/></div>
+      <!--<div class="videoPK_share_pop Ev-BayerShareCasePopShow">
+          <div id="videoPK_sharebtn" class="vPK_share_cont">
+              <div class="vPK_share_list">
+                  <div class="share_dao">分享到</div>
+                  <a class="share_sina Ev-BayerShareSina ui-link" target="_blank" ref="sina">
+                      <div class="share_sina_icon"><img src="//img50.allinmd.cn/column/videoPK/xinlang.png" _mce_src="//img50.allinmd.cn/column/videoPK/xinlang.png" alt=""></div>
+                      <div class="share_sina_text">新浪微博</div>
+                  </a>
+                  <a class="share_qzone Ev-BayerShareQzone ui-link" target="_blank" ref="qzone">
+                      <div class="share_qzone_icon"><img src="//img50.allinmd.cn/column/videoPK/kongjian.png" _mce_src="//img50.allinmd.cn/column/videoPK/kongjian.png" alt=""></div>
+                      <div class="share_sina_text">QQ空间</div>
+                  </a>
+              </div>
+          </div>
+          <div class="share_quxiao Ev-BayerShareHideBtn">取消</div>
+      </div>-->
+  </div>
+  </body>
+<script src="//m.allinmd.cn/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="//m.allinmd.cn/js/third-party/fastclick.js"></script>
+<script src="//m.allinmd.cn/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<script src="/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.js"></script>
+<script src="/js/lib/jquery/jquery.cookie.js"></script>
+    <!--build:js /dest/pages/conference/live_list.js-->
+    <script src="/js/comm/main.js"></script>
+    <script src='/js/comm/comm-data.js'></script>
+    <script src='/js/comm/comm-customer.js'></script>
+    <script src='/js/comm/common.js'></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/comm/comm.ajax.js"></script>
+    <script src='/js/comm/jweixin-1.0.0.js'></script>
+    <script src='/js/comm/WeixinJSApi.js'></script>
+    <script src="/js/comm/Weixin_share.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/social_intercourse/share.js"></script>
+    <script src="/js/scene/conference/live_list.js"></script>
+    <!--endbuild-->
+</html>

@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>${areaName}赛区</title>
+    <meta name="description" content=""/>
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="Keywords" content="病例专题，视频专题，专题页面，骨科专题，学术专题，文献专题，手术汇总，">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <link rel="dns-prefetch" href="//img50.allinmd.cn">
+    <script type="text/javascript" src="/js/third-party/flexible.js"></script>
+    <!-- build:css /dest/pages/column/activityTemplate/activity_areaTemplate.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/js/third-party/swiper/swiper.min.css">
+    <link rel="stylesheet" href="/css/column/activityTemplate/activityDetail.css">
+    <!--endbuild-->
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            var sharePos = location.search;
+            window.location.href="<#if showPagePath??>${showPagePath}</#if>"+sharePos ;
+        }
+    </script>
+</head>
+
+<body>
+<input type="hidden" value="${activityId?c}" id="activityId" />
+<!--主页面结构-->
+<section class="main">
+    <!--顶部title栏-->
+    <header class="headTitle">
+        <h2>${areaName}赛区</h2>
+        <a href="javascript:;" class="Ev-BackBtn">
+
+        </a>
+    </header>
+    <!--顶部轮播banner-->
+    <header class="headBanner swiper-container">
+        <section class="swiper-wrapper">
+
+            <!--新版广告位01-->
+            <!--新版广告位01-->
+            <#if adPosition_list??>
+                <#list adPosition_list as adPositionList>
+                    <#if adPositionList_index==0>
+                        <#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+                            <#if v_adPositionAttachmentList??>
+                                <input type="hidden" value="${v_adPositionAttachmentList?size}" id="bannerLength" />
+                                <#list v_adPositionAttachmentList as list>
+
+                                    <figure class="headBannerItem swiper-slide">
+                                        <img src="//img99.allinmd.cn/${list.adAttUrl}" alt="">
+
+                                    </figure>
+                                </#list>
+                            </#if>
+                    </#if>
+                </#list>
+            </#if>
+
+        </section>
+        <section class="swiper-pagination"></section>
+    </header>
+    <!--轮播banner结束-->
+    <!--精彩现场开始 -->
+    <section class="spTemp_list_cont resource_rank resource_rank_leftImg_rightArt">
+        <#if (recommendVideo_list??)&&(recommendVideo_list?size>0)>
+            <#list recommendVideo_list as recommendVideoList>
+                <#if recommendVideoList.recommendResourceListMap??>
+                    <#list recommendVideoList.recommendResourceListMap as recommendList>
+                        <div class="case_content rank_list_border">
+                            <div class="case_cont_left spTemp_right">
+                                <p class="title"><a href="${recommendList.h5Url}"><#if recommendList.resourceForArea??&&recommendList.resourceForArea?length gt 0><span class="al-actAreaColor">【${recommendList.resourceForArea}】</span></#if><#if recommendList.title?length gt 26>${recommendList.title?substring(0,26)}…<#else>${recommendList.title}</#if></a></p>
+                                <p class="act_list_type">
+                                    <#if recommendList.typeName??><#if recommendList.typeName=="病例"> <span class="act_icons case_icon">病例</span></#if></#if>
+                                    <#if recommendList.typeName??><#if recommendList.typeName=="视频"><span class="act_icons video_icon">视频</span></#if></#if>
+                                    <span>${recommendList.author}</span>
+                                    <span><#if recommendList.hospitalName?length gt 10>${recommendList.hospitalName?substring(0,10)}…<#else>${recommendList.hospitalName}</#if></span></p>
+                            </div>
+                            <p class="case_cont_right spTemp_left">
+                                <a href="${recommendList.h5Url}"><img class="bg" src="${recommendList.coverPicUrl}">
+                                    <#if (recommendList.playTime??)&& (recommendList.playTime?length gt 0)>
+                                        <i class="btn_small"><img src="/images/img50/column/specialTemplate/play-btn-small.png" alt=""></i>
+                                    </#if>
+                                    <#if (recommendList.playTime??)&& (recommendList.playTime?length gt 0)><span class="spTemp_list_videoTime">${recommendList.playTime}</span></#if>
+                                    <#if recommendList.isPromoted?exists && recommendList.isPromoted==1>
+                                        <i class="bayer_promotion"></i>
+                                    </#if>
+                                </a>
+
+
+                            </p>
+                        </div>
+                    </#list>
+                </#if>
+
+            </#list>
+        </#if>
+
+    </section>
+    <!--精彩现场结束-->
+
+    <!--页脚按钮组-->
+    <!--页脚按钮组-->
+    <footer class="pageFooter bayerAreaFooter">
+        <article class="footerItem">
+            <a href="//m.allinmd.cn" class="footerHome">
+                唯医首页
+            </a>
+        </article>
+        <i class="hr"></i>
+        <article class="footerItem ">
+            <a href="javascript:;" class="footerDownload Ev-footerAppDownload">
+                下载APP
+            </a>
+        </article>
+        <i class="hr"></i>
+        <article class="footerItem">
+            <a href="javascript:;" class="footerBackToTop">
+                返回顶部
+            </a>
+        </article>
+    </footer>
+    <section class="al-scrollShareBtn Ev-ShareBtn">
+        <i class="icon-scrollShare"></i>分享
+    </section>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<!-- build:js /dest/pages/column/activityTemplate/activity_areaTemplate.js-->
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/column/activityTemplate/column.activityDetail.js"></script>
+<!-- endbuild -->
+
+</body>
+
+</html>

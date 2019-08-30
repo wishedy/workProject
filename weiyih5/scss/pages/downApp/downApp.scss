@@ -1,0 +1,210 @@
+@charset "UTF-8";
+//样式模块调用
+@import "../../modules/utilities/utilities";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@include normalize(mobile);
+.al-mainInner{
+  padding-bottom: 0;
+  -webkit-overflow-scrolling: touch;
+}
+@mixin downLoadBtn{
+  .downBtn{
+    position: absolute;
+    top:rem(176px);
+    left: rem(338px);
+    width:rem(300px);
+    height:rem(96px);
+    background:rgba(100,131,233,1);
+    box-shadow:0px rem(4px) rem(8px) 0px rgba(100,131,233,0.5);
+    border-radius:rem(8px);
+    font-size:rem(32px);
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    line-height: rem(96px);
+    text-align: center;
+  }
+
+}
+.al-downLoad-container{
+  background:rgba(223,227,236,1);
+  background: url("http://img50.allinmd.cn/v3/downApp/downLoadApp.png") no-repeat center center/cover;
+  -webkit-overflow-scrolling: touch;
+  .al-down-header{
+    height: rem(442px);
+    width: 100%;
+    position: relative;
+    .logo{
+      position: absolute;
+      top:rem(98px);
+      left: 50%;
+      margin-left: rem(-88px);
+      width: rem(176px);
+      height: rem(182px);
+      background: url("http://img50.allinmd.cn/v3/downApp/downLogo.png") no-repeat center center/cover;
+    }
+    @include downLoadBtn();
+    .downBtn{
+      position: absolute;
+      top:rem(320px);
+      left: 50%;
+      margin-left: rem(-150px);
+    }
+
+  }
+  .al-down-content{
+    width: 100%;
+    .title{
+      width: rem(310px);
+      height: rem(84px);
+      font-size:rem(30px);
+      font-family:PingFangSC-Regular;
+      font-weight:400;
+      color:rgba(0,0,0,1);
+      line-height:rem(42px);
+      text-align: center;
+      position: relative;
+      margin: 0 auto;
+      &:after,&:before{
+        position: absolute;
+        content:" ";
+        width:rem(60px);
+        height:rem(4px);
+        display: block;
+        background:rgba(34,34,34,1);
+        top:rem(40px);
+      }
+      &:after{
+        left: rem(-108px);
+      }
+      &:before{
+        right: rem(-108px);
+      }
+    }
+    &.index{
+      height: rem(884px);
+      background:rgba(223,227,236,1);
+      background: url("http://img50.allinmd.cn/v3/downApp/index.png") no-repeat center center/cover;
+      .title{
+        display: none !important;
+      }
+    }
+    &.college{
+      height: rem(972px);
+      background:rgba(223,227,236,1);
+      background: url("http://img50.allinmd.cn/v3/downApp/college.png") no-repeat center center/cover;
+    }
+    &.surgery{
+      height: rem(972px);
+      background:rgba(223,227,236,1);
+      background: url("http://img50.allinmd.cn/v3/downApp/surgery.png") no-repeat center center/cover;
+    }
+    &.cases{
+      height: rem(1020px);
+      background:rgba(223,227,236,1);
+      background: url("http://img50.allinmd.cn/v3/downApp/cases.png") no-repeat center center/cover;
+    }
+  }
+  .al-down-footer{
+    position: relative;
+    height: rem(414px);
+    background: url("http://img50.allinmd.cn/v3/downApp/footer.png") no-repeat center center/cover;
+    @include downLoadBtn();
+    .downBtn{
+      position: absolute;
+      top:rem(72px);
+      margin-left: rem(-150px);
+      left: 50%;
+    }
+    .logo{
+      position: absolute;
+      top:rem(286px);
+      margin-left: rem(-150px);
+      left: 50%;
+      width: rem(302px);
+      height: rem(96px);
+      background: url("http://img50.allinmd.cn/v3/downApp/crosswiseLogo.png") no-repeat center center/cover;
+    }
+  }
+
+}
+.al-weixin{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  .logo{
+    position: absolute;
+    left: 50%;
+    width: rem(200px);
+    height: rem(200px);
+    bottom:rem(278px);
+    margin-left: rem(-100px);
+    background: url("http://img50.allinmd.cn/v3/downApp/downLogo.png") no-repeat center center/cover;
+  }
+  .title{
+    width:rem(364px);
+    height:rem(60px);
+    font-size:rem(44px);
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(34,34,34,1);
+    line-height:rem(60px);
+    padding-top: rem(156px);
+    margin-bottom: rem(8px);
+    margin-left: rem(244px);
+  }
+
+  .des,.explorerDes{
+    height:rem(44px);
+    font-size:rem(32px);
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    line-height:rem(44px);
+    margin-left: rem(244px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+  }
+  .des{
+    span{
+      font-size: rem(40px);
+      font-weight: bolder;
+      vertical-align: center;
+      line-height: rem(30px);
+      top:50%;
+      height: rem(8px);
+      margin-left: rem(10px);
+      width: rem(42px);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      em{
+        width: rem(8px);
+        height: rem(8px);
+        border-radius: 50%;
+        background:rgba(51,51,51,1);
+        margin-left: rem(8px);
+      }
+      i{
+        position: absolute;
+        height: rem(232px);
+        width: rem(180px);
+        right: rem(-188px);
+        //bottom:rem(240px);
+        bottom:0;
+        background: url("http://img50.allinmd.cn/v3/downApp/downArrows.png") no-repeat center center/cover;
+      }
+    }
+  }
+  .explorerDes{
+    span{
+      color:rgba(255,79,79,1);
+      margin-left: rem(8px);
+    }
+  }
+}

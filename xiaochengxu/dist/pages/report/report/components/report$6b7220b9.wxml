@@ -1,0 +1,31 @@
+<import src="/components/ensure$5e95f728" /><template name="report$6b7220b9">
+  <view class="_div data-v-2f534158 report {{[  [successFlag ? 'bgWhite' : ''],  [authorizationFlag ? 'bgWhite' : ''],  [successFlag && !authorizationFlag ? 'bgGray' : '']]}}">
+    <view wx:if="{{!successFlag&&!authorizationFlag}}" class="_ul data-v-2f534158">
+      <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" wx:for="{{dataList}}" wx:for-index="index" wx:for-item="item" class="_li data-v-2f534158">
+        <view class="_div data-v-2f534158 doctorInfo">
+          <image src="{{item.doctorUrl}}" class="_image data-v-2f534158"></image>
+          <view class="_div data-v-2f534158 baseInfo">
+            <view class="_div data-v-2f534158 info"><label class="_span data-v-2f534158 name">{{item.doctorName}}</label><label class="_span data-v-2f534158">{{item.medicalTitle}}</label></view>
+            <view class="_div data-v-2f534158 company">{{item.company}}</view>
+          </view>
+        </view>
+        <view class="_div data-v-2f534158 patientInfo">
+          <view wx:if="{{item.patientName.length>0}}" class="_div data-v-2f534158 mb10"><label class="_label data-v-2f534158 patientName">患者姓名</label><label class="_span data-v-2f534158">{{item.patientName}}</label></view>
+          <view wx:if="{{item.reportState ==0}}" class="_div data-v-2f534158"><label class="_label data-v-2f534158">系统提示</label><label class="_span data-v-2f534158 InfoContent">{{item.messageContent}}</label></view>
+          <view wx:if="{{item.reportState ==1}}" class="_div data-v-2f534158"><label class="_label data-v-2f534158">{{item.doctorName}}</label><label class="_span data-v-2f534158 InfoContent">{{item.messageContent}}</label></view>
+          <view wx:if="{{item.reportState ==2}}" class="_div data-v-2f534158"><label class="_label data-v-2f534158">{{item.messageName}}</label><label class="_span data-v-2f534158 InfoContent">{{item.messageContent}}</label></view>
+          <view class="_div data-v-2f534158 arrow"></view>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-2f534158 success" wx:if="{{successFlag&&!authorizationFlag}}">
+      <image src="/static/images/bg-icon@2x.png" class="_img data-v-2f534158"></image>
+      <view class="_h3 data-v-2f534158 title">暂无报到医生</view>
+      <view class="_p data-v-2f534158 text">请扫描就诊时医生提供的报到二维码与医生快速建立联系</view>
+    </view> <template wx:if="{{ensureShow}}" bindensureClickEvent="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="ensure$5e95f728"></template>
+    <view class="_div data-v-2f534158 authorization" wx:if="{{authorizationFlag}}">
+      <image src="/static/images/report/authorization.png" class="_img data-v-2f534158"></image>
+      <view class="_div data-v-2f534158 text">获取信息失败，请先授权</view> <button bindgetuserinfo="handleProxy" open-type="getUserInfo" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_button data-v-2f534158">去授权</button>
+    </view>
+  </view>
+</template>

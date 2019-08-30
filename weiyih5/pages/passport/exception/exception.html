@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>医师认证</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/authentication/unusualFlow.css">
+    <link rel="stylesheet" href="/css/pages/authentication/auth.css"/>
+    <link href="/js/third-party/swiper/swiper.min.css" rel="stylesheet">
+</head>
+<body>
+
+<section class="al-mainInner">
+    <header class="al-idSureHead ev-headerThree">
+        <ul>
+            <li class="al-idSureHeadItem">
+                <a href="javascript:;" class="ev_exceptionBackBtn">
+                    <img original-src="//img50.allinmd.cn/pages/personal/arrow_back01.png" src="//img50.allinmd.cn/pages/personal/arrow_back01.png" alt="">
+                </a>
+            </li>
+            <li class="al-idSureHeadItem ">完成认证</li>
+            <li class="al-idSureHeadItem"><span class="sureBtn ev_certSave">提交</span></li><!--active -->
+        </ul>
+    </header>
+    <!--相同帐号检测-->
+    <section class="un-sameAccount">
+        <section class="un-content">
+            <article class="un-topTxt">
+                <div>“<span class="un-userName"></span>”已经完成认证</div>
+                <div>原帐号为<span class="un-phoNum"></span>，是否使用原帐号登录？</div>
+            </article>
+            <button class="un-useOld ev-useOld">使用原帐号登录<i></i></button>
+            <button class="un-useNew">认证新帐号</button>
+            <article class="un-BotTxt">原帐号登录成功后，将自动向唯医发送合并申请，后续唯医客服会与您进行电话联系，确认合并相关内容</article>
+        </section>
+    </section>
+    <!--登录-->
+    <section class="ev-loginBox" style="display: none">
+        <section class="al-login">
+            <aside class="loginRegisterTab">
+                <p class="" data-type="1">手机验证登录</p>
+                <p class="active" data-type="2">帐号密码登录</p>
+            </aside>
+            <aside class="un-phoNumTxt">请输入<span class="un-phoNum">135****1234</span>完整帐号</aside>
+            <!--验证码登录-->
+            <aside class="phoneLoginCont loginCont" style="display: none;">
+                <div class="inputBox ev-newLogin">
+                    <input type="tel" maxlength="11" class="ev-loginInput" placeholder="请输入手机号"/>
+                </div>
+                <div class="inputBox">
+                    <input type="tel" class="mobileInput ev-codeInput ev-logCode" data-type="1" placeholder="请输入验证码" />
+                    <span class="ev-sendCode" data-type="1" data-unCli="0">获取验证码</span>
+                    <span class="timeYZM"></span>
+                </div>
+                <div class="problems">
+                    <span class="encounter ev-noCode">收不到验证码？</span>
+                </div>
+                <button class="loginBtn ev-loginBtn" unbind="0">立即进入</button>
+            </aside>
+            <!--帐号登录-->
+            <aside class="accountLoginCont loginCont" style="display: none">
+                <div class="inputBox">
+                    <input type="text" maxlength="50" class="mobileInput ev-logInp" placeholder="请输入手机号/邮箱"/>
+                </div>
+                <div class="inputBox">
+                    <input type="text" class="ev-passInput" maxlength="20" minlength="6" placeholder="请输入登录密码" />
+                    <i class="ev-closeIcon"></i>
+                    <i class="show_sign"></i>
+                </div>
+                <button class="loginBtn ev-loginPassBtn" unbind="0">立即进入</button>
+                <div class="problems"><span class="ev-findAccount">找回帐号</span><span class="encounter ev-fogetPass">忘记密码？</span></div>
+            </aside>
+            <!--收不到验证码弹层-->
+            <aside class="codePopup ev-codePopup">
+                <div class="popBottom">
+                    <div class="voiceCode">获取语音验证码</div>
+                    <div class="findPass ev-findAccount">忘记帐号，我要找回</div>
+                    <div></div>
+                    <div class="cancle">取消</div>
+                </div>
+            </aside>
+        </section>
+    </section>
+    <!--找回密码-->
+    <section class="un-findPass">
+        <aside class="un-phoNumTxt">请输入<span class="un-phoNum"></span>完整帐号</aside>
+        <div class="inputBox">
+            <input type="tel" maxlength="11" class="mobileInput ev-fogetPassInp" placeholder="请输入"/>
+        </div>
+        <button class="loginBtn ev-fogetSendCode">发送验证码</button>
+    </section>
+    <!--输入语音验证码-->
+    <section class="un-findCode ev-voiceCode">
+        <aside class="findPass">
+            <div class="codeTip">语音验证码已发送至<span class="un-phoNum"></span></div>
+            <input class="inpVoiceCode ev-inpVoiceCode" type="text" maxlength="4" />
+        </aside>
+        <div class="ev-voiceSendCode">重新发送</div>
+        <div class="codeTime ev-voiveCode">已发送<span>60</span>s后重新发送</div>
+    </section>
+    <!--找回密码-->
+    <section class="un-findCode ev-findPassCode">
+        <aside class="findPass">
+            <input class="inpVoiceCode ev-inpPassCode" type="text" maxlength="4" />
+        </aside>
+        <div class="ev-passSendCode">重新发送</div>
+        <div class="codeTime ev-passCode">已发送<span>60</span>s后重新发送</div>
+    </section>
+    <!--重置密码-->
+    <section class="un-resetting">
+        <div class="inputBox">
+            <input minlength="6" maxlength="20" class="ev-restPassOne" onpaste="return false;" placeholder="请输入6位以上新密码"/>
+        </div>
+        <div class="inputBox">
+            <input minlength="6" maxlength="20" class="ev-restPassTwo" onpaste="return false;" placeholder="请再次输入新密码"/>
+        </div>
+        <button class="loginBtn ev-restBtn">重置密码</button>
+    </section>
+    <!--客服-->
+    <section class="al-authHelpBg al-selectorBarMask">
+        <section class="al-authHelpContent">
+            <h2>服务时间</h2>
+            <span class="al-authHelpClose ev_helpClose"></span>
+            <p class="al-authHelpTime">周一至周五（9:00-18:00）节假日除外</p>
+            <section class="al-authHelpContact">
+                <p>客服电话 <span>010-59007006</span><a href="tel:010-59007006"><img src="//img50.allinmd.cn/authentication/auth/tel.png" alt=""></a></p>
+                <p>客服微信 <span>weiyizs123</span></p>
+            </section>
+        </section>
+    </section>
+    <!--帐号合并完成-->
+    <section class="mergeTip">
+        <img src="/images/img50/pages/personal/mergeTip.png" alt="">
+        <div>原帐号登录成功</div>
+        <div>您的合并申请已收到，后续唯医客服将与您联系</div>
+        <button class="loginBtn ev-IKnow">我知道了</button>
+    </section>
+</section>
+<!--重置密码-->
+<section class="resetPassword">
+    <section class="resetCont">
+        <h2>您的帐号已合并成功！</h2>
+        <span class="al-authHelpClose"></span>
+        <p class="conTxt">为了您的帐号安全，请在下方重置密码</p>
+        <p class="conTip">请输入新密码</p>
+        <div class="inputBox">
+            <input type="text" class="" placeholder=""/>
+        </div>
+        <p class="conTip">请再次输入新密码</p>
+        <div class="inputBox">
+            <input type="text" class="" placeholder=""/>
+        </div>
+        <button class="restBtn">重置密码</button>
+    </section>
+</section>
+<!--全栈认证弹层-->
+<section class="ToAuth" style="display: none">
+    <section class="ToAuthCont" style="display: none">
+        <span class="al-authHelpClose"></span>
+        <img src="/images/img50/pages/personal/goAuth.png" alt="">
+        <h2>立即认证，您将获得</h2>
+        <p>1.免费浏览与观看唯医所有资源</p>
+        <p>2.骨科医生专属工具使用资格</p>
+        <p>3.开启骨科在线执业</p>
+        <button>立即认证</button>
+    </section>
+    <section class="ToAuthCont ToAuthInner">
+        <span class="al-authHelpClose"></span>
+        <img src="/images/img50/pages/personal/goAuth.png" alt="">
+        <h2>完成认证，即可查看完整病历</h2>
+        <button>立即认证</button>
+    </section>
+</section>
+</body>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/swiper/swiper-3.4.2.min.js"></script>
+<script src="//paas.allinmd.cn/compose/ucr_sbin/seed.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/modules/module.medicalTitle.js"></script>
+<script src="/js/modules/module.addCompany.js"></script>
+<script src="/js/modules/module.addSchool.js"></script>
+<script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+<script src="/js/third-party/ajaxfileupload.js"></script>
+<script src="/js/third-party/ymd.js"></script>
+<script src="/js/third-party/md5.js"></script>
+<script src="/js/passport/auth/unusualFlow.js"></script>
+<script src="/js/passport/auth/auth.js"></script>
+</html>

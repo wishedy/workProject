@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>撰写评论</title>
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/common/comment.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/publish/publishComment.css">
+    <link rel="stylesheet" href="/js/third-party/sweetalert-master/lib/sweet-alert.css">
+    <!--endbuild-->
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="329">
+<section data-role="page" id="index" class="content-page case_content" style="background: #fff">
+    <div class="case_header">
+        <div class="nav-head">
+            <div class="comment_qx ev-comment_qx">取消</div>
+            <div class="new_case_title">撰写评论</div>
+        </div>
+    </div>
+    <div id="cancel_mask" style="display: none">
+        <div class="jxl_mask"></div>
+        <div class="jsx_parent">
+            <div class="jxl_want">
+                <div class="atten_title">提示</div>
+                <div class="jxl_want_top" style="line-height:3em; height:3em">接下来你想...</div>
+                <div class="jxl_want_bottom">
+                    <div class="jix_l color-blue" id="continue_pub">继续编辑</div>
+                    <div class="jix_r  color-grey">取消发布</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading_mask" style="display: none">
+        <div class="jxl_mask"></div>
+
+    </div>
+    <div class="write_comment_content">
+        <form action="" class="commentForm" method="post" enctype="multipart/form-data">
+            <div class="write_commtent_who-wrap">
+                <div class="write_commtent_who">
+                    <div class="write_comm_input">
+                        <textarea id="reviewContent" type="text" placeholder="请输入评论" data-role="none"></textarea>
+
+                    </div>
+                </div>
+            </div>
+            <div class="write_commtent_cont">
+                <div class="write_commtent_cont_center">
+                    <div class="write_comm_input">
+                        <div class="w_comm_photo">
+                            <ul class="add_photo">
+                                <div class="uploadImgListCont"> <ul class="uploadImgList ev-uploadImgList"></ul></div>
+                                <li class="upload ev-uploadBtn"><img src="//img50.allinmd.cn/comment/photo_normal.png"/></li>
+                                <div class="clear"></div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="write_commtent_at">
+                <div class="write_commtent_at_cont">
+                    <div class="remind">
+                        <div class="tag_cont">
+                            <div id="rem_title">提醒谁看</div>
+                            <div class="case_mr_title" id="rem_show">提醒谁看</div>
+                            <ul class="rem_list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="write_commtent_quote">
+                <div class="write_commtent_quote_cont">
+                    <div class="quote">
+                        <div class="quote_cont ev-quote_cont">
+                            <div id="quote_title">引用</div>
+                            <div class="case_mr_title" id="quote_show">引用</div>
+                            <p class="quoteText ev-quoteText_show"><span></span><i class="quoteTextI"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input name="paramJson" type="hidden" id="formParams"/>
+
+            <div class="w_comm_fb comm_disable">发布</div>
+            <div class="upload_del" id="delete">删除评论</div>
+        </form>
+    </div>
+</section>
+
+<section data-role="page" class="content-page case_content" id="remind" style="display: none;background: #fff;">
+    <div class="case_header">
+        <div class="nav-head">
+            <div class="comment_qx ev-popComment_qx"><a href="javascript:;">取消</a></div>
+            <div class="new_case_title">提醒谁看</div>
+            <div class="new_case_title_fh" id="success">完成</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="tx_who">
+        <!-- 已选列表 -->
+        <div class="add_tag_input">
+            <ul class="user_list"></ul>
+            <input id="user_input" type="text" placeholder="请输入医师姓名" data-role="none">
+        </div>
+        <!-- 默认列表 -->
+        <ul class="tx_who_look" id="my_user"></ul>
+
+        <!-- loading -->
+        <ul class="tx_who_look_loading" id="loading" style="display:none;">
+            <li>
+                <img src="//img50.allinmd.cn/case/loading.gif"/>
+            </li>
+
+        </ul>
+
+        <!-- 搜索列表 -->
+        <ul class="tx_who_look" id="search_user" style="display:none;"></ul>
+
+        <div class="yy_none_search">
+            <div class="sorry_none">很抱歉，没有找到相关结果。</div>
+        </div>
+    </div>
+</section>
+
+
+<section data-role="page" class="content-page case_content" id="quotePop" data-flag="1" style="display:none ;">
+    <div class="case_header">
+        <div class="nav-head">
+            <div class="comment_qx ev-quotePop_qx"><a href="javascript:;">取消</a></div>
+            <div class="new_case_title">引用相关资源</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="al-quoteCont">
+        <div class="searchInput">
+            <i></i><input type="text" class="ev-inputSearch" placeholder="引用相关资源，请在这里搜索" /><b></b>
+        </div>
+        <div class="PublishQuoteList ChoiceList ev-ChoiceList">
+            <ul>
+
+            </ul>
+        </div>
+        <div class="PublishQuoteList ev-myPublish" style="display: none">
+            <div class="myPublishTitle">我发布的</div>
+            <ul>
+
+            </ul>
+        </div>
+        <div class="al-quoteNone ev-quoteNone" style="display: none;">未找到相关资源，换个词试试吧~</div>
+    </div>
+</section>
+<section class="al-bottomSelectorListMask" id="backMask">
+    <section class="al-bottomSelectorListBox">
+        <section class="al-bottomSelectorList">
+            <figure class="al-bottomSelectorItem active save" on="true"><a href="javascript:void(0)">存为草稿</a></figure>
+            <figure class="al-bottomSelectorItem giveup"><a href="javascript:void(0)">放弃编辑</a></figure>
+        </section>
+        <section class="al-bottomSelectorList mgt">
+            <figure class="al-bottomSelectorItem cancel" id="EV-cancelUploadImg"><a href="javascript:void(0)">取消</a></figure>
+        </section>
+    </section>
+</section>
+
+<script src="/js/lib/jquery/jquery-1.8.0.min.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+<!--<script src="/js/third-party/touch-swipe/touchSwipe.js"></script>-->
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<!--build:js /dest/common/comment.js-->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+
+<script src="/js/third-party/add-removeable-group-pic-comment/plugin.add-removeable-group-pic.js"></script>
+<script src="/js/third-party/uploadReplace.js"></script>
+<script src="/js/third-party/add-removeable-group-pic-comment/plugin.replaceInput/plugin.replaceInput.js"></script>
+<script src="/js/third-party/add-removeable-group-pic-comment/plugin.readFile/plugin.readFile.js"></script>
+<script src="/js/third-party/jquery-form/jquery.form.js"></script>
+<script src="/js/third-party/sweetalert-master/lib/sweet-alert.js"></script>
+<script src="/js/scene/review/comment.js"></script>
+<!--endbuild-->
+</body>
+</html>

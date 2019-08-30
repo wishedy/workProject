@@ -1,0 +1,283 @@
+@charset "UTF-8";
+//个人主页——设置头像 
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //头部信息
+@import "../../components/_bottomBtns";
+.al-mainInner {
+    background-color: #EFF4F8;
+}
+.al-applyModify{
+    margin-top:rem(15px);
+    font-size:rem(24px);
+    color:#909090;
+    position: relative;
+    height:rem(50px);
+    line-height: rem(50px);
+    box-sizing:border-box;
+    padding-left: rem(28px);
+    .al-applyBtn{
+        width: rem(72px);
+        height:rem(34px);
+        line-height: rem(34px);
+        text-align:center;
+        border-radius:rem(20px);
+        position: absolute;
+        right:rem(30px);
+        top:rem(6px);
+        color:#44a7ea;
+        border:1px solid #44a7ea;
+    }
+}
+.al-tableModuleItem.authInfoCanChange{
+    position: relative;
+    &:after{
+        content:"";
+        background:url('//img50.allinmd.cn/pages/personal/arrow_right.png')center no-repeat;
+        position: absolute;
+        right:rem(30px);
+        width:rem(15px);
+        height: rem(26px);
+        background-size:cover;
+        top:rem(40px);
+    }
+}
+.al-tableModuleItem.authInfoChange h3 {
+    font-size: rem(30px);
+    color: #808080;
+}
+.al-tableModuleItem.authInfoChange .al-tableModuleItemInput {
+    font-size: rem(30px);
+}
+.reauthSubmit{
+    display:block;
+    margin:rem(60px) rem(30px) 0 rem(30px);
+    background:#2899e6;
+    border-radius:rem(10px);
+    font-size: rem(40px);
+    text-align: center;
+    line-height: rem(90px);
+    height: rem(90px);
+    color:#fff;
+}
+
+.al-personalMsgConfigHeader {
+    background-color: #fff;
+    height: rem(88px);
+    line-height: rem(88px);
+    @include font-dpr(17px);
+    font-weight: normal;
+    color: #333333;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid $outerBorderColor;
+    h2 {
+        font-weight: normal;
+    }
+    .al-personalMsgConfigBack {
+        position: absolute;
+        width: rem(18px);
+        height: rem(32px);
+        left: rem(30px);
+        top: 50%;
+        margin-top: rem(-16px);
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.al-tableModule {
+    margin-top: rem(20px);
+    background-color: #fff;
+}
+
+.al-tableModuleItem {
+    margin-left: rem(28px);
+    border-bottom: 1px solid $innerBorderColor;
+    height: rem(100px);
+    line-height: rem(100px);
+    position: relative;
+    h3 {
+        @include font-dpr(14px);
+        color: #555555;
+        font-weight: normal;
+        display: inline-block;
+    }
+    .al-tableModuleItemInput {
+        @include font-dpr(15px);
+        position: absolute;
+        left: rem(180px);
+        display: inline-block;
+        color: #222;
+        & > input {
+            border: none;
+            background: none;
+            font-family: "Microsoft Yahei"
+        }
+    }
+    .al_uploadAttTip{
+        position: absolute;
+        top:rem(69px);
+        width: 100%;
+        text-align: center;
+        @include font-dpr(10px);
+        color:#3598db;
+    }
+    p {
+        @include font-dpr(13px);
+        color: #aaaaaa;
+    }
+    .al-sexSelector {
+        position: absolute;
+        left: rem(180px);
+        top: 0;
+    }
+}
+
+.al-personalContent {
+    margin-top: rem(20px);
+    background-color: #EFF4F8;
+}
+
+.al-personalImgUpload {
+    .al-tableModuleItem {
+        //height: rem(140px);
+        height: rem(310px);
+        h3 {
+            //line-height: rem(140px);
+        }
+    }
+    .al-tableModuleItemInput{
+        //height: 100%;
+        //line-height: rem(140px);
+    }
+}
+.al-tableModuleUploadImgSecond{
+    left:rem(190px);
+}
+.al-tableModuleUploadImg {
+    //@include square(rem(110px));
+    @include square(rem(160px));
+    border: 1px dashed #c6c6c6;
+
+    position: absolute;
+    //right: rem(20px);
+    top: 50%;
+    margin-top: rem(-55px);
+    text-align: center;
+    input[type="file"] {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        left: 0;
+    }
+    .al-uploadTipsPic {
+        //@include middle-known(rem(38px), rem(30px));
+        width:rem(42px);
+        height: rem(34px);
+        position: absolute;
+        top:rem(59px);
+        left:rem(59px);
+    }
+    .al-uploadSuccessPic {
+        width: 100%;
+        height: 100%;
+        position: static;
+        margin: 0;
+    }
+    .al-uploadingStatus {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        img {
+            @include square(rem(32px));
+            vertical-align: top;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: rem(-16px);
+            margin-left: rem(-16px);
+            @include animate(rotate, 1s, linear, infinite);
+        }
+        .al-uploadingFailTips {
+            display: none;
+        }
+    }
+    .al-uploadingFail {
+        img {
+            display: none;
+        }
+        .al-uploadingFailTips {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            i {
+                display: block;
+                line-height: 1.5;
+                font-style: normal;
+                @include font-dpr(12px);
+                color: #fff;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+@import "../../components/_middleTipsModal"; //上传失败弹窗
+.al-middleTipsModal {
+    padding: rem(35px) rem(30px) !important;
+    .al-middleTipsModalText {
+        @include font-dpr(16px);
+    }
+}
+
+.al-qualificationSubmit {
+    .btn-primary {
+        background-color: #2899e6;
+        color: #fff !important;
+        display: inline;
+    }
+    color: #3598db;
+    @include font-dpr(14px);
+    float: right;
+}
+
+.al-qualificationSubmitNone {
+    .btn-primary {
+        background-color: #f4f4f4;
+        padding: rem(10px) rem(30px);
+        border: 1px solid #f4f4f4;
+        border-radius: rem(50px);
+        color: #909090 !important;
+        text-align: center;
+        display: inline;
+    }
+}
+.al-tableModuleSelect .al-dateSelector {
+    border: none;
+    background: 0 0;
+    padding: 0;
+    margin: 0;
+
+    color: #aaa;
+    font-family: "microsoft yahei";
+    border-bottom: 1px solid #e4e9ed;
+    padding-bottom: .13333rem;
+}
+//@import "../../components/_tableModule"; //表单
+@import "../../components/_buttonModule";
+@import "../../components/_animationModule"; //动画关键帧

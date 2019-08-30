@@ -1,0 +1,16 @@
+<import src="/components/commentContent$06036310" /><template name="gcList$652ed2f8">
+  <view class="_section data-v-74f5533d comment-container" id="container">
+    <view class="_nav data-v-74f5533d comment-navBar">
+      <view class="_section data-v-74f5533d comment-navBar-item {{[listType === 'all' ? 'active' : '']}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">全部评论 </view>
+      <view class="_section data-v-74f5533d comment-navBar-item {{[listType === 'author' ? 'active' : '']}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}"> 只看作者 </view>
+    </view>
+    <view class="_section data-v-74f5533d comment-content" hidden="{{!(listType==='all')}}"><template wx:key="index" wx:if="{{item.reviewData&&item.reviewData.isValid==1&&commentList.length>0}}" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0-'+index], $root}}" is="commentContent$06036310" wx:for="{{commentList}}" wx:for-index="index" wx:for-item="item"></template>
+      <view class="_article data-v-74f5533d no-comment" wx:if="{{commentList==='empty'}}">第一条评论是你的了~</view>
+      <view class="_section data-v-74f5533d extraLine" hidden="{{!(commentList!=='empty'&&allTypeLoading)}}">{{allTypeFinish?'--到底了--':'正在加载..'}}</view>
+    </view>
+    <view class="_section data-v-74f5533d comment-content" hidden="{{!(listType==='author')}}"><template wx:key="index" wx:if="{{item.reviewData&&item.reviewData.isValid==1&&authorCommentList.length>0}}" data-eventid="{{'3-'+index}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1-'+index], $root}}" is="commentContent$06036310" wx:for="{{authorCommentList}}" wx:for-index="index" wx:for-item="item"></template>
+      <view class="_article data-v-74f5533d no-comment" wx:if="{{authorCommentList==='empty'}}">暂无内容</view>
+      <view class="_section data-v-74f5533d extraLine" hidden="{{!(authorCommentList!=='empty'&&authorTypeLoading)}}">{{authorTypeFinish?'--到底了--':'正在加载..'}}</view>
+    </view>
+  </view>
+</template>

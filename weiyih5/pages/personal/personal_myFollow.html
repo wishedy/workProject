@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/personal/personal_index.html';
+        }
+    </script>
+    <title>我关注的－唯医,allinmd</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <meta name="description" content="我关注的－唯医,allinmd">
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_myFollow.css">
+    <!--<link rel="stylesheet" href="/css/pages/discover/tag_seminar.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_index.css">-->
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="224">
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader" data-alcode-mod='401'>
+            <figure class="al-indexHeaderItem">
+                <a href="personal_index.html" class="ev_digHole" data-alcode='e45'>
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>关注的</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)">
+                </a>
+            </figure>
+        </header>
+        <nav class="al-personalNavbar ev-followNav" data-alcode-mod='472' data-alcode-item-selector="figure">
+            <figure class="al-personNavbarItem active" data-role="case">
+                <figcaption>病例</figcaption>
+            </figure>
+            <figure class="al-personNavbarItem" data-role="topic">
+                <figcaption>话题</figcaption>
+            </figure>
+            <figure class="al-personNavbarItem" data-role="tag">
+                <figcaption>标签</figcaption>
+            </figure>
+        </nav>
+        <!-- 暂时无法关注病例 -->
+        <section class="al-noContentTips" style="display:none;">
+            <figure>
+                <img src="//img50.allinmd.cn/pages/personal/no_follow_case.png" alt="">
+            </figure>
+        </section>
+
+        <section class="al-searchInputBar ev-searchTag" style="display:none;">
+            <i class="icon-searchWhite"></i>
+            <input type="text" placeholder="查找我关注的标签">
+            <button class="al-searchCancel">
+                <i class="icon-searchCancel"></i>取消
+            </button>
+        </section>
+
+        <!-- 主内容区域 根据导航栏激活条目显示 -->
+        <section class="al-personalContent al-comment al-personalIndex" data-role="case">
+            <section class="al-searchResult ev-list" data-alcode-mod='473'>
+
+            </section>
+            <section class="al-searchResult ev-searchList" style="display:none">
+
+            </section>
+            <a href="/pages/discover/discover_tag.html" class="btn-primary-lg icon-whitePlus ev-followTag" style="display:none;position: fixed;bottom: 0px;">添加更多标签</a>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/scene/personal/personalMy.js"></script>
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+    
+</body>
+</html>

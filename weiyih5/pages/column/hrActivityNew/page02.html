@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超多内推大奖</title>
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="./css/baseNew.css">
+</head>
+<body>
+<audio id="audio" src="./video/sou.mp3"></audio>
+<div class="warp">
+    <header></header>
+    <section class="main" id="container">
+        <!--<h3><span>23:55</span></h3>-->
+        <!--<ul class="content-list">-->
+            <!--<li>-->
+                <!--<p class="name">郝婧Crystal</p>-->
+                <!--<p class="cont">@all 最近招聘情况怎么样，进人速度有点慢…</p>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<p class="name">郝婧Crystal</p>-->
+                <!--<p class="cont">能不能加快速度，很多都没人干</p>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<p class="name">郝婧Crystal</p>-->
+                <!--<p class="cont">产品经理，高级UI，品牌策划，内容运营，医学部的，java工程师……</p>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<p class="name">刘峥嵘</p>-->
+                <!--<p class="cont">我们的第二家线下医院也要落地了，在重庆，需要骨科医生，医生经纪人等等，你们要加快速度</p>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<p class="name">海生</p>-->
+                <!--<p class="cont">好的，我们尽快推进下</p>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<p class="name">付新鑫</p>-->
+                <!--<p class="cont">收到，头发可能不保了...</p>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<p class="name">段博洋</p>-->
+                <!--<p class="cont">我想静静</p>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<p class="name">niko</p>-->
+                <!--<p class="cont">周末可能没了</p>-->
+            <!--</li>-->
+        <!--</ul>-->
+        <!--<div class="btnGroup hidden">-->
+            <!--<p>看到需求的HR小哥哥小姐姐已经傻了</p>-->
+            <!--<img src="./images/button.png" alt="" id="goToBtn">-->
+        <!--</div>-->
+    </section>
+    <footer></footer>
+</div>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="./js/pixi.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<script src="js/share.js"></script>
+<script>
+    $(function(){
+        var winw = $(window).width();
+        var winh = $(window).height();
+        //窗口比例
+        var windowScale = winw / winh;
+        var pixiCreat={
+            messConArr:[],
+            messIndex:0,
+            topY:240,
+            pixiInit:function () {
+                let t=pixiCreat,
+                    app=t.creatApp(),
+                    mainCont=t.addHF(app);
+                t.messageT(mainCont);
+                t.messageConArr(app,mainCont);
+
+            },
+            loaderAdd:function () {
+                PIXI.loader
+                    .add([
+                        "./images/header.png",
+                        "./images/footer.png",
+                        "./images/button.png",
+                        "./images/haojing.png",
+                        "./images/haisheng.png",
+                        "./images/liuzong.png",
+                        "./images/fu.png",
+                        "./images/niko.png",
+                        "./images/duanboyang.png"
+                    ])
+                    .load(pixiCreat.pixiInit);
+            },
+            //创建背景
+            creatApp:function () {
+                var app = new PIXI.Application(750, 750/windowScale, {
+                    forceCanvas:true,//不使用webGL渲染
+                });
+                //将舞台放入dom中
+                document.getElementById('container').appendChild(app.view);
+                app.renderer.backgroundColor=0xeef3f8;
+                return app;
+            },
+        //    添加头部和底部
+            addHF:function (app) {
+                var mainCont=new PIXI.Container();
+                app.stage.addChild(mainCont);
+                var textureH=new PIXI.Sprite.fromImage("./images/header.png");
+                app.stage.addChild(textureH);
+                textureH.y=0;
+                var textureF=new PIXI.Sprite.fromImage("./images/footer.png");
+                app.stage.addChild(textureF);
+                textureF.y=750/windowScale-91;
+                return mainCont
+            },
+        //    时间封装
+            messageT:function (mainCont) {
+                //时间
+                var messageTstyle = new PIXI.TextStyle({
+                    fontFamily: "PingFangSC-Regular",
+                    fontSize: 24,
+                    fill: "#FFFFFF",
+                });
+                var messageT = new PIXI.Text("23:55",messageTstyle);
+                messageT.y=8;
+                messageT.x=8;
+                var triangle = new PIXI.Graphics();
+                triangle.beginFill(0xcecece);
+                triangle.drawRoundedRect(0, 0, 80, 40, 8);
+                triangle.endFill();
+                var textCon=new PIXI.Container();
+                textCon.addChild(triangle);
+                textCon.addChild(messageT);
+                textCon.y=150;
+                textCon.x=335;
+                mainCont.addChild(textCon);
+            },
+        //    多人聊天
+            messageConArr:function (app,mainCont) {
+                var t=pixiCreat;
+                var messageList=[
+                    {imgsrc:"./images/haojing.png", name:"郝婧Crystal", desc:'@all 最近招聘情况怎么样，进人的速度有点慢…'},
+                    {imgsrc:"./images/haojing.png", name:"郝婧Crystal", desc:'能不能加快速度，很多都没人干'},
+                    {imgsrc:"./images/haojing.png", name:"郝婧Crystal", desc:'产品经理，高级UI，品牌策划，内容运营，医学部的，java工程师……'},
+                    {imgsrc:"./images/liuzong.png", name:"刘峥嵘", desc:'我们的第二家线下医院也要落地了，在重庆，需要骨科医生，医生经纪人等等，你们要加快速度'},
+                    {imgsrc:"./images/haisheng.png", name:"海生", desc:'好的，我们尽快推进下'},
+                    {imgsrc:"./images/fu.png", name:"付新鑫", desc:'收到，头发可能不保了...'},
+                    {imgsrc:"./images/duanboyang.png", name:"段博洋", desc:'我想静静'},
+                    {imgsrc:"./images/niko.png", name:"niko", desc:'周末可能没了'},
+                    ];
+                var messageConY=0;
+                if(t.messConArr.length){
+                    messageConY=t.messConArr[t.messIndex-1].y;
+                    t.topY=messageConY+t.messConArr[t.messIndex-1].height+56;
+                }
+                t.messConArr.push(t.messageCon(mainCont,messageList[t.messIndex],t.topY));
+                app.ticker.add(function () {
+                    if(t.messIndex<8){
+                        if(t.messConArr[t.messIndex].y>t.topY-20){
+                            t.messConArr[t.messIndex].y-= 1;
+                        }
+                    }
+                    if(t.topY>750/windowScale-200&&mainCont.position.y>-(mainCont.height-(750/windowScale-300))){
+                        mainCont.position.y-=1;
+                    }
+                });
+                setTimeout(function () {
+                    t.messIndex++;
+                    if(t.messIndex<8){
+                        t.messageConArr(app,mainCont);
+                    }
+                },1300);
+            },
+        //    聊天框封装
+            messageCon:function (mainCont,option,topY) {
+                var mContaier=new PIXI.Container();
+                mContaier.y=topY;
+                mContaier.x=26;
+                mainCont.addChild(mContaier);
+                //头像
+                var imgsprit=new PIXI.Sprite.fromImage(option.imgsrc);
+                mContaier.addChild(imgsprit);
+
+                var cContiner=new PIXI.Container();
+                mContaier.addChild(cContiner);
+                cContiner.x=90;
+                //名字
+                var namestyle = new PIXI.TextStyle({
+                    fontFamily: "PingFangSC-Regular",
+                    fontSize: 24,
+                    fill: "#737373",
+                });
+                var messageName = new PIXI.Text(option.name,namestyle);
+                cContiner.addChild(messageName);
+                //消息说明
+                var descstyle = new PIXI.TextStyle({
+                    fontFamily: "PingFangSC-Regular",
+                    fontSize: 24,
+                    fill: "#141414",
+                    wordWrap:true,
+                    lineHeight:35,
+                    breakWords:true,
+                    wordWrapWidth:424,
+
+                });
+                var messageDesc = new PIXI.Text(option.desc,descstyle);
+                messageDesc.x=20;
+                messageDesc.y=20;
+                 var triangleDesc = new PIXI.Graphics();
+                triangleDesc.beginFill(0xffffff);
+                triangleDesc.drawRoundedRect(0, 0, 444, messageDesc.height+36, 7);
+                triangleDesc.endFill();
+                var textCon=new PIXI.Container();
+                textCon.addChild(triangleDesc);
+                textCon.addChild(messageDesc);
+                textCon.y=40;
+                cContiner.addChild(textCon);
+                return mContaier;
+            }
+        };
+        pixiCreat.loaderAdd();
+
+        //聊天
+
+        var isWeChat = false;
+        var isAudio = false;
+        var isFisrt = false;
+        function doAnimation(index) {
+            $(".content-list li").eq(index).addClass("animation");
+            $("#audio")[0].play();
+        }
+
+        var i=0;
+        var timer;
+        function setTimeAnimation(){
+            doAnimation(i++);
+            clearInterval(timer);
+           timer =  setInterval(function(){
+                console.log(i)
+                doAnimation(i++);
+                if(i>3){
+                    setTimeout(function(){
+                        $(".main").scrollTop( $(".main").height()+100);
+                    },1000)
+                    if(i>7) {
+                        $(".btnGroup").removeClass("hidden");
+                        clearInterval(timer);
+                        // setTimeout(function(){
+                        //     $(".main").scrollTop( $(".main").height());
+                        // },1000)
+                    }
+                }
+            },1300);
+        }
+
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            $("#audio")[0].load();
+            isWeChat = true;
+            if (isWeChat && isAudio) {
+                setTimeAnimation()
+            }
+        }, false);
+
+        $("#audio")[0].addEventListener("canplaythrough", function () {
+            if (isFisrt) {
+                return;
+            }
+            isFisrt = true;
+            isAudio = true;
+            if (isWeChat && isAudio) {
+                setTimeAnimation()
+            }
+        }, false);
+
+        $("#audio")[0].addEventListener('ended', function () {
+            $("#audio")[0].load();
+        }, false);
+
+
+        $("#goToBtn").on("click touchstart",function(){
+            window.location.href='./page04.html'
+        })
+    })
+</script>
+</body>
+</html>

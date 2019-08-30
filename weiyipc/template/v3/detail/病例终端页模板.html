@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>${case_baseinfo.caseName!''}-病例讨论-唯医,allinmd</title>
+    <meta name="description" content="${case_baseinfo.mainNarrate!''}${case_baseinfo.discussion!''}">
+    <meta name="Keywords" content="病例,病例讨论${seoMetaKeyword!''},${customer_auth.lastName}${customer_auth.firstName} ,唯医,allinmd">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <link rel="stylesheet" href="/dest/detail/detail_case.css">
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/video-js.css" rel="stylesheet" type="text/css"/>
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/videojs.allinmd.css" rel="stylesheet" type="text/css"/>
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="130">
+
+<input type="hidden" id="resourceId" value="${case_baseinfo.caseId?c}"/>
+<input type="hidden" id="resourceType" value="7"/>
+<input type="hidden" id="refCustomerId" value="${case_baseinfo.refCustomerId?c}"/>
+<input type="hidden" id="resourceTpl" value="${case_baseinfo.tplPath!''}"/>
+<input type="hidden" id="resourceWapUrl" value="${case_baseinfo.webStoragePath!''}"/>
+<input type='hidden' id="shareImgSrc" value="${shareImgSrc!''}"/>
+<section class="al-mainInner">
+
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <!--<li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>-->
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+
+    <section class="al-pageMainBox">
+        <!--页面主体内容：begin -->
+        <section class="al-mainContent">
+            <#assign customer_page="//www.allinmd.cn/pages/personal/others_contribution.html?cid=${customer_auth.customerId?c}">
+                <#if customer_auth.customerId?length==1>
+                    <#assign customer_page="javascript:;">
+                </#if>
+                <#if case_baseinfo??&&case_baseinfo.isValid=1>
+                    <div class="al-libraryInfoBox">
+                        <figure class="al-libraryInfo_head Ev-shareTitleName" data-alcode-mod='176'>
+                            <h4>${case_baseinfo.caseName}</h4>
+                            <ul class="al-littleScoreStarBox"><li></li><li></li><li></li><li></li><li></li></ul>
+                            <a target="_blank" href="${customer_page}">${customer_auth.lastName}${customer_auth.firstName}</a>
+                            <p>
+                                <#if case_baseinfo.publishTime??&&(case_baseinfo.publishTime?length>10)>
+                                    <span>发布于：${case_baseinfo.publishTime?substring(0,4)}-${case_baseinfo.publishTime?substring(5,7)}-${case_baseinfo.publishTime?substring(8,10)}</span>
+                                </#if>
+                            </p>
+                            <p>
+                                <#if case_baseinfo.lastUpdateTime??>
+                                    更新于：<span>${case_baseinfo.lastUpdateTime?substring(0,10)}</span>
+                                </#if>
+                            </p>
+                        </figure>
+                        <div class="al-browseData Ev-al-browseData">
+                            <h4 id="lib_rq_num">${case_baseinfo.browseNum}</h4>
+                            <span>浏览</span>
+                        </div>
+
+                        <div class="al-caseContentBox">
+                            <!--患者信息-->
+                            <figure>
+                                <h6 class="title">患者信息</h6>
+                                <p>
+                                    <#if case_baseinfo??&&case_baseinfo.sexId=1>
+                                        男
+                                    </#if>
+                                    <#if case_baseinfo??&&case_baseinfo.sexId=2>
+                                        女
+                                    </#if>
+                                    <#if case_baseinfo.age?? && case_baseinfo.age!='0' && case_baseinfo.age!=''>
+                                        <span class="age">${case_baseinfo.age}</span>岁
+                                    </#if>
+                                    <#if case_baseinfo.ageMonth?? && case_baseinfo.ageMonth!='0' && case_baseinfo.ageMonth!=''>
+                                        ${case_baseinfo.ageMonth}月
+                                    </#if>
+                                    <#if case_baseinfo.ageDay?? && case_baseinfo.ageDay!='0' && case_baseinfo.ageDay!=''>
+                                        ${case_baseinfo.ageDay}天
+                                    </#if>
+                                </p>
+                                <#if case_baseinfo.mainNarrate!=''>
+                                    <h6 class="title">主诉</h6>
+                                    <p style="line-height:30px;">${case_baseinfo.mainNarrate!''}</p>
+                                </#if>
+                            </figure>
+                            <!--患者信息结束-->
+
+                            <!--现病史-->
+                            <#if case_baseinfo.illnessHistory!=''>
+                                <figure class="MedicalHistory">
+                                    <h6 class="title">现病史</h6>
+                                    <p>${case_baseinfo.illnessHistory!''}</p>
+                                </figure>
+                            </#if>
+                            <!--现病史结束-->
+
+
+                            <!--既往史-->
+                            <#if case_supplement??>
+                                <#if case_supplement.pastHistory!=''>
+                                    <figure class="MedicalHistory">
+                                        <h6 class="title">既往史</h6>
+                                        <p>${case_supplement.pastHistory!''}</p>
+                                    </figure>
+                                </#if>
+                            </#if>
+                            <!--既往史结束-->
+
+                            <!--个人史-->
+                            <#if case_supplement??>
+                                <#if case_supplement.personalHistory!=''>
+                                    <figure class="MedicalHistory">
+                                        <h6 class="title">个人史</h6>
+                                        <p>${case_supplement.personalHistory!''}</p>
+                                    </figure>
+                                </#if>
+                            </#if>
+                            <!--个人史结束-->
+
+                            <!--家族史-->
+                            <#if case_supplement??>
+                                <#if case_supplement.familyHistory!=''>
+                                    <figure class="MedicalHistory">
+                                        <h6 class="title">家族史</h6>
+                                        <p>${case_supplement.familyHistory!''}</p>
+                                    </figure>
+                                </#if>
+                            </#if>
+                            <!--家族史结束-->
+
+                            <!--体格检查（全身查体&专科查体）-->
+                            <#if case_baseinfo.professionalChecking!=''>
+                                <figure class="MedicalHistory">
+                                    <h6 class="title">体格检查<span class="min_title">（全身查体&专科查体）</span></h6>
+                                    <p>${case_baseinfo.professionalChecking!''}</p>
+                                </figure>
+                            </#if>
+                            <!--体格检查（全身查体&专科查体）结束-->
+
+                            <!--辅助检查-->
+                            <#if case_supplement??>
+                                <#if case_supplement.auxiliaryInfo!=''>
+                                    <figure class="MedicalHistory">
+                                        <h6 class="title">辅助检查</h6>
+                                        <p>${case_supplement.auxiliaryInfo!''}</p>
+                                    </figure>
+                                </#if>
+                            </#if>
+                            <!--辅助检查结束-->
+
+
+                            <!--诊断&鉴别诊断-->
+                            <#if case_supplement??>
+                                <#if case_supplement.diagnosisInfo!=''>
+                                    <figure class="MedicalHistory">
+                                        <h6 class="title">诊断&鉴别诊断</h6>
+                                        <p>${case_supplement.diagnosisInfo!''}</p>
+                                    </figure>
+                                </#if>
+                            </#if>
+                            <!--诊断&鉴别诊断结束-->
+
+                            <!--治疗过程-->
+                            <#if case_supplement??&&case_supplement.treatmentRecord!=''>
+                                <figure class="MedicalHistory">
+                                    <h6 class="title">治疗过程</h6>
+                                    <p>${case_supplement.treatmentRecord!''}</p>
+                                </figure>
+                            </#if>
+                            <!--治疗过程结束-->
+
+                            <!--手术名称-->
+                            <#if case_supplement??>
+                                <#if case_supplement.operationName!=''>
+                                    <figure class="MedicalHistory">
+                                        <h6 class="title">手术名称</h6>
+                                        <p>${case_supplement.operationName!''}</p>
+                                    </figure>
+                                </#if>
+                            </#if>
+                            <!--手术名称结束-->
+
+                            <!--手术记录（主要病理发现）-->
+                            <#if case_supplement??>
+                                <#if case_supplement.intraoperativeInfo!=''>
+                                    <figure class="MedicalHistory">
+                                        <h6 class="title">手术记录<span class="min_title">（主要病理发现）</span></h6>
+                                        <p>${case_supplement.intraoperativeInfo!''}</p>
+                                    </figure>
+                                </#if>
+                            </#if>
+                            <!--手术记录（主要病理发现）结束-->
+
+                            <!--产品信息-->
+                            <#if case_supplement??>
+                                <#if case_supplement.productInfo!=''>
+                                    <figure class="MedicalHistory">
+                                        <h6 class="title">产品信息</h6>
+                                        <p>${case_supplement.productInfo!''}</p>
+                                    </figure>
+                                </#if>
+                            </#if>
+                            <!--产品信息结束-->
+
+                            <!--图片-->
+                            <#if ((case_att_url_list_1??)&&(case_att_url_list_1?size>0)) || ((case_video_url_list_1??)&&(case_video_url_list_1?size>0))>
+                                <figure class="surgery">
+                                    <h6 class="title">治疗前</h6>
+                                    <!-- 视频 -->
+                                    <#if (case_video_url_list_1??)&&(case_video_url_list_1?size>0)>
+                                        <#list case_video_url_list_1 as caseVideo>
+                                            <section class="al-textDetails_main  Ev-videoPic" data-qiniuId="${caseVideo.attId?c}">
+                                                <figure>
+                                                    <img src="" alt=""/>
+                                                    <b class="videoPlayBtn"></b>
+                                                    <span></span>
+                                                </figure>
+
+                                            </section>
+                                        </#list>
+                                    </#if>
+                                    <!-- 视频 -->
+
+                                    <#if (case_att_url_list_1?size==1)>
+                                        <#list case_att_url_list_1 as casePicInfo>
+                                            <div class="al-surgeryImgBox_1 viewBigImg" typeTitle="治疗前" caseId="${case_baseinfo.caseId?c}" caseCategoryId="1">
+                                                <figure>
+                                                    <img src="${casePicInfo.caseAttUrl}" alt=""/>
+                                                </figure>
+                                            </div>
+                                        </#list>
+                                        <#elseif (case_att_url_list_1?size==2)>
+                                            <div class="al-surgeryImgBox_2 viewBigImg" typeTitle="治疗前" caseId="${case_baseinfo.caseId?c}" caseCategoryId="1">
+                                                <#list case_att_url_list_1 as casePicInfo>
+                                                    <figure>
+                                                        <img src="${casePicInfo.caseAttUrl}" alt=""/>
+                                                    </figure>
+                                                </#list>
+                                            </div>
+                                            <#elseif (case_att_url_list_1?size>2)>
+                                                <div class="al-surgeryImgBox_9 viewBigImg" typeTitle="治疗前" caseId="${case_baseinfo.caseId?c}" caseCategoryId="1">
+                                                    <#list case_att_url_list_1 as casePicInfo>
+                                                        <#if casePicInfo_index<6>
+                                                        <figure>
+                                                            <img src="${casePicInfo.caseAttUrl}" alt=""/>
+                                                        </figure>
+                                    </#if>
+                                    </#list>
+                        </div>
+                        <#if (case_att_url_list_1?size>6)>
+                            <p>
+                                还有<span>${case_att_url_list_1?size-6}</span>张 >
+                            </p>
+                        </#if>
+                </#if>
+                </figure>
+                </#if>
+
+                <#if ((case_att_url_list_2??)&&(case_att_url_list_2?size>0)) || ((case_video_url_list_2??)&&(case_video_url_list_2?size>0))>
+                    <figure class="surgery">
+                        <h6 class="title">治疗中</h6>
+                        <!-- 视频 -->
+                        <#if (case_video_url_list_2??)&&(case_video_url_list_2?size>0)>
+                            <#list case_video_url_list_2 as caseVideo>
+                                <section class="al-textDetails_main Ev-videoPic" data-qiniuId="${caseVideo.attId?c}">
+                                    <figure>
+                                        <img src="" alt=""/>
+                                        <b class="videoPlayBtn"></b>
+                                        <span></span>
+                                    </figure>
+
+                                </section>
+                            </#list>
+                        </#if>
+                        <!-- 视频 -->
+
+                        <#if (case_att_url_list_2?size==1)>
+                            <#list case_att_url_list_2 as casePicInfo>
+                                <div class="al-surgeryImgBox_1 viewBigImg" typeTitle="治疗中" caseId="${case_baseinfo.caseId?c}" caseCategoryId="2">
+                                    <figure>
+                                        <img src="${casePicInfo.caseAttUrl}" alt=""/>
+                                    </figure>
+                                </div>
+                            </#list>
+                            <#elseif (case_att_url_list_2?size==2)>
+                                <div class="al-surgeryImgBox_2 viewBigImg" typeTitle="治疗中" caseId="${case_baseinfo.caseId?c}" caseCategoryId="2">
+                                    <#list case_att_url_list_2 as casePicInfo>
+
+                                        <figure>
+                                            <img src="${casePicInfo.caseAttUrl}" alt=""/>
+                                        </figure>
+                                    </#list>
+                                </div>
+                                <#elseif (case_att_url_list_2?size>2)>
+                                    <div class="al-surgeryImgBox_9 viewBigImg" typeTitle="治疗中" caseId="${case_baseinfo.caseId?c}" caseCategoryId="2">
+                                        <#list case_att_url_list_2 as casePicInfo>
+                                            <#if casePicInfo_index<6>
+                                            <figure>
+                                                <img src="${casePicInfo.caseAttUrl}" alt=""/>
+                                            </figure>
+                        </#if>
+                        </#list>
+                        </div>
+                        <#if (case_att_url_list_2?size>6)>
+                            <p>
+                                还有<span>${case_att_url_list_2?size-6}</span>张 >
+                            </p>
+                        </#if>
+                </#if>
+                </figure>
+                </#if>
+
+                <#if ((case_att_url_list_3??)&&(case_att_url_list_3?size>0)) || ((case_video_url_list_3??)&&(case_video_url_list_3?size>0))>
+                    <figure class="surgery">
+                        <h6 class="title">治疗后</h6>
+                        <!-- 视频 -->
+                        <#if (case_video_url_list_3??)&&(case_video_url_list_3?size>0)>
+                            <#list case_video_url_list_3 as caseVideo>
+                                <section class="al-textDetails_main  Ev-videoPic" data-qiniuId="${caseVideo.attId?c}">
+                                    <figure>
+                                        <img src="" alt=""/>
+                                        <b class="videoPlayBtn"></b>
+                                        <span></span>
+                                    </figure>
+
+                                </section>
+                            </#list>
+                        </#if>
+                        <!-- 视频 -->
+
+                        <#if (case_att_url_list_3?size==1)>
+                            <#list case_att_url_list_3 as casePicInfo>
+                                <div class="al-surgeryImgBox_1 viewBigImg" typeTitle="治疗后" caseId="${case_baseinfo.caseId?c}" caseCategoryId="3">
+                                    <figure>
+                                        <img src="${casePicInfo.caseAttUrl}" alt=""/>
+                                    </figure>
+                                </div>
+                            </#list>
+                            <#elseif (case_att_url_list_3?size==2)>
+                                <div class="al-surgeryImgBox_2 viewBigImg" typeTitle="治疗后" caseId="${case_baseinfo.caseId?c}" caseCategoryId="3">
+                                    <#list case_att_url_list_3 as casePicInfo>
+                                        <figure>
+                                            <img src="${casePicInfo.caseAttUrl}" alt=""/>
+                                        </figure>
+                                    </#list>
+                                </div>
+                                <#elseif (case_att_url_list_3?size>2)>
+                                    <div class="al-surgeryImgBox_9 viewBigImg" typeTitle="治疗后" caseId="${case_baseinfo.caseId?c}" caseCategoryId="3">
+                                        <#list case_att_url_list_3 as casePicInfo>
+                                            <#if casePicInfo_index<6>
+                                            <figure>
+                                                <img src="${casePicInfo.caseAttUrl}" alt=""/>
+                                            </figure>
+                        </#if>
+                        </#list>
+                        </div>
+                        <#if (case_att_url_list_3?size>6)>
+                            <p>
+                                还有<span>${case_att_url_list_3?size-6}</span>张 >
+                            </p>
+                        </#if>
+                </#if>
+                </figure>
+                </#if>
+
+                <!--图片结束-->
+
+                <!--讨论-->
+                <#if case_baseinfo??&&case_baseinfo.discussion!=''>
+                    <figure class="al-textDetails_discuss  Ev-goOtherCenter" data-alcode-mod="341">
+                        <i></i>
+                        <p class="active">
+                            ${case_baseinfo.discussion!''}
+                        </p>
+                    </figure>
+                </#if>
+                <!--讨论结束-->
+
+                <figure class="errorRecovery"><a href="javascript:;" class="Ev-correction">纠错</a> · <a  class="Ev-report" href="javascript:;">举报</a></figure>
+                <!--评分详情-->
+                <div class="al-myScorePart">
+                    <figure><span></span><ul class="al-littleScoreStarBox"><li class="ev-startItem"></li><li class="ev-startItem"></li><li class="ev-startItem"></li><li class="ev-startItem"></li><li class="ev-startItem"></li></ul></figure>
+                    <div class="al-scoreNumber al-scoreNumberLess">
+                        <a href="javascript:;" class="al-moreTen ev-scoreDetail">已有<span></span>人评分</a>
+                        <a href="javascript:;" class="al-lessTen">评分未达10人，暂无详情</a>
+                    </div>
+                </div>
+                </div>
+                <!--标签-->
+                <figure class="al-tagBox" data-alcode-mod='175'>
+                    <#if casePropertyList?size gt 0>
+                        <figcaption>标签</figcaption>
+                        <#list casePropertyList as property>
+                            <a  href="//www.allinmd.cn/pages/discover/discover_tagSubject.html#tId=${property.propertyId?c}">${property.propertyName!''}</a>
+                        </#list>
+                    </#if>
+                </figure>
+                <!--标签结束-->
+                </div>
+                </#if>
+                <!--病例被屏蔽：begin-->
+                <#if case_baseinfo??&&case_baseinfo.isValid=0>
+                    <div class="al-caseScreenedBox">
+                        <figure>
+                            <figcaption>${case_baseinfo.caseName}</figcaption>
+                            <p class="al-screenedImg">
+                                <img src="//img10.allinmd.cn/v3/terminal/caseScreenedImg.png" alt=""/>
+                            </p>
+                        </figure>
+                    </div>
+                </#if>
+                <!--病例被屏蔽：end-->
+
+                <!--病例被删除：begin-->
+                <#if case_baseinfo??&&case_baseinfo.isValid=3>
+                    <div class="al-caseScreenedBox">
+                        <figure>
+                            <figcaption>${case_baseinfo.caseName}</figcaption>
+                            <p class="al-screenedImg">
+                                <img src="//img10.allinmd.cn/v3/terminal/caseDeletedImg.jpg" alt=""/>
+                            </p>
+                        </figure>
+                    </div>
+                </#if>
+                <!--病例被删除:end--->
+
+                <!--评论区-->
+                <!--发表评论：begin-->
+                <div class="ev-detailReviewForm"></div>
+                <!--发表评论：end-->
+
+                <!--全部评论：begin-->
+                <div class="al-commentAll  al-contentItem"  id="reviewArea">
+                    <figure class="al-commentAll_head">
+                        <figcaption>全部评论</figcaption>
+                        <span class="al-oldNews  ev-listSortOld">最旧</span>
+                        <span class="ev-listSortNew">最新</span>
+                    </figure>
+
+                    <section class="ev-list" data-alcode-mod='179'>
+                    </section>
+                </div>
+                <!--全部评论：end-->
+                <figure class="al-lookMore_comment ev-listMore" style="display:none;">
+                    查看更多
+                    <b></b>
+                </figure>
+                <!--评论区结束-->
+        </section>
+        <!--页面主体内容：end -->
+
+
+        <!--页面侧边栏：begin-->
+        <aside class="al-sideBarContent">
+            <figure class="al-sideBarRoll_box Ev-floatCard">
+                <!--作者关注-->
+                <div class="expertInfo" data-alcode-mod='176'>
+                    <a target="_blank" href="${customer_page}"  class="expert_userImg Ev-cAuthLogo">
+                        <img src="${upload_author_logo.logoUrl!''}" alt=""/>
+                    </a>
+                    <a target="_blank" href="${customer_page}"  class="expertName Ev-cAuthName">${customer_auth.lastName!''}${customer_auth.firstName!''}</a>
+                    <span class="followBtn Ev-followBtn"></span>
+                    <p>
+                        <span class="Ev-cAuthTitle">${customer_auth.medicalTitleShow!''}</span>
+
+                        <span class="expert_workPlace Ev-cAuthCompany"><#if customer_auth.company!="">${customer_auth.company!''}<#else>${customer_auth.schoolName!''}</#if></span>
+                    </p>
+                </div>
+                <!--作者关注结束-->
+
+                <!--加入讨论，收藏点赞-->
+                <div class="al-sideBar_commentBox">
+                    <i class="leftArrow"></i>
+                    <a href="javascript:;" class="Ev-discussBtn">
+                        <figure class="discuss_container" >
+                            <b></b>
+                            <figcaption>加入讨论
+                                <span></span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <figure class="like_container Ev-like_container">
+                        <b></b>
+                        <figcaption>
+                            收藏
+                            <span></span>
+                        </figcaption>
+                    </figure>
+                    <figure class="zan_container Ev-zan_container">
+                        <b></b>
+                        <figcaption>
+                            点赞
+                            <span></span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!--加入讨论结束-->
+            </figure>
+
+            <!--关注病例-->
+            <div class="al-followCase">
+                <figure class="btnBox">
+                    <figcaption>帮您了解病例更新及最新评论</figcaption>
+                    <img class="followCaseBtn Ev-noFollow" src="//img10.allinmd.cn/v3/terminal/followCaseBtn.png" alt=""/>
+                    <img class="followCaseBtn Ev-EditCase hide" src="//img10.allinmd.cn/v3/terminal/editCaseBtn.png" alt="" caseId="${case_baseinfo.caseId?c}"/>
+                    <img class="followed_bigImg Ev-alFollow hide" src="//img10.allinmd.cn/v3/terminal/followedBtn_bigImg.png" alt=""/>
+                </figure>
+
+                <figure class="al-followCaseInfo Ev-followMore hide" data-alcode-mod='177' data-alcode-item-selector=".Ev-FollowList">
+                    <div class="Ev-followLogoList" style="display: inline-block;">
+
+                    </div>
+                    <div class="Ev-FollowList al-manyPeopleComment">
+                        已有<span class="Ev-moreFollow"></span>人关注
+                    </div>
+                </figure>
+                <figure class="al-noFollow Ev-followOne hide" data-alcode-mod='177'>
+                    已有<span class="Ev-oneFollow"></span>人关注
+                </figure>
+            </div>
+            <!--关注病例结束-->
+
+            <!--分享到-->
+            <div class="al-sideBar_shareBox">
+                <figure class="al-shareBox_head">
+                    <b class="line"></b>
+                    <span class="shareText">分享到</span>
+                    <b class="line"></b>
+                </figure>
+                <div class="shareBox_icon Ev-shareBox" data-alcode-mod='178' data-alcode-item-selector="figure">
+                    <figure class="shareLink_track ev-ttrend">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_inset.png" alt=""/>
+                        </a>
+                        <figcaption>唯医朋友圈</figcaption>
+                    </figure>
+                    <figure class="shareLink_wx ev-tweixin">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_weixin.png" alt=""/>
+                        </a>
+                        <figcaption>微信</figcaption>
+                    </figure>
+                    <figure class="shareLink_wb ev-tsina">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_weibo.png" alt=""/>
+                        </a>
+                        <figcaption>微博</figcaption>
+                    </figure>
+                    <figure class="shareLink_qqSpace ev-tqzone">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_zone.png" alt=""/>
+                        </a>
+                        <figcaption>QQ空间</figcaption>
+                    </figure>
+                    <figure class="shareLink_qq ev-tqq">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_qq.png" alt=""/>
+                        </a>
+                        <figcaption>QQ</figcaption>
+                    </figure>
+                    <section class="al-weixinErweiCodeBox al-weixinFixStyle ev-erweima hide"  style="background-image:none;">
+                        <span>使用微信扫描二维码</span>
+                        <img src="//img10.allinmd.cn/v3/friends/weixin_share.jpg" alt="">
+                    </section>
+                </div>
+            </div>
+            <!--分享到结束-->
+
+            <!--参加活动-->
+            <div class="al-joinActivity hide" data-alcode-mod="324">
+                <h6></h6>
+                <a class="Ev-actUrl" href="javascript:;">
+                    <img src="" alt=""/>
+                </a>
+
+                <span class="Ev-actName"></span>
+            </div>
+            <!--参加活动结束-->
+
+            <!--相关资源-->
+            <div class="al-resource Ev-recommendVideoList hide" data-alcode-mod='242'>
+                <h6>相关资源</h6>
+
+            </div>
+            <!--相关资源结束-->
+            <!--我有相似病例-->
+            <div class="al-caseBtn Ev-sCaseBtn">
+                <img src="//img10.allinmd.cn/v3/terminal/caseBtn.png" alt=""/>
+            </div>
+            <!--我有相似病例结束-->
+            <!--产品推荐-->
+            <div class="al-productRecommendBox">
+                <h6>
+                    相关产品(<span class="num"></span>)
+                    <span class="more">More</span>
+                </h6>
+                <ul class="al-productRecommendList" data-alcode-mod='248'>
+                </ul>
+            </div>
+            <!--产品推荐：end-->
+        </aside>
+        <!--页面侧边栏：end-->
+    </section>
+
+    <!-- 公共页脚：begin-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!-- 公共页脚：end-->
+</section>
+
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src='/js/lib/jquery/jquery.form.js'></script>
+<!--为保证IE8下正常使用，需要引入-->
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/ie8/videojs-ie8.min.js"></script>
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/video.js"></script>
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/videojs.allinmd.js"></script>
+<script src="/dest/detail/detail_comm.js"></script>
+</body>
+</html>

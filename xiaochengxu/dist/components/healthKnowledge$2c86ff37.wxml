@@ -1,0 +1,19 @@
+<import src="/components/search$f665dd88" />
+<import src="/components/healthItem$7f5834ba" />
+<import src="/components/loading$2ff823fe" /><template name="healthKnowledge$2c86ff37">
+  <view class="_section data-v-9b9f5188 healthSearchBox {{[historyShow ? 'bgf' : '']}}"><template bindsearchKetWordCallBack="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="search$f665dd88"></template>
+    <view class="_section data-v-9b9f5188 healthSearchFilter" wx:if="{{!historyShow}}">
+      <view class="_ul data-v-9b9f5188 healthFilterType">
+        <view class="_li data-v-9b9f5188 healthFilterItem {{[tabIndex == -1 ? 'on' : '']}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">全部</view>
+        <view class="_li data-v-9b9f5188 healthFilterItem {{[tabIndex == index ? 'on' : '']}}" bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}" wx:for="{{educationTypeList}}" wx:for-index="index" wx:for-item="item">{{item.typeName}}</view>
+      </view>
+      <view class="_section data-v-9b9f5188 healthSearchResult"><template wx:if="{{!noResult}}" from="search" data="{{...$root[$kk+'1'], $root}}" is="healthItem$7f5834ba"></template>
+        <view class="_figure data-v-9b9f5188 healthSearchNoResult" wx:if="{{noResult}}"><label class="_span data-v-9b9f5188">抱歉，暂未找到符合条件的结果</label></view>
+      </view>
+    </view>
+    <view class="_section data-v-9b9f5188 searchRecommendMoudle" wx:if="{{noResult}}">
+      <view class="_h2 data-v-9b9f5188">相关推荐</view> <template from="recommend" data="{{...$root[$kk+'2'], $root}}" is="healthItem$7f5834ba"></template>
+    </view>
+    <view class="_footer data-v-9b9f5188 noMore" wx:if="{{noMore}}">~没有更多了~</view> <template wx:if="{{finish}}" data="{{...$root[$kk+'3'], $root}}" is="loading$2ff823fe"></template>
+  </view>
+</template>

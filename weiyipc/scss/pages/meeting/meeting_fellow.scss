@@ -1,0 +1,73 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+//公共组件引用
+@import "../../components/_iconsModule"; //小图标
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_message_rightSideBar";
+@import "../../components/_shareBoxModule";
+@import "../../components/meeting/_meetingList"; //会议列表
+
+.meetingFellow{
+  width: 1000px;
+  margin: 0 auto;
+  .title{
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(215,222,229,0.50), 0 0 2px 0 #C7D3DF;
+    height: 52px;
+    line-height: 52px;
+    font-size: 18px;
+    color: #333333;
+    padding-left: 24px;
+    margin-top: 20px;
+  }
+  .meetingFellowList{
+    background: #FFFFFF;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px 0 rgba(215,222,229,0.50), 0 0 2px 0 #C7D3DF;
+    .titleTab{
+      height: 51px;
+      line-height: 51px;
+      background: #F9FBFD;
+      font-size: 17px;
+      color: #AAAAAA;
+      @include clearfix();
+      border-bottom: solid 1px #E8EDF0;
+      p{
+        float: left;
+        width: 189px;
+        text-align: center;
+        &.active{
+          font-size: 18px;
+          color: #3598DB;
+          background: #fff;
+          border-bottom: #fff solid 1px;
+          border-top: solid 2px #3598DB;
+        }
+      }
+      .firstTab{
+        border-right: solid 1px #E8EDF0;
+      }
+    }
+    li{
+      padding: 30px 24px 24px;
+      border-bottom: 1px solid #E4E9ED;
+    }
+  }
+}
+.meetingFellowNone{
+  padding: 220px 0 219px;
+  text-align: center;
+}
+
+.meetingListCont li a{
+  height: 18px;
+  height: 21px\9;
+  text-overflow: ellipsis;
+  //display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

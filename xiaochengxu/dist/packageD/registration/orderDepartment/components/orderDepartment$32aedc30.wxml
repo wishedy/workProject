@@ -1,0 +1,38 @@
+<import src="/components/OrderRule$60ed4c51" />
+<import src="/components/ensure$5e95f728" /><template name="orderDepartment$32aedc30">
+  <view class="_section data-v-ef2e6bea department">
+    <view class="_section data-v-ef2e6bea department-bg"></view>
+    <view class="_section data-v-ef2e6bea department-info"><label class="_span data-v-ef2e6bea department-select">选择科室：</label>
+      <view class="_section data-v-ef2e6bea department-list">
+        <view class="_section data-v-ef2e6bea department-item {{[idx === 0 ? 'item-no-border' : '']}}" wx:key="idx" key="{{idx}}" bindtap="handleProxy" data-eventid="{{'0-'+idx}}" data-comkey="{{$k}}" wx:for="{{departmentList}}" wx:for-index="idx" wx:for-item="department">
+          <view class="_div data-v-ef2e6bea department-logo">
+            <image wx:if="{{idx%4 === 0}}" src="https://m.allinmed.cn/static/image/mp/index/1.5.0/subject_one.png" class="_img data-v-ef2e6bea"></image>
+            <image wx:if="{{idx%4 === 1}}" src="https://m.allinmed.cn/static/image/mp/index/1.5.0/subject_two.png" class="_img data-v-ef2e6bea"></image>
+            <image wx:if="{{idx%4 === 2}}" src="https://m.allinmed.cn/static/image/mp/index/1.5.0/subject_three.png" class="_img data-v-ef2e6bea"></image>
+            <image wx:if="{{idx%4 === 3}}" src="https://m.allinmed.cn/static/image/mp/index/1.5.0/subject_four.png" class="_img data-v-ef2e6bea"></image>
+          </view>
+          <view class="_div data-v-ef2e6bea department-content">
+            <view class="_h3 data-v-ef2e6bea">{{department.deptName}}</view> <label class="_span data-v-ef2e6bea">{{department.deptDesc}}</label>
+          </view>
+          <view class="_div data-v-ef2e6bea department-next">
+            <image src="https://m.allinmed.cn/static/image/mp/index/1.5.0/department_go.png" class="_img data-v-ef2e6bea"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_section data-v-ef2e6bea order-rule">
+      <view class="_div data-v-ef2e6bea order-rule-btn"><template data="{{...$root[$kk+'0'], $root, $slotdefault:'data-v-ef2e6bea-default-0'}}" is="OrderRule$60ed4c51"></template></view>
+    </view>
+    <view class="_section data-v-ef2e6bea promise-popup" wx:if="{{showPromisePopup}}">
+      <view class="_section data-v-ef2e6bea department-promise">
+        <view class="_section data-v-ef2e6bea promise-bg"></view>
+        <view class="_section data-v-ef2e6bea promise-btn">
+          <form class="_form data-v-ef2e6bea promise-allow" bindsubmit="handleProxy" report-submit="true" data-eventid="{{'2'}}" data-comkey="{{$k}}"><button open-type="getUserInfo" type="button" formType="submit" bindgetuserinfo="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_button data-v-ef2e6bea">授权微信用户信息</button></form>
+        </view>
+        <view class="_section data-v-ef2e6bea promise-agreement">
+          <view class="_div data-v-ef2e6bea promise-select"></view> <label class="_span data-v-ef2e6bea">我已认真阅读，理解并同意《唯医互联网骨科医院服务协议》</label>
+        </view>
+      </view> <template wx:if="{{ensureShow}}" bindensureClickEvent="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="ensure$5e95f728"></template>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/common/base.css" />
+    <link rel="stylesheet" type="text/css" href="/js/plugins/relation2/review/relation2.review.css" />
+    <link rel="stylesheet" type="text/css" href="/js/plugins/reference-resource/reference-resource.css"/>
+    <link rel="stylesheet" type="text/css" href="/js/plugins/reply-remind/plugin.reply-remind.css" />
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js" type="text/javascript"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js" type="text/javascript"></script>
+    <script src="/js/comm/main.js" type="text/javascript"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/plugins/reference-resource/reference-resource.js" type="text/javascript"></script>
+    <script src="/js/plugins/reply-remind/plugin.reply-remind.js" type="text/javascript"></script>
+    <script>
+        $(function(){
+            $(".support-replyForm").referenceResource({
+                customerId:"1399252409974",
+                callback:function(){}
+            });
+            $(".support-replyForm").replyRemind({
+                customerId:"1399252409974",
+                callback:function(){
+                    //alert($(".support-replyForm").find(".remind_name span").length);
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div class="support-replyForm">
+    <div class="video_comment">
+        <div class="video_comment_l"><img src="//img00.allinmd.cn/detail/user_img.png"></div>
+        <div class="video_comment_r">
+            <div>
+                <textarea placeholder="回复@Rockyod" id="doc_abstract"></textarea>
+            </div>
+
+            <div class="pic"></div>
+            <div class="re_content_text peferRes_text hide"></div>
+            <div class="re_content_text remind_text hide"></div>
+
+            <div class="video_c_bf">
+                <div class="video_c_cz">
+                    <div class="btn_place">
+                        <div class="photo_bg">添加照片</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="video_c_but">
+                    <div class="qx_but"><img src="//img00.allinmd.cn/detail/qx_but.png"></div>
+                    <div class="fb_but"><img src="//img00.allinmd.cn/detail/fabu.png"></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+</body>
+</html>

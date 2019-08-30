@@ -1,0 +1,31 @@
+<import src="/components/loading$2ff823fe" />
+<import src="/components/toast$1074ede9" /><template name="patientList$5577453c">
+  <view class="_section data-v-5f070032 sticky-wrapper"><template wx:if="{{loading}}" data="{{...$root[$kk+'0'], $root}}" is="loading$2ff823fe"></template>
+    <view class="_section data-v-5f070032 main-inner">
+      <view class="_section data-v-5f070032 main-inner-content" wx:if="{{isMOblie===1}}">
+        <view class="_header data-v-5f070032 find-doctor-head">
+          <view class="_p data-v-5f070032 find-doctor-head-tips">{{headTitle}}</view>
+        </view>
+        <view class="_section data-v-5f070032 patient-list">
+          <view class="_section data-v-5f070032 patient-list-item {{[currentIndex == index ? 'on' : '']}}" hidden="{{!(gotPatient)}}" wx:key="index" key="{{index}}" wx:for="{{patientList}}" wx:for-index="index" wx:for-item="item">
+            <view bindtap="handleProxy" wx:if="{{mobileOnOff}}" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" class="_figcaption data-v-5f070032 {{[item.patientSex == 2 ? 'women' : '']}}"><label class="_span data-v-5f070032 name">{{item.fullName}}</label> <label class="_span data-v-5f070032 sex"> {{item.patientSex == 1?'男':'女'}}</label> <label class="_span data-v-5f070032 age"> {{item.patientAge+'岁'}}</label></view> <button open-type="getPhoneNumber" bindgetphonenumber="handleProxy" wx:if="{{!mobileOnOff}}" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}" class="_button data-v-5f070032 {{[item.patientSex == 2 ? 'women' : '']}}"><label class="_span data-v-5f070032 name">{{item.fullName}}</label> <label class="_span data-v-5f070032 sex"> {{item.patientSex == 1?'男':'女'}}</label> <label class="_span data-v-5f070032 age"> {{item.patientAge+'岁'}}</label></button>
+          </view>
+        </view>
+        <view class="_section data-v-5f070032 add-patient-box" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">
+          <form class="_form data-v-5f070032 add-patient-btn" bindsubmit="handleProxy" report-submit="true" data-eventid="{{'2'}}" data-comkey="{{$k}}"><button class="_button data-v-5f070032 add-btn" type="submit" formType="submit">
+              <view class="_i data-v-5f070032 icon-add"></view>添加就诊人
+            </button></form>
+        </view>
+      </view>
+      <view class="_section data-v-5f070032 main-inner-content" wx:if="{{isMOblie===2}}">
+        <view class="_header data-v-5f070032 find-doctor-head no-phone">
+          <image src="https://m1.allinmed.cn/static/image/mp/index/1.6.0/success.png" class="_img data-v-5f070032"></image>
+          <view class="_p data-v-5f070032 find-doctor-head-tips">医生已收到您的病情描述<view class="_br data-v-5f070032"></view>选择就诊人后您就可以与医生沟通啦～</view>
+        </view>
+        <view class="_section data-v-5f070032 add-patient-box">
+          <form class="_form data-v-5f070032 add-patient-btn" bindsubmit="handleProxy" report-submit="true" data-eventid="{{'5'}}" data-comkey="{{$k}}"><button class="_button data-v-5f070032 add-btn" type="submit" formType="submit" open-type="getPhoneNumber" bindgetphonenumber="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">选择就诊人</button></form>
+        </view>
+      </view>
+    </view> <template wx:if="{{toastShow}}" data="{{...$root[$kk+'1'], $root}}" is="toast$1074ede9"></template>
+  </view>
+</template>

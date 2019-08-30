@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>直播提醒</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/living/personal_livingRemind.css">
+</head>
+
+<body>
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem">
+                <a href="/design-html/personal/personal_index.html">
+                    <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>直播提醒</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)">
+                </a>
+            </figure>
+        </header>
+        <section class="al-content al-doctorRecommend" scrollpagination="enabled">
+            <section class="al-doctorRecommendItem">
+                <figure class="al-doctorRecommendImg">
+                    <a href="javascript:void(0)">
+                        <img src="/images/img50/pages/index/ranks_head.png" alt="">
+                        <i class="icon-newTips"></i>
+                    </a>
+                </figure>
+                <article class="al-doctorRecommendMsg">
+                    <a class="al-doctorRecommendName" href="javascript:void(0)">喵喵喵<i class="al-vipUser"></i>
+                    <button class="btn-switch"></button>
+                    </a>
+                    <span class="al-doctorRecommendJob">喵喵喵喵</span>
+                    <span class="al-doctorRecommendHospital">喵喵喵喵喵</span>
+                    
+                </article>
+            </section>
+            <section class="al-doctorRecommendItem">
+                <figure class="al-doctorRecommendImg">
+                    <a href="javascript:void(0)">
+                        <img src="/images/img50/pages/index/ranks_head.png" alt="">
+                        <i class="icon-newTips"></i>
+                    </a>
+                </figure>
+                <article class="al-doctorRecommendMsg">
+                    <a class="al-doctorRecommendName" href="javascript:void(0)">喵喵喵<i class="al-vipUser"></i>
+
+                    <button class="btn-switch on"></button>
+                    </a>
+                    <span class="al-doctorRecommendJob">喵喵喵喵</span>
+                    <span class="al-doctorRecommendHospital">喵喵喵喵喵</span>
+                    
+                </article>
+            </section>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script>
+    FastClick.attach(document.body);
+    $(".btn-switch").on("click",function(){
+        if ($(this).hasClass('on')) {
+            $(this).removeClass('on');
+        }else{
+            $(this).addClass('on');
+        }
+    })
+    </script>
+</body>
+
+</html>

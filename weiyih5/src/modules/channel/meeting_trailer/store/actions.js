@@ -1,0 +1,39 @@
+const actions = {
+    nowMouthChange:({commit,state},str)=>{//时间
+        commit("nowMouthChange",str);
+    },
+    meetingStateChange:({commit,state},str)=>{//是否当前月份判断
+        commit("meetingStateChange",str);
+    },
+    subjectTeamIdChange:({commit,state},str)=>{//专业筛选变化
+        commit("subjectTeamIdChange",str);
+    },
+    runStateChange:({commit,state},str)=>{//会议状态（0-未进行 1-已进行）
+        commit("runStateChange",str);
+    },
+    shootStateChange:({commit,state},str)=>{//拍摄状态（0-不拍摄，1-拍摄）
+        commit("shootStateChange",str);
+    },
+    scrNoReChange:({commit,state},str)=>{//筛选无结果
+        commit("scrNoReChange",str);
+    },
+    monthNoReChange:({commit,state},str)=>{//本月无会议
+        commit("monthNoReChange",str);
+    },
+    monthChangeFun:({commit,state},str)=>{//区分月份和筛选点击
+        commit("monthChangeFun",str);
+    },
+    scrChangeFun:({commit,state},str)=>{//筛选点击
+        commit("scrChangeFun",str);
+    },
+    majorNameChange:({commit,state},str)=>{//专业头部名称
+        commit("majorNameChange",str);
+    },
+    stateNameChange:({commit,state},str)=>{//会议状态头部名称
+        commit("stateNameChange",str);
+    },
+    isLiveChange:({commit,state},str)=>{//唯一合作按钮是否激活
+        commit("isLiveChange",str);
+    },
+};
+export default actions;

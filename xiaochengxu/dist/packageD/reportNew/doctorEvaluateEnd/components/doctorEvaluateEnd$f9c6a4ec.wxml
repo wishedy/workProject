@@ -1,0 +1,36 @@
+<import src="/components/healthItem$7f5834ba" />
+<import src="/components/LogoLoading$2b721f9a" />
+<import src="/components/BlackList$219144df" /><template name="doctorEvaluateEnd$f9c6a4ec">
+  <view class="_div data-v-43d0184f">
+    <view class="_section data-v-43d0184f stars-title"><label class="_span data-v-43d0184f">
+        <image src="//m.allinmed.cn/static/image/mp/index/1.2.0/name_select.png" alt class="_img data-v-43d0184f"></image>您已完成评价
+      </label></view>
+    <view class="_div data-v-43d0184f stars-con">
+      <view class="_section data-v-43d0184f patient-comment-stars">
+        <view class="_figure data-v-43d0184f patient-comment-stars-item {{[commentInfo.serviceStar >= 1 ? 'active' : '']}}"></view>
+        <view class="_figure data-v-43d0184f patient-comment-stars-item {{[commentInfo.serviceStar >= 2 ? 'active' : '']}}"></view>
+        <view class="_figure data-v-43d0184f patient-comment-stars-item {{[commentInfo.serviceStar >= 3 ? 'active' : '']}}"></view>
+        <view class="_figure data-v-43d0184f patient-comment-stars-item {{[commentInfo.serviceStar >= 4 ? 'active' : '']}}"></view>
+        <view class="_figure data-v-43d0184f patient-comment-stars-item {{[commentInfo.serviceStar >= 5 ? 'active' : '']}}"></view>
+      </view>
+    </view>
+    <view class="_section data-v-43d0184f patient-comment-tag-list">
+      <view class="_article data-v-43d0184f patient-comment-tag-item active" wx:key="index" key="{{index}}" wx:for="{{commentInfo.tagList}}" wx:for-index="index" wx:for-item="item">
+        {{item.tagName}}
+      </view>
+    </view>
+    <view class="_section data-v-43d0184f comment-text" wx:if="{{commentInfo.thoughts&&commentInfo.thoughts.length>0}}">
+      {{commentInfo.thoughts}}
+    </view>
+    <view class="_section data-v-43d0184f doc-listComm doc-healthContent" wx:if="{{recommendLists&&recommendLists.length>0}}">
+      <view class="_section data-v-43d0184f doc-listTitle"> 查看{{commentInfo.doctorName}}医生的专家文章，了解相关疾病 </view> <template from="doctorMain" data="{{...$root[$kk+'0'], $root}}" is="healthItem$7f5834ba"></template>
+    </view>
+    <view class="_div data-v-43d0184f share-box">
+      <view class="_div data-v-43d0184f share">
+        <form action bindsubmit="handleProxy" report-submit="true" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_form data-v-43d0184f"><button class="_button data-v-43d0184f shareBtn" open-type="share" formType="submit" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+            <image src="https://m.allinmed.cn/static/image/mp/index/1.2.0/wechat.png" alt class="_img data-v-43d0184f"></image> 分享
+          </button></form>
+      </view> <button class="_button data-v-43d0184f go-doctor-home" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}"> 去{{shareDoctorName}}医生主页看看 </button>
+    </view> <template wx:if="{{loading}}" data="{{...$root[$kk+'1'], $root}}" is="LogoLoading$2b721f9a"></template> <template data="{{...$root[$kk+'2'], $root}}" is="BlackList$219144df"></template>
+  </view>
+</template>

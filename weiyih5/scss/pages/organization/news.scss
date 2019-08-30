@@ -1,0 +1,392 @@
+@charset "UTF-8";
+@import "../../base";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+html,body{
+  width: 100%;
+  min-height: 100%;
+  background: #ffffff;
+}
+.al-mainInner{
+  width: 100%;
+  min-height: 100%;
+  background: #ffffff;
+  padding-bottom: 0;
+}
+.al-indexHeader{
+  border-bottom: 1px solid #D7DBDE;
+  .al-indexHeaderItem{
+    h1{
+      font-weight: 400;
+    }
+  }
+}
+//新闻公告
+.newsList{
+  padding: rem(88px) rem3(15px);
+  .newsItem{
+    padding: rem3(21px) 0 rem3(18px);
+    border-bottom: 1px solid rgba(227,229,233,.7);
+      p{
+        font-size:rem3(18px);
+        margin-bottom: rem3(8px);
+        font-weight:600;
+      }
+      span{
+        font-size:rem3(12px);
+        font-weight:400;
+        color: #666666;
+      }
+  }
+}
+//关注列表
+.followList{
+  padding: rem(88px) rem3(15px) 0 rem3(15px);
+  .followItem{
+    padding: rem3(21px) 0;
+    display: inline-block;
+    border-bottom: 1px solid rgba(227,229,233,0.7);;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    //粉丝列表中组织的样式
+    &.organization{
+      div{
+        display: inline-block;
+      }
+      .folImg{
+        img{
+          display: inline-block;
+          width: rem3(40px);
+          height: rem3(40px);
+          border-radius: 50%;
+          margin-right: rem3(12px);
+          vertical-align: middle;
+        }
+      }
+      .folTxt{
+        vertical-align: top;
+        .folName{
+          color: #FB875A;
+          font-size: rem3(16px);
+          width: rem3(206px);
+          @include ellipsis(1);
+        }
+        .folDesc{
+          margin-bottom: rem3(1px);
+          width: rem3(203px);
+          @include ellipsis(1);
+          font-size: rem3(14px);
+          color: #999999;
+        }
+      }
+      .followBtn{
+        position: absolute;
+        right: 0;
+        top: rem3(28px);
+        .toFollow{
+          width: rem3(65px);
+          height: rem3(26px);
+          font-weight: 600;
+          background:rgba(251,135,90,.08);
+          border-radius:rem3(3px);
+          text-align: center;
+          font-size:rem3(13px);
+          color:rgba(251,135,90,1);
+          line-height:rem3(26px);
+          margin-top: rem3(3px);
+          i{
+            background: url("/static/images/organization/toFollow.png") center center no-repeat;
+            display: inline-block;
+            width: rem3(12px);
+            height: rem3(12px);
+            margin-right: rem3(2px);
+            background-size: 100%;
+            vertical-align: middle;
+            margin-top: rem3(-2px);
+          }
+        }
+        .eachFollow{
+          width: rem3(65px);
+          height: rem3(26px);
+          background:rgba(248,248,248,1);
+          border-radius: rem3(3px);
+          font-size:rem3(13px);
+          font-weight: 600;
+          color:rgba(153,153,153,1);
+          line-height:rem3(26px);
+          text-align: center;
+        }
+        .alFollw{
+          img{
+            width: rem3(13px);
+            height: rem3(10px);
+            display: inline-block;
+            margin-right: rem3(26px);
+          }
+        }
+      }
+    }
+    &.user{
+      div{
+        display: inline-block;
+      }
+      .folImg{
+        img{
+          display: inline-block;
+          width: rem3(40px);
+          height: rem3(40px);
+          border-radius: 50%;
+          margin-right: rem3(12px);
+          vertical-align: middle;
+        }
+      }
+      .folTxt{
+        vertical-align: top;
+        .folName{
+          font-size: rem3(16px);
+          width: rem3(206px);
+          @include ellipsis(1);
+          margin-right: rem3(5px);
+          color: #6175AE;
+          .al-vipUserV1{
+            &:after{
+              width: rem3(16px);
+              height: rem3(14px);
+              background: url('/static/images/organization/orgV1.png') center center no-repeat;
+              background-size: 100% 100%;
+              vertical-align: rem(-3.75px);
+              margin-left: rem3(7px);
+            }
+          }
+          .al-vipUserV2{
+            &:after{
+              width: rem3(16px);
+              height: rem3(14px);
+              background: url('/static/images/organization/orgV2.png') center center no-repeat;
+              background-size: 100% 100%;
+              vertical-align: rem(-3.75px);
+              margin-left: rem3(7px);
+            }
+          }
+          .professional{
+            font-size: rem3(14px);
+            color: #999999;
+            margin-left: rem3(6px);
+          }
+        }
+        .folDesc{
+          margin-bottom: rem3(1px);
+          width: rem3(203px);
+          @include ellipsis(1);
+          font-size: rem3(14px);
+          color: #999999;
+        }
+      }
+      .followBtn{
+        position: absolute;
+        right: 0;
+        top: rem3(28px);
+        .toFollow{
+          width: rem3(65px);
+          height: rem3(26px);
+          font-weight: 600;
+          background:rgba(251,135,90,.08);
+          border-radius:rem3(3px);
+          text-align: center;
+          font-size:rem3(13px);
+          color:rgba(251,135,90,1);
+          line-height:rem3(26px);
+          margin-top: rem3(3px);
+          i{
+            background: url("/static/images/organization/toFollow.png") center center no-repeat;
+            display: inline-block;
+            width: rem3(12px);
+            height: rem3(12px);
+            margin-right: rem3(2px);
+            background-size: 100%;
+            vertical-align: middle;
+            margin-top: rem3(-2px);
+          }
+        }
+        .eachFollow{
+          width: rem3(65px);
+          height: rem3(26px);
+          background:rgba(248,248,248,1);
+          border-radius: rem3(3px);
+          font-size:rem3(13px);
+          font-weight: 600;
+          color:rgba(153,153,153,1);
+          line-height:rem3(26px);
+          text-align: center;
+        }
+        .alFollw{
+          img{
+            width: rem3(13px);
+            height: rem3(10px);
+            display: inline-block;
+            margin-right: rem3(26px);
+            vertical-align: middle;
+            margin-top: rem3(6px);
+          }
+        }
+      }
+    }
+  }
+}
+.partFans{
+  text-align: center;
+  font-size: rem3(14px);
+  color: #AAAAAA;
+  margin-top: rem3(30px);
+}
+//成员列表
+.memberList{
+  padding: rem(88px) rem3(15px) 0;
+  .presidentsTitle{
+    position: relative;
+    p{
+      display: inline-block;
+      font-size: rem3(25px);
+      color: #222222;
+      font-weight: 600;
+      line-height: rem3(36px);
+      margin: rem3(20px) rem3(10px) rem3(4px) 0;
+      span{
+        font-size: rem3(14px);
+        margin-left: rem3(10px);
+        font-weight: 500;
+      }
+    }
+    i{
+      font-size: rem3(14px);
+      color: #909090;
+      position: absolute;
+      right: 0;
+      bottom: rem3(8px);
+    }
+  }
+  .meList{
+    li{
+      border-bottom: 1px solid rgba(227,229,233,.7);
+      padding: rem3(20px) 0 rem3(20px);
+      position: relative;
+      div{
+        display: inline-block;
+      }
+      .folImg{
+        img{
+          display: inline-block;
+          width: rem3(40px);
+          height: rem3(40px);
+          border-radius: 50%;
+          margin-right: rem3(12px);
+          vertical-align: middle;
+        }
+      }
+      .folTxt{
+        vertical-align: top;
+        .folName{
+          font-size: rem3(16px);
+          width: rem3(206px);
+          @include ellipsis(1);
+          margin-right: rem3(5px);
+          color: #6175AE;
+          .al-vipUserV1{
+            &:after{
+              width: rem3(16px);
+              height: rem3(14px);
+              background: url('/static/images/organization/orgV1.png') center center no-repeat;
+              background-size: 100% 100%;
+              vertical-align: rem(-3.75px);
+              margin-left:rem3(6px);
+            }
+          }
+          .al-vipUserV2{
+            &:after{
+              width: rem3(16px);
+              height: rem3(14px);
+              background: url('/static/images/organization/orgV2.png') center center no-repeat;
+              background-size: 100% 100%;
+              vertical-align: rem(-3.75px);
+              margin-left:rem3(6px);
+            }
+          }
+          .professional{
+            font-size: rem3(14px);
+            color: #999999;
+            margin-left: rem3(6px);
+          }
+        }
+        .folDesc{
+          margin-bottom: rem3(1px);
+          width: rem3(203px);
+          @include ellipsis(1);
+          font-size: rem3(14px);
+          color: #999999;
+        }
+      }
+      .followBtn{
+        position: absolute;
+        right: 0;
+        top: rem3(28px);
+        .toFollow{
+          width: rem3(65px);
+          height: rem3(26px);
+          font-weight: 600;
+          background:rgba(251,135,90,.08);
+          border-radius:rem3(3px);
+          text-align: center;
+          font-size:rem3(13px);
+          color:rgba(251,135,90,1);
+          line-height:rem3(26px);
+          i{
+            background: url("/static/images/organization/toFollow.png") center center no-repeat;
+            display: inline-block;
+            width: rem3(12px);
+            height: rem3(12px);
+            margin-right: rem3(2px);
+            background-size: 100%;
+            vertical-align: middle;
+            margin-top: rem3(-2px);
+          }
+        }
+        .eachFollow{
+          width: rem3(65px);
+          height: rem3(26px);
+          background:rgba(248,248,248,1);
+          border-radius: rem3(3px);
+          font-size:rem3(13px);
+          font-weight: 600;
+          color:rgba(153,153,153,1);
+          line-height:rem3(26px);
+          text-align: center;
+        }
+        .alFollw{
+          img{
+            width: rem3(13px);
+            height: rem3(10px);
+            display: inline-block;
+            margin-right: rem3(26px);
+            vertical-align: middle;
+            margin-top: rem3(6px);
+          }
+        }
+      }
+    }
+  }
+}
+.dataIsOver{
+  text-align: center;
+  padding-top: rem(50px);
+  padding-bottom: rem(70px);
+  @include font-dpr(15px);
+  color: #626f8c;
+}

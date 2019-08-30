@@ -1,0 +1,149 @@
+@charset "UTF-8";
+*{box-sizing:border-box;}
+body{font-family:'Microsoft Yahei',Arial, sans-serif;}
+body,div,p,ul,li,header,section,footer,aside,h1,h2,h3,h4,h5,h6,ol{
+    margin:0px;
+    padding:0px;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:#66657F;
+}
+.container:after{
+    content:'';
+    display:table;
+    clear:both;
+}
+.container:before{
+    content:'';
+    clear:both;
+}
+.clear{clear:both;}
+.left{float:left;}
+.right{float:right;}
+/* 图片自适应 */
+img{
+    width: 100%;
+    height: auto;
+    width:auto\9; /* ie8 */
+    -ms-interpolation-mode:bicubic;/*为了照顾ie图片缩放失真*/
+    display: block;
+}
+/*topic_section*/
+.topic_section>.container_box{padding:1.5em;}
+.topic_section>.container_box>h5{
+    text-align: center;
+    font-size:1.5em;
+}
+.publish_info{
+    margin-top: -3em;
+}
+.publish_info .publish_con_text{
+    font-size: 2em;
+    line-height: 1.5em;
+    color: #333;
+    text-align: left;
+    margin-top: 1.5em;
+}
+
+.publish_info .publish_con_text a{
+    color:#2899e6;
+}
+.publish_info_img{
+    border:1px solid #DBDBDB;
+    position: relative;
+    width:97.75%;
+    margin-top: 3.5em;
+    padding:0.25em;
+}
+.publish_info_img>span{
+    position: absolute;
+    bottom:0.1em;
+    left:1%;
+    width:98%;
+    height:2em;
+    text-align: center;
+    line-height:1.88em;
+    color:#fff;
+    font-size:1.88em;
+    opacity:0.9;
+    background: #3f3f3f;
+}
+.publish_img_text{
+    line-height: 1.625em;
+    color:#666666;
+    text-align: center;
+    margin-top:1.875em;
+    font-size: 1.5em;
+}
+.publish_info_video{
+    border:1px solid #DBDBDB;
+    position:relative;
+    width:97.75%;
+    margin-top: 3.5em;
+    padding:0.25em;
+}
+
+.publish_info_video .video_play_icon{
+    position: absolute;
+    top: 44%;
+    left: 44%;
+    width: 14%;
+}
+.publish_info_video>span{
+    position: absolute;
+    bottom:0.2em;
+    right:0.25em;
+    width: 4.16em;
+    height: 1.45em;
+    line-height: 1.53em;
+    text-align:center;
+    color:#fff;
+    font-size:1.63em;
+    opacity:0.9;
+    background: #3f3f3f;
+}
+.video_mask{
+    display:none;
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0%;
+    top:0%;
+}
+.video_mask_bg{
+    position:absolute;
+    left:0;
+    top:0;
+    background:#000000;
+    opacity: 0.7;
+    width:100%;
+    height:100%;
+}
+.video_mask_tl{
+    position:absolute;
+    left:30%;
+    top:44%;
+    text-align: center;
+    font-size: 2.5em;
+    color:#fff;
+}
+.video_mask_con{
+    position:absolute;
+    left:30%;
+    top:56%;
+    text-align: center;
+    font-size: 2em;
+    color:#fff;
+}
+.isHref_mask .video_mask_tl{
+    background: url("/images/img50/detail/gou.png") no-repeat left center;
+    left: 36%;
+    padding-left: 1.25em;
+    background-size: 20%;
+}
+.uploading_mask .video_mask_tl{
+    left: 42%;
+    top: 48%;
+}

@@ -1,0 +1,161 @@
+<template name="reportDetails$30b93866">
+  <view class="_section data-v-e7585efe">
+    <view class="_section data-v-e7585efe send-count-box">
+      <view class="_article data-v-e7585efe reportTipsBox">
+        <image src="https://m.allinmed.cn/static/image/mp/index/1.2.0/congratulations.png" alt class="_img data-v-e7585efe tipsImg"></image>
+        <view class="_p data-v-e7585efe reportTipsText">您已经成功向{{targetMsg.nick}}医生报到，如有问题可以给医生留言。</view>
+      </view>
+    </view>
+    <view class="_section data-v-e7585efe report-details">
+      <view class="_header data-v-e7585efe report-details-head">
+        <view class="_i data-v-e7585efe icon-report">
+          <image src="https://m.allinmed.cn/static/image/mp/index/1.2.0/report.png" alt class="_img data-v-e7585efe"></image>
+        </view>
+        <view class="_p data-v-e7585efe">报到信息</view>
+      </view>
+      <view class="_section data-v-e7585efe report-details-content">
+        <view class="_section data-v-e7585efe patient-info-box">
+          <view class="_article data-v-e7585efe report-details-text-inline patientName"><label class="_span data-v-e7585efe text patientName">{{userName}}</label> <label class="_span data-v-e7585efe other">{{patientInfo.sexName}}</label> <label class="_span data-v-e7585efe other">{{patientInfo.age}}岁</label></view> <label class="_span data-v-e7585efe patientType">{{patientType}}</label>
+        </view>
+        <view class="_section data-v-e7585efe report-details-list">
+          <block wx:if="{{param.reportTypeNew && (param.reportTypeNew == 4 || param.reportTypeNew == 5)}}">
+            <view class="_section data-v-e7585efe report-details-item" wx:key="index" key="{{index}}" wx:for="{{param.reportList}}" wx:for-index="index" wx:for-item="item">
+              <view class="_article data-v-e7585efe report-details-text">
+                <view class="_h4 data-v-e7585efe title">{{item.reportFieldName}}</view>
+                <view class="_article data-v-e7585efe report-details-text-inline">
+                  <view class="_p data-v-e7585efe text">{{item.reportValue}}</view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <block wx:else>
+            <block wx:if="{{param.reportType==2}}">
+              <view class="_section data-v-e7585efe report-details-item">
+                <view class="_article data-v-e7585efe report-details-text">
+                  <view class="_h4 data-v-e7585efe title">住院时间</view>
+                  <view class="_article data-v-e7585efe report-details-text-inline">
+                    <view class="_p data-v-e7585efe text">{{param.hospitalTime.length>0?param.hospitalTime:"未填写"}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="_section data-v-e7585efe report-details-item">
+                <view class="_article data-v-e7585efe report-details-text">
+                  <view class="_h4 data-v-e7585efe title">医生诊断</view>
+                  <view class="_article data-v-e7585efe report-details-text-inline">
+                    <view class="_p data-v-e7585efe text">{{param.diagnosis.length>0?param.diagnosis:"未填写"}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="_section data-v-e7585efe report-details-item">
+                <view class="_article data-v-e7585efe report-details-text">
+                  <view class="_h4 data-v-e7585efe title">是否手术</view>
+                  <view class="_article data-v-e7585efe report-details-text-inline">
+                    <view class="_p data-v-e7585efe text">{{param.isOperation.length>0?param.isOperation:"未填写"}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="_section data-v-e7585efe report-details-item" wx:if="{{param.isOperation == '已手术'}}">
+                <view class="_article data-v-e7585efe report-details-text">
+                  <view class="_h4 data-v-e7585efe title">手术名称</view>
+                  <view class="_article data-v-e7585efe report-details-text-inline">
+                    <view class="_p data-v-e7585efe text">{{param.operationName.length>0?param.operationName:"未填写"}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="_section data-v-e7585efe report-details-item" wx:if="{{param.isOperation == '已手术'}}">
+                <view class="_article data-v-e7585efe report-details-text">
+                  <view class="_h4 data-v-e7585efe title">手术时间</view>
+                  <view class="_article data-v-e7585efe report-details-text-inline">
+                    <view class="_p data-v-e7585efe text">{{param.operationTime.length>0?param.operationTime:"未填写"}}</view>
+                  </view>
+                </view>
+              </view>
+            </block>
+            <block wx:if="{{param.reportType==1}}">
+              <view class="_section data-v-e7585efe report-details-item">
+                <view class="_article data-v-e7585efe report-details-text">
+                  <view class="_h4 data-v-e7585efe title">就诊时间</view>
+                  <view class="_article data-v-e7585efe report-details-text-inline">
+                    <view class="_p data-v-e7585efe text">{{param.clinicTime}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="_section data-v-e7585efe report-details-item">
+                <view class="_article data-v-e7585efe report-details-text">
+                  <view class="_h4 data-v-e7585efe title">医生诊断</view>
+                  <view class="_article data-v-e7585efe report-details-text-inline">
+                    <view class="_p data-v-e7585efe text">{{param.clinicDiagnosis.length>0?param.clinicDiagnosis:"未填写"}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="_section data-v-e7585efe report-details-item">
+                <view class="_article data-v-e7585efe report-details-text">
+                  <view class="_h4 data-v-e7585efe title">治疗建议</view>
+                  <view class="_article data-v-e7585efe report-details-text-inline">
+                    <view class="_p data-v-e7585efe text">{{param.treatmentRecommendations.length>0?param.treatmentRecommendations:"未填写"}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="_section data-v-e7585efe report-details-item">
+                <view class="_article data-v-e7585efe report-details-text">
+                  <view class="_h4 data-v-e7585efe title">报到目的</view>
+                  <view class="_article data-v-e7585efe report-details-text-inline">
+                    <view class="_p data-v-e7585efe text">{{param.clinicPurpose.length>0?param.clinicPurpose:"未填写"}}</view>
+                  </view>
+                </view>
+              </view>
+            </block>
+            <block wx:if="{{param.reportType==3}}">
+              <view class="_section data-v-e7585efe report-details-item">
+                <view class="_article data-v-e7585efe report-details-text">
+                  <view class="_h4 data-v-e7585efe title">来源渠道</view>
+                  <view class="_article data-v-e7585efe report-details-text-inline">
+                    <view class="_p data-v-e7585efe text">{{param.source.length>0?param.source:"未填写"}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="_section data-v-e7585efe report-details-item">
+                <view class="_article data-v-e7585efe report-details-text">
+                  <view class="_h4 data-v-e7585efe title">咨询目的</view>
+                  <view class="_article data-v-e7585efe report-details-text-inline">
+                    <view class="_p data-v-e7585efe text">{{param.purpose.length>0?param.purpose:"未填写"}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="_section data-v-e7585efe report-details-item">
+                <view class="_article data-v-e7585efe report-details-text">
+                  <view class="_h4 data-v-e7585efe title">病情描述</view>
+                  <view class="_article data-v-e7585efe report-details-text-inline">
+                    <view class="_p data-v-e7585efe text">{{param.illnessDetail.length>0?param.illnessDetail:"未填写"}}</view>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </block>
+        </view>
+        <view class="_section data-v-e7585efe report-img-box">
+          <view class="_h4 data-v-e7585efe title">图片资料</view>
+          <view class="_section data-v-e7585efe report-details-img-box" wx:if="{{imageShow}}">
+            <view class="_figure data-v-e7585efe report-details-img-item" wx:if="{{index < 4}}" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" wx:for="{{attList}}" wx:for-index="index" wx:for-item="item">
+              <image src="{{item.caseAttUrl}}" alt class="_img data-v-e7585efe"></image>
+              <view class="_article data-v-e7585efe report-details-img-big" wx:if="{{index===3 && attList.length > 4}}">
+                <view class="_figure data-v-e7585efe"><label class="_span data-v-e7585efe">更多</label> <label class="_span data-v-e7585efe">{{imageNum}}</label></view>
+              </view>
+            </view>
+          </view>
+          <view class="_p data-v-e7585efe report-img-text" wx:else>您还未上传，<label bindtap="handleProxy" class="_span data-v-e7585efe report-img-upload" data-eventid="{{'1'}}" data-comkey="{{$k}}">点击补充检查资料、药品图片</label>等</view>
+        </view>
+      </view>
+    </view>
+    <view class="_section data-v-e7585efe main-message-box">
+      <view class="_article data-v-e7585efe main-message-box-item others-message">
+        <view class="_figure data-v-e7585efe main-message-img">
+          <image src="{{targetMsg.avatar}}" alt class="_img data-v-e7585efe"></image>
+        </view>
+        <view class="_figcaption data-v-e7585efe main-message-content">
+          <view class="_p data-v-e7585efe">恭喜您报到成功，有问题可随时给我留言，上线后会尽快回复您。</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,367 @@
+@charset "UTF-8";
+//电子书终端
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+.al-mainInner {
+    overflow-x: visible;
+}
+
+@import "../../components/_terminalDoc";
+@import "../../components/_terminalContent";
+@import "../../components/_terminalFooter";
+@import "../../components/_bottomBtns";
+@import "../../components/_docDetailsModule";
+@import "../../components/_bottomSharePart"; //底部分享弹层
+@import "../../components/_belongSerise";
+.al-terminalHeader {
+    /*padding-top: 1.3rem;*/
+    .al-terminalAuthorImg {
+        width: rem(78px);
+        height: rem(110px);
+        border-radius: 0;
+        .al-terminalEbookImg{
+            width: rem(78px);
+            height: rem(110px);
+            border-radius: 0;
+            img {
+                border-radius: 0;
+            }
+        }
+    }
+    .al-terminalAuthorMsg {
+        h2 {
+            width: 6rem;
+        }
+    }
+}
+
+.al-eBookController {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-bottom: 1px solid $innerBorderColor;
+    overflow: hidden;
+    padding: rem(30px);
+    z-index: 5;
+    article {
+        float: right;
+    }
+    a {
+        color: #626f8c;
+        @include font-dpr(14px);
+        margin-left: rem(30px);
+        & > span {
+            vertical-align: middle;
+        }
+    }
+}
+
+.al-terminalContentSnsMsg {
+    overflow: hidden;
+}
+
+.al-eBookLanguageChange {
+    width: rem(158px);
+    height: rem(60px);
+    background-color: #2899e6;
+    @include font-dpr(15px);
+    color: #fff;
+    border-radius: rem(500px);
+    float: right;
+}
+
+.al-eBookLanguageChange.chinese:after {
+    content: "中文";
+    vertical-align: middle;
+}
+
+.al-eBookLanguageChange.english:after {
+    content: "英文";
+    vertical-align: middle;
+}
+
+.al-terminalVideoActivity {
+    background-color: #fff;
+    padding: rem(40px) 0;
+    padding-top: .26667rem;
+    p {
+        color: #333;
+        @include font-dpr(15px);
+        & > a {
+            color: #3598db;
+        }
+    }
+}
+
+.icon-terminalComment {
+    @extend %icon-terminalComment;
+}
+
+.icon-terminalLike {
+    @extend %icon-terminalLike;
+}
+.icon-terminalLiked {
+    @extend %icon-terminalLiked;
+}
+.icon-terminalBack {
+    @extend %icon-terminalBack;
+}
+
+.icon-terminalJoin {
+    @extend %icon-terminalJoin;
+}
+
+.icon-terminalCommentNum {
+    @extend %icon-terminalCommentNum;
+}
+
+.icon-terminallike {
+    @extend %icon-terminallike;
+}
+
+.icon-terminalCollect {
+    @extend %icon-terminalCollect;
+}
+
+.icon-simCase {
+    @extend %icon-simCase;
+}
+
+.icon-fixedTopShare {
+    @extend %icon-fixedTopShare;
+}
+
+.icon-terminalConfig {
+    @extend %icon-terminalConfig;
+}
+
+/*.al-vipUser {
+    @extend %al-vipUser;
+}*/
+
+.icon-terminalFollowed {
+    @extend %icon-terminalFollowed;
+}
+
+.icon-languageChange {
+    @extend %icon-languageChange;
+}
+
+.icon-controllerChange {
+    @extend %icon-controllerChange;
+}
+
+.icon-controllerAllBook {
+    @extend %icon-controllerAllBook;
+}
+
+.icon-controllerShare {
+    @extend %icon-controllerShare;
+}
+
+.al-terminalHeader > section {
+    padding-bottom: rem(10px);
+    border-bottom: 1px solid #d7dbde;
+}
+
+.al-terminalDocPdfImg {
+    width: 100%;
+    position: relative;
+    & > img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+    & > .al-terminalDocPdfImgMsg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        figcaption {
+            vertical-align: middle;
+            display: inline-block;
+            & > img {
+                width: rem(132px);
+                height: rem(87px);
+                display: block;
+                margin: 0 auto;
+            }
+            & > button {
+                background-color: #2899e6;
+                color: #fff;
+                margin: 0 auto;
+                margin-top: rem(30px);
+                @include font-dpr(15px);
+                padding: rem(15px) rem(40px);
+                display: block;
+            }
+        }
+    }
+}
+.al-terminalContent{
+    padding-bottom: 0;
+}
+.al-terminalDocPagesChange{
+    width: 100%;
+    height: rem(78px);
+    line-height: rem(78px);
+    color: #909090;
+    text-align: center;
+    border-top:1px solid #d7dbde;
+    margin-top: rem(50px);
+    img{
+        vertical-align: middle;
+        width:0.8rem;
+    }
+    .line{
+        display: inline-block;
+        height: rem(28px);
+        width: 1px;
+        background-color: #d7dbde;
+        vertical-align: middle;
+    }
+    .al-terminalDocPage{
+        display: inline-block;
+        @include font-dpr(14px);
+        padding: 0 rem(75px);
+        vertical-align: middle;
+        span{
+            vertical-align: middle;
+        }
+        i{
+            font-style: normal;
+        }
+        &:nth-last-child(1){
+            img{
+                transform:rotate(180deg);
+            }
+        }
+    }
+}
+
+
+//视频弹层
+.al-videoBox{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #0a1e2b;
+    opacity: 0.97;
+    z-index: 5;
+    & > a{
+        position: absolute;
+        top: rem(30px);
+        right: rem(30px);
+        width:rem(30px);
+        height:rem(30px);
+        color: #fff;
+        display:block;
+        @include font-dpr(16px)
+
+    }
+    .al-videoBoxItem{
+        margin-top: rem(255px);
+        width: 100%;
+        video{
+            width: 100%;
+            vertical-align: top;
+        }
+        img{
+            width: 100%;
+            height: 5rem;
+            vertical-align: top;
+        }
+    }
+    .al-videoItemContent{
+        margin-top: rem(50px);
+        color: #fff;
+        @include font-dpr(16px);
+        line-height: 1.5;
+        overflow: auto;
+        max-height: 4.5rem;
+        padding: 0 rem(30px);
+        box-sizing:border-box;
+    }
+
+}
+/*电子书文章终端页追加按钮样式*/
+.Ev-videoImgSrc{
+    width: 100%;
+    display:block;
+    position: relative;
+    img{
+        width: 100%;
+    }
+    @at-root {
+        .al-terminalVideoBtn {
+            @include middle-known(rem(81px), rem(81px));
+            img {
+                width: 100%;
+                height: 100%;
+                vertical-align: top;
+            }
+        }
+        .al-videoTime {
+            @include linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .2));
+            padding: rem(8px);
+            padding-left: rem(95px);
+            position: absolute;
+            right: rem(2px);
+            bottom: rem(10px);
+            color: #fff;
+            @include font-dpr(12px);
+        }
+    }
+}
+/*电子书文章终端页模板生成的p标签中图片样式控制*/
+.al-terminalContextItem{
+    p>img{
+        max-width: 100%;
+        display: table;
+        margin: 0 auto;
+    }
+    p span img{
+        max-width: 100%;
+        display: table;
+        margin: 0 auto;
+    }
+}
+
+
+//1.22  电子书表格UI
+.al-terminalContent{
+    table{
+        td{
+            border:1px solid #ccc;
+            padding:rem(10px);
+            img:not(.al-terminalVideoBtn img){min-width:rem(300px);}
+        }
+    }
+}
+/*20170309禁止长按事件*/
+body{
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+//发现——按术式筛选
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_contentModule"; //内容组件
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_scrollShareBtn"; //浮动分享按钮
+@import "../../components/_bottomBtns"; //底部弹层组
+@import "../../components/_bottomSharePart"; //底部分享弹层
+@import "../../components/_twoFloorsFilter"; //二级筛选列表
+.al-content{
+	padding-top: rem(200px);
+}
+.icon-contentAuthor {
+    @extend %icon-contentAuthor;
+        max-width: 2rem;
+    @include ellipsis();
+}
+
+.icon-contentWatchedNum {
+    @extend %icon-contentWatchedNum;
+}
+.icon-scrollShare{
+	@extend %icon-scrollShare;
+}
+.icon-tagComment {
+    @extend %icon-tagComment;
+}

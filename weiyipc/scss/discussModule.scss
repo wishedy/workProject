@@ -1,0 +1,216 @@
+@charset "UTF-8";
+//评论组件
+//2016-9-6
+//公共方法模块调用
+@import "modules/_common-modules";
+
+
+
+//评论样式
+.al-contentItem{  //最外层容器
+  .al-contentComment {
+    padding:30px 24px 0;
+    background-color:#fff;
+    border-left: 1px solid #e4e9ed;
+    border-right: 1px solid #e4e9ed;
+    &:hover {
+      background-color: #fafbfd;
+      .al-commentDeleteBtn {
+        display: block;
+      }
+    }
+  }
+}
+
+/*20181109  终端页评论分享按钮拿掉*/
+#reviewArea{
+  .al-contentCommentMain .al-contentCommentOtherMsg span{
+    &.ev-share{
+      margin-left: 20px;
+      i.al-shareBtn{
+        display: none;
+      }
+      b{
+        font-size: 0;
+      }
+    }
+  }
+}
+
+
+
+//评论主体左侧样式：begin
+.al-contentItem{
+  .al-contentCommentUserImg {   //头像样式
+      float: left;
+      margin-right:15px;
+      margin-bottom:35px;
+      a{
+        display: block;
+        position:relative;
+        img{
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          behavior: url("/js/third-party/pie/pie.htc");
+          position:relative;
+        }
+      }
+      .al-contentCommentTips {  //头像右上角——小红点
+        behavior: url("/js/third-party/pie/pie.htc");
+        @include circle(10px, #f34d4d);
+        position: absolute;
+        right: -2px;
+        top: 0;
+        border: 2px solid #fff;
+      }
+    }
+}
+//评论主体左侧样式：end
+
+
+//评论主体右侧样式：begin
+.al-contentItem{
+  &:last-child{
+    .al-contentCommentMain{
+      border:none;
+    }
+  }
+  .al-contentCommentMain {
+    margin-left:55px;
+    padding-bottom:30px;
+    border-bottom: 1px solid #ecf0f2;
+    .al-contentCommentItemTitle {
+      margin:2px 0 12px;
+      a {
+        cursor: pointer;
+        color:#555;
+        &:hover{
+          color: #2899e6;
+        }
+      }
+      h2 {
+        font-weight: 400;
+        font-size: 16px;
+        display: inline-block;
+        vertical-align: middle;
+        border-bottom:1px solid #f00;
+      }
+      span {
+        font-size: 14px;
+        color:#aaa;
+        padding-left:10px;
+      }
+      .al-contentCommentTime {
+        float: right;
+        font-size: 14px;
+        color:#909090;
+      }
+    }
+    .al-contentCommentText {
+      line-height:28px;
+      //word-break:break-all;   遇见、、、、、、、、、、、、、、、、、、、、、、、、、、、、时无效果
+      word-wrap: break-word;
+      padding-right:20px;
+      color:#555;
+      margin-bottom:10px;
+      white-space: pre-wrap;  //保留换行
+//      cursor: pointer;
+    }
+    //引用病例样式
+    .al-linkCase{
+      margin-top:20px;
+      line-height:26px;
+      font-weight:normal;
+      a{color:#626F8C;}
+    }
+      //我的评论
+    .al-contentMyComment {
+      background-color: #f3f6f9;
+      padding:12px 16px;
+      margin-top:15px;
+      font-size:15px;
+      line-height: 1.5;
+      color:#777;
+      a {
+        color:#aaa;
+        word-break: break-all;
+      }
+    }
+      //查看评论
+    .al-contentCommentOtherMsg {
+      text-align: right;
+      color:#909090;
+      padding-top:24px;
+      .al-commentDeleteBtn {  //评论——鼠标悬浮状态：删除 位置
+        float: left;
+        font-style: normal;
+        font-size: 14px;
+        color:#acb4c3;
+        display: block;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      .al-coomentWatchBtn {
+        font-size:14px;
+        color: #ff9224;
+        float: left;
+      }
+      span {
+        display: inline-block;
+        margin-left: 30px;
+        font-size:13px;
+        cursor: pointer;
+        font-family:Arial, "宋体";
+        color:#626f8c;
+        &:hover{color:#3598db;}
+      }
+      span span{
+        margin-left: 0;
+      span{
+        margin-left: 0;
+      }
+      }
+    }
+  }
+}
+
+.al-contentCommentMain{
+  .al-commentOthers{  //终端评论回复样式  10.27
+    border-left: 2px solid #DFDFDF;
+    font-size: 15px;
+    color: #909090;
+    padding-left: 10px;
+    margin-bottom:10px;
+    figcaption{
+      span{
+        display:inline-block;
+        max-width:495px;
+        white-space: nowrap;
+        overflow: hidden;
+        vertical-align: bottom;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+//评论主体右侧样式：end
+
+
+//评论区图片显示样式:begin
+  .singleImg,.singleCase,.videoCaseGroup{
+    .al-contentImgBox{
+      width:327px;
+      height:218px;
+    }
+  }
+//评论区图片显示样式:end
+
+//只有终端页评论区使用
+.terminal_singleImg{
+  .al-contentImgBox{
+    width:327px;
+    height:auto;
+  }
+}
+

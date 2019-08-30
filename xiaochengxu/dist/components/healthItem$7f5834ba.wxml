@@ -1,0 +1,22 @@
+<template name="healthItem$7f5834ba">
+  <view class="_section data-v-0f092eb0 articleLists">
+    <view class="_figure data-v-0f092eb0 articleItem" bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" wx:for="{{healthLists}}" wx:for-index="index" wx:for-item="item">
+      <view class="_article data-v-0f092eb0 noShowImg"><label class="_span data-v-0f092eb0 articalIcon"></label>
+        <view class="_h3 data-v-0f092eb0 articleTitle isArtical">{{item.educationName}}</view>
+      </view>
+      <view class="_section data-v-0f092eb0 recommendDoctor" wx:if="{{index==2&&from=='home'&&doctorLists.length>0}}">
+        <view class="_div data-v-0f092eb0 doctorBorder"></view>
+        <view class="_h3 data-v-0f092eb0">医生推荐</view>
+        <swiper options="{{swiperDoctorOption}}" ref="mySwiper" class="_swiper data-v-0f092eb0">
+          <swiper-slide wx:key="item.customerId" key="{{item.customerId}}" wx:for="{{doctorLists}}" wx:for-index="iIndex" wx:for-item="item" class="_swiper-slide data-v-0f092eb0">
+            <view class="_figure data-v-0f092eb0 doctorInfo">
+              <view class="_figcaption data-v-0f092eb0">
+                <image src="{{item.logoUrl}}" alt class="_img data-v-0f092eb0"></image>
+              </view> <label class="_span data-v-0f092eb0 doctorName">{{item.fullName.length>4?item.fullName.substring(0,4) + '...':item.fullName}}</label> <label class="_span data-v-0f092eb0 doctorTitle">{{item.medicalTitle}}</label> <label class="_span data-v-0f092eb0 doctorAddress">{{item.hospitalName.length>6?item.hospitalName.substring(0,6) + '...':item.hospitalName}}</label>
+            </view>
+          </swiper-slide>
+        </swiper>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <script type="text/javascript">
+      function IsPC() {
+          var userAgentInfo = navigator.userAgent;
+          var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+          var flag = true;
+          for (var v = 0; v < Agents.length; v++) {
+              if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                  flag = false;
+                  break;
+              }
+          }
+          return flag;
+      }
+      if(IsPC()){
+          window.location.href=window.location.href.replace(/m.allinmd/,'www.allinmd');
+      }
+  </script>
+  <title></title>
+  <meta name="keywords" content="">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta content="telephone=no,email=no" name="format-detection">
+  <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+  <meta name="data-alcode" content="a2">
+</head>
+<body data-alcode="205">
+<div id="app">
+
+</div>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="//paas.allinmd.cn/modules/sps/sps.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/eBook/eBook_details.html'+location.search;
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="骨科书籍，骨科电子书，在线阅读，电子书阅读，唯医allinmd"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/eBook/eBook_details.css">
+
+    <!--<link href="//paas.allinmd.cn/modules/allinmdplayer/css/video-js.css" rel="stylesheet" type="text/css"/>-->
+    <!--<link href="//paas.allinmd.cn/modules/allinmdplayer/css/videojs.allinmd-h5.css" rel="stylesheet" type="text/css"/>-->
+    <!--<link href="//paas.allinmd.cn/modules/show_big_img/1.1/showBigImg.css" rel="stylesheet">-->
+    <link href="/js/third-party/swiper/swiper.min.css" rel="stylesheet">
+    <meta name="data-alcode" content="a2">
+</head>
+<body data-alcode="207">
+    <input type="hidden" value="2" id="relationType"/>
+    <input type="hidden" value="" id="resourceId"/>
+    <section class="al-mainInner al-ebookMainPart">
+        <!--新增底部导航-->
+        <section class="commentCollageNav" style="display: none">
+            <!--无全书阅读-->
+            <div class="noPandect" style="display:none">
+                <p><i></i><span>评论</span></p>
+                <p><i></i><span>收藏</span></p>
+            </div>
+
+            <!--有全书阅读-->
+            <div class="BookComment">
+                <p><i></i><span>评论</span></p>
+                <p><i></i><span>收藏</span></p>
+            </div>
+            <div class="BookFree">免费阅读</div>
+        </section>
+        <!--新增底部导航 end-->
+        <header class="al-indexHeader" data-alcode-mod='401'>
+            <figure class="al-indexHeaderItem ev-backToMain">
+                <a href="javascript:;" data-alcode='e45'>
+                     <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <!--<h1>书籍详情</h1>-->
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <i class="ebookShare"></i>
+            </figure>
+        </header>
+        <header class="al-eBookBaseMessage" data-alcode-mod='436'>
+
+        </header>
+        <nav class="al-eBookContentChange slide-navbar" data-alcode-mod='437' data-alcode-item-selector="figure" style="display:none">
+            <figure class="al-eBookContentChangeItem slide-navbarItem" data-role="article">文章<span></span></figure>
+            <figure class="al-eBookContentChangeItem active slide-navbarItem" data-role="catalog">目录<span></span></figure>
+            <figure class="al-eBookContentChangeItem slide-navbarItem comment" data-role="comment">评论<span></span></figure>
+        </nav>
+        <section class="al-eBookContentContainer slide-container">
+            <section class="al-eBookContentWrapper slide-wrapper" data-active-role="catalog">
+                <section class="al-eBookItemContent slide-content" data-role="article">
+                    <header class="al-personalContributionHeader ev-subNav" style="display: none;">
+                        <h2 class="al-personalContributionTitle">
+                                <span class="labelsType">全部文章</span><span class="contributionNum"></span>
+                        </h2>
+                        <section class="al-personalContributionSelector al-personalSelectorOn">
+                            <h2>最多浏览</h2>
+                            <ul data-alcode-mod='438' data-alcode-item-selector="li">
+                                <li class="al-personalContributionSelectorItem active">最多浏览</li>
+                                <li class="al-personalContributionSelectorItem">最多评论</li>
+                            </ul>
+                        </section>
+                    </header>
+                    <section class="al-contentArticle" data-alcode-mod='439'>
+
+                    </section>
+                    <footer class="al-eBookNoContent" style="display: none;">
+                        <span>~</span>到底了<span>~</span>
+                    </footer>
+                </section>
+                <section class="al-eBookItemContent slide-content" data-role="catalog">
+                    <section class="al-eBookCatalog" data-alcode-mod='440'>
+                    </section>
+                </section>
+                <section class="al-eBookItemContent slide-content" data-role="comment">
+                    <section class="al-terminalComment">
+                        <!--评论区-->
+                        <section class="al-terminalMainContent al-terminalCommentContent Ev-discussArea">
+                            <h2 class="ev_commentNav" style="display: none;">
+                                评论(<span class="Ev-navReviewNum"></span>)
+                                <section class="al-terminalSortChange" data-alcode-mod='441' data-alcode-item-selector="button">
+                                    <button class="al-terminalSortChangeItem active" sortType="3">最新</button>
+                                    <button class="al-terminalSortChangeItem"  sortType="1">最旧</button>
+                                </section>
+                            </h2>
+                            <section class="al-terminalComment">
+                                <div id="EQ_newReplyList" data-alcode-mod='442'>
+
+                                </div>
+                                <section class="al-terminalNoComment" style="display: none;">
+                                    <span>暂无评论，快说出您的看法</span>
+                                </section>
+                            </section>
+                        </section>
+                        <!--评论区结束-->
+                        <!--没有更多-->
+                        <article class="al-terminalFinish"  style="display: none;">
+                            ~<span>没有更多了</span>~
+                        </article>
+
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <!--<section class="al-scrollShareBtn" data-alcode-mod='406'>-->
+        <!--<i class="icon-scrollShare" data-alcode="e46"></i>分享-->
+    <!--</section>-->
+    <!--<div class="al-commentEbookPart">-->
+        <!--<p>点评这本书...</p>-->
+    <!--</div>-->
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+    <script src="/js/react/JSXTransformer.js"></script>
+    <script src="/js/third-party/swiper/swiper-3.4.2.min.js"></script>
+    <script src="/js/react/react.js"></script>
+    <script type="text/jsx" src="/js/scene/case/comment.jsx" charset="utf-8"></script>
+
+    <script src="//paas.allinmd.cn/compose/aph5_sbin_waps/seed.js"></script>
+    <!--<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>-->
+    <!--<script src="//paas.allinmd.cn/modules/allinmdplayer/video.js"></script>-->
+    <!--<script src="//paas.allinmd.cn/modules/allinmdplayer/videojs.allinmd.js"></script>-->
+    <!--<script src="//paas.allinmd.cn/modules/show_big_img/1.1/showBigImg.js"></script>-->
+
+    <script src="/js/json/operator_auth.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.ajax.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/comm/date.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+    <script src="/js/scene/eBook/eBook_details.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+.crm-patientsEvaluation{
+  width: 1200px;
+  min-height: 500px;
+  height: auto;
+  background-color: #F6F7FA;
+  margin: 0 auto;
+  .crm-patientsEvaluation-title{
+    font-size: 20px;
+    color: #222222;
+    font-weight: bold;
+    display: inline-block;
+    margin: 32px 0 20px 0;
+  }
+  .crm-patientsEvaluation-handle{
+    position: relative;
+    width: 1200px;
+    min-height: 190px;
+    height: auto;
+    background: white;
+    box-shadow: 0 4px 10px 0 rgba(42, 53, 102, 0.04);
+    border-radius: 3px;
+    margin-bottom: 32px;
+    padding: 25px 15px;
+    box-sizing: border-box;
+    .el-form-item{
+      display: inline-block;
+      margin-bottom: 20px;
+      .el-input{
+        width: 190px;
+      }
+    }
+    .crm-patientsEvaluation-control{
+      height: 32px;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      .crm-reset-table{
+        font-size: 14px;
+        font-weight: 400;
+        color: #2c343a;
+        line-height: 14px;
+        margin-right: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+
+      }
+      .crm-filtrate-table{
+        width: 90px;
+        height: 32px;
+        border-radius: 3px;
+        border: 1px solid #4b67d6;
+        box-sizing: border-box;
+        line-height: 32px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #4b67d6;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+    }
+  }
+  .crm-patientsEvaluation-batch{
+    position: relative;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    height: 24px;
+    .batch-btn{
+      float: right;
+      width: 77px;
+      height: 28px;
+      background: #4B67D6;
+      border-radius: 3px;
+      line-height: 28px;
+      display: inline-block;
+      cursor: pointer;
+      text-align: center;
+      color: #FFFFFF;
+      font-size: 13px;
+      position: relative;
+      margin-right: 20px;
+      i{
+        display: inline-block;
+        min-width: 11px;
+        height: 16px;
+        border-radius: 16px;
+        position: absolute;
+        top: -8px;
+        right: -15px;
+        background: #FF7E4D;
+        line-height: 16px;
+        text-align: center;
+        padding: 2px 4px;
+      }
+      &.shield{
+        background: #EB3B46;
+        box-shadow: 0 5px 16px 0 rgba(254, 143, 166, 0.54);
+      }
+      &.pass{
+        background: #52CC64;
+        box-shadow: 0 5px 16px 0 rgba(152, 246, 166, 0.77);
+      }
+    }
+  }
+  .crm-patientsEvaluation-table{
+    padding: 0 25px;
+    background: #fff;
+    .has-gutter .cell{
+      font-size: 14px;
+      color: #111111;
+      font-weight: bold;
+    }
+    .el-table--enable-row-hover .el-table__body tr:hover>td {
+      background-color: #f5f7fa;
+    }
+    .el-table .descending .sort-caret.descending{
+      border-top-color: #4B67D6;
+    }
+    .crm-patientsEvaluation-normal,.crm-patientsEvaluation-pass,.crm-patientsEvaluation-shield{
+      width: 74px;
+      height: 28px;
+      padding: 0;
+      border-radius: 3px;
+      font-family: PingFangSC-Regular;
+      font-size: 13px;
+      letter-spacing: 0;
+      margin-left: 10px;
+      float: left;
+      text-align: center;
+      line-height: 28px;
+      color: #ffffff;
+      cursor: pointer;
+      background: #52CC64;
+      box-shadow: 0 5px 16px 0 rgba(152, 246, 166, 0.77);
+    }
+    .crm-patientsEvaluation-shield{
+      background: #EB3B46;
+      box-shadow: 0 5px 16px 0 rgba(254, 143, 166, 0.54);
+    }
+    .crm-patientsEvaluation-normal{
+      background: none;
+      box-shadow: none;
+      color: #333;
+    }
+
+  }
+  .crm-patientsEvaluation-pager{
+    text-align: center;
+    margin: 25px auto 33px;
+  }
+  .crm-patientsEvaluation-scorePanel{
+    width:100px;
+    background: #00D6C6;
+    height: 100px;
+    border-radius: 6px;
+  }
+  .crm-patientsEvaluation-score{
+    cursor: pointer;
+  }
+
+}
+.el-popover{
+  width: auto;
+  height: auto;
+  padding: inherit;
+  box-shadow: none;
+  background: none;
+  .crm-patientsEvaluation-panel{
+    min-height: 60px;
+    width: 323px;
+    height:auto;
+    padding: 14px 22px 22px 18px;
+    background: #fff;
+    box-shadow: 0 5px 16px 0 rgba(20,38,95,0.27);
+    border-radius: 3px;
+    .crm-patientsEvaluation-star{
+      height: 16px;
+      padding-bottom: 10px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      border-bottom: 1px solid rgba(230,230,232,.3);
+      .star-item{
+        width: 17px;
+        height: 16px;
+        margin-right: 10px;
+        display: inline-block;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAYAAADwMZRfAAAAAXNSR0IArs4c6QAAAT5JREFUOBGdk8FKw0AQhv+JCXj3KkJqeqsHjx5aG0FFr1LwHXwKD76NeBIhUbAH38BTUNJC60HxAQQ148xGQ7I0IXZhmZ35//l2N2SBhsF3wQ7H/rvGBhucJhHf2QUYayY2GGshHHUHAId5L4d5vphUCwF9nVda7LwkUmltlnw/XMXn7AicXdkaHDqBu3FD4fijrBFHm6cgHkoxkNkF87rE+hMCGYjm4nmS+QymsUA6M7m7Ni45aO7InsdCfl2KQPSm/Q7tp49wvV0BvfwLpH7XG2i/uTvtJQnY6wtk2hI0Vb/pk4biA9JhMpHTnLWCiM/4f80FJM/ZbwVB1WdBaKsdpOqzIOhZEP0nHqSWWfWKbzGE5NkRXcJxe3SQ9jWaXOv5qECKDZhHKxz5E44713wbbBdCaaF1o8d+qv4/6QeEDmUM9XPaawAAAABJRU5ErkJggg==") no-repeat center center;
+      }
+    }
+    .crm-patientsEvaluation-label{
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      .label-item{
+        background: #E3F7F6;
+        border-radius: 3px;
+        font-family: PingFangSC-Regular;
+        font-size: 13px;
+        color: #01ABA0;
+        letter-spacing: 0;
+        text-align: center;
+        padding: 0 9px;
+        height: 23px;
+        line-height: 23px;
+        display: inline-block;
+        margin-right: 6px;
+        margin-top: 8px;
+      }
+    }
+    .crm-patientsEvaluation-words{
+      line-height: 20px;
+      font-size: 14px;
+      color: #444444;
+      padding-top: 24px;
+      letter-spacing: 0;
+    }
+  }
+}

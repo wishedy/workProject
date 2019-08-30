@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+    if (IsPC()) {
+        window.location.href = '/pages/discover/discover_index.html';
+    }
+    </script>
+    <title>参加</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="keywords" content="医学资源分类，医学资源查找，手术视频,医学文献,病例讨论,骨科,唯医,allinmd">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/discover/join.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/discover/discover/characteristic_column.css">
+    <link rel="stylesheet" href="/css/vander/swiper.min.css">
+    <!--endbuild-->
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="192" style="background: #fff;">
+    <section class="al-mainInner boneClassCont">
+        <header class="al-indexHeader" data-alcode-mod='401'>
+            <figure class="al-indexHeaderItem">
+                <a href="/pages/discover/discover_index.html" class="Ev-SetBackBtn ev_digHole" data-alcode='e45'>
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1></h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+            </figure>
+        </header>
+        <section class="joinBone">
+            <aside class="text">菁英课堂下期邀请＊＊＊老师进行教授，你想听什么内容？请告诉我们</aside>
+            <textarea id="Ev-settingSuggest" placeholder="输入您想对我们说的话…"></textarea>
+            <button class="Ev-setSubmitBtn" data-flag="1">提交</button>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script><script src="/js/third-party/fastclick.js"></script>
+    <!--build:js /dest/pages/discover/join.js-->
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/comm/comm.textChange.js"></script>
+
+    <script src="/js/scene/discover/scene.discover.join.js"></script>
+    <!--endbuild-->
+</body>
+
+</html>

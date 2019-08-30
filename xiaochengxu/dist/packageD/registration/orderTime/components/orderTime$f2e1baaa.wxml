@@ -1,0 +1,16 @@
+<import src="/components/OrderRule$60ed4c51" /><template name="orderTime$f2e1baaa">
+  <view class="_section data-v-1b495e74 calendar">
+    <view class="_section data-v-1b495e74 calendar-title"><label class="_span data-v-1b495e74 calendar-department"><label style="color: #888;" class="_span data-v-1b495e74">科室：</label>{{departmentName}}</label> <template data="{{...$root[$kk+'0'], $root}}" is="OrderRule$60ed4c51"></template></view>
+    <view class="_section data-v-1b495e74 calendar-list">
+      <view class="_section data-v-1b495e74 calendar-item" wx:key="idx" key="{{idx}}" wx:for="{{allDate}}" wx:for-index="idx" wx:for-item="month">
+        <view class="_section data-v-1b495e74 calendar-month"><label class="_span data-v-1b495e74 calendar-month-month">{{month.month}}</label> <label class="_span data-v-1b495e74 calendar-month-yue">月</label> <label class="_span data-v-1b495e74 calendar-month-year">/{{month.year}}</label></view>
+        <view class="_section data-v-1b495e74 calendar-week"><label class="_span data-v-1b495e74 week-title">日</label> <label class="_span data-v-1b495e74 week-title">一</label> <label class="_span data-v-1b495e74 week-title">二</label> <label class="_span data-v-1b495e74 week-title">三</label> <label class="_span data-v-1b495e74 week-title">四</label> <label class="_span data-v-1b495e74 week-title">五</label> <label class="_span data-v-1b495e74 week-title">六</label></view>
+        <view class="_section data-v-1b495e74 calendar-day">
+          <view class="_section data-v-1b495e74 week {{[idn === 0 ? 'week-border' : '']}}" wx:key="idn" key="{{idn}}" wx:for="{{month.weekDate}}" wx:for-index="idn" wx:for-item="week">
+            <view class="_section data-v-1b495e74 day {{[  day.now ? 'day-now' : '',  day.now && day.before ? 'day-now-before' : '',  day.now && day.full ? 'day-now-full' : '',  day.before ? 'day-before' : '',  day.select ? 'day-select' : '',  day.full ? 'day-full' : '']}}" wx:key="id" key="{{id}}" bindtap="handleProxy" data-eventid="{{'0-'+idx+'-'+idn+'-'+id}}" data-comkey="{{$k}}" wx:for="{{week}}" wx:for-index="id" wx:for-item="day"><label class="_span data-v-1b495e74 day-date" wx:if="{{day.date !== null}}">{{day.date}}</label> <label class="_span data-v-1b495e74 day-text">{{day.text}}</label></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

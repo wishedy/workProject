@@ -1,0 +1,218 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+html,body,.al-mainInner{
+  background: #fff;
+  height: 100%;
+  padding-bottom: 0;
+}
+.al-mainInner{
+  /*落地页，申请加入前*/
+  .applyInfo{
+    position: relative;
+    width: rem3(375px);
+    margin:0 auto;
+    .applyInfoText_01{
+      margin-top: rem3(28px);
+      background: url("//img50.allinmd.cn/v3/teamApply/bg_01_01.png") no-repeat;
+      background-size: 100% 100%;
+      height: rem3(102px);
+    }
+    .applyInfoText_02{
+      padding-top:rem3(30px);
+      background: url("//img50.allinmd.cn/v3/teamApply/bg_01_02.png") repeat-y;
+      background-size: 100% 100%;
+      p{
+        font-size: rem3(20px);
+        color: #222222;
+        text-align: center;
+        line-height: rem3(30px);
+        padding: 0 rem3(45px)  rem3(17px) rem3(45px);
+        &:last-child{
+          padding-bottom: rem3(34px);
+        }
+        .infoOne,.infoThree{
+          font-size: rem3(20px);
+          color:rgba(94,127,232,1);
+        }
+      }
+    }
+    .applyInfoText_03{
+      background: url("//img50.allinmd.cn/v3/teamApply/bg_01_03.png") no-repeat;
+      background-size: 100% 100%;
+      width: rem3(375px);
+      height: rem3(152px);
+      .bg_box{
+        padding-top: rem3(20px);
+        .applyInfoPerson{
+          background: rgba(216,216,216,0.25);
+          border-radius: rem3(3px);
+          width: rem3(315px);
+          height: rem3(78px);
+          font-size: 0;
+          margin-left: rem3(30px);
+          figure{
+            display: inline-block;
+            vertical-align: middle;
+            margin:rem3(16px) rem3(10px) rem3(18px) rem3(15px);
+            img{
+              width: rem3(44px);
+              height: rem3(44px);
+              border-radius: 50%;
+            }
+          }
+          aside{
+            vertical-align: middle;
+            display: inline-block;
+            width: rem3(246px);
+            font-size: 0;
+            p{
+              .medInfo,.comInfo{
+                font-size: rem3(15px);
+                color: #555555;
+              }
+              .medInfo{
+                margin-right: rem3(8px);
+              }
+            }
+            .nameInfo{
+              font-size: rem3(17px);
+              color: #222222;
+              margin-bottom: rem3(4px);
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+  /*申请加入成功后*/
+  .alreadyApply{
+    position: relative;
+    background: url("//img50.allinmd.cn/v3/teamApply/bg_02.png") no-repeat;
+    background-size: 100% 100%;
+    width: rem3(375px);
+    height: rem3(300px);
+    margin:rem3(28px) auto 0 auto;
+    aside{
+      width: rem3(345px);
+      position: absolute;
+      top: rem3(126px);
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      .medAccept{
+        position: relative;
+        display: inline-block;
+        font-size: rem3(20px);
+        color: #222222;
+        margin-bottom: rem3(37px);
+        i{
+          display: inline-block;
+          background: url("//img50.allinmd.cn/v3/teamApply/conpleteIcon.png") no-repeat;
+          background-size: contain;
+          width: rem3(26px);
+          height: rem3(26px);
+          vertical-align: middle;
+          margin-right: rem3(8px);
+        }
+        span{
+          vertical-align: middle;
+          &.highLight{
+            color: rgba(94,127,232,1);
+          }
+        }
+        &:after{
+          content: "";
+          display: inline-block;
+          width: rem3(30px);
+          height: rem(2px);
+          background: rgba(216,216,216,0.4);
+          position: absolute;
+          top: rem3(46px);
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      .remindText{
+        font-size: rem3(16px);
+        color: #909090;
+      }
+    }
+  }
+
+  /*认证成功后的提示*/
+  .authSuccess{
+    position: relative;
+    background: url("//img50.allinmd.cn/v3/teamApply/bg_03.png") no-repeat;
+    background-size: 100% 100%;
+    width: rem3(375px);
+    height: rem3(324px);
+    margin:rem3(28px) auto 0 auto;
+    aside{
+      width: rem3(345px);
+      position: absolute;
+      top: rem3(126px);
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-size: 0;
+      .authRemind{
+        position: relative;
+        display: inline-block;
+        font-size: rem3(20px);
+        color: rgba(100,131,233,1);
+        margin-bottom: rem3(37px);
+        i{
+          display: inline-block;
+          background: url("//img50.allinmd.cn/v3/teamApply/conpleteIcon.png") no-repeat;
+          background-size: contain;
+          width: rem3(26px);
+          height: rem3(26px);
+          vertical-align: middle;
+          margin-right: rem3(8px);
+        }
+        span{
+          vertical-align: middle;
+        }
+        &:after{
+          content: "";
+          display: inline-block;
+          width: rem3(30px);
+          height: rem(2px);
+          background: rgba(216,216,216,0.4);
+          position: absolute;
+          top: rem3(46px);
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      .remindText{
+        font-size: rem3(16px);
+        color: #909090;
+      }
+    }
+  }
+  /*申请加入按钮*/
+  .applyTeamBtn{
+    text-align: center;
+    font-size: 0;
+    position: fixed;
+    bottom: rem3(30px);
+    left: 50%;
+    transform: translateX(-50%);
+    p{
+      display: inline-block;
+      background:rgba(94,127,232,1);
+      box-shadow: 0 -2px 10px 0 rgba(94,127,232,0.09);
+      border-radius: 3px;
+      width: rem3(345px);
+      height: rem3(50px);
+      line-height: rem3(50px);
+      color: #fff;
+      font-size: rem3(18px);
+      text-align: center;
+    }
+  }
+}

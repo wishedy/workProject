@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>${cmsChannel.seoTitle!''}</title>
+    <meta name="description" content="${cmsChannel.seoMetaDescription!''}">
+    <meta name="Keywords" content="${cmsChannel.seoMetaKeyword!''}">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <link rel="stylesheet" href="/dest/channel/fellowship/fellowship_index.css">
+
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+<body class="reltive" data-alcode="121">
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav" data-alcode-mod='54'>
+                <li><a href="//www.allinmd.cn">热门</a></li>
+                <li><a href="//www.allinmd.cn/pages/channel/case/case_index.html">病例</a></li>
+                <li><a href="//www.allinmd.cn/pages/channel/video/video_index.html">视频</a></li>
+                <li><a href="//www.allinmd.cn/pages/channel/conference/meeting_index.html">会议</a></li>
+                <li><a href="//www.allinmd.cn/pages/channel/doc/doc_index.html">文库</a></li>
+                <li><a href="//www.allinmd.cn/pages/channel/topic/topic_index.html">话题</a></li>
+                <li class="active"><a href="//www.allinmd.cn/html/index/fellowship/fellowship_home.html">进修</a></li>
+                <li><a href="//www.allinmd.cn/pages/channel/organization.html">组织</a></li>
+                <!--<li><a href="//www.allinmd.cn/pages/channel/product.html">药品</a></li>-->
+                <li><a href="//research.allinmd.cn/" target="_blank">多中心平台</a><i class="al-newNav"></i></li>
+
+
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+    <div id="meeting">
+        <div class="fellowship_main"  style="background-color: #eef3f8;">
+            <div class="fellowship_content">
+                <div class="video_banner">
+                    <div class="doc_banner">
+                        <div class="banner_channel" id="bannerCarousel">
+                            <div class="banner_channel_img">
+                                <div class="banner_channel_jd"></div>
+                                <div class="banner_channel_left prev"></div>
+                                <div class="banner-inner bd">
+                                    <ul data-alcode-mod='220'>
+                                        <#if ad_data_list_57??>
+                                            <#list ad_data_list_57 as list>
+                                                <li>
+                                                    <a href="${list.linkUrl}" target="_blank">
+                                                        <img  alt="" src="//img99.allinmd.cn/${list.adAttUrl}" /></a>
+                                                </li>
+                                            </#list>
+                                        </#if>
+                                    </ul>
+                                </div>
+                                <div class="banner_channel_right next"></div>
+                            </div>
+                            <div class="banner_channel_num hd">
+                                <ul class="">
+                                    <#if ad_data_list_57??>
+                                        <#list ad_data_list_57 as list>
+                                            <li > ${list_index+1}. </li>
+                                        </#list>
+                                    </#if>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs_cont">
+                    <div class="al-fs_cont_l_parents">
+                        <div class="fs_cont_l">
+                            <!--20170106fellowship改版增加-->
+                            <ul class="Ev-liClickBox" data-alcode-mod='221' data-alcode-item-selector="li">
+                                <li class="activeLi">全部进修</li>
+                                <li>国外进修</li>
+                                <li>国内进修</li>
+                                <li>培训课程</li>
+                            </ul>
+                            <!--20170106fellowship改版增加结束-->
+
+                            <!--全部进修div-->
+                            <div class="Ev-fellowListAdd" data-alcode-mod='222'>
+
+                            </div>
+                            <!--全部进修div结束-->
+
+                            <!--国外进修div-->
+                            <div class="Ev-fellowListAdd hide" data-alcode-mod='224'>
+
+                            </div>
+                            <!--国外进修div结束-->
+
+                            <!--国内进修进修div-->
+                            <div class="Ev-fellowListAdd hide" data-alcode-mod='225'>
+
+                            </div>
+                            <!--国内进修div结束-->
+
+                            <!--培训进修div-->
+                            <div class="Ev-fellowListAdd hide" data-alcode-mod='226'>
+
+                            </div>
+                            <!--培训进修div结束-->
+
+
+
+                        </div>
+                        <!--分页区1-->
+                        <div class="page-container newPage-container Ev-pageContainer">
+                            <div class="pagination newPagination pager" data-alcode-mod='129' data-alcode-item-selector="li">
+
+                            </div>
+                        </div>
+                        <!--分页区1结束-->
+                        <!--分页区2-->
+                        <div class="page-container newPage-container Ev-pageContainer hide">
+                            <div class="pagination newPagination pager" data-alcode-mod='129' data-alcode-item-selector="li">
+
+                            </div>
+                        </div>
+                        <!--分页区2结束-->
+                        <!--分页区3-->
+                        <div class="page-container newPage-container Ev-pageContainer hide">
+                            <div class="pagination newPagination pager" data-alcode-mod='129' data-alcode-item-selector="li">
+
+                            </div>
+                        </div>
+                        <!--分页区3结束-->
+                        <!--分页区4-->
+                        <div class="page-container newPage-container Ev-pageContainer hide">
+                            <div class="pagination newPagination pager" data-alcode-mod='129' data-alcode-item-selector="li">
+
+                            </div>
+                        </div>
+                        <!--分页区4结束-->
+                    </div>
+
+
+
+                    <div class="fs_cont_r">
+                        <div class="myapp font_yahei mar_b fs_font_s Ev-MyApplyBtn" data-alcode-mod='223'>
+                            <a href="javascript:;" data-alcode-mod='e42'>我的报名</a>
+                        </div>
+                        <div class="fs_cont_r_text font_yahei">
+                            <div class="fs_text_title">什么是CAOS医师进修？</div>
+                            <div class="fs_text_cont">
+                                <p class="mar_bp">
+                                    作为骨科医师，学习之路远未止于踏出医学院。为了精进技术、丰富知识、提升修养，医师通过不断学习，向梦想靠近。中国医师协会骨科医师分会以服务中国骨科医师为己任，致力于为医师提供更丰富的培训机会，选送优秀医师前往国内外知名院校深造，进而提升骨科诊疗水平，造福医师和患者，真正实现梦想不息，学习不止的初衷。
+                                </p>
+                                <p class="mar_bp">
+                                    携手国内外知名组织、业界厂商，CAOS已建立起国内外体系，多元学员互动平台，真正助力骨医继续教育，从国际进修（Fellowship）到国内进修，从课程参加到会议发言，伴随着国际合作的深入，CAOS的国际化继续教育平台也将不断延伸，内容形式也将不断丰富，引领更多有为的中国骨科医师走向世界舞台，展现中国骨科的风采。
+                                </p>
+                                <p>
+                                    医师只需登录网站，注册并完善个人信息，点击想参与的活动，便会有清晰明了的说明一路引导医师完成全部申请工作。遴选过程公开透明，项目体系清晰高效，进修培训专业高端，唯医进修，就是这么赞！
+                                </p>
+                            </div>
+                        </div>
+                        <div class="caos_fellowship">
+                            <div>电话：010-51921261</div>
+                            <div>邮箱：fellowship@caos-china.org</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#include virtual="/includes/footer.jsp"-->
+</section>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+
+<script src="/dest/channel/fellowship/fellowship_index.js"></script>
+<script src="/js/comm/comm.sps.js"></script>
+
+</body>
+</html>

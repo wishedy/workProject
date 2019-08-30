@@ -1,0 +1,326 @@
+@charset "UTF-8";
+//终端——病例首页
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_bottomSharePart"; //底部分享弹层
+.al-mainInner {
+    overflow-x: visible;
+}
+
+@import "../../components/_terminalDoc";
+@import "../../components/_terminalContent";
+@import "../../components/_terminalFooter";
+@import "../../components/_bottomBtns";
+@import "../../components/_bottomSharePart"; //底部分享弹层
+
+.al-terminalHeader > section {
+    border-bottom: none;
+}
+
+.al-termianlVideoHeader {
+    width: 100%;
+    margin-bottom: rem(16px);
+    & > img {
+        width: 100%;
+        vertical-align: top;
+    }
+}
+
+.al-terminalVideoSns {
+    background-color: #fff;
+    @include flex();
+    @include justify-content(center);
+    height: rem(90px);
+    line-height: rem(90px);
+    &Item {
+        @include font-dpr(14px);
+        color: #626f8c;
+        padding: 0 rem(45px);
+        & > span {
+            vertical-align: middle;
+            display: inline-block;
+        }
+    }
+    &Item.on.Ev-praiseNum {
+        .icon-videoLike:before {
+            background-image: url('//img50.allinmd.cn/pages/details/details_like_on.png');
+        }
+    }
+}
+
+.al-terminalVideoMain {
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.al-terminalVideoTitle {
+    display: table;
+    background-color: #fff;
+    padding: 0 rem(30px);
+    box-sizing: border-box;
+    & > h2 {
+        display: table-cell;
+        width: 100%;
+        color: #222;
+        font-weight: normal;
+        @include font-dpr(17px);
+        vertical-align: top;
+        line-height: 1.5;
+        padding-right: rem(50px);
+    }
+    & > button {
+        display: table-cell;
+        color: #fff;
+        width: rem(182px);
+        vertical-align: top;
+        @include font-dpr(15px);
+        span {
+            vertical-align: middle;
+        }
+    }
+    .collect {
+        background-color: #2899e6;
+    }
+    .collected {
+        background-color: #f76465;
+        .icon-videoCollect:before {
+            background-image: url('//img50.allinmd.cn/pages/video/icon_collected.png');
+        }
+    }
+}
+
+.al-terminalVideoContent {
+    color: #808080;
+    @include font-dpr(15px);
+    border-bottom: 1px solid $innerBorderColor;
+    padding: rem(40px) rem(30px);
+    box-sizing: border-box;
+    margin-bottom: rem(70px);
+    position: relative;
+    p {
+        line-height: 1.5;
+        height: 2rem;
+        transition: all 0.2s linear;
+    }
+    .al-terminalVideoContentOpen {
+        position: absolute;
+        bottom: rem(-41px);
+        left: 50%;
+        width: rem(128px);
+        background-color: #fff;
+        height: rem(32px);
+        text-align: center;
+        line-height: rem(32px);
+        border: 1px solid $innerBorderColor;
+        border-top: 1px solid #fff;
+        transform: translateX(-50%);
+        padding-bottom: rem(10px);
+        span {
+            vertical-align: middle;
+        }
+    }
+    .icon-videoOpen:after {
+        transition: all 0.2s linear;
+    }
+
+}
+
+.al-terminalVideoContentHide {
+    p {
+        @include ellipsis(2);
+        height: 1rem;
+        line-height: 0.5rem;
+    }
+    .icon-videoOpen:after {
+        transform: rotate(180deg);
+    }
+}
+
+.al-terminalVideoActivity {
+    background-color: #fff;
+    padding: rem(40px) rem(30px);
+    padding-top: rem(20px);
+    p {
+        color: #555;
+        @include font-dpr(15px);
+        & > a {
+            color: #3598db;
+        }
+    }
+}
+
+.al-terminalContentTags {
+    display: none;
+    margin-bottom: 0;
+}
+
+// .al-terminalContentTags {
+//     margin-bottom: 0;
+//     visibility: hidden;
+//     display: none;
+//     opacity: 0;
+//     transition:all 0.2s linear;
+// }
+// .al-terminalContentTags.show{
+//     visibility: visible;
+//     opacity: 1;
+// }
+.al-terminalVideoSlider {
+    .swiper-container {
+        padding: rem(40px) rem(15px);
+    }
+    .swiper-slide {
+        width: rem(246px);
+        height: rem(124px);
+        margin: 0 rem(15px);
+        padding: rem(25px) rem(20px);
+        color: #555;
+        @include font-dpr(14px);
+        background-color: #eff4f8;
+        overflow: hidden;
+        border-radius: rem(10px);
+        position: relative;
+        line-height: 1.5;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .swiper-slide.living {
+        color: #3598db;
+        .livingMark {
+            background-color: #f76465;
+            color: #fff;
+            @include font-dpr(12px);
+            padding: rem(5px) rem(15px);
+            border-top-left-radius: rem(10px);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+    .swiper-slide.allElement {
+        width: rem(80px);
+         height: rem(124px);
+         text-align: center;
+         line-height: rem(124px);
+         color: #626f8c;
+         @include font-dpr(13px);
+         span{
+            vertical-align: middle;
+             margin-right: rem(10px);
+         }
+    }
+}
+//返回按钮
+.al-videoBackBtn{
+    position: absolute;
+    top: rem(30px);
+    left: rem(30px);
+    width: rem(48px);
+    height: rem(48px);
+    z-index: 3;
+    & > img{
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+}
+.icon-terminalComment {
+    @extend %icon-terminalComment;
+}
+
+.icon-terminalLike {
+    @extend %icon-terminalLike;
+}
+
+.icon-terminalBack {
+    @extend %icon-terminalBack;
+}
+
+.icon-terminalJoin {
+    @extend %icon-terminalJoin;
+}
+
+.icon-terminalCommentNum {
+    @extend %icon-terminalCommentNum;
+}
+
+.icon-terminallike {
+    @extend %icon-terminallike;
+}
+
+.icon-terminalCollect {
+    @extend %icon-terminalCollect;
+}
+
+.icon-simCase {
+    @extend %icon-simCase;
+}
+
+.icon-fixedTopShare {
+    @extend %icon-fixedTopShare;
+}
+
+.icon-terminalConfig {
+    @extend %icon-terminalConfig;
+}
+
+/*
+.al-vipUser {
+    @extend %al-vipUser;
+}
+*/
+
+.icon-terminalFollowed {
+    @extend %icon-terminalFollowed;
+}
+
+.icon-videoDownload {
+    @extend %icon-videoDownload;
+}
+
+.icon-videoReply {
+    @extend %icon-videoReply;
+}
+
+.icon-videoLike {
+    @extend %icon-videoLike;
+}
+
+.icon-videoShare {
+    @extend %icon-videoShare;
+}
+
+.icon-videoCollect {
+    @extend %icon-videoCollect;
+}
+
+.icon-videoOpen {
+    @extend %icon-videoOpen;
+}
+
+.icon-videoBrowseNum {
+    @extend %icon-videoBrowseNum;
+    font-style: normal;
+    float: right;
+    span {
+        vertical-align: middle;
+    }
+}
+.icon-videoDetailsMore{
+    @extend %icon-videoDetailsMore;
+}
+.al-terminalAuthorMsg h2 {
+    width: 6rem;
+}
+
+.al-terminalReleaseTime p {
+    margin-top: rem(10px);
+}

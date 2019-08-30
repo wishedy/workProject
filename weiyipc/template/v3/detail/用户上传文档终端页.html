@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>${seoTitle!''} -医学文章-唯医,allinmd</title>
+    <meta name="description" content="${seoMetaDescription!''}">
+    <meta name="Keywords" content="医学文章${seoMetaKeyword!''},${docCustomerName},唯医,allinmd">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <link rel="stylesheet" href="/dest/detail/detail_doc02.css">
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/video-js.css" rel="stylesheet" type="text/css"/>
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/videojs.allinmd.css" rel="stylesheet" type="text/css"/>
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="129">
+
+<input type="hidden" id="resourceId" value="${doc.docId?c}"/>
+<input type="hidden" id="resourceType" value="2"/>
+<input type="hidden" id="refCustomerId" value="${doc.refCustomerId?c}"/>
+<input type="hidden" id="resourceTpl" value="${doc.tplPath!''}"/>
+<input type="hidden" id="resourceWapUrl" value="${doc.webStoragePath!''}"/>
+<input type='hidden' id="shareImgSrc" value="${shareImgSrc!''}"/>
+
+
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <!-- <li class="al-backBtn">
+                     <a href="javascript:void(0);">返回</a>
+                 </li>-->
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+
+    <section class="al-pageMainBox">
+        <!--页面主体内容：begin -->
+        <#assign customer_page="//www.allinmd.cn/pages/personal/others_contribution.html?cid=${customer_auth.customerId?c}">
+            <#if isOrg??>
+                <#assign customer_page="//www.allinmd.cn/pages/channel/organization-home.html?cid=${customer_auth.customerId?c}">
+            </#if>
+            <#if customer_auth.customerId?length==1>
+                <#assign customer_page="javascript:;">
+            </#if>
+            <section class="al-mainContent">
+                <#if doc??&&doc.isValid=1>
+                    <div class="al-libraryInfoBox">
+                        <figure class="al-libraryInfo_head Ev-shareTitleName" data-alcode-mod='176'>
+                            <h4>${doc.docName!''}</h4>
+                            <ul class="al-littleScoreStarBox"><li></li><li></li><li></li><li></li><li></li></ul>
+                            <#if docCustomerName?trim != ""><a href="${customer_page}" target="_blank">${customer_auth.lastName!''}${customer_auth.firstName!''}</a></#if>
+                            <#if doc.publishTime?trim != "">
+                                <p>
+                                    发布于：<span>${doc.publishTime?substring(0,4)}-${doc.publishTime?substring(5,7)}-${doc.publishTime?substring(8,10)}</span>
+                                </p>
+                            </#if>
+                            <#if doc.lastUpdateTime??>
+                                <p>
+                                    更新于：<span>${doc.lastUpdateTime?substring(0,10)}</span>
+                                </p>
+                            </#if>
+                        </figure>
+                        <div class="al-browseData Ev-al-browseData">
+                            <h4 id="lib_rq_num"></h4>
+                            <span>浏览</span>
+                        </div>
+                        <figure class="al-textDetailsBox">
+                            <#if doc.docAbstract??>
+                                <p>${doc.docAbstract!''}</p>
+                            </#if>
+                            <section class="al-textDetails_main" style="margin-bottom: 20px;">
+                                <iframe src="//d.allinmd.cn/docplugins/web/viewer.html?file=${docAttUrl!''}" width=660 height=500 frameborder=0></iframe>
+                            </section>
+
+                            <figure class="errorRecovery"><a href="javascript:;" class="Ev-correction">纠错</a> · <a  class="Ev-report" href="javascript:;">举报</a></figure>
+                            <!--评分详情-->
+                            <div class="al-myScorePart">
+                                <figure><span></span><ul class="al-littleScoreStarBox"><li class="ev-startItem"></li><li class="ev-startItem"></li><li class="ev-startItem"></li><li class="ev-startItem"></li><li class="ev-startItem"></li></ul></figure>
+                                <div class="al-scoreNumber al-scoreNumberLess">
+                                    <a href="javascript:;" class="al-moreTen ev-scoreDetail">已有<span></span>人评分</a>
+                                    <a href="javascript:;" class="al-lessTen">评分未达10人，暂无详情</a>
+                                </div>
+                            </div>
+                            <!--评分详情结束-->
+                        </figure>
+                        <figure class="al-tagBox" data-alcode-mod='175'>
+                            <#if docPropertyList?size gt 0>
+                                <figcaption>标签</figcaption>
+                                <#list docPropertyList as property>
+                                    <a  href="//www.allinmd.cn/pages/discover/discover_tagSubject.html#tId=${property.propertyId?c}">${property.propertyName!''}</a>
+                                </#list>
+                            </#if>
+                        </figure>
+                    </div>
+
+                </#if>
+                <!--文库被屏蔽：begin-->
+                <#if doc??&&doc.isValid=0>
+                    <div class="al-caseScreenedBox">
+                        <figure>
+                            <figcaption>${doc.docName!''}</figcaption>
+                            <p class="al-screenedImg">
+                                <img src="//img10.allinmd.cn/v3/terminal/librarySCreenedImg.png" alt=""/>
+                            </p>
+                        </figure>
+                    </div>
+                </#if>
+                <!--文库被屏蔽：end-->
+
+                <!--文库被删除：begin-->
+                <#if doc??&&doc.isValid=3>
+                    <div class="al-caseScreenedBox">
+                        <figure>
+                            <figcaption>${doc.docName!''}</figcaption>
+                            <p class="al-screenedImg">
+                                <img src="//img10.allinmd.cn/v3/terminal/libraryDeletedImg.png" alt=""/>
+                            </p>
+                        </figure>
+                    </div>
+                </#if>
+                <!--文库被删除:end--->
+
+                <!--评论区-->
+                <!--发表评论：begin-->
+                <div class="ev-detailReviewForm"></div>
+                <!--发表评论：end-->
+
+                <!--全部评论：begin-->
+                <div class="al-commentAll al-contentItem" id="reviewArea">
+                    <figure class="al-commentAll_head">
+                        <figcaption>全部评论</figcaption>
+                        <span class="al-oldNews ev-listSortOld">最旧</span>
+                        <span class="ev-listSortNew">最新</span>
+                    </figure>
+
+                    <section class="ev-list" data-alcode-mod='179'>
+                    </section>
+                </div>
+                <!--全部评论：end-->
+                <figure class="al-lookMore_comment ev-listMore" style="display:none;">
+                    查看更多
+                    <b></b>
+                </figure>
+                <!--评论区结束-->
+            </section>
+            <!--页面主体内容：end -->
+
+
+            <!--页面侧边栏：begin-->
+            <aside class="al-sideBarContent">
+                <figure class="al-sideBarRoll_box Ev-floatCard">
+                    <!--作者关注-->
+                    <div class="expertInfo" data-alcode-mod='176'>
+                        <a href="${customer_page}"  target="_blank"  class="expert_userImg Ev-cAuthLogo">
+                            <img src="${upload_author_logo.logoUrl!''}" alt=""/>
+                        </a>
+                        <a href="${customer_page}" target="_blank"  class="expertName Ev-cAuthName">${customer_auth.lastName!''}${customer_auth.firstName!''}</a>
+                        <span class="followBtn Ev-followBtn"></span>
+                        <p>
+                            <span class="Ev-cAuthTitle">${customer_auth.medicalTitleShow!''}</span>
+
+                            <span class="expert_workPlace Ev-cAuthCompany"><#if isOrg??><#else><#if customer_auth.company!="">${customer_auth.company!''}<#else>${customer_auth.schoolName!''}</#if></#if></span>
+                        </p>
+                    </div>
+                    <!--作者关注结束-->
+                    <!--加入讨论，收藏点赞-->
+                    <div class="al-sideBar_commentBox">
+                        <i class="leftArrow"></i>
+                        <a href="javascript:;" class="Ev-discussBtn">
+                            <figure class="discuss_container" >
+                                <b></b>
+                                <figcaption>加入讨论
+                                    <span></span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <figure class="like_container Ev-like_container">
+                            <b></b>
+                            <figcaption>
+                                收藏
+                                <span></span>
+                            </figcaption>
+                        </figure>
+                        <figure class="zan_container Ev-zan_container">
+                            <b></b>
+                            <figcaption>
+                                点赞
+                                <span></span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <!--加入讨论结束-->
+                </figure>
+                <!--分享到-->
+                <div class="al-sideBar_shareBox al-library_shareBox">
+                    <figure class="al-shareBox_head">
+                        <b class="line"></b>
+                        <span class="shareText">分享到</span>
+                        <b class="line"></b>
+                    </figure>
+                    <div class="shareBox_icon Ev-shareBox" data-alcode-mod='178' data-alcode-item-selector="figure">
+                        <figure class="shareLink_track ev-ttrend">
+                            <a href="javascript:;">
+                                <img src="//img10.allinmd.cn/v3/common/icon/share_inset.png" alt=""/>
+                            </a>
+                            <figcaption>唯医朋友圈</figcaption>
+                        </figure>
+                        <figure class="shareLink_wx ev-tweixin">
+                            <a href="javascript:;">
+                                <img src="//img10.allinmd.cn/v3/common/icon/share_weixin.png" alt=""/>
+                            </a>
+                            <figcaption>微信</figcaption>
+                        </figure>
+                        <figure class="shareLink_wb ev-tsina">
+                            <a href="javascript:;">
+                                <img src="//img10.allinmd.cn/v3/common/icon/share_weibo.png" alt=""/>
+                            </a>
+                            <figcaption>微博</figcaption>
+                        </figure>
+                        <figure class="shareLink_qqSpace ev-tqzone">
+                            <a href="javascript:;">
+                                <img src="//img10.allinmd.cn/v3/common/icon/share_zone.png" alt=""/>
+                            </a>
+                            <figcaption>QQ空间</figcaption>
+                        </figure>
+                        <figure class="shareLink_qq ev-tqq">
+                            <a href="javascript:;">
+                                <img src="//img10.allinmd.cn/v3/common/icon/share_qq.png" alt=""/>
+                            </a>
+                            <figcaption>QQ</figcaption>
+                        </figure>
+                        <section class="al-weixinErweiCodeBox al-weixinFixStyle ev-erweima hide" style="background-image:none;">
+                            <span>使用微信扫描二维码</span>
+                            <img src="//img10.allinmd.cn/v3/friends/weixin_share.jpg" alt="">
+                        </section>
+                    </div>
+                </div>
+                <!--分享到结束-->
+
+                <!--参加活动-->
+                <div class="al-joinActivity hide" data-alcode-mod="324">
+                    <h6></h6>
+                    <a class="Ev-actUrl" href="javascript:;">
+                        <img src="" alt=""/>
+                    </a>
+
+                    <span class="Ev-actName"></span>
+                </div>
+                <!--参加活动结束-->
+
+                <!--相关资源-->
+                <div class="al-resource Ev-recommendVideoList hide" data-alcode-mod='242'>
+                    <h6>相关资源</h6>
+
+                </div>
+                <!--相关资源结束-->
+                <!--产品推荐-->
+                <div class="al-productRecommendBox">
+                    <h6>
+                        相关产品(<span class="num"></span>)
+                        <span class="more">More</span>
+                    </h6>
+                    <ul class="al-productRecommendList" data-alcode-mod='248'>
+                    </ul>
+                </div>
+                <!--产品推荐：end-->
+            </aside>
+            <!--页面侧边栏：end-->
+    </section>
+
+
+    <!--公共底部 start-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--公共底部 End-->
+
+</section>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src='/js/lib/jquery/jquery.form.js'></script>
+<!--为保证IE8下正常使用，需要引入-->
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/ie8/videojs-ie8.min.js"></script>
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/video.js"></script>
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/videojs.allinmd.js"></script>
+<script src="/dest/detail/detail_comm.js"></script>
+</body>
+</html>

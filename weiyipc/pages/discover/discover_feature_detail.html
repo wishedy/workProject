@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if (!IsPC()) {
+            var url=document.URL;
+            var str=url.substring(url.lastIndexOf("?"),url.length);
+            window.location.href = '//m.allinmd.cn/dist/discover/discover_columnDetail.html'+str;
+        }
+    </script>
+    <title>骨课大讲堂</title>
+    <meta name="keywords" content="医学资源分类，医学资源查找，手术视频,医学文献,病例讨论,骨科,唯医,allinmd">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <!-- build:css /dest/discover/discover_bigLecture.css -->
+    <link rel="stylesheet" href="/css/v3/base.css"/>
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css"/>
+    <link rel="stylesheet" href="/css/v3/pageFooter.css"/>
+    <link rel="stylesheet" href="/js/modules/indexLogin/module.indexLogin.css">
+    <link rel="stylesheet" href="/js/modules/user/module.user.css"/>
+    <link rel="stylesheet" href="/js/modules/user/module.user-v2.css"/>
+    <link rel="stylesheet" href="/js/modules/find-password-v2/module.find-password-v2.css"/>
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/publish/publish.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>-->
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/css/v3/pages/discover/discoverV2/bone_class.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/message/message_index.css" />
+    <!--endbuild-->
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="321">
+<!--全内容容器——mainInner-->
+<section class="al-mainInner">
+    <!--资源多作者弹层-->
+    <div class="al-contentItemPopBox Ev-mesDoctorList" style="display: none;">
+        <section class="al-personal">
+            <!-- 评论区域 -->
+            <section class="al-personalInnerContent al-messageMain al-contentItemPop" id="ev-reviewUserList">
+                <section class="al-contentItem">
+                    <header class="al-contentItemTitle">
+                        <h2>
+                            <a class="Ev-mesDocPopText">&nbsp;</a>
+                            <i class="Ev-mesDocPopTextName"></i>
+                            <!--关闭按钮-->
+                            <b class="al-popCloseBtn Ev-mesDocPopCloseBtn"></b>
+                        </h2>
+                    </header>
+                    <div class="Ev-mesDocListBox" style="height:615px; overflow: auto"></div>
+                </section>
+            </section>
+        </section>
+    </div>
+    <!--资源多作者弹层-->
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-dis_header">
+
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav" data-alcode-mod="123" data-alcode-item-selector="li">
+                <li class="al-backBtn">
+                    <a href="javascript:;">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text"/>
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar al-mainSidebarCollapse">
+        <header class="al-mainLogo">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+        <section class="al-mainSidebarList">
+            <ul data-alcode-mod='52'>
+                <li class="al-mainSidebarItem">
+                    <a href="/">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>首页</h4>
+                            <p>HOME</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="/pages/college/college_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_college.png" alt="">
+                        <figcaption>唯医学院</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>唯医学院</h4>
+                            <p>HOME</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem active">
+                    <a href="/pages/discover/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发现</h4>
+
+                            <p>DISCOVERY</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发布</h4>
+
+                            <p>RELEASE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navMes">
+                    <a href="/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>消息</h4>
+
+                            <p>MESSAGE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navIndex">
+                    <a href="/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                        <figcaption>我的</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>我的</h4>
+
+                            <p>PROFILE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList" data-alcode-mod='72'>
+                <li class="al-mainSidebarItem al-siteEmr">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_emrIcon.png" alt="">
+                        <figcaption>病历管理</figcaption>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-siteSwitch">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_siteSwitch.png" alt="">
+                        <figcaption class="ev_siteSwitchName">骨科</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4 class="ev_siteSwitchName">骨科</h4>
+
+                                <p>SITE SWITCH</p>
+                            </div>
+                        </article>
+                    </a>
+
+                    <div class="al_siteSwitch_popBox">
+                        <div class="al_siteSwitch_orthopaedics"><i></i>骨科</div>
+                        <div class="al_siteSwitch_handSurgery"><i></i>手外科</div>
+                    </div>
+                </li>
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>小唯</h4>
+
+                            <p>SERVICE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navPhone">
+                    <a href="/pages/singlePage/iphone-app-download.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>手机端</h4>
+
+                            <p>MOBILES</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <section class="boneClassCont">
+
+            <script  id="al-tpl-banner" type="text/x-handlebars-template">
+                {{#each data_list}}
+                <aside class="banner" style="background:url('{{backgroundUrl}}') no-repeat;background-size:cover;" data-alcode-mod="735">
+                    <aside class="bannerCont">
+                <figure class="title">
+                    <p class="titleImg boneClassTitle"><img src="{{linkUrl}}"><!--骨课大讲堂类名‘boneClassTitle’骨切磋类名‘boneMappingTitle’菁英课堂类名‘essenceClassTitle’-->
+                    </p>
+
+                    <p class="viewFollew"><span class="line">{{browseNum}}人浏览</span><span>{{followNum}}人关注</span></p>
+                    {{#followClass followState}}
+                    <p class="{{followClass followState}} ev-follow">关注</p>
+                    {{/followClass}}
+                </figure>
+                <figure class="introductions">
+                    <p data-text="{{specialContent}}">{{ellipsis specialContent 180}}</p>
+
+                    <p class="moreOpen hide">展开</p><!--pickUp收起-->
+                </figure>
+                </aside>
+                </aside>
+                {{/each}}
+            </script>
+        <script  id="al-tpl-recommendDoctor" type="text/x-handlebars-template">
+            {{#each data_list}}
+            <div class="personalWrapper">
+                <div class="personalImg">
+                    <a href="/pages/personal/others_contribution.html?cid={{customerId}}" target="_blank"><img src="{{logoUrl}}"/></a>
+                </div>
+                <div class="personalName">
+                <p><a href="/pages/personal/others_contribution.html?cid={{customerId}}"  target="_blank">{{ellipsis fullName 12}}</a><span>{{medicalTitle}}</span></p>
+
+                <p class="hospital">{{company}}</p>
+                </div>
+                <a class="ev-doctor-introduce" href="/pages/personal/others_baseInfo.html?cid={{customerId}}"  target="_blank" ><p class="userIntroduction">
+                    <span>{{ellipsis summary 110}}</span>
+            </p></a>
+            </div>
+            <div class="recommendDoctor">推荐医师</div>
+            {{/each}}
+        </script>
+        <aside class="personal bannerCont hide"  data-alcode-mod="736">
+            <aside class="personalCont">
+
+            </aside>
+        </aside>
+        <aside class="typeNavCont">
+            <aside class="typeNav">
+                <script id="al-tpl-firstIndex" type="text/x-handlebars-template">
+                    {{#each data_list}}
+                        <li class="{{activeTabClass @index}} ev-firstLevel ev-tabContent" style="cursor:pointer;" data-categoryId="{{categoryId}}" data-treeLevel="{{treeLevel}}"><p>{{categoryName}}</p></li>
+                    {{/each}}
+                </script>
+                <ul class="typeNavText">
+                </ul>
+            </aside>
+            <div class="screenCont hide">
+                <p>筛选：</p>
+                <script id="al-tpl-secondIndex" type="text/x-handlebars-template">
+                    {{#each sonCategoryList}}
+                    <li class="{{activeTabClass @index}} ev-secondLevel ev-tabContent" style="cursor:pointer;" data-categoryId="{{sonCategoryId}}" data-treeLevel="{{treeLevel}}">{{sonCategoryName}}<span>{{resourceNum}}</span></li>
+                    {{/each}}
+                </script>
+                <ul class="al-tab-secondIndex">
+
+                </ul>
+                <div class="ev-pick-list hide">收起</div>
+                <!--更多viewMore pickUp -->
+            </div>
+            <aside class="hotNew">
+                <div class="newCont ev-change-sort">最新</div>
+                <div class="active ev-change-sort">默认</div>
+            </aside>
+            <script id="al-tpl-resourceList" type="text/x-handlebars-template">
+                {{#each data_list}}
+                <li class="{{afterVisited hasSceen}}">
+                    <aside class="boneClassListCont">
+                        <div class="typeNameParent"><p class="typeName"><i></i>
+                            <!--几种状态  视频videoIcon 文库docIcon 话题topicIcon 病例caseIcon-->
+                            <span class="videoIcon">{{typeName resourceType}}</span></p></div>
+                        <div class="listIntroduction  {{listIntroduction resourceType attrUrl}}">
+                            <a href="{{pageStoragePath}}"  target="_blank"><p class="title">{{htmToString resoureName}}
+                                {{#isNew isNew}}
+                                <i></i>
+                                {{/isNew}}
+                            </p>
+                            </a>
+                            <a href="{{pageStoragePath}}"  target="_blank">
+                            <p class="text">{{ellipsis resourceAbstract 143}}</p>
+                            </a>
+                            <div class="personalMsg">
+                                {{#videoAuthor resourceType}}
+                                <aside class="perMsg">
+                                    <a href="{{hasId refCustomerId}}"  target="_blank"><img src="{{dealAuthorLogo resourceType logoUrl}}" class="{{logoClass author}}">
+                                    <span>{{dealAuthor resourceType author}}</span>
+                                    </a>
+                                    <i>{{hospital}}</i>
+                                </aside>
+                                {{/videoAuthor}}
+                                {{#videoMoreAuthor resourceType}}
+                                <aside class="perMsg" owerNameList="{{owerNameListStr}}">
+
+                                    {{#if owerLen}}
+                                    <div class="multipUserLogo">
+                                        {{#each owerNameList}}
+                                        <img class="perMsg-authorName  {{noneImgLogo @index}}" src="{{logoUrl}}"/>
+                                        {{/each}}
+                                    </div>
+                                        {{#each owerNameList}}
+                                        <span class="perMsg-authorName {{noneChange @index}}">{{authorName}}等人</span>
+                                        {{/each}}
+                                    {{else}}
+                                        <a href="{{hasId refCustomerId}}"  target="_blank"><img src="{{dealAuthorLogo resourceType logoUrl}}" class="{{logoClass author}}">
+                                            <span>{{dealAuthor resourceType author}}</span>
+                                        </a>
+                                        <i>{{hospital}}</i>
+                                    {{/if}}
+                                </aside>
+                                {{/videoMoreAuthor}}
+                                <aside class="viewFollowNum">
+                                    <span class="time"><i class="al-contentWatchedNum"></i>{{towkH browseNum}}</span>
+                                    {{#showTime bindingTime}}<span class="num"><i></i></span>{{/showTime}}
+                                </aside>
+                            </div>
+                        </div>
+                        <div class="listImg {{hideImgOnOff resourceType attrUrl}}">
+                            {{#videoIcon resourceType}}
+                            <figure></figure>
+                            {{/videoIcon}}
+                            <p class="{{hideOnOff resourceType}}">{{changePlayTime playTime resourceType}}</p><a href="{{pageStoragePath}}"  target="_blank"><img src="{{attrUrl}}"></a>
+                        </div>
+                    </aside>
+                </li>
+                {{/each}}
+            </script>
+            <ul class="boneClassList" data-alcode-mod="737">
+
+            </ul>
+        </aside>
+    </section>
+    <!--公共底部 start-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--公共底部 End-->
+</section>
+
+
+    <!--<aside class="al-promptPopupCont">
+        <figure class="promptBoneClass"><img src="//img10.allinmd.cn/v3/discover/discoverV2/prompt02.png"> </figure>
+    </aside>-->
+
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src='/js/third-party/handlebars/handlebars-v4.0.10.js'></script>
+<!-- build:js /dest/discover/discover_feature_detail.js -->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<!--<script src="/js/comm/comm.track.js"></script>-->
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+<script src="/js/plugins/follow/plugin.follow.js"></script>
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/user/module.user.js"></script>
+<!--<script src="/js/modules/auth/module.auth.js"></script>-->
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+<script src="/js/modules/share/module.share.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<script src="/js/modules/publish/module.video-upload.js"></script>
+<script src="/js/third-party/jquery-qrcode-master/src/jquery.qrcode.js"></script>
+<script src="/js/third-party/jquery-qrcode-master/src/qrcode.js"></script>
+<script src="/js/modules/publish/module.doc-upload.js"></script>
+<!--<script src="/js/modules/publish/module.topic-upload.js"></script>-->
+<script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+<script src="/js/modules/resource-list-template/module.resource-list-template.js"></script>
+<script src="/js/plugins/make-sure-popup/plugin.make-sure-popup.js"> </script>
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script><script src='/js/third-party/md5.js'></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<!--<script src="/js/third-party/uploadify/swfobject2.2.js"></script>
+<script src="/js/third-party/uploadify/jquery.uploadify.js"></script>-->
+<script src="/js/third-party/ajaxfileupload.js"></script>
+<script src="/js/third-party/qiniu/qiniu.js"></script>
+<script src="/js/third-party/qiniu/ui.js"></script>
+<script src="/js/third-party/plupload/plupload.full.min.js"></script>
+<script src="/js/third-party/plupload/i18n/zh_CN.js"></script>
+
+<script src="/js/scene/discovery/discover_feature_detail.js"></script>
+<!--endbuild-->
+
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title><#if cmsActivity.seoName ??>${cmsActivity.seoName}</#if></title>
+    <meta name="description" content="<#if cmsActivity.seoSummary ??>${cmsActivity.seoSummary}</#if>">
+    <meta name="Keywords" content="<#if cmsActivity.seoKeyWord ??>${cmsActivity.seoKeyWord}</#if>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <link rel="dns-prefetch" href="//img50.allinmd.cn">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/dest/pages/column/activity/activity_template.css">
+
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            var sharePos = location.search;
+            window.location.href="<#if showPagePath??>${showPagePath}</#if>"+sharePos ;
+        }
+    </script>
+    <#assign  textColorYesOne="#2899E6">
+    <#assign  textColorYesTwo="#2899E6">
+    <#assign  textColorNoOne="#666">
+    <#assign  textColorNoTwo="#666">
+    <#assign  bgColorYesOne="#fff">
+    <#assign  bgColorYesTwo="#fff">
+    <#assign  bgColorNoOne="#fff">
+    <#assign  bgColorNoTwo="#fff">
+
+    <style type="text/css">
+        .textColorYesOne{color:${textColorYesOne};}
+        .textColorNoOne{color:${textColorNoOne};}
+        .textColorYesTwo{color:${textColorYesTwo};}
+        .textColorNoTwo{color:${textColorNoTwo};}
+        .bgColorYesOne{background:${bgColorYesOne};}
+        .bgColorNoOne{background:${bgColorNoOne};}
+        .bgColorYesTwo{background:${bgColorYesTwo};}
+        .bgColorNoTwo{background:${bgColorNoTwo};}
+    </style>
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="279">
+<input type='hidden' value=''  id='shareLoc'/>
+<#if adPosition_list??>
+<#assign name=0>
+<#list adPosition_list as adPositionList>
+<#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+<#if v_adPositionAttachmentList??>
+<#assign name=v_adPositionAttachmentList?size+name>
+
+</#if>
+</#list>
+<input type='hidden' value='${name}'  id='bannerLength'/>
+</#if>
+
+<input type="hidden" value="${cmsActivity.activityId?c}" id="activityId" />
+<!--banner和nav-->
+<section class="spTemp_total_up">
+    <header class="spTemp_total_banner swiper-container swiper-container-horizontal">
+        <section class="swiper-wrapper">
+
+            <#if adPosition_list??>
+            <#list adPosition_list as adPositionList>
+            <#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+            <#if v_adPositionAttachmentList??>
+            <#list v_adPositionAttachmentList as list>
+            <figure class="spTemp_total_bannerImg swiper-slide">
+                <img src="//img99.allinmd.cn/${list.adAttUrl}" alt="" class="bannerImg">
+
+            </figure>
+        </#list>
+    </#if>
+</#list>
+</#if>
+
+
+</section>
+<section class="swiper-pagination swiper-pagination-bullets">
+</section>
+<a class="backToHome" href="//m.allinmd.cn" ></a>
+</header>
+
+<#if (cmsActivityMenuList1??)&&(cmsActivityMenuList1?size>0)>
+<#assign navAll=0 />
+<#list cmsActivityMenuList1 as menuList1>
+<#if menuList1.siteId==2>
+<#assign navAll=navAll+1 />
+</#if>
+</#list>
+</#if>
+<section class="ev-placeholder">
+    <section class="spTemp_total_nav" data-alcode-mod="603" data-alcode-item-selector="li">
+        <ul class="spTemp_total_nav_list">
+            <#assign  textColorYesOne=0>
+            <#if (cmsActivityMenuList1??)&&(cmsActivityMenuList1?size>0)>
+            <#assign navOne=0 />https://www.allinmd.cn/pages/discover/discover_hotActivity.html?alcode=a1.62.732.3.jrbo7rx7
+            <#list cmsActivityMenuList1 as menuList1>
+            <#if menuList1.siteId==2>
+            <#assign navOne=navOne+1 />
+            <#assign  hasTwoMark=0>
+            <#if (cmsActivityMenuList2??)&&(cmsActivityMenuList2?size>0)>
+            <#list cmsActivityMenuList2 as menuList2>
+            <#if menuList1.activityMenuId==menuList2.parentId>
+            <#assign  hasTwoMark=1>
+        </#if>
+    </#list>
+</#if>
+
+<li  <#if hasTwoMark==1> class="nav_cut_hasTwo nav_cut_hasTwo_up"</#if>>
+
+<#if menuList1.contentType==2&& hasTwoMark==0>
+
+<a  <#if textColorYesOne==0>class="textColorYesOne"</#if> href="${menuList1.activityMenuUrl}" data-type="${menuList1.contentType}" data-activityMenuId="${menuList1.activityMenuId?c}"
+data-layoutId="${menuList1.layoutId?c}"  <#if menuList1.activityMenuUrl?index_of("allinmd")==-1>target="_blank"</#if> data-navText="${navOne}" >${menuList1.activityMenuName}</a>
+<#else>
+<span <#if textColorYesOne==0>class="textColorYesOne"</#if> data-href="${menuList1.activityMenuUrl}" data-type="${menuList1.contentType}" data-activityMenuId="${menuList1.activityMenuId?c}"
+data-layoutId="${menuList1.layoutId?c}" data-navText="${navOne}" >${menuList1.activityMenuName}</span>
+</#if>
+<#assign  textColorYesOne=1>
+<#if (cmsActivityMenuList2??)&&(cmsActivityMenuList2?size>0)>
+<#assign num = 10 />
+<#list cmsActivityMenuList2 as menuList3>
+<#if menuList1.activityMenuId==menuList3.parentId>
+<#if num==10>
+<section class="spTemp_total_nav_lists_two">
+    <i class="spTemp_total_nav_lists_two_topArrow"></i>
+    <dl class="bgColorNoTwo">
+
+        <!--<dd class="textColorNoTwo"  data-href="${menuList1.activityMenuUrl}" data-type="${menuList1.contentType}" data-activityMenuId="${menuList1.activityMenuId?c}" data-layoutId="${menuList1.layoutId?c}" data-navText="${navOne}" ><#if menuList1.contentType==2><a href="${menuList1.activityMenuUrl}" <#if menuList1.activityMenuUrl?index_of("allinmd")==-1>target="_blank"</#if>>${menuList1.activityMenuName}</a><#else>${menuList1.activityMenuName}</#if></dd>-->
+
+        <#assign navTwo=0 />
+        <#list cmsActivityMenuList2 as menuList4>
+
+        <#if menuList1.activityMenuId==menuList4.parentId>
+
+        <#assign navTwo=navTwo+1/>
+        <dd class="textColorNoTwo" data-href="${menuList4.activityMenuUrl}" data-type="${menuList4.contentType}" data-activityMenuId="${menuList4.activityMenuId?c}" data-layoutId="${menuList4.layoutId?c}" data-navText="${navOne}${navTwo}" ><#if menuList4.contentType==2><a href="${menuList4.activityMenuUrl}" <#if menuList4.activityMenuUrl?index_of("allinmd")==-1>target="_blank"</#if>>${menuList4.activityMenuName}</a><#else>${menuList4.activityMenuName}</#if></dd>
+</#if>
+</#list>
+</dl>
+</section>
+</#if>
+<#assign num = 11 />
+</#if>
+</#list>
+</#if>
+
+</li>
+</#if>
+</#list>
+</#if>
+</ul>
+<button class="spTemp_nav_more spTemp_nav_more_spread"></button>
+</section>
+</section>
+</section>
+<section class="spTemp_total_down" data-alcode-mod="604" data-alcode-item-selector="li">
+
+</section>
+<!--海选报名按钮开始-->
+<section class="footer_box">
+    <section class="registrationEntrance ev-signUpBtn" style="display: none;"><a href="javascript:;"><i></i><span class="ev-signUpName">海选报名</span></a></section>
+    <!--海选报名按钮结束-->
+    <footer class="pageFooter bayerAreaFooter" data-alcode-mod="605">
+        <article class="footerItem">
+            <a href="//m.allinmd.cn" class="footerHome" data-ajax="false">
+                唯医首页
+            </a>
+        </article>
+        <i class="hr"></i>
+        <article class="footerItem ">
+            <a href="javascript:;" class="footerDownload Ev-footerAppDownload" data-ajax="false">
+                下载APP
+            </a>
+        </article>
+        <i class="hr"></i>
+        <article class="footerItem">
+            <a href="javascript:;" class="footerBackToTop">
+                返回顶部
+            </a>
+        </article>
+    </footer>
+    <section class="al-scrollShareBtn Ev-ShareBtn">
+        <i class="icon-scrollShare"></i>分享
+    </section>
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<script src="/dest/pages/column/activityTemplate/activity_template.js"></script>
+</body>
+
+</html>

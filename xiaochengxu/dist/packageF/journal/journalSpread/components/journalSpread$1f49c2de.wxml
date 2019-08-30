@@ -1,0 +1,50 @@
+<import src="/components/ensure$5e95f728" />
+<import src="/components/loading$2ff823fe" />
+<import src="/components/toast$1074ede9" /><template name="journalSpread$1f49c2de">
+  <view class="_section data-v-1a81e563 spread-box">
+    <view class="_section data-v-1a81e563 spread-main">
+      <view class="_div data-v-1a81e563 doctor-info-box">
+        <image class="_img data-v-1a81e563 doctor-icon" src="{{doctorInfo.logoUrl.length?doctorInfo.logoUrl:'https://m.allinmed.cn/static/image/img00/doctorMain/doc_logo.png'}}" alt></image>
+        <view class="_div data-v-1a81e563 doctor-info">
+          <view class="_p data-v-1a81e563 doctor-info-top"><label class="_span data-v-1a81e563 doctor-name">
+              {{doctorInfo.customerName}}
+            </label> <label class="_span data-v-1a81e563 doctor-title">
+              {{doctorInfo.medical}}
+            </label></view>
+          <view class="_p data-v-1a81e563 doctor-info-hospital">
+            {{doctorInfo.company}}
+          </view>
+        </view>
+      </view>
+      <view class="_p data-v-1a81e563 spread-tips"> 请输入手机号，方便与您联系 </view>
+      <view class="_section data-v-1a81e563 login-box">
+        <view class="_article data-v-1a81e563 add-patient-content-item">
+          <view class="_aside data-v-1a81e563">手机号</view>
+          <view class="_figure data-v-1a81e563 add-patient-input "><input type="number" bindblur="handleProxy" bindinput="handleProxy" placeholder-style="color:rgb(170,170,170)" placeholder="请输入手机号码" name="phone" value="{{phone}}" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_input data-v-1a81e563" /></view>
+        </view>
+        <view class="_article data-v-1a81e563 add-patient-content-item">
+          <view class="_aside data-v-1a81e563">验证码</view>
+          <view class="_figure data-v-1a81e563 add-patient-input code-box"><input class="_input data-v-1a81e563 codeInput" type="number" bindblur="handleProxy" bindinput="handleProxy" placeholder-style="color:rgb(170,170,170)" placeholder="请输入" name="codeInput" value="{{codeNumber}}" data-eventid="{{'1'}}" data-comkey="{{$k}}" />
+            <view class="_i data-v-1a81e563 icon-clear" wx:if="{{codeNumber.length}}" catchtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}"></view>
+          </view> <label class="_span data-v-1a81e563 codeText" wx:if="{{codeTime<=0}}" catchtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">{{codeText}}</label> <label class="_span data-v-1a81e563 codeCountdown {{[codeNumber.length > 0 ? 'hasContent' : '']}}" wx:if="{{codeTime>0}}">
+            <view class="_i data-v-1a81e563">{{codeTime}}</view>
+            <view class="_i data-v-1a81e563">秒后重新获取</view>
+          </label>
+        </view>
+      </view>
+      <view class="_p data-v-1a81e563 login-tips">*手机号仅对医生本人可见</view>
+    </view>
+    <view class="_section data-v-1a81e563 next-box">
+      <view class="_div data-v-1a81e563 next-btn" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">下一步</view>
+      <view class="_div data-v-1a81e563 next-tips"> 点击按钮表示您同意唯医 <label class="_span data-v-1a81e563 next-agreement" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">《唯医骨科用户注册协议》</label></view>
+    </view>
+    <view class="_section data-v-1a81e563 journal-maskers" wx:if="{{authorizationFlag}}">
+      <view class="_section data-v-1a81e563 journal-confirmBox-inner">
+        <view class="_article data-v-1a81e563 journal-confirmBox-content">
+          <view class="_p data-v-1a81e563">需要您的授权，才能为您提供更好的服务</view>
+        </view>
+        <view class="_footer data-v-1a81e563 journal-confirmBox-btns"><button class="_button data-v-1a81e563 journal-confirmBox-ensureBtn" bindgetuserinfo="handleProxy" open-type="getUserInfo" data-eventid="{{'6'}}" data-comkey="{{$k}}">去授权</button></view>
+      </view>
+    </view> <template wx:if="{{ensureShow}}" bindensureClickEvent="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="ensure$5e95f728"></template> <template wx:if="{{loading}}" data="{{...$root[$kk+'1'], $root}}" is="loading$2ff823fe"></template> <template wx:if="{{toastShow}}" data="{{...$root[$kk+'2'], $root}}" is="toast$1074ede9"></template>
+  </view>
+</template>

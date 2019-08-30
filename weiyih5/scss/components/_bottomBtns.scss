@@ -1,0 +1,77 @@
+@charset "UTF-8";
+//底部按钮
+//Created by qiangkailiang on 2016/08/07
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+.al-bottomSelectorListMask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 6;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s linear;
+    -webkit-transition: opacity 0.15s linear;
+}
+
+.al-bottomSelectorListMask.on {
+    opacity: 1;
+    visibility: visible;
+    .al-bottomSelectorListBox {
+        opacity: 1;
+        transform: translateY(0%);
+        -webkit-transform: translateY(0%);
+    }
+}
+
+.al-bottomSelectorListBox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    background-color: #EFF4F8;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+}
+
+
+
+
+.al-bottomSelectorList {
+    background-color: #fff;
+}
+.al-bottomSelectorItem {
+    height: rem(100px);
+    text-align: center;
+    line-height: rem(100px);
+    @include font-dpr(18px);
+    border-bottom: 1px solid $innerBorderColor;
+    a {
+        color: #333;
+        display: block;
+    }
+}
+.al-bottomSelectorItem.active a {
+    color: #3598db;
+}
+.al-bottomSelectorItem.title a{
+    color: #909090;
+}
+.mgt {
+    margin-top: rem(20px);
+}
+.al-bottomSelectorItem.al-bottomSelectorTitle a{
+    @include font-dpr(15px);
+    color: $smallTextColor;
+}
+.EV-giveUpConfig a{
+    color: #f34b4b;
+}

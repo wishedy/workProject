@@ -1,0 +1,68 @@
+@charset "UTF-8";
+//个人主页——意见反馈
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_tableModule"; //表单组件
+@import "../../components/_buttonModule"; //按钮组件
+.al-tableModule {
+    margin-top: 0;
+}
+
+.al-tableModuleItem {
+    textarea {
+        height: rem(400px);
+        &:focus ~ .al-textareaInputNum {
+            display: inline;
+        }
+    }
+    .al-textareaInputNum {
+        @include font-dpr(16px);
+        color: #b4b4b4;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: none;
+    }
+}
+
+.al-mainInner {
+    background-color: #fff;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.btn-primary-lg {
+    opacity: 1;
+}
+
+.al-msgWriting {
+    opacity: 0.5
+}
+
+.al-buttonBox {
+    margin-top: 0;
+    border-bottom: none;
+    .al-tableModuleItem {
+        border-bottom: none;
+    }
+}
+
+textarea::-ms-input-placeholder {
+    @include font-dpr(16px)
+}
+
+
+textarea::-webkit-input-placeholder {
+    @include font-dpr(16px)
+}
+
+
+@import "../../components/_recordListModule"; //记录列表组件

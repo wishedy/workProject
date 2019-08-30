@@ -1,0 +1,44 @@
+<template name="reviewCaseSuccess$13151bd2">
+  <view class="_section data-v-5dc602a6">
+    <view class="_section data-v-5dc602a6 main-message-box">
+      <view class="_article data-v-5dc602a6 main-message-box-item others-message">
+        <view class="_figure data-v-5dc602a6 main-message-img">
+          <block wx:if="{{isFindDoctor}}">
+            <image src="https://m.allinmed.cn/static/image/mp/personal/profilePhoto.png" alt class="_img data-v-5dc602a6"></image>
+          </block>
+          <block wx:else>
+            <image src="https://m.allinmed.cn/static/image/mp/index/imSceneLogo.png" alt class="_img data-v-5dc602a6"></image>
+          </block>
+        </view>
+        <view class="_figcaption data-v-5dc602a6 medical-report-tips">
+          <view class="_p data-v-5dc602a6">我已将您的病历信息提交至{{doctorBaseMsg.customerName}}医生，点击下方卡片，立即与{{doctorBaseMsg.customerName}}医生沟通吧~</view>
+          <view class="_section data-v-5dc602a6 tips-content"> 重要提示：在线咨询不能代替面诊，医生建议仅供参考。 </view>
+        </view>
+      </view>
+    </view>
+    <view class="_section data-v-5dc602a6 main-message-box doctor-main-box" data-alcode-mod="762">
+      <view class="_article data-v-5dc602a6 doctor-box">
+        <view class="_header data-v-5dc602a6 doctor-header">
+          <view class="_h3 data-v-5dc602a6 doctor-title">点击卡片咨询医生</view>
+        </view>
+        <view class="_section data-v-5dc602a6 doctor-content" bindtap="handleProxy" data-alcode="e178" sps-data="{{getSpsData()}}" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+          <view class="_section data-v-5dc602a6 doctor-list">
+            <view class="_section data-v-5dc602a6 doctor-item">
+              <view class="_section data-v-5dc602a6 doctor-item-top">
+                <view class="_figure data-v-5dc602a6 doctor-item-img">
+                  <image src="{{doctorBaseMsg.logoUrl}}" alt="医生头像" class="_img data-v-5dc602a6"></image>
+                </view>
+                <view class="_figcaption data-v-5dc602a6 doctor-item-info">
+                  <view class="_p data-v-5dc602a6 doctor-base-info"><label class="_span data-v-5dc602a6 doctor-name">{{doctorName}}</label> <label class="_span data-v-5dc602a6 doctor-post">{{medicalTitle}}</label></view>
+                  <view class="_p data-v-5dc602a6 doctor-hospital"><label class="_span data-v-5dc602a6 doctor-hospital-level" wx:if="{{doctorBaseMsg.hospitalLevelId == 1}}">三甲</label>{{doctorBaseMsg.company}}</view>
+                </view>
+              </view>
+              <view class="_p data-v-5dc602a6 doctor-good" wx:if="{{doctorBaseMsg.illnessNameList.length}}"><label style="color: #25324D;" class="_span data-v-5dc602a6">擅长：</label>{{doctorBaseMsg.illnessNameList}}</view>
+              <view class="_section data-v-5dc602a6 doctor-item-bottom"><label class="_span data-v-5dc602a6 go-consult">去沟通</label></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

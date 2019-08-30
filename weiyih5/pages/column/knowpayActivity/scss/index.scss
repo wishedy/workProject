@@ -1,0 +1,726 @@
+//@method-name:rem
+//@desc:px-rem单位换算函数
+//	    默认换算比1:75，基于lib-flexible.js自适应库使用
+//		比例为设计图宽度十分之一，若有改动，请依照本函数格式重写，以免多次重设基础值而增大工作量
+@charset "UTF-8";
+@import "../../../../scss/modules/common-modules";
+
+@include normalize(mobile);
+@function rem($px, $base-font-size: 75px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  pointer-events: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  background-color: #2B008E;
+  width: 100%;
+  //背景装饰
+  .background-decoration {
+    position: relative;
+    img {
+      position: absolute;
+    }
+    .decoration-1 {
+      width: rem(160px);
+      height: rem(244px);
+      left: 0;
+      top: rem(50px);
+      opacity: 0.7;
+    }
+    .decoration-2 {
+      width: rem(81px);
+      height: rem(141px);
+      left: 0;
+      top: rem(1390px);
+    }
+    .decoration-3 {
+      width: rem(181px);
+      height: rem(271px);
+      right: 0;
+      top: rem(2000px);
+    }
+    .decoration-4 {
+      width: rem(181px);
+      height: rem(271px);
+      left: 0;
+      top: rem(2320px);
+    }
+    .decoration-5 {
+      width: rem(71px);
+      height: rem(121px);
+      right: 0;
+      top: rem(2770px);
+    }
+    .decoration-6 {
+      width: rem(160px);
+      height: rem(244px);
+      left: 0;
+      top: rem(2870px);
+    }
+    .decoration-7 {
+      width: rem(30px);
+      height: rem(54px);
+      right: 0;
+      top: rem(3455px);
+    }
+    .decoration-8 {
+      width: rem(17px);
+      height: rem(27px);
+      right: 0;
+      top: rem(4220px);
+    }
+
+  }
+  //页面 Header 部分
+  header {
+    height: rem(116px);
+    .header-logo {
+      float: left;
+      margin-left: rem(62px);
+      width: rem(95px);
+      height: rem(95px);
+      background: #39e0d9 url("/pages/column/knowpayActivity/images/header-logo.png") center no-repeat;
+      background-size: rem(80px);
+    }
+    //.header-share {
+    //  float: right;
+    //  margin-top: rem(45px);
+    //  margin-right: rem(50px);
+    //  width: rem(50px);
+    //  height: rem(50px)
+    //}
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+  //页面标题部分，“你愿意xxxx”
+  .main-title {
+    font-size: 0;
+    margin-left: rem(86px);
+    img {
+      margin-top: rem(-45px);
+      width: rem(600px);
+      height: rem(425px);
+    }
+  }
+  //页面讨论总数部分，“xxx人参与了讨论”
+  .main-discuss-total {
+    margin: rem(18px) 0 0 rem(102px);
+    width: rem(512px);
+    height: rem(60px);
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: rem(8px);
+    line-height: rem(65px);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    span {
+      display: inline-block;
+      font-size: rem(30px);
+      font-weight: bolder;
+      color: #5b07a7;
+      padding-left: rem(50px);
+    }
+    .discuss-total-number {
+      padding-left: rem(20px);
+    }
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      width: rem(51px);
+      height: rem(51px);
+      font-size: 0;
+    }
+  }
+  //页面主图部分
+  .main-picture {
+    font-size: 0px;
+    img {
+      margin-top: rem(-18px);
+      width: rem(750px);
+      height: rem(560px);
+    }
+  }
+  //版块容器，“活动说明”“点赞排行”“用户评论”等3个面板背景和标题
+  .panel-container {
+    position: relative;
+    margin: 0 auto;
+    margin-top: rem(90px);
+    padding-bottom: rem(36px);
+    width: rem(690px);
+    background-color: #ffffff;
+    border: rem(10px) solid #39e0d9;
+    border-radius: rem(8px);
+    .panel-header {
+      margin: rem(-50px) auto 0;
+      width: rem(430px);
+      height: rem(100px);
+      line-height: rem(100px);
+      text-align: center;
+      color: #ffffff;
+      font-size: rem(36px);
+      font-weight: bolder;
+      background: url("/pages/column/knowpayActivity/images/activity-desc-header.png") center center no-repeat;
+      -webkit-background-size: rem(430px) rem(100px);
+      background-size: rem(430px) rem(100px);
+    }
+  }
+  //“活动说明”部分
+  .activity-desc {
+    margin-top: rem(-190px);
+    padding-bottom: 0;
+    .activity-desc-content {
+      margin-top: rem(24px);
+      ul {
+        padding: 0 rem(32px);
+        li {
+          .item-header-1 {
+            background: url("/pages/column/knowpayActivity/images/icon-item-header-1.png") left center no-repeat;
+          }
+          .item-header-2 {
+            background: url("/pages/column/knowpayActivity/images/001-09.png") left center no-repeat;
+          }
+          .item-header-3 {
+            background: url("/pages/column/knowpayActivity/images/icon-item-header-3.png") left center no-repeat;
+          }
+          .item-header-4 {
+            background: url("/pages/column/knowpayActivity/images/001-10.png") left center no-repeat;
+          }
+          .item-header {
+            height: rem(60px);
+            line-height: rem(60px);
+            font-size: rem(30px);
+            color: #5b07a7;
+            font-weight: bolder;
+            background-size: rem(60px);
+            padding-left: rem(66px);
+          }
+          p {
+            margin: rem(22px) 0 rem(48px) rem(4px);
+            color: #333333;
+            font-size: rem(30px);
+            line-height: 1.5;
+            span {
+              color: #5b07a7;
+              font-size: rem(30px);
+              font-weight: bolder;
+            }
+          }
+        }
+      }
+    }
+  }
+  //“点赞排行”部分
+  .favorite-rank {
+    .favorite-rank-content {
+      ul {
+        li {
+          margin: rem(20px) rem(34px);
+          .item-content {
+            margin-top: rem(120px);
+            height: rem(40px);
+
+            font-size: 0;
+            position: relative;
+            background: url("/pages/column/knowpayActivity/images/favorite-process1.png") no-repeat;
+            border-radius: rem(50px);
+            background-size:100%;
+            .item-content-icon {
+              bottom: 0;
+              position: absolute;
+              font-size: 0;
+              .icon-top {
+                height: rem(50px);
+                text-align: center;
+                img {
+                  width: rem(70px);
+                  height: rem(50px);
+                }
+              }
+              .icon {
+                margin-top: rem(-6px);
+                width: rem(88px);
+                height: rem(88px);
+                border: rem(3px) solid #5b07a7;
+                border-radius: 50%;
+                box-sizing: border-box;
+                overflow: hidden;
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+            h3 {
+              left: rem(132px);
+              top: rem(-40px);
+              position: absolute;
+              font-size: rem(30px);
+              color: #5b07a7;
+              font-weight: bolder;
+            }
+            .item-content-favorite {
+              position: absolute;
+              top: 50%;
+              margin-top: -.35rem;
+              right: 0;
+              height: rem(40px);
+              background-color: #5b07a7;
+              border-radius: rem(50px);
+              font-size: rem(30px);
+              line-height: rem(40px);
+              color: #ffffff;
+              font-weight: bolder;
+              padding: rem(6px) rem(20px) rem(6px) rem(60px);
+              img {
+                width: rem(40px);
+                height: rem(40px);
+                left: rem(16px);
+                top: 50%;
+                margin-top: rem(-20px);
+                position: absolute;
+              }
+            }
+          }
+          &:nth-child(1) {
+            .item-content {
+              margin-top: rem(120px);
+              width: rem(560px);
+            }
+          }
+          &:nth-child(2) {
+            .item-content {
+              width: rem(450px);
+            }
+          }
+          &:nth-child(3) {
+            .item-content {
+              width: rem(408px);
+            }
+          }
+        }
+      }
+    }
+  }
+  //“用户评论”部分
+  .user-discuss {
+    .user-discuss-content {
+      margin-top: rem(24px);
+      padding: 0 rem(32px);
+      .discuss-content-panel {
+        .discuss-header-featured {
+          background: url("/pages/column/knowpayActivity/images/icon-discuss-featured.png") left center no-repeat;
+        }
+        .discuss-header-new {
+          background: url("/pages/column/knowpayActivity/images/icon-discuss-new.png") left center no-repeat;
+        }
+        .discuss-content-header {
+          height: rem(60px);
+          line-height: rem(60px);
+          font-size: rem(30px);
+          color: #5b07a7;
+          font-weight: bolder;
+          background-size: rem(60px);
+          padding-left: rem(66px);
+          span {
+            margin-left: rem(12px);
+            font-size: rem(24px);
+            color: #999999;
+          }
+        }
+        ul {
+          li {
+            margin-top: rem(48px);
+            position: relative;
+            &:first-child {
+              margin-top: rem(22px);
+            }
+            &:last-child {
+              padding-bottom: rem(64px);
+            }
+            .content-detail-icon {
+              width: rem(88px);
+              height: rem(88px);
+              border: rem(3px) solid #5b07a7;
+              border-radius: 50%;
+              box-sizing: border-box;
+              overflow: hidden;
+              position: absolute;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+            .content-detail-info {
+              padding-left: rem(114px);
+              .detail-info-header {
+                display: block;
+                h5 {
+                  float: left;
+                  font-size: rem(30px);
+                  color: #333333;
+                }
+                .favorite-total {
+                  float: right;
+                  position: relative;
+                  text-align: right;
+                  span {
+                    padding-right: rem(40px);
+                    font-size: rem(24px);
+                    color: #ff9757;
+                    display: inline-block;
+                    line-height: rem(40px);
+                  }
+                  img {
+                    width: rem(40px);
+                    height: rem(40px);
+                    position: absolute;
+                    right:0;
+                    top: 50%;
+                    margin-top: rem(-27px);
+                  }
+                }
+                &:after {
+                  display: block;
+                  content: '';
+                  clear: both;
+                }
+              }
+              p {
+                word-break: break-all;
+                min-height: rem(36px);
+                margin-top: rem(28px);
+                font-size: rem(30px);
+                color: #999999;
+                *{
+                  color: #999;
+                }
+              }
+            }
+          }
+        }
+
+      }
+      .discuss-content-new {
+        ul {
+          li {
+            &:last-child {
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+      .discuss-content-more {
+        margin-top: rem(48px);
+        text-align: center;
+        color: #999999;
+        font-size: rem(30px);
+        span {
+          vertical-align: middle;
+          display: inline-block;
+        }
+        img {
+          vertical-align: middle;
+          width: rem(30px);
+          height: rem(30px);
+        }
+      }
+    }
+  }
+  //页面 Footer 部分
+  footer {
+    position: relative;
+    margin-top: rem(64px);
+    padding-bottom: rem(130px);
+    text-align: center;
+    .footer-logo {
+      width: rem(240px);
+      height: rem(80px);
+    }
+    .decoration-9 {
+      position: absolute;
+      width: rem(310px);
+      height: rem(180px);
+      left: 0;
+      bottom: rem(96px);
+    }
+  }
+  //“我要评论”部分
+  .owner-discuss-btn {
+    position: fixed;
+    width: 100%;
+    height: rem(98px);
+    bottom: 0;
+    background: #FF9758;
+    line-height: rem(98px);
+    text-align: center;
+    font-size: 0;
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      color: #ffffff;
+      font-size: rem(36px);
+      font-weight: bolder;
+      padding-left: rem(10px);
+    }
+    img {
+      vertical-align: middle;
+      width: rem(40px);
+      height: rem(40px);
+    }
+  }
+  .activity-dialog {
+    .activity-dialog-mask {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #000000;
+      opacity: 0.7;
+      top: 0;
+      left: 0;
+    }
+  }
+  .owner-discuss {
+
+    .owner-discuss-container {
+      z-index: 99;
+      position: fixed;
+      top: 100%;
+      height: 100%;
+      width: 100%;
+      background-color: #ffffff;
+      padding: rem(54px);
+      box-sizing: border-box;
+
+      .discuss-input {
+        position: relative;
+        border: 1px solid #999999;
+        border-radius: rem(10px);
+        height: rem(230px);
+        textarea {
+          resize: none;
+          box-sizing: border-box;
+          width: 100%;
+          height: rem(190px);
+          padding: rem(10px);
+          border: none;
+          border-radius: rem(10px);
+          font-size: rem(30px);
+          color: #666666;
+          &::-webkit-input-placeholder {
+            color: #CCCCCC;
+          }
+        }
+        .discuss-input-remain {
+          color: #CCCCCC;
+          font-size: rem(20px);
+          position: absolute;
+          bottom: rem(10px);
+          right: rem(10px);
+        }
+
+      }
+      .discuss-phone-number {
+        margin-top: rem(34px);
+        label {
+          display: inline-block;
+          position: relative;
+          padding-right: rem(34px);
+          font-size: rem(32px);
+          font-weight: bolder;
+
+          color: #666;
+          &:after {
+            content: '*';
+            color: #f00;
+            position: absolute;
+            top: rem(-15px);
+          }
+        }
+        input {
+          width: rem(458px);
+          max-width: rem(458px);
+          padding-left: rem(10px);
+          height: rem(80px);
+          border: 1px solid #999999;
+          border-radius: rem(8px);
+          font-size: rem(30px);
+          color: #666666;
+          line-height: rem(30px);
+        }
+        p {
+          margin-top: rem(12px);
+          font-size: rem(24px);
+          color: #999;
+          line-height: 1.5;
+        }
+      }
+
+      .owner-discuss-close {
+        position: absolute;
+        top: rem(-86px);
+        right: rem(36px);
+        img {
+          width: rem(50px);
+          height: rem(50px);
+        }
+      }
+      .discuss-publish-btn {
+        height: rem(80px);
+        background: #FF9758;
+        line-height: rem(80px);
+        text-align: center;
+        border-radius: rem(8px);
+        margin-top: rem(48px);
+        span {
+          color: #ffffff;
+          font-size: rem(36px);
+          font-weight: bolder;
+        }
+      }
+
+      .discuss-publish-btn-disabled {
+        background: #cccccc;
+      }
+    }
+  }
+
+  // APP 中分享按钮
+  .app-share-btn {
+    position: fixed;
+    right: .4rem;
+    bottom: 1.6rem;
+    width: 1.81333rem;
+    height: .93333rem;
+    line-height: .93333rem;
+    background-color: #2899e6;
+    font-size: rem(26px);
+    border-radius: .66667rem;
+    color: #fff;
+    text-align: center;
+    opacity: .9;
+    z-index: 30;
+    box-shadow: 0.06667rem 0.06667rem 0.13333rem rgba(0, 0, 0, .2);
+    i {
+      &:before {
+        margin-top: -.05333rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+        display: inline-block;
+        width: .4rem;
+        height: .4rem;
+        vertical-align: middle;
+        margin-right: .13333rem;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAFMN540AAACbUlEQVR42mL8//8/AxJgYQISyCJ/mBjQAIYAQAAxopmBouIvEPuyQDkgZYwgGqaCEaYMIIAYgGasBZmDBav+hzL+o0m0Q+kuEM34H+IMRgbs4D/IEZpovkMGHwACiAGH/ZvBBgOJbTgU/MUmeAeIeYD4KXrw/ARidijbF1mHCLopyDoxvIYcyBh+ZsHjTwaAAIKZv/Y/doDuk0Co+HYQnwWbW3AAOyBeB8Q/gHgXWB8OG5DxbyBejcTnhOlhwWPTbiBmBmJWNPHvcJfisPk9EBsTcNF/Jhy2vgPis4QCAaT5ExBLookrExGADAABxEDAacgYlFqykMVgeecjEXEMwrehclowzSAgSYILOmCmwwLsORE+PAtNUHpA/BWI/YhJJPpQNb3oiYSQ5lioPA+S2FMg9iWk2QqH3G/kzIotY4CS5R9olvyLL5HgSmHB+DSCAg+bzTzQVMdEKH1hUzAPiDOJTZ7ogXINiDmISCz/CRXYJDubGCABxF9YwKU9vhISN9AECDBSsiQp2BMpd14FYg90NSBCHVpkkQKIdQAbEBcjmQ9K2ZOAWI0BqQyRpKKPGaF1y34cDv/IQIYvcGFeIJ4LxP+g5r0C4jIgFoTK50PFT4McRg2L/YD4M9SMG0BsiUUNiqXIJRA5FocB8R+o3j6YgcRYSq7FokD8GKpnGpF65NAdRqrF2VC1L4BYnJI0QYrFsIptG4WJ8D9yS5aQxbCq6iAVUv9/5AKXgUChex+IFaCN5RsMlIH/sA4CMRZTE/xnIKL2oxlggrZ8QWArtNqhFZCG2gEC65igDQYNaLP7FjQoaIGvQ+0A2RUMADihp7OrPVvAAAAAAElFTkSuQmCC");
+        background-size: 100%
+      }
+    }
+  }
+
+  // 发布成功
+  .discuss-success {
+    .discuss-success-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: rem(520px);
+      height: rem(510px);
+      background-color: #ffffff;
+      border-radius: rem(10px);
+      text-align: center;
+      p {
+        color: #5b07a7;
+        font-size: rem(36px);
+        font-weight: bolder;
+        line-height: 1.5;
+      }
+      img {
+        width: rem(300px);
+        height: rem(300px);
+        margin-top: rem(-160px);
+      }
+      .success-content-desc {
+        margin-top: rem(30px);
+        text-align: left;
+        padding: 0 rem(80px);
+      }
+      .success-content-button {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        margin-bottom: rem(-40px);
+        transform: translate(-50%);
+        background-color: #FF9758;
+        color: #ffffff;
+        font-size: rem(36px);
+        font-weight: bolder;
+        width: rem(400px);
+        height: rem(80px);
+        text-align: center;
+        line-height: rem(80px);
+        border-radius: rem(10px);
+      }
+    }
+  }
+
+  // 活动结束
+  .activity-over {
+    .activity-over-content {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: rem(520px);
+      height: rem(510px);
+      background-color: #ffffff;
+      border-radius: rem(10px);
+      text-align: center;
+      .over-content-header {
+        margin: rem(40px) 0 rem(60px);
+        width: rem(120px);
+        height: rem(120px);
+      }
+      .over-content-desc {
+        padding: 0 rem(46px);
+        text-align: left;
+        font-size: rem(28px);
+        color: #666;
+        line-height: 1.5;
+      }
+      .over-content-footer {
+        position: absolute;
+        background-color: #CCCCCC;
+        width: 100%;
+        height: rem(96px);
+        bottom: 0;
+        text-align: center;
+        border-bottom-left-radius: rem(10px);
+        border-bottom-right-radius: rem(10px);
+        img {
+          margin-top: rem(8px);
+          width: rem(240px);
+          height: rem(80px);
+        }
+      }
+    }
+  }
+}

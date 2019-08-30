@@ -1,0 +1,81 @@
+@charset "UTF-8";
+//电子书——书籍详情
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_bottomSharePart"; //底部分享弹层
+@import "../../components/_scrollShareBtn";
+
+.al-ebookList{
+    background: #fff;
+    padding: 0 rem(30px);
+    ul{}
+    li{
+        padding: rem(50px) 0;
+        border-bottom: solid 1px  #E4E9ED;
+        .ebookImg{
+            display: inline-block;
+            vertical-align: text-top;
+            img{
+                width: rem(156px);
+                height: rem(222px);
+                border-radius: rem(6px);
+                box-shadow: 0 rem(4px) rem(17px) 0 rgba(75,75,75,0.55);
+            }
+        }
+        .ebookDetail{
+            width: rem(480px);
+            display: inline-block;
+            margin-left: rem(40px);
+            vertical-align: text-top;
+        }
+        .ebookName{
+            font-size: rem(36px);
+            color: #000000;
+            display:block;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            margin-bottom: rem(13px);
+            font-weight: bold;
+        }
+        .ebookIntroduction{
+            font-size: rem(30px);
+            color: #555;
+            line-height: rem(45px);
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* autoprefixer: off */
+            -webkit-box-orient: vertical;
+            /* autoprefixer: on */
+            overflow: hidden;
+            margin-bottom: rem(35px);
+            height:rem(81px);
+        }
+        .ebookTag{
+            font-size: 0;
+            i{
+                display: inline-block;
+                height: rem(36px);
+                line-height: rem(36px);
+                padding: 0 rem(16px);
+                font-size: rem(24px);
+                color: #909090;
+                font-style: normal;
+                border: 1px solid #909090;
+                border-radius: 4px;
+            }
+            p{
+                font-size: rem(28px);
+                color: #909090;
+                display: inline-block;
+            }
+            p:last-child{
+                margin-left: rem(40px);
+            }
+        }
+    }
+}

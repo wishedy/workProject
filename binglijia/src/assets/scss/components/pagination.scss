@@ -1,0 +1,102 @@
+@charset "UTF-8";
+@import "../modules/common-modules";
+.pager{
+    content: '';
+    display: table;
+    clear: both;
+    margin: 0 auto;
+    @include userNoSelect();
+}
+.pagination {
+    height:40px;
+    padding:0;
+    margin: 50px auto 50px;
+    .pgTxCenter{
+        text-align: center;
+        float:left;
+    }
+    li{
+        display:inline-block;
+        *display:inline;
+        *zoom:1;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin-right: 11px;
+        text-align: center;
+        @include fontSize(18px,#AAAAAA);
+        overflow:hidden;
+        padding:0;
+        cursor: pointer;
+        &:hover{
+            color:#2888FF;
+        }
+    }
+    .pgNext{
+        width:40px;
+    }
+    .pgAfter{
+        margin-right: 0;
+    }
+    .pgCurrent{
+        background: #2888FF;
+        color:#FFFFFF;
+        &:hover{
+            color:#FFFFFF;
+        }
+    }
+    .pgEmpty,.page-number-omit{
+        cursor:default;
+    }
+    i{
+        display: inline-block;
+        width: 7px;
+        height: 12px;
+    }
+    .pgpre i{
+        background: url("/static/images/common/icon/search_arrow_left.png") no-repeat;
+    }
+    .pgAfter i{
+        background: url("/static/images/common/icon/search_arrow_right.png") no-repeat;
+    }
+    .pgpre.pgEmpty i{
+        background: url("/static/images/common/icon/search_arrow_left_limit.png") no-repeat;
+    }
+    .pgAfter.pgEmpty i{
+        background: url("/static/images/common/icon/search_arrow_right_limit.png") no-repeat;
+    }
+    .pgJump{
+        float:left;
+        @include fontSize(15px,#AAAAAA);
+        line-height: 40px;
+        margin-left: 11px;
+    }
+    .pgText{
+        margin-left:5px;
+    }
+    .pgJumpNumber{
+        width:38px;
+        height: 38px;
+        text-align: center;
+        outline: none;
+        background: #FFFFFF;
+        border: 1px solid #CCCCCC;
+        @include fontSize(18px,#000);
+    }
+    .pgJumpSubmit{
+        display: inline-block;
+        margin-left: 10px;
+        text-align: center;
+        background: none;
+        @include fontSize(15px,#AAAAAA);
+        line-height: 40px;
+        overflow: hidden;
+        padding: 0;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        &:hover{
+            color:#2888FF;
+        }
+    }
+}

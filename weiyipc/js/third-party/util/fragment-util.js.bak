@@ -1,0 +1,10 @@
+function getFragments() {
+
+alert($("[fragment]"));
+
+	$("[fragment]").each(function() {
+		var url = $(this).attr("fragment");
+		//alert(url);
+		$(this).load(url);
+	});
+}

@@ -1,0 +1,19 @@
+<import src="/components/loading$2ff823fe" /><template name="login$d8a5e3e6">
+  <view class="_section data-v-e3939130 out-box">
+    <view class="_section data-v-e3939130 image-head"></view>
+    <view class="_section data-v-e3939130 loginRegisterBox">
+      <view class="_article data-v-e3939130 tphoneTips">请填写手机号，仅对医生可见</view>
+      <view class="_p data-v-e3939130 phoneInput"><input type="number" placeholder="请输入手机号" bindblur="handleProxy" bindinput="handleProxy" value="{{phoneMessage}}" placeholder-class="placeholderClass" cursor-spacing="{{100}}" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_input data-v-e3939130 {{[clearPhone ? 'hasContent' : '']}}" />
+        <view wx:if="{{clearPhone}}" class="_i data-v-e3939130 icon-clear" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}"></view>
+      </view>
+      <view class="_p data-v-e3939130 codeInput"><input type="number" placeholder="请输入验证码" value="{{codeMessage}}" bindinput="handleProxy" bindblur="handleProxy" cursor-spacing="{{100}}" placeholder-class="placeholderClass" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_input data-v-e3939130 {{[clearCode ? 'hasContent' : '']}}" />
+        <view wx:if="{{clearCode}}" class="_i data-v-e3939130 icon-clear" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}"></view> <label wx:if="{{!countShow}}" class="_span data-v-e3939130 getCode" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">{{getCodeText}}</label><label wx:else class="_span data-v-e3939130 codeCountdown {{[codeMessage.length > 0 ? 'hasContent' : '']}}">
+          <view class="_i data-v-e3939130">{{codeTime}}</view>秒后重新获取
+        </label>
+      </view>
+      <view class="_section data-v-e3939130 stipulation">登录代表您已同意<view bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}" class="_i data-v-e3939130">《唯医互联网骨科医院服务协议》</view>
+      </view>
+    </view>
+    <form class="_form data-v-e3939130 btn-primary go-next" bindsubmit="handleProxy" report-submit="true" data-eventid="{{'7'}}" data-comkey="{{$k}}"><button class="_button data-v-e3939130 loginButton" disabled="{{loading}}" bindtap="handleProxy" formType="submit" data-eventid="{{'6'}}" data-comkey="{{$k}}">登录</button></form> <template wx:if="{{loading}}" data="{{...$root[$kk+'0'], $root}}" is="loading$2ff823fe"></template>
+  </view>
+</template>

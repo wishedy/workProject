@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="">
+<meta name="Keywords" content="临床指南,医学会议,手术视频,医学教学视频,医学科研视频,唯医,allinmd">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            function getpara(symbol){
+                var url=document.URL;
+                var param={};
+                var str,item;
+                if(url.lastIndexOf(symbol?symbol:"?")>0)
+                {
+                    str=url.substring(url.lastIndexOf(symbol?symbol:"?")+1,url.length);
+                    var arr=str.split("&");
+                    for(var i=0;i<arr.length;i++)
+                    {
+                        item =  arr[i].split("=");
+                        param[item[0]] = decodeURI(item[1]);
+                    }
+                }
+                return param;
+            };
+            window.location.href='//m.allinmd.cn/dist/organization/organization.html?orgId='+getpara().cid;
+        }
+    </script>
+<title>医学学术组织专栏,唯医组织频道,allinmd.cn</title>
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+<!-- build:css /dest/channel/organization/organization_home.css -->
+<link rel="stylesheet" href="/css/v3/base.css">
+<link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css" />
+<link rel="stylesheet" href="/css/v3/pageFooter.css" />
+<link href="/css/common/base.css" rel="stylesheet" type="text/css" />
+<link href="/css/channel/organization.css" rel="stylesheet" type="text/css" />
+<link href="/js/modules/user-list/module.user-list.css" rel="stylesheet" type="text/css"/>
+<link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css"/>
+<link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css"/>
+<link href="/js/modules/auth/module.auth.css" rel="stylesheet" type="text/css" />
+<link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css" />
+<link href="/js/modules/publish/publish.css" rel="stylesheet" type="text/css"/>
+<link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" type="text/css"/>
+<link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+<link href="/js/modules/weixin/module.weixin.css" rel="stylesheet" type="text/css"/>
+<link href="/js/third-party/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css" />
+<link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css" />
+<!--<link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>-->
+<link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+<!--<link href="/css/column/videoPK_v2/apply_zhezhao.css" rel="stylesheet" type="text/css"/>-->
+<link href="/js/third-party/pagination/pager.css" rel="stylesheet" type="text/css" />
+<!-- endbuild -->
+
+<!--[if lte IE 8]>
+<script src="/js/third-party/html5shiv.js"></script>
+<![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+
+<body data-alcode="137">
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav" data-alcode-mod='54'>
+                <li><a href="/">热门</a></li>
+                <li><a href="/pages/channel/case/case_index.html">病例</a></li>
+                <li><a href="/pages/channel/video/video_index.html">视频</a></li>
+                <li><a href="/pages/channel/conference/meeting_index.html">会议</a></li>
+                <li><a href="/pages/channel/doc/doc_index.html">文库</a></li>
+                <!--<li><a href="/pages/channel/topic/topic_index.html">话题</a></li>-->
+                <li><a href="/html/index/fellowship/fellowship_home.html">进修</a></li>
+                <li class="active"><a href="/pages/channel/organization.html">组织</a></li>
+                <!--<li><a href="/pages/channel/product.html">药品</a></li>-->
+                <li><a href="//research.allinmd.cn/" target="_blank">多中心平台</a><i class="al-newNav"></i></li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+
+	<div class="organization_mian">
+      <div class="organization_content">
+          <div class="organization_content_top">
+              <div class="organization_content_img ev-logo"></div>
+              <div class="organization_content_name font_yahei ev-nickname"></div>
+              <div class="organization_content_text ev-signature"></div>
+              <div class="organization_content_but">
+                  <div class="organization_content_but_l ev-orgFollow"></div>
+                  <div class="clear"></div>
+              </div>
+          </div>
+          <div class="organization_content_cont">
+              <div class="organization_content_cont_l">
+                  <div class="organization_list_l">
+	                  <div class="organization_content_title font_yahei ev-listTitle">介绍</div>
+	                  <ul class="v_l_list ev-list">
+			          	
+			            <div class="clear"></div>
+			          </ul>
+		          </div>
+		          <div class="organization_list_l_bottom"></div>
+		          <div class="pagination">
+				  	<div class="pager"></div>
+			      </div>
+              </div>
+              <div class="organization_content_cont_r">
+                <div class="organization_content_r_top cursor">
+                     <div class="organization_content_r_fans ev-sunNavi">
+                         <div class="organization_content_r_fans_l" data-events="fans">
+                             <div class="or_cont_t_fans font_yahei ev-fansNum"></div>
+                             <div class="or_cont_t_fans_text">粉丝</div>
+                         </div>
+                         <div class="organization_content_r_fans_l ev-naviResource" style="border:none;" data-events="resource">
+                             <div class="or_cont_t_fans font_yahei ev-resourceNum"></div>
+                             <div class="or_cont_t_fans_text">资源</div>
+                         </div>
+                         <div class="clear"></div>
+                     </div>
+                 </div>
+                 <div class="organization_content_r_top_bottom"></div>
+                 <div class="organization_content_r_top">
+                  <ul class="organization_cont_r font_yahei">
+	                <li>
+	                  <div class="organization_cont_mr_home "></div>
+	                  <div class="case_b ev-accessHome"></div>
+	                  <div class="clear"></div>
+	                </li>
+                  </ul>
+                 </div>
+                 <div class="organization_content_r_top_bottom"></div>
+                <div class="organization_content_r_top">
+                  <ul class="organization_cont_r font_yahei cursor ev-navi">
+                  </ul>
+                 </div>
+                 <div class="organization_content_r_top_bottom"></div>
+              </div>
+              <div class="clear"></div>
+          </div>
+      </div>
+       
+  </div>
+    <!--公共底部 start-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--公共底部 End-->
+</section>
+<script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/lib/jquery/jquery.form.js"></script>
+<script src="/js/lib/jquery/jquery.cookie.js"></script>
+<!-- build:js /dest/channel/organization/organization_home.js -->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.getUrlParams.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/comm.ajaxExistHtml.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<!--<script src="/js/comm/comm.track.js"></script>-->
+<script src="/js/scene/scene.header.js"></script>
+
+<script src="/js/modules/list-template/module.list-template.js"></script>
+<script src="/js/plugins/follow/plugin.follow.js"></script>
+<script src="/js/modules/user-list/module.user-list.js"></script>
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js" ></script>
+<!--<script src="/js/modules/auth/module.auth.js"></script>-->
+<script src="/js/modules/user/module.user.js"></script>
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/validate-email/module.validate-email.js"></script>
+<script src="/js/modules/weixin/module.welcome.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"> </script>
+<!--<script src="/js/scene/column/videoPK_v2/scene.column.videoPK_2.process.js"></script>-->
+<!--<script src="/js/modules/publish/module.select-type.js"></script>-->
+<script src="/js/modules/publish/module.video-upload.js" ></script>
+<script src="/js/modules/publish/module.doc-upload.js" ></script>
+<!--<script src="/js/modules/publish/module.topic-upload.js" ></script>-->
+<!--<script src="/js/modules/publish/module.case-upload.js" ></script>-->
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+
+<script src="/js/third-party/uploadify/swfobject2.2.js" ></script>
+<script src="/js/third-party/uploadify/jquery.uploadify.js" ></script>
+<script src="/js/third-party/ajaxfileupload.js" ></script>
+<script src="/js/third-party/qiniu/qiniu.js" ></script>
+<script src="/js/third-party/qiniu/ui.js" ></script>
+<script src="/js/third-party/plupload/plupload.full.min.js" ></script>
+<script src="/js/third-party/plupload/i18n/zh_CN.js" ></script>
+<script src="/js/third-party/jquery_lazyload/jquery.lazyload.min.js"></script>
+<script src="/js/third-party/jquery_lazyload/jquery.scrollstop.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script><script src='/js/third-party/md5.js'></script>
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<script src="/js/third-party/pagination/jquery.pager.js"></script>
+<script src="/js/scene/channel/scene.channel.organization_home.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

@@ -1,0 +1,494 @@
+/*%al-newsNum {
+    border-radius:rem(50px);
+    background-color: #F34B4B;
+    font-style: normal;
+    position: absolute;
+    top: rem(-10px);
+    right: rem(12px);
+    display: block;
+    height: rem(32px);
+    max-width: rem(42px);
+    line-height: rem(32px);
+    @include font-dpr(10px);
+    color: #fff;
+    padding: 0 rem(10px);
+}*/
+.icon-systemMark:before {
+    content: "";
+    display: inline-block;
+    width: 1.10667rem;
+    height: 0.4rem;
+    vertical-align: middle;
+    margin-right: 0.12rem;
+    background-image: url("//img50.allinmd.cn/pages/living/system_Live.png");
+    background-size: 100% 100%;
+}
+
+.icon-livingMaster:before {
+    content: "";
+    display: inline-block;
+    width: 1.10667rem;
+    height: 0.4rem;
+    vertical-align: middle;
+    margin-right: 0.12rem;
+    background-image: url("//img50.allinmd.cn/pages/living/Anchor_Live.png");
+    background-size: 100% 100%;
+}
+
+.icon-livingNoticeIcon:before {
+    content: "";
+    display: inline-block;
+    width: 0.37333rem;
+    height: 0.32rem;
+    vertical-align: middle;
+    margin-right: 0.18667rem;
+    background-image: url("//img50.allinmd.cn/pages/living/Notice_Live.png");
+    background-size: 100% 100%;
+}
+
+.slide-wrapper {
+    overflow: hidden;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+    min-height: 1000px;
+}
+
+.slide-wrapper:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.slide-content {
+    float: left;
+    background-color: #fff;
+}
+
+.al-livingVideoBox {
+    width: 100%;
+    height: 5.62667rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.al-livingVideoBox > img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+
+.al-livingWatcherMsg {
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.al-livingWatcherMsg > section {
+    position: relative;
+}
+
+.al-livingChatBox {
+    overflow: auto;
+}
+
+.al-livingContentWrapper {
+    box-sizing: border-box;
+    position: relative;
+    background-color: #f8f8f8;
+}
+
+.al-livingWatcherChangeBar {
+    background-color: #fff;
+    text-align: center;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    border-bottom: 1px solid #dfdfdf;
+    box-sizing: border-box;
+}
+
+.al-livingWatcherChangeBar a {
+    display: inline-block;
+    width: 33.333%;
+    float: left;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+[data-dpr="2"] .al-livingWatcherChangeBar a {
+    font-size: 32px;
+}
+
+[data-dpr="3"] .al-livingWatcherChangeBar a {
+    font-size: 48px;
+}
+
+.al-livingWatcherChangeBar a.active {
+    color: #3598db;
+    position: relative;
+}
+
+.al-livingWatcherChangeBar a.active:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0.05333rem;
+    background-color: #3598db;
+    display: block;
+}
+
+.al-livingWatcherChangeBar:after {
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    clear: both;
+}
+
+.onlineCountBg {
+    width: 0.66667rem;
+    display: inline-block;
+    margin-right: 0.13333rem;
+}
+
+.shareBg {
+    width: 0.4rem;
+    display: inline-block;
+    margin-right: 0.13333rem;
+}
+
+.shareIcon {
+    background: #3598db;
+    color: #fff;
+}
+
+.al-livingWatcherContent {
+    background-color: #f8f8f8;
+    padding: 0.4rem;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.al-livingWatcherContentItem {
+    margin: 0.4rem 0;
+    line-height: 1.5;
+}
+
+.al-livingWatcherContentItem .al-livingUser {
+    color: #3598db;
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+[data-dpr="2"] .al-livingWatcherContentItem .al-livingUser {
+    font-size: 30px;
+}
+
+[data-dpr="3"] .al-livingWatcherContentItem .al-livingUser {
+    font-size: 45px;
+}
+
+.al-livingWatcherContentItem .al-livingComment {
+    color: #555;
+    font-size: 15px;
+    vertical-align: middle;
+    margin-left: 0.06667rem;
+}
+
+[data-dpr="2"] .al-livingWatcherContentItem .al-livingComment {
+    font-size: 30px;
+}
+
+[data-dpr="3"] .al-livingWatcherContentItem .al-livingComment {
+    font-size: 45px;
+}
+
+.al-livingWatcherContent .gag {
+    font-size: 15px;
+    font-style: normal;
+    vertical-align: middle;
+    color: #F04B4B;
+}
+
+[data-dpr="2"] .al-livingWatcherContent .gag {
+    font-size: 30px;
+}
+
+[data-dpr="3"] .al-livingWatcherContent .gag {
+    font-size: 45px;
+}
+
+.al-livingWatcherContent .gag input {
+    color: #F04B4B;
+}
+
+.al-livingWatcherContent .welcomeUser {
+    color: #FF9224;
+    font-size: 15px;
+}
+
+[data-dpr="2"] .al-livingWatcherContent .welcomeUser {
+    font-size: 30px;
+}
+
+[data-dpr="3"] .al-livingWatcherContent .welcomeUser {
+    font-size: 45px;
+}
+
+.al-livingPersonalMsg {
+    position: relative;
+}
+
+.al-livingPersonalMsg .al-livingPersonalImg {
+    width: 1.06667rem;
+    height: 1.06667rem;
+    border-radius: 50%;
+    background-color: transparent;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.26667rem;
+}
+
+.al-livingPersonalMsg .al-livingPersonalImg > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.al-livingPersonalMsg .al-livingPersonalImg > a > img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    border-radius: 50%;
+}
+
+.al-livingPersonalMsg > figcaption {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.al-livingPersonalMsg > figcaption h3 {
+    color: #222;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 0.06667rem;
+}
+
+[data-dpr="2"] .al-livingPersonalMsg > figcaption h3 {
+    font-size: 32px;
+}
+
+[data-dpr="3"] .al-livingPersonalMsg > figcaption h3 {
+    font-size: 48px;
+}
+
+.al-livingPersonalMsg > figcaption h3 span {
+    vertical-align: middle;
+}
+
+.al-livingPersonalMsg > figcaption p {
+    color: #909090;
+    font-size: 13px;
+}
+
+[data-dpr="2"] .al-livingPersonalMsg > figcaption p {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-livingPersonalMsg > figcaption p {
+    font-size: 39px;
+}
+
+.al-livingPersonalMsg > figcaption p .hospital {
+    margin-left: 0.2rem;
+}
+
+.al-livingPersonalMsg > figcaption .btn-switch {
+    top: 25%;
+    right: 0;
+    -webkit-transform: normal;
+        -ms-transform: normal;
+            transform: normal;
+}
+
+.al-livingBaseMsg {
+    margin-top: 0.53333rem;
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: 0.53333rem;
+}
+
+.al-livingBaseMsg > h3 {
+    color: #222;
+    font-size: 13px;
+    margin-bottom: 0.2rem;
+}
+
+[data-dpr="2"] .al-livingBaseMsg > h3 {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-livingBaseMsg > h3 {
+    font-size: 39px;
+}
+
+.al-livingBaseMsg > p {
+    font-size: 13px;
+}
+
+[data-dpr="2"] .al-livingBaseMsg > p {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-livingBaseMsg > p {
+    font-size: 39px;
+}
+
+.al-livingBaseMsg > p .type {
+    color: #3598db;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.al-livingBaseMsg > p .point {
+    width: 0.05333rem;
+    height: 0.05333rem;
+    border-radius: 50%;
+    background-color: #909090;
+    margin: 0 0.18667rem;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.al-livingBaseMsg > p .hot {
+    color: #909090;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.al-livingBaseMsg > p .hot i {
+    font-style: normal;
+    margin-left: 0.04rem;
+}
+
+.al-livingNoticeContent {
+    margin-top: 0.53333rem;
+}
+
+.al-livingNoticeContent .al-livingNoticeTips {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 0.53333rem;
+}
+
+[data-dpr="2"] .al-livingNoticeContent .al-livingNoticeTips {
+    font-size: 28px;
+}
+
+[data-dpr="3"] .al-livingNoticeContent .al-livingNoticeTips {
+    font-size: 42px;
+}
+
+.al-livingNoticeContent .al-livingNoticeTips span {
+    vertical-align: middle;
+}
+
+.al-livingNoticeContent .al-livingNoticeText {
+    color: #333;
+    font-size: 15px;
+}
+
+[data-dpr="2"] .al-livingNoticeContent .al-livingNoticeText {
+    font-size: 30px;
+}
+
+[data-dpr="3"] .al-livingNoticeContent .al-livingNoticeText {
+    font-size: 45px;
+}
+
+.al-commentInputBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #dfdfdf;
+    padding: 0.16rem 0.26667rem;
+    background-color: #f8f8f8;
+    height: 1.17333rem;
+    box-sizing: border-box;
+}
+
+.al-commentInputBar .al-livingInput {
+    width: 96%;
+    height: 0.85333rem;
+    background-color: #fff;
+    border: 1px solid #e4e9ed;
+    color: #333;
+    font-size: 14px;
+    padding-left: 0.26667rem;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+[data-dpr="2"] .al-commentInputBar .al-livingInput {
+    font-size: 28px;
+}
+
+[data-dpr="3"] .al-commentInputBar .al-livingInput {
+    font-size: 42px;
+}
+
+.al-commentInputBar .al-livingInput::-webkit-input-placeholder {
+    color: #aaa;
+    font-family: "microsoft yahei";
+}
+
+.al-commentInputBar .al-livingInput::-moz-placeholder {
+    color: #aaa;
+    font-family: "microsoft yahei";
+}
+
+.al-commentInputBar.gag .al-livingInput::-webkit-input-placeholder {
+    color: #f34b4b;
+    font-family: "microsoft yahei";
+}
+
+.al-commentInputBar.gag .al-livingInput::-moz-placeholder {
+    color: #f34b4b;
+    font-family: "microsoft yahei";
+}
+
+.al-livingNewComment {
+    color: #2899e6;
+    background-color: #c5e4f9;
+    font-size: 12px;
+    display: inline-block;
+    padding: 0.2rem 0.33333rem;
+    border-radius: 66.66667rem;
+    position: absolute;
+    right: 0.13333rem;
+    bottom: 1.30667rem;
+    border-bottom-right-radius: 0;
+}
+
+[data-dpr="2"] .al-livingNewComment {
+    font-size: 24px;
+}
+
+[data-dpr="3"] .al-livingNewComment {
+    font-size: 36px;
+}
+
+.al-vipUser {
+    /*@extend %al-vipUser;*/
+}
+
+.al-vipUser:after {
+    vertical-align: middle;
+}

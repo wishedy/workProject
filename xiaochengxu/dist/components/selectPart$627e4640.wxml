@@ -1,0 +1,35 @@
+<import src="/components/loading$2ff823fe" />
+<import src="/components/toast$1074ede9" /><template name="selectPart$627e4640">
+  <view style="height:100%;position:absolute;top:0;left:0;right:0;bottom:0" class="_div data-v-c7b581ca">
+    <loading wx:if="{{finish}}" class="_loading data-v-c7b581ca"></loading>
+    <view class="_section data-v-c7b581ca main-inner select-part {{[isFullScreen ? 'full-screen' : '']}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+      <view class="_section data-v-c7b581ca main-inner-content" hidden="{{!(allReady)}}">
+        <view class="_section data-v-c7b581ca body-picture body-picture-f {{pointClassObject}}">
+          <view class="_figure data-v-c7b581ca body-picture-content">
+            <image class="_img data-v-c7b581ca body-picture-img" src="{{patientBody}}"></image>
+            <image wx:key="index" key="{{index}}" src="{{item}}" wx:for="{{imgArray}}" wx:for-index="index" wx:for-item="item" class="_img data-v-c7b581ca"></image>
+            <view class="_section data-v-c7b581ca pain-point-box">
+              <view class="_div data-v-c7b581ca pain-point" wx:key="pIndex" key="{{pIndex}}" bindtap="handleProxy" data-eventid="{{'0-'+pIndex}}" data-comkey="{{$k}}" wx:for="{{pointList.front}}" wx:for-index="pIndex" wx:for-item="item"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_section data-v-c7b581ca sex-select-box">
+      <view class="_ul data-v-c7b581ca sex-box">
+        <view bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_li data-v-c7b581ca {{ladyActive}}"><button class="_button data-v-c7b581ca lady"></button> <label class="_span data-v-c7b581ca">女</label></view>
+        <view bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" class="_li data-v-c7b581ca {{manActive}}"><button class="_button data-v-c7b581ca man"></button> <label class="_span data-v-c7b581ca">男</label></view>
+        <view bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}" class="_li data-v-c7b581ca {{childActive}}"><button class="_button data-v-c7b581ca child"></button> <label class="_span data-v-c7b581ca">儿童</label></view>
+      </view>
+    </view>
+    <view class="_div data-v-c7b581ca overturnBox {{[isIPad ? 'isIPad' : '']}}" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}"><button class="_button data-v-c7b581ca body-picture-overturn"></button> <label class="_span data-v-c7b581ca overturnText">点击转身</label></view>
+    <view class="_section data-v-c7b581ca part-choice-box {{clickDirection}}" wx:if="{{secondShow && !loading}}">
+      <view class="_ul data-v-c7b581ca part-box" catchtap="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}">
+        <view class="_li data-v-c7b581ca btnBox-btn {{[index == currentThreeLevel ? 'on' : '']}}" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'6-'+index}}" data-comkey="{{$k}}" wx:for="{{secondList}}" wx:for-index="index" wx:for-item="item">
+          <view class="_div data-v-c7b581ca btn-box">{{item.partNameAlias}}</view>
+        </view>
+      </view>
+      <form bindsubmit="handleProxy" report-submit="true" data-eventid="{{'9'}}" data-comkey="{{$k}}" class="_form data-v-c7b581ca"><button class="_button data-v-c7b581ca part-choice-ensure" bindtap="handleProxy" formType="submit" data-eventid="{{'8'}}" data-comkey="{{$k}}">确定</button></form>
+    </view> <template wx:if="{{loading}}" data="{{...$root[$kk+'1'], $root}}" is="loading$2ff823fe"></template> <template wx:if="{{toastShow}}" data="{{...$root[$kk+'2'], $root}}" is="toast$1074ede9"></template>
+  </view>
+</template>

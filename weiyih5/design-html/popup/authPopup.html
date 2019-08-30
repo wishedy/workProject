@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+    if (IsPC()) {
+        window.location.href = '/pages/discover/discover_index.html';
+    }
+    </script>
+    <title>认证弹层</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="keywords" content="医学资源分类，医学资源查找，手术视频,医学文献,病例讨论,骨科,唯医,allinmd">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="//m.allinmd.cn/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/authentication/authPopup.css">
+    <link rel="stylesheet" href="/css/vander/swiper.min.css">
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="192">
+<section class="authPopup">
+    <aside class="authPopupCont">
+        <figure><img src="/images/img50/authentication/auth/close.png"></figure>
+        <aside class="exhibitionImg submit"><img src="/images/img50/authentication/auth/success_hint.png"></aside><!--提交成功图片-->
+        <article class="titleText">提交成功</article>
+        <article class="detailText color777">认证医师审核将在1个工作日内完成，请耐心等待</article><!--色值为#777777 浅色-->
+        <aside class="exhibitionImg authTip"><img src="/images/img50/authentication/auth/attestation.png"></aside><!--提示认证图片-->
+        <aside class="exhibitionImg submitFail"><img src="/images/img50/authentication/auth/defeated_hint.png"></aside><!--提交失败图片-->
+        <article class="titleText">提交成功</article>
+        <article class="detailText color777">认证医师审核将在1个工作日内完成，请耐心等待</article><!--色值为#777777 浅色-->
+        <article class="detailText color333">未认证用户只能观看3分钟<br />是否前往认证？</article><!--色值为#333333 深色    在哪换行就加br标签-->
+        <!--<button class="hollowBtn">知道了</button>&lt;!&ndash;空心按钮&ndash;&gt;-->
+        <button class="solidBtn">前往认证</button><!--实心按钮-->
+        <article class="authNone">暂不认证</article>
+    </aside>
+</section>
+</body>
+
+</html>
+
+

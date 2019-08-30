@@ -1,0 +1,17 @@
+<template name="BasePickerNational$be5153d8">
+  <view class="_section data-v-618ac0d9 picker-main {{[defaultClass ? 'defualtClass' : '']}}">
+    <view class="_view data-v-618ac0d9 section" wx:if="{{selectType=='1'}}">
+      <picker class="_picker data-v-618ac0d9 national-picker" mode="selector" bindchange="handleProxy" value="{{value}}" range="{{minzuList}}" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+        <view class="_view data-v-618ac0d9 picker"></view>
+      </picker>
+    </view>
+    <view class="_view data-v-618ac0d9 picker-national" wx:if="{{selectType=='2'}}">
+      <view class="_section data-v-618ac0d9 timeSelect-bar"><label class="_span data-v-618ac0d9 timeCancel-enBtn" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">取消</label> <label class="_span data-v-618ac0d9 timeSelect-enBtn" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">确定</label></view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" class="_picker-view data-v-618ac0d9">
+        <picker-view-column class="_picker-view-column data-v-618ac0d9">
+          <view wx:key="index" key="{{index}}" style="line-height: 50px;text-align:center" wx:for="{{minzu}}" wx:for-index="index" wx:for-item="item" class="_view data-v-618ac0d9">{{item.name}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+</template>

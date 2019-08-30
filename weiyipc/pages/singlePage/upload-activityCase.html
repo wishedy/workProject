@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href='//m.allinmd.cn/pages/discover/discover_expert.html';
+        }
+    </script>
+    <title>上传病例</title>
+    <meta name="keywords" content="权威专家，医学专家，医学大佬，主任医师，权威医师，医生沟通，学术专栏，唯医,allinmd">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <!-- build:css /dest/singlePage/upload-activityCase.css -->
+    <link rel="stylesheet" href="/css/v3/base.css" />
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css" />
+    <link rel="stylesheet" href="/css/v3/pageFooter.css" />
+    <link rel="stylesheet" href="/js/modules/indexLogin/module.indexLogin.css">
+    <link rel="stylesheet" href="/js/modules/auth/module.auth.css"/>
+    <link rel="stylesheet" href="/js/modules/user/module.user.css"/>
+    <link rel="stylesheet" href="/js/modules/user/module.user-v2.css"/>
+    <link rel="stylesheet" href="/js/modules/find-password-v2/module.find-password-v2.css" />
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/publish/publish.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/modules/view-big-img/module.view-big-img.css" rel="stylesheet" type="text/css" />
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/css/v3/pages/upload_case/upload_case.css"/>
+    <!--endbuild-->
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="298">
+<!--全内容容器——mainInner-->
+<section class="al-mainInner" >
+    <aside class="al-mainSidebar al-mainSidebarCollapse">
+        <header class="al-mainLogo">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+        <section class="al-mainSidebarList">
+            <ul data-alcode-mod='52'>
+                <li class="al-mainSidebarItem">
+                    <a href="/">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>首页</h4>
+                            <p>HOME</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="/pages/college/college_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_college.png" alt="">
+                        <figcaption>唯医学院</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>唯医学院</h4>
+                            <p>HOME</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="/pages/discover/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发现</h4>
+                            <p>DISCOVERY</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release active">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发布</h4>
+                            <p>RELEASE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>消息</h4>
+                            <p>MESSAGE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                        <figcaption>我的</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>我的</h4>
+                            <p>PROFILE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList" data-alcode-mod='72'>
+                <li class="al-mainSidebarItem al-siteEmr">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_emrIcon.png" alt="">
+                        <figcaption>病历管理</figcaption>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-siteSwitch">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_siteSwitch.png" alt="">
+                        <figcaption class="ev_siteSwitchName">骨科</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4 class="ev_siteSwitchName">骨科</h4>
+                                <p>SITE SWITCH</p>
+                            </div>
+                        </article>
+                    </a>
+                    <div class="al_siteSwitch_popBox">
+                        <div class="al_siteSwitch_orthopaedics"><i></i>骨科</div>
+                        <div class="al_siteSwitch_handSurgery"><i></i>手外科</div>
+                    </div>
+                </li>
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>小唯</h4>
+                            <p>SERVICE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="/pages/singlePage/iphone-app-download.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>手机端</h4>
+                            <p>MOBILES</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <section class="uploadCase">
+        <!--弹层-->
+        <aside class="editorPupop" style="display: none;">
+            <aside class="editorPupopCont">
+                <div class="closeIcon"><i></i></div>
+                <p>确定放弃本次编辑吗？</p>
+                <div class="editorBtn">
+                    <button class="save">保存草稿并离开</button>
+                    <button class="enter">确定</button>
+                </div>
+            </aside>
+        </aside>
+        <!--弹层 END-->
+        <!--失败提示-->
+        <section class="uploadCaseError">
+            <i></i><span>图片上传失败，请重新上传</span>
+        </section>
+        <!--右侧导航-->
+        <aside class="uploadNav">
+            <p>点击定位</p>
+            <ul class="uploadNavCont">
+                <li class="active" data-dom="ev-essentialInfor">1. 基本信息</li>
+                <li data-dom="ev-caseInfo">2. 病例信息</li>
+                <li data-dom="ev-imageInfo">3. 影像资料</li>
+            </ul>
+        </aside>
+
+        <section class="uploadHeader">
+            <aside class="uploadCont">
+                <p class="saveDraft">保存草稿</p>
+                <p class="cancel"><i class="ev-caseCancel">取消</i><span class="ev-submitBtn">发布</span></p>
+            </aside>
+        </section>
+
+        <section class="essentialInformation msgMargin ev-essentialInfor">
+            <aside class="title">基本信息</aside>
+            <aside class="option ev-must ev-caseTitle">
+                <p class="titleText"><i></i>标题</p>
+                <textarea id="case_name" placeholder="请输入病例标题（必填）"></textarea>
+                <b>25</b>
+            </aside>
+            <aside class="option ev-sex ev-must ev-caseMale">
+                <p class="titleText" style="float:left;"><i></i>病人性别</p><p><i class="male ev-male" data-type="1"></i><img src="/images/img10/v3/upload_case/male.png"></p><p><i class="male ev-famale" data-type="2"></i><img src="/images/img10/v3/upload_case/female.png"></p>
+            </aside>
+            <aside class="option ev-must ev-caseAge">
+                <p class="titleText" style="float:left;"><i></i>病人年龄</p>
+                <div class="years">
+                    <p><input type="text" id="age">岁</p>
+                    <p class="default"><input type="text" id="month" disabled="disabled">月</p>
+                    <p class="default"><input type="text" id="day" disabled="disabled">天</p>
+                </div>
+            </aside>
+        </section>
+
+        <section class="essentialInformation ev-caseInfo">
+            <aside class="title"><p>病例信息</p><div class="ev-DIYcase">自定义病例项</div></aside>
+            <div class="ev-fixedContent"></div><!--用来填充fixed之后的空白-->
+            <aside class="supplement" style="display: none;">
+                <div class="supplementTitle"><p>补充资料</p><p class="dataText ev-caseInfoUp">收起</p></div>
+                <ul>
+                  <!--  <li><i></i>既往史</li>
+                    <li><i></i>个人史</li>
+                    <li><i></i>家族史</li>
+                    <li><i></i>辅助检查</li>
+                    <li><i></i>诊断依据</li>
+                    <li><i></i>鉴别诊断</li>
+                    <li><i></i>治疗过程</li>
+                    <li><i></i>手术名称</li>
+                    <li><i></i>手术记录</li>-->
+                    <li><i></i>产品信息</li>
+                 <!--   <li><i></i>康复计划</li>
+                    <li><i></i>随访记录</li>
+                    <li><i></i>临床转归</li>-->
+                </ul>
+            </aside>
+            <aside class="option ev-must ev-caseMain">
+                <p class="titleText"><i></i>主诉</p>
+                <textarea placeholder="请输入主诉（必填）" id="main_narrate"></textarea>
+                <b>50</b>
+            </aside>
+            <aside class="option ev-must ev-caseHos">
+                <p class="titleText"><i></i>现病史</p>
+                <textarea placeholder="请输入现病史（必填）" id="illness_history"></textarea>
+                <b>1500</b>
+            </aside>
+            <aside class="option ev-must ev-pastHistory">
+                <p class="titleText"><i></i>既往史</p>
+                <textarea placeholder="请输入既往史（必填）" id="past_history" data-name="pastHistory"></textarea>
+                <b>1500</b>
+            </aside>
+            <aside class="option ev-must ev-personalHistory">
+                <p class="titleText"><i></i>个人史</p>
+                <textarea placeholder="请输入个人史（必填）" id="personal_history" data-name="personalHistory"></textarea>
+                <b>1500</b>
+            </aside>
+            <aside class="option ev-must ev-familyHistory">
+                <p class="titleText"><i></i>家族史</p>
+                <textarea placeholder="请输入家族史（必填）" id="family_history" data-name="familyHistory"></textarea>
+                <b>1500</b>
+            </aside>
+            <aside class="option ev-must ev-caseCheck">
+                <p class="titleText"><i></i>体格检查</p>
+                <textarea placeholder="请输入主要阳性体征及必要阴性体征（必填）" id="professional_checking"></textarea>
+                <b>3000</b>
+            </aside>
+            <aside class="option ev-must ev-auxiliary_info">
+                <p class="titleText"><i></i>辅助检查</p>
+                <textarea placeholder="请输入辅助检查结果（必填）" id="auxiliary_info"></textarea>
+                <b>1500</b>
+            </aside>
+            <aside class="option ev-must ev-diagnosis">
+                <p class="titleText"><i></i>诊断</p>
+                <div class="atName">
+                    <div class="atNameText diagnosisText">
+                    </div>
+                    <div class="atContent ev-diaContent">
+                        <i class="arrow ev-diaHide" style="display: none;"></i>
+                        <div class="diagnosisListPopup ev-diaHide ev-diagnosisListPopup" style="display: none;">
+                            <ul class="ev-diagnosisList"><!--atPosition-->
+
+                            </ul>
+                            <div>
+                                <p class="diagnosisNone">没有找到诊断？</p>
+                                <p class="addDiagnosis ev-addDiagnosis">将“<span class="ev-diaReplace"></span>”添加为诊断</p>
+                            </div>
+                        </div>
+                        <input type="text" id="diagnosis_info" placeholder="请输入疾病诊断名称（必填）">
+                    </div>
+                </div>
+                <!--<b>100</b>-->
+            </aside>
+            <aside class="option ev-must ev-diagnosisInfo">
+                <p class="titleText"><i></i>诊断依据</p>
+                <textarea placeholder="请输入疾病诊断依据（必填）" id="diagnosis_basis" data-name="diagnosisInfo"></textarea>
+                <b>1500</b>
+            </aside>
+            <aside class="option ev-must diagnosis_identify">
+                <p class="titleText"><i></i>鉴别诊断</p>
+                <textarea placeholder="请输入疾病相关鉴别诊断思路（必填）" id="diagnosis_identify" data-name="diagnosisInfo"></textarea>
+                <b>1500</b>
+            </aside>
+            <aside class="option ev-must ev-treatmentRecord">
+                <p class="titleText"><i></i>治疗过程</p>
+                <textarea placeholder="请输入治疗过程（必填）" id="treatment_record" data-name="treatmentRecord"></textarea>
+                <b>2000</b>
+            </aside>
+            <aside class="option ev-must ev-addOpBox">
+                <p class="titleText titleFUN"><i></i>手术记录</p>
+                <!---->
+                <ul class="FUNList ev-funListOp">
+
+                </ul>
+                <button class="addFUN ev-addOpBtn" data-flag="1">添加手术记录</button>
+            </aside>
+            <aside class="option nonEssential">
+                <p class="titleText">产品信息</p>
+                <textarea placeholder="请输入产品品牌及型号" id="product_info" data-name="productInfo"></textarea>
+                <b>1500</b>
+            </aside>
+            <aside class="option ev-must ev-health_plan">
+                <p class="titleText"><i></i>康复计划</p>
+                <textarea placeholder="请输入康复计划（必填）" id="health_plan" data-name="productInfo"></textarea>
+                <b>2000</b>
+            </aside>
+            <aside class="option">
+                <p class="titleText">讨论</p>
+                <textarea placeholder="请输入要讨论的内容" minHeight="26" maxHeight="189" id="discussion"></textarea>
+                <b>3000</b>
+            </aside>
+            <aside class="option ev-must ev-addTitleFUN">
+                <p class="titleText titleFUN"><i></i>随访记录</p>
+                <!---->
+                <ul class="FUNList ev-funList">
+
+                </ul>
+                <button class="addFUN ev-addAPBtn" data-flag="1">添加随访记录</button>
+            </aside>
+            <aside class="option ev-must ev-clinical clinicalCont">
+                <p class="titleText clinicalTitle"><i></i>临床转归</p>
+                <p class="clinical"><i class="male ev-male" data-type="1"></i><span>治愈</span></p>
+                <p class="clinical"><i class="male ev-male" data-type="2"></i><span>好转</span></p>
+                <p class="clinical"><i class="male ev-male" data-type="3"></i><span>未愈</span></p>
+                <p class="clinical"><i class="male ev-male" data-type="4"></i><span>死亡</span></p>
+                <p class="clinical"><i class="male ev-male" data-type="5"></i><span>无效</span></p>
+                <p class="clinical"><i class="male ev-male" data-type="6"></i><span>其他</span></p>
+            </aside>
+            <aside class="option ev-remind">
+                <p class="titleText">提醒谁看</p>
+                <div class="atName">
+                    <div class="atNameText ev-atNameText">
+                    </div>
+                    <div class="atContent ev-atContent">
+                        <i class="arrow" style="display: none;"></i>
+                        <ul class="atPosition ev-atPosition" style="display: none;">
+                        </ul>
+                        <input type="text" placeholder="请输入要提醒的人">
+                    </div>
+                </div>
+                <div class="aitNum">0/10</div>
+            </aside>
+        </section>
+        <section class="essentialInformation ev-imageInfo">
+            <aside class="title ev-must"><i></i>影像资料</aside>
+            <!--图集治疗前开始-->
+            <aside class="imagesUploadCont">
+                <div class="images">图集<span>治疗前</span></div>
+                <div class="imagesUpload ev-uploadImgPar ev-treatment">
+                    <ul>
+
+                    </ul>
+                    <div class="imagesUploadBtn ev-uploadImgCon">
+                        <p><i class="cameraIcon"></i></p>
+                    </div>
+                    <div class="imagesUploadBtn">
+                        <div class="ev-uploadVideoCon" id="ev-uploadVideoCon01">
+                            <p><i class="videoIcon"></i></p>
+                            <input type="file">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!--图集治疗前结束-->
+
+            <!--图集治疗中开始-->
+            <aside class="imagesUploadCont">
+                <div class="images">图集<span>治疗中</span></div>
+                <div class="imagesUpload ev-uploadImgPar ev-treatment">
+                    <ul>
+
+                    </ul>
+                    <div class="imagesUploadBtn ev-uploadImgCon">
+                        <p><i class="cameraIcon"></i></p>
+                    </div>
+                    <div class="imagesUploadBtn">
+                        <div class="ev-uploadVideoCon" id="ev-uploadVideoCon02">
+                            <p><i class="videoIcon"></i></p>
+                            <input type="file">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!--图集治疗中结束-->
+
+            <!--图集治疗后开始-->
+            <aside class="imagesUploadCont">
+                <div class="images">图集<span>治疗后</span></div>
+                <div class="imagesUpload ev-uploadImgPar ev-treatment">
+                    <ul>
+
+                    </ul>
+                    <div class="imagesUploadBtn ev-uploadImgCon">
+                        <p><i class="cameraIcon"></i></p>
+                    </div>
+                    <div class="imagesUploadBtn">
+                        <div class="ev-uploadVideoCon" id="ev-uploadVideoCon03">
+                            <p><i class="videoIcon"></i></p>
+                            <input type="file">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!--图集治疗后结束-->
+        </section>
+        <section class="saveBtn">
+            <aside class="uploadCont">
+                <p class="saveDraft">保存草稿</p>
+                <p class="cancel"><i class="ev-caseCancel">取消</i><span class="ev-submitBtn">发布</span></p>
+            </aside>
+        </section>
+
+    </section>
+    <!--添加随访记录弹层开始-->
+    <section class="alPopup ev-alPopup" style=" width: 100%;position: fixed;top:0;left:0; height: 100%;z-index:6;display: none;">
+        <!--从这开始拷贝-->
+        <section class="alPopupMain upload_case ev-alPopupMain" style="position: fixed">
+            <!--<figure class="close"><i></i></figure>-->
+            <figure class="title">
+                <span>添加随访记录</span>
+                <figure class="close ev-closePopBtn"><i class="ev-cloIBtn"></i>
+                    <div class="whetherSignOut ev-closeRemind" style="display: none;">
+                        <div class="whetherTitle"><i></i><span>确认退出编辑吗？</span></div>
+                        <div class="whetherText">本次编辑的内容将被删除</div>
+                        <ul class="whetherBtn">
+                            <li class="ev-cancelNow">取消</li>
+                            <li class="signOut ev-signOut">退出</li>
+                        </ul>
+                    </div>
+                </figure>
+            </figure>
+            <ul class="popupFUNDetail">
+                <li>
+                    <div class="timeFUN ev-timeFUN"><i></i>随访时间<span class="firstChild">术后</span>
+                        <input id="addYears" type="text"><span>年</span>
+                        <input id="addMonth" type="text"><span>月</span></div>
+                </li>
+                <li>
+                    <div class="FUNDetail ev-FUNDetail">
+                        <span>随访记录</span>
+                        <textarea placeholder="请输入随访记录" minheight="26" maxheight="189" style="height: 26px; overflow: hidden;"></textarea>
+                        <b>500</b>
+                    </div>
+                </li>
+                <li>
+                    <div class="FUNDetail FUNImg ev-uploadImgPar ev-additionalPop">
+                        <span>随访影像</span>
+                        <ul class="ev-recImgVideo">
+
+                        </ul>
+                        <div class="imagesUploadBtn ev-uploadImgCon">
+                            <p class=""><i class="cameraIcon"></i></p>
+                            <input type="file" multiple="" >
+                        </div>
+                        <div class="imagesUploadBtn">
+                            <div class="ev-uploadVideoCon" id="ev-uploadVideoCon04" style="position: relative; z-index: 1;">
+                                <p class=""><i class="videoIcon"></i></p>
+                                <input type="file">
+                            </div>
+                            <div class="moxie-shim moxie-shim-html5" style="position: absolute; top: 0px; left: 0px; width: 185px; height: 185px; overflow: hidden; z-index: 0;">
+                                <input id="html5_1c11iimp01u3rmp71p9e50b1l3d6" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" accept="video/mp4,video/quicktime,video/avi,video/x-ms-wmv,video/x-flv">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <aside class="FUNSave">
+                <button class="ev-popSaveBtn" data-flag="1">保存</button>
+            </aside>
+        </section>
+        <!--结束-->
+    </section>
+    <!--添加随访记录弹层结束-->
+    <!--添加手术弹层开始-->
+    <section class="alPopup ev-addOpPop" style="width: 100%;position: fixed;top:0;left:0; height: 100%;z-index:6;display: none;">
+        <!--从这开始拷贝-->
+        <section class="alPopupMain upload_case ev-opAlPopupMain" style="position: fixed">
+            <figure class="title">
+                <span>添加手术记录</span>
+                <figure class="close"><i class="ev-opCloseBtn"></i>
+                    <div class="whetherSignOut ev-sureOpPop" style="display: none;">
+                        <div class="whetherTitle"><i></i><span>确认退出编辑吗？</span></div>
+                        <div class="whetherText">本次编辑的内容将被删除</div>
+                        <ul class="whetherBtn">
+                            <li class="ev-opPopCancel">取消</li>
+                            <li class="signOut ev-opPopExit">退出</li>
+                        </ul>
+                    </div>
+                </figure>
+            </figure>
+            <ul class="popupFUNDetail popupMinHeight">
+                <li>
+                    <div class="FUNDetail ev-opContent ev-operationName">
+                        <span><i></i>手术名称</span>
+                        <div class="atName">
+                            <div class="atNameText ev-opNameText">
+                            </div>
+                            <div class="atContent ev-opNameContent">
+                                <i class="arrow ev-opHide" style="display: none;"></i>
+                                <div class="diagnosisListPopup ev-opHide ev-opNameListPopup" style="display: none;">
+                                    <ul class="ev-operationNameList">
+
+                                    </ul>
+                                    <div>
+                                        <div class="diagnosisNone">没有找到手术名称？</div>
+                                        <div class="addDiagnosis ev-addOpName">将“<a href="javascript:;" class="ev-opNReplace"></a>”添加为手术名称</div>
+                                    </div>
+                                </div>
+                                <ul class="atPosition ev-operationNameList" style="display: none;">
+
+                                </ul>
+                                <input type="text" id="operation_name" placeholder="请输入手术名称（必填）">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="FUNDetail ev-FUNDetailOp ev-opContent">
+                        <span><i></i>手术记录</span>
+                        <textarea placeholder="请输入手术记录（主要病理发现）" minheight="26" maxheight="189" style="height: 26px; overflow: hidden;"></textarea>
+                        <!--<b>3000</b>-->
+                    </div>
+                </li>
+            </ul>
+            <aside class="FUNSave">
+                <button class="ev-opSaveBtn" data-flag="1">保存</button>
+            </aside>
+        </section>
+        <!--结束-->
+    </section>
+    <!--添加手术弹层结束-->
+    <!--公共底部 start-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--公共底部 End-->
+</section>
+
+
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src="//paas.allinmd.cn/compose/ucr_vu/seed.js"></script>
+
+<!-- build:js /dest/singlePage/upload-activityCase.js -->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/comm/comm.textChange.js" ></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.autoHeight.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+
+<script src="/js/plugins/scroll-box/plugin.scroll-box.js"></script>
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/user/module.user.js"></script>
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<script src="/js/modules/publish/module.video-upload.js" ></script>
+<script src="/js/modules/publish/module.doc-upload.js" ></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"> </script>
+<script src="/js/plugins/make-sure-popup/plugin.make-sure-popup.js"></script>
+<script src="/js/modules/view-big-img/module.view-big-img.js"></script>
+
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script><script src='/js/third-party/md5.js'></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<!--病例发布-->
+<script src="/js/scene/singlePage/scene.singlePage.upload-activityCase.js"></script>
+<!--endbuild-->
+
+</body>
+
+</html>

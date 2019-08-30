@@ -1,0 +1,2464 @@
+
+
+input,textarea{
+	outline: none;
+	font-family:microsoft yahei;
+}
+/*选择专业*/
+.case_content{
+	background: #efeff4;
+	/*height: 100%;*/
+	position: relative;
+	width:100%;
+	overflow-x:hidden;
+}
+
+/*遮罩*/
+#cancel_mask{
+	display:none;
+}
+.jxl_mask{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background:#000;
+	opacity:0.65;
+	z-index:6;
+}
+.jxl_parent{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.jxl_want{
+	position:absolute;
+	left:7.8%;
+	top:40%;
+	width:84.375%;
+	z-index:50;
+	background:#fff;
+	border-radius: 0.3125em 0.3125em 0.3125em 0.3125em;
+}
+.jxl_want_top{
+	border-bottom:solid #969696 0.069em;
+	height:5.93em;
+	font-size:1.875em;
+	color:#333;
+	/*line-height:5.93em; 这一句影响ＰＤＦ弹层效果*/
+}
+
+ .jix_l{
+	width:49%;
+	float:left;
+	font-size:2em;
+	color:#333;
+	border-right:solid #969696 0.074em;
+	line-height:2.8em;
+}
+ .jix_r{
+	width:49%;
+	float:left;
+	font-size:2em;
+	color:#0c8ef3;
+	line-height:2.8em;
+}
+.jxl_want_bottom .color-blue{
+    color:#0c8ef3;
+}
+.jxl_want_bottom .color-grey{
+    color:#333;
+}
+/*提示*/
+.atten_title{
+	font-size:2em;
+	color:#333;
+	margin-top:1em;
+	font-weight:700;
+}
+.atten_con{
+	font-size:1.75em;
+	color:#333;
+	margin-top:0.8em;
+	margin-bottom:1.6em;
+}
+.ms_sure{
+	font-size:2em;
+	color:#0c8ef3;
+	margin-top:1em;
+	font-weight:700;
+	line-height:2.8em;
+	border-top:solid #969696 0.069em;
+}
+
+
+.title_center{
+	font-size:2.25em;
+	color:#fff;
+	float:left;
+	margin-left:25%;
+	line-height:2.4em;
+}
+.quxiao{
+	font-size:1.75em;
+	color:#fff;
+	float:right;
+	margin-right:3.125%;
+	line-height:3.14em;
+}
+.case_cont li{
+	margin-left:3.7%;
+	display: inline-block;
+	margin-top:2.5em;
+	width: 21%;
+	height:8.6em;
+	box-sizing:border-box;
+}
+.hollow_circle{
+	border:solid 1px #d2d2d7;
+	border-radius: 50%;
+	background:#fff;
+	text-align:center;
+}
+.hollow_circle_text{
+	font-size:1.5em;
+	color:#666;
+	width: 5.86em;
+	height: 5.86em;
+	vertical-align: middle;
+	display: table-cell;
+}
+.blue_circle{
+	border:solid 0.1em #309bdf;
+	border-radius: 50%;
+	background:#309bdf;
+	text-align:center;
+}
+.blue_circle .hollow_circle_text{
+	color:#fff;
+}
+
+.input_title{
+	position:absolute;
+	left:6.25%;
+	top:2em;
+	z-index:4;
+	width: 83.75%;
+}
+/* .input_title textarea{
+	border:none;
+	text-align:left;
+	font-size:1.75em;
+	line-height:1em;
+	color:#333;
+	font-family:microsoft yahei;
+	width:100%;
+	height:1.75em;
+	resize:none;
+} */
+.input_title_cont{
+	font-size:1.75em;
+	color:#333;
+}
+.xb_text{
+	text-align:left;
+	font-size:1.75em;
+	line-height:3.6em;
+	color:#a9a9a9;
+	float:left;
+	width:20%;
+}
+.input_mr{
+	float:left;
+	margin:2em 1.2em 0 3.125em;
+	width:6.25%;
+}
+.input_mr img{
+	width:100%;
+}
+.nv_radio{
+	float:left;
+	margin-top:2em;
+	width:5.2%;
+}
+.nv_radio img{
+	width:100%;
+}
+
+.input_text{
+	margin:1.6em 0 0 3em;
+	float:left;
+	width:68%;
+}
+.input_age{
+	float:left;
+	width:33%;
+}
+.input_age input{
+	-webkit-appearance:none;
+	width:38%;
+	border:none;
+	border-bottom:2px solid #a9a9a9;
+	border-radius:0;
+	font-size: 1.75em;
+	line-height: 1em;
+	color: #333;
+	font-family: microsoft yahei;
+	text-align:center;
+	background-color: #fff;
+}
+.input_age span{
+	display:inline-block;
+	margin:0 0 0 12%;
+	font-size: 1.75em;
+	line-height: 1em;
+	color: #a9a9a9;
+	font-family: microsoft yahei;
+}
+.focus input{
+	border-color:#333;
+}
+.focus span{
+	color: #333;
+}
+.case_sc,.case_mr{
+	margin-right:4%;
+	margin-top:1.875em;
+	float:left;
+	/*width:26.56%;*/
+}
+.case_sc{
+	position:relative;
+	width:29%;
+}
+.img_con{
+	overflow:hidden;
+}
+.file_btn{
+	display: inline-block;
+	width: 10.625em;
+	height: 10.625em;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	background: url(//img50.allinmd.cn/case/xin_photo.png) no-repeat left center;
+	background-size:100%;
+	float:left;
+}
+#uploadify{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 100px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.case_sc img,.case_mr img{
+	width:100%;
+}
+
+.case_close img{
+	width:100%;
+}
+.case_title_more{
+	text-align:left;
+
+	position:relative;
+
+}
+.case_title_more_p{
+	border-bottom:solid 1px #dbdbdb;
+	width:90.625%;
+	margin:0 auto;
+	height:6.4em;
+}
+.case_title_more_p .case_mr_title{
+	padding-left:0.6em;
+}
+.case_title_more_p .bottom_con{
+	padding-left:2.1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*遮罩*/
+ .zhezhao{
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:50;
+	width:100%;
+
+}
+.zz_yiny{
+	width:100%;
+	height:64.5em;
+	background:#000;
+	filter:alpha(opacity=50); /*IE滤镜，透明度50%*/
+	-moz-opacity:0.5; /*Firefox私有，透明度50%*/
+	opacity:0.5;/*其他，透明度50%*/
+}
+.zz_but{
+	width:100%;
+	height:58em;
+	background:#efeff4;
+}
+.zz_but .pingbi{
+	height:2.9em;
+	line-height:2.9em;
+	font-size:1.875em;
+	color:#666666;
+	background:#fff;
+	border-bottom:solid 0.09em #dbdbdb;
+}
+.pb_after{
+	font-size:1.5em;
+	color:#969696;
+	margin:1em 0 2em 0;
+}
+.qx_but{
+	width:93.75%;
+	margin:1em auto;
+}
+.qx_but img{
+	width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*大图编辑*/
+.case_mr_title_jd{
+	font-size:1.75em;
+	color:#969696;
+	float:left;
+	line-height:1em;
+	margin:0.35em 2.5em 0 0;
+}
+.tag_li_jd{
+	/* margin: 1.5em 0; */
+	padding: 1.5em 0;
+}
+.topic_margin{
+	margin: 1.5em 0;
+}
+.bc_but{
+	width:93.75%;
+	margin:0 auto;
+	
+}
+.bc_but:after {
+clear: both;
+content: "clear";
+display: block;
+height: 0;
+overflow: hidden;
+visibility: hidden;
+}
+.bc_but_a{
+	display: inline-block;
+	width:48%;
+	vertical-align: middle;
+}
+.bc_sc_but{
+	display: inline-block;
+	width:48%;
+	vertical-align: middle;
+}
+.bc_but_a img,.bc_sc_but img{
+	width:100%;
+}
+.case_content_img{
+	background: #f8f8f8;
+	 height: 100%;
+	position: relative;
+}
+
+
+
+
+
+
+
+/*提醒谁看*/
+.user_list{
+	float: left;
+	padding-top:1em;
+	/* padding-bottom: 1.5em; */
+}
+.user_list li{
+	float:left;
+	font-size: 1.625em;
+	color: #333;
+	text-align: left;
+	line-height:1em;
+}
+.who_look_mr{
+	border-top:solid 1px #dbdbdb;
+	/* height:8.75em; */
+	background-size:6.25%;
+	overflow:hidden;
+}
+.who_look_mr .user_img_who{
+	float:left;
+	width:13.29%;
+	margin:1.6em 3%;
+	position:relative;
+}
+
+/*病例列表*/
+.case_list_logo{
+	float:left;
+	margin-top:1.6875em;
+	margin-left:1.25em;
+	width:10%;
+}
+.case_list_logo img{
+	width:100%;
+}
+.case_list_bl{
+	float: left;
+	font-size: 2em;
+	color: #fff;
+	line-height: 2.75em;
+	width:15.625%;
+}
+.case_list_top_r{
+	float:right;
+}
+.case_list_search,.case_list_personal{
+	float:left;
+	margin-top:1.875em;
+	width:13%;
+}
+.case_list_search img,.case_list_personal img{
+	width:100%;
+}
+
+.case_list_personal{
+	margin:1.875em 2.5em 0 2.5em;
+}
+#downMenu_v2 .shadow {
+	width: 0.1em;
+	height: 2.8125em;
+	/*background: url(//img50.allinmd.cn/video_list/yinying.png) no-repeat right;*/
+	border-left:solid 0.1em #c8c8c8;
+	top: 0;
+	left: 0;
+	position: absolute;
+	margin-top:1em;
+	float:left;
+}
+.case_list_more{
+	float:right;
+	font-size:1.75em;
+	color:#808080;
+	background:url(//img50.allinmd.cn/case/hui_xiala.jpg) no-repeat right center;
+	background-size: 20%;
+	line-height:2.7em;
+	margin-right:1em;
+	padding-right:1em;
+}
+#downMenu_v2{
+	width: 19.53%;
+	height: 100%;
+
+	float: right;
+	position: relative;
+}
+#visualRange_v2{
+	width: 80.47%;
+	overflow: hidden;
+	position: relative;
+	float: left;
+	height: 100%;
+	background:#fff;
+}
+#visualRange_v2 ul {
+	width: 80em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 97%;
+	cursor: pointer;
+}
+#visualRange_v2 ul li.active {
+	color: #0c8ef3;
+	border-bottom: 1px #0c8ef3 solid;
+}
+#visualRange_v2 ul li {
+	float: left;
+	width: 5em;
+	line-height: 2.92em;
+	font-size: 1.68em;
+	color:#808080;
+	height: 100%;
+	/* border-bottom: 1px solid white; */
+}
+.case_list_cont{
+	border-bottom: solid 1px #dbdbdb;
+	box-shadow: 0px 0.02em 0.125em #dbdbdb;
+	margin-bottom: 1.3em;
+}
+.case_list_cont li{
+	/*height:9.5em;*/
+	border-bottom:solid 1px #dbdbdb;
+	padding:1.875em 1.5em 1.875em 1.5em;
+	background:#fff;
+}
+#select1_v2{
+	width: 100%;
+	height: 4.87em;
+	border-bottom: 1px solid #D1D1D1;
+	background: white;
+	position: relative;
+	box-shadow: 0 0 0.25em #D1D1D1 ;
+}
+/* .list_img{
+	float:left;
+	text-align:left;
+	margin-right:2em;
+	width:32.8125%;
+	position: relative;
+} */
+.list_img img{
+	width:100%;
+	border:solid 1px #d5d5d5;
+}
+.case_list_right{
+	float:left;
+	width:60%;
+}
+
+/*病例终端*/
+.case_detail{
+	background:#fff;
+}
+.case_detail_cont{
+	width:90.625%;
+	margin:0 auto;
+}
+.case_author{
+	width:100%;
+	border:solid 1px #dbdbdb;
+	background:#f8f8f8;
+}
+.user_img_detail{
+	padding:1.25em;
+	border-bottom:solid 1px #dbdbdb;
+}
+.user_img_a{
+	float: left;
+	width: 13.29%;
+	position: relative;
+	margin-right:1.25em;
+}
+.user_img_a img {
+	width: 100%;
+	border-radius: 50%;
+}
+.vip_img_a{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+	width:30%;
+}
+/* .user_name_a{
+	float:left;
+	width:75%;
+} */
+.detail_name{
+	font-size: 1.625em;
+	color: #333;
+	text-align: left;
+	margin-top:0.35em;
+	line-height: 1em;
+	margin-bottom: 0.3em;
+}
+.detail_zhiwei{
+	font-size: 1.625em;
+	color: #808080;
+	text-align: left;
+}
+.detail_zhiwei span {
+	margin-right: 1em;
+}
+.setail_jt{
+	float:right;
+	width:3%;
+}
+.setail_jt img{
+	width:100%;
+}
+.user_fabu .fb01,.user_fabu .fb02{
+	float:left;
+	color:#73859e;
+	font-size:1.375em;
+	margin-left:1.3em;
+	line-height:2em;
+}
+.user_fabu span{
+	margin-left:0.5em;
+}
+.detail_title{
+	font-size:1.75em;
+	color:#969696;
+	line-height:1em;
+	text-align:left;
+	padding:1.1em 0 0.5em 0;
+}
+.detail_cont{
+	font-size:1.75em;
+	color:#333;
+	line-height:1.5em;
+	text-align:left;
+}
+.detail_after_img{
+	position:relative;
+}
+.detail_after_img img{
+	width:98.27%;
+	border:solid 1px #dbdbdb;
+	padding:0.25em;
+}
+.detail_title_time{
+	font-size: 1.125em;
+	color: #7898ad;
+	line-height: 1em;
+	text-align: left;
+	padding:0 0 1em 0;
+}
+.pl_bottom{
+	border-bottom:solid 1px #dbdbdb;
+	border-top:solid 1px #dbdbdb;
+	box-shadow:0px 0.0625em 0.125em #dbdbdb;
+	height:5.5em;
+	margin-bottom:1.3em;
+	background:#fff;
+}
+.pl_bottom li{
+	margin:1.25em 9.5%;
+	float:left;
+	text-align:center;
+	width:6%;
+}
+.pl_bottom li img{
+	width:100%;
+}
+.xg_case{
+	text-align:left;
+	background:#fff;
+}
+.xg_case .border_bottom{
+	margin-left:1.25em;
+	padding:0;
+}
+.xg_case_cont{
+	width:100%;
+	border-bottom:solid 1px #d5d5d5;
+	box-shadow:0px 0.0625em 0.125em #dbdbdb;
+	margin-bottom:1.3em;
+}
+
+.xg_case_cont li{
+	width:33.4375%;
+	float:left;
+	margin:1.25em 0 0 1.25em;
+}
+.xg_case_img{
+	position:relative;
+}
+.xg_case_img img{
+	width:98.13%;
+	border:solid 1px #d5d5d5;
+	padding:0.07em;
+}
+.xg_case_name{
+	font-size:1.5em;
+	color:#333;
+	margin:0.3em 0 0.5em 0;
+}
+/* .xg_case_time{
+	position:absolute;
+	bottom:0.15em;
+	right:0.15em;
+	z-index:10;
+	width:3.75em;
+	height:1.875em;
+	background: #000;
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+	text-align:center;
+} */
+/* .xg_case_text{
+	position:absolute;
+	bottom:0.4em;
+	right:1em;
+	z-index:10;
+	font-size:0.875em;
+	color:#fff;
+	text-align:center;
+} */
+.hot_comment{
+	text-align:left;
+	background:#fff;
+	box-shadow:0px 0.0625em 0.125em #dbdbdb;
+	margin-bottom:1.3em;
+}
+.hot_comment_li li{
+	height:12.5em;
+	border-bottom:solid 1px #d5d5d5;
+	margin:1.875em 0 0 0;
+	padding:0 1.25em;
+
+}
+.hot_c_l{
+	width:12.5%;
+	float:left;
+	margin-right:1.25em;
+	position:relative;
+	border: solid 0.5em #fff;
+}
+/* .hot_c_r{
+	float:left;
+	width:80%;
+	padding-bottom:1.5em;
+} */
+.hot_c_name{
+	float:left;
+	font-size:1.625em;
+	color:#333;
+}
+.hot_c_name a{
+	color:#333;
+	text-decoration:none;
+}
+.hot_c_time{
+	color:#798ca6;
+	font-size:1.375em;
+	float:right;
+}
+.hot_c_text{
+	font-size:1.625em;
+	color:#555;
+	line-height:1.5em;
+	margin-top:0.3em;
+	text-align:left;
+}
+.h_c_look .h01{
+	float:left;
+	line-height:1.5em;
+	margin-right:0.3em;
+	margin-top:0.65em;
+	font-size:1.5em;
+	color:#808080;
+	width:20%;
+}
+.h_c_look .h03{
+	float:left;
+	line-height:1.5em;
+	margin-right:0.3em;
+	margin-top:0.7em;
+	font-size:1.5em;
+	color:#808080;
+	width:30%;
+}
+.h_c_look .h04{
+	float:left;
+	line-height:1.5em;
+	margin-right:0.3em;
+	margin-top:0.5em;
+	font-size:1.5em;
+	color:#808080;
+	width:25%;
+}
+.h_c_look .h05{
+	float:left;
+	line-height:1.5em;
+	margin-right:0.7em;
+	margin-top:0.5em;
+	font-size:1.5em;
+	color:#808080;
+}
+.h_c_look img{
+	width:100%;
+}
+.hot_c_l img {
+	width:100%;
+	border-radius: 50%;
+}
+.h_c_look{
+	float:left;
+}
+.say_someone{
+	width:93.75%;
+	margin:2em  auto 0;
+	height:3.9375em;
+}
+.say_someone input{
+	font-size:1.375em;
+	width:98.5%;
+	color:#666;
+	line-height:2.86em;
+	border:solid 1px #dbdbdb;
+    border-radius: 0.3125em;
+	margin-bottom:0.5em;
+	padding-left:0.3em;
+}
+.all_comment_but img{
+	width:100%;
+}
+.pl_bottom_position{
+	position:fixed;
+	bottom:0;
+	left:0;
+	z-index:20;
+	height:6.125em;
+	width:100%;
+	border-top:solid 1px #acacac;
+	background:#f8f8f8;
+	filter:alpha(opacity=97); /*IE滤镜，透明度50%*/
+	-moz-opacity:0.97; /*Firefox私有，透明度50%*/
+	opacity:0.97;/*其他，透明度50%*/
+}
+.pl_bottom_position li {
+	margin: 1.25em 4em;
+	float: left;
+	text-align: left;
+	width: 6.875%;
+}
+.pl_bottom_position img{
+	width:100%;
+}
+.user_fabu_sq .fb01, .user_fabu_sq .fb02 {
+	float: left;
+	color: #808080;
+	font-size: 1.375em;
+	margin-left: 3%;
+	line-height: 2em;
+}
+.user_fabu_sq .fb01 a, .user_fabu_sq .fb02 a{
+	color: #808080;
+}
+.user_fabu_sq span {
+	margin-left: 0.5em;
+}
+.user_fabu_sq img, .setail_jt img{
+	width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*病例首页*/
+.case_banner{
+	position:relative;
+}
+.case_banner img{
+	width:100%;
+}
+.banner_xz{
+	background:url(//img50.allinmd.cn/case/xz_but.png) no-repeat;
+	background-size:100%;
+}
+.banner_mr{
+	background:url(//img50.allinmd.cn/case/mr_but.png) no-repeat;
+	background-size:100%;
+}
+.banner_but li{
+	float:left;
+	width:20%;
+	margin-right:20%;
+	height:1em;
+
+}
+.banner_but{
+	position:absolute;
+	bottom:1.25em;
+	left:45%;
+	z-index:10;
+	width:11%;
+}
+.index_tab{
+	background:#fff;
+}
+.tag_li_index {
+	padding: 2em 0 0 0;
+	border-bottom: solid 1px #dbdbdb;
+	box-shadow: 0px 0.0625em 0.125em #dbdbdb;
+	margin-bottom:1.3em;
+}
+.tag_li_index li {
+	border: solid 1px #dbdbdb;
+	border-radius: 0.3125em 0.3125em 0.3125em 0.3125em;
+	width:20.5%;
+	/*height:3.375em;*/
+	float: left;
+	margin-left: 3.25%;
+	margin-bottom:2em;
+}
+.tag_li_index li .tag_text {
+	color: #666;
+	font-size: 1.55em;
+	line-height: 2.1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.video_index_list{
+	background:#fff;
+	padding-bottom:1.875em;
+}
+.video_index_list li{
+	float:left;
+	width:45%;
+	padding: 1.875em 0em 0 3.5%;
+	height:auto;
+	border:none;
+}
+.video_index_list li .v_i_img a{
+    display: block;
+    width: 100%;
+    border:solid 1px #d5d5d5;
+    padding:1px;
+}
+.video_index_list li img{
+    min-height: 9em;
+    max-height:11em;
+    max-width:100%;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    height: 190px;
+	width: 285px;
+
+}
+.v_i_name{
+	font-size:1.5em;
+	color:#333;
+	margin:0.5em 0;
+	height: 2.5em;
+	overflow:hidden;
+}
+/* .video_index_list .v_i_personal{
+	background:url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;
+	background-size:7%;
+	color:#969696;
+	font-size:1.375em;
+	padding-left:1.5em;
+	height:1.3em;
+	overflow:hidden;
+} */
+.v_i_title_l{
+	float:left;
+	width:50%;
+}
+.v_i_title_r{
+	float:right;
+	margin:0.7em 1em 0 0;
+	width:30%;
+	text-align:right;
+}
+.v_i_title_r img{
+	width:13%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.doc_index_list{
+	background:#fff;
+	padding-bottom:1.875em;
+}
+.doc_index_list li{
+	padding: 1.875em 0em 0 1.5em;
+	height:auto;
+	border:none;
+	float:left;
+	width:29%;
+}
+.doc_index_list .v_i_personal{
+	background:url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;
+	background-size:11%;
+	color:#969696;
+	font-size:1.375em;
+	padding-left:1.5em;
+}
+.doc_index_list li img{
+	width:90%;
+	border:solid 1px #d5d5d5;
+	padding:0.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.detail_cont_topic{
+	font-size: 1.75em;
+	color: #333;
+	line-height: 1.5em;
+	text-align: left;
+	margin:1em 0;
+}
+.case_detail_title_topic{
+	font-size: 1.875em;
+	color: #333;
+	text-align: left;
+	line-height: 1em;
+	margin-bottom:1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.doc_qh{
+	width:90.625%;
+	background:#fff;
+	height:14em;
+	border-radius: 0.3125em 0.3125em 0.3125em 0.3125em;
+	position:absolute;
+	left:4.6875%;
+	top:0;
+	z-index:60;
+}
+.doc_qh_top{
+	height:5.375em;
+	border-bottom:solid 1px #dbdbdb;
+}
+.yd_ms{
+	float:left;
+	width:50%;
+	text-align:center;
+	font-size:1.625em;
+	color:#333;
+	line-height:3.3em;
+}
+.font_size{
+	float:left;
+	width:50%;
+	text-align:center;
+	font-size:1.625em;
+	color:#333;
+	line-height:3.3em;
+}
+.yd_ms_qh,.font_size_qh{
+	width:50%;
+	float:left;
+}
+.qh_normal{
+	float:left;
+	margin-left:1.5em;
+	border:solid 1px #969696;
+	border-radius: 0.3125em 0.3125em 0.3125em 0.3125em;
+	margin-top:1.5em;
+	color:#969696;
+	font-size:1.625em;
+	line-height:2.23em;
+	padding:0 8%;
+}
+.qh_click{
+	float:left;
+	margin-left:1.5em;
+	border:solid 1px #0c8ef3;
+	border-radius: 0.3125em 0.3125em 0.3125em 0.3125em;
+	margin-top:1.5em;
+	color:#0c8ef3;
+	font-size:1.625em;
+	line-height:2.23em;
+	padding:0 8%;
+}
+.font_size_normal,.font_size_click{
+	float:left;
+	border-radius: 0.3125em 0.3125em 0.3125em 0.3125em;
+	font-size:1.625em;
+	padding:3.5% 5%;
+	margin-left:1em;
+	margin-top:1.5em;
+}
+/*选择专业*/
+.title_center{
+	font-size:2.25em;
+	color:#fff;
+	float:left;
+	margin-left:25%;
+	line-height:2.4em;
+}
+.quxiao{
+	font-size:1.75em;
+	color:#fff;
+	float:right;
+	margin-right:3.125%;
+	line-height:3.14em;
+}
+.quxiao a,.quxiao a:hover{
+	color:#fff;
+}
+
+
+.xyb_but{
+	margin:2.5em 0;
+}
+.xyb_but img{
+	width:93.75%;
+}
+
+/*新建病例*/
+.case_fh{
+	float:left;
+	margin-left:3.125%;
+	width:6.8%;
+}
+.case_fh img{
+	width:100%;
+	margin-top:1.3em;
+	display: block;
+}
+.new_case_title{
+	float:left;
+	width:75%;
+	font-size:2.25em;
+	color:#fff;
+	line-height:2.4em;
+}
+.input_title input{
+	border:none;
+	text-align:left;
+	font-size:1.75em;
+	line-height:1em;
+	color:#333;
+	font-family:microsoft yahei;
+	width: 100%;
+	padding:0;
+}
+.case_title{
+	height:6.4em;
+	text-align:left;
+	border-bottom:solid 1px #dbdbdb;
+	background:#fff;
+	padding-left:6.25%;
+	position:relative;
+}
+.input_title textarea{
+	border:none;
+	text-align:left;
+	font-size:1.75em;
+	line-height:1.5em;
+	color:#333;
+	font-family:microsoft yahei;
+	width:100%;
+	height:1.75em;
+	resize:none;
+	padding:0;
+}
+.case_mr_title{
+	font-size:1.375em;
+	color:#969696;
+	padding-top:1em;
+	display:none;
+}
+.input_title_cont{
+	font-size:1.75em;
+	color:#333;
+}
+
+
+.case_sc .img_view, .case_mr .img_view{
+	width:100%;
+	height: 100%;
+}
+#stage{
+	margin:1.5em 0;
+}
+.photo_case{
+	padding:0 0 1.875em 1.875em;
+	border-bottom:solid 1px #dbdbdb;
+	background:#fff;
+}
+.case_close{
+	position:absolute;
+	right:-7%;
+	top:-7%;
+	z-index:5;
+	width:25.9%;
+}
+.case_close img{
+	width:100%;
+}
+.more_case_xx{
+	height:5.3125em;
+	background:#fff;
+	border-bottom:solid 1px #dbdbdb;
+	box-shadow:0px 0px 0.2em #dbdbdb;
+}
+.more_case_text{
+	font-size:1.5em;
+	line-height:3.5em;
+	background:url(//img50.allinmd.cn/case/more_case.png) no-repeat left center;
+	width:39.1%;
+	background-size:11.2%;
+	color:#0c8ef3;
+	margin-left:31.25%;
+	padding-left:1.5%;
+}
+.new_case_cont{
+	margin-bottom:2.5em;
+}
+.case_bc{
+
+}
+.tag_li li{
+	border:solid 1px #dbdbdb;
+	border-radius: 0.3125em 0.3125em 0.3125em 0.3125em;
+	padding:0.55em 1.1em;
+	float:left;
+	margin-right:1.3em;
+	margin-top:0.5em;
+}
+.tag_li{
+	margin:0.7em 0 1.2em 0;
+	display:none;
+}
+.case_tag,.remind{
+	height:auto;
+	text-align:left;
+	border-bottom:solid 1px #dbdbdb;
+	border-top:solid 1px #dbdbdb;
+	background:#fff;
+	padding-left:6.25%;
+}
+.tag_cont{
+	height: auto;
+}
+#tag_title,#rem_title{
+	text-align: left;
+	font-size: 1.75em;
+	line-height: 3.6em;
+	color: #a9a9a9;
+	width: 19%;
+}
+.rem_list{
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+	display:none;
+}
+.rem_list li{
+	float: left;
+	font-size: 1.625em;
+	color: #038EA8;
+	text-align: left;
+	line-height: 1em;
+}
+.tag_li li .tag_text{
+	color:#666;
+	font-size:1.625em;
+	line-height:1em;
+}
+.input_title_tx{
+	position:absolute;
+	left:6.25%;
+	top:2em;
+	z-index:10;
+}
+.input_title_tx input{
+	border:none;
+	text-align:left;
+	font-size:1.75em;
+	line-height:1em;
+	color:#7898ad;
+	font-family:microsoft yahei;
+
+}
+#more{
+	display:none;
+}
+.more_xx{
+	margin-bottom:1.5em;
+	text-align:left;
+	background:#fff;
+}
+.more_xx_title{
+	border-top:solid 1px #dbdbdb;
+	background:#f7f7f7;
+	border-bottom:solid 1px #dbdbdb;
+}
+.border_bottom{
+	border-top:solid 1px #fff;
+	border-bottom:solid 1px #fff;
+	font-size:1.5em;
+	color:#808080;
+	padding: 0.6em 4.8%;
+}
+
+
+
+
+
+/*大图编辑*/
+.tag_li_jd li {
+	border: solid 1px #dbdbdb;
+	border-radius: 0.3125em 0.3125em 0.3125em 0.3125em;
+	padding: 0.55em 1.1em;
+	float: left;
+	margin-right: 1.3em;
+	margin-top:0.5em;
+}
+.tag_li_jd li .tag_text {
+	color: #666;
+	font-size: 1.625em;
+	line-height: 1em;
+}
+.tag_text a{
+    color:#7898ad;
+}
+
+
+
+
+
+
+
+
+
+
+/*添加标签*/
+.new_case_title_tag{
+	float: left;
+	width: 65%;
+	font-size: 2.25em;
+	color: #fff;
+	line-height: 2.4em;
+}
+.new_case_title_fh{
+	float: right;
+	width: 15%;
+	font-size: 2.25em;
+	color: #fff;
+	line-height: 2.4em;
+	margin-left: 0;
+}
+.new_case_title_fh a,.new_case_title_fh a:hover{
+	color: #fff;
+}
+.add_tag_cont{
+	background:#fff;
+}
+.add_tag_text{
+	font-size:1.375em;
+	color:#969696;
+	text-align:left;
+	padding:1.3em 0 0 4.8%;
+}
+.add_tag_text span{
+	color:#0c8ef3;
+}
+.add_tag_input{
+	text-align:left;
+	padding-left:4.8%;
+}
+.add_tag_margin{
+	padding-left:5.8%;
+    float: left;
+    padding-bottom: 1.5em;
+}
+#tagList{
+	padding:0 0 1.5em 0;
+}
+.add_tag_input input{
+	font-size:1.625em;
+	color:#333;
+	font-family:microsoft yahei;
+	border:none;
+	line-height:1em;
+	margin:0.6em 0 0.8em 0;
+	padding:0;
+	width: 7em;
+}
+.add_tag_li li{
+	border-top:solid 1px #dbdbdb;
+	height:5.3125em;
+
+
+}
+.add_tag_mr{
+	text-align:left;
+	padding-left:15.625%;
+	font-size:1.875em;
+	color:#333;
+	background:url(//img50.allinmd.cn/case/radio_mr.png) no-repeat 5.8% center;
+	background-size:6.25%;
+	line-height:2.75em;
+
+}
+.add_tag_xz{
+	text-align:left;
+	padding-left:15.625%;
+	font-size:1.875em;
+	color:#333;
+	background:url(//img50.allinmd.cn/case/gou.jpg) no-repeat 5.8% center;
+	background-size:6.25%;
+	line-height:2.75em;
+}
+.tag_li_jd .tag_li_hover {
+	border-radius: 0.3125em;
+	padding: 0.55em 1.1em;
+	float: left;
+	margin-right: 1.3em;
+	background: #14be7f;
+	border: solid 1px #14be7f;
+}
+.tag_li_hover .tag_text{
+	color:#fff !important;
+}
+.tag_li_link{
+	border: solid 1px #dbdbdb;
+	border-radius: 0.3125em 0.3125em 0.3125em 0.3125em;
+	padding: 0.75em 1.3em;
+	float: left;
+	margin-right: 1.3em;
+
+}
+.add_tag_li_sr li{
+	border-top:solid 1px #dbdbdb;
+	height:5.3125em;
+}
+.add_tag_li_sr .add_tag_sr{
+	text-align:left;
+	padding-left:5.8%;
+	font-size:1.875em;
+	color:#333;
+	background-size:6.25%;
+	line-height:2.75em;
+}
+.tag_li_input{
+	float:left;
+}
+.tag_li_input input{
+	border:none;
+	font-size:1.4em;
+	color:#333;
+	line-height:1em;
+	padding-right:1.3em;
+	margin-top:0.3em;
+
+}
+.add_tag_li_loading{
+	text-align:right;
+	display:none;
+}
+.add_tag_li_loading li{
+	border-top:solid 1px #dbdbdb;
+	height:5.3125em;
+}
+.add_tag_li_loading img{
+	width:6.25%;
+	margin-top:1.2em;
+	margin-right:1.5em;
+}
+
+
+
+
+
+
+/*提醒谁看*/
+.tx_who{
+	background:#fff;
+}
+.tx_who_look .who_look_link{
+	border-top:solid 1px #dbdbdb;
+	/* height:8.75em; */
+	background:url(//img50.allinmd.cn/case/radio_mr.png) no-repeat 5.8% center;
+	background-size:6.25%;
+	overflow:hidden;
+}
+.who_look_hover{
+	border-top:solid 1px #dbdbdb;
+	/* height:8.75em; */
+	background:url(//img50.allinmd.cn/case/gou.jpg) no-repeat 5.8% center;
+	background-size:6.25%;
+	overflow:hidden;
+}
+.who_look_link .user_img_who,.who_look_hover .user_img_who{
+	float:left;
+	width:13.29%;
+	margin: 3.5% 3.5% 3% 15.5%;
+	position:relative;
+}
+.user_img_who img{
+	width:4.16667em;
+	height: 4.16667em;
+	border-radius:50%;
+}
+.user_name_who{
+	float:left;
+	width:60%;
+}
+.who_name{
+	font-size:1.625em;
+	color:#333;
+	text-align:left;
+	margin-top:11%;
+	line-height:1em;
+	margin-bottom:0.3em;
+}
+.who_zhiwei{
+	font-size:1.625em;
+	color:#808080;
+	text-align:left;
+}
+.who_zhiwei span{
+	margin-right:1em;
+}
+.vip_img_who{
+	position:absolute;
+	right:0;
+	bottom:0;
+	z-index:2;
+	width:30%;
+}
+.vip_img_who img{
+	width:100%;
+	height: 100%;
+}
+
+.tx_who_look_loading li{
+	border-top:solid 1px #dbdbdb;
+	height:5.75em;
+	overflow:hidden;
+	text-align:right;
+	padding:3em 1.5em 0 0;
+}
+.tx_who_look_loading li img{
+	width:6.25%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*病例列表*/
+.list_img{
+	float:left;
+	text-align:left;
+	margin-right:1.5em;
+	width:32.8125%;
+	position: relative;
+}
+.list_img a{
+    border: 1px solid #d5d5d5;
+    display:block;
+    padding: 1px;
+}
+
+.list_img a img{
+	width:100%;
+    min-height: 9em;
+    max-height:9em;
+}
+.case_list_name{
+	font-size:1.625rem;
+	color:#333;
+	text-align:left;
+	line-height:1.6em;
+}
+.case_list_hf{
+     float:left;
+     background: url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;
+     background-size:15%;
+     font-size:1.375em;
+     color:#808080;
+     width:33%;        /*原来是60%在我的收藏中的距离太大*/
+     /*line-height:3em;   大首页的病例推荐位的作者出注释*/
+     text-align:left;
+     padding-left:10%;
+    margin-top: 1em;
+ }
+.case_list_author{
+	 float:left;
+     background: url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;
+     background-size:7%;
+     font-size:1.375em;
+     color:#808080;
+     width:60%;        /*原来是60%在我的收藏中的距离太大*/
+     /*line-height:3em;   大首页的病例推荐位的作者出注释*/
+     text-align:left;
+     padding-left:7%;
+}
+.my_collect_browse{
+     float:left;
+     background: url("//img50.allinmd.cn/v3/list-order/images/view-black-11.png") no-repeat left center;
+     background-size:35%;
+     font-size:1.375em;
+     color:#808080;
+     width:17%;        /*原来是60%在我的收藏中的距离太大*/
+     /*line-height:3em;   大首页的病例推荐位的作者出注释*/
+     text-align:left;
+     padding-left:10%;
+     margin-top: 1em;
+ }
+
+.case_list_right_doc  .my_collect_browse{
+    float:left;
+    background: url("//img50.allinmd.cn/v3/list-order/images/view-black-11.png") no-repeat left center;
+    background-size:20%;
+    font-size:1.375em;
+    color:#808080;
+    width:18%;        /*原来是60%在我的收藏中的距离太大*/
+    /*line-height:3em;   大首页的病例推荐位的作者出注释*/
+    text-align:left;
+    padding-left:10%;
+    margin-top: 1em;
+}
+
+
+.my_collect_author{
+    float:left;
+    background: url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;
+    background-size:15%;
+    font-size:1.375em;
+    color:#808080;
+    width:35%;        /*原来是60%在我的收藏中的距离太大*/
+    /*line-height:3em;   大首页的病例推荐位的作者出注释*/
+    text-align:left;
+    padding-left:10%;
+    margin-top: 1em;
+}
+ .my_collect_author02{
+     float:left;
+     background: url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;
+     background-size:8%;
+     font-size:1.375em;
+     color:#808080;
+     width:60%;        /*原来是60%在我的收藏中的距离太大*/
+     /*line-height:3em;   大首页的病例推荐位的作者出注释*/
+     text-align:left;
+     padding-left:8%;
+ }
+.my_collect_author02_doc{ /*小人头像*/
+    float: left;
+    background: url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;
+    background-size: 1.2em;
+    font-size: 1.375em;
+    color: #808080;
+    width: 28%;
+    text-align: left;
+    padding-left: 5%;
+    margin-top:1em;
+    margin-right: 0.5em;
+}
+
+.my_collect_author02_nopic{
+    float: left;
+    /*background: url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;*/
+    /*background-size: 1.2em;*/
+    font-size: 1.375em;
+    color: #808080;
+    width: 35%;
+    text-align: left;
+    margin-top:1em;
+}
+.my_collect_resource_type{
+    float:  right;
+    /*background: url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;*/
+    /*background-size: 1.2em;*/
+    font-size: 1.375em;
+    color: #808080;
+    width: 3em;
+    text-align: left;
+    padding-left: 5%;
+    margin-top:1em;
+}
+ .my_collect_look{
+	float:left;
+	background:url(//img50.allinmd.cn/case/eye.jpg) no-repeat left center;
+	width:15%;
+	background-size:30%;
+	font-size:1.375em;
+	color:#808080;
+	text-align:left;
+	padding-left:1.875em;
+	/*line-height:3em;   大首页的病例推荐位的作者出注释*/
+    margin-top:1em;
+ }
+
+.case-list-my-video-ql{
+    float: left;
+    background: url(//img50.allinmd.cn/v3/video-list/images/play.jpg) no-repeat left center;
+    width: 12%;
+    background-size: 33%;
+    font-size: 1.375em;
+    color: #808080;
+    text-align: left;
+    padding-left: 1.3em;
+}
+.case_list_video{
+	float:left;
+	background: url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;
+	background-size:10%;
+	font-size:1.375em;
+	color:#808080;
+	width:60%;
+	/*line-height:3em;   大首页的病例推荐位的作者出注释*/
+	text-align:left;
+	padding-left:10%;
+}
+.case_list_eye{
+	float:left;
+	background:url(//img50.allinmd.cn/case/eye.jpg) no-repeat left center;
+	width:15%;
+	background-size:33%;
+	font-size:1.375em;
+	color:#808080;
+	text-align:left;
+	padding-left:1.875em;
+    margin-top: 1em;
+	/*line-height:3em;   大首页的病例推荐位的作者出注释*/
+}
+
+.case_list_eye_article{
+    float: left;
+    background: url(//img50.allinmd.cn/case/eye.jpg) no-repeat left center;
+    background-size: 1.5em;
+    font-size: 1.375em;
+    color: #808080;
+    width: 28%;
+    text-align: left;
+    padding-left: 7%;
+    margin-top:1em;
+}
+.case_list_review_article{
+    float: left;
+    background: url(//img50.allinmd.cn/case/huifu.jpg) no-repeat left center;
+    background-size: 1.5em;
+    font-size: 1.375em;
+    color: #808080;
+    width: 28%;
+    text-align: left;
+    padding-left: 7%;
+    margin-top:1em;
+}
+
+.case_list_doc_num{
+	float:left;
+	background:url(//img50.allinmd.cn/case/eye.jpg) no-repeat left center;
+	width:15%;
+	background-size:29%;
+	font-size:1.375em;
+	color:#808080;
+	text-align:left;
+	padding-left:1.875em;
+	/*line-height:3em;   大首页的病例推荐位的作者出注释*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*病例终端*/
+.case_detail_title{
+	font-size:1.875em;
+	color:#333;
+	text-align:left;
+	padding:0.7em 0;
+}
+.user_name_a{
+	float:left;
+}
+
+.detail_name a{
+	color: #333;
+}
+.img_bg{
+	position:absolute;
+	bottom:0.25em;
+	left: 1.7%;
+	z-index:2;
+	width:96.40%;
+	height:2em;
+	background:#000;
+	filter:alpha(opacity=50); /*IE滤镜，透明度50%*/
+	-moz-opacity:0.5; /*Firefox私有，透明度50%*/
+	opacity:0.5;/*其他，透明度50%*/
+
+    font-size:1.9em;
+    line-height:2em;
+}
+.img_zhang{
+	position:absolute;
+	bottom: 0.25em;
+    left: 1.7%;
+	z-index:2;
+	text-align:center;
+	font-size:1.9em;
+	line-height:2em;
+	color:#fff;
+    width:96.40%;
+    font-family: "microsoft yahei";
+}
+.xg_case_time{
+	position:absolute;
+	bottom:0.15em;
+	right:0.15em;
+	z-index:2;
+	width:3.75em;
+	height:1.875em;
+	background: #000;
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+	/*text-align:center;*/
+}
+.xg_case_text{
+	position:absolute;
+	bottom:0.4em;
+	right:1em;
+	z-index:2;
+	font-size:0.875em;
+	color:#fff;
+	/*line-height:;*/
+	/*text-align:center;*/
+}
+.hot_c_r{
+	float:left;
+	width:78%;
+	padding-bottom:1.5em;
+	margin-top:7px;
+}
+
+.h_c_look .h02{
+	float:left;
+	line-height:1.5em;
+	margin-top:0.5em;
+	font-size:1.5em;
+	color:#808080;
+}
+.user_fabu_sq .setail_jt{
+	/* margin:1.25em 2% 0 0; */
+	width:3%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*病例首页*/
+.case_index_position{
+	position:fixed;
+	bottom:0;
+	left:0;
+	z-index:20;
+	height:6.125em;
+	width:100%;
+}
+.case_index_position img{
+	width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.video_index_list .v_i_personal{
+	background:url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;
+	background-size:7%;
+	color:#969696;
+	font-size:1.375em;
+	padding-left:1.5em;
+	height:1.3em;
+	overflow:hidden;
+
+    margin-top: 1em;
+}
+.carousel-frame img{
+	width:100%;
+}
+/* .tag_text a{
+	color: #666;
+} */
+
+
+
+
+
+.font_size_click{
+	border:solid 1px #0c8ef3;
+	color:#0c8ef3;
+}
+.font_size_normal{
+	border:solid 1px #969696;
+	color:#969696;
+}
+
+/*手术图片滑动*/
+
+.detail_after_img .imgs{
+    width:98.27%;
+ /*   border:solid 1px #dbdbdb;*/
+    padding:0.25em;
+    overflow: hidden;
+}
+
+
+.detail_after_img .scroll-box{
+    /*margin: 1.25em 0;*/
+    width: 4000px;
+
+}
+
+.detail_after_img .scroll-box .scroll-box1{
+    float: left;
+}
+
+.detail_after_img .scroll-box .scroll-box2{
+    float: left;
+}
+
+
+.detail_after_img .scroll-box li{
+    float: left;
+    margin-right: 1.25em;
+}
+
+.detail_after_img .scroll-box li div{
+    border: 1px solid #d5d5d5;
+}
+
+.detail_after_img .scroll-box li a.img{
+    border: 1px solid #fff;
+    display: block;
+}
+
+.detail_after_img .scroll-box li img{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.v_i_personal {
+background: url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;
+background-size: 5%;
+color: #969696;
+font-size: 1.375em;
+padding-left: 1.5em;
+height: 1.3em;
+overflow: hidden;
+    margin-top: 1em;
+}
+.list_img_doc a img {
+width: 100%;
+padding: 0.4375em;
+border: solid 1px #d5d5d5;
+}
+.yy_none_search {
+	background: url(//img50.allinmd.cn/personal_v2/no_search.png) no-repeat;
+	background-size: 100%;
+	height: 50em;
+	display: none;
+}
+.sorry_none {
+	padding-top: 16em;
+	color: #b4b4b4;
+	font-size: 1.875em;
+}
+
+
+
+
+
+
+
+
+
+.reviewNum{
+	float:left;
+	background:url(//img50.allinmd.cn/case/huifu.jpg) no-repeat left center;
+	width:15%;
+	background-size:33%;
+	font-size:1.375em;
+	color:#808080;
+	text-align:left;
+	padding-left:1.875em;
+    margin-top: 1em;
+	/*line-height:3em;   大首页的病例推荐位的作者出注释*/
+}
+.browseNum{
+	float:left;
+	background:url(//img50.allinmd.cn/case/eye.jpg) no-repeat left center;
+	width:15%;
+	background-size:30%;
+	font-size:1.375em;
+	color:#808080;
+	text-align:left;
+	padding-left:1.875em;
+	/*line-height:3em;   大首页的病例推荐位的作者出注释*/
+}
+.case_list_hf02{
+     float:left;
+     background: url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;
+     background-size:7%;
+     font-size:1.375em;
+     color:#808080;
+     width:60%;        /*原来是60%在我的收藏中的距离太大*/
+     /*line-height:3em;   大首页的病例推荐位的作者出注释*/
+     text-align:left;
+     padding-left:7%;
+	 height:1.375em;
+	 overflow:hidden;
+ }
+.playNum{
+	float:left;
+	background:url(//img50.allinmd.cn/v3/video-list/images/play.jpg) no-repeat left center;
+	width:15%;
+	background-size:30%;
+	font-size:1.375em;
+	color:#808080;
+	text-align:left;
+	padding-left:1.875em;
+    margin-top: 1em;
+	/*line-height:3em;   大首页的病例推荐位的作者出注释*/
+}
+
+.case_list_cont .case_list_hf02,.case_list_cont .case_list_hf02{
+    float:left;
+    background: url(//img50.allinmd.cn/video/ren_bg.png) no-repeat left center;
+    background-size:12%;
+    font-size:1.375em;
+    color:#808080;
+    width:38%;        /*原来是60%在我的收藏中的距离太大*/
+    /*line-height:3em;   大首页的病例推荐位的作者出注释*/
+    text-align:left;
+    padding-left:7%;
+    height:1.375em;
+    overflow:hidden;
+    margin-top: 1em;
+}
+.case_list_cont .reviewNum{
+    float:left;
+    background:url(//img50.allinmd.cn/case/huifu.jpg) no-repeat left center;
+    width:17%;
+    background-size:30%;
+    font-size:1.375em;
+    color:#808080;
+    text-align:left;
+    padding-left:1.9em;
+    margin-top: 1em;
+}
+.case_list_cont .browseNum{
+    float:left;
+    background:url(//img50.allinmd.cn/case/eye.jpg) no-repeat left center;
+    width:18%;
+    background-size:25%;
+    font-size:1.375em;
+    color:#808080;
+    text-align:left;
+    padding-left:1.9em;
+    margin-top: 1em;
+    /*line-height:3em;   大首页的病例推荐位的作者出注释*/
+}
+.down{
+	padding: 1.25em 1.25em 0.75em 1.25em;
+}
+.up{
+	padding: 1em 1.25em 1em 1.25em;
+}
+.case_down{
+	padding: 1em 1.25em 0.75em 1.25em;
+}
+.case_up{
+	padding: 0.2em 0 1.25em 1.25em;
+}
+
+
+
+
+
+.look_dh{
+    width:30%;
+}
+.look_comment_text{
+    width:30%;
+}
+.look_dianzan{
+    width:20%;
+}
+.look_delete{
+    width:20%;
+}
+.look_dh img{
+    width:90%;
+}
+.look_comment_text img{
+    width:80%;
+}
+.look_dianzan img{
+    width:90%;
+}
+.look_delete img{
+    width:100%;
+}
+
+
+
+
+.case_detail_gz{
+	margin:0 0 1.5em 0;
+}
+.case_detail_pl_text,.case_detail_gz_text{
+	float:left;
+}
+.case_detail_pl_text,.case_detail_gz_text{
+    color:#0c8ef3;
+    font-size:1.5em;
+    line-height:2em;
+}
+.case_detail_gz_text{
+	margin:0 0 0 6%;
+}
+.case_detail_gz_but{
+	position:relative;
+	float:right;
+	width: 27%;
+}
+.case_detail_gz_but a{
+	float:right;
+	background:url(//img50.allinmd.cn/case/detail_gz_but.png) no-repeat ;
+	height:3.35em;
+	width:100%;
+	background-size: 100%;
+	position:relative;
+}
+.gz_after_up a{
+	float:right;
+	background:url(//img50.allinmd.cn/case/detail_ygz_but.png) no-repeat ;
+	height:3.35em;
+	width: 100%;
+	background-size: 100%;
+}
+.gz_after_down a{
+	float:right;
+	background:url(//img50.allinmd.cn/case/detail_ygz_but_d.png) no-repeat ;
+	height:3.35em;
+	width: 100%;
+	background-size: 100%;
+}
+.case_bj_but a{
+	float:right;
+	background:url(//img50.allinmd.cn/case/detail_bj_but.png) no-repeat ;
+	height:3.35em;
+	width: 100%;
+	background-size: 100%;
+}
+.case_detail_qxgz_but a{
+	background:url(//img50.allinmd.cn/case/detail_qxgz_but.png) no-repeat ;
+	height:3.35em;
+	width: 100%;
+	background-size: 100%;
+	position:absolute;
+	left:0;
+	top:2em;
+	z-index:2;
+}
+
+
+.comm_detail{
+    padding-top:1.5em;
+}
+.comm_detail li{
+    float:left;
+    overflow: hidden;
+    padding:0;
+}
+.comm_detail li img{
+    width:100%;
+    height:100%;
+    min-height:10em;
+    max-height:100%;
+}
+
+
+.comm_detail li.li-one{
+    width:60%;
+    height:14em;
+    margin:0 1em 1em 0;
+}
+
+.comm_detail li.li-four{
+    width:32%;
+    margin:0 0.8em 1em 0;
+    height: 12em;
+}
+
+.comm_detail li.li-nine{
+    width:32%;
+    margin:0 0.8em 1em 0;
+
+    height:8em;
+}
+ 
+.comm_detail li.li-nine:nth-child(3n){
+    margin-right: 0;
+}
+
+
+.case_list_all {
+    width: 100%;
+}
+.case_list_all .case_list_eye {
+    float: left;
+    background: url(//img50.allinmd.cn/case/eye.jpg) no-repeat left center;
+    width: 10%;
+    background-size: 33%;
+    font-size: 1.375em;
+    color: #808080;
+    text-align: left;
+    padding-left: 1.875em;
+    margin-top: 1em;
+}
+.case_list_all .case_list_review_my {
+    float: left;
+    background: url(//img50.allinmd.cn/case/huifu.jpg) no-repeat left center;
+    width: 10%;
+    background-size: 35%;
+    font-size: 1.375em;
+    color: #808080;
+    text-align: left;
+    padding-left: 1.875em;
+    margin-top: 1em;
+}
+.upload_del{
+	display:none;
+	color:#ff3b30;
+	font-size: 1.75em;
+	text-align: center;
+	margin-top: 1.75em;
+}

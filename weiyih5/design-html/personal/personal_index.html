@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>个人主页</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_index.css">
+</head>
+
+<body>
+    <section class="al-mainInner">
+        <!-- 顶部信息栏 -->
+        <header class="al-personalHead">
+            <a href="/design-html/personal/personal_config.html" class="al-personalConfig icon-config">设置</a>
+            <span class="al-personalShare icon-shareWhite">分享</span>
+            <article class="al-personalBasicMsg">
+                <figure class="al-personalImg">
+                    <a href="/design-html/personal/personal_changeImg.html">
+                        <img src="/images/img50/pages/personal/no_head.png" alt="">
+                    </a>
+                </figure>
+                <figcaption class="al-personalBasicMsgContent">
+                    <h2 class="al-vipUser">张艳丽<button class="al-personalGoQualification al-whiteBtn">去认证</button></h2>
+                    <ul>
+                        <li class="al-personalSnsNum"><a href="/design-html/personal/personal_fans.html">粉丝<span>169</span></a></li>
+                        <li class="al-personalSnsNum"><a href="/design-html/personal/personal_follow.html">关注<span>1万+</span></a></li>
+                        <li class="al-personalSnsNum"><a href="/design-html/personal/personal_like.html">赞<span>367</span><i class="al-newTips"></i></a></li>
+                    </ul>
+                </figcaption>
+            </article>
+            <button class="al-personalGoLogin al-whiteBtn">登录 / 注册</button>
+        </header>
+        <!-- 滚动距离时——顶部信息 -->
+        <header class="al-personalScrollHead">
+            <h2>张艳丽<span class="al-personalShare icon-shareDeepBlue">分享</span></h2>
+        </header>
+        <!-- 导航栏部分 -->
+        <nav class="al-personalNavbar">
+            <figure class="al-personNavbarItem active" data-role="index">
+                <img class="showOff" src="/images/img50/pages/personal/index_off.png" alt="">
+                <img class="showOn" src="/images/img50/pages/personal/index_on.png" alt="">
+                <figcaption>主页</figcaption>
+            </figure>
+            <figure class="al-personNavbarItem" data-role="contribution">
+                <img class="showOff" src="/images/img50/pages/personal/contribution_off.png" alt="">
+                <img class="showOn" src="/images/img50/pages/personal/contribution_on.png" alt="">
+                <figcaption>贡献</figcaption>
+            </figure>
+            <figure class="al-personNavbarItem" data-role="active">
+                <img class="showOff" src="/images/img50/pages/personal/active_off.png" alt="">
+                <img class="showOn" src="/images/img50/pages/personal/active_on.png" alt="">
+                <figcaption>动态</figcaption>
+            </figure>
+            <figure class="al-personNavbarItem" data-role="intro">
+                <img class="showOff" src="/images/img50/pages/personal/intro_off.png" alt="">
+                <img class="showOn" src="/images/img50/pages/personal/intro_on.png" alt="">
+                <figcaption>简介</figcaption>
+            </figure>
+        </nav>
+        <!-- 主内容区域 根据导航栏激活条目显示 -->
+        <section class="al-personalContent al-personalIndex al-personalNoLogin" data-role="index">
+            <!-- 头像上传 -->
+            <section class="al-middleTipsModal">
+                <figure class="al-middleTipsModalText al-loading">
+                    <img src="/images/img50/pages/default/loading.png" alt="">
+                    <p>正在上传头像</p>
+                </figure>
+                <figure class="al-middleTipsModalText al-loadingFinish">
+                    <img src="/images/img50/pages/default/loading_finish.png" alt="">
+                    <p>上传成功</p>
+                </figure>
+            </section>
+            <section class="al-personalBrowsedPart">
+                <section class="al-personalBrowsedItem">
+                    <a href="/design-html/personal/personal_collection.html" class="icon-collect">收藏的</a>
+                </section>
+                <section class="al-personalBrowsedItem">
+                    <a href="/design-html/personal/personal_myFollow.html" class="icon-follow">关注的</a>
+                </section>
+                <section class="al-personalBrowsedItem">
+                    <a href="/design-html/personal/personal_browsed.html" class="icon-history">历史记录</a>
+                </section>
+            </section>
+            <section class="al-personalBrowsedPart">
+                <section class="al-personalBrowsedItem">
+                    <a href="/design-html/personal/personal_myComment.html" class="icon-comment">我的评论</a>
+                </section>
+                <section class="al-personalBrowsedItem">
+                    <a href="/design-html/personal/personal_draft.html" class="icon-draft">草稿<i class="al-newsNum">2</i></a>
+                </section>
+            </section>
+        </section>
+        <section class="al-personalContent al-personalContribution" data-role="contribution">
+            <header class="al-personalContributionHeader">
+                <h2 class="al-personalContributionTitle">
+                    全部贡献<span>46</span>
+                </h2>
+                <section class="al-personalContributionSelector">
+                    <h2>全部</h2>
+                    <ul>
+                        <li class="al-personalContributionSelectorItem">全部</li>
+                        <li class="al-personalContributionSelectorItem">视频</li>
+                        <li class="al-personalContributionSelectorItem">病例</li>
+                        <li class="al-personalContributionSelectorItem">文库</li>
+                        <li class="al-personalContributionSelectorItem">话题</li>
+                    </ul>
+                </section>
+            </header>
+            <section class="al-contentPartModule">
+                <section class="al-tableBox">
+                    <article class="al-contentText">
+                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵</span></a>
+                        <p class="al-contentOtherMsg">
+                            <span class="al-contentWatchedNum"><i class="icon-contentAuthor"></i>喵咪咪咪</span>
+                            <span class="al-contentLikeNum"><i class="icon-contentWatchedNum"></i>233</span>
+                            <span class="al-contentDelete">x</span>
+                        </p>
+                    </article>
+                    <figure class="al-contentImgBox">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                            <i class="al-videoPlayBtn">
+                            <img src="/images/img50/pages/index/videoPlay_btn.png" alt="">
+
+                        </i>
+                            <span class="al-videoTime">00:00</span>
+                        </a>
+                    </figure>
+                </section>
+            </section>
+            <section class="al-contentPartModule">
+                <section class="al-tableBox">
+                    <article class="al-contentText">
+                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵</span></a>
+                        <p class="al-contentOtherMsg">
+                            <span class="al-contentNewest">最新</span>
+                            <span class="al-contentWatchedNum"><i class="icon-contentAuthor"></i>喵咪咪咪</span>
+                            <span class="al-contentLikeNum"><i class="icon-contentWatchedNum"></i>233</span>
+                            <span class="al-contentDelete">x</span>
+                        </p>
+                    </article>
+                    <figure class="al-contentImgBox">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                        </a>
+                        <i class="al-videoPlayBtn">
+                            <img src="/images/img50/pages/index/videoPlay_btn.png" alt="">
+                        </i>
+                        <span class="al-videoTime">00:00</span>
+                    </figure>
+                </section>
+            </section>
+            <section class="al-contentPartModule">
+                <section class="al-tableBox">
+                    <article class="al-contentText">
+                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                        <p class="al-contentOtherMsg">
+                            <span class="al-contentNewest">最新</span>
+                            <span class="al-contentWatchedNum"><i class="icon-contentAuthor"></i>喵咪咪咪</span>
+                            <span class="al-contentLikeNum"><i class="icon-contentWatchedNum"></i>233</span>
+                            <span class="al-contentDelete">x</span>
+                        </p>
+                    </article>
+                    <figure class="al-contentImgBox">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                        </a>
+                    </figure>
+                </section>
+            </section>
+            <section class="al-contentPartModule">
+                <section class="al-tableBox">
+                    <article class="al-contentText">
+                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵</span></a>
+                        <p class="al-contentOtherMsg">
+                            <span class="al-contentWatchedNum"><i class="icon-contentAuthor"></i>喵咪咪咪</span>
+                            <span class="al-contentLikeNum"><i class="icon-contentWatchedNum"></i>233</span>
+                            <span class="al-contentDelete">x</span>
+                        </p>
+                    </article>
+                    <figure class="al-contentImgBox">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                            <i class="al-videoPlayBtn">
+                            <img src="/images/img50/pages/index/videoPlay_btn.png" alt="">
+
+                        </i>
+                            <span class="al-videoTime">00:00</span>
+                        </a>
+                    </figure>
+                </section>
+            </section>
+            <section class="al-contentPartModule">
+                <section class="al-tableBox">
+                    <article class="al-contentText">
+                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵</span></a>
+                        <p class="al-contentOtherMsg">
+                            <span class="al-contentNewest">最新</span>
+                            <span class="al-contentWatchedNum"><i class="icon-contentAuthor"></i>喵咪咪咪</span>
+                            <span class="al-contentLikeNum"><i class="icon-contentWatchedNum"></i>233</span>
+                            <span class="al-contentDelete">x</span>
+                        </p>
+                    </article>
+                    <figure class="al-contentImgBox">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                        </a>
+                        <i class="al-videoPlayBtn">
+                            <img src="/images/img50/pages/index/videoPlay_btn.png" alt="">
+                        </i>
+                        <span class="al-videoTime">00:00</span>
+                    </figure>
+                </section>
+            </section>
+            <section class="al-contentPartModule">
+                <section class="al-tableBox">
+                    <article class="al-contentText">
+                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                        <p class="al-contentOtherMsg">
+                            <span class="al-contentNewest">最新</span>
+                            <span class="al-contentWatchedNum"><i class="icon-contentAuthor"></i>喵咪咪咪</span>
+                            <span class="al-contentLikeNum"><i class="icon-contentWatchedNum"></i>233</span>
+                            <span class="al-contentDelete">x</span>
+                        </p>
+                    </article>
+                    <figure class="al-contentImgBox">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                        </a>
+                    </figure>
+                </section>
+            </section>
+            <section class="al-contentPartModule">
+                <section class="al-tableBox">
+                    <article class="al-contentText">
+                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵</span></a>
+                        <p class="al-contentOtherMsg">
+                            <span class="al-contentWatchedNum"><i class="icon-contentAuthor"></i>喵咪咪咪</span>
+                            <span class="al-contentLikeNum"><i class="icon-contentWatchedNum"></i>233</span>
+                            <span class="al-contentDelete">x</span>
+                        </p>
+                    </article>
+                    <figure class="al-contentImgBox">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                            <i class="al-videoPlayBtn">
+                            <img src="/images/img50/pages/index/videoPlay_btn.png" alt="">
+
+                        </i>
+                            <span class="al-videoTime">00:00</span>
+                        </a>
+                    </figure>
+                </section>
+            </section>
+            <section class="al-contentPartModule">
+                <section class="al-tableBox">
+                    <article class="al-contentText">
+                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵</span></a>
+                        <p class="al-contentOtherMsg">
+                            <span class="al-contentNewest">最新</span>
+                            <span class="al-contentWatchedNum"><i class="icon-contentAuthor"></i>喵咪咪咪</span>
+                            <span class="al-contentLikeNum"><i class="icon-contentWatchedNum"></i>233</span>
+                            <span class="al-contentDelete">x</span>
+                        </p>
+                    </article>
+                    <figure class="al-contentImgBox">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                        </a>
+                        <i class="al-videoPlayBtn">
+                            <img src="/images/img50/pages/index/videoPlay_btn.png" alt="">
+                        </i>
+                        <span class="al-videoTime">00:00</span>
+                    </figure>
+                </section>
+            </section>
+            <section class="al-contentPartModule">
+                <section class="al-tableBox">
+                    <article class="al-contentText">
+                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                        <p class="al-contentOtherMsg">
+                            <span class="al-contentNewest">最新</span>
+                            <span class="al-contentWatchedNum"><i class="icon-contentAuthor"></i>喵咪咪咪</span>
+                            <span class="al-contentLikeNum"><i class="icon-contentWatchedNum"></i>233</span>
+                            <span class="al-contentDelete">x</span>
+                        </p>
+                    </article>
+                    <figure class="al-contentImgBox">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                        </a>
+                    </figure>
+                </section>
+            </section>
+            <section class="al-contentPartModule">
+                <section class="al-tableBox">
+                    <article class="al-contentText">
+                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵</span></a>
+                        <p class="al-contentOtherMsg">
+                            <span class="al-contentWatchedNum"><i class="icon-contentAuthor"></i>喵咪咪咪</span>
+                            <span class="al-contentLikeNum"><i class="icon-contentWatchedNum"></i>233</span>
+                            <span class="al-contentDelete">x</span>
+                        </p>
+                    </article>
+                    <figure class="al-contentImgBox">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                            <i class="al-videoPlayBtn">
+                            <img src="/images/img50/pages/index/videoPlay_btn.png" alt="">
+
+                        </i>
+                            <span class="al-videoTime">00:00</span>
+                        </a>
+                    </figure>
+                </section>
+            </section>
+            <section class="al-contentPartModule">
+                <section class="al-tableBox">
+                    <article class="al-contentText">
+                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵</span></a>
+                        <p class="al-contentOtherMsg">
+                            <span class="al-contentNewest">最新</span>
+                            <span class="al-contentWatchedNum"><i class="icon-contentAuthor"></i>喵咪咪咪</span>
+                            <span class="al-contentLikeNum"><i class="icon-contentWatchedNum"></i>233</span>
+                            <span class="al-contentDelete">x</span>
+                        </p>
+                    </article>
+                    <figure class="al-contentImgBox">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                        </a>
+                        <i class="al-videoPlayBtn">
+                            <img src="/images/img50/pages/index/videoPlay_btn.png" alt="">
+                        </i>
+                        <span class="al-videoTime">00:00</span>
+                    </figure>
+                </section>
+            </section>
+            <section class="al-contentPartModule">
+                <section class="al-tableBox">
+                    <article class="al-contentText">
+                        <a href="javascript:void(0)" class="al-contentTitle"><span>喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵</span></a>
+                        <p class="al-contentOtherMsg">
+                            <span class="al-contentNewest">最新</span>
+                            <span class="al-contentWatchedNum"><i class="icon-contentAuthor"></i>喵咪咪咪</span>
+                            <span class="al-contentLikeNum"><i class="icon-contentWatchedNum"></i>233</span>
+                            <span class="al-contentDelete">x</span>
+                        </p>
+                    </article>
+                    <figure class="al-contentImgBox">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                        </a>
+                    </figure>
+                </section>
+            </section>
+            <section class="al-personalContributionOver">
+                <span>~</span>没有更多了<span>~</span>
+            </section>
+            <section class="al-personalContributionNone">
+                <img src="/images/img50/pages/personal/no_contribution.png" alt="">
+                <button class="al-personalPushContribution">去发布</button>
+            </section>
+        </section>
+        <section class="al-personalContent al-personalActive" data-role="active">
+            <section class="al-comment">
+                <section class="al-commentItem">
+                    <figure class="al-commentUserImg">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/index/ranks_head.png" alt="">
+                        </a>
+                    </figure>
+                    <article class="al-commentContent">
+                        <h2 class="al-commentUserName">
+                    <a href="javascript:void(0)">喵喵喵</a>
+                        <span class="al-commentTime">刚刚</span>
+                    </h2>
+                        <p class="al-commentContentText">
+                            喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                        </p>
+                        <section class="al-commentContentMainArea">
+                            <section class="al-commentContentImgPart">
+                                <figure class="al-commentContentImg">
+                                    <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                                </figure>
+                                <figure class="al-commentContentImg">
+                                    <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                                </figure>
+                                <figure class="al-commentContentImg">
+                                    <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                                </figure>
+                                <figure class="al-commentContentImg">
+                                    <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                                </figure>
+                            </section>
+                        </section>
+                        <section class="al-commentOtherMsg">
+                            <span><i class="icon-commentNum"></i>27</span>
+                            <span class="al-commentLikeNum"><i class="icon-commentLikeNum"></i>745</span>
+                            <figure class="al-commentShare">···
+                                <section class="al-commentShareBtn">
+                                    <p class="al-commentShareSns">分享</p>
+                                    <p class="al-commentCollection">收藏</p>
+                                </section>
+                            </figure>
+                        </section>
+                    </article>
+                </section>
+                <section class="al-commentItem">
+                    <figure class="al-commentUserImg">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/index/ranks_head.png" alt="">
+                        </a>
+                    </figure>
+                    <article class="al-commentContent">
+                        <h2 class="al-commentUserName">
+                    <a href="javascript:void(0)">喵喵喵</a>
+                    <span class="al-commentShareTips">分享</span>
+                        <span class="al-commentTime">刚刚</span>
+                    </h2>
+                        <p class="al-commentContentText">
+                            喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                        </p>
+                        <section class="al-commentContentMainArea">
+                            <section class="al-commentContentImgPart">
+                                <figure class="al-commentContentImg">
+                                    <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                                </figure>
+                                <figure class="al-commentContentImg">
+                                    <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                                </figure>
+                            </section>
+                        </section>
+                        <section class="al-commentOtherMsg">
+                            <span><i class="icon-commentNum"></i>27</span>
+                            <span class="al-commentLikeNum"><i class="icon-commentLikeNum"></i>745</span>
+                            <figure class="al-commentShare">···
+                                <section class="al-commentShareBtn">
+                                    <p class="al-commentShareSns">分享</p>
+                                    <p class="al-commentCollection">收藏</p>
+                                </section>
+                            </figure>
+                        </section>
+                    </article>
+                </section>
+                <section class="al-commentItem">
+                    <figure class="al-commentUserImg">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/index/ranks_head.png" alt="">
+                        </a>
+                    </figure>
+                    <article class="al-commentContent">
+                        <h2 class="al-commentUserName">
+                    <a href="javascript:void(0)">喵喵喵</a>
+                    <span class="al-commentShareTips">分享</span>
+                        <span class="al-commentTime">刚刚</span>
+                    </h2>
+                        <p class="al-commentContentText">
+                            喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                        </p>
+                        <section class="al-commentContentMainArea">
+                            <article class="al-commentShareContent">
+                                <span>喵喵喵：喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵咪咪咪咪咪咪咪咪咪咪咪咪咪咪咪咪？</span>
+                            </article>
+                        </section>
+                        <section class="al-commentOtherMsg">
+                            <span><i class="icon-commentNum"></i>27</span>
+                            <span class="al-commentLikeNum"><i class="icon-commentLikeNum"></i>745</span>
+                            <figure class="al-commentShare">···
+                                <section class="al-commentShareBtn">
+                                    <p class="al-commentShareSns">分享</p>
+                                    <p class="al-commentCollection">收藏</p>
+                                </section>
+                            </figure>
+                        </section>
+                    </article>
+                </section>
+                <section class="al-commentItem">
+                    <figure class="al-commentUserImg">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/index/ranks_head.png" alt="">
+                        </a>
+                    </figure>
+                    <article class="al-commentContent">
+                        <h2 class="al-commentUserName">
+                    <a href="javascript:void(0)">喵喵喵</a>
+                    <span class="al-commentShareTips">分享活动</span>
+                        <span class="al-commentTime">刚刚</span>
+                    </h2>
+                        <p class="al-commentContentText">
+                            喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                        </p>
+                        <section class="al-commentContentMainArea">
+                            <figure class="al-commentContentVideo">
+                                <img class="al-commentContentVideoImg" src="/images/img50/pages/default/content_img.jpg" alt="">
+                                <i class="al-commentContentVideoBtn">
+                                <img src="/images/img50/pages/index/videoPlay_btn.png" alt="">
+                            </i>
+                                <span class="al-commentContentVideoTime">04:24</span>
+                            </figure>
+                            <section class="al-commentContentImgPart">
+                                <figure class="al-commentContentImg">
+                                    <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                                </figure>
+                            </section>
+                        </section>
+                        <section class="al-commentOtherMsg">
+                            <span><i class="icon-commentNum"></i>27</span>
+                            <span class="al-commentLikeNum"><i class="icon-commentLikeNum"></i>745</span>
+                            <figure class="al-commentShare">···
+                                <section class="al-commentShareBtn">
+                                    <p class="al-commentShareSns">分享</p>
+                                    <p class="al-commentCollection">收藏</p>
+                                </section>
+                            </figure>
+                        </section>
+                    </article>
+                </section>
+                <section class="al-commentItem">
+                    <figure class="al-commentUserImg">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/index/ranks_head.png" alt="">
+                        </a>
+                    </figure>
+                    <article class="al-commentContent">
+                        <h2 class="al-commentUserName">
+                    <a href="javascript:void(0)">喵喵喵</a>
+                    <span class="al-commentShareTips">分享</span>
+                        <span class="al-commentTime">刚刚</span>
+                    </h2>
+                        <p class="al-commentContentText">
+                            喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                        </p>
+                        <section class="al-commentContentMainArea">
+                            <figure class="al-commentContentVideo">
+                                <img class="al-commentContentVideoImg" src="/images/img50/pages/default/content_img.jpg" alt="">
+                                <i class="al-commentContentVideoBtn">
+                                <img src="/images/img50/pages/index/videoPlay_btn.png" alt="">
+                            </i>
+                                <span class="al-commentContentVideoTime">04:24</span>
+                            </figure>
+                            <section class="al-commentContentImgPart">
+                                <figure class="al-commentContentImg">
+                                    <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                                </figure>
+                                <figure class="al-commentContentImg">
+                                    <img src="/images/img50/pages/default/content_img.jpg" alt="">
+                                </figure>
+                            </section>
+                            <article class="al-commentShareContent">
+                                <span>喵喵喵：喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵咪咪咪咪咪咪咪咪咪咪咪咪咪咪咪咪？</span>
+                            </article>
+                        </section>
+                        <section class="al-commentOtherMsg">
+                            <span><i class="icon-commentNum"></i>27</span>
+                            <span class="al-commentLikeNum"><i class="icon-commentLikeNum"></i>745</span>
+                            <figure class="al-commentShare">···
+                                <section class="al-commentShareBtn">
+                                    <p class="al-commentShareSns">分享</p>
+                                    <p class="al-commentCollection">收藏</p>
+                                </section>
+                            </figure>
+                        </section>
+                    </article>
+                </section>
+                <section class="al-commentItem">
+                    <figure class="al-commentUserImg">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/index/ranks_head.png" alt="">
+                        </a>
+                    </figure>
+                    <article class="al-commentContent">
+                        <h2 class="al-commentUserName">
+                    <a href="javascript:void(0)">喵喵喵</a>
+                    <span class="al-commentShareTips">分享</span>
+                        <span class="al-commentTime">刚刚</span>
+                    </h2>
+                        <p class="al-commentContentText">
+                            喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                        </p>
+                        <p class="al-commentContentQuote">
+                            引用病例：《<span>干狗日驴艹飞机飞机老师你怎么了鸭脖子</span>》
+                        </p>
+                        <section class="al-commentContentMainArea">
+                            <article class="al-commentShareContent al-commentShareDeleted">
+                                <span>评论原文被删除</span>
+                            </article>
+                        </section>
+                        <section class="al-commentOtherMsg">
+                            <span><i class="icon-commentNum"></i>评论</span>
+                            <span><i class="icon-commentLikeNum"></i>点赞</span>
+                            <figure class="al-commentShare">···
+                                <section class="al-commentShareBtn">
+                                    <p class="al-commentShareSns">分享</p>
+                                    <p class="al-commentCollection">收藏</p>
+                                </section>
+                            </figure>
+                        </section>
+                    </article>
+                </section>
+                <section class="al-commentItem">
+                    <figure class="al-commentUserImg">
+                        <a href="javascript:void(0)">
+                            <img src="/images/img50/pages/index/ranks_head.png" alt="">
+                        </a>
+                    </figure>
+                    <article class="al-commentContent">
+                        <h2 class="al-commentUserName">
+                    <a href="javascript:void(0)">喵喵喵</a>
+                    <span class="al-commentShareTips">分享</span>
+                        <span class="al-commentTime">刚刚</span>
+                    </h2>
+                        <p class="al-commentContentText">
+                            喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+                        </p>
+                        <section class="al-commentContentMainArea">
+                            <article class="al-commentShareContent">
+                                <span>喵喵喵：喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵咪咪咪咪咪咪咪咪咪咪咪咪咪咪咪咪？</span>
+                            </article>
+                        </section>
+                        <section class="al-commentOtherMsg">
+                            <span><i class="icon-commentNum"></i>评论</span>
+                            <span><i class="icon-commentLikeNum"></i>点赞</span>
+                            <figure class="al-commentShare">···
+                                <section class="al-commentShareBtn">
+                                    <p class="al-commentShareSns">分享</p>
+                                    <p class="al-commentCollection">收藏</p>
+                                </section>
+                            </figure>
+                        </section>
+                    </article>
+                </section>
+            </section>
+            <section class="al-personalActiveNone">
+                <img src="/images/img50/pages/personal/no_active.png" alt="">
+            </section>
+        </section>
+        <section class="al-personalContent al-personalIntro" data-role="intro">
+            <section class="al-personalIntroMsgRatio">
+                <figure class="al-personalIntroMsgLine">
+                    <i class="al-personalIntroLineMask">
+                        <span class="al-personalIntroRatioNum">
+                            10%
+                        </span>
+                    </i>
+                </figure>
+                <figcaption>完善更多信息，让更多人了解你</figcaption>
+                <a href="/design-html/personal/personal_msgConfig.html" class="btn-primary icon-pencilBlue">完善简介</a>
+            </section>
+            <section class="al-tableModule">
+                <header class="al-personalContentTitle">
+                    <h2>基本信息</h2>
+                </header>
+                <article class="al-tableModuleContent">
+                    <p>张艳丽 女</p>
+                    <p>主任医师、讲师、博士生导师</p>
+                    <p>解放军总医院</p>
+                    <article class="al-basicMsgTag">
+                        <button>关节</button>
+                        <button>中西医结合</button>
+                    </article>
+                </article>
+            </section>
+            <section class="al-tableModule">
+                <header class="al-personalContentTitle">
+                    <h2>个人简介</h2>
+                </header>
+                <article class="al-tableModuleContent">
+                    <span class="al-tableModuleContentText">解放军总医院专科医院院长、主任医师、教授、博士 生导师。专科方向主要以人工髋关节置换、颈椎病、 腰腿痛及脊柱畸形为重点，积累了为重点，积累了为重点，积累了为重点，积累了为重点，积累了<b class="al-contentShow">展开</b></span>
+                    <i class="al-pushInContentNum">50</i>
+                </article>
+            </section>
+            <section class="al-tableModule">
+                <header class="al-personalContentTitle">
+                    <h2>工作经历</h2>
+                </header>
+                <article class="al-tableModuleContent">
+                    <p>中国人民解放军总医院 北京市</p>
+                    <p>骨科</p>
+                    <p>主任医师、教授、博士生导师</p>
+                    <span class="al-timeRange">1979/09-1984/07</span>
+                </article>
+            </section>
+            <section class="al-tableModule">
+                <header class="al-personalContentTitle">
+                    <h2>教育背景</h2>
+                </header>
+                <article class="al-tableModuleContent">
+                    <p>北京市 解放军第二军医大学</p>
+                    <span class="al-timeRange">1979/09-1984/07</span>
+                </article>
+                <article class="al-tableModuleContent">
+                    <p>北京市 北京市第二外国语学院中瑞管理学院</p>
+                    <p>临床医学 本科</p>
+                    <span class="al-timeRange">1979/09-1984/07</span>
+                </article>
+            </section>
+            <section class="al-tableModule">
+                <header class="al-personalContentTitle">
+                    <h2>继续教育</h2>
+                </header>
+                <article class="al-tableModuleContent">
+                    <p>培训机构名称</p>
+                    <p>培训内容描述，培训内容描述，培训内容描述培训内容描述</p>
+                    <span class="al-timeRange">1979/09-1984/07</span>
+                    <p>临床医学</p>
+                </article>
+            </section>
+            <section class="al-tableModule">
+                <header class="al-personalContentTitle">
+                    <h2>获得荣誉</h2>
+                </header>
+                <article class="al-tableModuleContent">
+                    <p>获得荣誉名称</p>
+                    <p>颁发机构名称</p>
+                    <span class="al-timeRange">1979/09-1984/07</span>
+                </article>
+            </section>
+            <section class="al-tableModule">
+                <header class="al-personalContentTitle">
+                    <h2>科研基金</h2>
+                </header>
+                <article class="al-tableModuleContent">
+                    <p>项目名称</p>
+                    <p>项目编号</p>
+                    <span class="al-timeRange">1979/09-1984/07</span>
+                </article>
+            </section>
+            <section class="al-tableModule">
+                <header class="al-personalContentTitle">
+                    <h2>社会任职</h2>
+                </header>
+                <article class="al-tableModuleContent">
+                    <p>机构名称</p>
+                    <p>职位名称</p>
+                    <span class="al-timeRange">1979/09-1984/07</span>
+                </article>
+            </section>
+            <section class="al-tableModule">
+                <header class="al-personalContentTitle">
+                    <h2>学术专著</h2>
+                </header>
+                <article class="al-tableModuleContent">
+                    <p>标题名称</p>
+                    <p>职位名称</p>
+                    <p>出版机构</p>
+                    <span class="al-timeRange">1979/09-1984/07</span>
+                    <p>引用信息内容描述，引用信息内容描述</p>
+                </article>
+            </section>
+            <section class="al-tableModule">
+                <header class="al-personalContentTitle">
+                    <h2>发明专利</h2>
+                </header>
+                <article class="al-tableModuleContent">
+                    <p>专利名称</p>
+                    <p>0910345</p>
+                    <p>出版机构</p>
+                    <span class="al-timeRange">1979/09-1984/07</span>
+                    <p>中国</p>
+                </article>
+            </section>
+            <section class="al-noLoginTips">
+                <figure>
+                    <img src="/images/img50/pages/personal/no_login.png" alt="">
+                </figure>
+            </section>
+        </section>
+        <!-- 页脚功能栏 -->
+        <footer class="al-footerBar">
+            <a href="/design-html/index/hotest_index.html" class="al-footerBarItem">
+                <img src="/images/img50/pages/index/mainIndex_off.png" alt="">
+                <figcaption class="al-footerBarItemTitle">
+                    首页
+                </figcaption>
+                <i class="icon-newTips"></i>
+            </a>
+            <a href="/design-html/discover/discover_index.html" class="al-footerBarItem">
+                <img src="/images/img50/pages/index/discover_off.png" alt="">
+                <figcaption class="al-footerBarItemTitle">
+                    发现
+                </figcaption>
+                <i class="al-newsNum">5</i>
+            </a>
+            <a class="al-footerBarItem al-release">
+                <figure class="al-releaseBtn">
+                    <img src="/images/img50/pages/index/release_icon.png" alt="">
+                </figure>
+                <figcaption class="al-footerBarItemTitle">
+                    发布
+                </figcaption>
+            </a>
+            <a href="/design-html/message/message_index.html" class="al-footerBarItem">
+                <img src="/images/img50/pages/index/message_off.png" alt="">
+                <figcaption class="al-footerBarItemTitle">
+                    消息
+                </figcaption>
+            </a>
+            <a class="al-footerBarItem active">
+                <img src="/images/img50/pages/index/mine_on.png" alt="">
+                <figcaption class="al-footerBarItemTitle">
+                    我的
+                </figcaption>
+            </a>
+        </footer>
+        <!--占位用途，不显示-->
+        <footer class="al-footerBar" style="visibility: hidden;position: static;">
+            <a class="al-footerBarItem">
+                <img src="/images/img50/pages/index/message_off.png" alt="">
+                <figcaption class="al-footerBarItemTitle">
+                    首页
+                </figcaption>
+            </a>
+            <a class="al-footerBarItem">
+                <img src="/images/img50/pages/index/message_off.png" alt="">
+                <figcaption class="al-footerBarItemTitle">
+                    发现
+                </figcaption>
+            </a>
+            <a class="al-footerBarItem al-release">
+                <figure class="al-releaseBtn">
+                    <img src="/images/img50/pages/index/message_off.png" alt="">
+                </figure>
+                <figcaption class="al-footerBarItemTitle">
+                    发布
+                </figcaption>
+            </a>
+            <a class="al-footerBarItem">
+                <img src="/images/img50/pages/index/message_off.png" alt="">
+                <figcaption class="al-footerBarItemTitle">
+                    消息
+                </figcaption>
+            </a>
+            <a class="al-footerBarItem">
+                <img src="/images/img50/pages/index/message_off.png" alt="">
+                <figcaption class="al-footerBarItemTitle">
+                    我的
+                </figcaption>
+            </a>
+        </footer>
+    </section>
+    <!-- 发布 -->
+    <section class="al-releasePageMask">
+        <figure class="al-releaseTitle">
+            <img src="/images/img50/pages/index/release_title.png" alt="">
+        </figure>
+        <section class="al-releaseBtn">
+            <figure class="al-releaseItem">
+                <img src="/images/img50/pages/index/release_case.png" alt="">
+                <figcaption>病例</figcaption>
+            </figure>
+            <figure class="al-releaseItem">
+                <img src="/images/img50/pages/index/release_topic.png" alt="">
+                <figcaption>话题</figcaption>
+            </figure>
+            <figure class="al-releaseItem">
+                <img src="/images/img50/pages/index/release_draft.png" alt="">
+                <figcaption>草稿</figcaption>
+            </figure>
+        </section>
+        <figure class="al-releaseCancel">
+            <img src="/images/img50/pages/index/release_cancel.png" alt="">
+        </figure>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script>
+    $(function() {
+        FastClick.attach(document.body);
+
+        function rem(opx) {
+            var px = parseInt(opx);
+
+            return (px / 75) + 'rem';
+        }
+        //导航切换
+        tabChange();
+
+        function tabChange() {
+            var tabRole = $(".al-personNavbarItem.active").data("role");
+            $(".al-personalContent").hide();
+            $(".al-personalContent[data-role=" + tabRole + "]").show();
+            $(".al-personNavbarItem").on("click", function(e) {
+                tabRole = $(this).data("role");
+                var img = $(this).find("img");
+                var imgSrc = img.attr("src");
+                if ($(this).hasClass('active')) {
+                    return;
+                }
+                $(".al-personalContent").hide();
+                $(this).addClass('active').siblings('.al-personNavbarItem').removeClass('active');
+                $(".al-personalContent[data-role=" + tabRole + "]").show();
+            });
+        }
+        //贡献——下拉菜单
+        $(".al-personalContributionSelector h2").on("click", function(e) {
+            e.stopPropagation();
+            if ($(".al-personalContributionSelector").hasClass('al-personalSelectorOn')) {
+                $(".al-personalContributionSelector").removeClass('al-personalSelectorOn');
+            } else {
+                $(".al-personalContributionSelector").addClass('al-personalSelectorOn');
+            }
+
+            return false;
+        });
+        //封面收起
+        var headHeight = $(".al-personalHead").outerHeight();
+        var navbarTop = $(".al-personalNavbar").height();
+        var scrollHeadHeight = $(".al-personalScrollHead").outerHeight();
+        $(window).on("scroll", function() {
+            if (headHeight < $(this).scrollTop()) {
+                $(".al-personalHead").hide();
+                $(".al-personalScrollHead").addClass('al-personalHeadFixed');
+                $(".al-personalNavbar").addClass('al-personalNavbarFixed');
+                $(".al-mainInner").css("paddingTop", navbarTop + scrollHeadHeight + headHeight);
+            } else {
+                $(".al-personalHead").show();
+                $(".al-personalScrollHead").removeClass('al-personalHeadFixed');
+                $(".al-personalNavbar").removeClass('al-personalNavbarFixed');
+                $(".al-mainInner").css("paddingTop", "0");
+            }
+        });
+        if ($(".al-contentPartModule").length === 0) {
+            $('.al-personalContributionNone').show();
+        }
+        //单选框样式
+        $(".al-blueSelector").on("click", function() {
+
+            if ($(this).data("check") === "checked") {
+                return;
+            }
+            var sex = $(this).attr("name");
+            $(this).find("img").hide();
+            $(this).attr("data-check", "checked").siblings(".al-blueSelector").attr("data-check", "").find("img[name='off']").show();
+
+            $(this).find("img[name='on']").show();
+            $(this).siblings(".al-blueSelector").find("img[name='on']").hide();
+        });
+
+
+
+
+        //图片排列形式
+        function imgAndVideoListWay() {
+            $('.al-commentContentMainArea').each(function(index, element) {
+                var imgLen = $(this).find(".al-commentContentImgPart img").length;
+                var vioLen = $(this).find(".al-commentContentVideo .al-commentContentVideoImg").length;
+                console.log(vioLen + "," + imgLen)
+                if (imgLen === 0 || vioLen === 0) {
+                    return;
+                } else {
+                    if (vioLen === 1 && imgLen === 1) {
+                        $(this).find(".al-commentUserImg").width(rem("270px"));
+                        $(this).find(".al-commentUserImg").height(rem("180px"));
+                        $(this).find(".al-commentContentVideo").width(rem("270px"));
+                        $(this).find(".al-commentContentVideo").height(rem("180px"));
+                        $(this).find(".al-commentContentVideo").addClass('al-videoImgInLine');
+                        $(this).find(".al-commentContentImgPart").addClass('al-videoImgInLine');
+
+                    }
+                    if (vioLen === 1 && imgLen === 2) {
+                        $(this).find(".al-commentContentImgPart").find(".al-commentContentImg").css("width", rem("185px"));
+                        $(this).find(".al-commentContentImgPart").find(".al-commentContentImg").css("height", rem("130px"));
+                        $(this).find(".al-commentContentVideo").width(rem("360px"));
+                        $(this).find(".al-commentContentVideo").height(rem("240px"));
+
+
+                    }
+                }
+            });
+        }
+        imgAndVideoListWay();
+        $(".al-release").on("click", function(e) {
+            $(".al-releasePageMask").addClass('show');
+            $(".al-mainInner").addClass('al-fullBlur');
+        });
+        $(".al-releaseCancel").on("click", function(e) {
+            $(".al-releasePageMask").removeClass('show');
+            $(".al-mainInner").removeClass('al-fullBlur');
+        });
+    });
+    </script>
+</body>
+
+</html>

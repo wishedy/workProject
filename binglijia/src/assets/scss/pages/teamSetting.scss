@@ -1,0 +1,791 @@
+@charset "UTF-8";
+@import "../modules/common-modules";
+
+
+.alEmr-mainInner{
+    padding-top: 200px;
+    .teamSetting{
+        .title{
+            width: 242px;
+            background: url("/static/images/pages/teamsetting/titleBg.png") no-repeat;
+            height: 32px;
+            line-height: 32px;
+            @include fontSize(16px,#333);
+            p{
+                padding-left: 20px;
+                display: inline-block;
+                &:last-child{
+                    margin-left: 21px;
+                }
+            }
+            .notActive{
+
+                color: #909090;
+            }
+        }
+        .teamSetInput{
+            box-sizing: border-box;
+            width: 450px;
+            height: 66px;
+            border: 1px solid #C8C8C8;
+            margin: 70px 0 50px 0;
+            border-radius: 4px;
+            position: relative;
+            font-size: 0;
+            &.teamNameInput{
+                padding: 18px 2px 18px 18px;
+                height: auto;
+                width: 450px;
+                max-height: 252px;
+                //overflow: auto;
+                .memberOverflow{
+                    @include scrollbar();
+                    max-height: 216px;
+                    overflow: auto;
+                    height: auto;
+                }
+                input{
+                    border: none;
+                    line-height: 26px;
+                    padding-left: 10px;
+                    @include iconImgI(inline,170px,26px);
+                    background: #fff;
+                    border-radius: 3px;
+                    @include fontSize(22px);
+                }
+                .searchListLi{
+                    padding: 0 11px 0 16px;
+                    height: 36px;
+                    line-height: 36px;
+                    display: inline-block;
+                    background: #EBF4FF;
+                    border-radius: 100px;
+                    font-size: 0;
+                    margin: 0 12px 18px 0;
+                    max-width: 166px;
+                    b{
+                        display: inline-block;
+                        vertical-align: middle;
+                        max-width: 108px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        font-weight: normal;
+                        @include fontSize(18px,#2888FF);
+                    }
+                    i{
+                        @include iconImgI(inline-block,24px,24px);
+                        background: url("/static/images/pages/teamsetting/label_correct__cancel.png") no-repeat;
+                        margin-left: 7px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            &:focus{
+                background: #FFFFFF;
+                border: 1px solid #2888FF;
+                box-shadow: 0 0 4px 0 rgba(67,130,241,0.47);
+                border-radius: 4px;
+            }
+            .searchUserList{
+                background: #FFFFFF;
+                box-shadow: 0 8px 16px 0 rgba(204,214,231,0.80);
+                border-radius: 4px;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 72px;
+                z-index: 2;
+                //display: none;
+                max-height: 320px;
+                overflow: auto;
+                @include scrollbar();
+                li{
+                    font-size: 0;
+                    border-top: solid 1px #dedede;
+                    padding: 12px 0;
+                    margin: 0 12px;
+                    cursor: pointer;
+                    &:first-child{
+                        border-top: solid 1px #fff;
+                    }
+                    &:hover{
+                        background: #EBF4FF;
+                        border-top: solid 1px #EBF4FF;
+                    }
+                    div{
+                        white-space:nowrap;
+                        overflow:hidden;
+                        text-overflow:ellipsis;
+                    }
+                    p{
+                        display: inline-block;
+                        vertical-align: middle;
+                        @include fontSize(16px,#333);
+                        margin-right: 12px;
+                        &:nth-child(1){
+                            margin-right: 14px;
+                        }
+                        &:nth-child(3),&:nth-child(4){
+                            @include fontSize(14px,#666);
+                        }
+                    }
+                    img{
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 100px;
+                    }
+                }
+            }
+            &.error{
+                background: #FFFFFF;
+                border: 1px solid #F34B4B;
+                box-shadow: 0 0 4px 0 rgba(243,75,75,0.59);
+                border-radius: 4px;
+            }
+            &.focus{
+                background: #FFFFFF;
+                border: 1px solid #2888FF;
+                box-shadow: 0 0 4px 0 rgba(67,130,241,0.47);
+                border-radius: 4px;
+            }
+            .formError{
+                position: absolute;
+                left: 0;
+                bottom: -30px;
+                @include fontSize(15px,#F34B4B);
+                //display: none;
+            }
+            input{
+                width: 390px;
+                height: 100%;
+                line-height: 66px;
+                border: none;
+                border-radius: 4px;
+                padding: 0 20px;
+                @include fontSize(22px,#000);
+                &::-webkit-input-placeholder { /* WebKit browsers */
+                    color:    #909090;
+                }
+                &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                    color:    #909090;
+                }
+                &::-moz-placeholder { /* Mozilla Firefox 19+ */
+                    color:    #909090;
+                }
+                &:-ms-input-placeholder { /* Internet Explorer 10+ */
+                    color:    #909090;
+                }
+            }
+        }
+        .establishBtn{
+            background: #2888FF;
+            border-radius: 4px;
+            width: 100%;
+            height: 52px;
+            text-align: center;
+            line-height: 52px;
+            @include fontSize(20px,#fff);
+            cursor: pointer;
+        }
+        h3{
+            border-top: solid 1px #dedede;
+            @include fontSize(15px,#909090);
+            margin-bottom: 18px;
+            font-weight: normal;
+            margin-top: 90px;
+            padding-top: 49px;
+        }
+        .explainText{
+            @include fontSize(14px,#909090);
+            line-height: 18px;
+            i{
+                display: inline-block;
+                float: left;
+            }
+            span{
+                display: inline-block;
+                float: left;
+                width: 432px;
+                margin-left: 2px;
+                margin-bottom: 9px;
+            }
+        }
+        .recommend{
+            margin-top: 44px;
+            h4{
+                @include fontSize(15px,#909090);
+                font-weight: normal;
+                margin-bottom: 14px;
+            }
+            li{
+                font-size: 0;
+                border-top: solid 1px #dedede;
+                padding: 11px 0;
+                div {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 400px;
+                    overflow: hidden;
+                    text-overflow:ellipsis;
+                    white-space: nowrap;
+                    p {
+                        display: inline-block;
+                        vertical-align: middle;
+                        @include fontSize(16px, #333);
+                        margin-right: 12px;
+                        &:nth-child(3), &:nth-child(4) {
+                            @include fontSize(14px, #666);
+                        }
+                    }
+                }
+                    .check{
+                        float: right;
+                        box-sizing: border-box;
+                        @include iconImgI(inline-block,20px,20px);
+                        border: 2px solid #DEDEDE;
+                        border-radius: 4px;
+                        margin: 10px 0 0 0;
+                        &.active{
+                            @include iconImgI(inline-block,20px,20px);
+                            border: none;
+                            background: url("/static/images/common/icon/moreselect.png") no-repeat;
+                            background-size: contain;
+                        }
+                    }
+
+                img{
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 100px;
+                }
+            }
+        }
+    }
+   .width450{
+       width: 450px;
+       margin: 0 auto;
+   }
+    .width1000{
+        width: 1000px;
+        margin: 0 auto;
+        //overflow: auto;
+    }
+    .notFound{
+        background: #FFFFFF;
+        box-shadow: 0 8px 16px 0 rgba(204,214,231,0.80);
+        border-radius: 4px;
+       /* height: 42px;
+        line-height: 42px;*/
+        @include fontSize(15px,#FFA800);
+        width: 410px;
+        position: absolute;
+        left: 0;
+        top: 72px;
+        padding: 12px 20px;
+        word-break: break-all;
+        line-height: 20px;
+        p{
+            margin-left: 20px;
+        }
+    }
+    .skipBtn{
+        box-sizing: border-box;
+        background: rgba(242,242,242,0.35);
+        border: 1px solid rgba(151,151,151,0.35);
+        border-radius: 100px;
+        width: 94px;
+        height: 36px;
+        line-height: 34px;
+        text-align: center;
+        @include fontSize(15px,#666);
+        position: absolute;
+        right: 219px;
+        top: 122px;
+        cursor: pointer;
+    }
+    .applicationReminding{
+        width: 100%;
+        height: 44px;
+        position: fixed;
+        left: 0;
+        top: 81px;
+        background: #EBF4FF;
+        line-height: 44px;
+        z-index: 2;
+        .remindingCont{
+            padding-left: 240px;
+            height: 100%;
+        }
+        .width1000{
+            overflow: hidden;
+        }
+        .remindingText{
+            float: left;
+            @include fontSize(16px,#333333);
+            span{
+                @include fontSize(20px,#F34B4B);
+                vertical-align: center;
+                margin: 0 4px;
+            }
+        }
+        .remindingBtn{
+            float: right;
+            background: #2888FF;
+            border-radius: 4px;
+            width: 102px;
+            height: 34px;
+            text-align: center;
+            line-height: 34px;
+            cursor: pointer;
+            margin-top: 5px;
+            font-size: 0;
+            span{
+                @include fontSize(16px,#fff);
+                vertical-align: middle;
+            }
+            i{
+                @include iconImgI(inline-block,24px,24px);
+                background: url("/static/images/pages/teamsetting/lookMore.png") no-repeat;
+                margin-left: 3px;
+            }
+        }
+    }
+    .teamName{
+        .nameSelect{
+            display: inline-block;
+            vertical-align: middle;
+            width: 448px;
+            height: 56px;
+            line-height: 56px;
+            border: 1px solid #C8C8C8;
+            border-radius: 4px;
+            position: relative;
+            z-index: 1;
+            &.focus{
+                background: #FFFFFF;
+                border: 1px solid #2888FF;
+                box-shadow: 0 0 4px 0 rgba(67,130,241,0.47);
+                border-radius: 4px;
+            }
+            &.error{
+                background: #FFFFFF;
+                border: 1px solid #F34B4B;
+                box-shadow: 0 0 4px 0 rgba(243, 75, 75, 0.59);
+                border-radius: 4px;
+            }
+            .teamList{
+                background: #FFFFFF;
+                box-shadow: 0 8px 16px 0 rgba(204,214,231,0.80);
+                border-radius: 4px;
+                width: 100%;
+                max-height: 300px;
+                overflow: auto;
+                padding: 10px 0;
+                position: absolute;
+                left: 0;
+                top: 58px;
+                z-index: 2;
+                li{
+                   position: relative;
+                    padding: 15px 0 15px 20px;
+                    line-height: 30px;
+                    cursor: pointer;
+                    @include fontSize(22px,#000);
+                    &:hover{
+                        background: #EBF4FF;
+                    }
+                   i{
+                       display: inline-block;
+                       vertical-align: top;
+                       width: 10px;
+                       height: 10px;
+                       border-radius: 50%;
+                       background-color: #F34B4B;
+                   }
+                }
+            }
+            span{
+                @include fontSize(22px,#000);
+                margin-left: 20px;
+            }
+            input{
+                @include fontSize(22px,#000);
+                margin-left: 20px;
+                border: none;
+                height: 100%;
+                float: left;
+                width: 340px;
+            }
+            p{
+                float: right;
+                margin-right: 10px;
+                cursor: pointer;
+                @include fontSize(15px,#666666);
+                i.tabBtn{
+                    @include iconImgI(inline-block,20px,20px);
+                    background: url("/static/images/pages/teamsetting/switching_on.png") no-repeat;
+                }
+                i.redPoint{
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-top: 16px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #F34B4B;
+                }
+            }
+            .changeNameError{
+                position: absolute;
+                left: 0;
+                bottom: -36px;
+                @include fontSize(18px,#F34B4B);
+                line-height: 18px;
+            }
+        }
+        .notApply{
+            display: inline-block;
+            vertical-align: middle;
+            width: 190px;
+            margin-left: 50px;
+            div{
+                @include fontSize(16px,#333);
+                line-height: 20px;
+                height: 20px;
+                p{
+                    background: #E8E8E8;
+                    border: 1px solid #949494;
+                    border-radius: 100px;
+                    width: 38px;
+                    height: 18px;
+                    display: inline-block;
+                    vertical-align: bottom;
+                    margin-left: 18px;
+                    position: relative;
+                    i{
+                        display: inline-block;
+                        background: #FFFFFF;
+                        box-shadow: 0 2px 4px 0 #9A9B9B;
+                        border-radius: 100px;
+                        width: 18px;
+                        height: 18px;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        z-index: 1;
+                    }
+                    &.activation{
+                        background: #2888FF;
+                        border: 1px solid #005CCE;
+                        border-radius: 100px;
+                        i{
+                            background: #FFFFFF;
+                            box-shadow: 0 2px 4px 0 #2888FF;
+                            right: 0;
+                            left: auto;
+                        }
+                    }
+                }
+            }
+            span{
+                @include fontSize(14px,#909090);
+                line-height: 26px;
+                height: 26px;
+            }
+        }
+        .createTeamBtn{
+            display: inline-block;
+            float: right;
+            background: #EBF4FF;
+            border: 1px solid #2888FF;
+            border-radius: 4px;
+            width: 178px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            @include fontSize(18px,#2888FF);
+            cursor: pointer;
+            i{
+                @include iconImgI(inline-block,24px,24px,text-top);
+                background: url("/static/images/pages/teamsetting/addTo.png") no-repeat;
+                margin-right: 5px;
+            }
+            /*span{
+                vertical-align: middle;
+            }*/
+        }
+    }
+    .teamUserList{
+        .userTitleCont{
+            overflow: hidden;
+            margin-top: 88px;
+            p{
+                &:first-child{
+                    @include fontSize(15px,#666);
+                    float: left;
+
+                }
+                &:last-child{
+                    @include fontSize(16px,#2888FF);
+                    float: right;
+                    span{
+                        cursor: pointer;
+                    }
+                    span:first-child{
+                        &:after{
+                            content: '';
+                            display: inline-block;
+                            height: 16px;
+                            width: 1px;
+                            background: #2888FF;
+                            vertical-align: middle;
+                            margin: 0 18px;
+                        }
+                    }
+                }
+            }
+        }
+        ul{
+            margin-top: 24px;
+            li{
+                padding: 13px 0 ;
+                height:41px;
+                font-size: 0;
+                border-top: solid 1px #DEDEDE;
+                &:last-child{
+                    border-bottom: solid 1px #DEDEDE;
+                }
+                p{
+                    display: inline-block;
+                    vertical-align: middle;
+                    @include fontSize(16px,#666);
+                    margin-right: 12px;
+                    &:nth-child(2){
+                        @include fontSize(16px,#333);
+                    }
+                    &:nth-child(3){
+                        @include fontSize(15px,#666);
+                    }
+                    &:nth-child(4){
+                        @include fontSize(15px,#666);
+                    }
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 100px;
+                    }
+                }
+                .teamMember{
+                    float: right;
+                    width: 89px;
+                    height: 43px;
+                    text-align: center;
+                    line-height: 43px;
+                    background: rgba(160,202,255,0.35);
+                    border-radius: 4px;
+                    font-size: 0;
+                    position: relative;
+                    &.owner{
+                        @include fontSize(15px,#2888FF);
+
+                    }
+                    &.transfer{
+                         background: #F2F2F2;
+                        cursor: pointer;
+                     }
+                    .TransferTxt{
+                        color:gray;
+                        font-size: 14px;
+                        margin: 0 0 -30px 30px;
+                    }
+                    span{
+                        vertical-align: middle;
+                        @include fontSize(15px,#666);
+                    }
+                    .close{
+                        @include iconImgI(inline-block,20px,20px);
+                        background: url("/static/images/pages/teamsetting/member_cancel.png") no-repeat;
+                        margin-left: 2px;
+                        cursor: pointer;
+                        &.inTransfer {
+                            @include iconImgI(inline-block 0px);
+                            background:none;
+                        }
+                    }
+                    .deletePopup{
+                        background: #FFFFFF;
+                        box-shadow: 0 0 16px 0 rgba(204,214,231,0.80);
+                        border-radius: 4px;
+                        width: 380px;
+                        height: 152px;
+                        z-index: 2;
+                        top: 52px;
+                        right: 0;
+                        position: absolute;
+                        cursor: default;
+                        text-align: left;
+                        button{
+                            width: 82px;
+                            height: 36px;
+                            text-align: center;
+                            line-height: 36px;
+                            background: #F2F2F2;
+                            border-radius: 4px;
+                            @include fontSize(14px,#666);
+                            margin-left: 22px;
+                            cursor: pointer;
+                        }
+                        .deleteBtn{
+                            float: right;
+                            font-size: 0;
+                            margin: 39px 18px 0 0;
+                        }
+                        p{
+                            margin: 33px 0 0 28px;
+                            @include fontSize(15px,#333);
+                            line-height: 15px;
+                        }
+                        &:before{
+                            @include iconImgI(inline-block,0,0);
+                            content: "";
+                            display: inline-block;
+                            position: absolute;
+                            right: 45px;
+                            height: 0;
+                            width: 0;
+                            top: -20px;
+                            border: 11px solid transparent;
+                            border-bottom: 11px solid #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.newBloodPopup{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(48,67,100,0.8);
+    z-index: 3;
+    .popupCont{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -moz-transform:translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        -o-transform:translate(-50%,-50%);
+        width: 800px;
+        height: auto;
+        background: #FFFFFF;
+        border-radius: 8px;
+        .popupTitle{
+            background: #F2F2F2;
+            border-radius: 8px 8px 0 0;
+            height: 80px;
+            line-height: 80px;
+            h2{
+                float: left;
+                @include fontSize(20px,#666);
+                font-weight: normal;
+                margin-left: 30px;
+            }
+            i{
+                float: right;
+                @include iconImgI(inline-block,36px,36px);
+                background: url("/static/images/pages/teamsetting/shell_cancel.png") no-repeat;
+                margin: 22px 28px 0 0;
+                cursor: pointer;
+            }
+        }
+        .list{
+            max-height: 494px;
+            overflow: auto;
+            padding: 19px 30px;
+                li{
+                    padding: 13px 0 ;
+                    height:41px;
+                    font-size: 0;
+                    border-bottom: solid 1px #DEDEDE;
+                    p{
+                        display: inline-block;
+                        vertical-align: middle;
+                        @include fontSize(16px,#666);
+                        margin-right: 12px;
+                        &:nth-child(2){
+                            @include fontSize(16px,#333333);
+                        }
+                        &:nth-child(3){
+                            @include fontSize(15px,#666666);
+                        }
+                        &:nth-child(4){
+                            @include fontSize(15px,#666666);
+                        }
+                        img{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 100px;
+                        }
+                    }
+                    .stateBtn{
+                        float: right;
+                        font-size: 0;
+                        p{
+                            width: 90px;
+                            height: 43px;
+                            text-align: center;
+                            line-height: 43px;
+                            border-radius: 4px;
+                            font-size: 15px;
+                            display: inline-block;
+                            margin-right: 0;
+                            cursor: pointer;
+                            &.agree{
+                                background: #EBF4FF;
+                                color: #2888FF;
+                            }
+                            &.refuse{
+                                background: #F2F2F2;
+                                color: #666;
+                                margin-left: 20px;
+                            }
+                            &.stated{
+                                background: #F2F2F2;
+                                color: #ccc;
+                                margin-left: 20px;
+                            }
+                        }
+                    }
+                }
+
+        }
+    }
+}
+
+.alEmr-mainIndex{
+    padding-bottom: 100px;
+}
+
+@media screen and (max-width:1540px){
+    .alEmr-mainInner .applicationReminding .remindingCont{
+        padding-left: 120px;
+    }
+}
+
+
+.memberNone{
+    text-align: center;
+    margin-top: 127px;
+    p{
+        @include fontSize(14px,#333)
+    }
+}

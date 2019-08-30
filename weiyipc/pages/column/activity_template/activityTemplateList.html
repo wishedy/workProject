@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新版活动</title>
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <!--videojs相关样式-->
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/video-js.css" rel="stylesheet" type="text/css"/>
+    <link href="//paas.allinmd.cn/modules/allinmdplayer/css/videojs.allinmd.css" rel="stylesheet" type="text/css"/>
+
+    <!-- build:css /dest/column/activity_template/activity_template.css -->
+    <link rel="stylesheet" href="/css/v3/base.css"/>
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css"/>
+    <link rel="stylesheet" href="/css/v3/pageFooter.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/activity_template/themeNews.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/activity_template/template_elementQuestionnaire.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/activity_template/big-img.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/activity_template/active_model.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/activity_template/screen.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/terminal/case_index.css"/>
+    <link rel="stylesheet" href="/css/v3/discussModule.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/activity_template/userList.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/activity_template/sign_up.css"/>
+
+    <link rel="stylesheet" href="/js/modules/reply-form/module.reply-form.css"/>
+    <link rel="stylesheet" href="/js/modules/reply-list/module.reply-list.css"/>
+    <link rel="stylesheet" href="/js/modules/float-relation/module.float-relation.css"/>
+    <link rel="stylesheet" href="/js/modules/report/module.report.css"/>
+    <link rel="stylesheet" href="/js/modules/view-big-img/module.view-big-img.css"/>
+    <link rel="stylesheet" href="/js/modules/find-password-v2/module.find-password-v2.css"/>
+    <link rel="stylesheet" href="/js/modules/video-case-pk/module.video-case-pk.css"/>
+    <link rel="stylesheet" href="/js/modules/publish/publish.css"/>
+    <link rel="stylesheet" href="/js/modules/user/module.user.css"/>
+    <link rel="stylesheet" href="/js/modules/user/module.user-v2.css"/>
+    <link rel="stylesheet" href="/js/modules/auth/module.auth.css"/>
+    <link rel="stylesheet" href="/js/modules/indexLogin/module.indexLogin.css"/>
+
+    <link rel="stylesheet" href="/js/plugins/ui-card/plugin.ui-card.css"/>
+    <link rel="stylesheet" href="/js/plugins/top-tip/plugin.top-tip.css"/>
+    <link rel="stylesheet" href="/js/plugins/reply-remindV3/plugin.reply-remind.css"/>
+    <link rel="stylesheet" href="/js/plugins/relation2/plugin.relation2.css"/>
+
+    <link rel="stylesheet" href="/js/third-party/pagination/pager.css"/>
+    <link rel="stylesheet" href="/js/third-party/jquery-X-Menu/css/powerFloat.css"/>
+    <link rel="stylesheet" href="/js/third-party/jquery-X-Menu/css/xmenu.css"/>
+    <link rel="stylesheet" href="/js/third-party/uploadify/uploadify.css"/>
+    <link rel="stylesheet" href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css"/>
+
+    <link rel="stylesheet" href="/css/column/videoPK_v2/works_mine.css"/>
+    <link rel="stylesheet" href="/css/column/videoPK_v2/works_score.css" type="text/css"/>
+
+    <link rel="stylesheet" href="/css/v3/pages/activity_template/specialTemplate.css"/>
+
+    <!-- endbuild -->
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            var sharePos = location.search;
+            window.location.href="https://m.allinmd.cn/html/m/activity/1491892487613/activity_index.html"+sharePos ;
+        }
+    </script>
+    <style type="text/css">
+        /*.textColorYesOne{color:;}*/
+        /*.textColorNoOne{color:;}*/
+        /*.textColorYesTwo{color:;}*/
+        /*.textColorNoTwo{color:;}*/
+        /*.bgColorYesOne{background:;}*/
+        /*.bgColorNoOne{background:;}*/
+        /*.bgColorYesTwo{background:;}*/
+        /*.bgColorNoTwo{background:;}*/
+        .textColorYesOne {
+            color: #fff;
+        }
+
+        .textColorNoOne {
+            color: #333;
+        }
+
+        .textColorYesTwo {
+            color: #3598db;
+        }
+
+        .textColorNoTwo {
+            color: #555;
+        }
+
+        .bgColorYesOne {
+            background: #055596;
+        }
+
+        .bgColorNoOne {
+            background: #fff;
+        }
+
+        .bgColorYesTwo {
+            background: #fff;
+        }
+
+        .bgColorNoTwo {
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-inde xHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox">
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar al-mainSidebarCollapse">
+        <header class="al-mainLogo">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+
+        <section class="al-mainSidebarList">
+            <ul>
+                <li class="al-mainSidebarItem">
+                    <a href="/">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>首页</h4>
+                                <p>HOME</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="/pages/discovery/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>发现</h4>
+                                <p>DISCOVERY</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>发布</h4>
+                                <p>RELEASE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navMes">
+                    <a href="/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>消息</h4>
+                                <p>MESSAGE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navIndex">
+                    <a href="/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                        <figcaption>我的</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>我的</h4>
+                                <p>PROFILE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList">
+                <li class="al-mainSidebarItem al-siteSwitch">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_siteSwitch.png" alt="">
+                        <figcaption class="ev_siteSwitchName">骨科</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4 class="ev_siteSwitchName">骨科</h4>
+                                <p>SITE SWITCH</p>
+                            </div>
+                        </article>
+                    </a>
+                    <div class="al_siteSwitch_popBox">
+                        <div class="al_siteSwitch_orthopaedics"><i></i>骨科</div>
+                        <div class="al_siteSwitch_handSurgery"><i></i>手外科</div>
+                    </div>
+                </li>
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>小唯</h4>
+                                <p>SERVICE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navPhone">
+                    <a href="/pages/singlePage/iphone-app-download.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>手机端</h4>
+                                <p>MOBILES</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+
+
+    <input type='hidden' value='' id='shareLoc'/>
+    <input type="hidden" value="1491892487613" id="activityId" />
+    <div class="spTemp_total_up">
+        <!--<div class="spTemp_total_banner" style="background:url(//images/img00/column/specialTemplate/questionSelect-l-11.png) no-repeat center;background-size:cover;">-->
+            <!--<div class="spTemp_total_banner_center" style="width:1000px;height:450px;margin:0 auto;background:url(//images/img00/column/specialTemplate/questionSelect-l-11.png) no-repeat center;background-size:cover;">-->
+                <!--<img src="//images/img00/column/specialTemplate/questionSelect-l-11.png"/>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="bannerBox">
+                    <div class="out ">
+                        <ul class="img ">
+                    <li>
+                        <!--<a href="# ">-->
+                            <img src="//img99.allinmd.cn/ad/2015/02/02/266_1422870449083.jpg" alt=" ">
+                        <!--</a>-->
+                    </li>
+                    <li>
+                        <!--<a href="# ">-->
+                            <img src="//img99.allinmd.cn/ad/2015/06/02/555_1433224345933.jpg" alt=" ">
+                        <!--</a>-->
+                    </li>
+                    <li>
+                        <!--<a href="# ">-->
+                            <img src="/images/img/ads2.jpg" alt=" ">
+                        <!--</a>-->
+                    </li>
+                    <li>
+                        <!--<a href="# ">-->
+                            <img src="/images/img/ads1.jpg" alt=" ">
+                        <!--</a>-->
+                    </li>
+                </ul>
+                <ul class="numList ">
+                </ul>
+                <div class="left btn ">
+                    <img src="//img10.allinmd.cn/v3/common/icon/left_banner.png"/>
+                </div>
+                <div class="right btn ">
+                    <img src="//img10.allinmd.cn/v3/common/icon/right_banner.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="spTemp_total_nav textColorNoOne bgColorNoOne">
+            <ul class="spTemp_total_nav_lists">
+                <!--<li>-->
+                    <!--<span data-href="/html/activity/1491892487613/1492395853168.html" data-type="1" data-activitymenuid="1492395714680" data-layoutid="1490943230950" data-navtext="1">手机排行榜</span><i></i>-->
+                <!--</li>-->
+                <!--<button class="spTemp_nav_more spTemp_nav_more_spread">更多</button>-->
+                <!--<div class="spTemp_clear"></div>-->
+                <li class="active">
+<span   data-href="/pages/column/activity_template/layout.html" data-type="1" data-activityMenuId="1492677529266"
+        data-layoutId="1490943230950" data-navText="1" data-thememenuid="1492676963711" class="textColorYesOne bgColorYesOne nav_cut">首页</span><i></i>
+                </li>
+
+                <li >
+
+<span   data-href="/pages/column/activity_template/layout2.html" data-type="1" data-activityMenuId="1492676963711"
+        data-layoutId="1490943971510" data-navText="2" data-thememenuid="1492677529266">排列</span><i></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div style="width:100%;background-color:;background-image:url() !important;">
+        <div class="spTemp_total_down" >
+            <!--<section class="tempMainModel">-->
+                <!--<section class="sp_container sp_container_l">-->
+                    <!--<div data-id="10" data-columnid="14" data-componenttype="3" class="isComp"><section class="total_title total_title_left"><span></span></section>-->
+                        <!--<section class="resource_rank resource_rank_leftArt_rightImg"></section>                </div>-->
+                <!--</section>-->
+            <!--</section>-->
+        </div>
+    </div>
+
+    <footer class="al-mainFooter">
+        <section class="al-mainFooterInner">
+            <section class="al-mainFooterContent">
+                <section class="al-mainFooterLinks">
+                    <a href="/pages/help/statement.html" class="al-mainFooterLinkItem" style="padding-left: 0;">隐私声明</a>
+                    <a href="/pages/help/service.html" class="al-mainFooterLinkItem">服务条款</a>
+                    <a href="/pages/help/about_us.html" class="al-mainFooterLinkItem">关于我们</a>
+                    <a href="/pages/help/contact.html" class="al-mainFooterLinkItem" style="padding-right: 0;border-right: none;">联系我们</a>
+                </section>
+                <article class="al-mainFooterMsg">
+                    <figure class="al-mainFooterMsgImg">
+                        <a id="___szfw_logo___" href="https://credit.szfw.org/CX20160321018165560180.html" target="_blank">
+                            <img src="//img10.allinmd.cn/v3/common/icon/site_1.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="al-mainFooterMsgImg">
+                        <a href="http://www.anquan.org/authenticate/cert/?site=www.allinmd.cn&amp;at=business">
+                            <img src="//img10.allinmd.cn/v3/common/icon/site_2.png" alt="">
+                        </a>
+                    </figure>
+                </article>
+                <article class="al-mainFooterRecordMsg">
+                    <p><!-- 京ICP证150380号 |  -->京ICP备14007118号-2号 京公网安备11010802014986号京卫计网审[2014] 第0378号 </p>
+                    <p>Copyright2017 Allinmd.cn All Rights Reserved.版权所有北京欧应信息技术有限公司</p>
+                    <p>地址：北京市朝阳区光华路9号光华路SOHO2期D座802 &nbsp;&nbsp; 电话：010-59007121</p>
+                </article>
+            </section>
+            <figure class="al-mainFooterErWeiCode">
+                <img src="//img10.allinmd.cn/v3/common/icon/footer_erweiCode.png" alt="">
+            </figure>
+        </section>
+    </footer>
+    <div class="baidu" style="display: none">
+        <script src="//other.allinmd.cn/statistics/baidu.js"></script>
+    </div>
+</section>
+
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<script src='/js/lib/jquery/jquery.form.js'></script>
+<script src="//paas.allinmd.cn/modules/pcShare/pcShare.js"></script>
+
+<!--<script src="/dest/column/activity_template/activity_template.js"></script>-->
+
+<!--为保证IE8下正常使用，需要引入-->
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/ie8/videojs-ie8.min.js"></script>
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/video.js"></script>
+<script type="text/javascript" src="//paas.allinmd.cn/modules/allinmdplayer/videojs.allinmd.js"></script>
+<script src="//paas.allinmd.cn/modules/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script src="/js/lib/jquery/jquery-1.8.2.alpha.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/comm.autoHeight.js"></script>
+
+<script src="/js/modules/user/module.user.js"></script>
+<script src="/js/modules/weixin/module.welcome.js"></script>
+<script src="/js/modules/weixin/module.weixin.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/video-case-pk/module.video-case-pk.js"></script>
+<script src="/js/modules/publish/module.video-upload.js"></script>
+<script src="/js/modules/publish/module.doc-upload.js"></script>
+<script src="/js/modules/videoPK-share/module.videoPK-share.js"></script>
+<script src="/js/modules/share/module.share.js"></script>
+<script src="/js/modules/view-big-img/module.view-big-img.js"></script>
+<script src="/js/modules/list2-template/module.list2-template.js"></script>
+<script src="/js/modules/review-box/module.review-box.js"></script>
+<script src="/js/modules/review-page/module.review-page.js"></script>
+
+<script src="/js/plugins/add-removeable-group-picV3/plugin.replaceInput/plugin.replaceInput.js"></script>
+<script src="/js/plugins/add-removeable-group-picV3/plugin.add-removeable-group-pic.js"></script>
+<script src="/js/plugins/reference-resourceV3/reference-resource.js"></script>
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+<script src="/js/plugins/expand-shrink/plugin.expand-shrink.js"></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+<script src="/js/plugins/scroll-box/plugin.scroll-box.js"></script>
+<script src="/js/plugins/medicalTitle/plugin.medicalTitleV3.js"></script>
+
+<script src="/js/scene/column/specialTemplate/idangerous.swiper.min.js"></script>
+<script src="/js/scene/conference/scene.conference.gssdk_native.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script><script src='/js/third-party/md5.js'></script>
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<script src="/js/third-party/ajaxfileupload.js"></script>
+<script src="/js/third-party/jquery_lazyload/jquery.lazyload.js"></script>
+<script src="/js/third-party/pagination/jquery.pager.js"></script>
+<script src="/js/third-party/qiniu/qiniu.js"></script>
+<script src="/js/third-party/qiniu/ui.js"></script>
+<script src="/js/third-party/plupload/plupload.full.min.js"></script>
+<script src="/js/third-party/plupload/i18n/zh_CN.js"></script>
+<script src="/js/third-party/jquery-qrcode-master/src/jquery.qrcode.js"></script>
+<script src="/js/third-party/jquery-qrcode-master/src/qrcode.js"></script>
+<script src="/js/third-party/gensee/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="/js/third-party/gensee/new-player/json2.js"></script>
+<script src="/js/third-party/gensee/new-player/lang.zh_CN.js"></script>
+<script src="/js/third-party/gensee/new-player/new-player.base.js"></script>
+<script src="/js/third-party/gensee/new-player/new-player.common.js"></script>
+<script src="/js/third-party/gensee/new-player/new-player.live.js"></script>
+<script src="/js/third-party/gensee/new-player/new-player.survey.js"></script>
+<script src="/js/third-party/gensee/new-player/webplayer.common.js"></script>
+<script src="/js/third-party/gensee/new-player/webplayer.live.js"></script>
+<script src="/js/third-party/ymd.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+
+<script src="/js/scene/column/activity_template/viewBigImg.js"></script>
+<script src="/js/scene/column/activity_template/scene.column.activity_template.comm.js"></script>
+<script src="/js/scene/column/activity_template/scene.column.activity_template.mylist.js"></script>
+<script src="/js/scene/column/activity_template/scene.column.activity_template.questionnaire.js"></script>
+<script src="/js/scene/column/activity_template/scrollbar.js"></script>
+<script src="/js/scene/column/activity_template/scene.column.activety_template.enroll.js"></script>
+<script src="/js/scene/column/activity_template/scene.column.activity_template.check.js"></script>
+<!-- endbuild -->
+<script>
+    $(function(){
+        (function banner() {
+            //代码初始化
+            var size=$(".img li").size();
+            //判断图片的个数超过一个开始轮播
+            if(size<=1){
+                $('.numList').hide();
+                $(".btn").hide();
+            }else{
+                for (var i = 1; i <= size; i++) {
+                    var li="<li></li>";
+                    $(".numList").append(li);
+                };
+
+                //手动控制轮播效果
+                $(".img li").eq(0).show();
+                $(".numList li").eq(0).addClass("active");
+                $(".numList li").click(function() {
+                    $(".numList li").stop();
+                    $(this).addClass("active").siblings().removeClass("active");
+                    var index = $(this).index();
+                    i=index;
+                    $(".img li").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+                })
+
+                //自动
+                var i = 0;
+                var t = setInterval(move, 4000);
+                //核心向左的函数
+                function moveLeft() {
+                    i--;
+                    if (i == -1) {
+                        i = size-1;
+                    }
+                    $(".numList li").eq(i).addClass("active").siblings().removeClass("active");
+                    $(".img li").eq(i).fadeIn(1000).siblings().fadeOut(1000);
+                }
+                //核心向右的函数
+                function move() {
+                    i++;
+                    if (i == size) {
+                        i = 0;
+                    }
+                    $(".numList li").eq(i).addClass("active").siblings().removeClass("active");
+                    $(".img li").eq(i).fadeIn(1000).siblings().fadeOut(1000);
+                }
+                //定时器的开始与结束
+                $(".out").hover(function() {
+                    clearInterval(t);
+                }, function() {
+                    t = setInterval(move, 4000)
+                })
+                //左边按钮的点击事件
+                $(".out .left").off("click").on("click", function () {
+                    $(".out .left").stop();
+                    moveLeft();
+                })
+                //右边按钮的点击事件
+                $(".out .right").off("click").on("click",function(){
+                    $(".out .right").stop();
+                    move();
+                })
+            }
+        }())
+    })
+</script>
+
+</body>
+</html>
+                                 

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+//底部分享弹层组件
+//Created by qiangkailiang on 2016/08/12
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+
+//注：该组件样式依赖父组件_bottomBtns.scss，需提前引入父组件
+.al-bottomSelectorItem.al-bottomShareListBox{
+    height: auto;
+    text-align: center;
+    padding: rem(60px) 0;
+    h2{
+        @include font-dpr(12px);
+        color: #aaa;
+        font-weight: normal;
+        line-height: 1;
+        margin-bottom: rem(60px);
+        position: relative;
+        &:after,&:before{
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: rem(140px);
+            height: 1px;
+            position: absolute;
+            top: 50%;
+            background-color: #dbdbdb;
+        }
+        &:after{
+            right: rem(100px);
+        }
+        &:before{
+            left: rem(100px);
+        }
+    }
+    .al-bottomShareItem{
+        display: inline-block;
+        padding: 0 rem(40px)
+    }
+    ul{
+        list-style: none;
+        line-height: 1;
+    }
+    .al-bottomShareImg{
+        @include circle(rem(80px),transparent);
+        margin:0 auto;
+        img{
+            width: 100%;
+            vertical-align: top;
+            height: 100%;
+        }
+    }
+    figcaption{
+        @include font-dpr(12px);
+        line-height: 1;
+        margin-top: rem(20px);
+    }
+}

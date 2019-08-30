@@ -1,0 +1,20 @@
+<import src="/components/LogoLoading$2b721f9a" /><template name="ImgList$2043005e">
+  <view class="_section data-v-45986dac question-imgList {{[imgList.imgSrcArr.length >= 6 ? 'imgList-more' : '']}}">
+    <view class="_article data-v-45986dac question-title">
+      {{imgList.title}}
+      <view wx:if="{{imgList.descShow}}" class="_p data-v-45986dac question-desc">{{imgList.descShow}}</view>
+    </view>
+    <view class="_ul data-v-45986dac img-list">
+      <view wx:key="index" key="{{index}}" class="_li data-v-45986dac img-list-item" wx:for="{{imgList.imgSrcArr}}" wx:for-index="index" wx:for-item="item">
+        <image src="{{item.path||item.caseAttUrl}}" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" class="_img data-v-45986dac"></image> <label class="_span data-v-45986dac imgItem-cover" wx:if="{{(!item.upload)&&(!item.attId)}}"><label class="_span data-v-45986dac imgItem-loading"></label></label>
+        <view class="_i data-v-45986dac close-icon" catchtap="handleProxy" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}"></view>
+        <view class="_figure data-v-45986dac imgItem-fail" wx:if="{{item.fail}}" catchtap="handleProxy" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}">
+          <view class="_p data-v-45986dac imgItem-failText">上传失败</view>
+          <view class="_p data-v-45986dac imgItem-reloadText">点击重试</view>
+        </view>
+      </view>
+      <view bindtap="handleProxy" wx:if="{{imgList.imgSrcArr.length<12}}" class="_li data-v-45986dac img-list-item wxChoseFileBtn" data-eventid="{{'3'}}" data-comkey="{{$k}}"></view>
+    </view>
+    <form action bindsubmit="handleProxy" report-submit="true" data-eventid="{{'5'}}" data-comkey="{{$k}}" class="_form data-v-45986dac"><button class="_button data-v-45986dac question-next active {{[imgList.imgSrcArr.length < 6 ? 'next-fixed' : '']}}" type="submit" formType="submit" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">下一步</button></form> <template wx:if="{{isLoading}}" data="{{...$root[$kk+'0'], $root}}" is="LogoLoading$2b721f9a"></template>
+  </view>
+</template>

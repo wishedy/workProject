@@ -1,0 +1,505 @@
+/*遮罩*/
+#lightbox {left: 0px;top: 0px;width: 100%;height: 100%;opacity: 0.5;zoom: 1;position: fixed;z-index: 9;background:#000;filter:alpha(opacity=50);}
+/*清除浮动*/
+.clearFloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearFloat{zoom:1}
+/*弹层*/
+
+/*学校清单弹层、删除提示弹层*/
+.layer_fellow_t {width:432px;height:40px;line-height: 40px;padding-left:20px;font-size:15px;color:#666;font-family:microsoft yahei;background:#f5f5f5;border-bottom:1px solid #e1e3e4;}
+.layer_fellow_t .tip{float:left;}
+.layer_fellow_t a.close{float:right;margin:15px 15px 0 0;}
+.layer_close{width:13px;height:13px;background: url(//img00.allinmd.cn/column/fellowship/layerClose.png) no-repeat;} /*标题头部结束*/
+
+.layer_fellow_c{background:#fff;}
+.layer_fellow_c .layerTxt{width:320px;padding:0 0 64px 30px;margin:0 auto;font-size:16px;line-height:28px;color:#666;word-spacing: 20px;background: url(//img00.allinmd.cn/column/fellowship/layerTip.png) no-repeat 0px 4px #fff;}
+.layerTip{width:452px;padding-top:64px;}
+
+.delTip{width:452px;padding-top:77px;} /*推荐信等的删除提示，将layerTip替换为delTip*/
+.delTip .layerTxt{width:186px;padding-bottom:79px;} /*删除提示文本*/
+
+.layerBtn{text-align: center;padding-bottom:30px;}
+.layerBtn a{display:inline-block;text-align:center;font-size:12px;color:#fff;line-height:28px;font-family:"宋体";padding:0 20px;border-radius:3px;background:#3a9eeb;}
+.layerBtnU a.gray,a.gray{color:#88c2eb;cursor: default;}
+.delTip .layerBtn a,.layerSave a{width:67px;margin-right:10px;padding:0;text-align: center;} /*删除提示按钮、报名申请表按钮*/
+.delTip .layerBtn a.gray,.layerSave a.gray{background:#9da6b0;color:#fff;}
+
+
+/*报名申请表*/
+.layerLarger{width:693px;font-size:16px;} /*弹层标题头部追加*/
+.layerLarger .layerCaption{float:left;}
+.layerLarger a.close{float:right;margin:15px 20px 0 0;}
+
+.layerSection{padding:30px 0;}
+.layerSection .secLeft{width:121px;padding-right:17px;font-size:13px;color:#969696;text-align:right;float: left;}
+.layerSection .secRight{float:left;}
+.layerTitle .secLeft{font-size: 16px;color:#73859e;line-height: 16px;word-spacing: 20px;}
+.layerTitle .secRight{font-size: 12px;line-height:16px;color:#c5c5c5;font-family:"宋体";}
+
+.applyInfoL{width:118px;} /*报名申请表左侧信息*/
+.layerBaseMagin{margin:4px 0 4px 17px;} /*报名申请表右侧input间距*/
+.layerBaseMagin select{padding-right:15px;}
+.applyAddress{margin-right:10px;}
+.layerSpecal{margin:3px 0 0 0;}
+.applyBottom{border-bottom:1px dashed #dbdbdb;}
+
+.layerWish{width:385px;} /*报名申请意向*/
+.layerWish ul{max-height: 100px;overflow:auto;}
+.layerWishT{width:385px;padding:0;border: solid 1px #dbdbdb;/*width:375px; padding:0 0 0 10px;*/}
+.p_c_title_bj_zl_r{
+    max-width: 443px;
+}
+.p_c_title_bj_zl_r select{appearance:none;-moz-appearance:none;-webkit-appearance:none;}
+.p_c_title_bj_zl_r select::-ms-expand { display: none;}
+.p_c_title_bj_zl_r .layerWishT select{padding-left: 20px; padding-right:15px; }
+.layerWishT_focus{width:368px;padding:0 0 0 17px;background:none;}
+.layerWishT .p_c_baseinfo_div01{background:url(//img00.allinmd.cn/personal/xl_base_info.png) no-repeat 369px center;}
+.layerWishT_focus .p_c_baseinfo_div01{background:url(//img00.allinmd.cn/personal/up_jt.png) no-repeat 352px center;}
+
+.layerSave .checkAgree{padding:0;margin:0;border:none;margin-bottom:20px;}
+.layerSave .checkAgree .agreeCheck{float:left;padding-top:2.5px;}
+.layerSave .checkAgree .agreeText{float:left;width:296px;color:#b4b4b4;line-height: 18px;}
+.layerSave{margin-top:12px;padding-bottom:0;text-align: left;padding-left:138px;}/*报名申请表按钮*/
+
+/*简历*/
+#auth_edit, #base_edit, #cEdu_edit, #cEdu_oth, #caos_edit, #countdown, #edu_edit, #edu_oth, #emialBind_edit, #emialUpa_edit, #fund_edit, #fund_oth, #group, #group_data, #group_edit, #honor_edit, #honor_oth, #occ_edit, #occ_oth, #opus_edit, #opus_oth, #password_edit, #pat_oth, #patent_edit, #phone_edit, #pic_mask, #soc_oth, #social_edit, #summary_edit, #summary_oth{display: none;}
+/*上传图片*/
+.base_show{margin-bottom: 25px;}
+.layerResumeWrap{padding:0;width:713px;}
+.layerWidth{width:713px;background:#fff;}
+.layerRel{position:relative;}
+.layerImg{position:absolute;right:30px;border:1px solid #dbdbdb;width:138px;padding:6px;margin-top:20px;z-index: 2;}
+.imgWrap{width:138px;height:194px;}  /*照片显示*/
+.layerChoose{width:138px;height:194px;background:#efeff4;text-align: center;} /*预览时可将其隐藏*/
+.imgMask{background:url(//img00.allinmd.cn/column/fellowship/imgMask.png) no-repeat;} /*有照片时的遮罩*/
+.chooseImgT{padding-top:24px;padding-left:30px;z-index: 2;text-align: left;}
+.chooseImgT img{width:73px;height:79px;}
+.chooseImgC {font-size: 15px;color: #3d84c6;line-height:23px;}
+.chooseImgB {font-size: 12px;color: #969696;line-height:18px;font-family: "宋体";padding:2px 11px 0 15px;}
+.layerChoose input{position:relative;width:138px;height:194px;position:absolute;top:0;left:0;cursor: pointer;filter:alpha(opacity=0);-moz-opacity:0;opacity:0;}
+
+.p_base_info_jbxx01 .layerBorderBlue{border: 1px solid #3a9eeb;box-shadow: 0 0 3px #3a9eeb;}
+
+.layerSpread{font-size:13px;color:#3d84c6;margin-left:20px;}
+.layerTrain{width:578px;margin-bottom:0;}
+.layerTrainE{width:510px;margin-bottom:0;}
+.layerNow{font-size:13px;color:#333;}
+.layerListItem{padding:10px 0;}
+.layerListItem:hover{background:#f6f6f6;}
+
+.layerResumeT{font-size:24px;color:#000;text-align:center;line-height:60px;background:#f7f7f9;border-top:1px solid #fff;position:relative;}
+.layerResumeT a{position:absolute;top:10px;top:16px;right:53px;display:inline-block;width:67px;height:28px;line-height:28px;border-radius: 4px;font-size:12px;font-family:"宋体";color:#fff;background: #3a9eeb;}
+.layerResumeT .layer_close{position:absolute;top:9px;right:10px;cursor: pointer;}
+.layerResumeT .yaheiBtn,.layerYahei li{font-family: microsoft yahei;}
+.layerResume{background:#efeff4;}
+.layerResume .layerEngL{width:121px;}
+.layerResume .layerEngL2{width:121px;font-size:12px;line-height:14px;}
+.layerResume .layerEngR{padding-left:139px;}
+.layerResume .layerEngR_btn{width:67px;height:28px;line-height:28px;padding:0;letter-spacing: 0;}
+.layerEngM{margin-left:65px;}
+.layerResume .layerEPub{width:134px;}
+.layerResume .layerEPub2{width:154px;}
+.layerResume .layerEPub_bg{background:url(//img00.allinmd.cn/personal/xl_base_info.png) no-repeat 128px center;}
+.layerMedical{bottom:-148px;}
+.layerMedical li{line-height:24px;height:auto;margin-top:10px;}
+.p_c_title_bj_text .layerEdit{float: left;}
+.p_c_title_bj_text .layerTranD,.p_c_title_bj_text .layerTranU{width:26px;height:55px;float:left;margin-left:20px;margin-right:10px;background: url(//img00.allinmd.cn/column/fellowship/layerTranD.png) no-repeat center;cursor: pointer;}
+.p_c_title_bj_text .layerTranD:hover{background: url(//img00.allinmd.cn/column/fellowship/layerTranDhover.png) no-repeat center;}
+.p_c_title_bj_text .layerTranU{background: url(//img00.allinmd.cn/column/fellowship/layerTranU.png) no-repeat center;}
+.p_c_title_bj_text .layerTranU:hover{background: url(//img00.allinmd.cn/column/fellowship/layerTranUhover.png) no-repeat center;}
+.p_c_cont_bj_mail_input input.layerAddress{width:308px;margin-left:0;margin-top:10px;}
+.p_c_cont_bj_mail_input input.layerAddress::-webkit-input-placeholder{color: #969696 !important;}
+.p_c_cont_bj_mail_input input.layerAddress:-moz-placeholder { color: #969696 !important;}
+.p_c_cont_bj_mail_input input.layerAddress::-moz-placeholder { color: #969696 !important;}
+.p_c_cont_bj_mail_input input.layerAddress:-ms-input-placeholder { color: #969696 !important;}
+.layerIntro{text-indent: 28px;}
+.layerIntro::-webkit-input-placeholder,.detailAddress::-webkit-input-placeholder{color: #969696 !important;}
+.layerIntro:-moz-placeholder,.detailAddress:-moz-placeholder{ color: #969696 !important;}
+.layerIntro::-moz-placeholder,.detailAddress::-moz-placeholder{ color: #969696 !important;}
+.layerIntro:-ms-input-placeholder,.detailAddress:-ms-input-placeholder{ color: #969696 !important;}
+.layerTran{background: url(//img00.allinmd.cn/column/fellowship/layerTran.png) no-repeat 212px center; overflow: hidden;height: 100%}
+.layerNoMargin{margin:0;}
+.layerBottom{background:none;width:713px;height:0;border-bottom: 1px solid #e1e3e4;margin:0;}
+
+/*推荐信及各证明*/
+.layerTxtU{width:551px;margin:0 auto;padding-top:52.5px;font-size:15px;color:#666;line-height: 28px;word-spacing: 20px;}
+.layerTxtU a{color:#409ce0;text-decoration: underline;}
+.layerBtnU{padding-top:43.5px;text-align: center;padding-bottom:60px;}
+.layerBtnU a{display:inline-block;font-size:24px;color:#fff;line-height:56px;padding:0 62px;border-radius:4px;background:#409ce0;position: relative;}
+.layerBtnU a span{
+    position: absolute;
+    top: 18px;
+    right: -70px;
+    z-index: 2;
+    color: #439ce0;
+    font-size: 18px;
+    font-family: "microsoft yahei";
+    display: block;
+    line-height: 20px;
+    height: 20px;
+    border-bottom: 1px solid #52a3e2;
+}
+.layerBtnU input{width:220px;height:56px;position:absolute;top:0;left:0;cursor: pointer;filter:alpha(opacity=0);-moz-opacity:0;opacity: 0;z-index:2 ;}
+.layerBtnC{padding-top:24.5px;padding-bottom: 30px;}
+.layerTxtC{padding-top: 33.5px;}
+.layerTxtL{width:390px;}
+.layerTxtLC{width:660px;padding-top:33.5px;}
+
+/*推荐信及各证明列表*/
+.layerFileList ul{width:713px;max-height:475px;overflow-y:auto;padding-bottom:30px;border-bottom:1px dashed #dbdbdb;zoom:1;}
+.layerFileList ul:after{content:'';display:block; clear:both;}
+.layerFileList li{margin:30px 0 0 30px;width:278px;padding:25px 0 26px 30px;background:#efeff4;border:1px dashed #cacaca;float: left;position:relative;}
+.layerFileList .active{position: relative;}
+.active .elasticLaye{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #000;
+    opacity: 0.7;
+    width: 308px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "microsoft yahei";
+    color: #fff;
+    text-align: center;
+    padding:46px 0 45px;
+}
+.layerFileList .fileDel{width:23px;height:23px;background: url(//img00.allinmd.cn/column/fellowship/fellowclose.png) no-repeat;position:absolute;right:5px;top:5px;cursor: pointer;display: none;z-index: 3;}
+.layerFileList li.active .fileDel{display: block;}
+.layerFileList dl{padding-left:62px;}
+.layerFileList dt{font-size:16px;color:#333;line-height: 24px;}
+.layerFileList dd{padding-top:12px;font-size:14px;line-height:24px;color:#b4b4b4;font-family:"宋体";}
+dl.layerPdf{background: url(//img00.allinmd.cn/column/fellowship/layerPdf.png) no-repeat 0 4px;}
+dl.layerWord{background: url(//img00.allinmd.cn/column/fellowship/layerWord.png) no-repeat 0 4px;}
+dl.layerPic{background: url(//img00.allinmd.cn/column/fellowship/layerPic.png) no-repeat 0 4px;}
+
+/*知情同意书*/
+.layerKnow{width:713px;height:809px;overflow-y: auto;}
+.layerKnow ol{padding:22px 30px 0 50px;}
+.layerKnow ol li{list-style-type:decimal;font-size:16px;color:#555;line-height:32px;margin-bottom:31px;}
+.layerKnow ol li.agreeTip{position:relative;list-style-type:none;color:#036eb8;}
+.layerKnow ol li.agreeTip div{width:16px;height:16px;background:url(//img00.allinmd.cn/column/fellowship/layerTip.png) no-repeat;background-size: 16px;position:absolute;top:7px;left:-25px;}
+.checkAgree{padding-top:19.5px;font-size:12px;line-height:13px;font-family:"宋体";color:#73859e;margin:0 30px;border-top:1px dashed #dbdbdb;}
+.checkAgree input{margin-right:10px;float:left;}
+
+
+
+
+
+
+
+
+/*fellowship二期  添加完成预览按钮*/
+.personal_content .personal_bottom{
+    background-color: #efeff4;
+    padding-bottom: 20px;
+}
+.personal_content .personal_bottom a{
+    display: inline-block;
+    width: 87px;
+    line-height: 28px;
+    font-size: 12px;
+    font-family: Arial, "宋体";
+    color: #fff;
+    border-radius: 3px;
+    text-align: center;
+}
+.personal_content .personal_bottom .personalBottomSuc{
+    background-color: #3d9eeb;
+    margin-left: 269px;
+}
+.personal_content .personal_bottom .personalBottomRed{
+    margin-left: 20px;
+    background-color: #ffb538;
+}
+.p_c_cont_bj_zlBorder{
+    border-bottom: 1px solid #e1e3e4;
+}
+
+/*简历预览*/
+.preview_all{
+    background-color: #f7f7f9;
+    width: 1000px;
+    margin:0 auto;
+    font-family: "microsoft yahei";
+    padding-bottom: 40px;
+}
+.preview_all .previewTitle{
+    font-size: 36px;
+    line-height: 36px;
+    color: #73859e;
+    text-align: center;
+    padding: 106px 0 51px;
+}
+.preview_all .previewMain{
+    margin: 0 auto;
+    width: 859px;
+    border: 1px solid #bebec0;
+    border-bottom: none;
+}
+.preview_all .previewMain .previewTop{
+    padding-left: 18px;
+    width: 841px;
+    height: 62px;
+    line-height: 62px;
+    background-color: #74859f;
+    font-size: 23px;
+    color: #fff;
+}
+.previewMidLef{
+    float: left;
+    width: 700px;
+}
+.previewMain .previewMidRig{
+    float: left;
+    width: 159px;
+    height: 236px;
+    border-bottom: 1px solid #d6d5da;
+}
+.previewMain .previewMidRig img{
+    padding: 20px 10px 10px 10px;
+    width: 139px;
+    height: 195px;
+}
+.previewMidLef li,.previewMid .previewBot li{
+    padding-left: 18px;
+    font-size: 16px;
+    line-height: 53px;
+    float: left;
+}
+.preOne{
+    width: 118px;
+    height:53px;
+    color: #8d8d8b;
+    border-right: 1px solid #bebec0;
+    border-bottom: 1px solid #d6d5da;
+    background-color: #f0eff5;
+}
+.preTwo{
+    width: 194px;
+    height:53px;
+    color: #72839d;
+    border-right: 1px solid #bebec0;
+    border-bottom: 1px solid #d6d5da;
+}
+.preThr{
+    width: 544px;
+    height:53px;
+    border-right: 1px solid #bebec0;
+    border-bottom: 1px solid #d6d5da;
+    color: #72839d;
+}
+.preFour{
+    width: 681px;
+    height:53px;
+    color: #8d8d8b;
+    border-right: 1px solid #bebec0;
+    border-bottom: 1px solid #d6d5da;
+}
+.preFour span{
+    color: #72839d;
+    padding-left: 18px;
+}
+.previewMid .previewBot{
+    width: 859px;
+}
+.preFun{
+    width: 704px;
+    height:53px;
+    border-bottom: 1px solid #d6d5da;
+    color: #72839d;
+}
+.previewBottom{
+    margin-top: 56px;
+}
+.previewBottom .previewBottomTit{
+    width: 861px;
+    height: 56px;
+    margin: 0 auto;
+    border-bottom: 1px solid #93a2b5;
+    position: relative;
+}
+.previewBottomTit>div{
+    width: 123px;
+    border: 2px solid #d4d8e1;
+    text-align: center;
+    border-bottom: none;
+    font-size: 18px;
+    color: #b3baca;
+    line-height: 45px;
+    background-color: #f3f2f7;
+    position: absolute;
+    left: 27px;
+    bottom: 4px;
+    z-index: 2;
+    cursor: pointer;
+}
+.previewBottomTit .EngPreview{
+    left: 166px;
+}
+.previewBottomTit .previewHover{
+    width: 128px;
+    border: 1px solid #73849e;
+    border-bottom: #f7f7f9;
+    line-height: 55px;
+    text-align: center;
+    font-size: 23px;
+    color: #73849e;
+    bottom: -1px;
+    z-index: 2;
+    background-color: #f7f7f9;
+}
+.preMain{
+    width: 859px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 1px solid #bebec0;
+    border-right: none;
+    border-bottom: none;
+}
+.preSix{
+    width:273px;
+    height:53px;
+    border-bottom: 1px solid #d6d5da;
+    border-right: 1px solid #bebec0;
+    color: #72839d;
+}
+.preSeven{
+    width: 702px;
+    height:53px;
+    border-bottom: 1px solid #d6d5da;
+    border-right: 1px solid #bebec0;
+    color: #72839d;
+}
+.preMainTop{
+    width: 859px;
+}
+.previewMidLef dl{
+    border-right:1px solid #bebec0;
+    width: 857px;
+    font-size: 16px;
+}
+.previewMidLef dl dt{
+    color: #a7a7a9;
+    padding-left: 18px;
+    background-color: #f0eff5;
+    line-height: 53px;
+    border-bottom: 1px solid #bebec0;
+}
+.previewMidLef .previewProfile{
+    padding: 10px 14px 10px 18px;
+    color: #72869f;
+    text-indent: 2em;
+    line-height: 32px;
+    border-bottom: 1px solid #bebec0;
+}
+.previewMidLef .fontIndent{
+    text-indent: 1em;
+}
+.previewMidLef .previewPublic{
+    padding-bottom: 18px;
+    border-bottom: 1px solid #bebec0;
+}
+.previewMidLef .previewPublic div{
+    float: left;
+}
+.previewPublic .previewBg{
+    width: 41px;
+    height: 42px;
+    background: url(//img10.allinmd.cn/common/icon/png/personal-sprite.png) no-repeat;
+    margin:0 18px;
+}
+.previewPublic .workBg{
+    background-position: 0 -155px;
+}
+.previewPublic .studyBg{
+    background-position: -41px -155px;
+}
+.previewPublic .otherBg{
+    background-position: -82px -155px;
+}
+
+.previewPublic .honorBg{
+    background-position:-123px -155px;
+}
+
+.previewPublic .foundingBg{
+    background-position:-164px -155px;
+}
+.previewPublic .socialBg{
+    background-position:-205px -155px;
+}
+.previewPublic .opusBg{
+    background-position:-246px -155px;
+}
+.previewPublic .patentBg{
+    background-position:-287px -155px;
+}
+
+
+.previewPublic p{
+    margin-top: 18px;
+    line-height: 16px;
+    color: #8d8d8b;
+    width: 768px;
+    padding-left: 76px;
+}
+.previewPublic .intro{
+    line-height: 30px;
+    margin-top: 10px;
+}
+.previewPublic p>span{
+    color: #72839d;
+}
+.previewPublic p>i{
+    font-style: normal;
+    margin: 0 16px;
+}
+
+/*fellow三期中文语言能力项样式*/
+.p_c_baseinfo_language{
+    background: url(//img00.allinmd.cn/personal/border_bg.png) repeat-x;
+    height: 28px;
+    line-height: 28px;
+    width: 120px;
+    border: solid 1px #dbdbdb;
+    border-radius: 2px;
+    float: left;
+    margin-right: 5px;
+    position: relative;
+}
+.p_c_baseinfo_language01{
+    background: url(//img00.allinmd.cn/personal/xl_base_info.png) no-repeat 104px center;
+    padding-right: 15px;
+    font-size: 13px;
+    color: #333;
+    height: 30px;
+}
+.languageName{
+    height: 28px !important;
+    line-height: 28px !important;
+    width:120px !important;
+}
+.language_list_par .bj_d_bg{
+	background:url(//img10.allinmd.cn/common/icon/png/languageIcon.png) no-repeat center 0;
+}
+/*报名表里面进修目的及要求*/
+.fellow_objective{
+	padding: 0 66px;
+}
+.fellow_objectiveTitle{
+	padding-top: 5px;
+	font-size: 13px;
+    color: #969696;
+}
+.fellow_objectiveText{
+	margin-top: 10px;
+}
+.fellow_objectiveText textarea{
+	height: 88px;
+	width: 100%;
+	border: solid 1px #e1e3e4;
+    font-size: 13px;
+    color: #333;
+}

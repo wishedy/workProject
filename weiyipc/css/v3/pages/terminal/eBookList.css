@@ -1,0 +1,227 @@
+@charset "UTF-8";
+.eBookList {
+    width: 1000px;
+    margin: 20px auto 0;
+}
+
+.eBookList ul.list {
+    background: #FFFFFF;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(215, 222, 229, 0.5), 0 0 2px 0 #C7D3DF;
+            box-shadow: 0 2px 4px 0 rgba(215, 222, 229, 0.5), 0 0 2px 0 #C7D3DF;
+}
+
+.eBookList ul.list li {
+    padding: 40px 30px 0;
+}
+
+.eBookList ul.list li:last-child .eBookListLi {
+    border-bottom: none;
+}
+
+.eBookList ul.list li .eBookListLi {
+    border-bottom: solid 1px  #E4E9ED;
+    padding-bottom: 40px;
+}
+
+.eBookList ul.list li:hover {
+    background: #F6F9FB;
+}
+
+.eBookList ul.list li:hover .bookDetail .bookName {
+    color: #2899E6;
+}
+
+.eBookList ul.list li .bookImg {
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+.eBookList ul.list li .bookImg img {
+    width: 108px;
+    height: 154px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 7px 15px 0 rgba(2, 15, 42, 0.3);
+            box-shadow: 0 7px 15px 0 rgba(2, 15, 42, 0.3);
+}
+
+.eBookList ul.list li .bookDetail {
+    display: inline-block;
+    vertical-align: text-top;
+    width: 761px;
+    margin-left: 30px;
+}
+
+.eBookList ul.list li .bookDetail .bookName {
+    font-size: 22px;
+    color: #333333;
+    margin-bottom: 16px;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-height: 33px;
+}
+
+.eBookList ul.list li .bookDetail .bookIntroduction {
+    font-size: 16px;
+    color: #555;
+    line-height: 24px;
+    margin-bottom: 38px;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 47px;
+}
+
+.eBookList ul.list li .bookDetail .bookTag {
+    font-size: 0;
+}
+
+.eBookList ul.list li .bookDetail .bookTag i {
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 8px;
+    border: 1px solid #909090;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #909090;
+}
+
+.eBookList ul.list li .bookDetail .bookTag p {
+    font-size: 16px;
+    color: #909090;
+    line-height: 22px;
+    display: inline-block;
+}
+
+.eBookList ul.list li .bookDetail .bookTag p:last-child {
+    margin-left: 20px;
+}
+
+.eBookList .al-more-column {
+    font-size: 18px;
+    color: #AAAAAA;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.al-downLoad_PopBox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+    /*IE8支持*/
+}
+
+.al-downContainer {
+    width: 450px;
+    height: 262px;
+    background-color: #fff;
+    border-radius: 6px;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px;
+    margin-top: -131px;
+    position: relative;
+}
+
+.al-downContainer .closePopBtn {
+    float: right;
+    width: 13px;
+    height: 13px;
+    background: url("//img10.allinmd.cn/v3/terminal/popCloseBtn.png") center center no-repeat;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.al-downLoadContent {
+    padding: 40px 50px 45px;
+}
+
+.al-downLoadContent:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.al-downLoadContent figcaption {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.al-downLoadContent .downLoadWay {
+    float: left;
+    margin-top: 10px;
+}
+
+.al-downLoadContent .downLoadWay p {
+    padding: 25px 0 0 25px;
+}
+
+.al-downLoadContent .downLoadWay p i {
+    display: inline-block;
+    width: 28px;
+    height: 32px;
+    background: url("//img10.allinmd.cn/v3/terminal/AndroidIcon.png") center center no-repeat;
+    vertical-align: middle;
+    margin-right: 15px;
+    margin-top: -5px;
+}
+
+.al-downLoadContent .downLoadWay p .iPhoneIcon {
+    width: 25px;
+    height: 31px;
+    background: url("//img10.allinmd.cn/v3/terminal/iPhoneIcon.png") center center no-repeat;
+    margin-top: -10px;
+}
+
+.al-downLoadContent .downLoadWay p span {
+    font-size: 20px;
+}
+
+.al-downLoadContent .downLoadWay p .AndroidText {
+    color: #49BD38;
+}
+
+.al-downLoadContent .downLoadWay p .iPhoneText {
+    color: #14A7F0;
+}
+
+.al-downLoadContent .downLoad_QR {
+    float: right;
+}
+
+.al-downLoadContent .downLoad_QR img {
+    width: 140px;
+    height: 140px;
+    -webkit-box-shadow: 8px 8px 10px rgba(83, 101, 119, 0.2), -5px -5px 10px rgba(83, 101, 119, 0.2);
+            box-shadow: 8px 8px 10px rgba(83, 101, 119, 0.2), -5px -5px 10px rgba(83, 101, 119, 0.2);
+}
+
+/*--start视频终端点击产品引导下载app弹框start--*/
+.al-downContainer .al-downLoadContent figcaption {
+    text-align: center;
+}
+
+.al-downContainer .al-downLoadContent .allinmd-QR-code {
+    margin: 0 auto;
+    float: inherit;
+}
+
+.al-downContainer .al-downLoadContent .allinmd-QR-code img {
+    display: block;
+    margin: 0 auto;
+}
+
+/*--end视频终端点击产品引导下载app弹框end--*/

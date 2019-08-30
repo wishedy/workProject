@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>房间公告</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_searchHospital.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_addHospital.css">
+</head>
+
+<body>
+    <section class="al-mainInner ev-summaryInner" style="">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem ev-backToMain">
+                <a href="javascript:;">
+                    <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>房间公告</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+            </figure>
+        </header>
+        <section class="al-addHospitalBox EV-personalIntro">
+            <textarea id="summaryIn" cols="" rows="" placeholder="请输入房间公告"></textarea>
+        </section>
+        <section class="al-addHospitalSave">
+            <button class="btn-primary-lg al-msgWriting" id="saveSummary">保存</button>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script>
+    FastClick.attach(document.body);
+    $(".ordered").on("click", function() {
+        $(".al-bottomSelectorListMask").addClass("on");
+        //放弃
+        $(".giveup").on("click", function() {
+            window.location.href = "/pages/personal/customerInfoEdit.html";
+        });
+        //取消
+        $(".cancel").on("click", function() {
+            $(".al-bottomSelectorListMask").removeClass("on");
+        })
+    })
+    </script>
+</body>
+
+</html>

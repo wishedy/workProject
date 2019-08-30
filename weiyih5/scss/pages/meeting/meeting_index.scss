@@ -1,0 +1,344 @@
+@charset "UTF-8";
+//直播结束
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_indexHeader"; //首页头部信息栏
+//@import "../../components/_twoFloorsFilter"; //首页头部信息栏
+@import "../../components/_bottomBtns"; //首页头部信息栏
+@import "../../components/_bottomSharePart"; //分享
+@import "../../components/meeting/_meetingList"; //会议列表
+.meetingIndexCont{
+  .banner{
+    width: 100%;
+    padding-top: rem(10px);
+    background: #fff;
+    img{
+      width: 100%;
+    }
+  }
+  .nav{
+    height: rem(120px);
+    line-height: rem(120px);
+    //margin-bottom: rem(16px);
+    ul{
+      @include clearfix();
+      background: #fff;
+    }
+    li{
+      width: 50%;
+      float: left;
+      text-align: center;
+      font-size: rem(34px);
+      color: #333333;
+      line-height: rem(120px);
+      a{
+        display: inline-block;
+      }
+      &:first-child{
+        &:before{
+          content: '';
+          width: rem(32px);
+          height: rem(34px);
+          display: inline-block;
+          //background: url("//img50.allinmd.cn/meeting/meeting_index/icon_follow_normal.png") no-repeat;
+          background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAiCAMAAAAJbCvNAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAEdUExURUxpcb+/v6GrvKKquqKqu6Kqu////6Kqu6K50aKqu6KpuuHh6KGrurOzzKKqu6KsvqKqu6WqvaGpu6KruqKru6GquuDh6KKqu6Oru6Gqu6GuvKGqu6KquqKqwaOruqKqu6GrvK+vv6asvKewwaGpu6Kquqazv6GrvKWtvaKpu6Kpu6OruqKsuqKqu6KsuqGqvKStv6Kquurq6qGqu6qq1aSrvaexuqqqxqGquqKqu6Opu8zMzKKqu6qqv6Kpu6GquqKqu6Gqu6GquqOquqWtvKW0w6asv+Hi6OTk6uDh56Kpu+Hh6ODi6e3t7eHk6ODi5+Hh5+Di5+Hh5+Pj6qSruqKqvaKpu6SqvaGpvKKru6KqveHi5+Li6qGpuuDh5y1zv48AAABddFJOUwAEhfk8wwHLC9juxKMK4TfwNveUjvjnwkDvE7zpIaD7ahAuHZ78FEw+krWCNMBKkBzmDOcGSRoJ6uBWBXsYr8/O8tdvIhEo8zDY6Jp9DkPqrMDuJUNgpFFfUkLDPaktCM4AAAFsSURBVDjLnVPXVsJAFAw1hCJFijQpIkhRivTeUUFAsevs/3+GJZuEkOAD8zRzZ87dvXvPMoyEnPbyWqe7vtTmGDVUWIhgKwq79gLU81eFcrlwla8D1prcr/YxaJsEZWoP0K9u+6YeuClPLbPb+ZKZcuiZtgJdDCeUWsgPHjaTIbqS34R5LIrSzWJFHr/GZjSFkpHDSHaj+zV53IzAGal+QqMlv7NxTR5aDXxQmUZ2d+r7FVlmkaaKxYXiXRZkfgGWCjOSisANuU3CTEUEGkWgRGYaRKjwI6ZcjeUzBj/lHOJq24uDo8yKqFogCitlz/CpBXx4E1blgFPpO+EQ16UFq5hDw0IrCtsRjncDxziyScrugtsoW4YbLvt24d2DYFiS4SA8r/KOJyHoEmc8P0voEDrZPTNweo4MTzM4Pw2ozJ2CgScGpFQ/hl4K6A8NiFAPdO4E/67DHAihw95AkfeL+1uQP/xzhvfX98pK374uSP7avYO4AAAAAElFTkSuQmCC") no-repeat;
+          background-size: contain;
+          vertical-align: middle;
+          margin-right: rem(14px);
+        }
+        &:after{
+          content: '';
+          width: rem(1px);
+          height: rem(60px);
+          display: inline-block;
+          background: #DFDFDF;
+          float: right;
+          margin-top: rem(30px);
+        }
+      }
+      &:last-child{
+        &:before{
+          content: '';
+          width: rem(32px);
+          height: rem(34px);
+          display: inline-block;
+          //background: url("//img50.allinmd.cn/meeting/meeting_index/icon_calender_normal.png") no-repeat;
+          background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAiCAMAAAAJbCvNAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABjUExURUxpceHi56KpuqKqu6Gquubm/6GqvP39/bOzzP///6qq1f///6Gqu+Hi6f///+Hi6OHi6P///+Hh5+Di57+/v8zMzKKruqKpu6Kqu7a226KpuqKquqKpuqGpuv///+Dh57e9yk6Vc40AAAAddFJOUwD17jz1CpDqCkoGAu+fBbL0CM3hCAWRzeEHsp/0YAykjgAAAJtJREFUOMvVk9kOgyAQRadYB7duavcO+v9fWUDR2DBEw1NPeLlyEi6GARjIpcxhYpkssu8llyyKSHEpVihQkEbZ5XBJYAG35affhFBRwh+RkACi0DX17igwP2oWGNYJYdYI8R22CWU24RXax1zv5ROu973j844oWaYGXrg0neHECsd6pzkf/rzDNmGcCz9mLjD84hCew2z60bP5BWUfKLAcEWBVAAAAAElFTkSuQmCC") no-repeat;
+          background-size: contain;
+          vertical-align: middle;
+          margin-right: rem(14px);
+        }
+      }
+    }
+  }
+  .screenListNav{
+    background: #fff;
+
+    border-bottom: 1px solid #E4E9ED;
+    &.screenFixed{
+      position: fixed;
+      z-index: 3;
+      width: 100%;
+    }
+    ul{
+      @include clearfix();
+        padding: rem(30px) rem(30px);
+    }
+    li{
+      float: left;
+      height: rem(60px);
+      line-height: rem(60px);
+      padding: 0 rem(16px);
+      //opacity: 0.3;
+      border: 1px solid #ABB3C5;
+      border-radius: 4px;
+      font-size: rem(28px);
+      color: #777;
+      margin-right: rem(20px);
+      /*margin-bottom: rem(20px);*/
+      &:last-child{
+        &.active{
+          background: #fff;
+        }
+        i{
+          display: inline-block;
+          width: rem(12px);
+          height: rem(6px);
+          //background: url("//img50.allinmd.cn/meeting/meeting_index/more_down_gray.png") no-repeat;
+          background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAMAAADAMI+zAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURUxpcXd3d3h4eHl5eXh4eHh4eHh4eHh4eHd3d3h4eHl5eXd3d+wM/MsAAAALdFJOUwD+ZmFq5P3Ta1VUZbuSRwAAAC9JREFUCNdFx8cRACAMA0E5G9x/v8SB/UiHqCegPxRIOpcSE+8ixiZe5YKrm7W1A1b4Ab7/I/+vAAAAAElFTkSuQmCC") no-repeat;
+          background-size: cover;
+          margin-left: rem(8px);
+          vertical-align: middle;
+        }
+      }
+      &.active{
+        background: rgba(40,153,230,0.10);
+        border: 1px solid rgba(40,153,230,0.50);
+        border-radius: rem(4px);
+        color: #2899E6;
+        i{
+          //background: url("//img50.allinmd.cn/meeting/meeting_index/more_up_blue.png") no-repeat;
+          background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAMAAADAMI+zAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAnUExURUxpcTWZ3DeZ2zaY2zWY3DeZ3DeY3Tea3TaZ3Deb3jWY3DaZ2zWY24Zh6G4AAAAMdFJOUwD+a+T9ZmFq1FTTVYVMK/4AAAAwSURBVAjXRcfHEQAgDMTAcyS5/3oxYUCvFZANkYaba4T6sVFkZMu8ncfpeBXUP30CM2EB3L8xtI0AAAAASUVORK5CYII=") no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+  }
+  /*.meetingList{
+    li{
+      padding: rem(50px) rem(30px);
+      position: relative;
+      .meetingTitle{
+        font-size: rem(38px);
+        color: #222222;
+        line-height: rem(38px);
+      }
+      span{
+        display: inline-block;
+        width: rem(60px);
+        height: rem(34px);
+        text-align: center;
+        line-height: rem(34px);
+        background: #626F8C;
+        border-radius: 4px;
+        font-size: rem(22px);
+        color: #FFFFFF;
+        vertical-align: bottom;
+      }
+      .meetingLive{
+        position: absolute;
+        right: rem(20px);
+        top: 0;
+        background: url("/images/img50/meeting/meeting_index/live_list.png") no-repeat;
+        background-size: cover;
+        width: rem(30px);
+        height: rem(50px);
+      }
+    }
+  }*/
+  .screenCont{
+    margin-top: rem(16px);
+    position: relative;
+  }
+  /*.meetingTime{
+    margin-top: rem(30px);
+    @include clearfix();
+    p{
+      font-size: rem(26px);
+      color: #AAAAAA;
+      float: left;
+      &:first-child{
+         margin-right: rem(30px);
+         &:before{
+           content: '';
+           display: inline-block;
+           width: rem(18px);
+           height: rem(20px);
+           background: url("/images/img50/meeting/meeting2016/icon_date.png") no-repeat;
+           background-size: cover;
+           vertical-align: baseline;
+           margin-right: rem(10px);
+         }
+       }
+      &:last-child{
+        &:before{
+          content: '';
+          display: inline-block;
+          width: rem(16px);
+          height: rem(22px);
+          background: url("/images/img50/meeting/meeting2016/address.png") no-repeat;
+          background-size: cover;
+          vertical-align: baseline;
+          margin-right: rem(10px);
+        }
+      }
+    }
+  }*/
+  .screenOption{
+    background: rgba(10, 30, 43, 0.06);
+    border-top: 1px solid #DFDFDF;
+    box-shadow: 0 16px 16px 0 rgba(0,0,0,0.10);
+    .screenOptionCont{
+      background: #fff;
+      height: rem(487.5px);
+      overflow: auto;
+      p{
+        font-size: rem(28px);
+        color: #666666;
+        margin-top: rem(60px);
+        padding: 0 rem(30px);
+        span{
+          color: #909090;
+          margin-left: rem(10px);
+        }
+      }
+      .ev-majorList span{
+        margin-bottom: rem(20px);
+      }
+      .screenOne{
+        font-size: rem(28px);
+        color: #777;
+        margin-top: rem(30px);
+        padding: 0 rem(30px);
+        span{
+          display: inline-block;
+          padding: 0 0.21333rem;
+          height: rem(60px);
+          line-height: rem(60px);
+          //opacity: 0.3;
+          border: 1px solid #ABB3C5;
+          border-radius: 4px;
+          margin: rem(20px) rem(15px) 0 0;
+          position: relative;
+          &:last-child{
+            margin-right: 0;
+          }
+          i{
+            position: absolute;
+            left: 50%;
+            bottom: rem(-31px);
+            z-index: 3;
+            display: inline-block;
+            background: url("//img50.allinmd.cn/meeting/arrow.png") no-repeat;
+            background-size: contain;
+            width: rem(24px);
+            height: rem(11px);
+            margin-left: rem(-12px);
+          }
+          &.active{
+            background: rgba(40,153,230,0.10);
+            border: rem(1px) solid rgba(40,153,230,0.50);
+            border-radius: rem(4px);
+            color: #2899E6;
+          }
+        }
+      }
+      .screenTwo{
+        background: #EFF4F8;
+        padding: rem(50px) 0 rem(10px);
+        margin-top: rem(30px);
+        ul{
+          @include clearfix();
+          padding: 0;
+        }
+        p{
+          float: left;
+        }
+        p,li{
+          background: #FFFFFF;
+          border-radius: 4px;
+          width: rem(113px);
+          height: rem(60px);
+          text-align: center;
+          line-height: rem(60px);
+          padding: 0;
+          margin:0 0 rem(40px ) rem(30px);
+          border: 1px solid #fff;
+          &.active{
+            background: rgba(40,153,230,0.10);
+            border: 1px solid rgba(40,153,230,0.50);
+            border-radius: 4px;
+            color: #3598DB;
+          }
+        }
+      }
+    }
+  }
+  .screenBtn{
+    font-size: rem(30px);
+    color: #555555;
+    border-top: 1px solid #DFDFDF;
+    @include clearfix();
+    background: #fff;
+    div{
+      float: left;
+      width: 50%;
+      text-align: center;
+      line-height: rem(82px);
+      height: rem(82px);
+      &:first-child{
+        &:before{
+          content:'';
+          width:1px;
+          height: rem(82px);
+          display: inline-block;
+          background: #DFDFDF;
+          float: right;
+        }
+      }
+      &:last-child{
+        &.active{
+          color: #2899e6;
+        }
+      }
+    }
+  }
+
+}
+
+.screenTop{
+  /*display: none;*/
+}
+.screenShadow{
+  position: fixed;
+  background: rgba(10, 30, 43, 0.06);
+  top: 3rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+
+
+.al-indexHeader, .al-indexNavbar{
+  background: #fff;
+  ul .active a:after{
+    bottom: rem(-10px) !important;
+  }
+}

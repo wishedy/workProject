@@ -1,0 +1,454 @@
+@charset "UTF-8";
+//他人主页——首页
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+
+@import "../../components/_contentModule"; //内容组件
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_commentModule"; //我的动态组件
+@import "../../components/_bottomBtns";
+@import "../../components/_bottomSharePart";//分享组件
+//个人主页 头部信息
+.al-personalHead {
+    width: 100%;
+    background: transparent url('//img50.allinmd.cn/pages/personal/others_head.jpg') center center no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    .al-othersSnsBar{
+        position: absolute;
+        right: rem(30px);
+        top: rem(35px);
+        @include font-dpr(13px);
+        & > span{
+            margin-left: rem(50px);
+        }
+    }
+
+    .al-othersBackToIndex{
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: rem(35px) rem(30px);
+    }
+}
+
+.al-personalBasicMsg {
+    .al-personalJobMsg {
+        margin-bottom: rem(40px);
+    }
+    .al-personalImg {
+        @include circle(rem(140px),
+        #fff);
+        border: rem(6px) solid rgba(255, 255, 255, 0.3);
+        margin: 0 auto;
+        margin-top: rem(60px);
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            img {
+                @include circle(rem(140px),
+                #fff);
+                vertical-align: top;
+            }
+        }
+    }
+    ul {
+        list-style: none;
+    }
+    .al-personalSnsNum {
+        font-size: rem(30px);
+        margin-top: rem(13px);
+        display: inline-block;
+        padding: 0 rem(30px);
+        border-right: 1px solid #fff;
+        position: relative;
+        a {
+            color: #fff;
+            @include font-dpr(15px);
+        }
+        &:nth-child(1) {
+            padding-left: 0
+        }
+        &:nth-last-child(1) {
+            border: none;
+        }
+        span {
+            padding-left: rem(12px)
+        }
+    }
+}
+
+.al-personalBasicMsgContent {
+    & > h2 {
+        @include font-dpr(18px);
+        color: #fff;
+        margin: rem(20px) 0;
+        font-weight: normal;
+    }
+}
+
+.al-personalGoLogin {
+    @include font-dpr(15px);
+    margin: rem(40px) 0; 
+    span:nth-child(1) {
+        display: inline;
+    }
+    span:nth-child(2) {
+        display: none;
+    }
+}
+
+.al-personalGoLogined {
+    @include font-dpr(15px);
+    margin: rem(40px) 0;
+    opacity: 0.5;
+    span{
+        display: inline;
+    }
+}
+
+// .al-personalShare {
+//     position: absolute;
+//     top: rem(30px);
+//     right: rem(30px);
+//     display: inline-block;
+//     vertical-align: middle;
+//     color: #fff;
+// }
+.al-personalScrollHead {
+    background-color: #fff;
+    height: rem(88px);
+    line-height: rem(88px);
+    @include font-dpr(17px);
+    font-weight: normal;
+    color: #333333;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    display: none;
+    h2 {
+        font-weight: normal;
+    }
+    .icon-backArrow{
+        position: absolute;
+        left: rem(25px);
+        &:before{
+            width: rem(60px);
+        height: rem(60px);
+        }
+    }
+}
+
+//导航栏
+.al-personalNavbar {
+    width: 100%;
+    @include flex();
+    @include justify-content(center);
+    @include align-items(center);
+    background-color: #fff;
+    height: rem(80px);
+    line-height: rem(72px);
+    border-bottom: 1px solid #e4e9ed;
+    z-index: 1;
+    .al-personNavbarItem {
+        color: #777777;
+        margin: 0 rem(45px);
+        text-align: center;
+        padding: 0 rem(20px);
+        border-box: border-box;
+        img {
+            width: rem(42px);
+            height: rem(36px);
+            vertical-align: top;
+        }
+        .showOff {
+            display: inline-block;
+        }
+        .showOn {
+            display: none;
+        }
+        figcaption {
+            margin-top: rem(7px);
+            @include font-dpr(16px)
+        }
+    }
+    .al-personNavbarItem.active {
+        color: #3598bd;
+        border-bottom: rem(4px) solid #3598db;
+        .showOn {
+            display: inline-block;
+        }
+        .showOff {
+            display: none;
+        }
+    }
+}
+
+//封面收起时——动态类
+.al-personalHeadFixed {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: block;
+    z-index: 3;
+}
+
+.al-personalNavbarFixed {
+    position: fixed;
+    z-index: 3;
+    top: rem(87px);
+    img {
+        display: none;
+    }
+}
+
+//主内容——首页
+.al-personalContent {
+    margin-top: rem(20px);
+}
+
+.al-personalBrowsedPart {
+    background-color: #fff;
+    margin-top: rem(16px);
+    padding-left: rem(90px);
+}
+
+.al-personalBrowsedItem {
+    padding: rem(40px) rem(30px) rem(40px) 0;
+    border-bottom: 1px solid $innerBorderColor;
+    @include font-dpr(15px);
+    a {
+        color: #333333;
+        position: relative;
+        &:after {
+            content: "";
+            width: rem(28px);
+            height: rem(14px);
+            float: right;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAPCAMAAADNjy/UAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA2UExURUxpcbe3t7e3t7i4uP///7i4uLi4uLi4uLe3t9XV1bi4uLe3t7e3t7y8vLm5ubq6uri4uLe3t4lCWEwAAAARdFJOUwD5Tq8CobFe/QZW4CAXUBr3HPGeLgAAAE9JREFUGNN1yVsSwBAQBMAJCXli73/ZKCllMenfBp4VTATua2Nnkse5CzmziAU8uTzuALs687UZT09//egbp9089dh8F+iUEz7lfiaf1fMCGnED5O9wdaoAAAAASUVORK5CYII=') center center no-repeat;
+            transform: rotate(-90deg);
+            background-size: cover;
+        }
+    }
+    .al-newsNum {
+        text-align: center;
+        float: right;
+        position: static;
+        margin-right: rem(30px);
+    }
+}
+
+//未登录
+.al-personalNoLogin {
+    a {
+        color: $smallTextColor !important;
+    }
+}
+
+//主内容——贡献
+.al-personalContributionHeader {
+    height: rem(78px);
+    width: 100%;
+    border-bottom: 1px solid $innerBorderColor;
+    padding: 0 rem(30px);
+    background-color: #fff;
+    position: relative;
+    box-sizing: border-box;
+    @include clearfix();
+    h2 {
+        font-weight: normal;
+        @include font-dpr(12px);
+        color: $smallTextColor;
+        height: 100%;
+        display: inline-block;
+        line-height: rem(78px);
+    }
+}
+
+@import "../../components/_classSelector"; //分类筛选框
+.al-personalContributionOver {
+    text-align: center;
+    padding-top: rem(50px);
+    padding-bottom: rem(70px);
+    @include font-dpr(15px);
+    color: #626f8c;
+    span {
+        margin: 0 rem(12px);
+    }
+}
+
+.al-othersActiveNone {
+    padding: rem(184px) 0;
+    text-align: center;
+    background-color: #eff4f8;
+    img {
+        display: block;
+        width: rem(191px);
+        height: rem(310px);
+        margin: 0 auto;
+    }
+}
+
+//主内容——动态
+.al-personalActiveNone {
+    padding: rem(160px) 0;
+    background-color: #eff4f8;
+    text-align: center;
+    img {
+        width: rem(361px);
+        height: rem(350px);
+    }
+}
+
+
+
+.al-personalContentTitle {
+    height: rem(78px);
+    line-height: rem(78px);
+    h2 {
+        font-weight: normal;
+        //        @include font-dpr(14px);
+        font-size: rem(30px);
+        color: #666666;
+        padding-left: rem(28px);
+        border-bottom: 1px solid $innerBorderColor;
+    }
+}
+
+
+.al-personalHeadImgWatcher{
+    background-color: #fff;
+    z-index: 99;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding-top: rem(232px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s linear;
+    -webkit-transition: opacity 0.3s linear;
+    figure{
+        width: 100%;
+        img{
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+}
+.al-personalHeadImgWatcher.show{
+    opacity: 1;
+    visibility: visible;
+}
+.al-tableModuleContentText{
+    margin-bottom: 0 !important;
+}
+.icon-contentAuthor{
+    @extend %icon-contentAuthor;
+    margin-right: rem(40px);
+}
+.icon-shareWhite{
+    @extend %icon-shareWhite;
+}
+.icon-othersToIndex{
+    @extend %icon-othersToIndex;
+}
+.icon-othersFollow{
+    @extend %icon-othersFollow;
+}
+.icon-othersFollowed{
+    @extend %icon-othersFollowed;
+}
+.icon-backArrow{
+    @extend %icon-backArrow;
+}
+.icon-commentNum{
+    @extend %icon-commentNum;
+}
+.icon-commentLikeNum{
+    @extend %icon-commentLikeNum;
+}
+
+.al-newsNum{
+    @extend %al-newsNum;
+}
+.al-contentSeminarMark{
+    @extend %al-contentSeminarMark;
+}
+.al-contentNewest{
+    @extend %al-contentNewest;
+}
+.al-contentHotest{
+    @extend %al-contentHotest;
+}
+
+.al-contentAward{
+    @extend %al-contentAward;
+}
+.al-contentJoin {
+    @extend %al-contentJoin ;
+}
+.al-contentPdf{
+    @extend %al-contentPdf;
+}
+.icon-othersLike{
+    @extend %icon-othersLike;
+}
+.al-vipUser{
+    /*@extend %al-vipUser;*/
+    &:after{
+        position: absolute;
+        margin-top: rem(15px);
+    }
+}
+.al-contentShow{
+    @extend %al-contentShow;
+
+}
+.al-contentShow.pickUp{
+    @extend %al-contentShow;
+    &:after{
+        transform:rotate(180deg);
+        -webkit-transform:rotate(180deg);
+    }
+}
+.icon-commentNum{
+    @extend %icon-commentNum;
+}
+.icon-likeNum{
+    @extend %icon-likeNum;
+    margin-right: rem(40px);
+}
+.icon-contentWatchedNum{
+    @extend %icon-contentWatchedNum;
+    margin-right: rem(40px);
+}
+.icon-commentLikeNum{
+    @extend %icon-commentLikeNum;
+
+}
+.icon-tagComment{
+    @extend %icon-tagComment;
+    margin-right: rem(40px);
+}
+.btn-deepMsg{
+    background-color: rgba(0, 0, 0, 0.1);
+    &:nth-child(1){
+        margin-right: rem(20px);
+    }
+}
+
+@import "../../components/_middleTipsModal";    //中部提示弹框
+@import "../../components/_bottomBtns";         //底部按钮选项
+@import "../../components/_tableModule.scss"; //页脚功能栏
+@import "../../components/_animationModule"; //动画组件
+@import "../../components/_footerBar"; //页脚功能栏

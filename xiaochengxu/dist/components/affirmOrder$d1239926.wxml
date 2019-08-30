@@ -1,0 +1,121 @@
+<import src="/components/medicalReportEnsure$7e2807f6" />
+<import src="/components/confirm$5251c782" />
+<import src="/components/toast$1074ede9" />
+<import src="/components/loading$2ff823fe" /><template name="affirmOrder$d1239926">
+  <view class="_section data-v-5c7faaf2 ao_main {{[choiceCouponShow ? 'hideScroll' : '']}}">
+    <view class="_section data-v-5c7faaf2 ao_fromDoctor" wx:if="{{pageFrom == 'findDoctor'}}"><template data="{{...$root[$kk+'0'], $root}}" is="medicalReportEnsure$7e2807f6"></template>
+      <view class="_ul data-v-5c7faaf2 fd_orderInfo">
+        <view class="_li data-v-5c7faaf2"><label class="_span data-v-5c7faaf2 fd_orderItemLeft">咨询费</label>
+          <view class="_p data-v-5c7faaf2 fd_orderItemRight fd_orderItemPrice">￥ {{priceMessage.generalPrice}}</view>
+        </view>
+        <view class="_li data-v-5c7faaf2"><label class="_span data-v-5c7faaf2 fd_orderItemLeft">优惠券</label>
+          <view class="_p data-v-5c7faaf2 fd_orderItemRight fd_orderItemCoupon" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"><label hidden="{{!(couponId)}}" class="_span data-v-5c7faaf2">已选 </label>{{couponName}}</view>
+        </view>
+        <view class="_li data-v-5c7faaf2"><label class="_span data-v-5c7faaf2 fd_orderItemLeft fd_orderItemExplain">服务说明</label>
+          <view class="_p data-v-5c7faaf2 fd_orderItemRight fd_orderItemExplain" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}"><label class="_span data-v-5c7faaf2">过期退款</label><label class="_span data-v-5c7faaf2">{{priceMessage.generalTimes}}次医生回答</label></view>
+        </view>
+      </view>
+      <view class="_footer data-v-5c7faaf2 fd_orderSubmit"><label class="_span data-v-5c7faaf2 fd_ActualMoney">￥{{showActualMoney}}</label> <label class="_span data-v-5c7faaf2 fd_goSubmit" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">提交咨询单</label></view>
+    </view>
+    <view class="_section data-v-5c7faaf2 ao_fromOther" wx:else>
+      <view class="_section data-v-5c7faaf2 ao_docBox">
+        <view class="_figure data-v-5c7faaf2 ao_doxInfo">
+          <view class="_figcaption data-v-5c7faaf2 ao_docIcon">
+            <image src="{{doctorIcon}}" class="_img data-v-5c7faaf2"></image>
+          </view>
+          <view class="_section data-v-5c7faaf2 ao_docDetails">
+            <view class="_div data-v-5c7faaf2 ao_docNameTitle"><label class="_span data-v-5c7faaf2 ao_docName">{{doctorInfo.fullName}}</label><label class="_span data-v-5c7faaf2 ao_docTitle">{{medicalTitle}}</label></view>
+            <view class="_div data-v-5c7faaf2 ao_docHospitalDivision"><label class="_span data-v-5c7faaf2 ao_docHospital">{{doctorInfo.company}}</label><label class="_span data-v-5c7faaf2 ao_docDivision">{{doctorInfo.platformId==1?'骨科':'手外科'}}</label></view>
+          </view>
+        </view>
+        <view class="_section data-v-5c7faaf2 ao_inquiryTypeBox">
+          <view class="_h2 data-v-5c7faaf2 ao_imgInquiry"><label class="_span data-v-5c7faaf2 ao_inquiryTitle">图文咨询</label> <label class="_span data-v-5c7faaf2 ao_inquiryMoney">{{priceMessage.generalPrice}}
+              <view class="_i data-v-5c7faaf2">元</view>
+            </label></view>
+          <view class="_div data-v-5c7faaf2 ao_inquiryUnder"></view>
+          <view class="_ul data-v-5c7faaf2 ao_doxCando" wx:if="{{caseType == '15'}}">
+            <view class="_li data-v-5c7faaf2">1.美年健康体检咨询，本次医生在线咨询免费</view>
+            <view class="_li data-v-5c7faaf2">2.本次问诊医生回复次数不限</view>
+          </view>
+          <view class="_ul data-v-5c7faaf2 ao_doxCando" wx:else>
+            <view class="_li data-v-5c7faaf2">1.咨询5天有效,可获得医生{{priceMessage.generalTimes}}次回答；</view>
+            <view class="_li data-v-5c7faaf2">2.医生48小时未接诊全额退款；</view>
+          </view>
+        </view>
+      </view>
+      <view class="_section data-v-5c7faaf2 ao_coupon" wx:if="{{caseType != '15'}}"><label class="_span data-v-5c7faaf2 ao_couponLeft">
+          <view class="_i data-v-5c7faaf2">优惠券</view>
+        </label> <label class="_span data-v-5c7faaf2 ao_couponRight" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">{{couponName}}</label></view>
+      <view class="_footer data-v-5c7faaf2 ao_btnBox"><label class="_span data-v-5c7faaf2 ao_money">实付款:<view class="_i data-v-5c7faaf2">￥{{showActualMoney}}</view></label><label class="_span data-v-5c7faaf2 ao_submit" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">提交订单</label></view>
+    </view>
+    <view class="_section data-v-5c7faaf2 ao_couponMasker" ref="couponMasker" wx:if="{{choiceCouponShow}}" bindtap="handleProxy" data-eventid="{{'13'}}" data-comkey="{{$k}}">
+      <view class="_figure data-v-5c7faaf2 ao_couponMaskerMain" catchtap="handleProxy" data-eventid="{{'12'}}" data-comkey="{{$k}}">
+        <view class="_figcaption data-v-5c7faaf2 mm_header"><label class="_span data-v-5c7faaf2 mm_title">优惠券</label><label class="_span data-v-5c7faaf2 mm_instructions" catchtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">使用说明</label>
+          <view class="_i data-v-5c7faaf2 mm_icon_close" bindtap="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}"></view>
+        </view>
+        <view class="_section data-v-5c7faaf2 mm_main">
+          <view class="_ul data-v-5c7faaf2 mm_useTab">
+            <view catchtap="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}" class="_li data-v-5c7faaf2 {{[tabIndex == 0 ? 'active' : '']}}">可使用({{enableCouponList.length}})</view>
+            <view catchtap="handleProxy" data-eventid="{{'8'}}" data-comkey="{{$k}}" class="_li data-v-5c7faaf2 {{[tabIndex == 1 ? 'active' : '']}}">不可使用({{unenableCouponList.length}})</view>
+          </view>
+          <view class="_div data-v-5c7faaf2 mm_CDkey"><input type="text" placeholder="请输入优惠码" class="_input data-v-5c7faaf2 mm_CDkeyInput" value="{{couponNum}}" bindinput="handleProxy" catchinput="handleProxy" data-eventid="{{'9'}}" data-comkey="{{$k}}" /><button class="_button data-v-5c7faaf2 mm_CDkeyBtn" catchtap="handleProxy" data-eventid="{{'10'}}" data-comkey="{{$k}}">兑换</button></view>
+          <view class="_section data-v-5c7faaf2 mm_useContent">
+            <view class="_div data-v-5c7faaf2 mm_useItem" hidden="{{!(tabIndex==0)}}">
+              <view class="_ul data-v-5c7faaf2 mm_useYesLists {{[isIPad ? 'mm_ipad' : '']}}" wx:if="{{enableCouponList.length>0}}">
+                <view class="_li data-v-5c7faaf2 mm_useYesItem" wx:key="index" key="{{index}}" catchtap="handleProxy" data-eventid="{{'11-'+index}}" data-comkey="{{$k}}" wx:for="{{enableCouponList}}" wx:for-index="index" wx:for-item="item">
+                  <view class="_figure data-v-5c7faaf2 mm_couponInfoBox">
+                    <view wx:if="{{item.ruleType == 2}}" class="_h4 data-v-5c7faaf2">免费咨询</view>
+                    <view wx:if="{{item.ruleType == 1}}" class="_h4 data-v-5c7faaf2">￥<label class="_span data-v-5c7faaf2">{{item.discountAmount}}</label></view>
+                    <view class="_section data-v-5c7faaf2 mm_couponInfo">
+                      <view class="_div data-v-5c7faaf2 mm_couponName">{{item.promotionName}}</view>
+                      <view class="_div data-v-5c7faaf2 mm_couponIndate"><label wx:if="{{item.infoTimeType == 0}}" class="_span data-v-5c7faaf2">有效期：长期有效</label><label wx:else class="_span data-v-5c7faaf2">有效期：{{item.threeFree?"长期有效":item.promotionEndtime}}</label></view>
+                    </view> <label class="_span data-v-5c7faaf2 mm_couponStatus {{[item.selected ? 'on' : '']}}"></label>
+                  </view>
+                </view>
+              </view>
+              <view class="_section data-v-5c7faaf2 mm_noCoupon {{[isIPad ? 'mm_ipad' : '']}}" wx:if="{{enableCouponList.length==0}}">
+                <image src="https://m.allinmed.cn/static/image/img00/findDoctor/coupon_none.png" alt class="_img data-v-5c7faaf2"></image> <label class="_span data-v-5c7faaf2">暂无可用优惠券，如有优惠码请先兑换</label>
+              </view>
+            </view>
+            <view class="_div data-v-5c7faaf2 mm_useItem" hidden="{{!(tabIndex==1)}}">
+              <view class="_ul data-v-5c7faaf2 mm_useYesLists {{[isIPad ? 'mm_ipad' : '']}}">
+                <view class="_li data-v-5c7faaf2 mm_useYesItem" wx:key="index" key="{{index}}" wx:for="{{unenableCouponList}}" wx:for-index="index" wx:for-item="item">
+                  <view class="_figure data-v-5c7faaf2 mm_couponInfoBox">
+                    <view wx:if="{{item.ruleType == 2}}" class="_h4 data-v-5c7faaf2">免费咨询</view>
+                    <view wx:if="{{item.ruleType == 1}}" class="_h4 data-v-5c7faaf2">￥<label class="_span data-v-5c7faaf2">{{item.discountAmount}}</label></view>
+                    <view class="_section data-v-5c7faaf2 mm_couponInfo">
+                      <view class="_div data-v-5c7faaf2 mm_couponName">{{item.promotionName}}</view>
+                      <view class="_div data-v-5c7faaf2 mm_couponIndate"><label wx:if="{{item.infoTimeType == 0}}" class="_span data-v-5c7faaf2">有效期 长期有效</label><label wx:else class="_span data-v-5c7faaf2">有效期至 {{item.promotionEndtime}}</label></view>
+                    </view>
+                  </view>
+                  <view class="_article data-v-5c7faaf2 mm_couponExplain" wx:if="{{item.limitDesc}}">
+                    <view class="_p data-v-5c7faaf2 colorRed">{{item.limitDesc}}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_section data-v-5c7faaf2 ao_couponMasker" style="z-index:3;" wx:if="{{instructionsShow}}">
+      <view class="_section data-v-5c7faaf2 ao_couponInstructions">
+        <view class="_h3 data-v-5c7faaf2 ci_title">优惠券使用说明</view>
+        <view class="_ul data-v-5c7faaf2 ci_info">
+          <view class="_li data-v-5c7faaf2">1. 每张优惠券仅限使用一次，每张订单限用一张，不得转赠；不找零，不兑换;</view>
+          <view class="_li data-v-5c7faaf2">2. 如有恶意下单等行为，我司有权取消优惠资格；</view>
+          <view class="_li data-v-5c7faaf2">3. 如发生退款，优惠券将退回到您的唯医账户。</view>
+        </view> <label class="_span data-v-5c7faaf2 ci_btn" bindtap="handleProxy" data-eventid="{{'14'}}" data-comkey="{{$k}}">我知道了</label>
+      </view>
+    </view>
+    <view class="_section data-v-5c7faaf2 ao_couponMasker" wx:if="{{serviceShow}}">
+      <view class="_section data-v-5c7faaf2 ao_couponInstructions">
+        <view class="_h3 data-v-5c7faaf2 ci_title">服务说明</view>
+        <view class="_ul data-v-5c7faaf2 ci_info">
+          <view class="_li data-v-5c7faaf2">1. 咨询5天有效，可获得医生{{priceMessage.generalTimes}}次回答</view>
+          <view class="_li data-v-5c7faaf2">2. 医生48小时未接诊，自动全额退款</view>
+        </view> <label class="_span data-v-5c7faaf2 ci_btn" bindtap="handleProxy" data-eventid="{{'15'}}" data-comkey="{{$k}}">我知道了</label>
+      </view>
+    </view> <template wx:if="{{noStateShow}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'16'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="confirm$5251c782"></template> <template wx:if="{{noMoreShow}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'17'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="confirm$5251c782"></template> <template wx:if="{{hasCommunShow}}" bindcancelClickEvent="handleProxy" bindensureClickEvent="handleProxy" data-eventid="{{'18'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'3'], $root}}" is="confirm$5251c782"></template> <template wx:if="{{toastShow}}" data="{{...$root[$kk+'4'], $root}}" is="toast$1074ede9"></template> <template wx:if="{{finish}}" data="{{...$root[$kk+'5'], $root}}" is="loading$2ff823fe"></template>
+  </view>
+</template>

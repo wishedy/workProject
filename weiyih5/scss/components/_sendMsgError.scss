@@ -1,0 +1,28 @@
+@charset "UTF-8";
+//发送错误提示
+//Created by qiangkailiang on 2016/08/29
+//公共方法模块调用
+@import "../modules/common-modules";
+.al-sendFailTips{
+	position: absolute;
+	top: rem(100px);
+	left: 0;
+	right: 0;
+	background-color:#0a1e2b;
+	opacity: 0;
+	line-height: rem(80px);
+	height: rem(80px);
+	text-align: center;
+	z-index: 1;
+	color: #fff;
+	transition:all 0.2s linear;
+	-webkit-transition:all 0.2s linear;
+	p{
+		@include font-dpr(14px);
+		color: #fff;
+	}
+}
+.al-sendFailTips.show{
+	@include animate-bounceIn(1s);
+	opacity: .9;
+}

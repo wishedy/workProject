@@ -1,0 +1,601 @@
+﻿<!doctype html>
+<html xmlns:gs="http://www.gensee.com/ec">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<title>点播demo</title>
+<link href="css/vod.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main_web">
+	<div class="main_left">
+    	<!--视频区域-->
+    	<div class="video_area">
+        <gs:video-vod id="videoComponent" site="product.gensee.com" ctx="training" ownerid="Bdbkos1Egf" uid="565651" uname="圣骑士" authcode="444444" bar="false" />
+        </div>
+        <div class="chat_qa">
+        	<div class="t" id="chat_qa_a">
+            	<p><a href="javascript:void(0);" class="on" data-id="chat">聊天记录</a></p>
+                <p><a href="javascript:void(0);" data-id="qa">问答记录</a></p>
+            </div>
+            <div class="chat_qa_area">
+            	<div class="chat_list">
+                    
+                </div>
+            	<div class="qa_list">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main_center">
+    	<!--标题状态区域-->
+    	<div class="title_area">
+        	点播demo
+        </div>
+        <!--文档区域-->
+        <div class="doc_area">
+        	<gs:doc id="docComponent"  ctx="training"  site="product.gensee.com" ownerid="Bdbkos1Egf" />
+        </div>
+        
+        <div class="tool_area">
+        	<!--播放进度条-->
+        	<div class="progress_area">
+        	</div>
+            <!--播放控制-->
+            <a class="play_area"></a>
+            <div class="play_time">
+            	<span id="play_now">00:00</span>
+                <span>/</span>
+                <em id="duration">00:00</em>
+            </div>
+        	<!--音量控制区域-->
+        	<div class="volume_area">
+            	<a href="#" class="volume_a"></a>
+                <div class="volume_slide">
+                	
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--章节区域-->
+    <div class="main_right">
+    	<div class="chapter_title">
+        	章节
+        </div>
+        <div class="chapter_body">
+        	<div class="t">
+            	<div class="n">序号</div>
+                <div class="b">标题</div>
+                <div class="s">时间</div>
+            </div>
+            <div class="chapter_list">
+            </div>
+        </div>
+    </div>
+</div>
+<!--遮罩层-->
+<div class="cover" id="cover"></div>
+<!--问卷-->
+<!--
+<div class="survey_area">
+	<div class="t">
+    	<p>XXXXXXXXXXXXXXXXXXXXXXXXXXX问卷调查</p>
+        <a href="#"></a>
+    </div>
+    <div class="survey_body">
+    	<div class="survey_select single">
+        	<h3>1、【单选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+            </div>
+        </div>
+        <div class="survey_select multi">
+        	<h3>2、【多选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+            </div>
+        </div>
+        <div class="survey_select diaocha">
+        	<h3>3、【问答】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <p><textarea></textarea></p>
+        </div>
+        <div class="survey_select single">
+        	<h3>1、【单选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+            </div>
+        </div>
+        <div class="survey_select multi">
+        	<h3>2、【多选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+            </div>
+        </div>
+        <div class="survey_select diaocha">
+        	<h3>3、【问答】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <p><textarea></textarea></p>
+        </div>
+        <div class="survey_select single">
+        	<h3>1、【单选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+            </div>
+        </div>
+        <div class="survey_select multi">
+        	<h3>2、【多选】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <div>
+            	<a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+                <a href="#" class="on">A. 第一方案</a>
+                <a href="#">A. 第一方案</a>
+            </div>
+        </div>
+        <div class="survey_select diaocha">
+        	<h3>3、【问答】XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h3>
+            <p><textarea></textarea></p>
+        </div>
+    </div>
+    <div class="survey_btn">
+    	<a href="#">提交</a>
+    </div>
+</div>
+-->
+<script type="text/javascript" src="http://static.gensee.com/webcast/static/sdk/js/gssdk.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript">
+	//根据组获得通讯通道
+	var channel = GS.createChannel();
+	
+	//章节信息
+	channel.bind("onChapter", function (event) {
+		console.log(event);
+		var txt='';
+		for(var i=0;i<event.data.list.length;i++){
+			var s=Number(event.data.list[i].starttimestamp)==0?"00:00":Util.timeDuration(Number(event.data.list[i].starttimestamp)/1000);
+			txt+='<a href="javascript:void(0);" data-startime="'+(Number(event.data.list[i].starttimestamp)==0?'0.01':event.data.list[i].starttimestamp)+'" data-endtime="'+event.data.list[i].stoptimestamp+'">'+
+				'<span class="n">'+(parseInt(i)+1)+'</span>'+
+				'<span class="b">'+(event.data.list[i].title!=''?event.data.list[i].title:'&nbsp;')+'</span>'+
+				'<span class="s">'+s+'</span>'+
+			'</a>';
+		}
+		$('.chapter_list').html(txt);
+	});
+	
+	//初始化点播，点播开始
+	channel.bind("loadStart", function (event) {
+		console.log(event);
+		$('.play_area').addClass('pause');
+	});
+	//监听暂停
+	channel.bind("onPause", function (event) {
+		console.log(event);
+		$('.play_area').removeClass('pause');
+	});
+	//跳转结束
+	channel.bind("play", function (event) {
+		console.log(event);
+		$('.play_area').addClass('pause');
+	});
+	
+	//收到问答信息
+	channel.bind("onQAList", function (event) {
+		console.log(event);
+		var txt='';
+		for(var i=0; i< event.data.list.length; i++){
+			txt+='<dl>'+
+					'<dt>'+
+						'<p>'+event.data.list[i].submitor+' 问</p>'+
+						'<span>'+Util.formatTime(event.data.list[i].submitTime)+'</span>'+
+					'</dt>'+
+					'<dd>'+event.data.list[i].question+'</dd>'+
+				'</dl>';
+			if(event.data.list[i].answer){
+				txt+='<dl>'+
+					'<dt>'+
+						'<p>'+event.data.list[i].answerBy+' 回答 '+event.data.list[i].submitor+'</p>'+
+						'<span>'+Util.formatTime(event.data.list[i].answerTime)+'</span>'+
+					'</dt>'+
+					'<dd>'+event.data.list[i].answer+'</dd>'+
+				'</dl>';
+			}
+		}
+		$('.qa_list').html(txt);
+	});
+	
+	//收到聊天
+	channel.bind("onChatHistory", function (event) {
+		console.log(event);
+		var txt='';
+		for(var i=0; i< event.data.list.length; i++){
+			txt+='<dl>'+
+					'<dt>'+
+						'<p>'+event.data.list[i].sender+'</p>'+
+						'<span>'+Util.formatTime(event.data.list[i].submitTime)+'</span>'+
+					'</dt>'+
+					'<dd>'+event.data.list[i].content+'</dd>'+
+				'</dl>';
+		}
+		$('.chat_list').html(txt);
+	});
+	
+	//收到调查问卷
+	var VoteSurvey = {};
+	channel.bind("onVote", function (event) {
+		console.log(event);
+		if($('#cover').css('display')=='none'){
+			$('#cover').fadeIn();
+		}
+		loadVote(event.data);
+	});
+	
+	//加载问卷
+	function loadVote(vs){
+		console.log(vs);
+		VoteSurvey[vs.id] = vs;
+		var txt='';
+		txt+='<div class="survey_area" id="vs_'+vs.id+'" data-id="'+vs.id+'">';
+		txt+='<div class="t">';
+			txt+='<p>'+vs.subject+'</p>';
+			if(vs.skip=="true"){//非强制显示关闭按钮
+				txt+='<a href="javascript:void(0);" class="survey_close"></a>';
+			}
+		txt+='</div>';
+		txt+='<div class="survey_body">';
+		for(var i in vs.questions){
+			var question = vs.questions[i];
+			if(question.type=="single" || question.type=="multi"){
+				txt += createVote(i, question);
+			}else if(question.type=="text"){
+				txt += createSurvey(i, question);
+			}
+		}
+		txt+='</div>';
+		txt+='<div class="survey_btn" id="vote-select-'+vs.id+'">';
+			txt+='<a href="javascript:void(0);">提交</a>';
+		txt+='</div>';
+		txt+='</div>';
+		$('body').append(txt);
+		$('#vs_'+vs.id).fadeIn();
+		$("#vs_"+ vs.id+" .survey_btn").bind("click", function(){
+			commitVoteAndSurvey(vs.id);
+		});
+	}
+	//单选多选创建
+	function createVote(idx, vote){
+		var sVoteElem = '<div class="survey_select'+(vote.type=="single"?' single':' multi')+'" id="'+vote.id+'">'+
+		'<h3>'+(Number(idx)+1)+'、'+vote.subject+'</h3><div>';
+		for(var i in vote.items){
+			var item = vote.items[i];
+			sVoteElem += '<a rel="'+(Number(i)+1)+'">'+item.option+'</a>';
+		}
+		sVoteElem +=  '</div></div>';
+		return sVoteElem;
+	}
+	//问答创建
+	function createSurvey(idx, survey){
+		var sSurveyElem = '<div class="survey_select diaocha" id="'+survey.id+'">' +
+				'<h3>'+(Number(idx)+1)+'、'+survey.subject+'</h3>'+
+				'<p><textarea></textarea></p>'+
+			'</div>';
+		return sSurveyElem;
+	}
+	//提交答案
+	function commitVoteAndSurvey(vsId){
+		var vsData = VoteSurvey[vsId];
+		if(vsData.skip=="false"){
+			if(isAllQuestionAnswered(vsData)>0){
+				alert("强制问答请选择所有问题");
+				return false;
+			}
+		}
+		//答案设置
+		$("#vs_"+vsId).find(".survey_select").each(function(){
+			
+			if($(this).hasClass("single")){
+				var answer = "";
+				if($(this).find('a.on').length>0){
+					if(answer.length==0){
+						answer = $(this).find('a.on').attr('rel');
+					}else{
+						answer += ","+ $(this).find('a.on').attr('rel');
+					}
+				}
+				setAnswer(vsId, $(this).attr("id"), answer);
+				$(this).off();
+				
+			}else if($(this).hasClass("multi")){
+				var answer = "";
+				$(this).find("a.on").each(function(){
+					if(answer.length==0){
+						answer = $(this).attr('rel');
+					}else{
+						answer += ","+ $(this).attr('rel');
+					}
+					
+				});
+				setAnswer(vsId, $(this).attr("id"), answer);
+				$(this).off();
+			}else if($(this).hasClass("diaocha")){
+				var testarea = $(this).find("textarea");
+				var answer = testarea.val();
+				setAnswer(vsId, $(this).attr("id"), answer);
+				testarea.attr("disabled", "disabled");
+			}
+			
+		});
+		
+		//提交调查问卷结果
+		console.log(VoteSurvey[vsId]);
+		channel.send("submitVote", VoteSurvey[vsId]);
+		if(vsData.skip=="false"){
+			if(($('.survey_area').length+$('.result_area').length)==1){
+				$('#cover').fadeOut();
+			}
+			$("#vs_"+vsId).fadeOut(
+				function(){
+					$(this).remove();
+				}
+			);
+			//关闭或提交答案后需要请求播放
+			channel.send("play", {
+			});
+		}else{
+			$('#vs_'+vsId).find('.survey_close').trigger('click');
+		}
+	}
+	//判断是否全部有答案
+	function isAllQuestionAnswered(vsData){
+		var i=0;
+		var h=0;
+		$("#vs_"+vsData.id).find(".survey_select").each(function(){
+			var that=this;
+			if($(that).hasClass("single")){
+				if($(that).find("a.on").length==0){
+					jQuery(that).parent('.survey_body').animate({scrollTop:h},500);
+					i++;
+					return false;
+				}
+			}else if($(that).hasClass("multi")){
+				if($(that).find("a.on").length==0){
+					jQuery(that).parent('.survey_body').animate({scrollTop:h},500);
+					i++;
+					return false;
+				}
+			}else if($(that).hasClass("diaocha")){
+				var val = $(that).find("textarea").val();
+				if(!val||$.trim(val).length<1){
+					jQuery(that).parent('.survey_body').animate({scrollTop:h},500);
+					i++;
+					return false;
+				}
+			}
+			h+=$(that).height();
+		});
+		return i;
+	}
+	//设置答案
+	function setAnswer(vsId, itemId, value){
+		//console.log(VoteSurvey[vsId],itemId,value);
+		if(value!=='undefined' && value!=''){
+			for(var i in VoteSurvey[vsId].questions){
+				if(VoteSurvey[vsId].questions[i].id===itemId){
+					VoteSurvey[vsId].questions[i].answer = value;
+					if(VoteSurvey[vsId].questions[i].type=='single' || VoteSurvey[vsId].questions[i].type=='multi'){
+						var value_arr=value.split(',');
+						for(var j=0;j<value_arr.length;j++){
+							VoteSurvey[vsId].questions[i].items[Number(value_arr[j])-1].selected="true";
+						}
+					}
+					break;
+				}
+			}
+		}
+	}
+	
+	//SDK状态通知 
+	channel.bind("onStatus", function (event) {
+		console.log(event);	
+		if(event.data.type!="2"){
+			alert("SDK状态通知 "+event.data.type+" "+event.data.explain);
+		}
+	});
+	
+	//SDK加载完毕，所有API生效
+	channel.bind("onDataReady", function (event) {
+		console.log(event);
+		setTimeout(function(){sdkgo();},0);	
+	});
+	//异步执行sdk交互
+	function sdkgo(){
+		
+		
+		var duration=0;
+		var testInterval;
+		
+		//获取播放总时长
+		channel.bind("onFileDuration", function (event) {
+			console.log(event);
+			duration=event.data.duration;
+			$('#duration').html(Util.timeDuration(duration/1000));
+			
+			//播放进度条
+			$(".progress_area").slider({
+				value: 0,
+				range:"min",
+				change: function() {
+					$(".progress_area span").width($(".progress_area a").css("left"));
+				},
+				start:function(){
+					if(testInterval){
+						clearInterval(testInterval);
+					}
+				},
+				stop:function(event, ui) {
+					var v = ui.value;
+					var s = duration * Number(v)/ 100;
+					var currentTime=Number(s);
+					//seek操作
+					channel.send("seek", {
+						"timestamp":currentTime
+					});
+				}
+			});
+			
+			//跳转结束
+			channel.bind("onSeekCompleted", function (event) {
+				console.log(event);
+				getplaynow();
+			});
+			
+			//定时获取当前播放时间点
+			function getplaynow(){
+				testInterval = setInterval(function(){
+					channel.send("playheadTime", {
+						
+					});
+				},190);
+			}
+			getplaynow();
+			//监听播放时间
+			channel.bind("onPlayheadTime", function (event) {
+				//console.log(event);
+				$('#play_now').html(Util.timeDuration(event.data.playheadTime/1000));
+				
+				$(".progress_area").slider("value", Util.calcPercent(event.data.playheadTime, duration));
+				
+				changeChapter(event.data.playheadTime);
+			});
+			//切换章节
+			function changeChapter(ms){
+				if(Util.isEmpty(ms))return;
+				$(".chapter_list").find("a").each(function(){
+					var endtime = $(this).attr("data-endtime");
+					$(".chapter_list").find(".on").removeClass("on");
+					if(Number(endtime) > Number(ms)){
+						$(this).addClass("on");
+						return false;
+					}
+				});
+			}
+			//点击章节跳转播放
+			$(".chapter_list").on('click','a',function(){
+				var startime=$(this).attr('data-startime');
+				if(testInterval){
+					clearInterval(testInterval);
+				}
+				channel.send("seek", {
+					"timestamp":startime
+				});
+			});
+			
+		});
+		
+		//播放按钮 播放和暂停
+		$('.play_area').on('click',function(){
+			if($(this).hasClass('pause')){
+				channel.send("pause", {
+				});
+			}else{
+				channel.send("play", {
+				});
+			}
+		});
+		
+		//获取问答
+		channel.send("submitQAList", {
+		});
+		
+		//获取聊天
+		channel.send("submitChatHistory", {
+		});
+		
+		//提交音量信息
+		$(".volume_slide").bind( "slidechange", function( event, ui ) {
+			console.log(ui.value);
+			channel.send("submitVolume", {
+				"value":ui.value/100
+			});
+		});
+		
+		
+		//关闭问卷
+		$('body').on('click','.survey_close',function(){
+			if(($('.survey_area').length+$('.result_area').length)==1){
+				$('#cover').fadeOut();
+			}
+			$(this).parent().parent().fadeOut(
+				function(){
+					$(this).remove();
+				}
+			);
+			//关闭或提交答案后需要请求播放
+			channel.send("play", {
+			});
+		});
+		
+		
+	}
+	//API错误通知
+	channel.bind("onAPIError", function (event) {
+		console.log(event);
+	});
+	//相关操作处理
+	$(function(){
+		//聊天问答按钮点击切换
+		$('#chat_qa_a a').on('click',function(){
+			if(!$(this).hasClass('on')){
+				var id=$(this).attr('data-id');
+				var old_id=$('#chat_qa_a a.on').attr('data-id');
+				$('#chat_qa_a a.on').removeClass('on');
+				$('.'+old_id+'_list').hide();
+				$('.'+id+'_list').show();
+				$(this).addClass('on');
+			}
+		});
+		
+		//设置音量默认75
+		$(".volume_slide").slider({
+			value: 75,
+			range:"min",
+			change: function() {
+				$(".volume_slide span").width($(".volume_slide a").css("left"));
+			}
+		});
+		
+		//单选多选设置答题
+		$('body').on('click','.survey_select div a',function(){
+			var that=this;
+			var is_radio=$(that).parents('.survey_select').hasClass('single');
+			if($(that).hasClass('on') && !is_radio){
+				$(that).removeClass('on');
+			}else{
+				if(is_radio){
+					$(that).parent('div').find('a').removeClass('on');
+				}
+				$(that).addClass('on');
+			}
+		});
+	});
+</script>
+</body>
+</html>

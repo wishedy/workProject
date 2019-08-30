@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>话题</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/css/v3/base.css">
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css"/>
+    <link rel="stylesheet" href="/css/v3/pageFooter.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/terminal/topic.css"/>
+    <link rel="stylesheet" href="/css/v3/discussModule.css" type="text/css"/>
+
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/auth/module.auth.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/publish/publish.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/modules/reply-form/module.reply-form.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/modules/reply-list/module.reply-list.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/modules/float-relation/module.float-relation.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/modules/report/module.report.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/modules/view-big-img/module.view-big-img.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" />
+
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+    <link href="/js/plugins/reference-resourceV3/reference-resource.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/plugins/reply-remindV3/plugin.reply-remind.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/plugins/add-removeable-group-picV3/plugin.add-removeable-group-pic.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/plugins/relation2/plugin.relation2.css" rel= "stylesheet" type="text/css" />
+
+    <link href="/js/third-party/pagination/pager.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+
+    <script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/lib/jquery/jquery.cookie.js"></script>
+    <script src="/js/lib/jquery/jquery-1.8.2.alpha.js"></script>
+    <script src="/js/lib/jquery/jquery.form.js"></script>
+
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/comm.customer.js"></script>
+    <script src="/js/comm/comm.getUrlParams.js"></script>
+    <script src="/js/comm/comm.equipment.js"></script>
+    <script src="/js/comm/comm.autoHeight.js"></script>
+    <script src="/js/comm/comm.checkAddress.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm.Log.js"></script> 
+    <script src="/js/comm/comm.track.js"></script>
+    <script src="/js/comm/comm.lightBox.js"></script>
+    <script src="/js/comm/comm.file.js"></script>
+    <script src="/js/comm/comm.getLogo.js"></script>
+    <script src="/js/comm/comm.scrollFloating.js"></script>
+    <script src="/js/comm/comm.cutArray.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/comm.ajaxExistHtml.js"></script>
+    <script src="/js/comm/comm.textChange.js"></script>
+
+    <script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+    <script src="/js/plugins/follow/plugin.follow.js"></script>
+    <script src="/js/plugins/relation2/plugin.relation2.js"></script>
+    <script src="/js/plugins/add-removeable-group-picV3/plugin.replaceInput/plugin.replaceInput.js"></script>
+    <script src="/js/plugins/add-removeable-group-picV3/plugin.add-removeable-group-pic.js"></script>
+    <script src="/js/plugins/add-removeable-group-picV3/plugin.readFile/plugin.readFile.js"></script>
+    <script src="/js/plugins/reference-resourceV3/reference-resource.js"></script>
+    <script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+    <script src="/js/plugins/scroll-box/plugin.scroll-box.js"></script>
+    <script src="/js/plugins/expand-shrink/plugin.expand-shrink.js"></script>
+    <script src="/js/plugins/view-dialog/plugin.view-dialog.js"></script>
+
+    <script src="/js/modules/share/module.share.js"></script>
+    <script src="/js/modules/publish/module.video-upload.js" ></script>
+    <script src="/js/modules/publish/module.doc-upload.js" ></script>
+    <script src="/js/modules/publish/module.topic-upload.js" ></script>
+    <script src="/js/modules/publish/module.case-upload.js" ></script>
+    <script src="/js/modules/report/module.report.js" ></script>
+    <script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+    <script src="/js/modules/auth/module.auth.js"></script>
+    <script src="/js/modules/view-big-img/module.view-big-img.js"></script>
+    <script src="/js/modules/user/module.user.js"></script>
+    <script src="/js/modules/background-video/module.background-video.js"></script>
+    <script src="/js/modules/list2-template/module.list2-template.js"></script>
+    <script src="/js/modules/review-box/module.review-box.js"></script>
+    <script src="/js/modules/review-page/module.review-page.js"></script>
+    <script src="/js/modules/resource-list-template/module.resource-list-template.js"></script>
+    <script src="/js/modules/reply-list/module.reply-list.js"></script>
+    <script src="/js/modules/reply-form/module.reply-form.js"></script>
+    <script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+    <script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+    <script src="/js/modules/index-list/module.index-list.js"></script>
+    <script src="/js/modules/dislikeAction/dislikeAction.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+
+    <script src="/js/third-party/jquery-qrcode-master/src/jquery.qrcode.js"></script>
+    <script src="/js/third-party/jquery-qrcode-master/src/qrcode.js"></script>
+    <script src="/js/third-party/uploadify/swfobject2.2.js" ></script>
+    <script src="/js/third-party/uploadify/jquery.uploadify.js" ></script>
+    <script src="/js/third-party/ajaxfileupload.js" ></script>
+    <script src="/js/third-party/qiniu/qiniu.js" ></script>
+    <script src="/js/third-party/qiniu/ui.js" ></script>
+    <script src="/js/third-party/plupload/plupload.full.min.js" ></script>
+    <script src="/js/third-party/plupload/i18n/zh_CN.js" ></script>
+    <script src="/js/third-party/pagination/jqueryscrollpagination/js/scrollpagination.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+    <script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+    <script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+    <script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+    <script src="/js/third-party/pagination/jquery.pager.js"></script>
+
+    <script src="/js/scene/scene.header.js"></script>
+
+    <script src="/js/scene/detail/scene.detail.commV3.js"></script>
+    <script src="/js/scene/detail/scene.detail.template.js"></script>
+</head>
+<body>
+
+<input type="hidden" id="resourceId" value="1471502754111"/><!--1422801619232-->
+<input type="hidden" id="resourceType" value="4"/>
+<input type="hidden" id="resourceTpl" value="59"/>
+<input type="hidden" id="resourceWapUrl" value="/html/m/topic//2016/07/06/1422244099701.html"/>
+<input type='hidden' id="shareImgSrc" value=""/>
+
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox">
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar al-mainSidebarCollapse">
+        <header class="al-mainLogo">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+
+        <section class="al-mainSidebarList">
+            <ul>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn/pages/channel/index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>首页</h4>
+                                <p>HOME</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn/pages/discover/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>发现</h4>
+                                <p>DISCOVERY</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>发布</h4>
+                                <p>RELEASE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navMes">
+                    <a href="//www.allinmd.cn/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>消息</h4>
+                                <p>MESSAGE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navIndex">
+                    <a href="//www.allinmd.cn/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                        <figcaption>个人</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>我的</h4>
+                                <p>PROFILE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList">
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>小唯</h4>
+                                <p>SERVICE</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navPhone">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4>手机端</h4>
+                                <p>MOBILES</p>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+
+        </section>
+    </aside>
+
+    <section class="al-pageMainBox">
+        <!--页面主体内容：begin -->
+        <section class="al-mainContent">
+            <div class="al-libraryInfoBox">
+                <figure class="al-libraryInfo_head Ev-shareTitleName">
+                    <h4>脊柱骨折合并脊髓损伤，取出内固定后为何疼痛？</h4>
+                    <a href="//www.allinmd.cn/pages/personal/others_index.html?cid=">张晓梦</a>
+                    <p>
+                        发布于：<span>2014-1-12</span>
+                    </p>
+                    <p>
+                        更新于：<span>2014-1-12</span>
+                    </p>
+                </figure>
+                <div class="al-browseData Ev-al-browseData">
+                    <h4></h4>
+                    <span>浏览</span>
+                </div>
+                <figure class="al-textDetailsBox">
+                    <p>成人脊柱侧凸为复杂脊柱疾病，源于骨质疏松和椎间盘非对称性退变所致的腰椎多节段旋转半脱位。特点为进行性、非对称性椎间盘和关节突复合体的退变。椎体冠状面既有椎体不对称性倒塌，又有侧方滑移。</p>
+                    <section class="al-textDetails_main">
+                        <img src="//img10.allinmd.cn/v3/terminal/topic_img1.jpg" alt=""/>
+                        <h5>缩短手术时间术中尽可能覆盖器械减少</h5>
+                        <p>随着肱骨髓内钉以及肩关节置换技术的成熟，目前关于需手术干预的肱骨近端骨折治疗方案选讨论也越来越多微创技术是治疗
+                            <a href="javascript:;">@王岩</a><a href="javascript:;">@王岩</a><a href="javascript:;">@王岩</a><a href="javascript:;">@王岩</a><a href="javascript:;">@王岩</a><a href="">@王岩</a>
+                            关于需手术干预的肱骨近端骨折治疗方案选择的讨论
+                        </p>
+                    </section>
+                    <section class="al-textDetails_main">
+                        <img src="//img10.allinmd.cn/v3/terminal/topic_img1.jpg" alt=""/>
+                        <b class="videoPlayBtn"></b>
+                        <span>04:24</span>
+                        <h5>缩短手术时间术中尽可能覆盖器械减少</h5>
+                        <p>成人脊柱侧凸为复杂
+                            <a href="javascript:;">@王岩</a><a href="javascript:;">@王岩</a>
+                            脊柱疾病，源于骨质疏松和椎间盘非对称性退变所致的腰椎多节段旋转半脱位。
+                        </p>
+                    </section>
+                    <section class="al-textDetails_main">
+                        <img class="littleImg" src="//img10.allinmd.cn/v3/terminal/topic_img2.jpg" alt=""/>
+                        <p>成人脊柱侧凸为复杂
+                            <a href="javascript:;">@王岩</a><a href="javascript:;">@王岩</a>
+                            脊柱疾病，源于骨质疏松和椎间盘非对称性退变所致的腰椎多节段旋转半脱位。
+                        </p>
+                    </section>
+                    <!--文字讨论-->
+                    <figure class="al-textDetails_discuss Ev-goOtherCenter">
+                        <i></i>
+                        <p class="active">
+                            成人脊柱侧凸为复杂
+                            <a href="javascript:;">@王岩</a><a href="javascript:;">@王岩</a>
+                            脊柱疾病，源于骨质疏松和椎间盘非对称性退变所致的腰椎多节段旋转半脱位。特点为进行性、非对称性椎间盘和关节突复合体的退变。椎体冠状面既有椎体不对称性倒塌，又有侧方滑移。
+                        </p>
+                    </figure>
+                    <!--文字讨论结束-->
+                    <figure class="errorRecovery"><a href="javascript:;" class="Ev-correction">纠错</a> · <a  class="Ev-report" href="javascript:;">举报</a></figure>
+                </figure>
+                <figure class="al-tagBox">
+                    <figcaption>标签</figcaption>
+                    <a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tid=">中西医结合</a>
+                    <a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tid=">颈椎</a>
+                    <a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tid=">人工髋关节置换</a>
+                    <a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tid=">中西医结合</a>
+                    <a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tid=">小儿骨科</a>
+                    <a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tid=">颈椎</a>
+                    <a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tid=">颈椎</a>
+                    <a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tid=">人工髋关节置换</a>
+                    <a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tid=">中西医结合</a>
+                    <a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tid=">颈椎</a>
+                    <a href="//www.allinmd.cn/pages/discovery/discover_tagSubject.html#tid=">精神病内科</a>
+                </figure>
+            </div>
+
+
+            <!--话题被屏蔽：begin-->
+            <div class="al-caseScreenedBox">
+                <figure>
+                    <figcaption>脊柱骨折合并脊髓损伤，取出内固定后为何疼痛固定后为</figcaption>
+                    <p class="al-screenedImg">
+                        <img src="//img10.allinmd.cn/v3/terminal/topicScreenedImg.png" alt=""/>
+                    </p>
+                </figure>
+            </div>
+            <!--话题被屏蔽：end-->
+
+            <!--话题被删除：begin-->
+            <div class="al-caseScreenedBox">
+                <figure>
+                    <figcaption>脊柱骨折合并脊髓损伤，取出内固定后为何疼痛</figcaption>
+                    <p class="al-screenedImg">
+                        <img src="//img10.allinmd.cn/v3/terminal/topicDeletedImg.png" alt=""/>
+                    </p>
+                </figure>
+            </div>
+            <!--话题被删除:end--->
+
+            <!--评论区-->
+            <!--发表评论：begin-->
+            <div class="ev-detailReviewForm"></div>
+            <!--发表评论：end-->
+
+            <!--全部评论：begin-->
+            <div class="al-commentAll al-contentItem" id="reviewArea">
+                <figure class="al-commentAll_head">
+                    <figcaption>全部评论</figcaption>
+                    <span class="al-oldNews ev-listSortOld">最旧</span>
+                    <span class="ev-listSortNew">最新</span>
+                </figure>
+
+                <section class="ev-list">
+                </section>
+            </div>
+            <!--全部评论：end-->
+            <figure class="al-lookMore_comment ev-listMore" style="display:none;">
+                查看更多
+                <b></b>
+            </figure>
+            <!--评论区结束-->
+        </section>
+        <!--页面主体内容：end -->
+
+
+        <!--页面侧边栏：begin-->
+        <aside class="al-sideBarContent">
+            <figure class="al-sideBarRoll_box Ev-floatCard">
+            <!--作者关注-->
+            <div class="expertInfo">
+                <a href="//www.allinmd.cn/pages/personal/others_index.html?cid=" class="expert_userImg Ev-cAuthLogo">
+                    <img src="关注的头像图片" alt=""/>
+                </a>
+                <a href="//www.allinmd.cn/pages/personal/others_index.html?cid=" class="expertName Ev-cAuthName">作者名</a>
+                <span class="followBtn"></span>
+                <p>
+                    <span class="Ev-cAuthTitle">作者职称</span>
+                    <span class="expert_workPlace Ev-cAuthCompany">作者单位</span>
+                </p>
+            </div>
+            <!--作者关注结束-->
+
+
+            <!--加入讨论，收藏点赞-->
+            <div class="al-sideBar_commentBox">
+                <i class="leftArrow"></i>
+                <a href="javascript:;" class="Ev-discussBtn">
+                    <figure class="discuss_container" >
+                        <b></b>
+                        <figcaption>加入讨论
+                            <span></span>
+                        </figcaption>
+                    </figure>
+                </a>
+                <figure class="like_container Ev-like_container">
+                    <b></b>
+                    <figcaption>
+                        收藏
+                        <span></span>
+                    </figcaption>
+                </figure>
+                <figure class="zan_container Ev-zan_container">
+                    <b></b>
+                    <figcaption>
+                        点赞
+                        <span></span>
+                    </figcaption>
+                </figure>
+            </div>
+            <!--加入讨论结束-->
+            </figure>
+            <!--关注话题-->
+            <div class="al-followCase" style="border: none;padding: 0;">
+                <div class="Ev-myselfTopic hide" style="border: 1px solid rgba(199, 211, 223, 0.45);padding: 30px 14px 24px;">
+                    <figure class="btnBox">
+                        <figcaption>帮您了解话题更新及最新评论</figcaption>
+                        <img class="followCaseBtn Ev-noFollow" src="//img10.allinmd.cn/v3/terminal/followTopicBtn.png" alt=""/>
+                        <img class="followed_bigImg Ev-alFollow hide" src="//img10.allinmd.cn/v3/terminal/followedBtn_bigImg.png" alt=""/>
+                    </figure>
+
+                    <figure class="al-followCaseInfo Ev-followMore hide">
+                        <div class="Ev-followLogoList" style="display: inline-block;">
+
+                        </div>
+                        <div class="Ev-FollowList al-manyPeopleComment">
+                            已有<span class="Ev-moreFollow"></span>人关注
+                        </div>
+                    </figure>
+                    <figure class="al-noFollow Ev-followOne hide">
+                        已有<span class="Ev-oneFollow"></span>人关注
+                    </figure>
+                </div>
+
+            </div>
+            <!--关注话题结束-->
+
+            <!--分享到-->
+            <div class="al-sideBar_shareBox">
+                <figure class="al-shareBox_head">
+                    <b class="line"></b>
+                    <span class="shareText">分享到</span>
+                    <b class="line"></b>
+                </figure>
+                <div class="shareBox_icon Ev-shareBox">
+                    <figure class="shareLink_track ev-ttrend">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_inset.png" alt=""/>
+                        </a>
+                        <figcaption>唯医朋友圈</figcaption>
+                    </figure>
+                    <figure class="shareLink_wx ev-tweixin">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_weixin.png" alt=""/>
+                        </a>
+                        <figcaption>微信</figcaption>
+                    </figure>
+                    <figure class="shareLink_wb ev-tsina">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_weibo.png" alt=""/>
+                        </a>
+                        <figcaption>微博</figcaption>
+                    </figure>
+                    <figure class="shareLink_qqSpace ev-tqzone">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_zone.png" alt=""/>
+                        </a>
+                        <figcaption>QQ空间</figcaption>
+                    </figure>
+                    <figure class="shareLink_qq ev-tqq">
+                        <a href="javascript:;">
+                            <img src="//img10.allinmd.cn/v3/common/icon/share_qq.png" alt=""/>
+                        </a>
+                        <figcaption>QQ</figcaption>
+                    </figure>
+                    <section class="al-weixinErweiCodeBox al-weixinFixStyle ev-erweima hide" style="background-image:none;">
+                        <span>使用微信扫描二维码</span>
+                        <img src="//img10.allinmd.cn/v3/friends/weixin_share.jpg" alt="">
+                    </section>
+                </div>
+            </div>
+            <!--分享到结束-->
+
+            <!--参加活动-->
+            <div class="al-joinActivity hide">
+                <h6></h6>
+                <a class="Ev-actUrl" href="javascript:;" target="_blank">
+                    <img src="" alt=""/>
+                </a>
+
+                <span class="Ev-actName"></span>
+            </div>
+            <!--参加活动结束-->
+
+            <!--相关资源-->
+            <div class="al-resource Ev-recommendVideoList hide">
+                <h6>相关资源</h6>
+
+            </div>
+            <!--相关资源结束-->
+
+        </aside>
+        <!--页面侧边栏：end-->
+    </section>
+
+    <!--公共底部 start-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--公共底部 End-->
+</section>
+
+
+</body>
+</html>

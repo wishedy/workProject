@@ -1,0 +1,13 @@
+<template name="share$baffe8be">
+  <view class="_section data-v-dc626a34"><canvas canvasId="sharecanvas" class="_canvas data-v-dc626a34" style=" {{(  'width:' +  (width + 'px') +  ';' +  'height:' +  (height + 'px') +  ';' +  'position:' +  'fixed' +  ';' +  'top:' +  0 +  ';' +  'left:' +  (9999 + 'px') +  ';')}}"></canvas>
+    <view wx:if="{{resultFlag}}" class="_section data-v-dc626a34 result">
+      <view class="_div data-v-dc626a34 resultImg">
+        <image src="{{shareUrl}}" class="_img data-v-dc626a34"></image>
+      </view>
+      <view class="_div data-v-dc626a34 operation">
+        <form wx:if="{{leftButton.flag}}" class="_form data-v-dc626a34"><button bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_button data-v-dc626a34"> {{leftButton.text}} </button></form>
+        <form wx:if="{{leftButton.flag}}" class="_form data-v-dc626a34 right"><button bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_button data-v-dc626a34"> {{rightButton.text}} </button></form>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,203 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";     //颜色组件
+@import "../../components/_loginModule";  //未登录组件
+@import "../../components/_message_rightSideBar";//右侧栏组件
+@import "../../components/_iconsModule";  //微型图标组件
+@import "../../components/_selectAll";  //全选组件
+@import "../../discussModule";//评论组件
+@import "../../components/_contentModule"; //主内容区域
+@import "../../components/_shareBoxModule"; //分享按钮盒
+@import "../../components/_commentModule";  //评论类内容
+
+/*
+.reviewBoxForm{
+    border: 1px solid rgba(199, 211, 223, 0.5);
+    box-shadow: 2px 2px 4px rgba(215, 222, 229, 0.1), -2px -2px 4px rgba(215, 222, 229, 0.1);
+}
+*/
+
+//页面主体内容：begin
+.al-personal {
+    width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    @include clearfix();
+}
+
+
+//页面主体内容：end
+//内容区块
+.al-personalInnerContent {
+    float: left;
+    width: 708px;
+}
+.al-personalInnerContent.al-messageMain {
+   margin:0;
+}
+
+
+
+//关注提醒页面：内容区多人评论 ：begin
+.al-messageMain{
+    .al-login_contentCommentMain{margin-left:0;}
+    .al-contentItem{
+        .al-redPointComment{//当有多人评论时，内容块距红点的距离。
+            margin-left:18px;
+        }
+        .al-contentCommentText{
+            .Ev-mesIsReadBtn{color:#626f8c;}
+        }
+    }
+}
+//关注提醒页面：内容区多人评论 ：end
+
+
+
+
+//评论弹层：begin
+.al-contentItemPopBox{
+    display:none;
+    //display:flex;
+    position:fixed;
+    z-index: 9;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,.5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);  /*IE8支持*/
+    padding:120px 0 0 150px;
+    .al-contentItem{
+        height:auto;
+        h2{
+            .al-popCloseBtn{  //弹层关闭按钮
+                float:right;
+                width:13px;
+                height:13px;
+                background: transparent url("//img10.allinmd.cn/v3/message/popCloseBtn.png") center center no-repeat;
+                margin-top:3px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+//专家详情样式：begin
+.al-doctorRecommend {
+    border-bottom: 1px solid #ecf0f2;
+    .al-hrLine {
+        width: 1px;
+        height: 16px;
+        display: inline-block;
+        vertical-align: middle;
+        background-color: #e4e9ed;
+        margin: 0 14px;
+        border: 0;
+    }
+    .al-doctorMsgContent p i {
+        margin-left: 10px;
+        width:auto; //  粉丝页面——评论数字距离未撑开
+    }
+    .al-followBtn{  //关注图标
+        float:right;
+    }
+}
+//专家详情样式：end
+
+//评论弹层：end
+//小红点
+.redPoint{
+    display:inline-block;
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    behavior: url("/js/third-party/pie/pie.htc");
+    position:relative;
+    background-color:#F34B4A;
+    margin:0 6px 0 -16px;
+}
+
+.al-contentItem{
+    .al-noMessage_imgBox{
+        background-color:#fff;
+        text-align:center;
+        height:565px;
+        line-height:565px;
+
+        border:1px solid #e4e9ed;
+        border-top:none;
+        img{
+            vertical-align: middle;
+        }
+    }
+}
+//全选
+.al-contentItemTitle{
+    span{
+        float:right;
+        font-size:16px;
+        color:#626F8C;
+        cursor: pointer;
+        &:hover{
+            color: #2899e6;
+        }
+    }
+}
+//小圆圈
+.al-contentComment_round{
+    float:left;
+    width:16px;
+    height:16px;
+    border:1px solid #b4b4b4;
+    border-radius: 50%;
+    position:relative;
+    behavior: url("/js/third-party/pie/pie.htc");
+    margin:6px 12px 0 0;
+}
+.al-contentComment{
+  border-bottom: 1px solid #e4e9ed;
+    .al-selectAll{  // 已选
+        background: transparent url("//img10.allinmd.cn/v3/message/delete_redBtn.png") center center no-repeat;
+        border: 1px solid #F34B4B;
+    }
+}
+
+
+.al-deletePopBox{ //弹层
+    display:block;
+}
+.al-systemMessage{
+    .al-contentItemTitle{   //编辑样式
+        span{
+            float:right;
+            font-size:16px;
+            color:#626F8C;
+            cursor: pointer;
+        }
+    }
+    .al-contentCommentMain{
+        margin-left:0;
+        .al-contentCommentItemTitle{
+            >span{     //话题删除通知
+                font-size:17px;
+                color:#333;
+                padding-left:0;
+            }
+            .al-viewDetails{  //查看详情
+                color:#626F8C;
+                font-size:16px;
+                margin-top:9px;
+                line-height: 28px;
+                cursor: pointer;
+            }
+        }
+    }
+    .al-contentCommentTextSys{   //消息详细文本
+        line-height:25px;
+        color:#666;
+        margin:0;
+    }
+}
+

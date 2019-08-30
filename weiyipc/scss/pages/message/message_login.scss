@@ -1,0 +1,67 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+@import "../../components/_loginModule";  //未登录组件
+@import "../../components/message_rightSideBar";//右侧栏组件
+@import "../../components/_iconsModule";  //微型图标组件
+//已登录：begin
+.al-contentItemPl{
+  .al-contentItemTitle{
+    span{
+      float:right;
+      font-size:16px;
+      color:#626F8C;
+    }
+  }
+}
+.al-contentComment{
+  .al-contentCommentText{
+    margin:0;
+    span{
+      color:#626F8C;
+    }
+  }
+  a{font-size:15px;}
+}
+.al-contentItemPl{
+  .al-login_contentCommentMain{ //当有多人评论时，内容块距红点的距离。
+    margin-left:18px;
+  }
+}
+
+//已登录：end
+
+
+//专家详情样式：begin
+.al-doctorRecommend {
+  border-bottom: 1px solid $innerBorderColor;
+  .al-hrLine {
+    width: 1px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #e4e9ed;
+    margin: 0 14px;
+    border: 0;
+  }
+  .al-doctorMsgContent p i {
+    margin-left: 10px;
+  }
+  .al-followBtn{  //关注图标
+    float:right;
+  }
+}
+//专家详情样式：end
+
+//评论弹层：end
+//小红点
+  .redPoint{
+    display:inline-block;
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    background-color:#F34B4A;
+    margin-bottom:-17px;
+  }

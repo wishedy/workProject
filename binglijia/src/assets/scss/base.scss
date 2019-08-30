@@ -1,0 +1,48 @@
+﻿@charset "UTF-8";
+//公共方法模块调用
+@import "modules/common-modules";
+//公共变量引用
+@import "variables/emr-variables";
+
+@import "components/contentInner";
+
+@import "modules/utilities/utilities";
+
+@import "modules/reset/_normalize";
+
+//清除基础样式
+@include normalize(pc);
+html,
+body {
+    width: 100%;
+    //min-height: 100%;
+    background-color: $indexBackgroundColor;
+}
+
+a {
+    @include unstyled-link();
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+li{
+    list-style: none;
+}
+i{
+    font-style: normal;
+}
+//.alEmr-mainInner{
+//    width: 100%;
+//    min-width: 1200px;
+//    min-height: 100%;
+//    box-sizing: border-box;
+//    position: relative;
+//    background-color: rgb(255, 255, 255);
+//    //padding-bottom: 180px;
+//    padding-top: 80px;
+//    overflow: hidden;
+//
+//}
+
+
+
+

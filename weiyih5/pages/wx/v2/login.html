@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/login_register/loginV2.css">
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="277">
+    <section class="al-mainInner">
+        <section class="ev-loginBox">
+            <section class="al-login">
+                <aside class="registerBtn"><span>注册</span></aside>
+                <aside class="loginRegisterTab">
+                    <p class="active" data-type="1">手机验证登录</p>
+                    <p data-type="2">帐号密码登录</p>
+                </aside>
+                <aside class="phoneLoginCont loginCont" style="">
+                    <div class="inputBox ev-newLogin">
+                        <input type="tel" maxlength="11" class="ev-loginInput ev-PV" placeholder="请输入手机号"/>
+                        <i class="ev-closeIcon"></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="tel" class="mobileInput ev-codeInput ev-logCode" data-type="1" placeholder="请输入验证码" />
+                        <span class="ev-sendCode" data-type="1">获取验证码</span>
+                        <span class="timeYZM"></span>
+                    </div>
+                    <button class="loginBtn ev-loginBtn">立即绑定</button>
+                    <div class="problems">
+                        <span class="encounter ev-questions">遇到问题？</span>
+                    </div>
+                    <!--<div class="lookAround"><a class="ev-goBack" href="javascript:;">随便看看</a></div>-->
+                </aside>
+                <aside class="accountLoginCont loginCont" style="display: none;">
+                    <div class="inputBox"><input type="text" maxlength="50" class="mobileInput ev-logInp" placeholder="请输入手机号/邮箱" /><i class="ev-closeIcon"></i></div>
+                    <div class="inputBox"><input type="text" class="ev-passInput" maxlength="20" minlength="6" placeholder="请输入登录密码" /><i class="ev-closeIcon"></i><i class="show_sign"></i> </div>
+                    <button class="loginBtn ev-loginBtn">立即绑定</button>
+                    <div class="problems"><span><a href="/pages/passport/reset/reset_step1.html">忘记密码</a></span><span class="encounter ev-questions">遇到问题？</span></div>
+                    <!--<div class="lookAround"><a href="javascript:;">随便看看</a></div>-->
+                </aside>
+            </section>
+        </section>
+        <section class="ev-registerBox" style="display: none">
+            <header class="al-indexHeader" data-alcode-mod="401">
+                <figure class="al-indexHeaderItem">
+                    <a href="javascript:;" class="ev_digHole" data-alcode="e45">
+                        <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                    </a>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                    <h1>注册</h1>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                </figure>
+            </header>
+            <section class="al-login ev-phoneReg">
+                <aside class="loginCont registerCont">
+                    <div class="inputBox">
+                        <input type="tel" maxlength="11" class="mobileInput ev-regPhoInput ev-PV" placeholder="请输入手机号" />
+                        <i class="ev-closeIcon"></i>
+                    </div>
+                    <div class="inputBox">
+                        <input class="mobileInput codeInput ev-codeInput ev-regCode" type="tel" data-type="2" placeholder="请输入验证码" />
+                        <span class="ev-regSendCode" data-type="2">获取验证码</span>
+                        <span class="timeYZM">60s</span>
+                    </div>
+                    <div class="inputBox"><input type="text" class="ev-regPassInput" maxlength="20" minlength="6" placeholder="请设置密码(至少6位)" /><i class="ev-closeIcon"></i><i class="show_sign"></i></div>
+                    <button class="loginBtn ev-reginBtn">创建并绑定</button>
+                    <div class="problems"><span class="ev-emailRegBtn">邮箱注册</span><span class="encounter ev-questions">遇到问题？</span></div>
+                    <div class="agree">
+                        <div>
+                            <p>
+                                创建帐号即表示同意
+                                <span><a href="/pages/service/service.html">服务条款</a></span>
+                                及
+                                <span><a href="/pages/service/privacy.html">隐私声明</a></span>
+                            </p>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+            <section class="al-login ev-emailReg" style="display: none;">
+                <aside class="loginCont registerCont">
+                    <div class="inputBox">
+                        <input type="text" maxlength="50" class="ev-regEmaInput" placeholder="请输入邮箱" />
+                        <i class="ev-closeIcon"></i>
+                    </div>
+                    <div class="inputBox"><input type="text" maxlength="20" minlength="6" class="ev-regEmaPasInput" placeholder="请设置密码(至少6位)" /><i class="ev-closeIcon"></i><i class="show_sign"></i></div>
+                    <button class="loginBtn ev-reginBtn">创建帐号</button>
+                    <div class="problems"><span class="encounter ev-questions">遇到问题？</span></div>
+                    <div class="agree">
+                        <div>
+                           <p>
+                               创建帐号即表示同意
+                               <span><a href="/pages/service/service.html">服务条款</a></span>
+                               及
+                               <span><a href="/pages/service/privacy.html">隐私声明</a></span>
+                           </p>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+        </section>
+    </section>
+    <section class="al-authHelpBg al-selectorBarMask">
+        <section class="al-authHelpContent">
+            <h2>服务时间</h2>
+            <span class="al-authHelpClose ev_helpClose"></span>
+            <p class="al-authHelpTime">周一至周五（9:00-18:00）节假日除外</p>
+            <section class="al-authHelpContact">
+                <p>客服电话 <span>010-59007122</span><a href="tel:010-59007122"><img src="//img50.allinmd.cn/authentication/auth/tel.png" alt=""/></a></p>
+                <p>客服微信 <span>allinmd2014</span></p>
+                <p>（加微信请备注姓名）</p>
+            </section>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+    <script src="/js/third-party/md5.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/wx/v2/loginNew.js"></script>
+
+</body>
+
+</html>

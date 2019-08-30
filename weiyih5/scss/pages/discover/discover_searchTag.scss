@@ -1,0 +1,224 @@
+@charset "UTF-8";
+//发现——搜索全部标签
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule";	//按钮组件
+@import "../../components/_searchList";     //搜索列表组件
+//
+@import "../../components/_searchTypeSelect"; //侧边栏类型匹配
+
+.al-noContentTips{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    text-align: center;
+    padding: rem(380px) 0; 
+    figure{
+        width: rem(395px);
+        height: rem(326px);
+        display: inline-block;
+        img{
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+        
+    }
+}
+
+.al-mainInner{
+    transition : margin-top 0.2s linear;
+    -webkit-transition : margin-top 0.2s linear;
+}
+
+.icon-searchWhite{
+    @extend %icon-searchWhite;
+}
+.icon-searchCancel{
+    @extend %icon-searchCancel;
+}
+.al-searchHead {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.al-searchResult {
+    margin-bottom: rem(20px);
+    background-color: #fff;
+}
+
+.al-searchResultTitle {
+    @include font-dpr(13px);
+    color: $smallTextColor;
+    padding: rem(10px) rem(30px);
+    border-bottom: 1px solid $innerBorderColor;
+}
+
+.al-searchResultItem em {
+    font-style: normal;
+    color: #3598db;
+}
+
+.al-searchInputBar {
+    background-color: #EFF4F8;
+    padding: rem(20px);
+    box-sizing: border-box;
+    position: relative;
+    text-align: left;
+    width: 115%;
+    input {
+        -webkit-appearance: none;
+        height: rem(80px);
+        line-height: rem(70px);
+        padding: 0;
+        padding-left: rem(110px);
+        box-shadow: none;
+        border: 1px solid $innerBorderColor;
+        background: #fff;
+        border-radius: rem(5px);
+        box-sizing:border-box;
+        width: 87%;
+        box-sizing: border-box;
+        @include font-dpr(14px);
+        color: #222;
+        font-family: "microsoft yahei";
+        border-radius: rem(4px);
+        vertical-align: middle;
+        overflow: visible;
+        transition: all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+        &:focus{
+            line-height: rem(30px);
+        }
+    }
+    input.focus {
+        width: 75%;
+        outline: none;
+    }
+    .al-searchCancel.show {
+        display: inline-block;
+        color: #3598db !important;
+    }
+    input::-webkit-input-placeholder {
+        @include font-dpr(14px);
+        color: $smallTextColor;
+        vertical-align: rem(-3px);
+        display: inline-block;
+        font-family: "microsoft yahei";
+
+    }
+    .icon-searchWhite {
+        position: absolute;
+        left: rem(45px);
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+    }
+    .al-searchCancel {
+        @include font-dpr(15px);
+        color: #3598db !important;
+        margin-left: rem(25px);
+        vertical-align: middle;
+        display: none;
+        padding: 0;
+        .icon-searchCancel {
+            position: absolute;
+            left: 69%;
+            display: none;
+            &:before {
+                vertical-align: baseline;
+            }
+        }
+    }
+}
+
+.al-searchTips {
+    border-bottom: 1px solid $outerBorderColor;
+    text-align: left;
+    @include font-dpr(13px);
+    color: $smallTextColor;
+    padding-left: rem(30px);
+    height: rem(50px);
+    line-height: rem(50px);
+    background-color: #fff;
+    .icon-backArrow:before {
+        transform: scale(0.7);
+        -webkit-transform: scale(0.7);
+    }
+}
+
+.al-searchResultItem {
+    margin-left: rem(30px);
+    padding-right: rem(30px);
+    border-bottom: 1px solid $innerBorderColor;
+    background-color: #fff;
+    @include font-dpr(15px);
+    color: #333;
+    height: rem(100px);
+    line-height: rem(100px);
+    display: block;
+    @include ellipsis();
+    .icon-selected {
+        float: right;
+        display: none;
+        margin-right: rem(30px);
+    }
+}
+
+.al-searchResultItem.selected {
+    .icon-selected {
+        display: block;
+    }
+}
+
+.al-searchFailed {
+    margin-top: rem(70px);
+    text-align: center;
+    @include font-dpr(14px);
+    color: #5f6f8f;
+    a {
+        display: inline-block;
+        margin-top: rem(20px);
+        padding: rem(10px) rem(45px)
+    }
+}
+
+.al-noResult {
+    margin: rem(200px) 0;
+}
+
+.al-searchFocusMask {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+.al-searchFocusMaskShow {
+    opacity: 1;
+    visibility: visible;
+}
+
+.al-searchHeadShow {
+    margin-top: rem(-97.5px)
+}
+
+// 获取焦点——头部隐藏
+.al-searchHead {
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}

@@ -1,0 +1,556 @@
+@charset "utf-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+
+body{ background-color:#eef3f8;}
+.eBookPageBox{
+  @include clearfix();
+  //退出按钮
+  .al-exitReadBtn{
+    position: fixed;
+    top:27px;
+    left:60px;
+    font-size:15px;
+    color:#62688c;
+    cursor: pointer;
+    b{
+      display: inline-block;
+      width:18px;
+      height:18px;
+      background:transparent url("//img10.allinmd.cn/v3/terminal/ExitReading.png") center center no-repeat;
+      margin:0 7px -3px 0;
+    }
+    &:hover{
+      color:#3598db;
+      b{ background:transparent url("//img10.allinmd.cn/v3/terminal/ExitReading_Act.png") center center no-repeat;}
+    }
+  }
+
+  .al-mainAnavBox{
+    max-width:910px;
+    margin:0 auto;
+    position:relative;
+    padding-left:60px;
+  }
+}
+
+
+//电子书主体样式
+.al-eBookIndexContent{
+  width:850px;
+  box-sizing: border-box;
+  padding:0 95px 30px;
+  background-color:#fff;
+  header{
+    font-size:14px;
+    color:#777;
+    padding-bottom:16px;
+    padding-top:30px;
+    border-bottom:1px solid #e4e9ed;
+    position: fixed;
+    z-index:3;
+    top:0;
+    background-color:#fff;
+    width:660px;
+   span,i{
+      float:right;
+      width:19px;
+      height:19px;
+      cursor: pointer;
+      margin-left:28px;
+    }
+    span{  //中英文转换图标
+      background: url("//img10.allinmd.cn/v3/terminal/switchBtnIcon_dark.png") center center no-repeat;
+      margin-right:20px;
+      margin-top:1px;
+      @include clearfix();
+      >b{
+        display: none;
+        float:left;
+        margin-top:25px;
+        margin-left:-30px;
+        width:80px;
+        height:30px;
+        line-height:35px;
+        font-weight:400;
+        text-align:center;
+        color:#fff;
+        background: url("//img10.allinmd.cn/v3/terminal/changeEnglishIcon.png") center center no-repeat;
+      }
+      &:hover{
+        background: url("//img10.allinmd.cn/v3/terminal/switchBtnIcon_on.png") center center no-repeat;
+        b{display: block;}
+      }
+    }
+    >i{ //目录图标
+      position: relative;
+      background: url("//img10.allinmd.cn/v3/terminal/Details.png") center center no-repeat;
+      >b{
+        display: none;
+        position:absolute;
+        top:21px;
+        left:-32px;
+        width:80px;
+        height:30px;
+        line-height:35px;
+        font-weight:400;
+        text-align:center;
+        color:#fff;
+        background: url("//img10.allinmd.cn/v3/terminal/changeEnglishIcon.png") center center no-repeat;
+      }
+      &:hover{
+        background: url("//img10.allinmd.cn/v3/terminal/Details_Act.png") center center no-repeat;
+        b{display: block;}
+      }
+    }
+  }
+  table{
+    td,th{
+      border:1px solid #ccc;
+      padding:10px;
+      min-width: 66px;
+      img{max-width: 370px !important;}
+      p{line-height:24px;}
+    }
+  }
+}
+.al-textDetailsBox{
+  padding-top:117px;
+  img{
+    width: 660px;
+  }
+  figcaption{
+    font-size:26px;
+    line-height:40px;
+    color:#626f8c;
+    margin-bottom:30px;
+    word-wrap:break-word;
+  }
+  p{
+    text-align: justify;
+    color:#333;
+    line-height:28px;
+    margin-bottom:12px;
+    word-break: break-all;
+    overflow: hidden;
+    a{
+      //color:#3598db;
+      //padding:0 3px;
+    }
+  }
+  >p{margin-bottom:35px;}
+}
+.al-textDetails_main{
+  img{width:660px;}
+  h5{
+    font-weight:400;
+    text-align:center;
+    font-size:14px;
+    line-height:24px;
+    color:#666;
+    margin:10px 0 35px;
+    word-wrap: break-word;
+  }
+  .al-moreText{text-align:left;}
+}
+        //分割线
+.al-pageSplitLine{
+  margin:50px 0;
+  border-bottom:1px solid #e4e9ed;
+  color:#aaa;
+  font-size:13px;
+  &:after{
+    content:'';
+    float:right;
+    width:17px;
+    height:23px;
+    background:transparent url("//img10.allinmd.cn/v3/terminal/bookMarkSplitIcon.png") center center no-repeat;
+  }
+  p{
+    text-align:right;
+    margin-bottom:30px;
+  }
+}
+
+        //进度条
+.al-eProgressBarBox{
+  .al-progressLine{
+    width:625px;
+    height:4px;
+    background-color:#e4e9ed;
+    position: relative;
+    >p{
+      position:absolute;
+      top:0;
+      left:0;
+      background-color:#9CCFF2;
+      width:20%;
+      max-width:625px;
+      height:4px;
+      z-index:2;
+      .al-eProgressIcon{ //圆圈图标
+        position: absolute;
+        z-index: 3;
+        top:-18px;
+        right:-30px;
+        width:37px;
+        height:37px;
+        background:transparent url("//img10.allinmd.cn/v3/terminal/progressIcon.png") center center no-repeat;
+        cursor: pointer;
+        &:hover{
+          .al-eProgressShow{display: block;}
+        }
+      }
+    }
+    .al-progressNum{
+      position:absolute;
+      font-size:12px;
+      color:#777;
+      top:-4.5px;
+      right:-30px;
+    }
+  }
+
+  .al-eProgressShow{
+    display: none;
+    position:absolute;
+    z-index:3;
+    top:-25px;
+    left:-21px;
+    width:80px;
+    height:30px;
+    text-align:center;
+    line-height:24px;
+    color:#fff;
+    font-size:16px;
+    background:transparent url("//img10.allinmd.cn/v3/terminal/eprogressShowIcon.png") center center no-repeat;
+  }
+}
+//电子书主体样式:End
+
+
+
+
+.al-eBookSideBarBox{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+  //电子书右侧栏:begin
+  .al-eBookSideBar{
+    position: absolute;
+    z-index:4;
+    top:110px;
+    left:50%;
+    margin-left: 455px;
+    >ul{
+      text-align: center;
+      li{
+        width:26px;
+        height:26px;
+        cursor: pointer;
+      }
+      //收藏图标
+      .al-collect{
+        position: relative;
+        span{display: none;}
+        background:transparent url("//img10.allinmd.cn/v3/terminal/Collect.png") center center no-repeat;
+        &:hover{
+          background:transparent url("//img10.allinmd.cn/v3/terminal/Collect_act.png") center center no-repeat;
+          span{
+            position:absolute;
+            top:6px;
+            left:35px;
+            display:inline-block;
+            font-size:15px;
+            width:70px;
+            color:#555;
+          }
+        }
+
+      }
+      .collectClick{background:transparent url("//img10.allinmd.cn/v3/terminal/Collect_Already.png") center center no-repeat;}
+
+      //订阅图标
+      .al-order{
+        position: relative;
+        span{display: none;}
+        margin:14px 0 48px;
+        background:transparent url("//img10.allinmd.cn/v3/terminal/AddBookmark.png") center center no-repeat;
+        &:hover{
+          background:transparent url("//img10.allinmd.cn/v3/terminal/AddBookmark_act.png") center center no-repeat;
+          span{
+            position:absolute;
+            top:6px;
+            left:35px;
+            display:inline-block;
+            font-size:15px;
+            width:70px;
+            color:#555;
+          }
+        }
+      }
+      .orderClick{background:transparent url("//img10.allinmd.cn/v3/terminal/AddBookmark_Already.png") center center no-repeat;}
+
+      //搜索图标
+      .al-search{
+        background:transparent url("//img10.allinmd.cn/v3/terminal/Search.png") center center no-repeat;
+        &:hover{background:transparent url("//img10.allinmd.cn/v3/terminal/Search_act.png") center center no-repeat;}
+        span{display: none;}
+      }
+      .searchClick{background:transparent url("//img10.allinmd.cn/v3/terminal/Search_act.png") center center no-repeat;}
+
+      //目录图标
+      .al-catalog{
+        background:transparent url("//img10.allinmd.cn/v3/terminal/Catalog.png") center center no-repeat;
+        margin:14px 0 15px;
+        &:hover{background:transparent url("//img10.allinmd.cn/v3/terminal/Catalog_act.png") center center no-repeat;}
+        span{display: none;}
+      }
+      .catalogClick{background:transparent url("//img10.allinmd.cn/v3/terminal/Catalog_act.png") center center no-repeat;}
+
+      //书签图标
+      .al-bookmark{
+        background:transparent url("//img10.allinmd.cn/v3/terminal/Bookmark_Operate.png") center center no-repeat;
+        margin:14px 0 15px;
+        &:hover{background:transparent url("//img10.allinmd.cn/v3/terminal/Bookmark_Operate_act.png") center center no-repeat;}
+        span{display: none;}
+      }
+      .bookmarkClick{background:transparent url("//img10.allinmd.cn/v3/terminal/Bookmark_Operate_act.png") center center no-repeat;}
+
+      .searchClick,.catalogClick,.bookmarkClick{
+        position: relative;
+        span{
+          position:absolute;
+          top:6px;
+          left:35px;
+          display:inline-block;
+          font-size:15px;
+          width:30px;
+          color:#555;
+        }
+      }
+      //向上、向下按钮
+      .al-toTopBtn,.al-toDownBtn{
+        width:40px;
+        height:80px;
+      }
+      .al-toTopBtn{
+        position: relative;
+        margin:55px 0 5px -7px;
+        background:transparent url("//img10.allinmd.cn/v3/terminal/toTop.png") center center no-repeat;
+        //&:hover{background:transparent url("//img10.allinmd.cn/v3/terminal/toTop_act.png") center center no-repeat;}
+        span{display: none;}
+      }
+      .al-toTopHover{
+        position: relative;
+        background:transparent url("//img10.allinmd.cn/v3/terminal/toTop_act.png") center center no-repeat;
+        span{
+          position:absolute;
+          top:32px;
+          left:40px;
+          display:inline-block;
+          font-size:15px;
+          width:70px;
+          color:#555;
+        }
+      }
+      .al-toDownBtn{
+        position: relative;
+        margin-left:-7px;
+        background:transparent url("//img10.allinmd.cn/v3/terminal/toDown.png") center center no-repeat;
+        /* &:hover{background:transparent url("//img10.allinmd.cn/v3/terminal/toDown_act.png") center center no-repeat;}*/
+        span{display: none;}
+      }
+      .al-toDownHover{
+        position: relative;
+        background:transparent url("//img10.allinmd.cn/v3/terminal/toDown_act.png") center center no-repeat;
+        span{
+          position:absolute;
+          top:32px;
+          left:40px;
+          display:inline-block;
+          font-size:15px;
+          width:70px;
+          color:#555;
+        }
+      }
+    }
+  }
+}
+
+
+          //搜索、目录、书签公用弹框:begin
+.al-eBookSearchPop{
+  height: 920px;
+  overflow: auto;
+  position:absolute;
+  z-index:4;
+  background-color:#fff;
+  top:-110px;
+  right:60px;
+  width:550px;
+  padding:40px 30px;
+  box-sizing: border-box;
+  border:1px solid #e4e9ed;
+  box-shadow: 4px 4px 8px rgba(197, 206, 214, 0.5), -4px -4px 8px rgba(197, 206, 214, 0.5);
+}
+          //搜索、目录、书签公用弹框:end
+
+          //搜索结果
+.al-searchContentPart{
+  //display:none;
+  .al-searchArea{
+    position: relative;
+    margin-bottom:16px;
+    input{
+      height:34px;
+      line-height:34px;
+      width:488px;
+      border-radius:20px;
+      behavior: url("/js/third-party/pie/pie.htc");
+      border:1px solid #A1ADBE;
+      box-sizing: border-box;
+      font-size:16px;
+      color:#333;
+      padding:0 45px 0 20px;
+      &:focus{
+        border: 1px solid #3598db !important;
+        box-shadow:1px 1px 3px rgba(53,152,219,0.8), -1px -1px 3px rgba(53,152,219,0.8);
+      }
+    }
+    b{
+      position:absolute;
+      top:10px;
+      right:18px;
+      width:14px;
+      height:14px;
+      background: transparent url("//img10.allinmd.cn/v3/message/top_search.png") center center no-repeat;
+    }
+  }
+}
+.al-searchContentItem{
+  padding-top:24px;
+  border-bottom:1px solid #ecf0f2;
+  &:hover{
+    background-color:#fafbfd;
+    margin:0 -30px;
+    padding:24px 30px 0;
+    .al-deleteBtn{visibility: visible;}
+  }
+  >a{
+    display: block;
+    >span{
+      color:#555;
+      line-height:26px;
+      word-wrap:break-word;
+      i{color:#3598db;}
+    }
+  }
+  p{
+    font-size:13px;
+    font-family:"宋体";
+    color:#909090;
+    margin:20px 0;
+    i{float:right;}
+    .al-deleteBtn{
+      visibility: hidden;
+      float:right;
+      padding-right:20px;
+      color:#ACB4C3;
+    }
+  }
+}
+
+
+        //书签搜索
+.al-bookmarkContentPart{
+  //.al-searchContentItem{display: none;}
+  //display:none;
+  h6{
+    font-weight:400;
+    font-size:26px;
+    color:#555;
+  }
+  .al-noBookmarkBox{
+    display:none;
+    height:810px;
+    line-height:810px;
+    text-align:center;
+    img{
+      width:192px;
+      height:239px;
+      vertical-align: middle;
+    }
+  }
+}
+
+      //目录
+.al-catalogContentPart{
+  h6{
+    font-weight:400;
+    font-size:26px;
+    color:#555;
+  }
+  header{
+    font-size:18px;
+    color:#555;
+    margin:50px 0 20px;
+  }
+}
+  .al-chapterListBox{
+    line-height:58px;
+    margin-top:-1px;
+    .al-chapterNumItem{
+      font-size:18px;
+      color:#62688c;
+      cursor: pointer;
+      figcaption{
+        border-top:1px solid #e4e9ed;
+        border-bottom:1px solid #e4e9ed;
+        &:hover{color:#3598db;}
+      }
+      >p{
+        border-bottom:1px solid #e4e9ed;
+        font-size:16px;
+        color:#777;
+        padding-left:20px;
+        word-wrap: break-word;
+        &:hover{color:#3598db;}
+      }
+    }
+  }
+//电子书右侧栏:End
+
+
+/*电子书全书阅读视频按钮样式*/
+.Ev-allReadingCon{
+  .Ev-videoPlayBtn{
+    position:absolute;
+    width: 80px;
+    height:80px;
+    border-radius: 50%;
+    //behavior:url("/js/third-party/pie/pie.htc");
+    background: url("//img10.allinmd.cn/v3/common/icon/videoPlayIcon.png") center center no-repeat;
+    cursor: pointer;
+    top:40%;
+    left:50%;
+    margin-left:-40px;
+  }
+  .Ev-videoImgSrc {
+    span {
+      position: absolute;
+      right: 3px;
+      bottom: 10px;
+      text-align: center;
+      color: #fff;
+      width: 81px;
+      height: 25px;
+      line-height: 25px;
+      font-size: 14px;
+      background: url("//img10.allinmd.cn/v3/terminal/video_time.png") center center no-repeat;
+    }
+  }
+}
+@import "../../components/medplusDownLoad";

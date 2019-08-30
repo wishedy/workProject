@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>${seoTitle!''}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+    <meta name="description" content="${seoMetaDescription!''}">
+    <meta name="Keywords" content="${seoMetaKeyword!''}">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+    <link rel="stylesheet" href="//m.allinmd.cn/js/lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
+    <link href="//m.allinmd.cn/css/common/main.css?t_=1445925569591" rel="stylesheet" type="text/css">
+    <script src="//m.allinmd.cn/js/lib/jquery/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+        //修改字体大小
+        function changeFontSize(size){
+            $("body").css("font-size",size);
+        }
+    </script>
+</head>
+<body class=""><!--ui-mobile-viewport ui-overlay-a-->
+<section data-role="page" class="content-page case_content page-detail page-detail-doc">
+    <input type="hidden" value="2" id="relationType"/>
+    <input type="hidden" value="8" id="preferReviewType"/>
+    <input type="hidden" value="${doc.docId?c}" id="resourceId"/>
+    <input type="hidden" id="refId" value="${doc.docId?c}">
+    <input type="hidden" id="docName" value="${doc.docName}">
+    <input type="hidden" id="docAbstract" value="${doc.docAbstract}">
+
+    <div class="case_header">
+    </div>
+
+    <div class="case_detail setting-font-size">
+        <div class="case_detail_cont">
+
+
+            <div class="detail_cont_zy">摘要：${doc.docAbstract!''}</div>
+
+            <div class="detail_cont_doc">
+                <#if docContent??>${docContent.docContent!''}</#if>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+    <div class="clear"></div>
+
+    </div>
+    </div>
+
+
+
+</section>
+
+</body>
+</html>

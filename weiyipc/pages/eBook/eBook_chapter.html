@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href="//m.allinmd.cn/dist/eBook/eBook_chapter.html"+location.search;
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="骨科书籍，骨科电子书，在线阅读，电子书阅读，唯医allinmd"/>
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <!--build:css /dest/eBook/eBook_chapter.css-->
+    <link rel="stylesheet" href="/css/v3/base.css">
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css"/>
+    <link rel="stylesheet" href="/css/v3/pageFooter.css"/>
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/auth/module.auth.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/publish/publish.css" rel= "stylesheet" type="text/css" />
+    <link href="/js/modules/find-password-v2/module.find-password-v2.css" rel="stylesheet" />
+
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+    <link href="/js/plugins/reply-remindV3/plugin.reply-remind.css" rel= "stylesheet" type="text/css" />
+
+    <link href="/js/third-party/pagination/pager.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>-->
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/css/column/videoPK_v2/apply_zhezhao.css" rel="stylesheet" type="text/css"/>-->
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/css/v3/pages/terminal/topic.css"/>
+    <link rel="stylesheet" href="/css/v3/discussModule.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/v3/pages/terminal/eBook_chapterList.css" type="text/css"/>
+    <!--endbuild-->
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <meta name="data-alcode" content="a1">
+</head>
+<body data-alcode="104">
+
+<!--<input type="hidden" id="resourceId" value="1471502754111"/>&lt;!&ndash;1422801619232&ndash;&gt;-->
+<input type="hidden" id="resourceType" value="2"/>
+<!--<input type="hidden" id="resourceTpl" value="59"/>-->
+<!--<input type="hidden" id="resourceWapUrl" value="/html/m/topic//2016/07/06/1422244099701.html"/>-->
+<!--<input type='hidden' id="shareImgSrc" value=""/>-->
+
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-indexHeader">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav"  data-alcode-mod='123' data-alcode-item-selector="li">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox" data-alcode-mod='61'>
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch" data-alcode-mod='74' data-alcode-item-selector="b">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+
+    <section class="al-pageMainBox">
+        <!--页面主体内容：begin -->
+        <section class="al-mainContent al-chapterListMain">
+            <figure class="al-chapterTitle">
+                <i></i>
+                <span></span>
+                <b></b>
+            </figure>
+
+            <section class="al-personalInnerSidebarChange" style="display: block;">
+                <section class="al-contentItem">
+                    <header class="al-contentTabsChange">
+                        <figure class="al-contentTabsItem article active">
+                           文章<span>(<span class="collectVideoNum"></span>)</span>
+                        </figure>
+                        <figure class="al-contentTabsItem video">
+                            视频<span>(<span class="collectCaseNum"></span>)</span>
+                        </figure>
+                    </header>
+                    <section class="ev-collectList">
+                    </section>
+                </section>
+
+                <figure class="al-eBookListPartBox">
+                    <div class="al-eBookSelectChoice article">
+                        <span class="showAll">默认顺序</span>
+                        <b class="topArrow"></b>
+                        <ul class="al-OrderSelectItem">
+                            <li class="active">默认顺序</li>
+                            <li>最多浏览</li>
+                            <li>最多评论</li>
+                        </ul>
+                    </div>
+
+                    <div class="al-eBookSelectChoice video al-eBook_videoSelectItem" style="display: none">
+                        <span class="showAll">全部</span>
+                        <b class="topArrow"></b>
+                        <ul class="al-OrderSelectItem">
+                            <li class="active" data-id="0">全部</li>
+                            <li data-id="1">视诊/触诊</li>
+                            <li data-id="2">活动度</li>
+                            <li data-id="3">肌力检查</li>
+                            <li data-id="4">操作</li>
+                            <li data-id="5">特殊检查</li>
+                        </ul>
+                    </div>
+
+
+                    <section class="al-articleListContent article" data-alcode-mod="278">
+
+                    </section>
+                    <section class="al-articleListContent video" style="display: none;"  data-alcode-mod="279">
+                    </section>
+                </figure>
+
+            </section>
+            <div class="page-container">
+                <div class="pagination">
+                    <div class="pager article"></div>
+                    <div class="pager video" style="display:none"></div>
+                </div>
+            </div>
+        </section>
+        <!--页面主体内容：end -->
+
+
+        <!--页面侧边栏：begin-->
+        <aside class="al-sideBarContent al-eBookSideBar">
+            <!--全书阅读:begin-->
+            <div class="al-wholeBookRed" data-alcode-mod='187'>
+
+            </div>
+            <!--全书阅读:End-->
+
+            <!--所属章节-->
+            <div class="al-readChapter">
+                <h6>本书章节</h6>
+                <ul class="al-chapterDetails" data-alcode-mod='188' data-alcode-item-selector="li">
+
+                </ul>
+            </div>
+            <!--所属章节结束-->
+        </aside>
+        <!--页面侧边栏：end-->
+    </section>
+
+    <!--公共底部 start-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--公共底部 End-->
+</section>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+
+<!--build:js /dest/eBook/eBook_chapter.js-->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<!--<script src="/js/comm/comm.track.js"></script>-->
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.ajaxExistHtml.js"></script>
+<script src="/js/comm/comm.textChange.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+
+<script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+
+<script src="/js/modules/share/module.share.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<!--<script src="/js/scene/column/videoPK_v2/scene.column.videoPK_2.process.js"></script>-->
+<!--<script src="/js/modules/publish/module.select-type.js"></script>-->
+<script src="/js/modules/publish/module.video-upload.js" ></script>
+<script src="/js/modules/publish/module.doc-upload.js" ></script>
+<!--<script src="/js/modules/publish/module.topic-upload.js" ></script>-->
+<!--<script src="/js/modules/publish/module.case-upload.js" ></script>-->
+
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<!--<script src="/js/modules/auth/module.auth.js"></script>-->
+<script src="/js/modules/user/module.user.js"></script>
+<script src="/js/modules/resource-list-template/module.resource-list-template.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+
+<script src="/js/third-party/jquery-qrcode-master/src/jquery.qrcode.js"></script>
+<script src="/js/third-party/jquery-qrcode-master/src/qrcode.js"></script>
+<script src="/js/third-party/uploadify/swfobject2.2.js" ></script>
+<script src="/js/third-party/uploadify/jquery.uploadify.js" ></script>
+<script src="/js/third-party/ajaxfileupload.js" ></script>
+<script src="/js/third-party/qiniu/qiniu.js" ></script>
+<script src="/js/third-party/qiniu/ui.js" ></script>
+<script src="/js/third-party/plupload/plupload.full.min.js" ></script>
+<script src="/js/third-party/plupload/i18n/zh_CN.js" ></script>
+<script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script><script src='/js/third-party/md5.js'></script>
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<script src="/js/third-party/pagination/jquery.pager.js"></script>
+
+<script src="/js/scene/eBook/eBookChapterList.js"></script>
+<!--endbuild-->
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+@charset "UTF-8";
+//立即认证弹层提示
+.ToAuth{
+  font-size: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 6;
+  .ToAuthCont{
+    padding: rem3(35px) rem3(35px) 0;
+    width: rem3(245px);
+    height: rem3(404px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: rem3(4px);
+    text-align: center;
+    img{
+      display: inline-block;
+      width: rem3(190px);
+      height: rem3(140px);
+      margin: rem3(10px) auto rem3(22px);
+    }
+    h2{
+      font-size: rem3(19px);
+      color: #000000;
+      margin-bottom: rem3(12px);
+      font-weight: 100;
+    }
+    p{
+      font-size: rem3(17px);
+      line-height: rem3(25.5px);
+      text-align: left;
+    }
+    button{
+      width: rem3(190px);
+      height: rem3(45px);
+      background: #2888FF;
+      box-shadow: 0 rem3(8px) rem3(18px) 0 rgba(40,136,255,0.50);
+      border-radius: rem3(3px);
+      margin-top: rem3(50px);
+      font-size: rem3(17px);
+      color: #ffffff;
+    }
+    .al-authHelpClose{
+      width: rem3(15px);
+      height: rem3(15px);
+      position: absolute;
+      right: rem3(15px);
+      top: rem3(15px);
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAV9JREFUSA29180RwiAQBWDhlDRgEXZhFxZhA7mlCIuwC7uwCBtITok8lExEdtnFIAd/wvK+wGTIYLquO0zTdGnb9tT3/WNXsbn8/TAMV2vt2QJ11nEcxxs6arnIhgELpsVMjTH3eZ4PtfCAwoDlTcww7mia5uiubbLsVLYJS0sVhP6Sby5zgRHMFWrhXNYHvBWeQ+F8wb/iEpSES3EpysJaXINmYSmuRUVwDi9BxTCF4zp2u7AjaTae5FONwFSLZ4eaEhTjVDAGrHEf4PZezUwxBs2+vv7/qZrxerZ4y+B2qy91jGJ5AVd9uFKou+Zfm1wfboxq2aWWBEtq4htgYU2gphY3QcLaIIRpxiRhTQDAdZOO/YKlA9dY/FuS8QFLBsQI9T+XtcC5QgrgrnOZHuYKuGBJH5VtqA5JqLQmZVicZUr3WwX8wBYbTizv85M9u4BbyatNCqPOzdrjsHBoewIPdmltEExNwwAAAABJRU5ErkJggg==") no-repeat;
+      background-size: cover;
+    }
+  }
+  .ToAuthInner{
+    padding: rem3(35px) rem3(47px) 0;
+    width: rem3(221px);
+    height: rem3(331px);
+    h2{
+      font-size: rem3(17px);
+      margin: rem3(2px) 0 rem3(10px);
+    }
+  }
+}
+//关于骨架屏的加载
+@import "../components/skeleton";

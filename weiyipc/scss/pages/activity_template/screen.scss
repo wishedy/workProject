@@ -1,0 +1,482 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+@import "../../components/_message_rightSideBar";//右侧栏组件
+@import "../../components/_makeSurePopup";
+@import "../../components/_focusOnTagsPerson"; //关注标签的人
+@import "../../components/_tableModule";
+
+//tempMainModel
+.activityV3Main{
+    width: 1000px;
+    margin: 20px auto 0;
+    @include clearfix();
+
+    .actScreen{
+        width: 268px;
+        float: left;
+        background: #FFFFFF;
+        border: 1px solid rgba(199,211,223,0.35);
+        margin-right: 20px;
+
+    }
+    .toTop{
+        position: fixed;
+        top: 106px;
+    }
+    .toTopTwo{
+        position: fixed;
+        top: 170px;
+    }
+
+    .actResource{
+        width: 660px;
+        float: right;
+        background: #FFFFFF;
+        box-shadow: 0 2px 4px 0 rgba(215,222,229,0.50), 0 0 2px 0 #C7D3DF;
+        padding: 0 24px;
+    }
+
+    .screenList{
+        li{
+            border-bottom: solid 1px #F5F5F5;
+            cursor: pointer;
+            .menuFirst{
+                font-size: 16px;
+                color: #626F8C;
+                line-height: 24px;
+                padding:14px 0 14px 20px;
+                @include clearfix();
+                article{
+                    width: 192px;
+                    float: left;
+                }
+                //选中展开
+                &.active{
+                    color: #FFFFFF;
+                    background: #3598DB;
+                    i{
+                        background: url("/images/img10/v3/avtivity/pack-up-white.png") no-repeat;
+                    }
+                }
+                //选中收起
+                &.activeUp{
+                    color: #FFFFFF;
+                    background: #3598DB;
+                    i{
+                        background: url("/images/img10/v3/avtivity/down-white.png") no-repeat;
+                    }
+                }
+                i{
+                    display: inline-block;
+                    background: url("/images/img10/v3/avtivity/drop-down.png") no-repeat;
+                    width: 10px;
+                    height: 6px;
+                    float: right;
+                    margin-top: 8px;
+                    padding-right: 20px;
+                }
+            }
+
+
+        }
+    }
+
+    .menuSecond{
+        font-size: 15px;
+        color: #666666;
+        padding-left: 36px;
+        display: none;
+        article{
+            width: 180px;
+            display: inline-block;
+            line-height: 22px;
+        }
+        div{
+            padding:12px 0;
+            &.active{
+                 color: #3598DB;
+                 i{
+                     background: url("/images/img10/v3/avtivity/pack-up.png") no-repeat;
+                 }
+             }
+            &.activeUp{
+                color: #3598DB;
+                i{
+                    background: url("/images/img10/v3/avtivity/drop-down-blue.png") no-repeat;
+                }
+            }
+        }
+        i{
+            display: inline-block;
+            background: url("/images/img10/v3/avtivity/drop-down.png") no-repeat;
+            width: 10px;
+            height: 6px;
+            float: right;
+            margin-top: 5px;
+            padding-right: 20px;
+        }
+    }
+    .menuThird{
+        padding: 10px 0 0 15px;
+        display: none;
+        p{
+            font-size: 14px;
+            color: #909090;
+            line-height: 20px;
+            padding: 10px 0;
+
+            &.active{
+                color: #3598DB;
+            }
+        }
+    }
+
+    .resourseList{
+        li{
+            border-bottom: solid 1px #ECF0F2;
+            padding: 30px 0;
+            @include clearfix();
+            position: relative;
+        }
+        .resourseText{
+            float: left;
+            width: 445px;
+            a{
+                font-size: 17px;
+                color: #333333;
+                line-height: 17px;
+                /*i{
+                    display: inline-block;
+                    width: 70px;
+                    height: 24px;
+                    line-height: 24px;
+                    text-align: center;
+                    border: 1px solid rgba(40,153,230,0.50);
+                    border-radius: 100px;
+                    font-size: 14px;
+                    color: #3598DB;
+                    margin-left: 19px;
+                    cursor: pointer;
+                    float: right;
+
+                    &:hover{
+                        color: #fff;
+                        border: 1px solid #2899e6;
+                        background: #2899e6;
+                        b{
+                            background: url('/images/img10/v3/avtivity/praise-white.png') no-repeat;
+                        }
+                    }
+                    &:active{
+                        color: #fff;
+                        border: 1px solid #3598DB;
+                        background: #3598DB;
+                        b{
+                            background: url('/images/img10/v3/avtivity/praise-white.png') no-repeat;
+                        }
+                    }
+                    &.onclick{
+                        color: #c5c5c5;
+                        border: 1px solid #c5c5c5;
+                        b{
+                            background: url('/images/img10/v3/avtivity/yet.png') no-repeat;
+                            width: 13px;
+                            height: 9px;
+                        }
+                        &:hover{
+                            color: #c5c5c5;
+                            border: 1px solid #c5c5c5;
+                            background: #e2e2e2;
+                            b{
+                                background: url('/images/img10/v3/avtivity/yet.png') no-repeat;
+                                width: 13px;
+                                height: 9px;
+                            }
+                        }
+                    }
+                    b{
+                        display: inline-block;
+                        background: url('/images/img10/v3/avtivity/praise.png') no-repeat;
+                        width: 14px;
+                        height: 14px;
+                        vertical-align: middle;
+                        margin-right: 5px;
+                    }
+                }*/
+            }
+            .resTextCont{
+                color: #666666;
+                margin: 16px 0;
+                font-size: 15px;
+                line-height: 26px;
+                word-break: break-all;
+                height: 52px;
+            }
+        }
+        .resourseImg{
+            float: right;
+            width: 192px;
+            position: relative;
+            img {
+                width: 192px;
+                height: 128px;
+                vertical-align: top;
+            }
+            .al-contentVideoBtn{
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                margin-left: -25px;
+                margin-top: -25px;
+                top: 50%;
+                left: 50%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    vertical-align: middle;
+                }
+            }
+            .al-contentVideoTime {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 81px;
+                height: 25px;
+                font-size: 14px;
+                color: #fff;
+                font-style: normal;
+                text-align: center;
+                line-height: 25px;
+                background: url(//img10.allinmd.cn/v3/terminal/video_time.png) center center no-repeat;
+                text-indent: 10px;
+            }
+        }
+    }
+    .contentOtherMsg span {
+        font-family: Arial,"宋体";
+        font-size: 12px;
+        position: relative;
+        color: #909090;
+        margin-right: 14px;
+    }
+    .al-contentWatchedNum {
+        display: inline-block;
+        width: 18px;
+        height: 12px;
+        background: transparent url(/images/img10/v3/avtivity/see.png) center center no-repeat;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+    .al-contentAuthorBox {
+
+    }
+    .al-contentAuthor {
+        content: "";
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background: transparent url(/images/img10/v3/avtivity/name.png) center center no-repeat;
+        background-size: 100% 100%;
+        vertical-align: sub;
+        margin-right: 5px;
+        margin-top: 0px;
+    }
+    .contentOtherMsg{
+        @include clearfix();
+        .recourseType{
+            display: inline-block;
+            border: 1px solid #3598DB;
+            border-radius: 2px;
+            width: 32px;
+            height: 18px;
+            font-size: 12px;
+            color: #3598DB;
+            line-height: 18px;
+            text-align: center;
+            margin-right: 16px;
+        }
+        .recourseType_video{
+            border: 1px solid #FF9224;
+            color: #FF9224;
+        }
+        .recourseType_lib{
+            border: 1px solid #F34B4B;
+            color: #F34B4B;
+        }
+        .recourseType_topic{
+            border: 1px solid #9bcc4e;
+            color: #9bcc4e;
+        }
+        .recourseType_case{
+            border: 1px solid #3598DB;
+            color: #3598DB;
+        }
+        .commentNum{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: transparent url(/images/img00/column/specialTemplate/praise.png) center center no-repeat;
+            background-size: 100% 100%;
+            vertical-align: sub;
+            margin-right: 5px;
+            margin-top: 0px;
+        }
+
+        .recourseTime{
+            font-size: 13px;
+            display: inline-block;
+            float: right;
+            color: #AAAAAA;
+            font-family: "microsoft yahei";
+            margin-right: 0;
+        }
+    }
+    .contentOtherMsg{
+        .resPraise{
+            float: right;
+            display: inline-block;
+            width: 70px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            border: 1px solid rgba(40,153,230,0.50);
+            border-radius: 100px;
+            font-size: 14px;
+            color: #3598DB;
+            margin-left: 19px;
+            cursor: pointer;
+            text-indent: 16px;
+        }
+        .resource_list_assist_yes {
+            background: #fff url(/images/img00/column/specialTemplate/yet.png) no-repeat 10px center;
+            color: #C5C5C5;
+            border: 1px solid #C5C5C5;
+        }
+        .resource_list_assist_no{
+            background: #fff url(/images/img00/column/specialTemplate/praise_blue.png) no-repeat 10px center;
+            color: #2899E6;
+            border: 1px solid #2899E6;
+            &:hover{
+                color: #fff;
+                border: 1px solid #2899e6;
+                background: #2899e6 url('/images/img10/v3/avtivity/praise-white.png') no-repeat 10px center;
+            }
+            &:active{
+                color: #fff;
+                border: 1px solid #3598DB;
+                background: #3598DB url('/images/img10/v3/avtivity/praise-white.png') no-repeat 10px center;
+            }
+        }
+    //    分数样式
+        .al-actScoreNumBox{
+            float: right;
+            display: inline-block;
+            font-size: 16px;
+            color: #2899e6;
+
+            .al-actScoreNum{
+                font-size: 24px;
+            }
+        }
+    }
+
+
+
+    /*没有图片的晋级图标*/
+    .promotionNoneImg{
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: url("/images/img10/v3/avtivity/promotion.png") no-repeat;
+        width: 30px;
+        height: 40px;
+
+    }
+    .promotion{
+        position: absolute;
+        left: 10px;
+        top: 0;
+        background: url("/images/img10/v3/avtivity/promotion.png") no-repeat;
+        width: 32px;
+        height: 49px;
+    }
+    .promotion.smallImage{
+        background: url("/images/img10/v3/avtivity/promotion2.png") no-repeat;
+        width: 32px;
+        height: 49px;
+        font-size: 12px;
+        color: #FFFFFF;
+        line-height: 16px;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 4px;
+    }
+    .promotion.bigImage{
+        background: url("/images/img10/v3/avtivity/promotion3.png") no-repeat;
+        width: 42px;
+        height: 50px;
+        font-size: 12px;
+        color: #FFFFFF;
+        line-height: 16px;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 4px;
+    }
+    .promotion_noPic{
+        position: absolute;
+        top: 0;
+        right:24px;
+        background: url("/images/img10/v3/avtivity/promotion.png") no-repeat;
+        width: 30px;
+        height: 40px;
+        display: inline-block;
+    }
+    .promotion_noPic.smallImage{
+        background: url("/images/img10/v3/avtivity/promotion2.png") no-repeat;
+        width: 30px;
+        height: 46px;
+        font-size: 12px;
+        color: #FFFFFF;
+        line-height: 16px;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 4px;
+    }
+    .promotion_noPic.bigImage{
+        background: url("/images/img10/v3/avtivity/promotion3.png") no-repeat;
+        width: 40px;
+        height: 47px;
+        font-size: 12px;
+        color: #FFFFFF;
+        line-height: 16px;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 4px;
+    }
+}
+.noneResourse{
+    display: none;
+    margin: 80px auto;
+    width: 139px;
+}
+.relati{
+    position: relative;
+    background: #eef3f8;
+}
+.pagePosi{
+    width: 70.8%;
+    position: absolute;
+    right: 0;
+    background: #fff;
+}
+.screenScroll{
+    overflow-y: auto;
+    //height: 750px;
+}
+
+.signUpPbtn{
+    margin-top: 35px;
+}

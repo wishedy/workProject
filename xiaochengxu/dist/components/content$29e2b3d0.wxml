@@ -1,0 +1,22 @@
+<template name="content$29e2b3d0">
+  <view class="_section data-v-59645c6b main-message-box" bindlongpress="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+    <view class="_article data-v-59645c6b main-message-box-item {{[  contentMessage.from === userData.account ? 'my-message' : '',  contentMessage.from === targetData.account ? 'others-message' : '']}}" data-clientid="{{contentMessage.idClient}}">
+      <view class="_figure data-v-59645c6b main-message-img" wx:if="{{contentMessage.from===targetData.account}}" catchtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+        <block wx:if="{{isFindDoctor}}">
+          <image src="https://m.allinmed.cn/static/image/mp/personal/profilePhoto.png" alt class="_img data-v-59645c6b"></image>
+        </block>
+        <block wx:else>
+          <image src="https://m.allinmed.cn/static/image/mp/index/imSceneLogo.png" alt class="_img data-v-59645c6b"></image>
+        </block>
+      </view>
+      <view class="_i data-v-59645c6b fail-button" style="display:none"></view>
+      <view class="_figcaption data-v-59645c6b main-message-content">
+        <transition name="fade" class="_transition data-v-59645c6b"><label class="_span data-v-59645c6b delete-msg-btn" catchtap="handleProxy" wx:if="{{currentIndex===deleteMsgIndex&&showDeleteMsg&&contentMessage.from===userData.account}}" data-eventid="{{'1'}}" data-comkey="{{$k}}">撤回</label></transition>
+        <view class="_p data-v-59645c6b">{{contentMessage.text}}</view>
+      </view>
+      <view class="_figure data-v-59645c6b main-message-img" wx:if="{{contentMessage.from===userData.account}}">
+        <image src="{{logoUrl}}" alt class="_img data-v-59645c6b"></image>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript">
+
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href='//m.allinmd.cn/html/m/activity/1449026372937/activity_details.html';
+        }
+
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>活动详情专题页 - 唯医,allinmd</title>
+    <meta name="Keywords" content="病例专题，视频专题，骨科示教病例及手术视频选拔赛－活动详情 ，骨科专题，学术专题，文献专题，手术汇总，">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+
+    <link href="/dest/column/videoPK/details.css" rel="stylesheet" type="text/css"/>
+    <meta name="data-alcode" content="a1">
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body data-alcode="112">
+<!--#include virtual="/includes/header.jsp"-->
+<input type='hidden' id='activityId' />
+<div class="video_pk"><!--最大的块-->
+
+    <div class="middledasai_qr-code" id="right_nav" data-alcode-mod='201' data-alcode-item-selector="a"><!--二维码-->
+        <div class="erweima_nav"><img src="//img00.allinmd.cn/column/videoPK/erweima.png" /></div>
+        <div class="right_nav_btn"><a href="#hd_zhuzhi">活动主旨</a></div>
+        <div class="right_nav_btn"><a href="#zige">参赛资格</a></div>
+        <div class="right_nav_btn"><a href="#sai_zhishuoming">赛制说明</a></div>
+        <div class="right_nav_btn"><a href="#vd_pingwei">全部评委</a></div>
+        <div class="right_nav_btn" style="margin:0;"><a href="#vd_banquan">版权说明</a></div>
+    </div>
+
+    <!--新版广告位-->
+    <#if adPosition_list??>
+        <#list adPosition_list as adPositionList>
+            <#if adPositionList_index==0>
+                <#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+                    <#if v_adPositionAttachmentList??>
+                        <#list v_adPositionAttachmentList as list>
+                            <div class="video_pk_shouye_lunbo" style="background: url(//img99.allinmd.cn/${list.adAttUrl}) no-repeat center;">
+                                <div class="video_pk_shouye_center">
+                                    <div class="video_pk_shouye_share" id="hr_share" data-alcode-mod='199' data-alcode-item-selector="a"> <span>分享至:</span> <a href="javascript:;" class="share_ico_tsina"><img src="//img00.allinmd.cn/column/videoPK/homepageweibo.png" /></a>
+                                        <!--<a href="javascript:;" class="share_weixin"><img src="//img00.allinmd.cn/column/videoPK/homepageweixin.png" /></a>-->
+                                        <a href="javascript:;" class="share_ico_tqq"><img src="//img00.allinmd.cn/column/videoPK/homepageqq.png" /></a> <a href="javascript:;" class="share_ico_qzone"><img src="//img00.allinmd.cn/column/videoPK/homepageqqkongjian.png" /></a> </div>
+                                </div>
+                            </div>
+                        </#list>
+                    </#if>
+            </#if>
+        </#list>
+    </#if>
+
+    <div class="video_pk_shouye_navhuodongjianjie hide"><!-- 导航和活动简介-->
+        <ul class="video_pk_shouye_nav" id="Ev-NavList" data-alcode-mod='200' >
+            <#if (activityMenu??)&&(activityMenu?size>0)>
+                <#list activityMenu as MenuList>
+                    <#if MenuList_index  ==1>
+                        <li class="nav_homgpage"><a href="${MenuList.activityMenuUrl}?activityId=${MenuList.activityId?c}">${MenuList.activityMenuName}</a></li>
+                        <#else>
+                            <li><a href="${MenuList.activityMenuUrl}?activityId=${MenuList.activityId?c}">${MenuList.activityMenuName}</a></li>
+                    </#if>
+                </#list>
+            </#if>
+            <li class="nav_zx myWork"><a href="//www.allinmd.cn/v2/pages/column/videoPK/personal_center.html?activityId=${MenuList.activityId?c}" class="nav_zx_a">我的作品</a></li>
+            <li class="nav_bm"><a href="javascript:;">立即报名</a><div></div></li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+    <div class="xq_main">
+        <div class="xq_text"><!-- 详情的内容 -->
+            <#if (cms_news_list??)&&(cms_news_list?size>0)>
+                <#list cms_news_list as newsList>
+                    <#if newsList_index==0>
+                        ${newsList.newsBody}
+                    </#if>
+                </#list>
+            </#if>
+            <div class="clear"></div>
+
+            <a name="vd_pingwei" class="target_nav"></a>
+            <div class="vd_pingwei" data-alcode-mod='202'>
+                <div class="production_cont_list_nav font_yahei" style="border: solid 1px #e1e3e4;">
+                    <ul id="ev_tabBtn">
+                        <#if (columnList??)&&(columnList?size>0)>
+                            <#list columnList as cList>
+                                <#if cList_index  ==0>
+                                    <li>
+                                        <div class="production_cont_nav_li on"> ${cList.columnName}</div>
+                                    </li>
+                                    <#else>
+                                        <li>
+                                            <div class="production_cont_nav_li"> ${cList.columnName}</div>
+                                        </li>
+                                </#if>
+                            </#list>
+                        </#if>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+
+                <!--tab内容-->
+                <#if activityDetial??>
+                    <#list activityDetial as recommList>
+                        <#assign v_id = recommList.id>
+                            <#assign a_list = recommList.recommendCustomerList>
+
+                                <#if recommList_index == 0>
+                                    <div class="ev_tadCont"><!--脊柱-->
+                                        <#else>
+                                            <div class="ev_tadCont" style="display:none;"> </#if>
+                                <#if (a_list?size >= 15)>
+                                    <table class="ev_tadCont_shuang"  cellspacing="0" cellpadding="0">
+                                        <#else>
+                                            <table class="ev_tadCont_dan" cellspacing="0" cellpadding="0">
+                                </#if>
+                                <tr class="td_bs">
+                                    <td class="td_ts" colspan="6">有 ${a_list?size}位专家评委</td>
+                                </tr>
+                                <#if (a_list?size == 0)>
+                                    <tr class="td_bs td_footer" height="42">
+                                        <td class="td_ts"  colspan="3"	></td>
+                                    </tr>
+                                    </table>
+            </div>
+            </#if>
+            <!--数据-->
+            <#list a_list as c_List>
+                <#assign falg = c_List.sortOrder>
+
+                    <#if (a_list?size >= 15)>
+                        <!--双排-->
+                        <#if c_List_index % 2 ==0>
+                            <#if falg==1>
+                                <tr> <#else>
+
+                                    <tr class="td_bs"> </#if>
+                            <td class="td_left_name" width="44"  ><a href="//www.allinmd.cn/v2/pages/personal/home.html?cid=${c_List.refId?c}
+                                    " target="_blank">${c_List.refName}</a></td>
+                            <td class="td_left_zhicheng" width="158">${c_List.remark}</td>
+                            <td width="253">${c_List.recommendUrl}</td>
+                            <#else>
+                                <td class="td_right_name" width="51" ><a href="//www.allinmd.cn/v2/pages/personal/home.html?cid=${c_List.refId?c}
+								    " target="_blank">${c_List.refName}</a></td>
+                                <td class="td_left_zhicheng" width="156">${c_List.remark}</td>
+                                <td width="254">${c_List.recommendUrl}</td>
+                                </tr>
+                        </#if>
+
+                        <#else>
+                            <!--单排-->
+                            <#if c_List_index % 2 ==0>
+                                <tr>
+                                    <td  class="td_dan_name"><a href="//www.allinmd.cn/v2/pages/personal/home.html?cid=${c_List.refId?c}
+								    " target="_blank">${c_List.refName}</a></td>
+                                    <td>${c_List.remark}</td>
+                                    <td>${c_List.recommendUrl}</td>
+                                </tr>
+                                <#else>
+                                    <tr class="td_bs">
+                                        <td  class="td_dan_name"><a href="//www.allinmd.cn/v2/pages/personal/home.html?cid=${c_List.refId?c}
+								    " target="_blank">${c_List.refName}</a></td>
+                                        <td>${c_List.remark}</td>
+                                        <td>${c_List.recommendUrl}</td>
+                                    </tr>
+                            </#if>
+
+
+                    </#if>
+                    <#if (a_list?size >= 15)>
+                        <#if !c_List_has_next>
+                            <#if (a_list?size % 2 >0)>
+                                <td class="td_right_name" width="51" ><a href="
+								    " target="_blank"></a></td>
+                                <td class="td_left_zhicheng" width="156"></td>
+                                <td width="254"></td>
+                                </tr>
+                            </#if>
+                            <!--双排-->
+                            <tr class="td_bs">
+                                <td class="td_ts" colspan="6"></td>
+                            </tr>
+                            </table>
+        </div>
+        </#if>
+
+        <#else>
+            <!--单排-->
+            <#if !c_List_has_next>
+                <tr class="td_bs td_footer" height="42">
+                    <td class="td_ts"  colspan="3"	></td>
+                </tr>
+                </table>
+    </div>
+    </#if>
+    </#if>
+
+    </#list>
+
+    </#list>
+
+    </#if> </div>
+<a name="vd_banquan" class="target_nav"></a>
+<div class="vd_banquan">
+    <#if (cms_news_list??)&&(cms_news_list?size>0)>
+        <#list cms_news_list as newsList>
+            <#if newsList_index==1>
+                ${newsList.newsBody}
+            </#if>
+        </#list>
+    </#if>
+</div>
+</div>
+<!--文字-->
+</div>
+</div>
+<!-- 详情的内容 -->
+</div>
+<!--最大的块-->
+
+<!--#include virtual="/includes/footer.jsp"-->
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+
+<script src="/dest/column/videoPK/details.js"></script>
+</body>
+</html>

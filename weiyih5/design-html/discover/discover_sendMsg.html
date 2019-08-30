@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>告诉我们</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/discover/discover_sendMsg.css">
+</head>
+
+<body>
+    <section class="al-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem">
+                <a href="/design-html/personal/personal_config.html">
+                    <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>告诉我们</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)">
+                </a>
+            </figure>
+        </header>
+        <section class="al-personalContent">
+            <section class="al-tableModule">
+                <article class="al-tableModuleItem">
+                    <textarea name="" id="" cols="" rows="" placeholder="写下你想看的..."></textarea>
+                    <span class="al-textareaInputNum">
+                        233
+                    </span>
+                </article>
+            </section>
+            <section class="al-tableModule al-buttonBox">
+                <article class="al-tableModuleItem">
+                    <button class="btn-primary-lg al-msgWriting">发送</button>
+                </article>
+            </section>
+        </section>
+    </section>
+    <!-- 删除提示弹框 -->
+    <section class="al-confirmModalMask">
+        <section class="al-confirmModal">
+            <article class="al-confirmModalContent">
+                <article>
+                    <p>感谢您的反馈</p>
+                    <p>我们会尽快处理</p>
+                </article>
+            </article>
+            <footer class="al-confirmModalBtns">
+                <button class="al-confirmModalCancelBtn">继续浏览</button>
+            </footer>
+        </section>
+    </section>
+    <!-- 发送失败提示 -->
+    <section class="al-sendFailTips">
+        <p>当前网络环境不佳，请重新发送</p>
+    </section>
+    <!-- 底部选项 -->
+    <section class="al-bottomSelectorListMask">
+        <section class="al-bottomSelectorListBox">
+            <section class="al-bottomSelectorList">
+                <figure class="al-bottomSelectorItem"><a href="javascript:void(0)">继续</a></figure>
+                <figure class="al-bottomSelectorItem al-cancelSend"><a href="javascript:void(0)">放弃</a></figure>
+            </section>
+            <section class="al-bottomSelectorList mgt">
+                <figure class="al-bottomSelectorItem" id="EV-cancelUploadImg"><a href="javascript:void(0)">取消</a></figure>
+            </section>
+        </section>
+    </section>
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script>
+    FastClick.attach(document.body);
+    $(function() {
+        $(".al-msgWriting").on("click", function(e) {
+            if ($(".al-bottomSelectorListMask").hasClass('on')) {
+                return;
+            }
+            $(".al-bottomSelectorListMask").addClass('on');
+
+        });
+        $('#EV-cancelUploadImg').on("click", function(e) {
+            $(".al-bottomSelectorListMask").removeClass('on');
+        });
+        $(".al-indexHeaderItem h1").on("click", function(e) {
+            $(".al-confirmModalMask").addClass('show');
+            $(".al-confirmModalCancelBtn").on("click", function(e) {
+                $(".al-confirmModalMask").removeClass('show');
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>

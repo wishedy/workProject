@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/pages/personal/personal_active.html';
+        }
+    </script>
+    <title>动态－在唯医的个人经历,唯医,allinmd</title>
+    <meta name="data-alcode" content="a2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <meta name="description" content="动态－在唯医的个人经历,唯医,allinmd">
+    <script src="/js/third-party/flexible.js"></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_index.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_changeImg.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_myComment.css">
+    <link rel="stylesheet" href="/css/pages/authentication/personal.css">   <!--展示条-->
+
+
+    <!--<link href="//paas.allinmd.cn/modules/allinmdplayer/css/video-js.css" rel="stylesheet" type="text/css"/>-->
+    <!--<link href="//paas.allinmd.cn/modules/allinmdplayer/css/videojs.allinmd-h5.css" rel="stylesheet" type="text/css"/>-->
+    <!--<link href="//paas.allinmd.cn/modules/show_big_img/1.1/showBigImg.css" rel="stylesheet">-->
+    <link href="/js/third-party/swiper/swiper.min.css" rel="stylesheet">
+</head>
+
+<body data-alcode="220">
+    <section class="al-mainInner ev-mainInner" style="padding-bottom: 0;">
+        <!-- 顶部信息栏 -->
+        <header class="al-personalHead" data-alcode-mod='464'>
+            <a href="/pages/personal/setting.html" class="al-personalConfig icon-config ev-setting">设置</a>
+            <span class="al-personalShare icon-shareWhite">分享</span>
+            <article class="al-personalBasicMsg">
+                <figure class="al-personalImg ev-hasLogin" style="display: none">
+                    <a href="javascript:;" class="ev-logoUrl">
+
+                    </a>
+                </figure>
+
+                <figcaption class="al-personalBasicMsgContent ev-hasLogin"  style="display: none">
+                    <h2 class=""><span class="ev-name"></span></h2>
+                    <ul style="display: none" class="ev-hasAuth">
+                        <li class="al-personalSnsNum"><a href="/pages/personal/sns.html?action=fans">粉丝<span class="ev-fansNum"></span></a></li>
+                        <li class="al-personalSnsNum"><a href="/pages/personal/sns.html?action=follow">关注<span class="ev-followNum"></span></a></li>
+                        <li class="al-personalSnsNum"><a href="/pages/personal/sns.html?action=praise">赞<span class="ev-upNum"></span><i class="al-newTips"></i></a></li>
+                    </ul>
+                </figcaption>
+            </article>
+            <button class="al-personalGoLogin al-whiteBtn ev-noLogin">登录 / 注册</button>
+        </header>
+        <!-- 滚动距离时——顶部信息 -->
+        <header class="al-personalScrollHead">
+            <h2><span class="ev-name"></span><span class="al-personalShare icon-shareDeepBlue">分享</span></h2>
+        </header>
+        <!-- 导航栏部分 -->
+        <nav class="al-personalNavbar" data-alcode-mod='463'>
+            <a href="/pages/personal/personal_index.html">
+                <figure class="al-personNavbarItem" data-role="index">
+                    <img class="showOff" src="//img50.allinmd.cn/pages/personal/index_off.png" alt="">
+                    <img class="showOn" src="//img50.allinmd.cn/pages/personal/index_on.png" alt="">
+                    <figcaption>主页</figcaption>
+                </figure>
+            </a>
+            <a href="/pages/personal/personal_contribution.html">
+                <figure class="al-personNavbarItem" data-role="contribution">
+                        <img class="showOff" src="//img50.allinmd.cn/pages/personal/contribution_off.png" alt="">
+                        <img class="showOn" src="//img50.allinmd.cn/pages/personal/contribution_on.png" alt="">
+                        <figcaption>贡献</figcaption>
+                </figure>
+            </a>
+            <figure class="al-personNavbarItem active" data-role="active">
+                <img class="showOff" src="//img50.allinmd.cn/pages/personal/active_off.png" alt="">
+                <img class="showOn" src="//img50.allinmd.cn/pages/personal/active_on.png" alt="">
+                <figcaption>动态</figcaption>
+            </figure>
+            <a href="/pages/personal/personal_customerInfo.html">
+            <figure class="al-personNavbarItem" data-role="intro">
+                <img class="showOff" src="//img50.allinmd.cn/pages/personal/intro_off.png" alt="">
+                <img class="showOn" src="//img50.allinmd.cn/pages/personal/intro_on.png" alt="">
+                <figcaption>个人资料</figcaption>
+            </figure>
+            </a>
+        </nav>
+        <section class="al-personalContent al-personalActive" data-role="active">
+            <section class="al-comment">
+                <section class="ev-list" data-alcode-mod='468' data-alcode-item-selector=".ev-review">
+
+                </section>
+            </section>
+        </section>
+
+        <!-- 页脚功能栏 -->
+        <footer class="al-footerBar" data-alcode-mod='382'>
+            <a href="/" class="al-footerBarItem">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAABNlJREFUWAntmVtoVEcYgPeSTSRFLSagDaUNPtjGIKj4YlobttpQEmMum/VBatWHIBbEF6uBUpqm9KHtU237EpQ+aIOQzY1FcZum2FoVMRSLoogoKcVeqC1K6rom2U2//3jmcDZ7stmzezZriwOzczn/zP/NP//MmTnrcj0J+bWA26nup6en3f39/e2kAfpcTYyT/8nj8fQEAoGjTulxBHhgYKAyHo8fA/AlKzC32z3i8/nebGpq+tXquZ26nIGHhoZemJyc/AbYZ9MpBvqW1+vd2NLSMpZObq5nnrkE0j0fHBxcBez3JtgJ5DsAW4orVADZRTkufSCznFk4g9uskHK2IWsLh0KhdUBEULxEVx4DMNDW1nbSDNPb2xuk/BXRp9f/gXu81tzcfNksl2k+K2Cs9DLWOoGSRbqi+1h1S2tr67dWivv6+hoSiUSIZwv0538zA6+zGC9ayaers+0SKN+EcrGsgr1Hvm42WFEO2AkG1ED2vpQJS5idEay/4VEx819bFkbBZqY9hLISUUH+L2IdQD9mopKZWc9gT9L+ab19FEs3M9jhTNqLTMYWxme3It+vYMn/TqzNFBZZF2DnSV4l3pEyfZUygLAYQsqZhIwsDOwOOj9Ch17pFKv+QrKRBXZDynYDu8vKqakp2Qqf0dtOYultDF78PG2Y08LA7qGHL4kK9ibAG7KFFRp2iKsktfrApcqHpY+j6w0ppAtpLcxU7afxJ6oDFFxjS9rkxBtL+tTfkCNYermuI4Gld2Ppw0rnzHRWC7MbvIewAUv+Umlpaa1TsAIib72SkpJXyF6XMsEDfDe69z4qpv5aAjM1HzNFnUocy14oKiry19fX/6nqnEobGxtvFxcXi3tckT4BdqP7ENAHrHQkuYQIA/s5gm+ZhL8rLy/f7Pf7/zHVOZ5lyysD9GsY1qrOcY9O3ON9VZbUAEbQy6gOk+5UAow6UlFR0VJTU/NA1eUzDYfDz8VisZ/NOoD+COgOVae5xOjoqA/Ynhmwg1VVVVvmC1aAsPBDBaZS6g6y+A/BphlXAx4bG/uUCnkxaAHL9pSVlQWrq6vl9PU4hL24apeAqEXXqKiAPcIUbMdnp1RdoVJYwibduySvAfPgIPEi5Q5g28knTIIFy1ZWVsp16zN4fiNqW6yx6ApGZVLM7WXpxMSEnFG0EAwGU/iUSyiZxz4tsiLEwTtYhPuYhmOcGd62kilU3WwW7gRoGdD7h4eHFxcKzkqvJTCg2gFdGkSjUXWtsWo/73WWwPNOYUPhfw7YctHZGHCSKIu1nYo9uFQV6UMW7QXOAh9wNfohSTCHgiMWjkQiTwEbBrSbuAYe8fvF5Ov4HHCas8C7OTAmNXUEeHx8/EPgZrtIytWqi8NVQ5LmLAs5A2PZF4E1bgi4QTeH/XXyHQ0muSVrAZkvVD6X1Akflo8hauCneNHsVkDc2eq5HcvNuhzg5+UOV9CPgQIGiHwL1gILzHy6kjvbXSxuLDj82ZBVbeymyjJ22xnyAC00Ci7XuCmvskbdDFn13FaaM7AtbQ4I/2+AY8oY+N0ylc93OkOXwWDWm3JAlodsVWdZTDVmwfnO4+/n2HFS/jOxdAlg3wGwkNekhM6QYidLYK4mp9mi/IzyDDGa0ipPFaJLdIpuYciTmifdprXAv6H62B/3npbsAAAAAElFTkSuQmCC" alt="">
+                <figcaption class="al-footerBarItemTitle">
+                    首页
+                </figcaption>
+            </a>
+            <a href="/pages/discover/discover_index.html" class="al-footerBarItem">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAyCAYAAADcD8w1AAAAAXNSR0IArs4c6QAAD0dJREFUeAHtWwlwlEUWfj0zmSSTkIMjkHAEhAQCBJQoEERMKS66gqiQuFiugsixriBHOMTVxdtcgFirUrooUkgtl4gnsAIrIaCIwHIkATkSIAMCgdzXzN/7vWEmmUzmJDPA7tJVPX297n79/e9//fr1P0Q3w00E/pcQEP9ti5k/f76uvLy8rZTSXwih5VSj0ZxLS0srvJHXcsMDDWDDSktLhwHQQQCS463Ia2xBBehlqD+M9CDihpCQkG/QLx50dyuK0gNpJ8SOaAsFnZr7I1+EpAAxX61Wb8jIyPgJdZLbvB1uWKDnzp3buaamZhpAGY9FB1sWrhJShreokRqVEUhRrUAsrfTXVFZrdBYac3oRaUtEt9cIkE+B/oGFCxceMo/hMIlKrXqcjDK+aKHuBYdEVg1NJMOq7bpkZ8+e3aGuri6rurp6FBgwSV5M+2KKRezStoQ6tikRfhrFAl4AaDhSVY0fnb0cbDhc2PJkzuEOGpQ7cz0CS+gPAPE9xHzkiyHhBq1WK4xGY3vEaNTzm/IwHmpn5Nsj7xToyBnl70hFGU9C+oPWLaAtDIP++oeZM2c+StLwsVERIWq1pIRuekqKL6B2LSs8Zu7kubD9K7f1Ona+JHAEOvsBwLMqlWpGVlbWSkeDQU0FI5Y7auf6qFmVY6RRfojnF0RCla/P0rFachluCKB5gystLVmkKHICc9y783kaPTiXQnS1LhdArZ4hUvAgLtnH75g+fPnfvkyIxkBDeDAAvnDBggUzkXqsi6NTq7rUKMb9AK0FgC4nlSpVnxm0xDWTHugvdwa7GprFixf7FxYc22QwiiFQCTRy4BEa1PO0+0O1fhZAQwiLP7XqA43T5k9EQXcSVeeTOL9461+Xx68tLffLAhFbK8sSExPHp6SkQNG7Dt0WS/+qUxVxiiKWQhH1AciYQBQOHqi7ZXWKcGsMr0m03EC9SKFIiqAd0HhVrtknWrVqlXr3j9nr64yq4aFBNTTpgV+uSk00mavVRBIRU+qrZck3JIrm5L6x+s45Fy4FfoaGYID9BcAe5QzsyFmVz0MXz4bsR0iSlSqh8oMeD4TKKBMqmlCUoftH/SQuMioX7W41y3WUTnV0kIy0mfS0X35N7dzpuHPnjg8ZZF2AgSb/3ksg88S6fo2n1yXwjhj3YkrOFK3WeC9AvgDARu7ateulxoQ2JaNMFlJEoFYjSISYQGYSqZAnIHOXZgMtv6E2GCeVBzOHGKolKE7nYcaMGU9IKcZp/Yw08f691Dbc8w3P4QxVexs3Ve0zlQHUfWljtz6OTXEUwIbxofxl2rRp0C/2g79ajkbL1zAQLzWmEOoOc6u7Na5zXmo20JDiQIhLYxWkkK1N24gLPoQIMrzDlaPvzKVOESWN2ptduPARyYsfk4R+lpc/J9K/Uj8kJPv5zAnfGwH0G6hUI13B/NQTWGVOZgSfLcrSPYLVHYBObtg8Id7SoDxkReoy22ygxQgqxCxr62cSdJE0tKy+bCdz+fLlN42KqmXXyEt0e+xZOxTNrcL+9NsCohMQSP3L2CzLGg8oDek4Ob6Kyp2Q8uiSkpJ5jQkaSh1Tqx7B3jMkKNBPESqxHy2VJGWAQvLeBirXuWYDbZoimsZACY1GnEL+lCBGEh8M7AYcSLpDiiaxnZx8V55dGl9XSkmD/pqyZgRUyJ/Nc00EXzDZrgTepCHlptNotxaBG7i2oqpWrfIXD0KYB+M0ulolxCdXqN371bhH5pxK3I6t0FqqnZDj1DcWUqTqH1tEEWFe1MtO5rTbJGgK7Ol7pk+fvgX83GMwGMaDbhHT5uTkrIAwDIf+jlk0X+ij5ssg6ELNr/NFKZrPID7GdJ4E70i0mzNCSiAI8kkm79+d/TnXMUhxlyyIDwegbFtDG8hpLMk4nfLB5jGUjf7+/pXcVjRfVJpB5uJVBZdAy9y+w2RunxFXNbpNJ+jCoYpCUW1CKyja2xugzVyuirCLNVStGo4j+bcA+ziAjc7Ozr4VlkiGuW8mXK9e26WdAi3z+nTHg/1OSmWDzI1PcMW8q3YsZhjT9Ot2zhXptWk3Gu8DyGBLbuMJobNfQr4/sqfDwsIWcp23glOgYcTcUj+RoIZ8faVnGSyqN/fo2IZV3Q0QBHVkLsBXjpmb4ZzCN/0M1BzO9d4LzoGWlFg/lXW+vtL9DHTffZCWodyjnTcPJ+6zYIdSRHElgD1sbmS7+gOok412iJtV1cTqkHm9n8ABZDJiS6nIOMvoAGk61MeDKF9E/FjEHYCr0L0wa9asGOzq7BdQqVWKbNmiqvEBx71hvE8lZRQ7tY4fP55mHlzp0qXLNO9PBJOlyaBSpAFU05O2bUN9LNfhqfdE/iOkDaclW2JzGa+gDgeUL1AM56oQXR33aQq00YDDBSyRSph8AYFw/LYHd37cxWdBIZU8ceLEakxwF6KJr6lTp9Z4OiEEcCKuKPJE7IEfHPW1pzrmwyBnn2uhbScAexrx39DdL7sDMvfHvd3bSOJAbzqdwImk2I5rKp/TkygrJVx7kKiAetSzueq7AJcnLd3Yh826EeDtAmbis4BYsmSJx09XCvkB/EwznHHbRKLNKsGkFuTh3ul4zLN4AAD/Ptrg/HU/pKamJkFlPIeF1GJBz6Bndp1BZf8tqLLxrNqW3Z/WJWWdQU3L/hlPhwtbtwBvJeBtGNIfkGqPHj2qxQAMussgj/WNJYNMhEmI7rKfzO87mPyMR8UtB8/ZdrYn0Q00arG1vqCyytdXOs6Aab6Tg8PBpCZeg7m0h6nh42iqNrghKIh/G4LOqV+qgc42VweMTp2Er8O+D6USd4vvfTeUQaYArbEa3YdiMywEv0EMemZmplvHVZkf/4BSa8wHyJ8wCzjWd1QU43ZZK05ImcwPq1FwDrRKU1BPLVQN+fpKxxm4QceA+dtAURgaGpoJXV2NhZzBTYrmQokdECMiSYaFk9RqSYbCmRbZwfHgzlpKLpEoLydxEdrAAL1vFYouBtOCdf2poMhI4WE6GpN06CXceP8MsHqZyQ5ZkTvParQ5KpV4AWp2LRMixUMTC7FrPSvE6iZ3cE1Uh/XoImbvYZwMR+FxaUX3/T9Zt7nKA+SpTANwX2WQzfQ5SJNPnAsztg6txHWQVVDhmUe2t6q4ymyLEJLQ9aYNVdOwvD1H29Gq7T0Jqgtu2XIaP+wnQ0jrsr+bZ/EYaNF1D58a35YywU/m1QBYsVUdd8Chnm7gxMG6RNz+dQ6aHFbDURMPoAcA5GJI8woLIco5qE/OPdX63B2xRXYtGwvtVaf+AURdutV3r6jW0tod3WnfsbamugE9inDxm0catbJdRB80OfTB02BuRAq/s2dBiD11Sl7vL3G+3Oysp0ugnXV21AaGTUdttH9uJc28EJZo6MdWGqhwSLv9fdHRuJ7W7wW463b0oIpqP/LHTc7IxHwaCKBNQdK7nIK/EPhgHkaWd7T1pjYPf1Q9Dj7kqotzHe2qt4N2MDyImwBsw2aKMtySu9GWV1unjth9JCrfQfdmV5dWamnppr60/Pt4E8jdOxTTnOSdV0DGVgx9miN6HsTVCxFs/BTwCcOdtoC/U82e3MEAPgEajLfj+eCkOWE9L0BmETY5a9bvjGm8U1kTXmWe35Jdee0pbXUiHTzZBlaFgf5wdy5NwsVvWLB5m2AOhGa2ZQrwNIHzSJdZ6nyR+kR1gOkAgM3Mw9ZqHKCzP4UUvV5dq+m152jkmoQYPV+ANjuwmvju56503mzR9Iq+gBsc/gin8UEPAv2O6LFvB08Iy+hJWBzsrTuHqy2P9yJPmPaVRJskGYuIsWWGdTYewGKuX7G1V9+aOu0WWxpPyiy5GWsGmtQEg9wmtJKeGnoAVsW+piALsZni4mby+PiIMhzCkMF58DMDfFVy3lfBVxKdjUU8Cqb/iPiZLfOQ6nRsQI+C5raXlw/enf70lly80XG2dI7KNXUa2n2kHeFjRjp7KdhEFt6imob1O053xOIob2eThSTnUoA6BTaukTvgI8pMJBEAeQts6SY8mgb14k9jW9ZLAyclJeXjVPgcgOyJr4Fq8KFKtvXQ27ZtMw4ZMmQbJH4cPmhM+PFI+3lJfU7xhtTVms42f+p8CG3c05VW/qsndHAElcN0Y9UwfMCvNObuQ/BzlwFk214mid1MgZr7RZd9l7kVKuNF8MaSXYOvSkfs2LGDPZI+DXbY8s58WMxDAJL1nhqb4iv4Kj8rPT29zHp02NvjseCPUFen0YixGU9v7g/Jft5Cg+M6/VoUTocKWpuOzMVl/CyuBP6UN7HHGYrv/Bv8ybzD2Q+sk1ldWCQZc07GnO+Dmr/tSIY0m6wP+729V+szoJlFgD0JYH/AeSyqBPFDLPJ7+Bbyg4ODC6AXFdw0v47mFxHRJNN6RRcbQoOqxxWXBbTHCZJgCnJ3UwgOrMWlrp4Gdj9NrUNtnFAWInPKJhxbF5aND2MLXD5MR5qBiGevGg9zbqlNN58VfQo0cw0J4l39NSzud9arAOhsb/EGFIg2HOfs+KgBfqeIUurR4aKI63SROrUpsat/LePiCGSAC3c7PMvvWuxkbps3b17bqqqqTzDP/VzG3KmQ5CzOX6vgc6AtC4HLNBF6mxeagNgPi460tJnTGtRpAQLzVI5kaUBAwOtvTv7KwLfVhItUPIqOgCkKsn/l+G76D4osArCnoD82U4DylYg+cMkyLt4YDUzJMRgrE2NHoP484rhFixZ9baG5Vuk1A9p2QXyFxHX4dkLR6/USoBjwtVBcbW3te6hO4jYA9AsAWop0JSSwmOvcCXPmzAnF/1/4IML6vgP3wRibsE88hT8EneXytQ7XDWhnC4XeZrOQbVyTJwggwTtG3yKyB5FdmYdgIrLTQosH4w9Q+YDUC/vBINAOQn4A2ky+WJQPIGbiwnU5Use7Jjr4MtyQQPOCzZemfM00FkX++5snNr9EP/amZeFN2IT0ugevAR01oyJbqsQafaZukbdXZd7MWL+z39gUAXwrgMmSzrqdz9knUc5B3Al1tPOtt97yuW2MOd0OXgGa/+NRUVDJH5ys12cFJbs9+/8RYbOAxleWOiqrWAr/UW9gBknjP87IbPzX48szWbpraj7d6M+sWU4ldA4gKdhxBLOLg1TDlo3Fq9zZVLz5U49AsyTaMkqnuTK8rrbyPMob9QuCHrTU30wbEGiWRFuGKXxb4OqZCjHYfkvdzdRHCLC+hsrwyhviIxav67D/AcNk7vmq9rXpAAAAAElFTkSuQmCC" alt="">
+                <figcaption class="al-footerBarItemTitle">
+                    发现
+                </figcaption>
+            </a>
+            <a class="al-footerBarItem al-release">
+                <figure class="al-releaseBtn">
+                    <img src="data:image/png;base64,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" alt="">
+                </figure>
+                <figcaption class="al-footerBarItemTitle">
+                    发布
+                </figcaption>
+            </a>
+            <a href="/pages/message/message_main.html" class="al-footerBarItem">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAABJJJREFUWAnlmVtoVFcUhpOZdMSEQCs+6EiR4ENNU8Ti5SEYH3yoGmhzp4hVa1WigoIXaL08WupTK5ZqW/ShBNpC7iS1CbQPXki9DC1qB1KkJFUIKupDUMx9/LacNewZz9ln53imVTpwWGvttda//qy9zzn77OTlvWS//LD59vb2Fg0PD/eAuzAajW6ora1Vemi/SGhIDhBkV6Ku4Jo9OTm5I2z80Ann5+fPEJLoc1tbW+eLHYYsCAPECyOVSi3jGmxubr4N+R6uE3V1dVe84m3GA6/h9vb2xUz5eop8W19ff0OKtbS0LILkVbFd5AWIbycn6eLzHQq0JJjmDycmJn6D2H6uc3oViFyLRCKbIfUD10V8D3Q/+gpyfqfrB7PGrcxpdZhCUTp4HOSdgg6pK5BcLna2JCfCbFRMTU1twLcJW1+G35C7E4yp7DwvW0/2ikmP09kjGDrZPwoKCurSAS6KQ+YsrrMdHR2fMzNfQ7rCCW0EM4Vu/TSx7jCdfRfgToo9zYFIUzwebywvL3/sFLcSiUTilcHBwZPgbJEEltBGbsYmsU3SinBnZ2d8fHw8SZFXFRhk25hKY2dNRZWPBnwP3jon7lEsFltQVVV1xy/P6qZjGndrZG8UFhZu9gP28zM7qsPXnbiisbGxQ345yu9LuK+vbyY3zDYBg/iOysrKYbGDSrWUWAp7tfzGrq6u2ZrtqvoSHhoa+oDMWU729YaGhl9dkQIMsm5/YXmdd1Jjo6Oj7/nB+BKmo6sEhI58JXpYEsI/aljVmu6q+hIG8E3JhPwF0UOUP2lYb2u6q2okDMEoWW+oTIhPlJaWpl/BrmgBBtl+3gR7VKVSL55MJmMmGCPh7u7ueYDI7uufsrKyMRNYEB9kKZG65eRG+vv755pwjIR51OhvwtDJCjFIj4uOVLPq+TMS5iazerF4ogdw+NU0Eg5QL+cpLwRhtYht/1JrwtMBtS0eJM6acBDwXOQYCfvdALkg5IdpJMymx3pt+RWy9fs1yUjYL9mWRJhxRsJhFgoLy0iYJ8NMKcTbyPpDUXJspXo9S6xeU8Z0aSTMl8YBCQboT9FzINPYfIp9bML3JNzW1rYGkvLNlcfX8RcmoOf06djr+d5b7YXnSphd2muc6pyWJKbsu5qamstihy35oL1EjSbBpVGnFQexdelKeGRk5CRBcRUI0F2eFvv0pFzo1NijajnY8xwOz5R6hjDT8RF/4fsSib6FTfZ9sXMlnRpbBV9xUFzEFpmxfSRgIYEJnEVOwKmSkpL0SY8k5VIODAycAF+Iq/OKJZxX/CU19Q26GjvFJWSVvRUASVb2v/1T5xVfUvQdKZyxJOjuW+J4USTrepnOJYMwC18dgd7TA/5j/SH1D+scMtaw7piOzto/w+ysVTl05ACPqaOSj+8TfJ85vp/xVYoviMxew0EwFMlWIYz8FJJzADrPVYG9S0BVnOhBZSgdVsUh2QM5zzcUZHvp7pqgRCUvYw3LYBBZXFysjl+PcWVvkpR9zPEHgc7ICa3Dgsop++u81pey+V/ATfw3/1xMVFdXy0GJhP1/5BM+nJd7A4NsnQAAAABJRU5ErkJggg==" alt="">
+                <figcaption class="al-footerBarItemTitle">
+                    消息
+                </figcaption>
+            </a>
+            <a href="javascript:;" class="al-footerBarItem active">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAA2VJREFUWAntmE9IFHEUx9+b1SQviUrtIgRRkbpeQjom9McIKvKSRHQo8s8xSoiOnYOgLtWaHrpE5aUoiKhACoIOIoSt0K3AdldIStJUnHm9N8KU6+7M74272xD9YGHn93u/7/vMm/f7/d4MwP9W3ghgKeSJCFuHM3vRweMOQQeLNgFSAxB+JYApC+E1WfQ4fS7xBhG5K3xbN3DLYO4gkH2VKXYHYbCzccDYpcm+LS+DbIuNhwY+8ZBiE98y14jgfDHxYv2IcKOtLjEw0o12MZti/aGAV2CzjzgVjhYTDurn1HjaVhfv0kJbQcKFxlciGx5WNOVmRaeQvl+fOsKSs0T2Cz9RzRhirFOT06oIy24gC0wDFGgrC1Z0DZsKWLYuk93A0LdrJnqiazpHBQyO1WUqrLGT/dvUXgXMj844EqYAYieHjam9CpgTrclUWGOn0VUBu8ethsTUVo5xw6YD5trAUFdnptBVAfOKntKRmFlrdFXAUnWZIeisNLoqYCkRdShm1hpd4xNGXMuJ1DqYGSvl4cEA4+m+RLtpnayKsCvK9axZ3AytWM8UVhRVwDJBChWpZ+X/epvoaAof8acGlkk2bbjNUfko/0M3hLdSxGvnq3I4OZjZw8foZc5hriko1M2uAkR8b1l4Md0Tf7Wq3+fCCLj57mwDLsxfJ3BO+2iFHuKndd+qjl34cHZzNkgkEDiZyuxzAO4RUDxIbD3jCJjlX1e6P/7OT8f3sSaHsscY9nm5YQVQfDjojCZT2VN+wEUj3HIn10mO/YQn1/gJlH4MHY7iyXR/YqSQdkHglqEvHWDDM15ctYUmVaBvscrCwxO9idF8X2uA21OzjXPwY5ING/ONK3nNe/SMVV2VzF+Ia3J4Hufk1fuvwkpg+ANNvbO0fCs/SKsiXOpX+HxnYa4twO4/89mL8BXig4Dsm2FEyzmH1xGj/f4M4AE/GJo+wIM7y+k8jDZvd61twznvk5gHzFvYmTCClZjj2OR9cHRzuD01s2kOFjLsfGMlALQ++ARcroWaxrH++u9uhBdg6UhUYeXmOC2qfsLiIfnvAtvgJOUiyo2X3X7hc4E55M1Rhl1ho+0eMCDsij4wbvOAeZ/bEX1g2uoB81YxHXlggpwHbGGsl6E/RxWa30g+EcR6osr3b3H9AjBWE9O5984zAAAAAElFTkSuQmCC" alt="">
+                <figcaption class="al-footerBarItemTitle">
+                    我的
+                </figcaption>
+            </a>
+        </footer>
+
+    </section>
+    <!-- 头像上传 -->
+    <section class="al-middleTipsBox ev-showStatus" style="display: none">
+        <section class="al-middleTipsModal al-uploadFigureBox ">
+            <figure class="al-middleTipsModalText al-loading" style="display: none">
+                <img src="//img50.allinmd.cn/pages/default/loading.png" alt="">
+                <p>正在上传头像</p>
+            </figure>
+            <figure class="al-middleTipsModalText al-loadingFinish">
+                <img src="//img50.allinmd.cn/pages/default/loading_finish.png" alt="">
+                <p>上传成功</p>
+            </figure>
+        </section>
+    </section>
+
+    <!--上传头像-->
+    <section class="al-mainInner ev-uploadInner" style="display: none">
+        <!-- 头部信息 -->
+        <header class="al-personalChangeImgHeader">
+            <h2><a href="javascript:;" class="al-personalChangeImgBack ev-backMain"><img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt=""></a>个人头像</h2>
+        </header>
+        <section class="al-personalChangeImgInner">
+            <figure class="al-personalImg">
+                <img class="ev-bigLogo" src="" alt="">
+            </figure>
+        </section>
+        <figure class="al-personalChangeImgBtn">
+            <button>更换头像
+                <input type="file" name="file" class="al-personalChangeImg" id="ev-uploadBtn">
+            </button>
+        </figure>
+    </section>
+
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+    <script src="/js/third-party/swiper/swiper-3.4.2.min.js"></script>
+    <script src="//paas.allinmd.cn/compose/aph5_sbin/seed.js"></script>
+    <!--<script src="//paas.allinmd.cn/modules/show_big_img/1.1/showBigImg.js"></script>-->
+    <script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+    <!--<script src="//paas.allinmd.cn/modules/allinmdplayer/video.js"></script>-->
+    <!--<script src="//paas.allinmd.cn/modules/allinmdplayer/videojs.allinmd.js"></script>-->
+
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/third-party/ajaxfileupload.js"></script>
+    <script src="/js/scene/personal/personalCommon.js"></script>
+    <script src="/js/modules/module.listTemplate.js"></script>
+    <script src="/js/scene/personal/personalAction.js"></script>
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+    <script src="/js/social_intercourse/social.js"></script>
+
+</body>
+
+</html>

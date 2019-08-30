@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- build-css: base.css -->
+    <link href="/css/common/base.css" rel="stylesheet" type="text/css"/>
+    <!-- endbuild -->
+
+    <!-- build-css: lib.css -->
+    <link href="/js/modules/video-case-pk/module.video-case-pk.css" rel="stylesheet" type="text/css">
+    <link href="/js/modules/publish/publish.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/user/module.user-v2.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/auth/module.auth.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/modules/indexLogin/module.indexLogin.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/plugins/reply-remind/plugin.reply-remind.css" rel="stylesheet" type="text/css"/>
+    <!-- endbuild -->
+
+    <link href="/js/third-party/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>
+    <!-- build-js: base.js -->
+    <script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/lib/jquery/jquery.cookie.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/comm.customer.js"></script>
+    <script src="/js/comm/comm.cutArray.js"></script>
+    <script src="/js/comm/comm.checkAddress.js"></script>
+    <script src="/js/comm/comm.file.js"></script>
+    <script src="/js/comm/comm.lightBox.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm.textChange.js"></script>
+    <script src="/js/comm/comm.ajaxExistHtml.js"></script>
+   <!-- <script src="/js/scene/scene.header.js"></script>-->
+    <!-- endbuild -->
+
+    <!-- build-js: lib.js -->
+    <script src="/js/modules/user/module.user.js"></script>
+    <script src="/js/modules/auth/module.auth.js"></script>
+    <script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+    <script src="/js/plugins/ui-card/plugin.ui-card.js"></script>
+    <script src="/js/plugins/top-tip/plugin.top-tip.js"></script>
+    <script src="/js/plugins/reply-remind/plugin.reply-remind.js"></script>
+
+
+    <script src="/js/modules/video-case-pk/module.video-case-pk.js"></script>
+    <script src="/js/modules/publish/module.select-type.js"></script>
+    <script src="/js/modules/publish/module.case-upload.js"></script>
+    <script src="/js/modules/publish/module.video-upload.js"></script>
+    <script src="/js/modules/publish/module.topic-upload.js"></script>
+    <script src="/js/modules/publish/module.doc-upload.js"></script>
+    <!-- endbuild -->
+
+    <script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+    <script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+    <script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+    <script src="/js/third-party/uploadify/jquery.uploadify.js"></script>
+    <script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+    <script src="/js/third-party/ajaxfileupload.js"></script>
+    <script src="/js/third-party/qiniu/qiniu.js"></script>
+    <script src="/js/third-party/qiniu/ui.js"></script>
+    <script src="/js/third-party/plupload/plupload.full.min.js"></script>
+    <script src="/js/third-party/plupload/i18n/zh_CN.js"></script>
+
+    <style>
+        body{
+            padding: 200px;
+
+        }
+        .test{
+            width: 100px;
+            height: 40px;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            module.videoUpload({
+                videoBtn:$("#btn1"),//创建点击btn
+                //container:$(".personal_content"),//存放弹层的外层
+                top:126,//弹层top值
+                //userImg:"",//是否有用户头像
+                needAuth:1,
+                callback:function(){},//回调函数
+                publishBack:function(){}
+            });
+
+            module.caseUpload({
+                editBtn:$("#btn2"),//创建点击btn
+                //container:$(".personal_content"),//存放弹层的外层
+                top:126,//弹层top值
+                //userImg:"",//是否有用户头像
+                //needAuth:1,
+                publishBack:function(){}
+            });
+
+            module.topicUpload({
+                topicBtn:$("#btn3"),//创建点击btn
+                //container:$(".personal_content"),//存放弹层的外层
+                top:126//弹层top值
+                //userImg:"头像地址"/是否有用户头像
+            });
+        })
+    </script>
+</head>
+
+<body>
+<input type="button" value="上传视频" id="btn1" class="test"/>
+<input type="button" value="上传病例" id="btn2" class="test" caseId="1503886402955"/>
+<input type="button" value="上传话题" id="btn3" class="test"/>
+
+</body>
+</html>

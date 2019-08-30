@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>验证成功</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/personal/updateEmailSuccess.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_mailBoxSuccess.css">
+    <!--endbuild-->
+</head>
+
+<body>
+<section class="al-mainInner">
+    <section class="al-contentBox">
+        <article class="al-validateResult">
+            <i class="icon-validateSuccess"></i>
+            <article class="al-validateContent">
+                <h2>恭喜你，邮箱验证成功</h2>
+                <p>你的登录邮箱为:<span id="email"></span></p>
+            </article>
+        </article>
+        <figure class="al-validateBtn btn-primary-lg">
+            <a href="/">进入唯医</a>
+        </figure>
+    </section>
+</section>
+</body>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<!--build:js /dest/pages/personal/updateEmailSuccess.js-->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+
+<!--endbuild-->
+<script>
+    var email = comm.getpara().account;
+    $("#email").text(email);
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+    if(IsPC()){
+        window.location.href='//www.allinmd.cn/pages/singlePage/user/passport/reset_password_success_new.html?account='+email;
+    }
+</script>
+
+</html>

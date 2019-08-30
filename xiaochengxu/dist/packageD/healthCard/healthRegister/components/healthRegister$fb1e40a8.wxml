@@ -1,0 +1,15 @@
+<import src="/components/BasePickerNational$be5153d8" />
+<import src="/components/BasePickerCity$e4028b66" /><template name="healthRegister$fb1e40a8">
+  <view class="_section data-v-081a37b1 regist-main">
+    <view class="_section data-v-081a37b1 title">注册居民健康卡，有利于医生了解您的病情</view>
+    <view class="_section data-v-081a37b1 registInfo-content">
+      <view class="_section data-v-081a37b1 registInfo-item"><label class="_span data-v-081a37b1 registInfo-itemType">姓名</label> <input class="_input data-v-081a37b1 registInfo-itemInput" placeholder-class="{{'placeholderClass'}}" placeholder="请输入姓名" type="text" /></view>
+      <view class="_section data-v-081a37b1 registInfo-item"><label class="_span data-v-081a37b1 registInfo-itemType">身份证号</label> <input class="_input data-v-081a37b1 registInfo-itemInput" placeholder-class="{{'placeholderClass'}}" placeholder="请输入证件号" type="text" /></view>
+      <view class="_section data-v-081a37b1 registInfo-item"><label class="_span data-v-081a37b1 registInfo-itemType">民族</label>
+        <view class="_section data-v-081a37b1 registInfo-itemNational">{{national}}</view> <template bindselectNational="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="BasePickerNational$be5153d8"></template>
+      </view>
+      <view class="_section data-v-081a37b1 registInfo-item"><label class="_span data-v-081a37b1 registInfo-itemType city">所在城市</label> <label class="_span data-v-081a37b1 registInfo-itemCity">{{province}} {{city}}</label> <template binddataChange="handleProxy" wx:if="{{hackReset}}" data-eventid="{{'1'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="BasePickerCity$e4028b66"></template></view>
+    </view>
+    <view class="_section data-v-081a37b1 regist-submitBtn {{[isActived ? 'actived' : '']}}">领取</view>
+  </view>
+</template>

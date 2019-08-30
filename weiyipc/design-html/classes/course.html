@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href='//m.allinmd.cn/pages/discover/discover_index.html';
+        }
+    </script>
+    <title></title>
+    <meta name="keywords" content="医学资源分类，医学资源查找，手术视频,医学文献,病例讨论,骨科,唯医,allinmd">
+    <link rel="dns-prefetch" href="//comm.allinmd.cn">
+    <link rel="dns-prefetch" href="//modules.allinmd.cn">
+    <link rel="dns-prefetch" href="//plugins.allinmd.cn">
+    <link rel="dns-prefetch" href="//other.allinmd.cn">
+    <link rel="dns-prefetch" href="//scene.allinmd.cn">
+    <link rel="dns-prefetch" href="//img00.allinmd.cn">
+    <link rel="dns-prefetch" href="//img10.allinmd.cn">
+    <!-- build:css /dest/discover/discover_index.css -->
+    <link rel="stylesheet" href="/css/v3/base.css" />
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css" />
+    <link rel="stylesheet" href="/css/v3/pageFooter.css" />
+    <link rel="stylesheet" href="/css/v3/pages/classes/classes.css" />
+    <link rel="stylesheet" href="/js/modules/indexLogin/module.indexLogin.css">
+    <link rel="stylesheet" href="/js/modules/auth/module.auth.css"/>
+    <link rel="stylesheet" href="/js/modules/user/module.user.css"/>
+    <link rel="stylesheet" href="/js/modules/user/module.user-v2.css"/>
+    <link rel="stylesheet" href="/js/modules/personYouKnow/personYouKnow.css"/>
+    <link rel="stylesheet" href="/js/modules/find-password-v2/module.find-password-v2.css" />
+    <link href="/js/plugins/top-tip/plugin.top-tip.css" rel="stylesheet" type="text/css" />
+    <link href="/js/modules/publish/publish.css" rel= "stylesheet" type="text/css" />
+    <!--<link href="/js/third-party/uploadify/uploadify.css" rel="stylesheet" type="text/css"/>-->
+    <link href="/js/third-party/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="/css/column/videoPK_v2/apply_zhezhao.css" rel="stylesheet" type="text/css"/>-->
+    <link rel="stylesheet" href="/css/v3/pages/discover/discover_index.css"/>
+    <!--endbuild-->
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--全内容容器——mainInner-->
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-dis_header">
+        <section class="al-headerContainer">
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox">
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar al-mainSidebarCollapse">
+        <header class="al-mainLogo">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+        <section class="al-mainSidebarList">
+            <ul>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>首页</h4>
+                            <p>HOME</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem active">
+                    <a href="//www.allinmd.cn/pages/discover/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find_active.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发现</h4>
+                            <p>DISCOVERY</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>发布</h4>
+                            <p>RELEASE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navMes">
+                    <a href="//www.allinmd.cn/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>消息</h4>
+                            <p>MESSAGE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navIndex">
+                    <a href="//www.allinmd.cn/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                        <figcaption>我的</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>我的</h4>
+                            <p>PROFILE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList">
+                <li class="al-mainSidebarItem al-siteSwitch">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_siteSwitch.png" alt="">
+                        <figcaption class="ev_siteSwitchName">骨科</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4 class="ev_siteSwitchName">骨科</h4>
+                                <p>SITE SWITCH</p>
+                            </div>
+                        </article>
+                    </a>
+                    <div class="al_siteSwitch_popBox">
+                        <div class="al_siteSwitch_orthopaedics"><i></i>骨科</div>
+                        <div class="al_siteSwitch_handSurgery"><i></i>手外科</div>
+                    </div>
+                </li>
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>小唯</h4>
+                            <p>SERVICE</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navPhone">
+                    <a href="//www.allinmd.cn/pages/singlePage/iphone-app-download.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            <h4>手机端</h4>
+                            <p>MOBILES</p>
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <section class="classesCont">
+        <section class="columnLeft">
+            <aside class="header"><img src="/images/img10/v3/classes/ads.jpg"> </aside>
+            <section class="courseIntroduction">
+                <aside class="text">
+                    <p class="title">人工髋关节置换膝关节膝关性关节炎工髋关节关节</p>
+                    <p class="num">浏览数：<span>11111</span><span>6节课</span></p>
+                    <p class="freeTime">限时免费</p>
+                </aside>
+                <aside class="btn"><i></i>收藏</aside>
+            </section>
+            <section class="teacherIntroduction">
+                <aside class="title">讲师简介</aside>
+                <ul>
+                    <li>
+                        <img src="https://img05.allinmd.cn/public1/M00/00/11/wKgBMFdzshuAVHePABTWQCEogzU196.png" alt="">
+                        <p class="name">名字</p>
+                        <p class="doctorTitle">主任医师</p>
+                        <p class="hospital">北京301医院</p>
+                    </li>
+                    <li>
+                        <img src="https://img05.allinmd.cn/public1/M00/00/11/wKgBMFdzshuAVHePABTWQCEogzU196.png" alt="">
+                        <p class="name">名字</p>
+                        <p class="doctorTitle">主任医师</p>
+                        <p class="hospital">北京301医院</p>
+                    </li>
+                    <li>
+                        <img src="https://img05.allinmd.cn/public1/M00/00/11/wKgBMFdzshuAVHePABTWQCEogzU196.png" alt="">
+                        <p class="name">名字</p>
+                        <p class="doctorTitle">主任医师</p>
+                        <p class="hospital">北京301医院</p>
+                    </li>
+                    <li>
+                        <img src="https://img05.allinmd.cn/public1/M00/00/11/wKgBMFdzshuAVHePABTWQCEogzU196.png" alt="">
+                        <p class="name">名字</p>
+                        <p class="doctorTitle">主任医师</p>
+                        <p class="hospital">北京301医院</p>
+                    </li>
+                </ul>
+                <i class="teacherMore"></i>
+            </section>
+            <section class="courseColumn">
+                <aside class="title">课程目录</aside>
+                <ul>
+                    <li>
+                        <aside class="name">1. 脊柱的发生与正常结构</aside>
+                        <p class="listPdf"><i></i>脊柱的发生与正常结构一<b></b></p>
+                        <p class="listVideo"><i></i>唯医最棒唯医最厉害看看这里最多能写几个字我觉得这么长就差不多了...<!--<span>在线观看</span>--></p>
+                        <p class="listVideo"><i></i>唯医最棒唯医最厉害看</p>
+                    </li>
+                    <li>
+                        <aside class="name">1. 脊柱的发生与正常结构</aside>
+                        <p class="listPdf"><i></i>脊柱的发生与正常结构一<b></b></p>
+                        <p class="listVideo"><i></i>唯医最棒唯医最厉害看看这里最多能写几个字我觉得这么长就差不多了...</p>
+                        <p class="listVideo"><i></i>唯医最棒唯医最厉害看</p>
+                    </li>
+                    <li>
+                        <aside class="name">1. 脊柱的发生与正常结构</aside>
+                        <p class="listPdf"><i></i>脊柱的发生与正常结构一<b></b></p>
+                        <p class="listVideo"><i></i>唯医最棒唯医最厉害看看这里最多能写几个字我觉得这么长就差不多了...</p>
+                        <p class="listVideo"><i></i>唯医最棒唯医最厉害看</p>
+                    </li>
+                </ul>
+
+            </section>
+        </section>
+        <section class="columnRight">
+
+            <section class="btnMod">
+                <p>对系列课有什么想法么？</p>
+                <p>快告诉我们</p>
+                <!--button 为按钮-->
+                <button style="display: none;">写下你的想法</button>
+                <aside><textarea placeholder="写下你的想法" class="think"></textarea><span>500</span></aside>
+                <article class="thinkBtn">
+                    <!--未激活时去掉类名 activation-->
+                    <button class="activation">提交</button>
+                    <span>取消</span>
+                </article>
+            </section>
+            <section class="btnMod">
+                <p>安装手机客户端，免费下载视频</p>
+                <button>下载</button>
+            </section>
+            <section class="courseXg ydCourse">
+                <p class="al_dis_professor">相关课程<span class="al-hLine" style="display:inline-block;width:85px;height:1px;background:#E4E9ED;margin:5px;"></span><a href="//www.allinmd.cn/pages/discover/discover_expert.html" class="al_dis_more">换一批</a></p>
+                <ul>
+                    <li>
+                        <figure><img src="/images/img10/v3/classes/ads01.jpg"></figure>
+                        <fieldset>
+                            <p class="title">小儿脊柱退变侧段融合手术标题标…</p>
+                            <p>6课时<span>限时免费</span></p>
+                        </fieldset>
+                    </li>
+                    <li>
+                        <figure><img src="/images/img10/v3/classes/ads01.jpg"></figure>
+                        <fieldset>
+                            <p class="title">小儿脊柱退变侧段融合手术标题标…</p>
+                            <p>6课时<span>限时免费</span></p>
+                        </fieldset>
+                    </li>
+                    <li>
+                        <figure><img src="/images/img10/v3/classes/ads01.jpg"></figure>
+                        <fieldset>
+                            <p class="title">小儿脊柱退变侧段融合手术标题标…</p>
+                            <p>6课时<span>限时免费</span></p>
+                        </fieldset>
+                    </li>
+                    <li>
+                        <figure><img src="/images/img10/v3/classes/ads01.jpg"></figure>
+                        <fieldset>
+                            <p class="title">小儿脊柱退变侧段融合手术标题标…</p>
+                            <p>6课时<span>限时免费</span></p>
+                        </fieldset>
+                    </li>
+                </ul>
+            </section>
+            <section class="ydCourse">
+                <p class="al_dis_professor">医鼎相关课程<span class="al-hLine" style="display:inline-block;width:62px;height:1px;background:#E4E9ED;margin:5px;"></span><a href="//www.allinmd.cn/pages/discover/discover_expert.html" class="al_dis_more">More</a></p>
+                <ul>
+                    <li>
+                        <figure><img src="/images/img10/v3/classes/ads01.jpg"></figure>
+                        <fieldset>
+                            <p class="title">小儿脊柱退变侧段融合手术标题标…</p>
+                            <p>6课时</p>
+                        </fieldset>
+                    </li>
+                    <li>
+                        <figure><img src="/images/img10/v3/classes/ads01.jpg"></figure>
+                        <fieldset>
+                            <p class="title">小儿脊柱退变侧段融合手术标题标…</p>
+                            <p>6课时</p>
+                        </fieldset>
+                    </li>
+                    <li>
+                        <figure><img src="/images/img10/v3/classes/ads01.jpg"></figure>
+                        <fieldset>
+                            <p class="title">小儿脊柱退变侧段融合手术标题标…</p>
+                            <p>6课时</p>
+                        </fieldset>
+                    </li>
+                    <li>
+                        <figure><img src="/images/img10/v3/classes/ads01.jpg"></figure>
+                        <fieldset>
+                            <p class="title">小儿脊柱退变侧段融合手术标题标…</p>
+                            <p>6课时</p>
+                        </fieldset>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </section>
+    <!--公共底部 start-->
+    <!--#include virtual="/includes/footer.jsp"-->
+    <!--公共底部 End-->
+</section>
+<script src='/js/lib/jquery/jquery-1.8.3.js'></script>
+<script src='/js/lib/jquery/jquery.json-2.4.js'></script>
+<script src='/js/lib/jquery/jquery.cookie.js'></script>
+<!-- build:js /dest/discover/discover_index.js -->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/comm.customer.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.lightBox.js"></script>
+<script src="/js/comm/comm.textChange.js" ></script>
+<script src="/js/comm/comm.ajaxExistHtml.js"></script>
+<script src="/js/comm/comm.Log.js"></script>
+<!--<script src="/js/comm/comm.track.js"></script>-->
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.file.js"></script>
+<script src="/js/scene/scene.header.js"></script>
+
+<script src="/js/modules/indexLogin/module.indexLogin.js"></script>
+<script src="/js/modules/find-password-v2/module.find-password-v2.js"></script>
+<script src="/js/modules/user/module.user.js"></script>
+<script src="/js/modules/auth/module.auth.js"></script>
+<script src="/js/modules/user/temp/jquery-auto-mail/jquery-auto-mail.js"></script>
+<script src="/js/plugins/follow/plugin.follow.js"></script>
+<script src="/js/plugins/reply-remindV3/plugin.reply-remind.js"></script>
+<script src="/js/modules/weixin/module.welcome.auth.js"></script>
+<script src="/js/modules/weixin/module.weixin.auth.js"></script>
+<!--<script src="/js/scene/column/videoPK_v2/scene.column.videoPK_2.process.js"></script>-->
+<!--<script src="/js/modules/publish/module.select-type.js"></script>-->
+<script src="/js/modules/publish/module.video-upload.js" ></script>
+<script src="/js/modules/publish/module.doc-upload.js" ></script>
+<script src="/js/modules/publish/module.topic-upload.js" ></script>
+<script src="/js/modules/publish/module.case-upload.js" ></script>
+<script src="/js/plugins/top-tip/plugin.top-tip.js"> </script>
+<script src="/js/modules/personYouKnow/module.personYouKnow.js"></script>
+
+<script src="/js/third-party/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+<script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="/js/third-party/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="/js/third-party/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="/js/third-party/uploadReplace/uploadReplace.js"></script>
+<script src="/js/third-party/uploadify/swfobject2.2.js" ></script>
+<script src="/js/third-party/uploadify/jquery.uploadify.js" ></script>
+<script src="/js/third-party/ajaxfileupload.js" ></script>
+<script src="/js/third-party/qiniu/qiniu.js" ></script>
+<script src="/js/third-party/qiniu/ui.js" ></script>
+<script src="/js/third-party/plupload/plupload.full.min.js" ></script>
+<script src="/js/third-party/plupload/i18n/zh_CN.js" ></script>
+
+<script src="/js/scene/discovery/scene.discover.index.js"> </script>
+<!--endbuild-->
+
+
+<script>
+    $(function(){
+        $('.courseColumn li p').hover(function(){
+            $(this).append('<span>在线观看</span>');
+        },function(){
+            $(this).find("span").remove();
+        })
+    })
+</script>
+</body>
+
+</html>

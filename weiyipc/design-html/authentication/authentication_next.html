@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="/css/v3/base.css" />
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css"/>
+    <link rel="stylesheet" href="/css/v3/pageFooter.css"/>
+    <link rel="stylesheet" href="/css/v3/pages/authentication/authentication.css"/>
+    <script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section class="al-mainInner">
+    <!-- 页头——本页面无超链接-->
+    <header class="al-header al-dis_header">
+        <section class="al-headerContainer">
+            <ul class="al-headerTopNav">
+                <li class="al-backBtn">
+                    <a href="javascript:void(0);">返回</a>
+                </li>
+            </ul>
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord">
+                浏览记录
+                <div class="al-browseRecordBox">
+
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text" />
+                <b></b>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <!--#include virtual="/includes/header.jsp"-->
+    <section class="authentication_next authentication">
+        <header>认证信息</header>
+        <article class="authText">完成这一步，你就可以同十万骨科医师一同交流学习了~</article>
+        <label class="authInput">
+            <span>证件类型</span>
+            <figure class="al-tableItemContent">
+                <article class="al-tableItemRadio ev-authsexId">
+                    <i class="al-tableRadioOff"></i>工作证
+                </article>
+                <article class="al-tableItemRadio ev-authsexId">
+                    <i class="al-tableRadioOff al-tableRadioOn"></i>医师执业证
+                </article>
+                <article class="al-tableItemRadio ev-authsexId">
+                    <i class="al-tableRadioOff al-tableRadioOn"></i>医师执业证
+                </article>
+                <article class="al-tableItemRadio ev-authsexId">
+                    <i class="al-tableRadioOff al-tableRadioOn"></i>医师执业证
+                </article>
+                <article class="al-tableItemRadio ev-authsexId">
+                    <i class="al-tableRadioOff al-tableRadioOn"></i>医师执业证
+                </article>
+            </figure>
+        </label>
+        <label class="authInput">
+            <span>证件编号</span>
+            <figure class="al-tableItemContent">
+                <input type="text" />
+                <article class="authNav">
+                    <span class="active">证件照片上传</span><span class="authWechat">微信提交</span>
+                </article>
+                <aside class="uploadImg">
+                    <div class="photoCont">
+                        <figure><img src="/images/img10/authentication/certificate.png"> </figure>
+                        <figcaption>请按照左侧的规范,上传证件照片，如果证件照有两 面，请上传证件号的一面。</figcaption>
+                    </div>
+                    <figure class="uploadPhoto">
+                        <i></i>
+                        <p>上传证件照</p>
+                    </figure>
+                    <!--上传后的图片 上传中添加类名 uploading-->
+                    <figure class="uploadSuccess">
+                        <aside class="uploading">
+                            <!--loading状态-->
+                            <figure class="uploadingImg" style="display: none">
+                                <i><img src="//img10.allinmd.cn/loading/Loading.png" alt="loading"></i>
+                                <span>20%</span>
+                            </figure>
+                            <!--上传失败状态 重新上传-->
+                            <article class="uploadFail">
+                                <i> 失败</i><i>重新上传</i>
+                            </article>
+                        </aside>
+                    </figure>
+                </aside>
+                <aside class="wechatLogin">
+                    <div class="clearFloat">
+                        <figure><img src="//img10.allinmd.cn/v3/common/icon/footer_erweiCode.png" alt=""></figure>
+                        <article>
+                            <div class="erweima">电脑上传不方便？</div>
+                            <div class="erweimaText">扫描左边二维码，<br/>关注后即可用手机发送证件照片给我们。</div>
+                        </article>
+                    </div>
+                </aside>
+            </figure>
+        </label>
+        <section class="clearFloat">
+            <aside class="authNext">
+                <span>取消</span>
+                <!--激活图标添加 active类名-->
+                <button class="">下一步</button>
+            </aside>
+        </section>
+        <article class="authOther">其它认证方式</article>
+    </section>
+    <!-- 公共页脚部分 -->
+    <!--#include virtual="/includes/footer.jsp"-->
+</section>
+
+</body>
+<script>
+$(function(){
+    $('.authWechat').click(function(){
+        $('.wechatLogin').css('display','block');
+        $(this).addClass('active');
+        $('.authNav span:first-child').removeClass('active');
+        $('.uploadImg').css('display','none');
+    })
+    $('.authNav span:first-child').click(function(){
+        $('.wechatLogin').css('display','none');
+        $('.authWechat').removeClass('active');
+        $(this).addClass('active');
+        $('.uploadImg').css('display','block');
+    })
+});
+</script>
+</html>

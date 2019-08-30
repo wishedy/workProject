@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>教育背景</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="dns-prefetch" href="//m.allinmd.cn"/>
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/personal/education.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_eduBackground.css">
+    <link rel="stylesheet" href="/css/pages/personal/personal_searchHospital.css">
+    <!--endbuild-->
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="342">
+    <section class="al-mainInner ev-mainInner">
+        <!-- 头部信息 -->
+        <header class="al-indexHeader">
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:;" id="backHref">
+                    <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                </a>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <h1>教育背景</h1>
+            </figure>
+            <figure class="al-indexHeaderItem">
+                <a href="javascript:void(0)" class="al-experienceDelete" id="delete" style="display: none">
+                    删除
+                </a>
+            </figure>
+        </header>
+        <section class="al-personalContent">
+            <section class="al-tableModule">
+                <article class="al-tableModuleItem">
+                    <h3>就读城市</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <input type="hidden" id="cityId"/>
+                        <a href="javascript:void(0)" class="al-selectResult" id="city">请选择就读城市</a>
+                    </figure>
+                </article>
+            </section>
+            <section class="al-tableModule">
+                <article class="al-tableModuleItem">
+                    <h3>学校名称</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <input type="hidden" id="universityId"/>
+                        <input type="text" placeholder="请输入学校名称" id="university">
+                    </figure>
+                </article>
+                <article class="al-tableModuleItem">
+                    <h3>所学专业</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <article class="al-tableModuleSelect">
+                            <select id="major">
+                                <option value=0 selected=true>请选择专业</option>
+                            </select>
+                        </article>
+                    </figure>
+                </article>
+                <article class="al-tableModuleItem">
+                    <h3>获得学历</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <article class="al-tableModuleSelect">
+                            <select id="education">
+                                <option value=0 selected=true>请选择学历</option>
+                            </select>
+                        </article>
+                    </figure>
+                </article>
+            </section>
+            <section class="al-tableModule">
+                <article class="al-tableModuleItem">
+                    <h3>开始时间</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <article class="al-tableModuleSelect">
+                            <select class="al-dateSelector" id="sYear" style="color: #333">
+                            </select>
+                            <span style="color: #333">年</span>
+                        </article>
+                        <article class="al-tableModuleSelect">
+                            <select class="al-dateSelector" id="sMonth" style="color: #333">
+
+                            </select>
+                            <span style="color: #333">月</span>
+                        </article>
+
+                    </figure>
+                </article>
+                <article class="al-tableModuleItem">
+                    <h3>结束时间</h3>
+                    <figure class="al-tableModuleItemInput">
+                        <article class="al-tableModuleSelect">
+                            <select class="al-dateSelector" id="eYear" style="color: #333">
+                                <option value="0">至今</option>
+                            </select>
+                            <span style="color: #333">年</span>
+                        </article>
+                        <article class="al-tableModuleSelect">
+                            <select class="al-dateSelector" id="eMonth" style="color: #333">
+
+                            </select>
+                            <span style="color: #333">月</span>
+                        </article>
+                    </figure>
+                </article>
+            </section>
+        </section>
+        <section class="al-saveBtnBox">
+            <button class="btn-primary-lg save">
+                保存
+            </button>
+        </section>
+        <!-- 底部选项 -->
+        <section class="al-bottomSelectorListMask" id="backMask">
+            <section class="al-bottomSelectorListBox">
+                <section class="al-bottomSelectorList">
+                    <figure class="al-bottomSelectorItem active save"><a href="javascript:void(0)">保存</a></figure>
+                    <figure class="al-bottomSelectorItem giveup"><a href="javascript:void(0)">放弃</a></figure>
+                </section>
+                <section class="al-bottomSelectorList mgt">
+                    <figure class="al-bottomSelectorItem cancel" id="EV-cancelUploadImg"><a href="javascript:void(0)">取消</a></figure>
+                </section>
+            </section>
+        </section>
+    </section>
+
+    <!--城市筛选-->
+    <section class="al-mainInner ev-cityInner" style="display: none">
+        <!-- 头部信息 -->
+        <header class="al-searchHead">
+            <header class="al-indexHeader">
+                <figure class="al-indexHeaderItem ev-backToMain">
+                    <a href="javascript:;">
+                        <img src="//img50.allinmd.cn/pages/personal/arrow_back.png" alt="">
+                    </a>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                    <h1>就读城市</h1>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                </figure>
+            </header>
+            <article class="al-searchTips ev-sProvince">
+                <span class="backTitle">选择省份</span>
+            </article>
+            <article class="al-searchTips ev-sCity" id="cityBack" style="display: none">
+                <i class="icon-backArrow"></i><span class="backTitle"></span>
+            </article>
+
+        </header>
+        <section class="al-searchResult ev-sProvince" id="sProvince" style="margin-top: 2rem;">
+
+        </section>
+        <section class="al-searchResult ev-sCity" id="sCity" style="margin-top: 2rem;">
+
+        </section>
+    </section>
+
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <script src="/js/third-party/fastclick.js"></script>
+    <!--build:js /dest/pages/personal/education.js-->
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/log.js"></script>
+
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/modules/module.addCity.js"></script>
+    <script src="/js/third-party/ymd.js"></script>
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination.js"></script>
+    <script src="/js/scene/personal/education.js"></script>
+    <!--endbuild-->
+</body>
+
+</html>

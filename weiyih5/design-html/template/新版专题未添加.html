@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title><#if colTheme.seoName ??>${colTheme.seoName}</#if></title>
+    <meta name="description" content="<#if colTheme.seoSummary ??>${colTheme.seoSummary}</#if>">
+    <meta name="Keywords" content="<#if colTheme.seoKeyWord ??>${colTheme.seoKeyWord}</#if>">
+
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/column/specialTemplate/specialTemplate.css">
+    <link rel="stylesheet" href="/css/column/specialTemplate/questionnaire.css">
+    <link rel="stylesheet" href="/css/column/specialTemplate/newsModule.css"/>
+    <link rel="stylesheet" href="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.css">
+    <link rel="stylesheet" href="/js/third-party/photoswipe/photoswipe-master/dist/default-skin/default-skin-new.css">
+    <script src="/js/third-party/flexible.js"></script>
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            var sharePos = location.search;
+            window.location.href="<#if showPagePath??>${showPagePath}</#if>"+sharePos ;
+        }
+    </script>
+    <#assign  textColorYesOne="#2899E6">
+        <#assign  textColorYesTwo="#2899E6">
+            <#assign  textColorNoOne="#666">
+                <#assign  textColorNoTwo="#666">
+                    <#assign  bgColorYesOne="#fff">
+                        <#assign  bgColorYesTwo="#fff">
+                            <#assign  bgColorNoOne="#fff">
+                                <#assign  bgColorNoTwo="#fff">
+
+                                    <style type="text/css">
+                                        .textColorYesOne{color:${textColorYesOne};}
+                                        .textColorNoOne{color:${textColorNoOne};}
+                                        .textColorYesTwo{color:${textColorYesTwo};}
+                                        .textColorNoTwo{color:${textColorNoTwo};}
+                                        .bgColorYesOne{background:${bgColorYesOne};}
+                                        .bgColorNoOne{background:${bgColorNoOne};}
+                                        .bgColorYesTwo{background:${bgColorYesTwo};}
+                                        .bgColorNoTwo{background:${bgColorNoTwo};}
+                                    </style>
+</head>
+
+<body>
+<input type='hidden' value=''  id='shareLoc'/>
+<input type="hidden" value="${colTheme.themeId?c}" id="themeId" />
+<!--banner和nav-->
+<section class="spTemp_total_up">
+    <header class="spTemp_total_banner">
+        <figure class="spTemp_total_bannerImg">
+            <img src="<#if colTheme.webBannerUrl??>${colTheme.webBannerUrl}</#if>">
+        </figure>
+        <a class="backToHome" href="//m.allinmd.cn" data-ajax="false">首页</a>
+    </header>
+    <#if (colThemeMenuList1??)&&(colThemeMenuList1?size>0)>
+        <#assign navAll=0 />
+        <#list colThemeMenuList1 as menuList1>
+            <#if menuList1.siteId==2>
+                <#assign navAll=navAll+1 />
+            </#if>
+        </#list>
+    </#if>
+
+    <section class="spTemp_total_nav" <#if navAll<=1>style="display:none"</#if>>
+    <ul class="spTemp_total_nav_list">
+        <#assign  textColorYesOne=0>
+            <#if (colThemeMenuList1??)&&(colThemeMenuList1?size>0)>
+                <#assign navOne=0 />
+                <#list colThemeMenuList1 as menuList1>
+                    <#if menuList1.siteId==2>
+                        <#assign navOne=navOne+1 />
+                        <#assign  hasTwoMark=0>
+                            <#if (colThemeMenuList2??)&&(colThemeMenuList2?size>0)>
+                                <#list colThemeMenuList2 as menuList2>
+                                    <#if menuList1.themeMenuId==menuList2.menuParentId>
+                                        <#assign  hasTwoMark=1>
+                                    </#if>
+                                </#list>
+                            </#if>
+
+                            <li  <#if hasTwoMark==1> class="nav_cut_hasTwo nav_cut_hasTwo_up"</#if>>
+                            <#if menuList1.contentType==2&& hasTwoMark==0>
+                                <a  <#if textColorYesOne==0>class="textColorYesOne"</#if> href="${menuList1.url}" data-type="${menuList1.contentType}" data-themeMenuId="${menuList1.themeMenuId?c}"
+                                data-layoutId="${menuList1.layoutId?c}"  <#if menuList1.url?index_of("allinmd")==-1>target="_blank"</#if> data-navText="${navOne}" >${menuList1.menuName}</a>
+                                <#else>
+                                    <span  <#if textColorYesOne==0>class="textColorYesOne"</#if> data-href="${menuList1.url}" data-type="${menuList1.contentType}" data-themeMenuId="${menuList1.themeMenuId?c}"
+                                    data-layoutId="${menuList1.layoutId?c}" data-navText="${navOne}" >${menuList1.menuName}</span>
+                            </#if>
+                            <#assign  textColorYesOne=1>
+                                <#if (colThemeMenuList2??)&&(colThemeMenuList2?size>0)>
+                                    <#assign num = 10 />
+                                    <#list colThemeMenuList2 as menuList3>
+                                        <#if menuList1.themeMenuId==menuList3.menuParentId>
+                                            <#if num==10>
+                                                <section class="spTemp_total_nav_lists_two">
+                                                    <i class="spTemp_total_nav_lists_two_topArrow"></i>
+                                                    <dl class="bgColorNoTwo">
+
+                                                        <!--<dd class="textColorNoTwo"  data-href="${menuList1.url}" data-type="${menuList1.contentType}" data-themeMenuId="${menuList1.themeMenuId?c}" data-layoutId="${menuList1.layoutId?c}" data-navText="${navOne}" ><#if menuList1.contentType==2><a href="${menuList1.url}" <#if menuList1.url?index_of("allinmd")==-1>target="_blank"</#if>>${menuList1.menuName}</a><#else>${menuList1.menuName}</#if></dd>-->
+
+                                                        <#assign navTwo=0 />
+                                                        <#list colThemeMenuList2 as menuList4>
+                                                            <#if menuList1.themeMenuId==menuList4.menuParentId>
+                                                                <#assign navTwo=navTwo+1/>
+                                                                <dd class="textColorNoTwo" data-href="${menuList4.url}" data-type="${menuList4.contentType}" data-themeMenuId="${menuList4.themeMenuId?c}" data-layoutId="${menuList4.layoutId?c}" data-navText="${navOne}${navTwo}" ><#if menuList4.contentType==2><a href="${menuList4.url}" <#if menuList4.url?index_of("allinmd")==-1>target="_blank"</#if>>${menuList4.menuName}</a><#else>${menuList4.menuName}</#if></dd>
+                                                            </#if>
+                                                        </#list>
+                                                    </dl>
+                                                </section>
+                                            </#if>
+                                            <#assign num = 11 />
+                                        </#if>
+                                    </#list>
+                                </#if>
+
+                                </li>
+                    </#if>
+                </#list>
+            </#if>
+    </ul>
+    <button class="spTemp_nav_more spTemp_nav_more_spread"></button>
+</section>
+</section>
+<section class="spTemp_total_down">
+
+</section>
+<section class="al-scrollShareBtn Ev-ShareBtn">
+    <i class="icon-scrollShare"></i>分享
+</section>
+<script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/comm/jweixin-1.0.0.js"></script>
+<script src="/js/comm/WeixinJSApi.js"></script>
+<script src="/js/comm/Weixin_share.js"></script>
+<script src="/js/comm/shareAll.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.cutArray.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/third-party/fastclick.js"></script>
+<script src="/js/social_intercourse/share.js"></script>
+<script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.js"></script>
+<script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe-ui-default.js"></script>
+<script src="/js/third-party/jquery.plugin.picshow.js"></script>
+<script src="/js/third-party/jquery.plugin.picshow-comment.js"></script>
+<script src="/js/third-party/gssdk.js"></script>
+<script src="/js/third-party/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="/js/scene/live/gensee/lang.zh_CN.js"></script>
+<script src="/js/scene/live/gensee/new-player.base.js"></script>
+<script src="/js/scene/live/gensee/new-player.common.js"></script>
+<script src="/js/scene/live/gensee/new-player.survey.js"></script>
+<script src="/js/scene/live/gensee/webplayer.common.js"></script>
+<script src="/js/scene/live/gensee/new-player.chat.js"></script>
+<script src="/js/scene/live/live_common.js"></script>
+
+<script src="/js/column/specialTemplate/iscroll.js"></script>
+<script src="/js/column/specialTemplate/column.specialTemplate.comn.js"></script>
+<script src="/js/column/specialTemplate/specialTemplate.js"></script>
+<script src="/js/column/specialTemplate/questionnaire.js"></script>
+</body>
+
+</html>
+<script>
+    $(function(){
+        $.ajax({
+            type:"post",
+            url:"//m.allinmd.cn/mcall/log/customer/browse/createBrowse/",
+            data:{paramJson:$.toJSON({browseUrl:window.location.href,browseType:34,opDesc:"专题页面"})},
+            success:function(){}
+        });
+    })
+</script>                                    

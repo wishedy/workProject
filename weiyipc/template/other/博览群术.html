@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="病例专题，视频专题，播览群术合集，骨科专题，学术专题，文献专题，手术汇总，">
+    <title>博览群术合集</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<link rel="dns-prefetch" href="//comm.allinmd.cn">
+	<link rel="dns-prefetch" href="//modules.allinmd.cn">
+	<link rel="dns-prefetch" href="//plugins.allinmd.cn">
+	<link rel="dns-prefetch" href="//other.allinmd.cn">
+	<link rel="dns-prefetch" href="//scene.allinmd.cn">
+	<link rel="dns-prefetch" href="//img00.allinmd.cn">
+	<link rel="dns-prefetch" href="//img10.allinmd.cn">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+	<link href="//comm.allinmd.cn/base.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href='//m.allinmd.cn/html/m/album/2016/04/08/1460113285067.html';
+        }
+    </script>
+</head>
+<body>
+<!--#include virtual="/includes/header.jsp"-->
+    <div class="expo_wrap">
+        <!--banner-->
+        <div class="expoTitle">
+            <div class="titleMain"></div>
+        </div>
+        <!--content-->
+        <ul class="expoUL">
+        	<#if (conferenceList??)&&(conferenceList?size>0)>
+				<#list conferenceList as list>
+					<#if list.conference??>
+					
+						<li>
+			                <div class="expoMain">
+			                    <div class="expoMainLeft">
+			                        <a  class="epxBgTit" href="<#if list.menuUrlAllin??>${list.menuUrlAllin}</#if>"><img src="<#if list.conference.conMainPicUrl??>${list.conference.conMainPicUrl}</#if>" alt=""/></a>
+			                        <div class="expoLabel"><a href=""><img src="//img00.allinmd.cn/column/expo/label<#if list.periodNum??>${list.periodNum}</#if>.png" alt=""/></a></div>
+			                    </div>
+			                    <div class="expoMainRight" >
+			                        <div class="listName"><a href="<#if list.menuUrlAllin??>${list.menuUrlAllin}</#if>"><#if list.conference.conName??>${list.conference.conName}</#if></a></div>
+			                        <div class="speaker">主讲人：<#if list.lecturer??>${list.lecturer}</#if><span>
+                                                       时间：<#if list.conference.startTime??>${list.conference.startTime}</#if></span></div>
+			                        <ul class="playCont">
+			                        	<#if (list.videoList??)&&(list.videoList?size>0)>
+			                        		<#list list.videoList as videoList>
+			                        			<li>
+					                                <a class="lcon" href=""><img src="//img00.allinmd.cn/column/expo/playbtn02.png" alt=""/></a>
+					                                <a class="playText" href="<#if videoList.pageStoragePath??>${videoList.pageStoragePath}</#if>">
+					                                	<#if videoList.videoName?length gt 24>
+								                              ${videoList.videoName?substring(0,24)}...
+								                        <#else>
+								                             ${videoList.videoName!''}
+								                        </#if>
+					                                </a>
+					                                <a class="playbtn" href="<#if videoList.pageStoragePath??>${videoList.pageStoragePath}</#if>"><img src="//img00.allinmd.cn/column/expo/playbtn01.png" alt=""/></a>
+					                                <div class="clear"></div>
+			                            		</li>
+			                        		</#list>
+			                        	</#if>
+			                        </ul>
+			                    </div>
+			                    <div class="clear"></div>
+                                             <#if list.periodNum??>
+			                    	<#if list.periodNum!='01'>
+			                    		<div class="expoLine"><img src="//img00.allinmd.cn/column/expo/expoLine.png" alt=""/></div>
+			                    	</#if>
+			                    </#if>
+			                </div>
+			            </li>
+					</#if>
+				</#list>
+			</#if>
+	
+        </ul>
+    </div>
+<!--#include virtual="/includes/footer.jsp"-->
+</body>
+</html>

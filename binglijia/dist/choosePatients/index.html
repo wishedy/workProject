@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href='//m.allinmd.cn';
+        }
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"
+    />
+    <meta name="Keywords" content="vue2 multiple entry" />
+    <meta name="Description" content="vue2 multiple entry" />
+<link href="/static/css/choosePatients.e77d7be.css" rel="stylesheet"></head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/javascript" src="//paas.allinmd.cn/modules/sps/lib/jquery-1.8.0.min.js"></script>
+    <!--为保证IE8下正常使用，需要引入-->
+    
+        <script>
+            window.onload = function () {
+                var script = document.createElement('script')
+                var firstScript = document.getElementsByTagName('script')[0]
+                script.type = 'text/javascript'
+                script.async = true
+                script.src = '/sw-register.js?v=' + Date.now()
+                firstScript.parentNode.insertBefore(script, firstScript)
+            }
+
+        </script>
+    
+<script type="text/javascript" src="/static/js/manifest.694ef94.js"></script><script type="text/javascript" src="/static/js/vendors.955bd16.js"></script><script type="text/javascript" src="/static/js/choosePatients.78bb1e6.js"></script></body>
+
+</html>

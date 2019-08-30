@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="/css/v3/base.css">
+    <link rel="stylesheet" href="/css/v3/pages/discover/discover_index.css">
+    <link rel="stylesheet" href="/css/v3/pageTopNav_And_SideBar.css">
+    <link rel="stylesheet" href="/css/v3/pageFooter.css">
+    <link rel="stylesheet" href="/js/modules/personYouKnow/personYouKnow.css">
+    <link rel="stylesheet" href="/css/v3/pages/discover/discover_billboard.css">
+    <script src="/js/lib/jquery/jquery-1.8.3.js"></script>
+    <link rel="stylesheet" href="/css/v3/pages/activity_template/sign_up.css">
+    <link rel="stylesheet" href="/css/v3/pages/activity_template/screen.css">
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+    <!--<script src="activity.js"></script>-->
+
+
+    <!--[if lte IE 8]>
+    <script src="/js/third-party/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+
+<!--全内容容器——mainInner-->
+<section class="al-mainInner">
+    <!-- 页头——视场景加入跳转链接 -->
+    <header class="al-header al-dis_header" style="margin-left: 0px;">
+        <section class="al-headerContainer">
+            <!--<ul class="al-headerTopNav">-->
+            <!--<li>-->
+            <!--<a href="javascript:void(0);">< 返回</a>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--浏览记录：begin-->
+            <div class="al-headerSearchRecord" hasload="true">
+                浏览记录
+                <div class="al-browseRecordBox">
+                    <section class="al-contentBrowseBox al-browseRecord">
+                        <section class="ev-browseRecordBox">
+                            <section class="al-contentBrowse ev-cBrowse" data-style="longAgo"><h2>更早以前</h2>
+                                <article class="al-contentBrowseItem"><span>文库</span><a
+                                        href="https://www.allinmd.cn/html/doc/2016/12/27/1482832857972.html"
+                                        target="_blank">测试生成001</a></article>
+                            </section>
+                        </section>
+                        <h6 class="al-browseAll hide" style="display: block;">查看全部</h6></section>
+                </div>
+            </div>
+            <!--浏览记录：end-->
+            <figure class="al-headerSearch">
+                <input type="text">
+                <b></b>
+
+                <div class="al-searchContent" style="display: none;"></div>
+            </figure>
+        </section>
+    </header>
+    <!-- 主侧边栏——Logo于此放置 -->
+    <aside class="al-mainSidebar" style="width: 80px;">
+        <header class="al-mainLogo" style="box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px;">
+            <img src="//img10.allinmd.cn/v3/common/sidebar/logo.png" alt="">
+        </header>
+        <header class="al-collapseLogo">
+            <img src="//img00.allinmd.cn/v3/index/logo.png" alt="">
+        </header>
+        <section class="al-mainSidebarList">
+            <ul>
+                <li class="al-mainSidebarItem">
+                    <a href="//www.allinmd.cn">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_index.png" alt="">
+                        <figcaption>首页</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>首页</h4>
+
+                            <p>HOME</p>
+
+                            <p></p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem active">
+                    <a href="//www.allinmd.cn/pages/discovery/discover_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_find_active.png" alt="">
+                        <figcaption>发现</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>发现</h4>
+
+                            <p>DISCOVERY</p>
+
+                            <p></p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-release">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_release.png" alt="">
+                        <figcaption>发布</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>发布</h4>
+
+                            <p>RELEASE</p>
+
+                            <p></p>
+                        </article>
+                    </a>
+                    <!---点击发布图标弹出框---->
+                    <div class="al-release_popBox"><a href="//www.allinmd.cn/pages/live/live_create.html"
+                                                      class="ev-liveBtn"><b
+                            class="webcastIcon"></b><span>直播</span></a><a href="javascript:;" class="ev-caseUBtn"
+                                                                          on="true"><b></b><span>病例</span></a><a
+                            href="javascript:;" class="ev-topicUBtn" on="true"><b class="topicIcon"></b><span>话题</span></a><a
+                            href="javascript:;" class="ev-docUBtn"><b class="libraryIcon"></b><span>文库</span></a><a
+                            href="javascript:;" class="ev-videoUBtn"><b class="videoIcon"></b><span>视频</span></a></div>
+                </li>
+                <li class="al-mainSidebarItem al-navMes">
+                    <a href="//www.allinmd.cn/pages/message/message_main.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_msg.png" alt="">
+                        <figcaption>消息</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>消息</h4>
+
+                            <p>MESSAGE</p>
+
+                            <p></p>
+                        </article>
+                        <span class="al-navRedPoint al-navMessagePoint">1</span></a>
+                </li>
+                <li class="al-mainSidebarItem al-navIndex">
+                    <a href="//www.allinmd.cn/pages/personal/personal_index.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_personal.png" alt="">
+                        <figcaption>我的</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>我的</h4>
+
+                            <p>PROFILE</p>
+
+                            <p></p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+            <ul class="al-mainSidebarOtherList">
+                <li class="al-mainSidebarItem al-siteSwitch">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_siteSwitch.png" alt="">
+                        <figcaption class="ev_siteSwitchName">骨科</figcaption>
+                        <article class="al-collapseItem">
+                            <div class="al-collapseItemText">
+                                <h4 class="ev_siteSwitchName">骨科</h4>
+
+                                <p>SITE SWITCH</p>
+                            </div>
+                        </article>
+                    </a>
+
+                    <div class="al_siteSwitch_popBox">
+                        <div class="al_siteSwitch_orthopaedics" on="true"><i></i>骨科</div>
+                        <div class="al_siteSwitch_handSurgery" on="false"><i></i>手外科</div>
+                    </div>
+                </li>
+                <li class="al-mainSidebarItem al-allinmdService">
+                    <a href="javascript:void(0)">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_cs.png" alt="">
+                        <figcaption>唯客服</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>小唯</h4>
+
+                            <p>SERVICE</p>
+
+                            <p></p>
+                        </article>
+                    </a>
+                </li>
+                <li class="al-mainSidebarItem al-navPhone">
+                    <a href="//www.allinmd.cn/pages/singlePage/iphone-app-download.html">
+                        <img src="//img10.allinmd.cn/v3/common/sidebar/sidebar_mobile.png" alt="">
+                        <figcaption>手机端</figcaption>
+                        <article class="al-collapseItem">
+                            <p class="al-collapseItemText">
+                            </p><h4>手机端</h4>
+
+                            <p>MOBILES</p>
+
+                            <p></p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <!--活动三期筛选:begin-->
+    <section class="activityV3Main">
+        <section class="actScreen">
+            <ul class="screenList">
+                <li>
+                    <div class="menuFirst">全部<span>（12345）</span></div>
+                </li>
+                <li>
+                    <div class="menuFirst">南区<span>（12345）</span><i></i></div>
+                    <aside class="menuSecond">
+                        <div>全部</div>
+                        <div class="">北京市<span>（12345）</span><i></i>
+                            <aside class="menuThird">
+                                <p>全部</p>
+
+                                <p>朝阳区<span>（12345）</span></p>
+
+                                <p class="">海淀区<span>（12345）</span></p>
+
+                                <p>西城区<span>（12345）</span></p>
+                            </aside>
+                        </div>
+                        <div>河北省<span>（12345）</span><i></i></div>
+                        <div>天津市<span>（12345）</span><i></i></div>
+                    </aside>
+                </li>
+                <li>
+                    <div class="menuFirst">
+                        <article>这是一个名字超级长的选项
+                            超过行就换行<span>（12345）</span></article>
+                        <i></i></div>
+                </li>
+            </ul>
+        </section>
+        <section class="actResource">
+            <!--<ul class="resourseList">
+                <li>
+                    <aside class="resourseText">
+                        <a><span>VTS_013奎寺fdfsfffffffffffffffffffff</span></a>
+
+                        <p class="resTextCont">努力上传中，请勿关闭当前页面努力上传中，请勿关闭当前页面努力上传中，请勿关闭当前页面努力上传中，...</p>
+                        <aside class="contentOtherMsg">
+                            <span class="recourseType">病例</span>
+                            <span class="al-contentAuthorBox"><i class="al-contentAuthor"></i>唯医小编</span>
+                            <span><i class="al-contentWatchedNum"></i>56</span>
+                            <span><i class="commentNum"></i>19596</span>
+                            &lt;!&ndash;<span class="recourseTime">2016-09-19</span>&ndash;&gt;
+                            <i class="resPraise resource_list_assist"><b></b>点赞</i>
+                        </aside>
+                    </aside>
+                    <aside class="resourseImg">
+                        <a target="_blank">
+                            <img src="//img05.allinmd.cn/public1/M00/07/92/wKgBMFiuPRiABcZmAATsZFD85_I428_c.jpg" alt="">
+                            <i class="al-contentVideoBtn">
+                                <img src="/images/img10/v3/common/icon/video_btn.png" alt="">
+                            </i>
+                            <i class="al-contentVideoTime">00:01:01</i>
+                            <i class="promotion"></i>
+                        </a>
+                    </aside>
+                </li>
+
+                <li>
+                    <aside class="resourseText">
+                        <a><span>VTS_013奎寺fdfsfffffffffffffffffffff</span><i class="resPraise"><b></b>点赞</i></a>
+
+                        <p class="resTextCont">努力上传中，请勿关闭当前页面努力上传中，请勿关闭当前页面努力上传中，请勿关闭当前页面努力上传中，...</p>
+                        <aside class="contentOtherMsg">
+                            <span class="recourseType">病例</span>
+                            <span class="al-contentAuthorBox"><i class="al-contentAuthor"></i>唯医小编</span>
+                            <span><i class="al-contentWatchedNum"></i>56</span>
+                            <span><i class="commentNum"></i>19596</span>
+                            <span class="recourseTime">2016-09-19</span>
+                        </aside>
+                    </aside>
+                    <aside class="resourseImg">
+                        <a target="_blank">
+                            <img src="//img05.allinmd.cn/public1/M00/07/92/wKgBMFiuPRiABcZmAATsZFD85_I428_c.jpg" alt="">
+                            <i class="al-contentVideoBtn">
+                                <img src="/images/img10/v3/common/icon/video_btn.png" alt="">
+                            </i>
+                            <i class="al-contentVideoTime">00:01:01</i>
+                        </a>
+                    </aside>
+                </li>
+            </ul>-->
+            <div class="noneResourse"><img src="/images/img10/v3/avtivity/noneResponse.png"></div>
+        </section>
+    </section>
+    <!--活动三期筛选:end-->
+    <!--公共底部 start-->
+
+    <footer class="al-mainFooter">
+        <section class="al-mainFooterInner">
+            <section class="al-mainFooterContent">
+                <section class="al-mainFooterLinks">
+                    <a href="//www.allinmd.cn/pages/help/statement.html" class="al-mainFooterLinkItem"
+                       style="padding-left: 0;">隐私声明</a>
+                    <a href="//www.allinmd.cn/pages/help/service.html" class="al-mainFooterLinkItem">服务条款</a>
+                    <a href="//www.allinmd.cn/pages/help/about_us.html" class="al-mainFooterLinkItem">关于我们</a>
+                    <a href="//www.allinmd.cn/pages/help/contact.html" class="al-mainFooterLinkItem"
+                       style="padding-right: 0;border-right: none;">联系我们</a>
+                </section>
+                <article class="al-mainFooterMsg">
+                    <figure class="al-mainFooterMsgImg">
+                        <a id="___szfw_logo___" href="https://credit.szfw.org/CX20160321018165560180.html"
+                           target="_blank">
+                            <img src="//img10.allinmd.cn/v3/common/icon/site_1.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="al-mainFooterMsgImg">
+                        <a href="http://www.anquan.org/authenticate/cert/?site=www.allinmd.cn&amp;at=business">
+                            <img src="//img10.allinmd.cn/v3/common/icon/site_2.png" alt="">
+                        </a>
+                    </figure>
+                </article>
+                <article class="al-mainFooterRecordMsg">
+                    <p><!-- 京ICP证150380号 |  -->京ICP备14007118号-2号 京公网安备11010802014986号京卫计网审[2014] 第0378号 </p>
+
+                    <p>Copyright2017 Allinmd.cn All Rights Reserved.版权所有北京欧应信息技术有限公司</p>
+
+                    <p>地址：北京市朝阳区光华路9号光华路SOHO2期D座802 &nbsp;&nbsp; 电话：010-59007121</p>
+                </article>
+            </section>
+            <figure class="al-mainFooterErWeiCode">
+                <img src="//img10.allinmd.cn/v3/common/icon/footer_erweiCode.png" alt="">
+            </figure>
+        </section>
+    </footer>
+    <div class="baidu" style="display: none">
+        <script src="//other.allinmd.cn/statistics/baidu.js"></script>
+        <script src=" http://hm.baidu.com/h.js?2a8bdc22175d5b291d02db032672746c" type="text/javascript"></script>
+        <a href="http://tongji.baidu.com/hm-web/welcome/ico?s=2a8bdc22175d5b291d02db032672746c" target="_blank"><img
+                border="0" src="http://eiv.baidu.com/hmt/icon/21.gif" width="20" height="20"></a>
+    </div>
+    <!--公共底部 End-->
+    <!--右下角按钮-->
+    <section class="al-backToTop">
+        <figure class="al-backToTopItem al-backToTopFirst ev-goTop" style="display: none;"></figure>
+        <figure class="al-backToTopItem ev-shareContainer hide">分享</figure>
+        <figure class="al-backToTopItem al-clickToShowErweiCode"><i class="icon-erweiCodeBottom"></i>
+            <section class="al-shareBox al-erweiCodeShareBox hide" style="display: none;">
+                <figure class="al-shareListItem"><img src="//img10.allinmd.cn/v3/common/icon/erweiCode_1.png" alt="">
+                </figure>
+                <figcaption>唯医骨科官方微信</figcaption>
+            </section>
+        </figure>
+    </section>
+</section>
+
+
+</body>
+
+</html>

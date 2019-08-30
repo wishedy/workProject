@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="/js/comm/domain.js"></script>
+    <script src="/js/wx/login_select.js"></script>
+    <title>登录选择</title>
+    <script type="text/javascript">
+
+    /**
+     * 微信分享
+     */
+    function initShareWeixin(){
+    	var weiXinTitle="我发现了一个很专业的医生社区。一起来看看吧。";
+    	var weiXinDesc="唯医网是专门的医生互动社区。更汇集海量手术视频、病例讨论、会议回放哦～";
+    	WeixinJSApi.title=function(){return weiXinTitle;};
+    	WeixinJSApi.desc=function(){return weiXinDesc;};
+    }
+    initShareWeixin();
+    </script>
+</head>
+<body>
+    <section id="allinLoginPage" data-role="page" class="content-page bg-f9">
+        <div class="v3-login-banner">
+            <img src="//img50.allinmd.cn/login/images/index-banner_02.png" alt=""/>
+        </div>
+        <div class="w-875">
+            <div class="v3-select_box fix">
+
+                <a class="v3-white-btn"  onclick="caosLogin();" href="#" data-enhanced="false" data-ajax="false">CAOS会员登录</a>
+                <a class="v3-white-btn" onclick="allinLogin();" href="#" data-enhanced="false" data-ajax="false">唯医会员登录</a>
+
+            </div>
+
+            <div class="v3-text-over-line fix">
+                 <div class="text">还没有帐户? 注册唯医</div>
+            </div>
+             <a  href="/pages/passport/regist_allin.html?flag=1" data-ajax="false"> <div class="v3-blue-btn">立即注册</div> </a>
+        </div>
+
+    </section>
+    <!--#include file="/footer.jsp"-->
+</body>
+</html>

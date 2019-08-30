@@ -1,0 +1,194 @@
+@charset "UTF-8";
+//简历预览
+//by zhangXiangFeng 2017-1-11
+//公共方法模块调用
+@import "../../modules/common-modules";
+
+.preview_all{
+  background-color: #f7f7f9;
+  width: 1000px;
+  margin:0 auto;
+  font-family: "microsoft yahei";
+  padding-bottom: 40px;
+}
+
+.resumePreviewPart{
+  margin:0 70px;
+  td{
+    padding:10px 0 10px 24px;
+    border:1px solid #898989;
+    box-sizing: border-box;
+    background-color:#fff;
+    height:54px;
+  }
+      //简历标题
+  .resumeTitle{
+    font-size: 36px;
+    line-height: 36px;
+    color: #73859e;
+    text-align: center;
+    padding:105px 0 50px;
+  }
+      //报名基本信息UI
+  .al-resumeFormTitle{
+    width:860px;
+    height:62px;
+    line-height:62px;
+    background-color:#73859e;
+    font-size:23px;
+    color:#fff;
+    border:1px solid #898989;
+    padding:0 24px;
+  }
+}
+
+thead{
+       //简历右侧：用户头像UI
+  .releaseUserImgShow{
+    padding:15px 8px 6px;
+    img{
+      width:140px;
+      height:195px;
+    }
+  }
+}
+
+        //简历默认文本UI
+.releaseDefaultTextInfo{
+  color:#8E8E8E;
+  background-color:#EFEFF4 !important;
+  width:137px;
+  font-size:16px;
+}
+
+      //简历用户输入文本UI
+.releaseUserWriteInfo{
+  width:213px;
+  color:#73859e;
+  font-size:16px;
+  line-height:32px;
+  padding-right:24px !important;
+  word-break: break-all;
+}
+
+    // 报名基本信息 tbody UI:begin
+.volunteerText{color:#8E8E8E;}
+
+
+
+//中英文简历切换：begin
+.chineseResumeBox,.englishResumeBox{
+  margin:0 70px;
+  width:860px;
+  td{
+    padding-left: 24px;
+    border:1px solid #898989;
+    box-sizing: border-box;
+    background-color:#fff;
+    height:54px;
+  }
+}
+
+  .resumeSwitchBox{
+    width: 860px;
+    height: 56px;
+    margin: 60px auto 20px;
+    border-bottom: 1px solid #93a2b5;
+    position: relative;
+    >div{
+      width: 123px;
+      border: 2px solid #d4d8e1;
+      text-align: center;
+      border-bottom: none;
+      font-size: 18px;
+      color: #b3baca;
+      line-height: 45px;
+      background-color: #f3f2f7;
+      position: absolute;
+      left: 27px;
+      bottom: 4px;
+      z-index: 2;
+      cursor: pointer;
+    }
+    .englishResumeBtn{left:166px;}
+    .active{
+      width: 128px;
+      border: 1px solid #73849e;
+      border-bottom: #f7f7f9;
+      line-height: 55px;
+      text-align: center;
+      font-size: 23px;
+      color: #73849e;
+      bottom: -1px;
+      z-index: 2;
+      background-color: #f7f7f9;
+    }
+  }
+//中英文简历切换：end
+
+
+
+//语言能力Icon
+.releaseUserWriteInfo{
+  .languageIcon{
+      width:23px;
+      height:35px;
+      background-image:url(//img00.allinmd.cn/column/fellowship/languageIcon.png);
+      margin:0 20px;
+  }
+}
+
+
+.previewMidLef dl{
+  margin:0 -24px -1px;
+  width: 857px;
+  font-size: 16px;
+  dt{
+    color: #a7a7a9;
+    padding-left: 18px;
+    background-color: #f0eff5;
+    line-height: 53px;
+    border-bottom: 1px solid #bebec0;
+  }
+}
+
+.previewPublic{
+  padding-bottom: 18px;
+  border-bottom: 1px solid #bebec0;
+  div{float: left;}
+  .previewBg{
+    width: 41px;
+    height: 42px;
+    background: url(//img10.allinmd.cn/common/icon/png/personal-sprite.png) no-repeat;
+    margin: 0 18px;
+  }
+  .workBg{background-position: 0 -155px;}
+  .studyBg{background-position: -41px -155px;}
+  .otherBg{background-position: -82px -155px;}
+  .honorBg{background-position:-123px -155px;}
+  .foundingBg{background-position:-164px -155px;}
+  .socialBg{background-position:-205px -155px;}
+  .opusBg{background-position:-246px -155px;}
+  .patentBg{background-position:-287px -155px;}
+  p{
+    margin-top: 18px;
+    line-height: 16px;
+    color: #8d8d8b;
+    width: 768px;
+    padding-left: 76px;
+    span{color: #72839d;}
+    i{margin: 0 16px;}
+  }
+  .intro{
+    line-height: 30px;
+    margin-top: 10px;
+  }
+}
+
+.releaseUserWriteMoreText{
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.addressHeight{
+  height:80px;
+}

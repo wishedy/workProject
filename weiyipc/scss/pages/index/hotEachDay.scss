@@ -1,0 +1,92 @@
+@import "../../components/_contentModule";
+@import "../../components/_iconsModule"; //小图标
+.al-personal {
+  width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  &:after{
+    display:block;
+    content:'';
+    width:0;
+    height:0;
+    clear:both;
+  }
+}
+.al_dis_right {
+  width: 270px;
+  float: right;
+  .al_dis_allW_wrap {
+    padding: 24px 20px 0 20px;
+    section {
+      margin-bottom: 20px;
+    }
+    a {
+      color: #666;
+      font-size: 15px;
+      display: block;
+      position: relative;
+      &:hover{
+        color: #2899e6;
+      }
+    }
+    a:after {
+      content: ">";
+      width: 3px;
+      height: 10px;
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      color: #aaa;
+      font-family: "Helvetica Neue";
+    }
+    p {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #aaaaaa;
+    }
+    .al-orange {
+      color: #ff9224;
+    }
+  }
+}
+.al_hotEachDay{
+  background: #fff;
+  width:710px;
+
+}
+.al-discover_subjectMain{
+
+  float:left;
+  width:710px;
+  margin-top:20px;
+
+  header{
+    height:54px;
+    line-height:55px;
+    font-size:18px;
+    padding:0 25px;
+    border-bottom:1px solid #EFF2F4;
+    background:#fff;
+  }
+  .al-discover_subjectMainInner{
+    border:1px solid #E2E9F0;
+    background-color: #fff;
+    margin-bottom:20px;
+  }
+}
+.al-discover_know{
+  border:1px solid #E0E8EF;
+  background-color:#fff;
+  box-sizing: border-box;
+  margin-top:20px;
+  padding-bottom: 20px;
+  h4{
+    padding:18px 20px;
+    border-bottom:1px solid #E4E9ED;
+    font-size:18px;
+    font-weight:normal;
+  }
+  .al-discover_knowZj{//可能认识专家详情
+    @include clearfix();
+  }
+}

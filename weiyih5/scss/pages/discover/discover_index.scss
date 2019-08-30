@@ -1,0 +1,383 @@
+@charset "UTF-8";
+//发现主页
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_indexHeader"; //首页头部信息栏
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+@import "../../components/_searchList"; //搜索列表
+@import "../classes/classes";
+.al-mainInner {
+    transition: blur 0.2s linear;
+    -webkit-transition: blur 0.2s linear;
+    margin-top: 1.3rem;
+    overflow-x: auto;
+    overflow: hidden;
+}
+
+.al-indexHeader {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    left: 0;
+
+}
+.al-searchInputBar input{
+    width:rem(690px);
+    padding-left: rem(80px);
+}
+
+// 内容开始
+// banner
+.al-discoverIndexBanner {
+    width: 100%;
+    height: rem(290px);
+    & > img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+    &Img {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            & > img {
+                width: 100%;
+                height: 100%;
+                vertical-align: top;
+            }
+        }
+    }
+    &Mark {
+        display: block;
+        @include square(rem(107px));
+        position: absolute;
+        top: 0;
+        left: 0;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+// 分类入口
+.al-discoverEntry {
+    margin-top: rem(16px);
+    background-color: #fff;
+    @include clearfix();
+    box-sizing: border-box;
+    padding: rem(20px);
+    border-bottom: 1px solid $innerBorderColor;
+    &Item {
+        float: left;
+        box-sizing: border-box;
+        width: 33.33333%;
+        text-align: center;
+        padding: rem(30px) 0;
+        @include font-dpr(15px);
+        border-bottom: 1px solid $innerBorderColor;
+        border-right: 1px solid $innerBorderColor;
+        span {
+            position: relative;
+        }
+        &:active {
+            background-color: #f9f9f9;
+        }
+        &:nth-child(3),
+        &:nth-child(6) {
+            border-right: none;
+        }
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
+            border-bottom: none;
+        }
+        a {
+            color: #666;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        span {
+            vertical-align: middle;
+        }
+    }
+}
+
+
+//分类入口2.2版
+.al-classifyEntry{
+    margin-top:rem(16px);
+    background-color:#fff;
+    padding:rem(24px) 0 rem(40px);
+    border-bottom: 1px solid $innerBorderColor;
+    @include clearfix();
+    .al-classifyEntryItem{
+        float:left;
+        list-style:none;
+        width:25%;
+        border-right:1px solid #e4e9ed;
+        text-align:center;
+        box-sizing: border-box;
+        span{
+            @include font-dpr(15px);
+            color:#666;
+        }
+        b{
+            display:block;
+            width:rem(36px);
+            height:rem(36px);
+            background-image: url("/images/img50/pages/discover/discover_td.png");
+            margin:0 auto rem(14px);
+            background-size:100% 100%;
+        }
+        .al-diseaseIcon{background-image: url("/images/img50/pages/discover/discover_dis.png");}
+        .al-operationIcon{background-image: url("/images/img50/pages/discover/discover_prepuce.png");}
+        .al-tagIcon{background-image: url("/images/img50/pages/discover/discover_tag.png");}
+        &:last-child{border-right:none;}
+    }
+}
+
+
+
+
+// 推荐入口
+.al-discoverRecommend {
+    margin-top: rem(16px);
+    padding: rem(20px) 0;
+    @include clearfix();
+    background-color: #fff;
+    box-sizing: border-box;
+    border-bottom: 1px solid $innerBorderColor;
+    &Item {
+        text-align: center;
+        float: left;
+        width: 50%;
+        box-sizing: border-box;
+        &:active {
+            background-color: #f9f9f9;
+        }
+        &:nth-child(1) {
+            border-right: 1px solid $innerBorderColor;
+        }
+    }
+    &Text {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: left;
+        padding: rem(20px) 0;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            & > h2 {
+                @include font-dpr(15px);
+                color: #333;
+                font-weight: normal;
+                position: relative;
+
+            }
+            & > p {
+                @include font-dpr(12px);
+                color: $smallTextColor;
+                margin-top: rem(10px);
+            }
+        }
+    }
+}
+
+// 大家都在看的
+.al-discoverList {
+    margin-top: rem(16px);
+    background-color: #fff;
+    @at-root {
+        .al-discoverListTitle {
+            height: rem(78px);
+            line-height: rem(78px);
+            @include font-dpr(13px);
+            color: $smallTextColor;
+            padding: 0 rem(30px);
+            box-sizing: border-box;
+            font-weight: normal;
+            border-bottom: 1px solid $innerBorderColor;
+        }
+    }
+    &Item {
+        margin-left: rem(30px);
+        padding: rem(35px) 0;
+        padding-right: rem(30px);
+        box-sizing: border-box;
+        // height: rem(100px);
+        // line-height: rem(100px);
+        border-bottom: 1px solid $innerBorderColor;
+        &:nth-last-child(2){
+            border-bottom: none;
+        }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        p {
+            @include font-dpr(15px);
+            color: #333;
+            width: 6rem;
+            display: inline-block;
+            @include ellipsis();
+            vertical-align: middle;
+        }
+        span {
+            @include font-dpr(13px);
+            float: right;
+            color: #aaa;
+            strong {
+                font-weight: normal;
+                color: #ff9224;
+            }
+            &:after {
+                content: "";
+                width: rem(14px);
+                height: rem(28px);
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: rem(16px);
+                background: url('/images/img50/pages/personal/arrow_right.png') center center no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+.al-discoverListOver {
+    padding-top: rem(50px);
+    text-align: center;
+    @include font-dpr(14px);
+    color: #5f6f8f;
+    background-color: #EFF4F8;
+    //padding-bottom: rem(300px);
+}
+
+.al-discoverListTitleFixed {
+    position: fixed;
+    top: rem(120px);
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background-color: #fff;
+}
+
+.icon-searchWhite {
+    @extend %icon-searchWhite;
+}
+
+.icon-searchCancel {
+    @extend %icon-searchCancel;
+}
+
+.icon-discoverTd {
+    @extend %icon-discoverTd;
+}
+
+.icon-discoverDis {
+    @extend %icon-discoverDis;
+}
+
+.icon-discoverPrepuce {
+    @extend %icon-discoverPrepuce;
+}
+
+.icon-discoverType {
+    @extend %icon-discoverType;
+}
+
+.icon-discoverSem {
+    @extend %icon-discoverSem;
+}
+
+.icon-discoverTag {
+    @extend %icon-discoverTag;
+}
+
+.icon-discoverActive {
+    @extend %icon-discoverActive;
+}
+
+.icon-discoverMaster {
+    @extend %icon-discoverMaster;
+}
+
+.al-newsNum {
+    @extend %al-newsNum;
+}
+
+.al-tagsRecommendHot {
+    @extend %al-tagsRecommendHot;
+
+}
+
+.al-tagsRecommendNew {
+    @extend %al-tagsRecommendNew;
+
+}
+.icon-discoverEntryHot{
+    @extend %icon-discoverEntryHot;
+    display: none;
+}
+
+
+@import '../../components/_releaseModule'; //发布内容
+@import "../../components/_footerBar"; //页脚功能栏
+@import "../../components/_classSelector"; //类型筛选
+.al-mainInner .al-indexHeader{
+    overflow:initial;
+    height: rem(105px);
+    line-height: rem(105px);
+}
+.al-personalContributionSelector{
+    position:absolute;
+    top:1.4rem;
+    z-index: 7;
+    right:rem(30px);
+}
+.al-personalContributionSelector ul:before {
+    left: 65%;
+}
+.platformChange{
+    width: rem(75px);
+    text-align: center;
+    overflow:hidden;
+    span{
+        float:left;
+        display:block;
+        line-height: rem(34px);
+        @include font-dpr(12px);
+    }
+    &:after{
+        display:block;
+        content:'';
+        clear:both;
+
+    }
+    .platformName{
+        width:100%;
+
+    }
+    .platformIcon{
+        margin:0 auto;
+        margin-left:rem(20px);
+        display:inline-block;
+        width:rem(34px);
+        height: rem(34px);
+        background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAArZJREFUSA3FVk1oE0EUnje7xmIaSksOehAKKnixgrWgeBAvihfB6gYUUyVopdRb0ya3bkWwBhFvQhGt7cVujB48ePTgH0i1KOJB7M1roZSUJpvdHd9sMjVk2XG2BF3Ynbfvve99b/7eDBDFx7AszXm5OAXMyzBCdinC6m4AKwDESnbEs5oqcH9H7zhh7Cb6J1QxTX47CCMDGzW7W29SSkVGWMp3AO3Ci/k7T6XOLUZjKHvU8ch7HJkUbbGF/gIjSW6EmP4h1CnEUJy7KzBJZcKQWJHV6oRAPD861NzILE0A5TkEQgsM2MHnDwu/mvCRRYiM2CLg7KUsrhlC1Id0i0StsMCQGqYZ27nSI+15tbrdm5m5XmsNpvLvB744ku+ulN1p3GuncYPuVgAyIPATP6UuLT41O2tW/obZHFJjONe1UXY/M8aGORkGsgmQquzFMuVgcvuw8uTXnPXXpmkGRiosAd2tuLeQqJcAfIyBnl6Yu/0jzFnoMTk4P5Trx3YBiY98XS7fQNt9YZe1lHhwijvoGr2qQsZ9AYCV5guLOBpj/B81foy6LP9SzHAvd7EeT3+TuwatlNAGph4j6BHU8G3hLxyeddAs13ixRvVhIN1e59ITh/1IeEwpT7ac+o8VFxD9srz+FtPvF1qPedu4jD0rtZ0Q41JchJ04VTFBiO0aTvwzLREfazsh9tBBgj5eQAShNTlZE1PWdkJBUjRNW8hgmkL897VUuro202qj8F8I/f3Hy1XUjlC7MSV4d1TFYg/Br52D6XyfKkj4MfAamHoMoZe1FJfrK+6AV5ZHxpXcAZWe8kvx4OXxY7ih7/lYVo8hIxI2yGQmEqs2++QfN0IbqYU3+pmBE8VUSulypS0tvbMPHT/5xKnWOrH69yAXf6XziUYXz8TvQOkDfU/8WnF0lG92pec37CLcGnyIRKwAAAAASUVORK5CYII=') no-repeat center;
+        background-size:100% 100%;
+    }
+}

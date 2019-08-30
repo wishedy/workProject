@@ -1,0 +1,320 @@
+@charset "UTF-8";
+//公共方法模块调用
+@import "../../../../modules/common-modules";
+//公共变量引用
+@import "../../../../variables/allinmdV2-variables";
+
+
+
+/*轨迹动画*/
+@keyframes myMove01 {
+  0% {
+    top:rem(37px);
+    right: rem(185px);
+    opacity:1;
+  }
+
+  25% {
+    top:rem(-87px);
+    right: rem(210px);
+    opacity:0.8;
+  }
+
+  50% {
+    top:rem(-177px);
+    right: rem(170px);
+    opacity:0.6;
+  }
+
+  75% {
+    top:rem(-327px);
+    right: rem(190px);
+    opacity:0.2;
+  }
+
+  100% {
+    top:rem(-527px);
+    right: rem(185px);
+    opacity:0;
+  }
+}
+%myMove01 {
+  animation: myMove01 2.5s linear both;
+}
+@keyframes myMove02 {
+  0% {
+    top:rem(37px);
+    right: rem(117px);
+    opacity:1;
+  }
+
+  25% {
+    top:rem(-87px);
+    right: rem(140px);
+    opacity:0.8;
+  }
+
+  50% {
+    top:rem(-177px);
+    right: rem(130px);
+    opacity:0.6;
+  }
+
+  75% {
+    top:rem(-327px);
+    right: rem(150px);
+    opacity:0.2;
+  }
+
+  100% {
+    top:rem(-527px);
+    right: rem(117px);
+    opacity:0;
+  }
+}
+
+%myMove02 {
+  animation: myMove02 1.5s linear both;
+}
+@keyframes myMove03 {
+  0% {
+    top:rem(37px);
+    right: rem(45px);
+    opacity:1;
+  }
+
+  25% {
+    top:rem(-87px);
+    right: rem(70px);
+    opacity:0.8;
+  }
+
+  50% {
+    top:rem(-177px);
+    right: rem(50px);
+    opacity:0.6;
+  }
+
+  75% {
+    top:rem(-327px);
+    right: rem(80px);
+    opacity:0.2;
+  }
+
+  100% {
+    top:rem(-527px);
+    right: rem(60px);
+    opacity:0;
+  }
+}
+
+%myMove03 {
+  animation: myMove03 1.5s linear both;
+}
+/*闪烁*/
+%twinkle{
+  animation-name:twinkle;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count:infinite;
+  animation-fill-mode:both;
+}
+@keyframes twinkle{
+  0% {
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+/*云彩动画1*/
+%cloud{
+  animation-name:cloud;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count:infinite;
+  animation-fill-mode:both;
+}
+@keyframes cloud{
+  0% {
+    left: rem(140px);
+  }
+  25%{
+    left: rem(142px);
+  }
+  50%{
+    left: rem(145px);
+  }
+  75%{
+    left: rem(142px);
+  }
+  100%{
+    left: rem(140px);
+  }
+}
+
+/*云彩动画2*/
+%cloud2{
+  animation-name:cloud2;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count:infinite;
+  animation-fill-mode:both;
+  animation-delay: 1s;
+}
+@keyframes cloud2{
+  0% {
+    left: rem(362px);
+  }
+  25%{
+    left: rem(364px);
+  }
+  50%{
+    left: rem(366px);
+  }
+  75%{
+    left: rem(364px);
+  }
+  100%{
+    left: rem(362px);
+  }
+}
+/*泡泡动画*/
+%bubble{
+  animation-name:bubble;
+  animation-duration: 0.9s;
+  animation-timing-function: ease-out;
+  animation-iteration-count:infinite;
+  animation-fill-mode:both;
+}
+@keyframes bubble{
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+/*按钮动画*/
+%btnAnimation{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top:0;
+  animation-name:aroundBtn;
+  animation-duration: 0.9s;
+  animation-timing-function: linear;
+  animation-iteration-count:1;
+  animation-fill-mode:both;
+  will-change:transform;
+}
+@keyframes aroundBtn{
+  0% {
+    transform: translate3d(0,1462px,0);
+  }
+  100%{
+    transform: translate3d(0,0,0);
+  }
+}
+
+/*光标动画*/
+%cursor{
+  animation-name:around;
+  animation-duration: 0.9s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-iteration-count:infinite;
+  animation-fill-mode:forwards;
+  vertical-align: middle;
+}
+@keyframes around{
+  0% {
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+
+
+.hide{
+  display: none;
+}
+
+/*翻页箭头*/
+@-webkit-keyframes arrow {
+  50% {
+    -webkit-transform: translateY(-10px);
+  }
+}
+%arrow{
+  animation: arrow 1s infinite;
+}
+
+/*地图按钮*/
+@-webkit-keyframes address {
+  0% {
+    transform: scale(0);
+  }
+  //25% {
+  //  transform: scale(1.3);
+  //}
+  50% {
+    transform: scale(1.3);
+  }
+  //75% {
+  //  transform: scale(1.5);
+  //}
+  100% {
+    transform: scale(1);
+  }
+}
+%address{
+  animation: address 0.7s 1 both;
+}
+
+
+/*灯泡*/
+@-webkit-keyframes light {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+%light{
+  animation-name:around;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-iteration-count:infinite;
+}
+
+
+/*报错动画*/
+@-webkit-keyframes error {
+  0% {
+    left: rem(16px);
+    top: rem(364px);
+    z-index: 3;
+  }
+  100% {
+    left: rem(32px);
+    top: rem(380px);
+    z-index: 4;
+  }
+}
+%error{
+  animation-name:error;
+  animation-duration: 0.1s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-iteration-count:infinite;
+  animation-fill-mode:forwards;
+}

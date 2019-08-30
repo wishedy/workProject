@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="Keywords" content="病例专题，视频专题，骨林琅琊榜，骨科专题，学术专题，文献专题，手术汇总，">
+    <title>骨林琅琊榜－唯医，allinmd</title>
+    <link rel="stylesheet" type="text/css" href="/css/column/YE_check.css"/>
+    <script src="/js/comm/common-func.js"></script>
+    <script>
+        if (IsPC()) {
+            window.location.href = '/pages/column/YE_check/YE_index.html';
+        }
+    </script>
+</head>
+
+<body>
+<div class="YE_wrap">
+    <div class="YE_index">
+        <div class="YE_indexTxt">
+					转眼间，2015已成历史<br>骨艺超群的长老泰斗，内功更加浑厚<br>勤学苦练的青年才俊，渐成后起之秀<br>2015骨林江湖，谁主沉浮?
+		</div>
+        <ul>
+            <li>
+                <a href="/pages/column/YE_check/YE_video.html">
+                    <dl>
+                        <dt>视频</dt>
+                        <dd><img src="//img50.allinmd.cn/column/YE_check/YE_indexIn.png"/></dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="/pages/column/YE_check/YE_case.html">
+                    <dl>
+                        <dt>病例</dt>
+                        <dd><img src="//img50.allinmd.cn/column/YE_check/YE_indexIn.png"/></dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="/pages/column/YE_check/YE_doc.html">
+                    <dl>
+                        <dt>文库</dt>
+                        <dd><img src="//img50.allinmd.cn/column/YE_check/YE_indexIn.png"/></dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="/pages/column/YE_check/YE_hotWords.html">
+                    <dl>
+                        <dt>热词</dt>
+                        <dd><img src="//img50.allinmd.cn/column/YE_check/YE_indexIn.png"/></dd>
+                    </dl>
+                </a>
+            </li>
+        </ul>
+        <div class="YE_indexBtn">
+            <a href="//m.allinmd.cn/"><img src="//img50.allinmd.cn/column/YE_check/YE_backAllin.png"/></a>
+        </div>
+    </div>
+    <div class="YE_caseShare">
+        <a href="javascript:;" id="share"><img src="//img50.allinmd.cn/column/YE_check/YE_case_share.png"/></a>
+    </div>
+</div>
+
+<!-- share Button BEGIN 分享-->
+<div class="videoPK_share_pop">
+    <div class="vPK_share_cont" id="videoPK_sharebtn">
+        <div class="vPK_share_list">
+            <div class="share_dao">分享到</div>
+            <a target="_blank" class="share_sina">
+                <div class="share_sina_icon"><img src="//img50.allinmd.cn/column/videoPK/xinlang.png"/></div>
+                <div class="share_sina_text">新浪微博</div>
+            </a>
+
+            <a target='_blank' class="share_qzone">
+                <div class="share_qzone_icon"><img src="//img50.allinmd.cn/column/videoPK/kongjian.png"/></div>
+                <div class="share_sina_text">QQ空间</div>
+            </a>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="share_quxiao">取消</div>
+</div>
+<!--朋友圈分享-->
+</body>
+<script src='/js/lib/jquery/jquery-2.1.0.min.js'></script>
+<script src='/js/comm/comm_service.js'></script>
+<script src='/js/json/operator_auth.js'></script>
+<script src='/js/comm/comm-page-url.js'></script>
+<script src='/js/comm/comm-data.js'></script>
+<script src='/js/comm/date.js'></script>
+<script src='/js/comm/comm-customer.js'></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+<script src='/js/third-party/jquery-validate/jquery.validate.js'></script>
+<script src='/js/comm/common.js'></script>
+<script src='/js/comm/jweixin-1.0.0.js'></script>
+<script src='/js/comm/WeixinJSApi.js'></script>
+<script>
+    $(function () {
+
+
+
+        //点击分享按钮分享层开启
+        $('#share').click(function (e) {
+
+            if (is_weixin()) {
+                var $zhezhao = $('<div id="videoPK_weixin_zhezhao"></div>').on('click', function () {
+                    $(this).remove();
+                });
+                $zhezhao.css({
+                    position: 'fixed',
+                    width: '100%',
+                    height: '100%',
+                    background: "rgba(0,0,0,0.8)",
+                    zIndex: '100',
+                    top: '0',
+                    left: '0'
+                }).append($('<img src="//img50.allinmd.cn/column/videoPK/video_pk_share.jpg" style="display:block;width:100%;height:100%;opacity:0.6;"/>'));
+                $('body')
+                        .append($zhezhao)
+                        .delay(300)
+                        .remove('#videoPK_weixin_zhezhao');
+            } else {
+                $('.videoPK_share_pop').show();
+            }
+            e.preventDefault();
+        })
+        //点击分享按钮分享层关闭
+        $('.videoPK_share_pop a').click(function () {
+            $(this).parents('.videoPK_share_pop').hide();
+        })
+        //点击分享层本身-分享层关闭
+        $('.videoPK_share_pop').click(function () {
+            $(this).hide();
+        })
+        //返回顶部
+        $('.fhdb').click(function () {
+            $('body').animate({scrollTop: 0}, 500)
+            return false;
+        })
+        //分享
+        $('.share_sina').click(function () {
+            shareSina();
+        })
+        $('.share_qq').click(function () {
+            shareQQ();
+        })
+        $('.share_qzone').click(function () {
+            shareQzone();
+        })
+        setTimeout(function () {
+            initShareWeixinm();
+        }, 1000);
+
+    });
+
+    /**
+     * 微信分享
+     */
+    function initShareWeixinm() {
+        var weiXinTitle = "2015骨林江湖，谁主沉浮？";
+        var weiXinDesc = "唯医琅琊榜，为你揭晓！唯厚积薄发者，方能统帅骨林。 ";
+        var weiXinLogo = "//m.allinmd.cn//img50.allinmd.cn/column/YE_check/lyb.png";
+
+        WeixinJSApi.title = function () {
+
+            return weiXinTitle;
+        };
+        WeixinJSApi.desc = function () {
+            return weiXinDesc;
+        };
+
+        WeixinJSApi.imgUrl = function () {
+
+            return weiXinLogo;
+        };
+        WeixinJSApi.init();
+    }
+
+
+    //分享
+    function shareSina() {
+        var openurl = "http://v.t.sina.com.cn/share/share.php?&appkey=895033136",
+                url = "&url=" + encodeURIComponent(window.location.href),
+                title = "&title=骨科人必看的2015年＃骨林琅琊榜＃，你上榜了吗？",
+                pic = "&pic=//m.allinmd.cn//img50.allinmd.cn/column/YE_check/lyb.png"
+        var aLink = openurl + url + title + pic;
+        window.open(aLink, '_blank')
+    }
+    //function shareQQ(){
+    //	var openurl = 'http://connect.qq.com/widget/shareqq/index.html?',
+    //
+    ////		title=qqhaoyou,
+    //		url="url="+encodeURIComponent(window.location.href),
+    //		desc="&desc=我对%23骨科示教病例及手术视频选拔赛%23很感兴趣，你也来参加吧！"+location;
+    //	var aLink = openurl+url+desc;
+    //	window.open(aLink,'_blank')
+    //}
+
+
+    function shareQzone() {
+
+        var openurl;		//分享链接，PC手机两种
+        var title = "&title=" + encodeURIComponent("骨科人必看的2015年＃骨林琅琊榜＃，你上榜了吗？");			//分享标题
+        var url = "&url=" + encodeURIComponent(window.location.href),					//分享url
+                imageUrl = "&imageUrl=" + encodeURIComponent("//m.allinmd.cn//img50.allinmd.cn/column/YE_check/lyb.png"),				//图片链接
+                pics = "&pics=" + encodeURIComponent("//m.allinmd.cn//img50.allinmd.cn/column/YE_check/lyb.png"),						//图片链接
+                desc = "骨科人必看的2015年＃骨林琅琊榜＃，你上榜了吗？",		//描述
+                summary = "&summary=" + encodeURIComponent(desc),				//描述
+                t = "&t=" + new Date().getTime();							//时间戳
+
+        if (IsPC()) {
+            //PC端
+            openurl = "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            var aLink = openurl + "desc=" + summary + imageUrl + pics + title + url;
+            window.open(aLink, '_blank');
+
+
+        } else {
+            //移动端
+            openurl = "http://qzs.qzone.qq.com/open/connect/widget/mobile/qzshare/index.html?";
+            var aLink = openurl + "&desc=" + summary + imageUrl + title + url + t;
+            window.open(aLink, '_blank');
+        }
+    }
+    function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone",
+            "SymbianOS", "Windows Phone",
+            "iPad", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+</script>
+</html>

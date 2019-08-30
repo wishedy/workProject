@@ -1,0 +1,208 @@
+@charset "UTF-8";
+//朋友圈
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV3-variables";
+//公共组件引用
+@import "../../components/_contentModule"; //主内容区域
+@import "../../components/_iconsModule";   //小图标
+
+.al-searchBox {
+    float: right;
+}
+
+.al-contentBackToIndex {
+    font-size: 15px;
+    color: #626f8c;
+    float: left;
+    line-height: 70px;
+    vertical-align: middle;
+}
+
+.al-leftArrowIcon {
+    background: transparent url("//img10.allinmd.cn/v3/common/icon/icon_leftArrow.png") center center no-repeat;
+    width: 8px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.al-indexInner {
+    width: 1000px;
+    margin: 0 auto;
+    @include clearfix();
+}
+
+.al-indexMainContent {
+    width: 708px;
+    float: left;
+}
+
+.al-indexSidebar {
+    float: left;
+    width: 268px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.al-discoverDoctor {
+    background-color: #fff;
+    border: 1px solid $outerBorderColor;
+    padding: 28px 0;
+    text-align: center;
+    h2 {
+        font-size: 16px;
+        color: #555;
+        font-weight: normal;
+    }
+    a {
+        display:inline-block;
+        margin-left:auto;
+        margin-right:auto;
+        width: 180px;
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 50px;
+        margin-top: 20px;
+        position:relative;
+        behavior: url('/js/third-party/pie/pie.htc');
+        background-color: $linkContentColor;
+        &:hover{background-color:#52A9E4;}
+    }
+}
+
+.al-bulbsIcon {
+    background: transparent url("//img10.allinmd.cn/v3/common/icon/icon_bulbs.png") center center no-repeat;
+    width: 20px;
+    height: 21px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.al-possibleKnowDoctor {}
+
+.al-shortContentItem {
+    @include clearfix();
+    .al-shortContentImg {
+        float: left;
+        width: 40px;
+        height: 40px;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                vertical-align: top;
+            }
+        }
+    }
+    .al-shortContentMsg {
+        float: left;
+        & > a {
+            color: #333;
+            font-size: 15px;
+            &:hover {
+                color: #3598db;
+            }
+        }
+        & > p {
+            color: $smallContentColor;
+            font-size: 13px;
+        }
+    }
+}
+
+.al-discover_know {
+    border: 1px solid #E0E8EF;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-top: 20px;
+    h4 {
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px solid #E4E9ED;
+        font-size: 18px;
+        padding-left: 20px;
+        font-weight: normal;
+    }
+    .al-discover_knowZj {
+        //可能认识专家详情
+        @include clearfix();
+        padding: 20px;
+
+    }
+}
+.al-noFollowTips {
+    height: 350px;
+    text-align: center;
+    cursor: default;
+    &:hover {
+        background-color: #fff;
+    }
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+    img {
+        width: 310px;
+        height: 248px;
+        vertical-align: middle;
+    }
+}
+
+.al-indexSidebar {
+    .al-noFollowTips {
+        height: 248px;
+        img {
+            width: 128px;
+            height: 155px;
+        }
+    }
+}
+
+.al-findMoreFriends {
+    margin-top: 20px;
+    height: 52px;
+    line-height: 52px;
+    width: 100%;
+    font-size: 16px;
+    color: #626f8c;
+    background-color: #fff;
+    text-align: center;
+}
+
+.al-downArrow {
+    background: transparent url("//img10.allinmd.cn/v3/friends/icon_downArrow.png") center center no-repeat;
+    width: 13px;
+    height: 7px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+.al-NoContributionUser{
+    padding:132px 0 142px;
+    color: $smallContentColor;
+    font-size: 17px;
+    text-align: center;
+    background-color:#fff;
+    border:1px solid #e4e9ed;
+    margin-top:-1px; //朋友圈
+    p{margin-bottom: 20px;}
+    a{
+        color: #3598db;
+        font-size: 17px;
+        &:hover{text-decoration: underline;}
+    }
+}
+//@import "../../components/_backToTopBtns";  //回到顶部浮动按钮
+//@import "../../components/_shareBoxModule"; //分享按钮盒
+//@import "../../components/_commentModule"; //内容评论

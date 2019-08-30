@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="Keywords" content="病例专题，视频专题，要求&范例，骨科专题，学术专题，文献专题，手术汇总，">
+    <meta charset="UTF-8">
+    <title>要求&范例专题页－唯医，allinmd</title>
+    <link rel="stylesheet" href="/css/column/videoPK.css">
+    <script type="text/javascript">
+
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(IsPC()){
+            window.location.href='//www.allinmd.cn/html/activity/1449026372937/works_details.html';
+        }
+    </script>
+    <meta name="data-alcode" content="a2">
+</head>
+<body data-alcode="267">
+<div class="videoPK_h5">
+    <div class="casePK_title_Ios" id="browser_title" style="background-color:rgb(12,142,243)">
+        <div class="casePK_titleCon" data-alcode-mod='531'>
+            <div class="casePK_l"><a href="//m.allinmd.cn" data-ajax="false" style="background-image:url(/images/img50/column/videoPK/home_pk.png)"></a></div>
+            <div class="casePK_c">病例&视频评选活动</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--新版广告位-->
+    <#if adPosition_list??>
+        <#list adPosition_list as adPositionList>
+            <#if adPositionList_index==0>
+                <#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+                    <#if v_adPositionAttachmentList??>
+                        <#list v_adPositionAttachmentList as list>
+                            <div class="header_pk" style="padding-top: 2.7em;background-color:rgb(12,142,243)"><img src="//img99.allinmd.cn/${list.adAttUrl}"  alt="" width="100%" class="pk_banner"></div>
+                        </#list>
+                    </#if>
+            </#if>
+        </#list>
+    </#if>
+    <div class="casePK_nav" data-alcode-mod='507'>
+        <ul>
+            <#if (activityMenu??)&&(activityMenu?size>0)>
+                <#list activityMenu as MenuList>
+                    <#if MenuList_index  ==3>
+                        <li><a href="//m.allinmd.cn/pages/column/videoPK/m/works.html?activityId=1449026372937" data-ajax="false">参选作品</a></li>
+                    </#if>
+                    <li <#if MenuList_index  ==2>class="cur"</#if>><a href="${MenuList.activityMenuUrl}" data-ajax="false">${MenuList.activityMenuName}</a></li>
+                </#list>
+            </#if>
+            <li><a href="javascipt:;" data-ajax="false">我的作品</a></li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+    <!--第一块-->
+    <div class="act_con" style="padding-bottom: 0;">
+        <div class="content_pk act_bg_new">
+            <div class="content_main" data-alcode-mod='531'>
+                <h2 class="main_title main_title_sl"></h2>
+                <div class="prod" style="width: 75%; margin: 0 auto;"> <a href="#" class="shipin now">视频</a><a href="#" class="bingli">病例</a> </div>
+                <!--视频-->
+                <#if activityDetial??>
+                    <#list activityDetial as recommList>
+
+                        <#assign v_id = recommList.id>
+
+                            <!--推荐视频-->
+                            <#if v_id==2>
+                                <#assign v_VideoList = recommList.recommendVideoList>
+                                    <#if v_VideoList??>
+                                        <div class="prod_list">
+                                            <#list v_VideoList as recommendList>
+                                                <div class="list_con">
+                                                    <div class="list_z"> <a href="${recommendList.webStoragePath}" target="_blank"><img src="${recommendList.videoLogoUrl}" alt="" width="100%;"><p>${recommendList.playTime}</p></a> </div>
+                                                    <div class="list_y"> <a href="${recommendList.webStoragePath}" target="_blank">
+                                                        <h5 class="bt">${recommendList.videoName}</h5>
+                                                    </a>
+                                                        <div>
+                                                            <div class="case_list_hf"> ${recommendList.videoAuthor}</div>
+                                                            <div class="playNum">${recommendList.playNum}</div>
+                                                            <div class="clear">6</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </#list>
+                                        </div>
+                                    </#if>
+                                    <#elseif v_id==7>
+                                        <#assign v_caseList = recommList.recommendCaseList>
+                                            <#if v_caseList??>
+                                                <!--病例-->
+                                                <div class="prod_list" style="display: none;">
+                                                    <#list v_caseList as recommendList>
+                                                        <div class="list_con">
+                                                            <div class="list_z"> <a href="${recommendList.webStoragePath}" target="_blank"><img src="${recommendList.reason}" alt="" width="100%;"></a></div>
+                                                            <div class="list_y"> <a href="${recommendList.webStoragePath}" target="_blank">
+                                                                <h5 class="bt">${recommendList.caseName}</h5>
+                                                            </a>
+                                                                <div>
+                                                                    <div class="case_list_hf">${recommendList.discussion}</div>
+                                                                    <div class="browseNum">${recommendList.browseNum}</div>
+                                                                    <div class="reviewNum">${recommendList.reviewNum}</div>
+                                                                    <div class="clear"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </#list>
+                                                </div>
+                                            </#if>
+
+                            </#if>
+                    </#list>
+                </#if>
+            </div>
+        </div>
+    </div>
+
+    <!-- 作品详情的内容 -->
+    <div class="zp_text"> <#if (cms_news_list??)&&(cms_news_list?size>0)>
+        <#list cms_news_list as newsList>
+            ${newsList.newsBody}
+        </#list>
+    </#if>
+        <!-- share Button END -->
+        <div class="share_popup"><a href="#" id="share"><img src="/images/img50/column/videoPK/share.png" alt=""></a></div>
+        <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+        <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+        <script src="/js/comm/main.js"></script>
+        <script src="/js/comm/common.js"></script>
+        <script src="/js/comm/comm.func.js"></script>
+        <script src="/js/comm/comm-customer.js"></script>
+        <script src="/js/comm/comm-data.js"></script>
+        <script src="/js/comm/log.js"></script>
+        <script src="/js/modules/module.user.js"></script>
+        <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+        <script src="/js/comm/jweixin-1.0.0.js"></script>
+        <script src="/js/comm/WeixinJSApi.js"></script>
+        <script src="/js/column/videoPK/m/PKcomm.js"></script>
+        <script src="/js/column/eventdetails_fn_share.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/js/column/require_fn_tab.js" type="text/javascript" charset="utf-8"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+@import "./common";
+
+html,body,.wrap{
+  height:100%;
+  width:100%;
+}
+.hidden{
+  display: none;
+}
+@keyframes myfirst {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes myfirst /* Safari 与 Chrome */
+{
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header{
+  width:100%;
+  height:rem(128px);
+  background: url(../images/header.png) center center no-repeat;
+  background-size: cover;
+  //position: fixed;
+  //top:0;
+  //left:0;
+  //z-index: 5;
+}
+
+footer{
+  width:100%;
+  height:rem(90px);
+  background: url(../images/footer.png) center center no-repeat;
+  background-size: cover;
+  //position: fixed;
+  //bottom:0;
+  //left:0;
+  //z-index: 5;
+}
+
+.main{
+  overflow-y: auto;
+  //margin: rem(116px) 0 rem(90px);
+  height:541px;
+  box-sizing: border-box;
+  h3{
+    text-align: center;
+    margin-top: rem(36px);
+    span{
+      display: inline-block;
+      width:rem(80px);
+      height:rem(40px);
+      background: #CECECE;
+      border-radius: 8px;
+      font-family: PingFangSC-Regular;
+      font-size: rem(24px);
+      color: #FFFFFF;
+      line-height: rem(40px);
+    }
+  }
+
+  .content-list{
+    li{
+      padding:rem(26px) 0 0 rem(112px);
+      position: relative;
+      opacity: 0;
+      .name{
+        font-family: PingFangSC-Regular;
+        font-size: rem(24px);
+        color: #737373;
+        line-height: 24px;
+        margin-bottom: rem(10px);
+      }
+
+      .cont{
+        width:rem(484px);
+        background: #FFFFFF;
+        border: 1px solid #CCCCCC;
+        border-radius: 7px;
+        padding: rem(20px) 0 rem(20px) rem(16px);
+        font-family: PingFangSC-Regular;
+        font-size: rem(31px);
+        color: #141414;
+        line-height: 1.2;
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        width: rem(74px);
+        height: rem(74px);
+        position: absolute;
+        opacity: 1;
+        left: rem(18px);
+        top: rem(30px);
+        background: url(../images/haojing.png) center center no-repeat;
+        background-size: rem(74px) rem(74px);
+      }
+      &:nth-of-type(4):before{
+        background: url(../images/liuzong.png) center center no-repeat;
+        background-size: rem(74px) rem(74px);
+      }
+      &:nth-of-type(5):before{
+        background: url(../images/haisheng.png) center center no-repeat;
+        background-size: rem(74px) rem(74px);
+      }
+      &:nth-of-type(6):before{
+        background: url(../images/fu.png) center center no-repeat;
+        background-size: rem(74px) rem(74px);
+      }
+      &:nth-of-type(7):before{
+        background: url(../images/duanboyang.png) center center no-repeat;
+        background-size: rem(74px) rem(74px);
+      }
+      &:nth-of-type(8):before{
+        background: url(../images/niko.png) center center no-repeat;
+        background-size: rem(74px) rem(74px);
+      }
+      //mgsList 用于动画
+      &.animation {
+        animation: myfirst 0.5s 0.5s;
+        animation-fill-mode: forwards;
+        -webkit-animation: myfirst 0.5s 0.5s;
+        -webkit-animation-fill-mode: forwards;
+        will-change: transform;
+      }
+    }
+  }
+
+  .btnGroup{
+    text-align: center;
+    padding-bottom: rem(34px);
+    p{
+      font-family: PingFangSC-Regular;
+      font-size: rem(31px);
+      color: #141414;
+      line-height: rem(74px);
+      padding-left:rem(160px) ;
+      position: relative;
+      margin:rem(172px) 0  rem(30px);
+      text-align: left;
+      &:before {
+        content: "";
+        display: block;
+        width: rem(74px);
+        height: rem(74px);
+        position: absolute;
+        left:rem(80px);
+        top: 0;
+
+        background: url(../images/smile.png) center center no-repeat;
+        background-size: contain;
+      }
+    }
+    img{
+      width:92%;
+      cursor:pointer;
+    }
+  }
+}
+

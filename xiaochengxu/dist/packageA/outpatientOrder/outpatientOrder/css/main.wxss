@@ -1,0 +1,230 @@
+@import "/vendor/css/main.wxss";
+
+.outpatient-order-inner {
+  background-color: #F2F4F7;
+  width: 100%;
+}
+.outpatient-order-header {
+  padding-top: 76rpx;
+  padding-bottom: 102rpx;
+  background-image: linear-gradient(0deg, #01D1C2 5%, #039D94 92%);
+  padding-left: 48rpx;
+  box-sizing: border-box;
+}
+.outpatient-order-header > ._h2 {
+  font-size: 48rpx;
+  font-weight: normal;
+  color: #FFFFFF;
+}
+.outpatient-order-header > ._h2 > ._span {
+  font-size: 36rpx;
+  color: #A3EBE6;
+}
+.order-submit {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 32rpx;
+  line-height: 98rpx;
+  text-align: center;
+  color: #FFFFFF;
+}
+.order-submit.on {
+  background: #2EA9FE;
+}
+.order-submit.off {
+  background: #CCCCCC;
+}
+.outpatient-order-info-content {
+  position: relative;
+  top: -62rpx;
+  padding: 0 20rpx;
+  padding-bottom: 98rpx;
+}
+.outpatient-order-info-content .info-container {
+  background: #FFFFFF;
+  border-radius: 8rpx;
+  padding: 0 28rpx;
+}
+.outpatient-order-info-content .info-container.select-time {
+  box-shadow: 0 6rpx 14rpx 0 rgba(37, 56, 77, 0.08);
+  font-size: 38rpx;
+  color: #222222;
+}
+.outpatient-order-info-content .info-container.select-time .time-list .time-item {
+  padding: 26rpx 0;
+  position: relative;
+}
+.outpatient-order-info-content .info-container.select-time .time-list .time-item::before {
+  content: "";
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 12rpx;
+  vertical-align: -1rpx;
+}
+.outpatient-order-info-content .info-container.select-time .time-list .time-item.am::before {
+  background: url("https://m.allinmed.cn/static/image/imScene/am_off.png") no-repeat center;
+  background-size: contain;
+}
+.outpatient-order-info-content .info-container.select-time .time-list .time-item.pm::before {
+  background: url("https://m.allinmed.cn/static/image/imScene/pm_off.png") no-repeat center;
+  background-size: contain;
+}
+.outpatient-order-info-content .info-container.select-time .time-list .time-item::after {
+  content: "";
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  box-sizing: border-box;
+  background: url("https://m.allinmed.cn/static/image/imScene/select_no.png") no-repeat center;
+  background-size: contain;
+  right: 0;
+  top: 50%;
+  margin-top: -20rpx;
+}
+.outpatient-order-info-content .info-container.select-time .time-list .time-item.selected {
+  color: #29A3A3;
+}
+.outpatient-order-info-content .info-container.select-time .time-list .time-item.selected.am::before {
+  background: url("https://m.allinmed.cn/static/image/imScene/am_on.png") no-repeat center;
+  background-size: contain;
+}
+.outpatient-order-info-content .info-container.select-time .time-list .time-item.selected.pm::before {
+  background: url("https://m.allinmed.cn/static/image/imScene/pm_on.png") no-repeat center;
+  background-size: contain;
+}
+.outpatient-order-info-content .info-container.select-time .time-list .time-item.selected::after {
+  background: url("https://m.allinmed.cn/static/image/imScene/label_succes.png") no-repeat center;
+  background-size: contain;
+}
+.outpatient-order-info-content .info-container.select-time .time-list .time-item + .time-item {
+  border-top: 1rpx solid #F5F5F5;
+}
+.outpatient-order-info-content .info-container.patient-info {
+  box-shadow: 0 4rpx 10rpx 0 rgba(37, 56, 77, 0.04);
+}
+.outpatient-order-info-content .info-container.patient-info .patient-info-list .patient-info-item {
+  line-height: 112rpx;
+  font-size: 30rpx;
+  color: #AAAAAA;
+}
+.outpatient-order-info-content .info-container.patient-info .patient-info-list .patient-info-item:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.outpatient-order-info-content .info-container.patient-info .patient-info-list .patient-info-item .patient-info-item-left {
+  float: left;
+}
+.outpatient-order-info-content .info-container.patient-info .patient-info-list .patient-info-item .patient-info-item-left.phone {
+  font-size: 32rpx;
+  color: #444444;
+}
+.outpatient-order-info-content .info-container.patient-info .patient-info-list .patient-info-item .patient-info-item-right {
+  float: right;
+}
+.outpatient-order-info-content .info-container.patient-info .patient-info-list .patient-info-item .patient-info-item-right .phone-number {
+  color: #333333;
+}
+.outpatient-order-info-content .info-container.patient-info .patient-info-list .patient-info-item .patient-info-item-right .phone-number::after {
+  content: "";
+  display: inline-block;
+  width: 1rpx;
+  height: 32rpx;
+  background: #F5F5F5;
+  margin: 0 32rpx;
+  vertical-align: -4rpx;
+}
+.outpatient-order-info-content .info-container.patient-info .patient-info-list .patient-info-item .patient-info-item-right .change {
+  color: #29A3A3;
+}
+.outpatient-order-info-content .info-container.patient-info .patient-info-list .patient-info-item .patient-info-item-right .phone-input {
+  margin-top: 30rpx;
+  text-align: right;
+  border: none;
+  font-size: 30rpx;
+  color: #333333;
+}
+.outpatient-order-info-content .info-container.patient-info .patient-info-list .patient-info-item + .patient-info-item {
+  border-top: 1rpx solid #F5F5F5;
+}
+.outpatient-order-info-content .info-container.pay-way {
+  box-shadow: 0 4rpx 10rpx 0 rgba(37, 56, 77, 0.04);
+  font-size: 32rpx;
+  margin-top: 16rpx;
+  line-height: 128rpx;
+}
+.outpatient-order-info-content .info-container.pay-way:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.outpatient-order-info-content .info-container.pay-way .pay-way-left {
+  float: left;
+  color: #444444;
+}
+.outpatient-order-info-content .info-container.pay-way .pay-way-right {
+  float: right;
+  color: #AAAAAA;
+}
+.outpatient-order-info-content .info-container.order-tips {
+  box-shadow: 0 4rpx 10rpx 0 rgba(37, 56, 77, 0.04);
+  margin-top: 16rpx;
+}
+.outpatient-order-info-content .info-container.order-tips .order-tips-top {
+  padding: 36rpx 0;
+  font-size: 30rpx;
+  color: #E34F52;
+  border-bottom: 1rpx solid #F0F0F0;
+}
+.outpatient-order-info-content .info-container.order-tips .order-tips-bottom {
+  font-size: 30rpx;
+  line-height: 1;
+  padding: 40rpx 0 48rpx;
+}
+.outpatient-order-info-content .info-container.order-tips .order-tips-bottom .order-tips-bottom-title {
+  color: #444444;
+}
+.outpatient-order-info-content .info-container.order-tips .order-tips-bottom .order-tips-bottom-item {
+  color: #909090;
+  padding-left: 20rpx;
+}
+.outpatient-order-info-content .info-container.order-tips .order-tips-bottom .order-tips-bottom-item:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.outpatient-order-info-content .info-container.order-tips .order-tips-bottom .order-tips-bottom-item::before {
+  content: "";
+  display: block;
+  float: left;
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 20rpx;
+  background: #C7C7C7;
+  margin-left: -20rpx;
+  margin-top: 11rpx;
+}
+.outpatient-order-info-content .info-container.order-tips .order-tips-bottom .order-tips-bottom-item:nth-child(2) {
+  margin-top: 32rpx;
+}
+.outpatient-order-info-content .info-container.order-tips .order-tips-bottom .order-tips-bottom-item:nth-child(3) {
+  margin-top: 20rpx;
+}
+.outpatient-order-info-content .info-title {
+  font-size: 32rpx;
+  color: #555555;
+  margin: 48rpx 0 28rpx;
+}
+.outpatient-order-info-content .info-title::before {
+  content: "";
+  display: inline-block;
+  width: 6rpx;
+  height: 20rpx;
+  margin: 0 12rpx;
+  background: #2EA9FE;
+  font-weight: normal;
+}

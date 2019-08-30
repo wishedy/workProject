@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript">
+
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href='//m.allinmd.cn/html/m/activity/1449026372937/activity_question.html';
+        }
+
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>预赛结果专题页 - 唯医,allinmd</title>
+    <meta name="Keywords" content="病例专题，视频专题，骨科示教病例及手术视频选拔赛－预赛结果，骨科专题，学术专题，文献专题，手术汇总，">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<link rel="dns-prefetch" href="//comm.allinmd.cn">
+	<link rel="dns-prefetch" href="//modules.allinmd.cn">
+	<link rel="dns-prefetch" href="//plugins.allinmd.cn">
+	<link rel="dns-prefetch" href="//other.allinmd.cn">
+	<link rel="dns-prefetch" href="//scene.allinmd.cn">
+	<link rel="dns-prefetch" href="//img00.allinmd.cn">
+	<link rel="dns-prefetch" href="//img10.allinmd.cn">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+	<!-- <link href="//comm.allinmd.cn/base.css" rel="stylesheet" type="text/css"/> -->
+    <link href="//modules.allinmd.cn/lib.css" rel="stylesheet" type="text/css"/>
+
+    <link href="//other.allinmd.cn/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css"/>
+    <link href="//other.allinmd.cn/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css"/>
+    <link href="//other.allinmd.cn/uploadify/uploadify.css" rel="stylesheet" type="text/css">
+    <link href="//other.allinmd.cn/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css"/>
+    <link href="//other.allinmd.cn/videoPKCss/videoPK.forTemplate.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--#include virtual="/includes/header.jsp"-->
+<input type='hidden' id='activityId' />
+<div class="video_pk_changjianwenti_main"><!--最大的块-->
+    <div class="middledasai_qr-code" ><!--二维码-->
+        <div class="erweima_nav" style="margin:0;"><img src="//img00.allinmd.cn/column/videoPK/erweima.png" /></div>
+    </div>
+   
+<!--新版广告位-->
+<#if adPosition_list??>
+	<#list adPosition_list as adPositionList>
+		<#if adPositionList_index==0>
+		<#assign v_adPositionAttachmentList = adPositionList.adProfileAttachment_list>
+			<#if v_adPositionAttachmentList??>
+				<#list v_adPositionAttachmentList as list>
+					 <div class="video_pk_shouye_lunbo" style="background: url(//img99.allinmd.cn/${list.adAttUrl}) no-repeat center;">
+ <div class="video_pk_shouye_center">
+        <div class="video_pk_shouye_share" id="hr_share">
+            <span>分享至:</span>
+            <a href="javascript:;" class="share_ico_tsina"><img src="//img00.allinmd.cn/column/videoPK/homepageweibo.png" /></a>
+            <!--<a href="javascript:;" class="share_weixin"><img src="//img00.allinmd.cn/column/videoPK/homepageweixin.png" /></a>-->
+            <a href="javascript:;" class="share_ico_tqq"><img src="//img00.allinmd.cn/column/videoPK/homepageqq.png" /></a>
+            <a href="javascript:;" class="share_ico_qzone"><img src="//img00.allinmd.cn/column/videoPK/homepageqqkongjian.png" /></a>
+        </div>
+    </div>
+</div>
+				</#list>
+			</#if>
+		</#if>	 
+	</#list>
+</#if>
+   
+<div class="video_pk_shouye_navhuodongjianjie hide"><!-- 导航和活动简介-->
+    <ul class="video_pk_shouye_nav" id="Ev-NavList" >
+        <#if (activityMenu??)&&(activityMenu?size>0)>
+            <#list activityMenu as MenuList>
+                <#if MenuList_index  ==4>
+                    <li class="nav_homgpage"><a href="${MenuList.activityMenuUrl}">${MenuList.activityMenuName}</a></li>
+                    <#else>
+                        <li><a href="${MenuList.activityMenuUrl}">${MenuList.activityMenuName}</a></li>
+                </#if>
+            </#list>
+        </#if>
+        <li class="nav_zx myWork"><a href="//www.allinmd.cn/pages/column/videoPK/personal_center.html" class="nav_zx_a">我的作品</a></li>
+        <li class="nav_bm"><a href="javascript:;">立即报名</a><div></div></li>
+        <div class="clear"></div>
+    </ul>
+</div>
+<#if (cms_news_list??)&&(cms_news_list?size>0)>
+    <#list cms_news_list as newsList>
+        ${newsList.newsBody}
+    </#list>
+</#if>
+<!--#include virtual="/includes/footer.jsp"-->
+
+<script src="//comm.allinmd.cn/base.js"></script>
+<script src="//modules.allinmd.cn/lib.js"></script>
+
+<script src="//scene.allinmd.cn/column/vPK_3/scene.column.vPKCheck.js"></script>
+<script src="//scene.allinmd.cn/column/vPK_3/scene.column.vPK_3.score.js"></script>
+<script src="//scene.allinmd.cn/column/scene.column.vPK_center.js"></script>
+<script src="//scene.allinmd.cn/column/scene.column.vPK_main.js"></script>
+<script src="//scene.allinmd.cn/column/scene.column.vPKFAQ.js"></script>
+
+<script src="//other.allinmd.cn/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="//other.allinmd.cn/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu-con.js"></script>
+<script src="//other.allinmd.cn/jquery-validate/jquery.validate.js"></script>
+<script src="//other.allinmd.cn/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src="//other.allinmd.cn/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="//other.allinmd.cn/uploadReplace/uploadReplace.js"></script>
+<script src="//other.allinmd.cn/jquery_lazyload/jquery.lazyload.js"></script>
+<script src="//other.allinmd.cn/uploadify/jquery.uploadify.js"></script>
+<script src="//other.allinmd.cn/ajaxfileupload.js"></script>
+<script src="//other.allinmd.cn/qiniu/qiniu.js"></script>
+<script src="//other.allinmd.cn/qiniu/ui.js"></script>
+<script src="//other.allinmd.cn/plupload/plupload.full.min.js"></script>
+<script src="//other.allinmd.cn/plupload/i18n/zh_CN.js"></script>
+
+</body>
+</html>

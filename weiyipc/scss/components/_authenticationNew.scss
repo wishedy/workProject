@@ -1,0 +1,1186 @@
+@charset "UTF-8";
+.al-personal{
+  .al-personalInner{
+    .al-personalHeader{
+      .al-not-auth{
+        font-size: 15px;
+        span{
+          margin-right: 20px;
+        }
+        .al-go-auth{
+          font-size: 14px;
+          color:#fff;
+          background: #FF9224;
+          border-radius: 100px;
+          width: 110px;
+          height: 30px;
+          line-height: 28px;
+          cursor: pointer;
+        }
+      }
+    }
+    .al-personalNavbar{
+      .al-personalNavbarItem,.al-customer-info{
+        position: relative;
+        .al-auth-reminder{
+          position: absolute;
+          width: 396px;
+          height:86px;
+          background: #FFFFFF;
+//          border: 1px solid #E4E9ED;
+          box-shadow: 0 0 11px 1px rgba(103,103,103,0.30);
+          border-radius: 4px;
+          bottom:60px;
+          left:-47%;
+          em {
+            font-style: normal;
+            display: block;
+            width: 100%;
+            text-align: left;
+          }
+          i{
+            float: left;
+          }
+          .reminderClose{
+            float: left;
+            width: 42px;
+          }
+          .al-auth-reminder-close{
+            opacity: 0.8;
+            background: #808080;
+            width: 12px;
+            height: 12px;
+            margin:31px 0 0 16px;
+            //padding-right: 12px;
+            //border-right: 1px solid #E4E9ED;
+            background: url('/images/img10/authentication/close_grey.png') no-repeat 50% 50%;
+            background-size: contain;
+            /*&:after{
+              content: '';
+              display: inline-block;
+              width: 1px;
+              height: 12px;
+              background: #E4E9ED;
+              vertical-align: super;
+              margin-left: 22px;
+            }*/
+          }
+
+          .al-auth-reminder-icon{
+            display: none;
+          }
+          .al-auth-reminder-content{
+            font-size: 15px;
+            color: #808080;
+            line-height: 24px;
+            padding:0 8px 0 10px;
+          }
+          .al-auth-reminder-go{
+            width:14px;
+            height:14px;
+            background: url('/images/img10/authentication/htbright.png') no-repeat 0 0;
+            background-size: contain;
+            margin-top: 30px;
+            margin-right: 20px;
+            float: right;
+          }
+          .al-auth-reminder-sharp{
+            position: absolute;
+            height:18px;
+            width: 32px;
+            left:120px;
+            bottom: -9px;
+            background: url('/images/img10/authentication/down.png') no-repeat 0 0;
+          }
+        }
+        .al-reminder-no-auto{
+          height:60px;
+          width: 310px;
+          .author{
+            height:28px;
+            width: 230px;
+          }
+          .al-auth-reminder-close{
+            margin: 28px 0 0 16px;
+          }
+          .al-auth-reminder-go{
+            margin-top: 26px;
+          }
+        }
+//        .al-auth-reminder:hover{
+          .al-auth-reminder-close{
+            &:hover{
+              background: url('/images/img10/authentication/reminder-close.png') no-repeat 50% 50%;
+              //background-size: contain;
+            }
+          }
+        .author{
+          float: left;
+          width: 294px;
+          height: 29px;
+          margin-top: 20px;
+          border-left:1px solid  #E4E9ED;;
+        }
+        .author:hover{
+          .al-auth-reminder-content{
+            color: #2899E6;
+          }
+          .al-auth-reminder-go{
+            background: url('/images/img10/authentication/arrow_right.png') no-repeat 0 0;
+            background-size: contain;
+          }
+        }
+//        }
+        .al-auth-reminder-failed,.al-auth-reminder-failed:hover{
+          width: 344px;
+          height: 60px;
+          .al-auth-reminder-close{
+            margin: 27px 0 0 16px;
+          }
+          .al-auth-reminder-content{
+            color:#F34B4B;
+            padding-left: 3px;
+          }
+          .al-auth-reminder-icon{
+            display:inline-block ;
+            width: 14px;
+            height: 13px;
+            margin: 7px 0 0 10px;
+            background: url('/images/img10/authentication/exclamation_mark.png') no-repeat 0 0;
+            background-size: contain;
+          }
+          .al-auth-reminder-go{
+            width:14px;
+            height:14px;
+            background: url('/images/img10/authentication/htbright.png') no-repeat 0 0;
+            background-size: contain;
+            margin-top: -22px;
+            margin-right: 20px;
+            float: right;
+
+          }
+        }
+      }
+    }
+    .al-personalInnerContent{
+      .al-contentItemTitle{
+        .al-auth-certificate-reminder{
+         display: inline-block;
+          font-size: 14px;
+          color: #909090;
+          margin-left: 285px;
+          .al-auth-certificate-help{
+            width: 16px;
+            height: 16px;
+            margin-bottom: -3px;
+            //border-radius: 50%;
+            cursor: pointer;
+            display: inline-block;
+            background: url('/images/img10/authentication/help.png') no-repeat 0 0;
+          }
+
+        }
+      }
+      .al-auth-certificate{
+        display: inline-block;
+      }
+      .al-certificate-list{
+        .al-certificate-item{
+
+          .al-certificate-header-bar{
+            height: 18px;
+            padding: 39px 24px 21px 24px;
+            font-size: 18px;
+            color: #333333;
+            line-height: 18px;
+            .al-certificate-title{
+              display: inline-block;
+              .onlyTipRed{
+                display: inline-block;
+                color: #F4493A;
+                font-size: 14px;
+                margin-left: 10px;
+              }
+              i{
+                background: url('/images/img10/authentication/Star.png') no-repeat 0 0;
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                margin-left: 10px;
+              }
+            }
+            .al-certificate-number{
+              font-size: 18px;
+              color: #333333;
+              line-height: 18px;
+              display: inline-block;
+              margin-left: 15px;
+            }
+            .al-certificate-error{
+              display: inline-block;
+              margin-left: 30px;
+              i{
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                margin-right: 8px;
+                margin-bottom: -3px;
+                background: url('/images/img10/authentication/exclamation_mark.png') no-repeat 0 0;
+              }
+              font-size: 13px;
+              color: #F34B4B;
+              line-height: 13px;
+            }
+
+            .al-certificate-operate{
+              display: inline-block;
+              float: right;
+              font-size: 16px;
+              color: #0B83E0;
+              line-height: 16px;
+              cursor: pointer;
+            }
+            .hide{
+              display: none;
+            }
+          }
+          .al-certificate-img{
+            padding:9px 84px;
+            .al-certificate-img-item{
+              display: inline-block;
+              width: 216px;
+              height:142px;
+              border-radius: 6px;
+              img{
+                width: 100%;
+                height: 100%;
+                border-radius: 6px;
+                display: block;
+              }
+            }
+            .al-certificate-img-item:nth-child(1){
+              margin-right: 55px;
+            }
+          }
+          .al-certificate-img-post{
+            padding:9px 108px 0 108px;
+            background: #F3F6F9;
+            position: relative;
+            @include clearfix();
+            .al-certificate-post-number{
+              width:100%;
+              height:36px;
+              line-height: 36px;
+              color:#666;
+              font-size: 16px;
+              padding-top: 20px;
+              .al-certificate-number-title{
+                margin-right: 38px;
+              }
+              .al-certificate-number-input{
+                background: #FFFFFF;
+                border: 1px solid #E6E8ED;
+                border-radius: 4px;
+                color:#777;
+                font-size: 17px;
+                padding-left: 10px;
+                height: 36px;
+                outline: none !important;
+                width: 290px;
+              }
+              .al-certificate-number-input::-webkit-outer-spin-button,
+              .al-certificate-number-input::-webkit-inner-spin-button {
+                -webkit-appearance: none !important;
+                margin: 0;
+              }
+              .al-certificate-number-input:focus{
+                outline: none !important;
+                box-shadow: none !important;
+                border: 1px solid #E6E8ED !important;
+              }
+            }
+            .al-certificate-post-item{
+              display: inline-block;
+              width: 216px;
+              height:142px;
+              margin-top: 31px;
+              float: left;
+              border-radius: 6px;
+              img{
+                width: 100%;
+                height: 100%;
+                border-radius: 6px;
+              }
+              position: relative;
+              .al-certificate-post-title{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                opacity: 0.9;
+                background: #515C74;
+                //width: 100px;
+                padding: 0 10px;
+                height: 28px;
+                font-size: 15px;
+                color: #FFFFFF;
+                border-top-left-radius: 6px;
+                border-bottom-right-radius: 6px;
+                text-align: center;
+                line-height: 28px;
+              }
+              background: #fff;
+              background: url('/images/img10/authentication/camera.png') no-repeat 0 0;
+              background-size: contain;
+              .al-certificate-post{
+                position: absolute;
+                margin: 0 auto;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                z-index: 1;
+                i{
+                  display: block;
+                }
+                input{
+                  opacity: 0;
+                  filter: alpha(opacity=0);
+                }
+                .al-certificate-formImg{
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  top: 0;
+                  left: 0;
+                  z-index: 2;
+                  font-size: 0;
+                  filter:alpha(opacity=0);
+                  -moz-opacity:0;
+                  -khtml-opacity: 0;
+                  opacity: 0;
+                }
+
+              }
+              .al-certificate-result{
+                display: none;
+              }
+              .al-certificate-failed{
+                display: none;
+              }
+            }
+            .al-certificate-post-over{
+              position: relative;
+              .al-certificate-post{
+                display: none;
+              }
+              .al-certificate-result{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                display: block;
+                img{
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 6px;
+                }
+              }
+            }
+            .al-certificate-post-failed,.al-certificate-post-loading{
+              position: relative;
+              border-radius: 6px;
+              .al-certificate-post{
+                display: none;
+              }
+              .al-certificate-result{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                display: block;
+                img{
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 6px;
+                }
+              }
+              .al-certificate-failed{
+                position: absolute;
+                border-radius: 6px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                filter:alpha(opacity=70);
+                -moz-opacity:.7;
+                -khtml-opacity: .7;
+                opacity: .7;
+                background: #0A1E2B;
+                display: block;
+                .al-certificate-close{
+                  background: url('/images/img10/authentication/close.png') no-repeat 0 0;
+                  border-radius: 0 6px 0 6px;
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                  width: 28px;
+                  height: 28px;
+                  cursor: pointer;
+                }
+                .al-certificate-failed-info{
+                  font-size: 15px;
+                  color: #FFFFFF;
+                  line-height: 30px;
+                  text-align: center;
+                }
+                .al-certificate-info{
+                  padding-top: 48px;
+                }
+
+              }
+            }
+            .al-certificate-post-loading{
+              .al-certificate-failed-info{
+                display: none;
+              }
+              .al-certificate-loading{
+                .al-loadEffect{
+                  display: block;
+                  margin: 0 auto;
+                  padding-top: 33px;
+                  img {
+                    width: 32px;
+                    height: 32px;
+                    margin: 12px auto;
+                    display: block;
+                    vertical-align: top;
+                    @include animate(rotate, 1s, linear, infinite);
+                  }
+                }
+                .al-loading-progress{
+                  font-size: 15px;
+                  color: #FFFFFF;
+                  line-height: 30px;
+                  text-align: center;
+                  display: block;
+                  margin: 0 auto;
+                }
+              }
+            }
+            .al-certificate-post-example{
+              margin-right: 55px;
+            }
+          }
+        }
+        .al-certificate-edit{
+          position: relative;
+          .al-certificate-img{
+            display: none;
+          }
+          .al-certificate-img-post{
+            display: block;
+            .al-certificate-edit-bar{
+              padding: 30px 0;
+              float: left;
+              width: 100%;
+              .al-certificate-edit-des{
+                height: 35px;
+                width: 100%;
+                p{
+                  float: right;
+                  font-size: 12px;
+                  color: #aaa;
+                }
+              }
+              .al-certificate-edit-button{
+                float: right;
+                .al-certificate-edit-cancel{
+                  font-size: 15px;
+                  color: #AAAAAA;
+                  width: 76px;
+                  height: 30px;
+                }
+                .al-certificate-edit-ensure{
+                  width: 76px;
+                  height: 30px;
+                  background: #2899E6;
+                  border-radius: 27px;
+                  line-height: 30px;
+                  font-family: MicrosoftYaHei;
+                  font-size: 15px;
+                  color: #FFFFFF;
+                  filter:alpha(opacity=40);
+                  -moz-opacity:.4;
+                  -khtml-opacity: .4;
+                  opacity: .4;
+                }
+                .active{
+                  filter:alpha(opacity=100);
+                  -moz-opacity:1;
+                  -khtml-opacity: 1;
+                  opacity: 1;
+                }
+              }
+            }
+            .al-certificate-edit-sharp{
+              position: absolute;
+              top: -13px;
+              left: 80px;
+              width: 26px;
+              height: 26px;
+              background: #fff;
+              background: url('/images/img10/authentication/triangle.png') no-repeat 0 0;
+            }
+          }
+        }
+        .al-certificate-ready{
+          .al-certificate-img{
+            display:block;
+          }
+          .al-certificate-img-post{
+            display: none;
+          }
+        }
+        .al-certificate-nothing{
+          .al-certificate-img{
+            display:none;
+          }
+          .al-certificate-img-post{
+            display: none;
+          }
+        }
+      }
+
+    }
+  }
+}
+.al-auth-grade{
+  display: none !important;
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  background: rgba(10,30,43,0.70);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#bb0A1E2B, endColorstr=#bb0A1E2B); BOTTOM: 0px;
+  .al-auth-grade-details{
+    background: #fff;
+    width: 420px;
+    position:absolute;
+    margin-left: -210px;
+    margin-top:-146px;
+    top:50%;
+    left:50%;
+    padding:30px;
+    height: 292px;
+    border-radius: 4px;
+    h1{
+      font-weight: 400;
+    }
+    .al-auth-grade-title{
+      font-family: MicrosoftYaHei;
+      font-size: 18px;
+      color: #222222;
+      line-height: 18px;
+      padding-top: 10px;
+      text-align: center;
+      font-weight: 600;
+    }
+    .al-auth-grade-produce{
+      line-height: 22px;
+      font-size: 14px;
+      color: #777777;
+      margin: 12px auto;
+      padding: 16px 20px;
+    }
+    .al-auth-grade-des{
+      margin: 0 auto;
+      h1{
+        font-weight: 600;
+        font-size: 16px;
+        color: #333;
+        margin:11px 0;
+        i{
+          display: inline-block;
+          background: url('/images/img10/authentication/square.png') no-repeat 0 0;
+          width: 11px;
+          height: 11px;
+          margin-right: 7px;
+        }
+        .remark{
+          font-size: 14px;
+          color: #777777;
+          letter-spacing: 0;
+          line-height: 14px;
+          font-weight: 400;
+          margin-left: 14px;
+        }
+      }
+      p{
+        line-height: 22px;
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 36px;
+        margin-left: 18px;
+      }
+    }
+    .al-auth-grade-close{
+      position: absolute;
+      top: 19px;
+      right: 19px;
+      width: 14px;
+      height: 14px;
+      background: url('/images/img10/authentication/close_grey.png') no-repeat 0 0;
+      background-size: contain;
+      cursor: pointer;
+    }
+  }
+}
+.al-adept-department{
+  @include clearfix();
+  font-size: 16px;
+  min-height: 26px;
+  height: auto;
+  width: 530px;
+  line-height: 26px;
+  position: relative;
+  //#departmentInput,#uncertifiedDepartmentInput{
+    padding: 5px 10px 0px;
+    background: #FFFFFF;
+    border: 1px solid #E6E8ED;
+    border-radius: 4px;
+  //}
+}
+.al-adept-fieldType,.al-adept-case,.al-adept-surgery{
+  @include clearfix();
+  font-size: 16px;
+  padding: 5.5px 10px;
+  background: #FFFFFF;
+  border: 1px solid #E6E8ED;
+  border-radius: 4px;
+  min-height: 26px;
+  height: auto;
+  width: 530px;
+  line-height: 26px;
+  position: relative;
+  .al-adept-case-name{
+    margin: 0;
+    height: 26px;
+    line-height: 26px;
+  }
+  .al-adept-fieldType-input,.al-adept-case-input,.al-adept-surgery-input{
+    border: 0;
+    color: #909090;
+    height: 16px;
+    width: 200px;
+    line-height: 19px;
+    font-size: 16px;
+    padding-left: 12px;
+    display: inline;
+    resize: none;
+    outline: none;
+  }
+  .al-adept-department-input:focus,.al-adept-fieldType-input:focus,.al-adept-case-input:focus,.al-adept-surgery-input:focus {
+    outline: none;
+    border: 0px solid #3598db !important;
+    box-shadow: none !important;
+  }
+  .al-adept-department-result,.al-adept-fieldType-result,.al-adept-case-result,.al-adept-surgery-result{
+    display: none;
+    position: absolute;
+    width: 100%;
+    top:89px;
+    left: 0;
+    border-bottom: #e1e3e4 solid 1px ;
+    z-index: 3;
+    background: #fff;
+    height: auto;
+    .al-adept-department-result-item,.al-adept-fieldType-result-item,.al-adept-case-result-item,.al-adept-surgery-result-item{
+      height: auto;
+      padding: 12px;
+      margin: 0;
+      border-top: #e1e3e4 solid 1px;
+      border-left: #e1e3e4 solid 1px;
+      border-right: #e1e3e4 solid 1px;
+      color:#666;
+      .al-adept-department-result-content,.al-adept-fieldType-result-content,.al-adept-case-result-content,.al-adept-surgery-result-content{
+        width: 60px;
+      }
+    }
+    .al-adept-department-result-first,.al-adept-fieldType-result-first,.al-adept-case-result-first,.al-adept-surgery-result-first{
+      border-top:none;
+    }
+    .al-adept-department-result-item:hover,.al-adept-fieldType-result-item:hover,.al-adept-case-result-item:hover,.al-adept-surgery-result-item:hover{
+      background: #3d84c6;
+      p{
+        color:#fff;
+      }
+    }
+  }
+}
+/*.al-adept-fieldType{
+  @include clearfix();
+  padding: 5.5px 29px 5.5px 11px;
+  background: #FFFFFF;
+  border: 1px solid #E6E8ED;
+  border-radius: 4px;
+  min-height: 26px;
+  height: auto;
+  width: 510px;
+  line-height: 26px;
+  position: relative;
+  .al-adept-case-name{
+    margin: 0;
+    height: 26px;
+    line-height: 26px;
+  }
+  .al-adept-fieldType-input{
+    border: 0;
+    color: #909090;
+    height: 17px;
+    width: 200px;
+    line-height: 19px;
+    font-size: 17px;
+    padding-left: 12px;
+    display: inline;
+    resize: none;
+    outline: none;
+  }
+  .al-adept-fieldType-input:focus {
+    outline: none;
+    border: 0px solid #3598db !important;
+    box-shadow: none !important;
+  }
+  .al-adept-fieldType-result{
+    display: none;
+    position: absolute;
+    width: 100%;
+    top:89px;
+    left: 0;
+    border-bottom: #e1e3e4 solid 1px ;
+    z-index: 3;
+    background: #fff;
+    height: auto;
+    .al-adept-fieldType-result-item{
+      height: auto;
+      padding: 12px;
+      margin: 0;
+      border-top: #e1e3e4 solid 1px;
+      border-left: #e1e3e4 solid 1px;
+      border-right: #e1e3e4 solid 1px;
+      color:#666;
+      .al-adept-fieldType-result-content{
+        width: 60px;
+      }
+    }
+    .al-adept-fieldType-result-first{
+      border-top:none;
+    }
+    .al-adept-fieldType-result-item:hover{
+      background: #3d84c6;
+      p{
+        color:#fff;
+      }
+    }
+  }
+}*/
+/*.al-adept-case{
+  @include clearfix();
+  padding: 5.5px 29px 5.5px 11px;
+  background: #FFFFFF;
+  border: 1px solid #E6E8ED;
+  border-radius: 4px;
+  min-height: 26px;
+  height: auto;
+  width: 510px;
+  line-height: 26px;
+  position: relative;
+  .al-adept-case-name{
+    margin: 0;
+    height: 26px;
+    line-height: 26px;
+  }
+  .al-adept-case-input{
+    border: 0;
+    color: #909090;
+    height: 17px;
+    width: 200px;
+    line-height: 19px;
+    font-size: 17px;
+    padding-left: 12px;
+    display: inline;
+    resize: none;
+    outline: none;
+  }
+  .al-adept-case-input:focus {
+    outline: none;
+    border: 0px solid #3598db !important;
+    box-shadow: none !important;
+  }
+  .al-adept-case-result{
+    display: none;
+    position: absolute;
+    width: 100%;
+    top:89px;
+    left: 0;
+    border-bottom: #e1e3e4 solid 1px ;
+    z-index: 3;
+    background: #fff;
+    height: auto;
+    .al-adept-case-result-item{
+      height: auto;
+      padding: 12px;
+      margin: 0;
+      border-top: #e1e3e4 solid 1px;
+      border-left: #e1e3e4 solid 1px;
+      border-right: #e1e3e4 solid 1px;
+      color:#666;
+      .al-adept-case-result-content{
+        width: 60px;
+      }
+    }
+    .al-adept-case-result-first{
+      border-top:none;
+    }
+    .al-adept-case-result-item:hover{
+      background: #3d84c6;
+      p{
+        color:#fff;
+      }
+    }
+  }
+}*/
+/*.al-adept-surgery{
+  @include clearfix();
+  padding: 5.5px 29px 5.5px 11px;
+  background: #FFFFFF;
+  border: 1px solid #E6E8ED;
+  border-radius: 4px;
+  min-height: 26px;
+  height: auto;
+  line-height: 26px;
+  width: 510px;
+  position: relative;
+  .al-adept-surgery-name{
+    margin: 0;
+    height: 26px;
+    line-height: 26px;
+  }
+  .al-adept-surgery-input{
+    border: 0;
+    color: #909090;
+    height: 17px;
+    width: 200px;
+    line-height: 19px;
+    font-size: 17px;
+    padding-left: 12px;
+    display: inline;
+    resize: none;
+    outline: none;
+  }
+  .al-adept-surgery-input:focus {
+    outline: none;
+    border: 0px solid #3598db !important;
+    box-shadow: none !important;
+  }
+  .al-adept-surgery-result{
+    display: none;
+    position: absolute;
+    width: 100%;
+    top:89px;
+    left: 0;
+    border-bottom: #e1e3e4 solid 1px ;
+    z-index: 2;
+    background: #fff;
+    height: auto;
+    .al-adept-surgery-result-item{
+      height: auto;
+      padding: 12px;
+      margin: 0;
+      border-top: #e1e3e4 solid 1px;
+      border-left: #e1e3e4 solid 1px;
+      border-right: #e1e3e4 solid 1px;
+      color:#666;
+    }
+    .al-adept-surgery-result-first{
+      border-top:none;
+    }
+    .al-adept-surgery-result-item:hover{
+      background: #3d84c6;
+      p{
+        color:#fff;
+      }
+    }
+  }
+}*/
+.al-adept-result-item{
+  line-height: 26px;
+}
+/*.ev-good-at-case,.ev-good-at-surgery{
+  margin-top: -4px;
+}*/
+.al-mask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width:100%;
+  height:100%;
+  background: rgba(51,51,51,.7);
+  .percentage{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: auto;
+    height: auto;
+    span{
+      display: block;
+      font-size: 15px;
+      color: #FFFFFF;
+      line-height: 15px;
+      text-align: center;
+    }
+    img{
+      width: 23px;
+      height: 22px;
+    }
+  }
+}
+.al-adept-case{
+  .al-adept-case-title{
+    margin-left: 0;
+  }
+}
+.al-adept-surgery-container{
+  width: 640px;
+  height: auto;
+  background: #FFFFFF;
+  box-shadow: 0 8px 20px 0 rgba(197,206,214,0.80);
+  border-radius: 4px;
+  position: absolute;
+  top: 36px;
+  left: 0;
+  z-index: 2;
+  min-height: 136px;
+  .al-adept-surgery-list{
+    width: 612px;
+    padding: 24px;
+    height: 98px;
+    @include clearfix();
+    border-bottom: 1px solid #ECF0F2;
+    .al-surgery-subject{
+      border: 1px solid #DBDBDB;
+      border-radius: 26px;
+      float: left;
+      height: 38px;
+      padding: 0 14px;
+      line-height: 38px;
+      font-size: 15px;
+      color: #808080;
+      margin:6px;
+      cursor: pointer;
+      i{
+        display: none;
+      }
+    }
+    .al-surgery-subject:hover{
+      background: #F8F8F8;
+      border: 1px solid #D7DBDE;
+      border-radius: 26px;
+      color: #808080;
+    }
+    .selected{
+      border: 1px solid #2899E6;
+      border-radius: 26px;
+      color: #2899E6;
+      background: #fff;
+      i{
+        display: inline-block;
+        width: 8px;
+        height: 6px;
+        background: url("/images/img10/authentication/selected.png") no-repeat 50% 50%;
+        margin-right: 6px;
+      }
+    }
+    .selected:hover{
+      background: rgba(40,153,230,0.13);
+      border: 1px solid #2899E6;
+      border-radius: 26px;
+      color: #2899E6;
+    }
+    .active,.active:hover{
+      background: #2899E6;
+      border-radius: 26px;
+      color: #FFFFFF;
+
+    }
+    .activeHave,.activeHave:hover{
+      background: #2899E6;
+      border-radius: 26px;
+      color: #FFFFFF;
+      border: solid 1px #2899e6;
+      i{
+        //background-size: cover;
+        display: inline-block;
+        width: 9px;
+        height: 6px;
+        background: url("/images/img10/authentication/yes.png") no-repeat 50% 50%;
+        margin-right: 6px;
+      }
+    }
+  }
+  .al-adept-subject-surgery{
+    width: 640px;
+    border-bottom: 1px solid #ECF0F2;
+    height: 284px;
+    @include clearfix();
+    .al-adept-second-index{
+      height: 284px;
+      width: 230px;
+      float: left;
+      overflow-y: scroll;
+      .al-adept-second-item{
+        padding: 16px 26px 16px 28px;
+        line-height: 24px;
+        font-size: 16px;
+        color: #555555;
+        border-right: 1px solid #ECF0F2;
+        border-bottom: 1px solid #ECF0F2;
+        background: #F8F8F8;
+        cursor: pointer;
+      }
+      .selected{
+        border-right: none;
+        background: #fff;
+
+      }
+    }
+    .al-adept-third-index{
+      height: 284px;
+      overflow-y: scroll;
+      .al-adept-third-item{
+        cursor: pointer;
+        float: left;
+        width: 300px;
+        padding: 0 26px 0 30px;
+        margin:10px 0;
+        font-size: 16px;
+        color: #555555;
+      }
+      .selected{
+        color: #2899E6;
+        background: url("/images/img10/authentication/selected.png") no-repeat 16px 50%;
+      }
+    }
+    /* 设置滚动条的样式 */
+    .al-adept-third-index::-webkit-scrollbar,.al-adept-second-index::-webkit-scrollbar {
+      width:4px;
+      height: 80px;
+    }
+    /* 滚动槽 */
+    .al-adept-third-index::-webkit-scrollbar-track ,.al-adept-second-index::-webkit-scrollbar-track {
+      //-webkit-box-shadow:inset006pxrgba(0,0,0,0.3);
+      border-radius:10px;
+    }
+    /* 滚动条滑块 */
+    .al-adept-third-index::-webkit-scrollbar-thumb,.al-adept-second-index::-webkit-scrollbar-thumb {
+      width: 4px;
+      background: #D8D8D8;
+      border-radius: 47px;
+      height: 80px;
+      //-webkit-box-shadow:inset006pxrgba(0,0,0,0.5);
+    }
+    .al-adept-third-index::-webkit-scrollbar-thumb:window-inactive,.al-adept-second-index::-webkit-scrollbar-thumb:window-inactive {
+      background: #D8D8D8;
+      width: 4px;
+      border-radius: 47px;
+    }
+  }
+  .al-adept-submit{
+    width: 640px;
+    height: 69px;
+    .al-adept-submit-cancel,.al-adept-submit-ensure{
+      background: #2899E6;
+      border-radius: 27px;
+      width: 76px;
+      height: 30px;
+      font-size: 15px;
+      color: #FFFFFF;
+      margin:19px 0 0 24px;
+    }
+    .al-adept-submit-cancel{
+      color: #AAAAAA;
+      background: none;
+      margin-left: 0;
+    }
+  }
+
+}
+.ev-upload{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width:100%;
+  height:100%;
+  background: rgba(51,51,51,.7);
+  .uploadPopup{
+    position: absolute;
+    left: 0;
+    top: 0%;
+    z-index: 3;
+    background: rgba(10,30,43,0.7);
+    width: 100%;
+    height: 100%;
+    p{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+      font-size: 15px;
+      color: #FFFFFF;
+      line-height: 22px;
+    }
+
+
+  }
+  .popupClose{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 4;
+    width: 28px;
+    height: 28px;
+    background: url("/images/img10/authentication/close.png") no-repeat;
+  }
+}
+.al-contentItemTitle{
+  .al-auth-title{
+    display: inline-block;
+    height: 18px;
+  }
+  .al-auth-audit{
+    display: inline-block;
+    height: 18px;
+    float: right;
+    color: #909090;
+  }
+}
+
+
+
+
+.al-personal{
+  margin-bottom: 40px;
+}
+
+.al-tablePadding .al-tableItem{
+  padding-top: 25px;
+}

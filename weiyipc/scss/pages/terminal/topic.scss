@@ -1,0 +1,139 @@
+@charset "utf-8";
+//公共方法模块调用
+
+@import "library";
+
+.al-textDetails_main{
+  text-align:center;
+  position: relative;
+  .Ev-videoPlayBtn{
+    position:absolute;
+    width: 80px;
+    height:80px;
+    border-radius: 50%;
+    //behavior:url("/js/third-party/pie/pie.htc");
+    background: url("//img10.allinmd.cn/v3/common/icon/videoPlayIcon.png") center center no-repeat;
+    cursor: pointer;
+    top:50%;
+    left:50%;
+    margin: -40px 0 0 -40px;
+  }
+.Ev-videoImgSrc{
+  .Ev-videoPlayTime{
+    position: absolute;
+    right:3px;
+    bottom:10px;
+    text-align: center;
+    color: #fff;
+    width: 81px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    background: url("//img10.allinmd.cn/v3/terminal/video_time.png") center center no-repeat;
+  }
+}
+
+
+  >img{width:660px;}
+  >figure{
+    position: relative;
+    img{width:660px;min-height:440px;}
+    .videoPlayBtn{  //视频播放按钮
+      position:absolute;
+      width: 80px;
+      height:80px;
+      border-radius: 50%;
+      //behavior:url("/js/third-party/pie/pie.htc");
+      background: url("//img10.allinmd.cn/v3/common/icon/videoPlayIcon.png") center center no-repeat;
+      cursor: pointer;
+      top:185px;
+      left:50%;
+      margin-left:-40px;
+    }
+    span{
+      position: absolute;
+      right:0;
+      bottom:1px;
+      text-align: center;
+      color: #fff;
+      width: 81px;
+      height: 25px;
+      line-height: 25px;
+      font-size: 14px;
+      background: url("//img10.allinmd.cn/v3/terminal/video_time.png") center center no-repeat;
+    }
+  }
+
+  .littleImg{height:292px;}
+  h5{
+    font-size:14px;
+    color:#666666;
+    text-align:center;
+    font-weight:normal;
+    margin-top:15px;
+  }
+  p{
+    margin-top:40px;
+    a{
+      color:#3598DB;
+      padding:0 3px;
+    }
+  }
+  .active{margin-top:6px;}
+}
+
+
+//讨论
+.al-textDetails_discuss {
+  position: relative;
+  margin-top:40px;
+  i{
+    display: block;
+    width: 66px;
+    height: 38px;
+    background: url("//img10.allinmd.cn/v3/terminal/discussIcon_img.png") center center no-repeat;
+  }
+  p{
+    line-height:30px;
+    //margin-bottom:22px;
+    margin-top:6px;
+    white-space: pre-wrap;
+    a{
+      color: #3598DB;
+      padding: 0 3px;
+    }
+  }
+}
+
+//英文按钮
+  .al-switchEnglishBtn{
+    display: inline-block;
+    width:71px;
+    text-align: center;
+    height:23px;
+    line-height:23px;
+    box-sizing: border-box;
+    border:1px solid #2899e6;
+    color:#3598db !important;
+    border-radius:50px;
+    //behavior:url("/js/third-party/pie/pie.htc");
+    margin-left:20px;
+    &:before{
+      content:'';
+      display:inline-block;
+      width:14px;
+      height:14px;
+      background: url("//img10.allinmd.cn/v3/terminal/switchBtnIcon.png") center center no-repeat;
+      margin:0 4px -1px 0;
+    }
+  }
+  /*文章终端页模板生成视频图片处理*/
+.Ev-videoImgSrc{
+  display: block;
+  position: relative;
+  width: 100%;
+  img{
+    width: 100%;
+  }
+}
+@import "../../components/medplusDownLoad";

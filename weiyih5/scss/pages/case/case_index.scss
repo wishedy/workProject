@@ -1,0 +1,218 @@
+@charset "UTF-8";
+//终端——病例首页
+//公共方法模块调用
+@import "../../modules/common-modules";
+//公共变量引用
+@import "../../variables/_allinmdV2-variables";
+//样式模块调用
+@import "../../components/_iconModule"; //小图标组件
+@import "../../components/_buttonModule"; //按钮组件
+.al-mainInner {
+    overflow-x: visible;
+}
+
+@import "../../components/_terminalDoc";
+@import "../../components/_terminalContent";
+@import "../../components/_terminalFooter";
+@import "../../components/_bottomBtns";
+@import "../../components/_bottomSharePart"; //底部分享弹层
+@import "../../components/_confirmModal";
+@import "../../components/_docDetailsModule";
+@import "../../components/_belongSerise";
+/*.al-terminalHeader {
+    padding-top: 1.3rem;
+}*/
+.Ev-videoBcImg{
+    width:100%;
+}
+.icon-terminalComment {
+    @extend %icon-terminalComment;
+}
+
+.icon-terminalLike {
+    @extend %icon-terminalLike;
+}
+.icon-terminalLiked {
+    @extend %icon-terminalLiked;
+}
+
+.icon-terminalBack {
+    @extend %icon-terminalBack;
+}
+
+.icon-terminalJoin {
+    @extend %icon-terminalJoin;
+}
+
+.icon-terminalCommentNum {
+    @extend %icon-terminalCommentNum;
+}
+
+.icon-terminallike {
+    @extend %icon-terminallike;
+}
+
+.icon-terminalCollect {
+    @extend %icon-terminalCollect;
+}
+
+.icon-simCase {
+    @extend %icon-simCase;
+}
+
+.icon-fixedTopShare {
+    @extend %icon-fixedTopShare;
+}
+
+.icon-terminalConfig {
+    @extend %icon-terminalConfig;
+}
+
+/*.al-vipUser {
+    @extend %al-vipUser;
+}*/
+
+.icon-terminalFollowed {
+    @extend %icon-terminalFollowed;
+}
+.icon-videoDownload {
+    @extend %icon-videoDownload;
+}
+
+.icon-videoReply {
+    @extend %icon-videoReply;
+}
+
+.icon-videoLike {
+    @extend %icon-videoLike;
+}
+
+.icon-videoShare {
+    @extend %icon-videoShare;
+}
+
+.icon-videoCollect {
+    @extend %icon-videoCollect;
+}
+
+.icon-videoOpen {
+    @extend %icon-videoOpen;
+}
+.icon-videoBrowseNum{
+    @extend %icon-videoBrowseNum;
+    font-style: normal;
+    float: right;
+    span{
+        vertical-align: middle;
+    }
+}
+.icon-terminalMoreImg:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(14px);
+    height: rem(22px);
+    transform: rotate(180deg);
+    background-image: url('//img50.allinmd.cn/pages/case/back.png');
+    background-size: 100% 100%;
+    margin-left: rem(12px);
+}
+.al-terminalHeader > section {
+    border-bottom: 0;
+}
+
+.al-terminalDocPdfImg {
+    width: 100%;
+    position: relative;
+    & > img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+    & > .al-terminalDocPdfImgMsg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        figcaption {
+            vertical-align: middle;
+            display: inline-block;
+            & > img {
+                width: rem(132px);
+                height: rem(87px);
+                display: block;
+                margin: 0 auto;
+            }
+            & > button {
+                background-color: #2899e6;
+                color: #fff;
+                margin: 0 auto;
+                margin-top: rem(30px);
+                @include font-dpr(15px);
+                padding: rem(15px) rem(40px);
+                display: block;
+            }
+        }
+    }
+}
+.al-terminalHeader .al-littleScoreStarBox{padding-bottom:0;}
+
+
+/*详情页新增*/
+.Subtitle{
+    font-size: rem(34px);
+    line-height: rem(51px);
+    color: #909090;
+    margin: rem(20px) 0;
+}
+.al-terminalImgBox .videoMore{
+    @include clearfix();
+    li{
+        width: rem(338px);
+        height: rem(224px);
+        margin: 0 rem(13px) rem(15px) 0;
+        float: left;
+        &:nth-child(2n){
+            margin-right: 0;
+        }
+        .al-terminalImg img{
+            width: rem(338px);
+            height: rem(224px);
+        }
+        .al-terminalVideoBtn img{
+            width: 1.08rem;
+            height: 1.08rem;
+        }
+    }
+}
+
+
+.uploadSuccess{
+    position:  absolute;
+    left:  0;
+    top: 0;
+    background: url('//img50.allinmd.cn/case/videoFormating.jpg') no-repeat;
+    width:  100%;
+    height: 100%;
+    background-size: cover;
+    z-index: 3;
+}
+.uploadFail{
+    position:  absolute;
+    left:  0;
+    top: 0;
+    background: url('//img50.allinmd.cn/case/videoFailing.png') no-repeat;
+    width:  100%;
+    height: 100%;
+    background-size: cover;
+    z-index: 3;
+}

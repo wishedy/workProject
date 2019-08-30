@@ -1,0 +1,477 @@
+@charset "UTF-8";
+.fixedHeader {
+    position: fixed;
+    top: 0;
+    z-index: 6;
+    width: 100%;
+}
+
+.al-indexHeader {
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 0.4rem;
+    height: 1.17333rem;
+    overflow: hidden;
+}
+
+.al-indexHeader h1 {
+    font-size: 17px;
+    color: #222222;
+}
+
+[data-dpr="2"] .al-indexHeader h1 {
+    font-size: 34px;
+}
+
+[data-dpr="3"] .al-indexHeader h1 {
+    font-size: 51px;
+}
+
+.al-indexHeader a {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    color: #515c74;
+}
+
+[data-dpr="2"] .al-indexHeader a {
+    font-size: 26px;
+}
+
+[data-dpr="3"] .al-indexHeader a {
+    font-size: 39px;
+}
+
+.al-indexHeader a:link {
+    color: #515c74;
+}
+
+.al-indexHeader a:visited {
+    color: #515c74;
+}
+
+.al-indexHeader a:hover {
+    color: #515c74;
+}
+
+.al-indexHeader a:active {
+    color: #515c74;
+}
+
+.al-indexHeader .al-indexHeaderItem {
+    width: 3rem;
+    height: 100%;
+    line-height: 1.17333rem;
+    white-space: nowrap;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-last-child(1) {
+    text-align: right;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-child(1) {
+    text-align: left;
+}
+
+.al-indexHeader .al-indexHeaderItem:nth-child(2) {
+    text-align: center;
+}
+
+.al-indexHeaderItem:nth-child(1) a {
+    display: block;
+    height: 100%;
+    width: 1rem;
+    margin-left: -0.25rem;
+}
+
+.al-indexHeaderItem:nth-child(1) a:before {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.al-indexHeaderItem:nth-child(1) a img {
+    width: 0.8rem;
+    height: 0.8rem;
+    vertical-align: middle;
+}
+
+.al-indexHeaderItem:nth-child(3) a {
+    color: #626f8c;
+    font-size: 14px;
+}
+
+[data-dpr="2"] .al-indexHeaderItem:nth-child(3) a {
+    font-size: 28px;
+}
+
+[data-dpr="3"] .al-indexHeaderItem:nth-child(3) a {
+    font-size: 42px;
+}
+
+/*搜索框*/
+.searchCont {
+    background: #fff;
+    padding: 0 0 0 0.4rem;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    overflow: hidden;
+}
+
+.searchCont:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.searchCont .searchInput {
+    float: left;
+    width: 7.81333rem;
+    height: 1.12rem;
+    overflow: hidden;
+    background: rgba(205, 205, 205, 0.2) url("//img50.allinmd.cn/index/searchBorder.png") no-repeat;
+    background-size: contain;
+    font-size: 0.4rem;
+    color: #a0a0a0;
+}
+
+.searchCont .searchInput i {
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url("//img50.allinmd.cn/index/search.png") no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin: 0 0.17333rem 0 0.29333rem;
+}
+
+.searchCont button {
+    float: left;
+    background: #3CAEFA;
+    border-radius: 0 6px 6px 0;
+    width: 1.4rem;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    font-size: 0.4rem;
+    color: #FFFFFF;
+}
+
+html, body {
+    height: 100%;
+}
+
+i {
+    font-style: normal;
+}
+
+.al-mainInner {
+    background: url("/pages/wx/ReceiveCredits/image/creditBG.png") no-repeat;
+    background-size: cover;
+    padding: 0;
+}
+
+.unOpenContain {
+    text-align: center;
+    margin-top: 4.42667rem;
+}
+
+.unOpenContain .unOpenTitle {
+    font-size: 0.74667rem;
+    color: #FFFFFF;
+}
+
+.unOpenContain .unOpentext {
+    opacity: 0.9;
+    font-size: 0.56rem;
+    color: #FFFFFF;
+    margin-top: 1.33333rem;
+    line-height: 0.98667rem;
+    display: none;
+}
+
+.unOpenContain .unOpentext i {
+    display: block;
+}
+
+.unOpenContain .unOpentext span {
+    display: block;
+}
+
+.infoTitle {
+    margin-top: 1.4rem;
+    text-align: center;
+    font-size: 0.58667rem;
+    color: #FFFFFF;
+}
+
+.inputBox {
+    border: 2px solid #ffffff;
+    border-radius: 0.13333rem;
+    width: 80%;
+    height: 1.41333rem;
+    line-height: 1.41333rem;
+    margin: 0 auto 0.4rem;
+    font-size: 0.45333rem;
+    color: #ffffff;
+    margin-top: 1.44rem;
+}
+
+.inputBox.codeInput {
+    margin-top: 0rem;
+}
+
+.inputBox.codeInput input {
+    width: 50%;
+}
+
+.inputBox :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #ffffff;
+    opacity: 1;
+    font-size: 0.45333rem;
+}
+
+.inputBox ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #ffffff;
+    opacity: 1;
+    font-size: 0.45333rem;
+}
+
+.inputBox input:-ms-input-placeholder {
+    color: #ffffff;
+    opacity: 1;
+    font-size: 0.45333rem;
+}
+
+.inputBox input::-webkit-input-placeholder {
+    color: #ffffff;
+    opacity: 1;
+    font-size: 0.45333rem;
+}
+
+.inputBox input {
+    border: none;
+    width: 70%;
+    margin-left: 0.4rem;
+    color: #ffffff;
+    text-align: left;
+    background-color: transparent;
+    font-size: 0.74667rem;
+    margin-top: 0.29333rem;
+}
+
+.inputBox span {
+    float: right;
+    margin-right: 0.4rem;
+}
+
+.receiveBtn {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80%;
+    height: 1.41333rem;
+    line-height: 1.41333rem;
+    margin: 0 auto;
+    margin-top: 1.06667rem;
+}
+
+.receiveBtn button {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 0.48rem;
+    color: #2899E6;
+}
+
+.receiveBtn p {
+    opacity: 0.8;
+    font-size: 0.4rem;
+    color: #ffffff;
+    line-height: 0.6rem;
+    margin-top: 0.53333rem;
+}
+
+.receiveBtn p i {
+    width: 2rem;
+    display: inline-block;
+}
+
+.reminder {
+    width: 80%;
+    height: 1.41333rem;
+    line-height: 0.66667rem;
+    margin: 0 auto;
+    margin-top: 0.4rem;
+    font-size: 0.4rem;
+    color: #FFEBC2;
+    opacity: 0.9;
+}
+
+.reminder p {
+    width: 26%;
+    display: inline-block;
+    line-height: 0.6rem;
+    vertical-align: top;
+}
+
+.reminder p.reminderCon {
+    width: 72%;
+}
+
+.infoFooter {
+    text-align: center;
+    /*position: fixed;
+    bottom: rem(49px);*/
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.infoFooter .infoFooterCon {
+    width: 56%;
+    text-align: left;
+    display: inline-block;
+}
+
+.infoFooter .infoFooterCon p {
+    font-size: 0.4rem;
+    color: #FFFFFF;
+    line-height: 0.58667rem;
+    margin-bottom: 0.24rem;
+}
+
+.infoFooter .infoFooterCon p span {
+    width: 1.09333rem;
+    height: 0.58667rem;
+    font-size: 0.37333rem;
+    color: #2899E6;
+    line-height: 0.58667rem;
+    background: #ffffff;
+    display: inline-block;
+    border-radius: 0.05333rem;
+    margin-left: 0.30667rem;
+}
+
+.infoFooter .infoFooterCon p i {
+    width: 0.4rem;
+    display: inline-block;
+}
+
+.infoFooter a {
+    color: #FFB47A;
+}
+
+.failedContain {
+    width: 100%;
+    text-align: center;
+    margin-top: 2.02667rem;
+}
+
+.failedContain .faileTitle {
+    font-size: 0.58667rem;
+    color: #FFFFFF;
+    line-height: 0.88rem;
+    display: inline-block;
+}
+
+.failedContain .checkFaile {
+    position: static;
+    margin-top: 1.73333rem;
+}
+
+.failedContain .refill {
+    margin-top: 1.69333rem;
+}
+
+.successContain {
+    width: 100%;
+    text-align: center;
+}
+
+.successContain .sucTitle {
+    margin: 1.4rem auto 1.30667rem;
+    font-size: 0.58667rem;
+    color: #FFFFFF;
+    line-height: 0.58667rem;
+}
+
+.successContain .sucCardTitle {
+    text-align: left;
+    margin-left: 1rem;
+}
+
+.successContain .sucCardTitle i {
+    display: inline-block;
+    background: #ffffff;
+    width: 0.24rem;
+    height: 0.24rem;
+    border-radius: 0.24rem;
+    margin-right: 0.26667rem;
+}
+
+.successContain .sucCardTitle p {
+    display: inline-block;
+    font-size: 0.48rem;
+    color: #FFFFFF;
+    line-height: 0.4rem;
+}
+
+.successContain .sucCardImg {
+    width: 8rem;
+    height: 5.64rem;
+    margin: 0 auto;
+    background: #D9E5E9;
+    margin-top: 0.66667rem;
+    border-radius: 0.26667rem;
+    position: relative;
+}
+
+.successContain .sucCardImg img {
+    width: 8rem;
+    height: 3.86667rem;
+    border-top-left-radius: 0.26667rem;
+    border-top-right-radius: 0.26667rem;
+}
+
+.successContain .sucCardImg .sucTxt {
+    width: 7.09333rem;
+    height: 1.22667rem;
+    font-size: 0.37333rem;
+    color: #555555;
+    letter-spacing: 0;
+    line-height: 0.61333rem;
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    background: #ffffff;
+    padding: 0.26667rem 0.45333rem;
+    border-bottom-left-radius: 0.26667rem;
+    border-bottom-right-radius: 0.26667rem;
+}
+
+.isOverContain {
+    width: 100%;
+    text-align: center;
+}
+
+.isOverContain .oveTitle {
+    margin: 1.4rem auto 1.30667rem;
+    font-size: 0.58667rem;
+    color: #FFFFFF;
+    line-height: 0.58667rem;
+}
+
+.isOverContain .oveFooter {
+    position: static;
+}

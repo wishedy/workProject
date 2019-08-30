@@ -1,0 +1,34 @@
+<template name="medicalReportEnsure$7e2807f6">
+  <view class="_div data-v-87b7c2ec mre_main">
+    <view class="_figure data-v-87b7c2ec mre_content {{[foldMoreText == '展开' ? 'fixationH' : '']}}">
+      <view class="_figcaption data-v-87b7c2ec"><label class="_span data-v-87b7c2ec mre_patientName">{{medicalParams.medicalShow.patientName}}</label><label class="_span data-v-87b7c2ec">{{medicalParams.medicalShow.sex == 1?"男":"女"}}</label><label class="_span data-v-87b7c2ec">{{medicalParams.medicalShow.age}}岁</label></view>
+      <view class="_ul data-v-87b7c2ec mre_infroLists">
+        <view class="_li data-v-87b7c2ec"><label class="_span data-v-87b7c2ec mre_infroItemLeft">服务医生</label>
+          <view class="_p data-v-87b7c2ec mre_infroItemRight">{{doctorInfo}}</view>
+        </view>
+        <view class="_li data-v-87b7c2ec"><label class="_span data-v-87b7c2ec mre_infroItemLeft">病情描述</label>
+          <view class="_p data-v-87b7c2ec mre_infroItemRight">{{illnessDescribe}}</view>
+        </view>
+        <view wx:if="{{medicalParams.medicalShow.treatment}}" class="_li data-v-87b7c2ec"><label class="_span data-v-87b7c2ec mre_infroItemLeft">治疗情况</label>
+          <view class="_p data-v-87b7c2ec mre_infroItemRight">{{cureCondition}}</view>
+        </view>
+        <view wx:if="{{medicalParams.medicalShow.illness}}" class="_li data-v-87b7c2ec"><label class="_span data-v-87b7c2ec mre_infroItemLeft">病情补充</label>
+          <view class="_p data-v-87b7c2ec mre_infroItemRight">{{medicalParams.medicalShow.illness}}</view>
+        </view>
+        <view class="_li data-v-87b7c2ec"><label class="_span data-v-87b7c2ec mre_infroItemLeft">寻求帮助</label>
+          <view class="_p data-v-87b7c2ec mre_infroItemRight">{{medicalParams.medicalShow.docHelp}}</view>
+        </view>
+        <view wx:if="{{medicalParams.medicalShow.imageList.length > 0}}" class="_li data-v-87b7c2ec"><label class="_span data-v-87b7c2ec mre_infroItemLeft">图片资料</label>
+          <view class="_p data-v-87b7c2ec mre_infroItemRight">{{medicalParams.medicalShow.imageList.length}}张</view>
+          <view class="_section data-v-87b7c2ec mre_imgLists">
+            <view class="_div data-v-87b7c2ec mre_imgItem" wx:key="index" key="{{index}}" wx:for="{{imageListThree}}" wx:for-index="index" wx:for-item="item">
+              <image src="{{item||item.blob}}" alt bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" class="_img data-v-87b7c2ec"></image>
+              <view class="_div data-v-87b7c2ec mre_imgMore" wx:if="{{index == 2&&medicalParams.medicalShow.imageList.length>3}}" bindtap="handleProxy" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}">查看全部</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_section data-v-87b7c2ec foldOrMore" hidden="{{!(foldOrMoreShow)}}" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">{{foldMoreText}}</view>
+  </view>
+</template>

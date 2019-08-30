@@ -1,0 +1,41 @@
+<!--top start-->
+<!--#include virtual="/includes/header.jsp"-->
+<!--top End-->
+<input id="liveType" type="hidden" value="meetingTopic" />
+<div class="banner" style="background: url(//img99.allinmd.cn/${adProfileAttachment.adAttUrl?''}) no-repeat center; width: 100%; height: 355px;">
+    <div class="m_nav">
+
+        <ul id="evNaviTab">
+            <#list conferenceMenu as list>
+                <li><a href="${list.menuUrlAllin}" id="a_${list.tplPath}">${list.conMenu}</a></li>
+            </#list>
+        </ul>
+
+    </div>
+</div>
+
+<div class="qr_img">
+    <img src="//img00.allinmd.cn/conference/4/meeting_content/weixin.png" />
+</div>
+<input id="conSubId" type="hidden" value="${conference_sub.id}" />
+
+<link href="//modules.allinmd.cn/lib.css" rel="stylesheet" type="text/css"/>
+
+<link href="//other.allinmd.cn/jquery-X-Menu/css/powerFloat.css" rel="stylesheet" type="text/css" />
+<link href="//other.allinmd.cn/jquery-X-Menu/css/xmenu.css" rel="stylesheet" type="text/css" />
+<link href="//other.allinmd.cn/jquery-autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+
+<script src="//comm.allinmd.cn/base.js"></script>
+<script src="//modules.allinmd.cn/lib.js"></script>
+<script src="//scene.allinmd.cn/channel/scene.channel.meeting.js" type="text/javascript"></script>
+
+<script src="//other.allinmd.cn/jquery-autocomplete/jquery.autocomplete.js"></script>
+<script src="//other.allinmd.cn/jquery-autocomplete/jquery.lenovo.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-powerFloat-min.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu-new.js"></script>
+<script src="//other.allinmd.cn/jquery-X-Menu/js/jquery-xmenu-con.js"></script>
+<script src="//other.allinmd.cn/jquery-validate/jquery.validate.js"></script>
+<script src="//other.allinmd.cn/jquery-validate/jquery.validate.rules.collection.js"></script>
+<script src="//other.allinmd.cn/zhihu-placeholder/jquery.placeholder.zhihu.js"></script>
+<script src="//other.allinmd.cn/uploadReplace/uploadReplace.js"></script>

@@ -1,0 +1,18 @@
+<template name="checkSuggest$789ecc15">
+  <view data-alcode-mod="715" class="_div data-v-ef35674c">
+    <view class="_section data-v-ef35674c main-message-box">
+      <view class="_article data-v-ef35674c check-suggest-box">
+        <view class="_header data-v-ef35674c check-suggest-title">建议您进行以下检查，并上传检查资料，分诊将继续为您解答，并推荐对症专家</view>
+        <view class="_section data-v-ef35674c check-suggest-bg"></view>
+        <view class="_section data-v-ef35674c check-suggest-content">
+          <view class="_ul data-v-ef35674c check-suggest-list">
+            <view class="_li data-v-ef35674c check-suggest-item" data-adviceid="{{item.adviceId}}" data-advicetype="{{item.adviceType}}" wx:key="index" key="{{index}}" scrollToBottom="{{scrollToBottom}}" scrollElement="{{scrollElement}}" wx:for="{{tempSuggest}}" wx:for-index="index" wx:for-item="item"><label class="_span data-v-ef35674c">{{item.adviceName}}</label></view>
+          </view>
+          <view class="_section data-v-ef35674c more-box" wx:if="{{moreBoxShow}}"><label class="_span data-v-ef35674c more-box-btn more-btn" hidden="{{!(moreData)}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">查看更多</label> <label class="_span data-v-ef35674c more-box-btn less-btn" hidden="{{!(!moreData)}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">收起</label></view>
+          <view data-alcode="e129" class="_section data-v-ef35674c check-suggest-btn" data-role="videoTriage" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}"> 上传检查资料 </view>
+        </view>
+        <view class="_section data-v-ef35674c tips-content"> 重要提示：在线咨询不能代替面诊，医生建议仅供参考。 </view>
+      </view>
+    </view>
+  </view>
+</template>

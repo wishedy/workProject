@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文库JOA</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="keywords" content="医学资源分类，医学资源查找，手术视频,医学文献,病例讨论,骨科,唯医,allinmd">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/doc/doc_index.css">
+    <link rel="stylesheet" href="/css/vander/swiper.min.css">
+
+    <link href="/js/third-party/sweetalert-master/lib/sweet-alert.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/third-party/photoswipe/photoswipe-master/dist/default-skin/default-skin-new.css" rel="stylesheet"
+          type="text/css"/>
+
+    <script src="/js/lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+     <script src="/js/third-party/fastclick.js"></script>
+    <script src="/js/json/operator_auth.js"></script>
+    <script src="/js/comm/main.js"></script>
+    <script src="/js/comm/common.js"></script>
+    <script src="/js/comm/comm.func.js"></script>
+    <script src="/js/comm/comm-customer.js"></script>
+    <script src="/js/comm/comm-data.js"></script>
+    <script src="/js/comm/comm_service.js"></script>
+    <script src="/js/comm/jweixin-1.0.0.js"></script>
+    <script src="/js/comm/shareAll.js"></script>
+    <script src="/js/comm/WeixinJSApi.js"></script>
+    <script src="/js/comm/log.js"></script>
+    <script src="/js/comm/comm.date.js"></script>
+    <script src="/js/comm/date.js"></script>
+
+    <script src="/js/comm/comm.ajax.js"></script>
+    <script src="/js/comm/comm-page-url.js"></script>
+
+    <script src="/js/modules/module.user.js"></script>
+    <script src="/js/modules/dialog.js"></script>
+
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination_noconvertjson.js"></script>
+    <script src="/js/third-party/iscroll.js"></script>
+    <script src="/js/third-party/jqueryscrollpagination/js/scrollpagination_reverse.js"></script>
+    <script src="/js/third-party/sweetalert-master/lib/sweet-alert.min.js"></script>
+    <script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.js"></script>
+    <script src="/js/third-party/photoswipe/photoswipe-master/dist/photoswipe-ui-default.js"></script>
+    <script src="/js/third-party/jquery.plugin.picshow.js"></script>
+    <script src="/js/third-party/jquery.plugin.picshow-comment.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.js"></script>
+    <script src="/js/third-party/jquery-validate/jquery.validate.rules.collection.js"></script>
+    <script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+
+    <script src="/js/react/JSXTransformer.js"></script>
+    <script src="/js/react/react.js"></script>
+    <script type="text/jsx" src="/js/scene/case/comment.jsx" charset="utf-8"></script>
+
+    <script src="/js/social_intercourse/relation.js"></script>
+    <script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+
+    <script src="/js/scene/doc/doc-detailV2.js"></script>
+
+
+</head>
+
+<body>
+<input type="hidden" value="2" id="relationType"/>
+<input type="hidden" value="8" id="preferReviewType"/>
+<input type="hidden" value="1475892766220" id="resourceId"/>
+<input type='hidden' id="shareImgSrc" value=""/>
+<input type='hidden' id="tplPath" value="52"/>
+
+<section class="al-mainInner">
+
+    <!--文库被删除开始-->
+    <figure class="al-terminalNone">
+        <img src="/images/img50/pages/case/deleted.png" alt="">
+        <figcaption>
+            很抱歉，该病例已被作者删除
+        </figcaption>
+    </figure>
+    <!--文库被删除结束-->
+
+    <!--文库被屏蔽开始-->
+    <figure class="al-terminalNone">
+        <img src="/images/img50/pages/case/deleted.png" alt="">
+        <figcaption>
+            很抱歉，该病例已被管理员屏蔽
+        </figcaption>
+    </figure>
+    <!--文库被屏蔽结束-->
+
+    <!--作者信息-->
+    <header class="al-terminalHeader">
+        <section>
+            <figure class="al-terminalAuthorImg">
+                <a href="javascript:void(0)">
+                    <img src="/image/allin_logo.png" alt="">
+                </a>
+            </figure>
+            <figcaption class="al-terminalAuthorMsg">
+                <h2><span class="Ev-authorName">强凯亮</span><i class="al-vipUser"></i></h2>
+
+                <p>不正常人类研究中心</p>
+                    <span class="al-terminalReleaseTime">
+                    2016.02.29
+                </span>
+            </figcaption>
+        </section>
+    </header>
+    <!--作者信息结束-->
+
+    <!--文库主体内容-->
+    <section class="al-terminalContent">
+        <header class="al-terminalContentTitle Ev-caseTitle">
+            <!--标题-->
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima labore, quia! Voluptate, ipsum,
+                dolores. Quas ab dignissimos qui delectus quasi architecto! Alias pariatur autem dicta totam magni
+                corporis aspernatur suscipit.</h2>
+            <!--标题结束-->
+            <article class="al-terminalContentSnsMsg">
+                <span class="al-terminalBrowsedNum"><em class="Ev-browseNum"></em>浏览</span>
+                <i class="point">·</i>
+                <span class="al-terminalFollowedNum"><em class="Ev-followNum"></em>评论</span>
+            </article>
+        </header>
+        <div id="pagebody">
+
+            <div id="art_content" style="background:#fff; min-width:100%; text-align:left;">
+                <div class="main_width" style="width:100%;">
+                    <div class="case_header"></div>
+                    <div class="case_detail">
+                        <div class="case_detail_cont setting-font-size" style="font-size: 16px;">
+
+                            <div class="floor03" style="padding-top:1.5em;">
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>非骨水泥全髋关节置换术前模板测量的准确性</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>The Accuracy of Preoperative Templating in Cementless Total Hip Arthroplasty</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Aasis Unnanuntana, Dominic Wagner, Stuart B. Goodm</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/6/21 4:14:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>摘要：我们研究了109例非骨水泥全髋关节置换术前模板测量的准确性及临床有效性。46例（42.2%）髋臼假体及75例（68.8%）股骨假体的型号预测完全准确。如果股骨假体预测允许误差小于1个型号，髋臼假体允许误差小于2个型号，则准确性可升高至90%以上。如对侧已行全髋关节置换术，术前模板测量时可资参考，但只提高了股骨假体型号预测的准确性。88%的髋臼假体倾斜角在理论安全范围之内，42%的髋臼假体前倾角在理论安全范围之内。术后双下肢长度差平均为0.9±6.8 mm；93.5%长度差在10 mm以内。关键词：术前模板测量，非骨水泥全髋关节置换术，准确性，临床有效性。 全髋关节置换术（total hip arthroplasty，THA）是治疗关节炎功能障碍最成功的手术方法之一。THA手术的目标是缓解疼痛，恢复关节活动度，改善功能，重建髋关节正常的生物力学，包括下肢长度及偏距[1-3]。明显的下肢不等长及髋关节偏距不足将干扰THA术后的生物力学，可能影响患者的功能及手术的远期效果。因此，综合、全面的术前计划包括模板测量是THA手术获得成功的重要一步。 虽然有很多关于THA手术成功的研究报告，但是评估术前模板测量有效性的报告寥寥无几[4-8]。据我们所知，仅有1篇报告研究了放射片模板测量在非骨水泥THA中的作用。该研究中，74个股骨假体型号约有50%在术前得到准确预测[4]。因为骨水泥及非骨水泥THA的手术技术及术中要求不同，我们仅研究非骨水泥假体的资料。 本研究的首要目标是评估术前模板测量技术在确定最终假体型号及安放位置方面的准确性。次要目标是研究一种术前模板测量方法在确保双下肢等长及恢复髋偏距方面的临床有效性。待验证假设为：（1）术前模板在预测最终假体尺寸及安放位置方面有用而且准确；（2）如果了解并参照置换术后的对侧肢体资料，假体预测将更准确；（3）对于继发于髋关节发育不良及髋臼外移的退行性骨关节炎患者，植入的髋臼假体应比模板预测值大。 材料与方法 经随访审批委员会批准，我们回顾性调查了292例初次THA患者的307个髋的术前及术后3个月的放射片。所有手术均在2003年1月至2006年6月期间由同一名外科医生指导在同一所医疗机构完成。排除标准为骨水泥及混合型THA患者（102髋），双侧同时置换THA（16髋）的患者，伴有严重退行性双髋关节疾病致解剖不易辨认的患者（18髋）...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>全髋关节置换术前塑料模板测量和数字模板测量的比较数字模板测量是否准确安全？</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>A Comparison of Acetate vs Digital Templating for Preoperative Planning of Total Hip Arthroplasty: Is Digital Templating Accurate and Safe?</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Richard Iorio, Jodi Siegel, Lawrence M. Specht, Jo</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/6/21 3:10:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>摘要：本研究目的是比较初次全髋关节置换术前使用塑料模板测量和数字模板测量的精确性，并确定数字模板测量是否安全。2005年我们对连续50例术前X线片进行测量设计。测量结果与实际使用髋关节假体进行比较，并记录塑料模板测量者间可信度和塑料及数字模板测量精确性。结果发现数字方法高估髋臼大小（P &lt; 0.001）并且低估股骨大小（P = 0.03）。与塑料模板测量相比较，数字模板测量的绝对误差较大，然而绝对误差均值的差异并无统计学意义（髋臼，P = 0.090；股骨，P = 0.114）。塑料模板测量和数字模板测量都能够准确地估测THA假体的规格。对于初次THA手术，术前采用数字模板测量的安全性是可以接受的。关键词：塑料和数字模板测量，术前设计，初次全髋关节置换术。 术前设 计可以使全 髋关节置 换 术（t o t a l h i par throplasty，THA）更加精确、有效，更具有可重复性。成功的术前模板测量可以避免使用小尺寸和超尺寸的髋关节假体，并能及早发现使用极小或极大号假体的骨尺寸，发现可能需要非标准型假体的骨畸形或骨形态。术前准备不充分和模板测量不准确可导致股骨骨折、下肢不等长、偏距不足、不稳定、骨长入失败等并发症[1-7]。 由于医院和骨科已采用数字放射技术，从事矫形重建的骨科医师需要学习使用数字模板测量进行全髋关节置换的术前设计。然而对THA而言，数字模板测量是否安全、准确还不明确。Conn等[8]将数字影像冲印在模拟胶片上并用模拟模板进行测量，发现其在假体选择上的精确率仅有69%（32例中的22例）。 数字放射技术和数字模板测量相结合有望消除手工操作塑料模板和模拟胶片造成的误差。CT技术曾用于髋关节重建术前设计，但在精确性方面，与塑料模板测量模拟X线片方法相比并没有很大提高[9, 10]。 与传统胶片相比，数字影像的空间分辨率偏低，其影像质量受到质疑[11]。但采用数字模板测量系统时，这种分辨率差异就不再是问题。 本研究的目的是比较初次全髋关节置换术前使用塑料模板测量和数字模板测量的精确性。我们假定采用数字模板测量数字影像与采用塑料模板测量放大率控制恰当的数字影像X线片同样精确、安全。 材料与方法 THA术前模板测量要求有固定放大率的标准X线片和与之匹配的模板。传统的骨盆和髋关节摄片时，X线球管和X线诊断台之间有一标准距离[1-3,12]。这种影...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">
+                                        中文标题：<span>应用Burch-Schneider 加强环处理髋臼骨缺损的有效性  5~21年的随访结果</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>The Effectiveness of the Burch-Schneider Antiprotrusio Cage for Acetabular Bone Deficiency: Five to Twenty-one Years' Follow-up</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Panagiotis P. Symeonides, George E. Petsatodes, Jo</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/6/21 2:22:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>摘要：1985~2001年，应用Burch-Schneider加强环（B-S APC）治疗55例（共57髋）伴有大块髋臼骨缺损的患者。术后随访5~21年，B-S APC 的生存率为89.5%，并达到显著缓解疼痛、增加髋关节活动范围和行走能力的效果。10.5%的失败率源于无菌性松动（2例）和机械性失败（4例）。这表明在选择合适的适应症和良好手术技术的前提下，应用B-S APC治疗有广泛髋臼骨缺损的患者可获得持久效果。关键词：Burch-Schneider，加强环，髋臼骨缺损。 随着初次全髋关节置换术（total hip arthroplasty，THA）在全球范围内应用的不断增加以及患者年龄范围的扩大（患者趋于年轻化），全髋关节翻修术的需求量也不断上升。许多髋关节翻修病例存在严重的髋臼骨缺损，这种情况在一些初次全髋关节置换病例中也可能遇到。 引起髋臼骨缺损的原因多样，包括初次手术中去除的髋臼骨量；聚乙烯磨损碎屑引起的骨丢失；松动的髋臼假体在骨性髋臼内移动造成磨损——尤其是翻修手术被拖延时；因老龄化[1]或原发疾病（如严重类风湿关节炎、退行性骨关节炎和髋关节发育不良等）引起的骨量丢失，特别是当手术治疗被延误时。 髋臼骨量的丢失使髋臼假体与宿主骨得不到充分接触，从而难以实现假体的牢固固定，同时也使旋转中心的调整变得困难。后者将导致肢体不等长，继而引起髋关节的异常受力。另外，也将影响髋关节的稳定性。 美国骨科医师学会（Ame r ic a n Ac a demy ofOrthopaedic Surgeons，AAOS）分类系统[2]对髋臼骨缺损的分型如下：节段性骨缺损（Ⅰ型）、腔隙性骨缺损（Ⅱ型）、混合性骨缺损（Ⅲ型）、骨盆不连续（Ⅳ型）和关节融合（Ⅴ型）。大部分微小的髋臼骨缺损（Ⅰ型和Ⅱ型）通过应用常规的髋臼假体即可成功处理。然而，较大的髋臼骨缺损（Ⅲ型和Ⅳ型）处理起来则比较复杂。目前已有多种手术方法用于处理较大的骨缺损，包括超大号或巨大半球形非骨水泥固定髋臼假体结合颗粒骨移植和螺钉固定[3,4]；椭圆或双叶形臼杯[5-7]；双极假体和骨移植[8]；微孔涂层臼杯固定于广泛骨缺损的髋臼上方，形成高髋关节中心[9]；以及大块异体骨移植和金属加强环（antiprotrusio cages，APCs）[10-14]。 本文旨在评价应用Burch-Schneider（B-S）APC...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>抗生素骨水泥占位器治疗髋关节植入假体感染</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>RETRACTED: Cement Spacer Loaded With Antibiotics for Infected Implants of the Hip Joint</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Kengo Yamamoto, Naoki Miyagawa, Toshinori Masaoka,</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/21 1:40:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>髋关节植入感染治疗困难。患者在治疗中承受身体和精神的双重痛苦。本研究应用抗生素骨水泥占位器治疗17例全髋关节置换（total hip arthroplasty，THA）和双极半髋关节置换（bipolar hip arthroplasty，BHA）术后感染，获得良好的临床结果。我们在治疗中彻底清除异物，并植入与假体形状相似的抗生素骨水泥占位器。抗生素骨水泥占位器可使感染局部保持高浓度抗生素，而且可以避免下肢不等长以及骨髂或肌肉萎缩。虽然骨水泥占位器尚存在成形和强度等方面的问题，我们采用骨水泥占位器模具来制作占位器获得了良好的结果，平均随访3年2个月，未见感染复发。关键词：全髋关节置换术，植入假体感染，二期翻修，骨水泥占位器。 全髋关节置换术（total hip arthroplasty，THA）已经发展了近半个世纪。 全髋关节置换术后感染是最严重的并发症之一。大多数全髋关节置换术后感染包含深部感染，需要一定的时间来确诊，因而导致治疗延误。 全髋关节置换术后感染必须取出植入假体方可治愈[1-4]。 这一治疗过程不仅对患者造成身体上和精神上的伤害，也增加了患者和医疗单位的经济负担[5-6]。随着无菌手术室和预防性抗生素的应用，以及对THA禁忌证更为深入的了解，多数关节置换中心的THA术后感染率已降至1%以下[7]。但由于每年THA患者数量的不断增加，感染病例的绝对数量并未减少。必须确认彻底清除病原菌才能预防感染的复发。 以往通常采用闭合灌注冲洗的方法治疗感染，但目前采用抗生素骨水泥治疗感染已经得到认同。治疗中通常采用抗生素骨水泥珠链，也有文献报道采用按照人工髋关节假体成形的抗生素骨水泥占位器，获得了良好的临床疗效[8]。 采用骨水泥占位器时，必须使用热稳定的抗生素，而且每位外科医生均应当了解所选抗生素的释放率。 治疗髋关节置换感染的另一个争议是选择一期翻修[9,10]还是二期翻修[2,8]。本文探讨采用二期翻修抗生素骨水泥占位器治疗THA术后感染的临床结果。 患者和方法 图1 图2 图3 1998年1月至2002年12月间，共17例（男性6例，女性11例）行全髋关节或双极半髋关节置换的患者发生术后感染。这些患者随后在本院采用抗生素骨水泥占位器治疗。患者在我院诊断为假体关节感染的平均年龄为61.8岁（范围：44~76岁）。初次置换前的诊断包括：股骨颈骨折（8例）、股骨头坏死...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>髋关节假体感染治疗中粗隆延长截骨的应用</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Use of the Extended Trochanteric Osteotomy in Treating Prosthetic Hip Infection</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Brett R. Levine, Craig J. Della Valle, Mark Hammin</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/6/21 11:41:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>摘要：本研究旨在评估二期翻修应用粗隆延长截骨（e x t e n d e d t r o c h a n t e r i c osteotomy，ETO）治疗髋关节置换术后假体周围感染的疗效。对23例在行二期翻修治疗假体感染过程中行ETO的连续感染患者进行回顾性分析。用常规方法无法取出股骨假体时采用ETO。平均随访49个月，进行临床和X线片评估。术后23例患者中的20例（87%）感染治愈，23例患者中22例的ETO平均11.5周愈合。术前改良D'Aubigne和Postel评分为：疼痛平均评分2.4分，行走功能平均评分2.6分；术后两项评分分别显著提高至5.3和4.9分（P &lt; 0.001）。二期翻修术治疗中选择适当患者应用ETO是安全有效的。关键词：假体感染，粗隆延长截骨。 全髋关节置换术（total hip arthroplasty，THA）术后感染的诊断和治疗均很困难。清除假体周围感染困难且花费巨大，并发症的发生率较高。目前，北美治疗全髋关节置换术后感染的标准方法是二期翻修，报告的感染清除成功率为80%~95%[1-7]。粗隆延长截骨（extended trochanteric osteotomy，ETO）是一种扩大显露的方法，有助于取出假体、清除骨水泥、增加显露和便于翻修时植入假体。关于应用这一方法治疗假体感染的文献较少[8]。 ETO可能出现的问题包括：截骨不愈合且粗隆移位、术中骨折和术后骨折[9-12]。在假体感染方面，另一个问题是为固定截骨块而使用内固定物会导致感染持续存在[8]。髋关节置换感染后，如果股骨假体固定良好或有大量固定良好的骨水泥，可能需要更大范围的显露，例如ETO，以便进行二期翻修治疗。本研究目的是观察二期翻修应用ETO和立即固定治疗髋关节置换术后感染的影像学和临床结果。 材料与方法 本研究资料采集自医院科室数据库中关于二期翻修应用ETO治疗髋关节置换术后感染患者的病历记录。本研究获得医院伦理委员会的批准。在数据库中检索1997年2月至2003年3月全部髋关节置换术后感染的患者，纳入标准包括：术中采用ETO并在植入占位器时行内固定、二期翻修手术以及至少随访2年。 共有63例患者在研究期间行二期翻修治疗髋关节置换术后感染。23例连续感染髋（23例患者）符合纳入标准，其余40例行二期翻修的患者未行ETO。符合以下3项中的2项定义为感染：...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>羟基磷灰石涂层股骨柄的初次人工全髋关节置换 一项荟萃分析</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Hydroxyapatite Coated Femoral Stems in Primary Total Hip Arthroplasty: A Meta-Analysis</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Rajiv Gandhi, J. Roderick Davey, Nizar N. Mahomed</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/6/21 10:44:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>摘要：我们对应用羟基磷灰石涂层股骨柄的人工全髋关节置换临床研究进行荟萃分析。全面检索文献，提取出依据无菌性松动得出的假体存活率和Harris评分（Harris Hipscore，HHS）等相关数据。报道了危险比和均差（95%可信区间）。共有9项研究符合入选标准，被纳入分析。依据无菌性松动得出的股骨柄存活率，计算出累计危险比为1.0（95% CI：0.995~1.005，P=0.98）。HHS的混合平均差为0.072（95% CI：-0.062~0.206，P=0.293）。本研究显示，多孔表面上仅增加羟基磷灰石涂层，对于初次人工全髋关节置换没有临床益处。关键词：髋关节置换术，羟基磷灰石，存活率，临床转归，荟萃分析。 羟基磷灰石（hydroxyapatite，HA）涂层生物股骨柄的支持者认为，它可能有利于骨长入的质量和速度[1-3]。其潜在缺点是费用较高及涂层剥脱，后者将增加聚乙烯的三体磨损、假体周围骨溶解和假体松动[4-5]。 很多研究者从影像学上观察远端皮质增厚及松质骨硬化来研究假体柄周围骨重塑，但研究结论并不一致[3,7-10]。这些研究方法可能存在限制和不足，因为在某些条件下，钙沉积改变30%以上才会产生标准影像学上可识别的骨密度（bone mineral density，BMD）改变[6]。因此我们选择观察患者临床转归的研究进行分析。 本文假设HA涂层多孔股骨柄相对于多孔柄没有临床优势，通过系统的文献回顾来验证这一假设。 材料与方法 入选标准 入选文献需包括如下内容：（1）使用生物固定股骨柄的初次全髋置换；（2）比较近端HA涂层多孔股骨柄和近端多孔股骨柄[3]；通过无菌性松动计算的假体存活率及术后HHS来判断疗效[4]；这些研究为公开或非公开发表的随机对照研究或比较性观察研究。 研 究 鉴 定 ：由 2 位 作 者 独 立 完 成 P u b M e dMEDLINE和OVID MEDLINE数据库（1966~2007年7月）、EMBASE数据库（1980~2007年）的计算机检索，检索式为（hydroxyapat ite OR HA）和（hiparthroplasty OR joint replacement OR arthroplasty）。同时检索了Cochrane系统综述数据库、Cochrane临床对照试验资料库以及Clinicaltrials.go...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>全髋关节置换术中羟基磷灰石涂层股骨柄的随机研究 一项13年随访</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>A Randomized Trial of Hydroxyapatite-Coated Femoral Stems in Total Hip Arthroplasty: A 13-Year Follow-Up</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Dan Camazzola, Terry Hammond, Rajiv Gandhi, J. Rod</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/6/21 9:39:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>摘要：本项前瞻性随机研究比较了全髋关节置换术中羟基磷灰石（hydroxyapatite，HA）涂层和非羟基磷灰石涂层股骨柄假体。61例患者被随机分组，分别采用HA涂层假体或非HA涂层假体进行初次全髋关节置换。术后平均随访13年5个月，共48例髋获得随访。仅1例患者股骨假体因股骨骨折而翻修。所有股骨柄固定良好，X线片无松动征象。HA组和非HA组的翻修率和Harris评分均无显著差异。本研究提示，采用HA涂层股骨假体进行初次置换并无明显优势。关键词：羟基磷灰石，髋关节置换，生存率，随机试验，无骨水泥。 髋关节置换术中使用无骨水泥假体时，许多医生倾向于选择羟基磷灰石（hydroxyapatite，HA）涂层，以增加宿主骨和假体之间的结合强度，缩短假体获得牢 固固定所需时间[1-3]。通过X线立体摄影测量技术分析发现，使用HA涂层的假体下沉和微动更小[4,5]。但HA涂层也有一些缺点，尤其是理论上涂层与假体存在分离可能[6,7]。此外，涂层技术和参数也受到关注[2,8-10]。 尽管HA涂层应用普遍，但是比较转归的随机对照试验却很少[11-13]。多数研究回顾临床结果、X线片表现和翻修率，未发现HA涂层假体和非HA涂层假体之间有显著差别[14-18]。在某些研究中，由于HA涂层假体恢复活动时间早、大腿疼痛少且透光少，建议使用HA涂层[19-22]。一项研究显示非HA涂层假体的8~10年翻修率高，但仅为20例髋的数据[23]。 本随机研究拟通过假体柄在位率、Harris评分、X线片随访和手术并发症来确定HA涂层是否有益。 材料与方法 病例资料 1989年1月至1992年9月，医院共有55例患者行61例非骨水泥初次全髋关节置换术。纳入标准为男性小于60岁，女性小于65岁，行择期初次全髋关节置换术。研究方案经当地伦理审查委员会批准（伦理审查委员会03-0580-AE）。所有患者均签署知情同意书。 患者于手术时被随机分组，选用HA涂层假体或非HA涂层假体。采用计算机产生的随机数字进行分组。 术前诊断见表1，随机分组结果见表2。 所有患者均使用Mallory-Head多孔柄（Biomet，Warsaw，Ind）。这是一款双锥度钛金属柄，近端1/3全周喷涂，中间1/3附有纹理，远端1/3为光面。HA涂层假体近端1/3以空气喷涂技术涂层HA。采用钴铬钼金属头。髋臼使用2款非骨水泥假体：最...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>重度先天性髋臼发育不良的初次全髋关节置换： 使用组配式非骨水泥柄的10年结果</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Primary Total Hip Arthroplasty in Severe Developmental Dysplasia of the Hip. Ten-Year Results Using a Cementless Modular Stem</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Leela C. Biant, Warwick J.M. Bruce, Joseph B. Assi</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/6/20 2:34:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>摘要：本文报道了28例使用组配式S-ROM假体（DePuy Or thopedics , Wa r saw,Ind）行全髋关节置换治疗存在技术难度的Crowe III型或IV型先天性髋臼发育不良（developmental dysplasia of the hip，DDH）患者的平均10年临床和放射学结果。21例患者行大块自体骨移植，1例行大块异体骨移植，6例患者在全髋关节置换时行股骨短缩。3例患者术中出现技术性并发症。术前Harris髋关节评分（Harris hip score，HHS）为37分，10年随访时为81分。在10年随访时，SF12躯体评分为41.64分，精神评分为54.03分，Western Ontario和McMaster大学骨关节炎指数（Western Ontario and McMaster Universities Osteoarthritis Index，WOMAC）平均评分为23分。在末次随访时，无1例患者S-ROM柄被翻修或出现松动。6例髋关节在Gruen 1区或7区有骨溶解，但无1例出现于股骨周围或远端。10年随访结果表明，重度DDH继发骨关节炎的患者应用S-ROM柄可获得极好的效果。关键词：先天性髋臼发育不良，髋关节置换，S-ROM髋关节假体。 解剖结构异常和既往手术使重度先天性髋臼发育不良（developmental dysplasia of the hip，DDH）继发骨关节炎的初次全髋关节置换在技术上存在一定难度。选择合适的假体和精确的手术操作对保证此类相对年轻患者的人工关节具有最佳寿命至关重要。Crowe等[1]报道了一种根据髋臼发育不良半脱位程度进行分类的方法。其中Crowe III型（75%～100%半脱位）和Crowe IV型（完全脱位）的解剖结构异常最为明显，使得全髋关节置换存在一定难度，本研究即针对这两种类型的DDH。 由于DDH的髋关节置换在技术上存在一定难度，Charnley [2]和Coventry [3]相继在1973年和1974年提出，未复位的先天髋关节脱位患者不应行髋关节置换。Har r is [4]于1977年指出，对于有重度髋臼缺损的DDH病例，行股骨头骨移植后可以在髋臼应发育的位置植入髋臼，进行髋关节置换。Harris强调了此种手术的难度，同时提到股神经、旋股动脉、股深动脉及前方的关节囊会出现扭曲和...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>陶瓷和钴铬合金股骨假体对全膝关节聚乙烯衬垫的磨损</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Ceramic Versus Cobalt-Chrome Femoral Components; Wear of Polyethylene Insert in Total Knee Prosthesis</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Hironobu Oonishi, Masaru Ueno, Sok Chol Kim, Hiroy</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>本文通过膝关节模拟试验和回收假体分析的方法，确定股骨假体材料和消毒方法对全膝关节假体磨损性能的影响。模拟试验证实，陶瓷股骨假体对超高分子量聚乙烯（UHMWPE）衬垫的磨损显著小于钴铬合金假体产生的磨损。但假体回收研究显示，两者线性磨损无显著性差异。氧化铝陶瓷假体对UHMWPE衬垫的磨损轻微。而γ射线激发的高交联是否能有效减轻磨损尚未被证实。与之相反，氧化变性和脱层已被证实能有效减轻磨损。因此，本研...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>股骨柄保守翻修：防止过度治疗</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Conservative Femoral Stem Revision: Avoiding Therapeutic Escalation</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Alban Pinaroli, Frédéric Lavoie, Jean-Claude Carti</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>本文分析了一种股骨柄保守翻修方法，共报道41例股骨侧翻修，使用广泛羟基磷灰石涂层的初次置换假体，收集其临床、手术和放射学资料以供分析研究。至少随访1年，Harris评分从65/100分增加至90/100分（P &lt; 0.05）。所有假体均显示达到骨性结合固定；没有测量到明显移位；没有患者因为柄的问题再次手术。Paprosky I 型和 II 型股骨缺损患者的翻修治疗获得了良好结果，两型之间结果...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>利用导航技术测定后稳定全膝置换的软组织平衡</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Soft Tissue Balance Measurement in Posterior-Stabilized Total Knee Arthroplasty With a Navigation System</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Tomoyuki Matsumoto, Hirotsugu Muratsu, Nobuhiro Ts</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>在对30例骨性关节炎患者进行初次后稳定假体全膝关节置换术时，利用测量全膝置换中髌股关节复位后软组织平衡的张力测量器，在髌骨外翻时及复位后情况下，测量膝关节伸直和屈曲90°时的关节间隙和韧带张力。与此同时，利用导航系统对上述指标进行测量，并确定此系统与张力器测量结果之间的关系。在膝关节伸直位和90°屈曲位，髌骨复位后测得的R2值大于外翻时的测量值。本研究认为，该导航系统测量髌骨复位后膝关节软组织张力...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>现代骨水泥技术以及Exeter全髋假体置换的术中和术后患者死亡率</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Contemporary Cementing Technique and Mortality During and After Exeter Total Hip Arthroplasty</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Rafael J. Sierra, John A. Timperley, Graham A. Gie</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>术中和术后患者死亡率采用现代骨水泥技术固定的Exeter通用型股骨柄的15年随访生存率令人满意。这一技术要求手术中长时间加压，防止股骨髓腔出血。有医生认为该技术可能增加死亡率，使其未能被骨科医生广泛接受。出于这一原因，本文对1988 ~ 2005年的9082例初次全髋关节置换资料进行了总结。术后30天内死亡的所有病例纳入本研究，如有尸检结果，亦进行总结。术后30天内的死亡病例共有21例（0.23%...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">
+                                        中文标题：<span>全聚乙烯骨水泥固定髋臼假体与金属外杯非骨水泥固定 髋臼假体用于初次全髋关节置换的结果比较</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>A Comparison of the Outcome of Cemented All-Polyethylene and Cementless Metal-Backed Acetabular Sockets in Primary Total Hip Arthroplasty</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>George Hartofilakidis, George Georgiades, George C</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>本文比较了50例Charnley全聚乙烯水泥固定髋臼假体与51例金属外杯非骨水泥固定髋臼假体置换的结果。两组病例均为年轻患者，具有可比性，随访时间最短10年。尽管骨水泥组的翻修率为28%，非骨水泥组为35%，但由无菌性松动引起的翻修率在骨水泥组高达28%，非骨水泥组仅有12%。两组的平均聚乙烯磨损分别为每年0.112 mm和0.114 mm。骨水泥组50例髋臼中的18例出现线性骨溶解。非骨水泥组5...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>全膝和全髋关节置换患者自评结果：中期结果比较</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Patient-Reported Outcomes After Total Hip and Knee Arthroplasty: Comparison of Midterm Results</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Vikki Wylde, Ashley W. Blom, Sarah L. Whitehouse, </span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>本研究旨在比较全膝关节置换（TKA）和全髋关节置换（THA）术后中期随访功能结果。于同一时间点对5~8年前在同一骨科中心行初次关节置换手术的所有患者进行邮寄问卷调查。参加者根据Oxford髋、膝评分表功能状况进行自我评估打分。共有1112例THA和613例TKA患者回复了问卷，回复率为72%。膝关节评分中位数显著低于髋关节（26分 vs 19分，P &lt; 0.001）。由此可见，在术后 5~8...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>卡入关节腔的骨粒对摩擦面形态的影响和对聚乙烯的磨损</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>The Effect of Entrapped Bone Particles on the Surface Morphology and Wear of Polyethylene</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Kimberly D. Mimnaugh, Jian Q. Yao, Michel P. Laure</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>临床回收的高交联超高分子量聚乙烯（HXPE）髋臼衬垫表面常有划痕，而传统超高分子量聚乙烯（UHMWPE）衬垫在植入早 期，表面显得更为光滑。本研究分析了骨 粒或软组织碎片而非骨水泥对HXPE和UHMWPE（γ射线消毒）髋臼衬垫表面的影响。多枚骨粒存在时，应用3600个步行周期即可模拟出类似回收假体表面的划痕。通过重塑研究发现，这些划痕实际上是聚乙烯塑料变形，而非磨损。此外，磨损研究证实，这些划痕不...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>行连续股神经阻滞的全膝关节置换术围手术期及2年随访结果</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Continuous Femoral Nerve Block in Total Knee Arthroplasty: Immediate and Two-Year Outcomes</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Cheuk Fan Shum, Ngai Nung Lo, Seng Jin Yeo, Kuang </span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>我们开展了一项前瞻性研究，观察采用连续股神经阻滞（FNB）麻醉的全膝关节置换术患者的围手术期及2年随访结果。研究纳入60例单侧膝关节置换患者，随机分为3组：大剂量FNB组、小剂量FNB组和无FNB组。在围手术期，研究患者的疼痛评分、吗啡累计使用量、FNB相关并发症、初次下地时间和患者满意度等指标。在2年随访时，根据Oxford 膝关节问卷和膝关节协会（Knee Society）临床评分对患者的功能...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>1990~2004年间美国初次关节置换和翻修手术量</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Primary and Revision Arthroplasty Surgery Caseloads in the United States from 1990 to 2004</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Steven M. Kurtz, Kevin L. Ong, Jordana Schmier, Ke</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>本文分析了1990~2004年间，美国髋、膝关节初次置换及翻修医生的手术量随时间的变化情况。从全国住院患者抽样库中选择关节置换手术病例及手术医生。对每种手术的年手术量进行分析；全国47% ± 2%的髋关节医生和39% ± 2%的膝关节医生开展了翻修手术。在上述时间段内，医生人均翻修手术量分别以每10年1.2例（全髋关节置换术，THA）和1.4例（全膝关节置换术，TKA）的速度缓慢增长。初次THA和...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>CT测量经股骨上髁轴的观察者本人和观察者之间的误差</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Interobserver and Intraobserver Error in Distal Femur Transepicondylar Axis Measurement With Computed Tomography</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Chester Lie Wai Hung, Yau Wai Pan, Chiu Kwong Yuen</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>6位研究者在两个时间点（至少间隔1周）分别研究CT测量10例尸体膝关节经股骨上髁轴（TEA）的误差，通过标本解剖确定外科参照TEA。研究发现采用CT确定值的平均误差为2.6°(外旋）；依传统横断面扫描测量的误差显著小于依三维重建测量的误差（P &lt; 0.001，配对t检验）。常规二维CT测量发现，同一研究者两次测量结果无显著差异（P = 0.814，Wilcoxon秩和检验）。但不同测量者之间...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>初次全膝关节置换危险分级</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Risk Classification for Primary Knee Arthroplasty</span></div>
+                                    <div class="oe_title_blue">作者：<span>Yassir Babiker Al-Arabi</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>研究者设计了初次全膝关节置换危险评估的4级分类方法。C0级：健康状况良好，单纯性关节炎；CI级：健康状况良好，复杂性关节炎；CII级：健康状况不佳，单纯性关节炎；CIII级：健康状况不佳，复杂性关节炎。根据文献方法确定患者健康状况和关节炎评估。本文资深作者根据以上分级方法将所治疗的122例患者进行回顾性分类，发现与C0组比较，CII组和CIII组并发症发生危险显著升高（P &lt; 0.001），...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>非水泥组配式全髋关节置换治疗多发性骨骺发育不良</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Modular Cementless Total Hip Arthroplasty for Multiple Epiphyseal Dysplasia</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Seung-Jae Lim, Youn-Soo Park, Young-Wan Moon,Sung-</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>本文分析了连续13例（23髋）行非水泥组配式全髋关节置换的患者。患者术前均确诊为多发性骨骺发育不良导致终末期髋关节骨性关节炎。平均 Harris 评分从40.6分提高至93.8分。手术后，所有患者的生物力学指标，包括髋旋转中心、股骨偏心距、股骨颈长度和肢体长度均得到改善。平均随访4.8年，没有患者因髋臼和股骨假体无菌性松动而翻修。全髋关节置换术后8年，1例患者（1髋，4.3%）因聚乙烯磨损和骨溶解...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>采用Cellect DBM细胞疗法治疗继发性股骨髁坏死的初步报告</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Cell Therapy for Secondary Osteonecrosis of the FemoralCondyles Using the Cellect DBM System: A Preliminary Report</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Kevin Lee, Stuart B. Goodman</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>本文报告了一种治疗继发性股骨髁坏死的新方法。此法相对简单，后遗症少，如失败并不影响后期采用其他治疗。对3例大面积继发性股骨髁坏死的患者行坏死区减压清创，并利用Cellect DBM（Depuy Spine，Inc.,Raynham，Mass）系统进行细胞植入。该系统可提供基质及3~4倍富集的骨祖细胞。术后随访2年，3例患者均无并发症，结果优良，功能和活动水平接近正常。本文的初步结果显示，至少从短期...</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>全髋关节置换假体位置优化：骨盆前平面参考概念是否可靠？</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Optimization of Total Hip Arthroplasty Implantation:Is the Anterior Pelvic Plane Concept Valid?</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Marc-Antoine Rousseau, Jean Y. Lazennec, Patrick B</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>在全髋关节置换手术中，尤其在行计算机辅助手术时，骨盆前平面（APP）的浅表解剖标志常被用于三维定向。然而，实际决定骨盆方向的指标是骶骨倾斜度，后者又与脊柱的其他功能指标相关。本研究的目的是探讨APP与骶骨倾斜度之间的关系。2位研究者借助328张站立位骨盆侧位片对两项指标进行测量，结果发现APP与骶骨倾斜度之间的相关性不明显，提示采用APP参考行立体定向手术时，需要在术前计划时根据骶骨倾斜度进行必要...</span>
+                                    </div>
+                                </div>
+                                <div class="journal_floor01">
+                                    <div class="oe_title_blue">中文标题：<span>初次全髋关节置换假体植入位置评估：一种无图像导航系统与传统方法的比较</span>
+                                    </div>
+                                    <div class="oe_title_blue">
+                                        原文标题：<span>Evaluation of Component Positioning in Primary Total HipArthroplasty Using an Imageless Navigation Device Compared With Traditional Methods</span>
+                                    </div>
+                                    <div class="oe_title_blue">作者：<span>Brian C. Najarian, John E. Kilgore, David C. Marke</span>
+                                    </div>
+                                    <div class="oe_title_blue">发布日期：<span>2009/7/12 12:05:00</span>
+                                    </div>
+                                    <div class="oe_title_blue"><span>髋臼假体放置的位置和方向影响全髋关节置换的效果，计算机辅助导航可帮助减少位置错误。本研究借助一种无图像导航系统分析了全髋关节置换的效果。我们推断此种方法可以改善手术的可靠性和精确性。149例髋关节采用微创手术技术进行置换，共分为3组：手工操作组（n = 53）、初期导航组（n = 49）和后期导航组（n = 47）。手工操作组臼杯前倾角与标准位置比较的变化范围为-19°~ +18°（SD = 9....</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <!-- 回应E -->
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <!--标签开始-->
+        <article class="al-terminalContextItem al-terminalContentTags">
+            <h3>标签</h3>
+            <a href="//m.allinmd.cn/pages/discover/tag_seminar.html?tId=" class="al-terminalTags">关节</a>
+            <a href="//m.allinmd.cn/pages/discover/tag_seminar.html?tId=" class="al-terminalTags">中西医结合</a>
+            <a href="//m.allinmd.cn/pages/discover/tag_seminar.html?tId=" class="al-terminalTags">小儿骨科</a>
+            <a href="//m.allinmd.cn/pages/discover/tag_seminar.html?tId=" class="al-terminalTags">人工关节翻修</a>
+            <a href="//m.allinmd.cn/pages/discover/tag_seminar.html?tId=" class="al-terminalTags">人工关节翻修</a>
+
+        </article>
+        <!--标签结束-->
+
+        <!--所属活动或者专辑-->
+        <article class="al-terminalActivition Ev-activity" style="display: none;">
+            <span>活动：</span><a class="Ev-actName" href="javascript:void(0)">《2016视频、病例pk》</a>
+        </article>
+        <!--所属活动或专题结束-->
+
+        <!--分享区-->
+        <section class="al-terminalShare">
+            <h3>分享给好友 共同讨论</h3>
+            <section class="al-terminalShareItem Ev-shareBtn" ref="trend">
+                <figure class="al-bottomShareImg">
+                    <img src="/images/img50/pages/index/share_allin.png"
+                         _mce_src="/images/img50/pages/index/share_allin.png" alt=""></figure>
+                <figcaption>站内动态</figcaption>
+            </section>
+            <section class="al-terminalShareItem Ev-shareBtn" ref="qzone">
+                <figure class="al-bottomShareImg">
+                    <img src="/images/img50/pages/index/share_kongjian.png"
+                         _mce_src="//m.allinmd.cn/images/img50/pages/index/share_kongjian.png" alt="">
+                </figure>
+                <figcaption>QQ空间</figcaption>
+            </section>
+            <section class="al-terminalShareItem Ev-shareBtn" ref="sina">
+                <figure class="al-bottomShareImg">
+                    <img src="/images/img50/pages/index/share_weibo.png" alt="">
+                </figure>
+                <figcaption>微博</figcaption>
+            </section>
+        </section>
+        <!--分享区结束-->
+
+    </section>
+    <!--文库主体内容结束-->
+
+    <!--相关推荐开始-->
+    <section class="al-terminalMainContent Ev-similarRecommend" style="display: none">
+        <h2>相关推荐</h2>
+
+    </section>
+    <!--相关推荐结束-->
+
+    <!--评论区-->
+    <section class="al-terminalMainContent al-terminalCommentContent Ev-discussArea">
+        <h2>
+            评论(<span class="Ev-navReviewNum"></span>)
+            <section class="al-terminalSortChange">
+                <button class="al-terminalSortChangeItem" sortType="3">最新</button>
+                <button class="al-terminalSortChangeItem active"  sortType="1">最旧</button>
+            </section>
+        </h2>
+        <section class="al-terminalComment">
+            <div id="EQ_newReplyList">
+
+            </div>
+            <section class="al-terminalNoComment" style="display: none;">
+                <span>暂无评论，快“加入讨论”参与进来~</span>
+            </section>
+        </section>
+    </section>
+    <!--评论区结束-->
+
+    <!--没有更多-->
+    <article class="al-terminalFinish"  style="display: none;">
+        ~<span>没有更多了</span>~
+    </article>
+    <!--没有更多结束-->
+
+
+    <!--底部悬浮按钮-->
+    <footer class="al-terminalFooter">
+        <figure class="al-terminalFooterItem">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalBack"></i>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem al-terminalJoinDiscuss Ev-discussBtn">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalJoin"><span>加入讨论</span></i>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-reviewNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalCommentNum"></i>
+                <span class="al-newsNum Ev-al-newsNum"></span>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-praiseNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminallike"></i>
+                <span class="al-newsNum Ev-al-newsNum"></span>
+            </a>
+        </figure>
+        <figure class="al-terminalFooterItem Ev-collectNum">
+            <a href="javascript:void(0)">
+                <i class="icon-terminalCollect"></i>
+                <span class="al-newsNum Ev-al-newsNum"></span>
+            </a>
+        </figure>
+    </footer>
+    <!--底部悬浮按钮结束-->
+</section>
+
+
+</body>
+
+</html>

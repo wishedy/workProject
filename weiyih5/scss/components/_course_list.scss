@@ -1,0 +1,108 @@
+@charset "UTF-8";
+//内容组件
+//Created by qiangkailiang on 2016/07/29
+//公共方法模块调用
+@import "../modules/common-modules";
+//公共变量引用
+@import "../variables/_allinmdV2-variables";
+
+@import "_iconModule"; //小图标组件
+
+.courseList{
+  @include clearfix();
+  padding: 0 rem(30px);
+  box-shadow: 0 1px 0 0 #E4E9ED;
+  margin-top: rem(30px);
+  li{
+    float: left;
+    margin:0 rem(22px) rem(40px) 0;
+    position: relative;
+    overflow: hidden;
+    &:nth-child(2n){
+      margin-right:0;
+    }
+    img{
+      width: rem(334px);
+      height: rem(222px);
+    }
+    p{
+      font-size: rem(28px);
+      color: #333333;
+      line-height: rem(28px);
+      margin-top: rem(14px);
+      &:last-child{
+        font-size: rem(22px);
+        color: #909090;
+        line-height: rem(24px);
+        @extend %icon-contentWatchedNum;
+        /*i{
+          content: "";
+          display: inline-block;
+          width: rem(28px);
+          height: rem(18px);
+          background: url(//img50.allinmd.cn/classes/views.png) no-repeat;
+          background-size: 100% 100%;
+          vertical-align: middle;
+          margin-right: rem(10px);
+        }*/
+        span{
+          margin-left: rem(20px);
+        }
+        b{
+          font-size: rem(24px);
+          color: #FF9224;
+          line-height: rem(24px);
+          font-weight: normal;
+          float: right;
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.courseMore{
+  font-size: rem(26px);
+  color: #909090;
+  line-height: rem(80px);
+  height: rem(80px);
+  width: 100%;
+  text-align: center;
+  i{
+    display: inline-block;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAMCAMAAAC6EAb3AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACHUExURUxpcZGRkZGRkZCQkJycnJKSkpKSkpKSkpCQkJGRkZGRkZCQkJGRkZCQkJGRkZCQkJGRkZOTk////5CQkJCQkJSUlL+/v5CQkJGRkZCQkJCQkJCQkJKSkpKSkpKSkpGRkZCQkJGRkZSUlJWVlaKiopCQkJGRkZCQkJGRkZGRkZeXl5mZmZCQkIMBAPUAAAAsdFJOUwD8YVUSZXwV1NP+bEFF5Yr6SQL2mD4E8qU17bEcByMs/ckmDAvmwsa84BYPyAaC6gAAAHBJREFUGNNlz9kOgjAUhOFfBdu6AeK+g6Ko8/7PZ4whYHuuJl8mkxwILorfTGbjfzRWMdORhl18WbkI+j0lnaaTM98wSLWY+whZrs2q2WwQlmvtjz+0pl3b7lTffIRzpUfpI5yeugQIh0J3Ez7KtY0fvYEHpE0fbUEAAAAASUVORK5CYII=") no-repeat;
+    width: rem(20px);
+    height: rem(16px);
+    background-size:contain ;
+    vertical-align: middle;
+    margin-left: rem(6px);
+  }
+  &.up{
+    i{
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      transform:rotate(180deg);
+      margin-top: rem(-10px);
+    }
+  }
+  &.right{
+    i{
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      transform:rotate(-90deg);
+      margin-top: rem(-3px);
+    }
+  }
+}
+.collaged{
+  background: rgba(0,0,0,0.30);
+  width: rem(78px);
+  height: rem(30px);
+  text-align: center;
+  line-height: rem(30px);
+  font-size: rem(20px);
+  color: #FFFFFF;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

@@ -1,0 +1,386 @@
+@charset "UTF-8";
+//微型图标组件
+//Created by qiangkailiang on 2016/08/04
+//公共方法模块调用
+@import "../modules/_common-modules";
+//公共变量引用
+@import "../variables/_allinmdV3-variables";
+//设置
+.al-iconConfig {
+    display: inline-block;
+    vertical-align: middle;
+    @include square(16px);
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_config.png') center center no-repeat;
+    margin: 0 5px;
+}
+
+//成功
+.al-iconSuccess {
+    background: transparent url("//img10.allinmd.cn/v3/common/icon/icon_success.png") center center no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+//我的关注、收藏、浏览……
+.al-iconMyCollect {
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_collection_off.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.al-iconMyFollow {
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_follow_off.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.al-iconMyBrowsed {
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_browser_off.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.al-iconMyComment {
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_comment_off.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.al-iconMyDraft {
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_draft_off.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+.al-iconMyWebcast{
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_video.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+//激活态
+.active {
+    .al-iconMyCollect {
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_collection_on.png') center center no-repeat;
+        background-size: 100% 100%;
+    }
+    .al-iconMyFollow {
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_follow_on.png') center center no-repeat;
+        background-size: 100% 100%;
+    }
+    .al-iconMyBrowsed {
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_browser_on.png') center center no-repeat;
+        background-size: 100% 100%;
+    }
+    .al-iconMyComment {
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_comment_on.png') center center no-repeat;
+        background-size: 100% 100%;
+    }
+    .al-iconMyDraft {
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_draft_on.png') center center no-repeat;
+        background-size: 100% 100%;
+    }
+    .al-iconMyWebcast{
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_video_on.png') center center no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+//我的主页、贡献、动态、简介
+.al-iconMyIndex {
+    width: 28px;
+    height: 22px;
+    display: inline-block;
+    vertical-align:text-bottom;
+    margin-right: 10px;
+    background: transparent url('/images/img10/v3/common/icon/personal_index_off.png') center center no-repeat;
+}
+
+.al-iconMyContribution {
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    vertical-align:text-bottom;
+    margin-right: 10px;
+    background: transparent url('/images/img10/v3/common/icon/personal_contribution_off.png') center center no-repeat;
+}
+
+.al-iconMyActive {
+    width: 23px;
+    height: 22px;
+    display: inline-block;
+    vertical-align:text-bottom;
+    margin-right: 10px;
+    background: transparent url('/images/img10/v3/common/icon/personal_active_off.png') center center no-repeat;
+}
+
+.al-iconMyMsg {
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    vertical-align:text-bottom;
+    margin-right: 10px;
+    background: transparent url('/images/img10/v3/common/icon/personal_msg_off.png') center center no-repeat;
+}
+
+.active {
+    .al-iconMyIndex {
+        width: 28px;
+        height: 22px;
+        display: inline-block;
+        vertical-align:text-bottom;
+        background: transparent url('/images/img10/v3/common/icon/personal_index_on.png') center center no-repeat;
+    }
+    .al-iconMyContribution {
+        width: 23px;
+        height: 23px;
+        display: inline-block;
+        vertical-align:text-bottom;
+        background: transparent url('/images/img10/v3/common/icon/personal_contribution_on.png') center center no-repeat;
+    }
+    .al-iconMyActive {
+        width: 23px;
+        height: 22px;
+        display: inline-block;
+        vertical-align:text-bottom;
+        background: transparent url('/images/img10/v3/common/icon/personal_active_on.png') center center no-repeat;
+    }
+    .al-iconMyMsg {
+        width: 23px;
+        height: 23px;
+        display: inline-block;
+        vertical-align:text-bottom;
+        background: transparent url('/images/img10/v3/common/icon/personal_msg_on.png') center center no-repeat;
+    }
+}
+
+//作者
+.al-contentAuthor {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_user.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align:sub;
+    margin-right: 5px;
+    margin-top:0;
+    &.authorNoUserId{
+        width: 13px;
+        height: 15px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/icon-book.png') center center no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+//浏览数
+.al-contentWatchedNum {
+    display: inline-block;
+    width: 18px;
+    height:12px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/personal_watchNum.png') center center no-repeat;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+//时间
+.al-contentTime {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 15px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/meeting_time.png') center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+//地点
+.al-contentPlace {
+    display: inline-block;
+    width: 13px;
+    height: 15px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/meeting_place.png') center center no-repeat;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+//旗帜
+.al-mark {
+    width: 31px;
+    height: 46px;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    z-index: 2;
+    img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+}
+.al_imgMark{
+    right:3px;
+}
+
+//交互功能
+span {
+    i{
+        display: inline-block;
+
+        vertical-align: middle;
+//        margin-right: 5px;
+        margin-top:-1px;
+    }
+
+    .al-commentBtn {background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_btn_off.png') center center no-repeat;min-width: 14px;
+        height: 14px;}
+    .al-likeBtn {background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_like_off.png') center center no-repeat;min-width: 14px;
+        height: 14px;}
+    .al-shareBtn {background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_share_off.png') center center no-repeat;min-width: 14px;
+        height: 14px;}
+    .al-collectBtn {
+        height:12px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_collect_off.png') center center no-repeat;
+        min-width: 14px;
+    }
+}
+
+span:hover {
+    .al-commentBtn {background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_btn_on.png') center center no-repeat;}
+    .al-likeBtn {background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_like_on.png') center center no-repeat;}
+    .al-shareBtn {background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_share_on.png') center center no-repeat;}
+    .al-collectBtn {
+        height:12px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_collect_on.png') center center no-repeat;
+    }
+}
+span:hover{
+    .al-contentWatchedNum{
+        width:18px;
+        height:12px;
+    }
+}
+//激活态
+span.active {
+    i{
+        display: inline-block;
+//        min-width: 14px;
+//        height: 14px;
+        vertical-align: middle;
+//        margin-right: 5px;
+        margin-top:-1px;
+    }
+    .al-likeBtn {background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_like_active_off.png') center center no-repeat;}
+    .al-collectBtn {
+        height:12px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_collect_active_off.png') center center no-repeat;
+    }
+}
+
+span.active:hover {
+    i{
+        display: inline-block;
+//        min-width:14px;
+//        height:14px;
+        vertical-align: middle;
+//        margin-right: 5px;
+        margin-top: -1px;
+    }
+    .al-likeBtn {background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_like_active_on.png') center center no-repeat;}
+    .al-collectBtn {
+        height:12px;
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_collect_active_on.png') center center no-repeat;
+    }
+}
+
+//更换/刷新
+.al-refreshFans {
+    display: inline-block;
+    width: 18px;
+    height: 15px;
+    background: transparent url("//img10.allinmd.cn/v3/common/icon/icon_refresh.png") center center no-repeat;
+    background-size: 100% 100%;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+//评论上传按钮
+.al-commentBtnImg {
+    vertical-align:text-bottom;
+    display: inline-block;
+    margin-right:6px;
+}
+
+.al-commentPic {
+    width: 16px;
+    height: 13px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_pic.png') center center no-repeat;
+    margin-right:10px;
+}
+
+.al-commentVideo {
+    width: 20px;
+    height: 13px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_video.png') center center no-repeat;
+}
+
+.al-commentAt {
+    width: 14px;
+    height: 15px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_at.png') center center no-repeat;
+}
+
+.al-commentQuote {
+    width: 20px;
+    height: 14px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/comment_quote.png') center center no-repeat;
+}
+
+//他人主页 右上角 点赞数量
+.al-iconOthersLike {
+    width: 17px;
+    height: 17px;
+    background: transparent url('//img10.allinmd.cn/v3/others/icon_like.png') center center no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 7px;
+}
+.al-othersLikeOn{
+    background: transparent url('//img10.allinmd.cn/v3/others/icon_likeActive.png') center center no-repeat;
+}
+
+//个人主页大的VIP
+.al-vipBigUser {
+    display: inline-block;
+    width: 18px;
+    height: 16px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_vip.png') center center no-repeat;
+    margin-left: 3px;
+}
+.al-vipNewBigUser{
+    width: 35px;
+    height:18px;
+}
+//VIP
+.al-vipUser {
+    display: inline-block;
+    width: 14px;
+    height: 12px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_vip2.png') center center no-repeat;
+    margin-left:6px;
+}
+
+//不喜欢按钮
+.al-unlikeBtn {
+    display: inline-block;
+    width: 26px;
+    height: 18px;
+    background: transparent url('//img10.allinmd.cn/v3/common/icon/icon_unlike.png') center center no-repeat;
+    margin: 0 15px;
+    float: right;
+    &:hover{
+        background: transparent url('//img10.allinmd.cn/v3/common/icon/unlikeHover.png') center center no-repeat;
+    }
+}
+.al-contentCommentOtherMsg b{
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}

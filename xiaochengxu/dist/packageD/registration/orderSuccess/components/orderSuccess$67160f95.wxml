@@ -1,0 +1,14 @@
+<import src="/components/share$baffe8be" /><template name="orderSuccess$67160f95">
+  <view class="_section data-v-268130cc order-success-main"><template ref="share" bindsuccess="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="share$baffe8be"></template>
+    <view class="_article data-v-268130cc content">
+      <view class="_div data-v-268130cc"><label class="_span data-v-268130cc label">患者姓名</label> <label class="_span data-v-268130cc info">{{ patientName }}</label></view>
+      <view class="_div data-v-268130cc"><label class="_span data-v-268130cc label">就诊状态</label> <label class="_span data-v-268130cc info">{{ visitState == 1 ? '待就诊' : '已就诊' }}</label></view>
+      <view class="_div data-v-268130cc"><label class="_span data-v-268130cc label">就诊时间</label> <label class="_span data-v-268130cc info">{{ registDate }} {{ clinicDuration }}</label></view>
+      <view class="_div data-v-268130cc"><label class="_span data-v-268130cc label">科室</label> <label class="_span data-v-268130cc info">{{ deptName }}</label></view>
+      <view class="_div data-v-268130cc"><label class="_span data-v-268130cc label">医生</label> <label class="_span data-v-268130cc info">{{ doctorName }} {{ doctorTitle }}</label></view>
+    </view>
+    <view class="_section data-v-268130cc submit">
+      <form bindtap="handleProxy" report-submit="true" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_form data-v-268130cc"><button class="_button data-v-268130cc">保存本页为图片</button></form>
+    </view>
+  </view>
+</template>
